@@ -30,6 +30,10 @@
     <!-- directories are relative to the main source PreTeXt file -->
     <source>
         <directories external="../assets" generated="../generated-assets"/>
+        <!-- Selects which @component-marked elements survive assembly.  The
+             interactives and videos are marked component="web": they are kept
+             here and dropped by publication-print.ptx. -->
+        <version include="web"/>
     </source>
 
     <common>
