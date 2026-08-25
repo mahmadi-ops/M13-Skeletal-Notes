@@ -7,8 +7,10 @@
   instruction.  Content mirrors ch-10-8.ptx of the full lecture notes;
   every xml:id here is prefixed with "skel-" so the two can coexist.
 
-  Figures: both the exponential and the sine approximation plots are
-  complex, so they are reproduced in full, as in the lecture notes.
+  Figures: the exponential and sine approximation plots are complex, so
+  they are reproduced as in the lecture notes.  The manim interactive is
+  marked component="web", so it appears on the web and is dropped from
+  the PDF.
 -->
 <section xml:id="sec-skel-series-taylor" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Taylor and Maclaurin Series</title>
@@ -48,7 +50,10 @@ directly from the definition.
 </ul>
 </objectives>
 
-<introduction>
+<!-- ================================================================ -->
+<subsection xml:id="subsec-skel-taylor-definitions">
+<title>Definitions of Taylor Series, Maclaurin Series, and Taylor Polynomials</title>
+
 <p>
 In this section we will answer the following question:
 </p>
@@ -68,19 +73,147 @@ belongs, so that you can fill them in by hand.</em>
 </p>
 
 <p>
-Let us begin by assuming that we know the exact form of the function
-<m>f(x)</m>. As an example, take <m>f(x) = e^x</m> near <m>x = 0</m>.
-The tangent line at <m>x = 0</m> is the first order approximation, and
-the higher order approximations follow the same pattern:
-<md xml:id="eq-skel-taylor-pattern" number="yes">
-p_n(x) = f(0) + \frac{f'(0)}{1!}(x-0)^1 + \frac{f''(0)}{2!}(x-0)^2
-+ \cdots + \frac{f^{(n)}(0)}{n!}(x-0)^n.
-</md>
+Throughout, let <m>f</m> be a function with derivatives of all orders
+throughout some interval containing <m>a</m> as an interior point.
 </p>
 
 <p>
-Use <xref ref="eq-skel-taylor-pattern"/> to write <m>p_1</m>,
-<m>p_2</m>, and <m>p_3</m> for <m>f(x) = e^x</m> at <m>x = 0</m>.
+Before stating the definitions, let us see where the coefficients of such
+a polynomial have to come from. Suppose the only things we know about
+<m>f</m> are its readings at <m>x = a</m>: the value <m>f(a)</m>, the
+slope <m>f'(a)</m>, the second derivative <m>f''(a)</m>, and so on. We
+look for a polynomial written in terms of <m>x - a</m>,
+<md xml:id="eq-skel-taylor-ansatz" number="yes">
+p_n(x) = c_0 + c_1(x-a) + c_2(x-a)^2 + \cdots + c_n(x-a)^n,
+</md>
+and we pin down the unknown coefficients
+<m>c_0, c_1, \ldots, c_n</m> by requiring <m>p_n</m> to agree with
+<m>f</m> at <m>x = a</m> in as many derivatives as it has coefficients.
+Writing it in terms of <m>x - a</m> rather than <m>x</m> is what makes
+this manageable: every term after the first vanishes at <m>x = a</m>.
+</p>
+
+<p>
+Work out the first few coefficients. In each row, differentiate the
+polynomial as many times as it has coefficients, evaluate at
+<m>x = a</m>, and match against <m>f</m>.
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,12);
+\draw[gray!35] (0,8.5) -- (15,8.5);
+\draw[gray!35] (0,4) -- (15,4);
+\node[anchor=north west, font=\small\itshape] at (0.35,11.7)
+  {a line, $p_1(x) = c_0 + c_1(x-a)$: \quad $c_0 =$ \quad $c_1 =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,8.2)
+  {a parabola, $p_2(x) = c_0 + c_1(x-a) + c_2(x-a)^2$: \quad $c_2 =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.7)
+  {a cubic, $p_3(x) = \cdots + c_3(x-a)^3$: \quad $c_3 =$};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in three rows, for finding the coefficients of the linear, quadratic, and cubic approximations.</shortdescription>
+</image>
+</sidebyside>
+
+<p>
+Notice what should <em>not</em> have happened: <m>c_0</m> and <m>c_1</m>
+should come out the same every time. Each new condition is the first one
+in which the next coefficient appears, so it determines that coefficient
+and leaves the earlier ones untouched. That is why <m>p_2</m> is the
+tangent line with a single new term added to it, rather than a fresh
+approximation built from scratch. The pattern in the denominators should
+now be visible: <m>0!, 1!, 2!, 3!, \ldots</m>
+</p>
+
+<p>
+One computation settles every coefficient at once. Differentiate
+<xref ref="eq-skel-taylor-ansatz"/> exactly <m>k</m> times and evaluate
+at <m>x = a</m>. Say what happens to the terms of degree below <m>k</m>,
+to those of degree above <m>k</m>, and to the term
+<m>c_k(x-a)^k</m> itself; then impose
+<m>p_n^{(k)}(a) = f^{(k)}(a)</m> and solve for <m>c_k</m>.
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,8);
+\draw[gray!35] (0,3) -- (15,3);
+\node[anchor=north west, font=\small\itshape] at (0.35,7.7) {$p_n^{(k)}(a) =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,2.7) {$c_k =$};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in two rows, for the kth derivative of the polynomial at a and the resulting coefficient.</shortdescription>
+</image>
+</sidebyside>
+
+<p>
+So there is nothing to choose. Once we ask a polynomial to match
+<m>f</m> and its first <m>n</m> derivatives at <m>x = a</m>, its
+coefficients are determined, and they are the numbers
+<m>f^{(k)}(a)/k!</m>. Reading <m>f^{(0)}</m> as <m>f</m> and <m>0!</m> as
+<m>1</m>, the first coefficient <m>c_0 = f(a)</m> fits the same formula.
+Letting <m>n</m> grow without bound leads to the following definitions.
+</p>
+
+<definition xml:id="def-skel-taylor-series">
+<title>Taylor Series</title>
+<statement>
+<p>
+The <term>Taylor series generated by <m>f</m> at <m>x = a</m></term> is
+<md>
+<mrow>\sum_{k=0}^{\infty} \frac{f^{(k)}(a)}{k!}(x-a)^k
+\amp = f(a) + f'(a)(x-a) + \frac{f''(a)}{2!}(x-a)^2 + \cdots</mrow>
+<mrow>\amp \quad + \frac{f^{(n)}(a)}{n!}(x-a)^n + \cdots</mrow>
+</md>
+</p>
+</statement>
+</definition>
+
+<definition xml:id="def-skel-taylor-polynomial">
+<title>Taylor Polynomial of Order <m>n</m></title>
+<statement>
+<p>
+The <term>Taylor polynomial of order <m>n</m></term> generated by
+<m>f</m> at <m>x = a</m> is the polynomial
+<md>
+p_n(x) = f(a) + f'(a)(x-a) + \frac{f''(a)}{2!}(x-a)^2 + \cdots
++ \frac{f^{(n)}(a)}{n!}(x-a)^n.
+</md>
+</p>
+</statement>
+</definition>
+
+<remark xml:id="remark-skel-maclaurin-series">
+<title>Maclaurin Series</title>
+<p>
+The centre <m>a = 0</m> is common enough to have its own name. The Taylor
+series generated by <m>f</m> at <m>x = 0</m> is known as the
+<term>Maclaurin series generated by <m>f</m></term>, which is
+<md>
+\sum_{k=0}^{\infty} \frac{f^{(k)}(0)}{k!}x^k
+= f(0) + f'(0)x + \frac{f''(0)}{2!}x^2 + \cdots
++ \frac{f^{(n)}(0)}{n!}x^n + \cdots.
+</md>
+</p>
+</remark>
+
+<example xml:id="example-skel-taylor-exp">
+<title>Approximating <m>e^x</m> near <m>x = 0</m></title>
+<statement>
+<p>
+Write down the Taylor polynomials of orders <m>1</m>, <m>2</m>, and
+<m>3</m> generated by <m>f(x) = e^x</m> at <m>x = 0</m>.
+</p>
+
+<p>
+<em>Solution.</em> Every derivative of <m>e^x</m> is <m>e^x</m> again, so
+the coefficients of <xref ref="def-skel-taylor-polynomial"/> are easy.
+Check your answers against <xref ref="fig-skel-taylor-exp"/>.
 </p>
 
 <sidebyside width="97%">
@@ -96,11 +229,8 @@ Use <xref ref="eq-skel-taylor-pattern"/> to write <m>p_1</m>,
 <shortdescription>Blank box with rows labelled p sub 1 of x, p sub 2 of x, and p sub 3 of x, for the first three Taylor polynomials of e to the x.</shortdescription>
 </image>
 </sidebyside>
-
-<p>
-As you can see in <xref ref="fig-skel-taylor-exp"/>, as we increase the
-order of the polynomials <m>p_n(x)</m>, the approximation improves.
-</p>
+</statement>
+</example>
 
 <figure xml:id="fig-skel-taylor-exp">
 <caption>
@@ -152,61 +282,85 @@ each polynomial hugs the curve more closely than the one before it.
 </image>
 </figure>
 
+<!-- Web only: an interactive animation, dropped from the PDF by
+     publication-print.ptx.  The paragraph pair below says the same thing
+     in each format. -->
+<sidebyside component="web" width="100%">
+<figure xml:id="fig-skel-taylor-order-animation">
+<caption>
+The same idea, animated. Each new term of the Taylor polynomial is grown
+in one at a time, so you can watch <m>p_n</m> peel away from the previous
+approximation and settle closer to <m>f(x) = e^x</m>.
+</caption>
+<interactive xml:id="interactive-skel-taylor-approx-manim"
+             iframe="taylor-approx-manim.html" width="100%" aspect="4:3">
+<instructions>
 <p>
-This brings us to the definition of Taylor and Maclaurin series.
+Press <q>Play</q> to build the polynomials in order: the flat line
+<m>p_0</m> matches only the height at the centre, <m>p_1</m> adds the
+slope and becomes the tangent line, <m>p_2</m> adds the curvature, and
+each later term bends the blue curve into agreement with <m>f</m> over a
+wider stretch. The shaded green band is the interval on which <m>p_n</m>
+stays within <m>0.1</m> of <m>f</m>; watch it widen as the order climbs.
+Stop the animation at any time and set the order <m>n</m> yourself, or
+use the <m>p_1, p_2, p_3</m> buttons to return to the three polynomials
+of <xref ref="fig-skel-taylor-exp"/>. The second slider moves the centre
+<m>a</m> away from <m>0</m>, which rebuilds the whole family at a new
+point of the curve. <q>Trails</q> leaves the earlier polynomials on
+screen in faint gold so the family can be seen closing in together.
 </p>
-</introduction>
+</instructions>
+</interactive>
+</figure>
+</sidebyside>
 
-<!-- ================================================================ -->
-<subsection xml:id="subsec-skel-taylor-definitions">
-<title>Definitions of Taylor Series, Maclaurin Series, and Taylor Polynomials</title>
-
-<p>
-Let <m>f</m> be a function with derivatives of all orders throughout
-some interval containing <m>a</m> as an interior point.
+<p component="web">
+<xref ref="fig-skel-taylor-order-animation"/> puts all of this on one
+screen for <m>f(x) = e^x</m>. The centre slider is the <m>a</m> of the
+definitions: left at <m>a = 0</m> it builds the Maclaurin polynomials,
+and moved anywhere else it rebuilds the same construction at a new point,
+where <m>p_n</m> again touches the curve. The order slider is the
+<m>n</m> of <m>p_n</m>, and stepping it up adds exactly one term,
+<m>\dfrac{f^{(n)}(a)}{n!}(x-a)^n</m>. That term vanishes at <m>x = a</m>,
+which is why raising the order changes the shape of the polynomial
+everywhere else but never moves it off the point
+<m>\left(a, f(a)\right)</m>.
+</p>
+<p component="print">
+An animation of this construction accompanies the online version of these
+notes, with sliders for the centre <m>a</m> and the order <m>n</m>. Two
+things are worth noting from it. Moving <m>a</m> rebuilds the same
+construction at a new point of the curve, where <m>p_n</m> again touches
+<m>f</m>. Raising <m>n</m> adds exactly one term,
+<m>\dfrac{f^{(n)}(a)}{n!}(x-a)^n</m>, which vanishes at <m>x = a</m>
+<mdash/> so it changes the shape of the polynomial everywhere else but
+never moves it off the point <m>\left(a, f(a)\right)</m>.
 </p>
 
-<p>
-<ul>
-<li>
-<p>
-Then the <term>Taylor series generated by <m>f</m> at <m>x = a</m></term>
-is
-<md xml:id="eq-skel-taylor-series" number="yes">
-\sum_{k=0}^{\infty} \frac{f^{(k)}(a)}{k!}(x-a)^k
-= f(a) + f'(a)(x-a) + \frac{f''(a)}{2!}(x-a)^2 + \cdots
-+ \frac{f^{(n)}(a)}{n!}(x-a)^n + \cdots
-</md>
+<p component="web">
+The green band in the figure is worth watching on its own. It marks the
+interval on which <m>p_n</m> stays within <m>0.1</m> of <m>f</m>, and it
+widens with every term: about <m>[-0.5, 0.4]</m> for <m>p_1</m>, about
+<m>[-1.3, 1.2]</m> for <m>p_3</m>, and wider than the picture by
+<m>p_8</m>. So the Taylor polynomials do not merely improve at the centre;
+the region where they are usable grows. Whether that region eventually
+covers everything, and how large the error is at a given <m>x</m>, are
+the questions of the next section.
 </p>
-</li>
-<li>
-<p>
-The <term>Taylor polynomial of order <m>n</m></term> generated by
-<m>f</m> at <m>x = a</m> is the polynomial
-<md xml:id="eq-skel-taylor-polynomial" number="yes">
-p_n(x) = f(a) + f'(a)(x-a) + \frac{f''(a)}{2!}(x-a)^2 + \cdots
-+ \frac{f^{(n)}(a)}{n!}(x-a)^n.
-</md>
-</p>
-</li>
-<li>
-<p>
-The Taylor series generated by <m>f</m> at <m>x = 0</m> is known as the
-<term>Maclaurin series generated by <m>f</m></term>, which is
-<md xml:id="eq-skel-maclaurin-series" number="yes">
-\sum_{k=0}^{\infty} \frac{f^{(k)}(0)}{k!}x^k
-= f(0) + f'(0)x + \frac{f''(0)}{2!}x^2 + \cdots
-+ \frac{f^{(n)}(0)}{n!}x^n + \cdots.
-</md>
-</p>
-</li>
-</ul>
+<p component="print">
+The interval on which <m>p_n</m> stays within <m>0.1</m> of <m>f</m>
+widens with every term: about <m>[-0.5, 0.4]</m> for <m>p_1</m>, about
+<m>[-1.3, 1.2]</m> for <m>p_3</m>, and wider still by <m>p_8</m>. So the
+Taylor polynomials do not merely improve at the centre; the region where
+they are usable grows. Whether that region eventually covers everything,
+and how large the error is at a given <m>x</m>, are the questions of the
+next section.
 </p>
 </subsection>
 
 <!-- ================================================================ -->
-<subsection xml:id="subsec-skel-taylor-example">
-<title>Example</title>
+<subsection xml:id="subsec-skel-taylor-more-examples">
+<title>More Examples</title>
 
 <example xml:id="example-skel-taylor-sin">
 <title>The Maclaurin series of <m>\sin(x)</m></title>
@@ -237,7 +391,7 @@ polynomials provide a better approximation.
 
 <p>
 <em>A.</em> Differentiate <m>f</m> repeatedly, evaluate at <m>x = 0</m>,
-find the pattern, then use <xref ref="eq-skel-maclaurin-series"/>.
+find the pattern, then use <xref ref="remark-skel-maclaurin-series"/>.
 </p>
 
 <sidebyside width="97%">
@@ -282,7 +436,6 @@ find the pattern, then use <xref ref="eq-skel-maclaurin-series"/>.
 <xref ref="fig-skel-taylor-sin"/>.
 </p>
 </statement>
-
 </example>
 
 <figure xml:id="fig-skel-taylor-sin">
@@ -343,11 +496,6 @@ at <m>x = 0</m>, where <m>p_1(x) = x</m>,
 </prefigure>
 </image>
 </figure>
-</subsection>
-
-<!-- ================================================================ -->
-<subsection xml:id="subsec-skel-taylor-exercises">
-<title>Exercises</title>
 
 <exercise xml:id="exercise-skel-taylor-geometric">
 <statement>
@@ -400,9 +548,9 @@ Compute the Taylor series of <m>f(x) = \dfrac{1}{3x+7}</m> at
 <image>
 <latex-image>
 \begin{tikzpicture}
-\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,9);
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,10);
 \node[anchor=north west, text=gray!60, font=\footnotesize\itshape]
-  at (0.25,8.75) {workspace};
+  at (0.25,9.75) {workspace};
 \end{tikzpicture}
 </latex-image>
 <shortdescription>Blank workspace for a handwritten solution.</shortdescription>
@@ -411,7 +559,8 @@ Compute the Taylor series of <m>f(x) = \dfrac{1}{3x+7}</m> at
 </statement>
 <hint>
 <p>
-Write <m>3x+7</m> in terms of <m>x-1</m>.
+Either differentiate repeatedly at <m>x = 1</m>, or write <m>3x+7</m> in
+terms of <m>x-1</m> and reduce to a geometric series.
 </p>
 </hint>
 </exercise>

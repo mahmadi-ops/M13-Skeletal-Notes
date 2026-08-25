@@ -396,22 +396,33 @@
     </task>
 
     <conclusion>
-      <p>
+      <p component="web">
         <xref ref="fig-collision-animation"/> puts the whole scenario in motion:
         the projectile rises to <m>H</m>, the ball is released from <m>B</m> at
         the time <m>t_{\text{rel}}</m>, the two meet at <m>C</m>, and the
         velocity arrows there have the same length.
       </p>
+      <p component="print">
+        An animation of the whole scenario <mdash/> the projectile rising to
+        <m>H</m>, the ball released from <m>B</m> at the time
+        <m>t_{\text{rel}}</m>, and the two meeting at <m>C</m> with velocity
+        arrows of equal length <mdash/> accompanies the online version of these
+        notes.
+      </p>
 
-      <figure xml:id="fig-collision-animation">
-        <caption>
-          Animation: the projectile and the ball, released from rest on the
-          directrix, collide at half of the maximum height with equal speeds.
-        </caption>
-        <video xml:id="video-collision-directrix"
-               source="videos/projectile_collision_directrix_1080p.mp4"
-               width="90%" aspect="16:9"/>
-      </figure>
+      <!-- Web only: in print this could only ever be a dead still, so the
+           whole sidebyside is dropped by publication-print.ptx. -->
+      <sidebyside component="web" width="90%">
+        <figure xml:id="fig-collision-animation">
+          <caption>
+            Animation: the projectile and the ball, released from rest on the
+            directrix, collide at half of the maximum height with equal speeds.
+          </caption>
+          <video xml:id="video-collision-directrix"
+                 source="videos/projectile_collision_directrix_1080p.mp4"
+                 width="100%" aspect="16:9"/>
+        </figure>
+      </sidebyside>
     </conclusion>
   </exercise>
 
