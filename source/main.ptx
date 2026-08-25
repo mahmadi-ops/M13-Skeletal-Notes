@@ -37,9 +37,11 @@
     <xi:include href="frontmatter.ptx" />
    <!-- <xi:include href="introduction.ptx" /> -->
 
-    <!-- Chapter 1: skeletal (fill-in) notes -->
+    <!-- Chapter 1: skeletal (fill-in) notes, 7.3 Hyperbolic Functions -->
     <xi:include href="ch-hyperbolic-skeletal.ptx" />
-    <!-- Chapter 2: the problem sets -->
+    <!-- Chapter 2: skeletal (fill-in) notes, Series and Sequences -->
+    <xi:include href="ch-series-skeletal.ptx" />
+    <!-- Chapter 3: the problem sets -->
     <xi:include href="exercises.ptx" />
   </book>
 

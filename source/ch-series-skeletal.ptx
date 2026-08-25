@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Skeletal (fill-in) version of Chapter 2, Series and Sequences.
+  Wrapper only: the mathematical content lives in the included files,
+  each of which is a <section> of this chapter.  Sections are added
+  here as their skeletal versions are written.
+-->
+<chapter xml:id="skel-chapter-series-sequences" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Series and Sequences (Skeletal Notes)</title>
+
+<xi:include href="sec-skel-series-infinite.ptx" />
+</chapter>

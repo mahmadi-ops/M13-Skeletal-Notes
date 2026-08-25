@@ -1,0 +1,624 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Skeletal (fill-in) version of 2.1 Infinite Series.
+
+  Definitions, theorems, summaries, and problem statements are kept;
+  derivations and solutions are replaced by blank workspace boxes, so
+  the notes can be completed by hand (e.g. on an iPad over the PDF, or
+  printed).  Content mirrors ch-10-2.ptx of the full lecture notes;
+  every xml:id here is prefixed with "skel-" so the two can coexist.
+
+  Figures: the unit-square picture is a simple shape, so only blank
+  space is left for the student to draw it.  The bouncing-ball figure
+  is reproduced in full, as in the lecture notes.
+-->
+<section xml:id="sec-skel-series-infinite" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Infinite Series</title>
+
+<objectives>
+<introduction>
+<p>
+After completing this section, you should be able to:
+</p>
+</introduction>
+
+<ul>
+<li>
+<p>
+Define an infinite sequence, an infinite series, and the sequence of
+partial sums, and decide convergence of a series from its partial sums.
+</p>
+</li>
+<li>
+<p>
+Recognize a geometric series, and determine whether it converges and
+what it converges to.
+</p>
+</li>
+<li>
+<p>
+Apply the <m>n</m>th Term Test for divergence, and understand what the
+test can and cannot conclude.
+</p>
+</li>
+<li>
+<p>
+Combine convergent series using the sum, difference, and constant
+multiple rules, and evaluate telescoping series from their partial
+sums.
+</p>
+</li>
+</ul>
+</objectives>
+
+<introduction>
+<p>
+What does it mean to add infinitely many numbers together? In this
+section we answer that question by defining an infinite series and its
+sequence of partial sums, so that convergence of a series becomes a
+statement about a limit we already know how to study. We then put the
+definition to work on the geometric series, whose behavior we can settle
+completely, and on the <m>n</m>th Term Test, which is our first quick
+check for divergence.
+</p>
+<p>
+<em>These are skeletal notes: the definitions, theorems, and problem
+statements are given, and blank boxes are left wherever a derivation, a
+solution, or a sketch belongs, so that you can fill them in by hand.</em>
+</p>
+</introduction>
+
+<!-- ================================================================ -->
+<subsection xml:id="subsec-skel-series-definitions">
+<title>Definitions</title>
+
+<definition xml:id="def-skel-sequence">
+<title>Sequence</title>
+<statement>
+<p>
+A <term>sequence</term> is a list of numbers,
+<m>a_1, a_2, a_3, \cdots</m>. An <term>infinite sequence</term> of
+numbers is a function whose domain is the set of positive integers.
+</p>
+</statement>
+</definition>
+
+<example xml:id="example-skel-series-halving-sequence">
+<title>A Sequence of Halves</title>
+<statement>
+<p>
+The numbers
+<m>\dfrac12, \dfrac14, \dfrac18, \dfrac{1}{16}, \cdots</m> form an
+infinite sequence; its <m>n</m>th term is
+<m>a_n = \left(\dfrac12\right)^{n}</m>.
+</p>
+</statement>
+</example>
+
+<definition xml:id="def-skel-infinite-series">
+<title>Infinite Series</title>
+<statement>
+<p>
+The sum of the numbers in an infinite sequence <m>\{a_n\}</m>, i.e.
+<m>a_1 + a_2 + a_3 + \cdots = \displaystyle\sum_{n=1}^{\infty} a_n</m>,
+is called an <term>infinite series</term>. Here <m>a_n</m> is the
+<m>n</m>th term of the series.
+</p>
+</statement>
+</definition>
+
+<example xml:id="example-skel-series-halving-series">
+<title>An Infinite Series with a Finite Sum</title>
+<statement>
+<p>
+Infinite sequences can have finite sums. Consider the sum of the
+sequence from <xref ref="example-skel-series-halving-sequence"/>, i.e.
+<m>\dfrac12 + \dfrac14 + \dfrac18 + \dfrac{1}{16} + \cdots</m>.
+</p>
+<p>
+It is most convenient to evaluate the result of this sum geometrically.
+Draw a square of side one in the space below. Shade half of it, then
+half of what is left, then half of what is left after that, and keep
+going. Label the pieces <m>\frac12</m>, <m>\frac14</m>, <m>\frac18</m>,
+<m>\frac{1}{16}</m>. What is the total shaded area, and therefore what
+is the sum?
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,10);
+\node[anchor=north west, text=gray!60, font=\footnotesize\itshape]
+  at (0.25,9.75) {draw the unit square and its subdivisions here};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank space in which to draw a unit square subdivided into rectangles of area one half, one fourth, one eighth, one sixteenth, and so on.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+</example>
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="subsec-skel-series-partial-sums">
+<title>Partial Sums</title>
+
+<p>
+Consider again the infinite sequence
+<m>\dfrac12, \dfrac14, \dfrac18, \dfrac{1}{16}, \cdots</m>. Let us
+denote the sum of the first <m>n</m> terms in this sequence by
+<m>s_n</m>, which are known as <term>partial sums</term>. Can we find a
+pattern in the sequence of partial sums?
+</p>
+
+<p>
+Write out <m>s_1</m>, <m>s_2</m>, and <m>s_3</m>, each one both as a
+fraction and in the form <m>1 - \square</m>. Then guess a closed formula
+for <m>s_n = \displaystyle\sum_{k=1}^{n}\left(\frac12\right)^{k}</m>.
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,7.5);
+\node[anchor=north west, font=\small] at (0.35,7.1) {$s_1 =$};
+\node[anchor=north west, font=\small] at (0.35,5.6) {$s_2 =$};
+\node[anchor=north west, font=\small] at (0.35,4.1) {$s_3 =$};
+\node[anchor=north west, font=\small] at (0.35,2.6) {$\vdots$};
+\node[anchor=north west, font=\small] at (0.35,1.5) {$s_n =$};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box with rows labelled s sub 1, s sub 2, s sub 3, and s sub n, for computing the partial sums by hand.</shortdescription>
+</image>
+</sidebyside>
+
+<p>
+Now use your formula for <m>s_n</m> to compute the infinite series, by
+taking the limit of the partial sum as <m>n \to \infty</m>. Compare the
+answer with the one you found geometrically from the square.
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,6);
+\node[anchor=north west, text=gray!60, font=\footnotesize\itshape]
+  at (0.25,5.75) {workspace};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank workspace for taking the limit of the partial sums by hand.</shortdescription>
+</image>
+</sidebyside>
+
+<p>
+In the example above, the sequence of partial sums converged to a
+number. In general, if the sequence of the partial sums converges to a
+number, we say that the series <term>converges</term>, otherwise we say
+that the series <term>diverges</term>.
+</p>
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="subsec-skel-series-geometric">
+<title>Geometric Series</title>
+
+<p>
+An important example of infinite series is the geometric series. The
+<term>geometric series</term> is of the form
+<md xml:id="eq-skel-series-geometric" number="yes">
+a + ar + ar^2 + \cdots + ar^{n-1} + \cdots
+= \sum_{n=1}^{\infty} ar^{n-1},
+</md>
+where <m>a, r</m> are real numbers and <m>a \ne 0</m>. Note that we can
+re-write the series as <m>\displaystyle\sum_{n=0}^{\infty} ar^{n}</m>.
+</p>
+
+<p>
+Let us compute the partial sum <m>s_n</m> for the geometric series, so
+that
+<md xml:id="eq-skel-series-geo-sn" number="yes">
+s_n = a + ar + ar^2 + \cdots + ar^{n-1}.
+</md>
+</p>
+
+<p>
+Multiply <xref ref="eq-skel-series-geo-sn"/> by <m>r</m>, subtract the
+result from <xref ref="eq-skel-series-geo-sn"/>, and solve for
+<m>s_n</m>. Almost every term should cancel.
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,7);
+\node[anchor=north west, font=\small] at (0.35,6.6) {$r\,s_n =$};
+\node[anchor=north west, font=\small] at (0.35,5.1) {$s_n - r\,s_n =$};
+\node[anchor=north west, font=\small] at (0.35,3.0) {$s_n =$};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box with rows labelled r times s sub n, s sub n minus r times s sub n, and s sub n, for deriving the partial sum of a geometric series.</shortdescription>
+</image>
+</sidebyside>
+
+<p>
+Next, take the limit of your partial sum as <m>n \to \infty</m>. Treat
+the cases <m>|r| \lt 1</m>, <m>|r| \gt 1</m>, and <m>r = 1</m>
+separately, and in each case say what
+<m>\lim\limits_{n\to\infty} r^{n}</m> does.
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,9);
+\draw[gray!35] (0,6) -- (15,6);
+\draw[gray!35] (0,3) -- (15,3);
+\node[anchor=north west, font=\small\itshape] at (0.35,8.75) {$|r| &lt; 1$:};
+\node[anchor=north west, font=\small\itshape] at (0.35,5.75) {$|r| &gt; 1$:};
+\node[anchor=north west, font=\small\itshape] at (0.35,2.75) {$r = 1$:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box with three rows labelled absolute value of r less than one, greater than one, and r equals one, for the three cases of the geometric series.</shortdescription>
+</image>
+</sidebyside>
+
+<exercise xml:id="skel-checkpoint-series-geometric-r-negative-one">
+<title>What Happens When <m>r = -1</m>?</title>
+<statement>
+<p>
+We have now handled <m>|r| \lt 1</m>, <m>|r| \gt 1</m>, and
+<m>r = 1</m>, but one case is still missing: <m>r = -1</m>. Write out the
+partial sums <m>s_1, s_2, s_3, s_4</m> of the series
+<m>a - a + a - a + \cdots = \displaystyle\sum_{n=1}^{\infty} a(-1)^{n-1}</m>
+for <m>a \neq 0</m>. Does the sequence of partial sums approach a single
+number as <m>n \to \infty</m>? What does that tell you about the series?
+</p>
+
+<p>
+<em>Your answer and reasoning.</em>
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,6);
+\node[anchor=north west, text=gray!60, font=\footnotesize\itshape]
+  at (0.25,5.75) {workspace};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank workspace for a handwritten answer.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+<hint>
+<p>
+The partial sums do not grow without bound here, the way they do when
+<m>r = 1</m>. Look instead at whether they settle down to one value.
+</p>
+</hint>
+</exercise>
+
+<p>
+Putting all of the cases together, we can say that if <m>|r| \ge 1</m>,
+the geometric series is divergent.
+</p>
+
+<assemblage xml:id="skel-summary-geometric-series">
+<title>Summary</title>
+<p>
+The geometric series <xref ref="eq-skel-series-geometric"/> converges to
+<m>\dfrac{a}{1-r}</m> if <m>|r| \lt 1</m>, i.e.
+<md xml:id="eq-skel-series-geometric-sum" number="yes">
+\sum_{n=1}^{\infty} ar^{n-1} = \frac{a}{1-r},
+\qquad |r| \lt 1,
+</md>
+and diverges if <m>|r| \ge 1</m>.
+</p>
+</assemblage>
+
+<p>
+Next, as an application of the geometric series, we will go through the
+following example, which is from our textbook.
+</p>
+
+<example xml:id="example-skel-series-ball">
+<title>A bouncing ball</title>
+<statement>
+<p>
+You drop a ball from <m>a</m> meters above a flat surface. Each time
+the ball hits the surface after falling a distance <m>h</m>, it
+rebounds a distance <m>rh</m>, where <m>r</m> is positive but less than
+1. Find the total distance the ball travels up and down.
+</p>
+
+<p>
+<em>Solution.</em>
+(Use <xref ref="fig-skel-series-ball"/> to write the total distance as
+an infinite series, then match it against
+<xref ref="eq-skel-series-geometric-sum"/>. Watch the first drop: it is
+travelled only once.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,9);
+\node[anchor=north west, text=gray!60, font=\footnotesize\itshape]
+  at (0.25,8.75) {workspace};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank workspace for a handwritten solution.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+</example>
+
+<figure xml:id="fig-skel-series-ball">
+<caption>
+The ball falls a distance <m>a</m>, then rises and falls a distance
+<m>ar</m>, then <m>ar^2</m>, and so on, so the total distance travelled
+is <m>a + 2ar + 2ar^2 + \cdots</m>.
+</caption>
+<image width="62%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-skel-series-ball">
+<diagram dimensions="(340,280)" margins="12">
+<definition>b0(t) = (0.55 + 0.55*t, 4.0*(1 - t^2))</definition>
+<definition>b1(t) = (1.10 + 0.9*t, 2.4*(4*t*(1 - t)))</definition>
+<definition>b2(t) = (2.00 + 0.7*t, 1.44*(4*t*(1 - t)))</definition>
+<definition>b3(t) = (2.70 + 0.55*t, 0.864*(4*t*(1 - t)))</definition>
+<definition>b4(t) = (3.25 + 0.42*t, 0.5184*(4*t*(1 - t)))</definition>
+<coordinates bbox="(-0.7,-0.5,4.4,4.6)">
+<line at="ball-ground" endpoints="((-0.35,0),(4.2,0))"
+      stroke="black" thickness="2"/>
+<line at="ball-wall" endpoints="((-0.35,0),(-0.35,4.4))"
+      stroke="black" thickness="2"/>
+<line at="ball-lev1" endpoints="((-0.35,2.4),(2.0,2.4))"
+      stroke="#D6336C" dash="5 4" thickness="1"/>
+<line at="ball-lev2" endpoints="((-0.35,1.44),(2.7,1.44))"
+      stroke="#D6336C" dash="5 4" thickness="1"/>
+<line at="ball-lev3" endpoints="((-0.35,0.864),(3.25,0.864))"
+      stroke="#D6336C" dash="5 4" thickness="1"/>
+<parametric-curve at="ball-c0" function="b0" domain="(0,1)"
+                  stroke="#56B4E9" thickness="2.5"/>
+<parametric-curve at="ball-c1" function="b1" domain="(0,1)"
+                  stroke="#56B4E9" thickness="2.5"/>
+<parametric-curve at="ball-c2" function="b2" domain="(0,1)"
+                  stroke="#56B4E9" thickness="2.5"/>
+<parametric-curve at="ball-c3" function="b3" domain="(0,1)"
+                  stroke="#56B4E9" thickness="2.5"/>
+<parametric-curve at="ball-c4" function="b4" domain="(0,1)"
+                  stroke="#56B4E9" thickness="2.5"/>
+<point at="ball-start" p="(0.55,4.0)" fill="#56B4E9"/>
+<label at="ball-a" anchor="(-0.45,4.0)" alignment="w">
+<m>a</m>
+</label>
+<label at="ball-ar" anchor="(-0.45,2.4)" alignment="w">
+<m>ar</m>
+</label>
+<label at="ball-ar2" anchor="(-0.45,1.44)" alignment="w">
+<m>ar^2</m>
+</label>
+<label at="ball-ar3" anchor="(-0.45,0.864)" alignment="w">
+<m>ar^3</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A ball dropped from height a follows a sequence of bounces that decay geometrically. Dashed horizontal lines mark the rebound heights a r, a r squared, and a r cubed, each a fixed fraction of the previous height.">
+  <annotation ref="ball-c0" text="The initial drop from height a to the ground."/>
+  <annotation ref="ball-c1" text="The first bounce, rising to height a r and falling back."/>
+  <annotation ref="ball-c2" text="The second bounce, rising to height a r squared."/>
+  <annotation ref="ball-c3" text="The third bounce, rising to height a r cubed. The bounces continue forever, but the total distance is finite."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="subsec-skel-series-nth-term">
+<title>The <m>n</m>th Term Test</title>
+
+<theorem xml:id="thm-skel-series-nth-term">
+<statement>
+<p>
+If <m>\displaystyle\sum_{n=1}^{\infty} a_n</m> converges, then
+<m>\lim\limits_{n\to\infty} a_n = 0</m>.
+</p>
+</statement>
+</theorem>
+
+<p>
+<term>Important note:</term> If <m>\lim\limits_{n\to\infty} a_n = 0</m>,
+we <em>cannot</em> conclude that
+<m>\displaystyle\sum_{n=1}^{\infty} a_n</m> converges. See parts D and E
+in the example below.
+</p>
+
+<p>
+The following test is a consequence of the above theorem.
+</p>
+
+<assemblage xml:id="skel-test-nth-term">
+<title>The <m>n</m>th Term Test</title>
+<p>
+If <m>\lim\limits_{n\to\infty} a_n</m> does not exist or
+<m>\lim\limits_{n\to\infty} a_n \ne 0</m>, then
+<m>\displaystyle\sum_{n=1}^{\infty} a_n</m> diverges.
+</p>
+</assemblage>
+
+<example xml:id="example-skel-series-convergence">
+<title>Testing series for convergence</title>
+<statement>
+<p>
+Determine whether the series is convergent or divergent. If it is
+convergent, find its sum.
+<ol marker="A.">
+<li>
+<p>
+<m>\displaystyle\sum_{n=1}^{\infty} n</m>
+</p>
+</li>
+<li>
+<p>
+<m>\displaystyle\sum_{n=1}^{\infty} (-1)^n</m>
+</p>
+</li>
+<li>
+<p>
+<m>\displaystyle\sum_{n=1}^{\infty} \frac{n^3+1}{n^2+n}</m>
+</p>
+</li>
+<li>
+<p>
+<m>\displaystyle\sum_{n=1}^{\infty} \frac{1}{n(n+1)}</m>
+</p>
+</li>
+<li>
+<p>
+<m>\dfrac49 - \dfrac{8}{27} + \dfrac{16}{81} - \dfrac{32}{243} + \cdots</m>
+</p>
+</li>
+</ol>
+</p>
+
+<p>
+<em>Solution.</em>
+(For each one, start by computing <m>\lim\limits_{n\to\infty} a_n</m>.
+For D, the <m>n</m>th Term Test will not settle it, so write the partial
+sum instead and use
+<m>\dfrac{1}{k(k+1)} = \dfrac1k - \dfrac{1}{k+1}</m>. For E, the test
+will not settle it either, so write the series in sigma notation and
+identify <m>a</m> and <m>r</m>.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,20);
+\draw[gray!35] (0,17) -- (15,17);
+\draw[gray!35] (0,14) -- (15,14);
+\draw[gray!35] (0,11) -- (15,11);
+\draw[gray!35] (0,5.5) -- (15,5.5);
+\node[anchor=north west, font=\small\itshape] at (0.35,19.75) {A.};
+\node[anchor=north west, font=\small\itshape] at (0.35,16.75) {B.};
+\node[anchor=north west, font=\small\itshape] at (0.35,13.75) {C.};
+\node[anchor=north west, font=\small\itshape] at (0.35,10.75) {D.};
+\node[anchor=north west, font=\small\itshape] at (0.35,5.25) {E.};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box divided into five rows labelled A through E, for testing each of the five series by hand.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+</example>
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="subsec-skel-series-combining">
+<title>Combining Series</title>
+
+<theorem xml:id="thm-skel-series-combining">
+<statement>
+<p>
+If <m>\sum a_n = A</m> and <m>\sum b_n = B</m> are convergent series,
+then
+
+<ol>
+<li>
+<p>
+<em>Sum Rule:</em>
+<m>\sum (a_n + b_n) = \sum a_n + \sum b_n = A + B</m>
+</p>
+</li>
+<li>
+<p>
+<em>Difference Rule:</em>
+<m>\sum (a_n - b_n) = \sum a_n - \sum b_n = A - B</m>
+</p>
+</li>
+<li>
+<p>
+<em>Constant Multiple Rule:</em>
+<m>\sum k a_n = k \sum a_n = kA</m> (Any number <m>k</m>).
+</p>
+</li>
+</ol>
+</p>
+</statement>
+</theorem>
+
+<example xml:id="example-skel-series-difference">
+<title>Using the difference rule</title>
+<statement>
+<p>
+Evaluate <m>\displaystyle\sum_{n=1}^{\infty}
+\frac{1}{n(n+1)} - \frac{1}{2^n}</m>.
+</p>
+
+<p>
+<em>Solution.</em>
+(You have already summed both of these series in this section: one in
+<xref ref="subsec-skel-series-partial-sums"/> and the other in part D of
+<xref ref="example-skel-series-convergence"/>.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,6);
+\node[anchor=north west, text=gray!60, font=\footnotesize\itshape]
+  at (0.25,5.75) {workspace};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank workspace for a handwritten solution.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+</example>
+
+<example xml:id="example-skel-series-telescoping-ln">
+<title>A telescoping series with logarithms</title>
+<statement>
+<p>
+Evaluate <m>\displaystyle\sum_{k=0}^{\infty}
+\ln\!\left(\frac{k+2}{k+1}\right)</m>, if it converges and if it
+diverges, show that it does.
+</p>
+
+<p>
+<em>Solution.</em>
+(Begin by writing the partial sum <m>s_n</m>, and use
+<m>\ln\!\left(\frac{k+2}{k+1}\right) = \ln(k+2) - \ln(k+1)</m> so that
+the sum telescopes.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,9);
+\node[anchor=north west, text=gray!60, font=\footnotesize\itshape]
+  at (0.25,8.75) {workspace};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank workspace for a handwritten solution.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+</example>
+</subsection>
+
+</section>
