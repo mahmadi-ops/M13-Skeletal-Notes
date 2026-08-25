@@ -283,6 +283,8 @@ find the pattern, then use <xref ref="eq-skel-maclaurin-series"/>.
 </p>
 </statement>
 
+</example>
+
 <figure xml:id="fig-skel-taylor-sin">
 <caption>
 The function <m>f(x) = \sin x</m> together with the Taylor polynomials
@@ -341,7 +343,6 @@ at <m>x = 0</m>, where <m>p_1(x) = x</m>,
 </prefigure>
 </image>
 </figure>
-</example>
 </subsection>
 
 <!-- ================================================================ -->

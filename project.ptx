@@ -12,7 +12,7 @@
          these exercises are auto-graded on Runestone. -->
     <target name="runestone" format="html" platform="runestone"
             publication="publication-runestone.ptx" />
-    <target name="print" format="pdf" latex-engine="xelatex" />
+    <target name="print" format="pdf" />
   </targets>
 </project>
 
