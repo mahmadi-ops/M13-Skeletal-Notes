@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--
+  Publication file for the "print" (PDF) target only.
+
+  Identical to publication.ptx except for <version include="print"/>.  The
+  interactives (GeoGebra, Desmos) and the manim videos are marked
+  component="web" in the source, so they are assembled into the HTML builds
+  and dropped from the PDF, where they could only ever appear as a dead
+  placeholder.
+-->
+
+<publication>
+    <!-- directories are relative to the main source PreTeXt file -->
+    <source>
+        <directories external="../assets" generated="../generated-assets"/>
+        <!-- Selects which @component-marked elements survive assembly.  The
+             interactives and videos are marked component="web", so they are
+             dropped here and kept by publication.ptx. -->
+        <version include="print"/>
+    </source>
+
+    <common>
+
+  
+
+
+  <exercise-divisional solution="yes"/> 
+        <!-- Chunk at subsection level: the divisions that used to be chapters -->
+        <!-- are now sections, so chunking one level deeper keeps each of      -->
+        <!-- their subdivisions on its own page, at its existing URL.          -->
+        <chunking level="3"/>
+      <tableofcontents level="4"/>
+        <!-- When writing an article for a specific journal, you can   -->
+        <!-- specify the name of the journal to get appropriate latex. -->
+        <!-- See the guide for a list of valid names:
+          https://pretextbook.org/doc/guide/html/appendix-journals.html#appendix-journals -->
+
+        <!--<journal name="ams" /> -->
+         <!-- QR code image: set path to an image to put in center of QR codes -->
+      <!-- <qrcode image="image.png" /> -->
+    </common>
+
+    <!--  <numbering> -->
+    <!-- the divisions element describes the numbering of divisions.  -->
+    <!-- @part-structure should be "decorative" or "structural",      -->
+    <!-- were the latter would restart numbering chapters within each -->
+    <!-- part (this only matters if your book has parts).             -->
+    <!-- The attribute @chapter-start give the number of the first    -->
+    <!-- chapter.  @level says how deep (chapter->section->subsection)-->
+    <!-- numbering should appear.                                     -->
+    <!-- For use with a book organized by part, you can set the -->
+    <!--  @part-structure to "decorative" or "structural" -->
+    <!-- <divisions level="3"/> -->
+
+    <!-- The next elements say how the levels deep to break up the    -->
+    <!-- numbering of the respective elements. Can't be more than the -->
+    <!-- @level on divisions above.                                   -->
+    <!--  <blocks level="1" /> -->
+    <!--  <examples level="2" /> -->
+    <!--  <figures level="3"/> -->
+
+  <!-- </numbering> -->
+
+ <numbering>
+  <!-- Everything sits one division deeper than it used to, now that the
+       former top-level sections are grouped under four chapters, so each
+       level below is one greater than before the regrouping. -->
+  <divisions level="4" />
+  <blocks level="2" />
+  <projects level="3" />
+  <equations level="2" />
+  <footnotes level="2" />
+</numbering>
+
+  <!-- 
+  <source/>
+  <html>
+     Activates the pre-configured wide stylesheet layout 
+    <css style="wide"/>
+  </html> 
+  -->
+
+  <!-- publication.ptx -->
+
+<!--  <source>
+  <directories external="assets" generated="generated-assets"/>
+</source> -->
+  <html>
+    <!-- PreFigure diagrams that carry <annotations> are drawn by            -->
+    <!-- diagcess.js, which scans for its .ChemAccess-element target divs    -->
+    <!-- once at page load.  A figure opened afterwards inside a             -->
+    <!-- cross-reference knowl is injected after that scan, so its div stays -->
+    <!-- empty and the diagram never appears.  With "cross-page", a          -->
+    <!-- reference whose target sits on the same page is rendered as an      -->
+    <!-- ordinary link to the figure in place, where the diagram does draw;  -->
+    <!-- references that genuinely cross a page boundary stay knowls.        -->
+    <cross-references knowled="cross-page"/>
+    <webwork divisional="dynamic"/>
+  </html>
+</publication>
