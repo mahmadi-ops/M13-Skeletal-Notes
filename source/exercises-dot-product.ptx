@@ -3,12 +3,11 @@
   Final exam problems on the dot product
 -->
 <worksheet xml:id="worksheet-exercises-dot-product" xmlns:xi="http://www.w3.org/2001/XInclude">
-<title>Exercises for <xref ref="section-dot-product" text="title"/></title>
+<title>Exercises for The Dot Product</title>
 
 <introduction>
 <p>
-These problems use the projection of one vector onto another. If you would like to review this topic before
-attempting them, see <xref ref="section-dot-product" text="title"/>.
+These problems use the projection of one vector onto another.
 </p>
 </introduction>
 

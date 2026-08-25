@@ -3,11 +3,11 @@
   Final exam problems on the binomial series
 -->
 <worksheet xml:id="worksheet-exercises-binomial-series" xmlns:xi="http://www.w3.org/2001/XInclude">
-<title>Exercises for <xref ref="chapter-binomial-series" text="title"/></title>
+<title>Exercises for The Binomial Series and Applications of Taylor Series</title>
 
 <introduction>
 <p>
-A final exam problem that represents a function as a series. If you would like to review this topic first, see <xref ref="chapter-binomial-series" text="title"/>.
+A final exam problem that represents a function as a series.
 </p>
 </introduction>
 

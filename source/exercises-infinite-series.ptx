@@ -3,12 +3,12 @@
   Review problems on convergence and sums of infinite series
 -->
 <worksheet xml:id="worksheet-exercises-infinite-series" xmlns:xi="http://www.w3.org/2001/XInclude">
-<title>Exercises for <xref ref="chapter-infinite-series" text="title"/></title>
+<title>Exercises for Infinite Series</title>
 
 <introduction>
 <p>
 These problems work with sequences and finite sums, and ask whether a series
-converges and, when it does, what it sums to. If you would like to review this topic before attempting them, see <xref ref="chapter-infinite-series" text="title"/>.
+converges and, when it does, what it sums to.
 </p>
 </introduction>
 

@@ -37,18 +37,10 @@
     <xi:include href="frontmatter.ptx" />
    <!-- <xi:include href="introduction.ptx" /> -->
 
-    <!-- Chapter 1 -->
-    <xi:include href="ch-7-3.ptx" />
-    <!-- Chapter 2 -->
-    <xi:include href="ch-series-sequences.ptx" />
-    <!-- Chapter 3 -->
-    <xi:include href="ch-geometry.ptx" />
-    <!-- Chapter 4 -->
-    <xi:include href="ch-functions-multiple-variables.ptx" />
-    <!-- Chapter 5: the problem sets, gathered after the content chapters -->
-    <xi:include href="exercises.ptx" />
-    <!-- Skeletal (fill-in) notes, kept at the end of the book for now -->
+    <!-- Chapter 1: skeletal (fill-in) notes -->
     <xi:include href="ch-hyperbolic-skeletal.ptx" />
+    <!-- Chapter 2: the problem sets -->
+    <xi:include href="exercises.ptx" />
   </book>
 
 </pretext>

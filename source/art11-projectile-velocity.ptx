@@ -7,13 +7,9 @@
 -->
 
 <worksheet xml:id="exercises-projectile-velocity">
-  <title> Exercises for <xref ref="section-parametrization" text="title"/></title>
+  <title> Exercises for Parametrization of Plane Curves</title>
 
   <introduction>
-    <p>
-      If you would like to review this topic before attempting the exercises,
-      click <xref ref="section-parametrization" text="title"/>.
-    </p>
     <p>
       The exercises below on the velocity and direction of a projectile after a
       given time use the figure of a projectile at a general instant.

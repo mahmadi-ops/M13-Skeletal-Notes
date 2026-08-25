@@ -3,11 +3,11 @@
   Final exam problems on hyperbolic functions
 -->
 <worksheet xml:id="worksheet-exercises-hyperbolic" xmlns:xi="http://www.w3.org/2001/XInclude">
-<title>Exercises for <xref ref="chapter-hyperbolic-functions" text="title"/></title>
+<title>Exercises for <xref ref="skel-chapter-hyperbolic-functions" text="title"/></title>
 
 <introduction>
 <p>
-A final exam problem on the hyperbolic identities. If you would like to review this topic first, see <xref ref="chapter-hyperbolic-functions" text="title"/>.
+A final exam problem on the hyperbolic identities. If you would like to review this topic first, see <xref ref="skel-chapter-hyperbolic-functions" text="title"/>.
 </p>
 </introduction>
 
@@ -145,7 +145,7 @@ e^x = 4 \quad\Longrightarrow\quad x = \ln 4 = 2\ln 2.
 <exercise xml:id="ex-hyp-arctanh">
 <statement>
 <p>
-Following the method of <xref ref="example-hyp-arccosh"/>, show that the
+Following the method of <xref ref="example-skel-hyp-arccosh"/>, show that the
 inverse hyperbolic tangent is given by
 <md>
 \tanh^{-1}(x) = \frac12\ln\left(\frac{1+x}{1-x}\right),

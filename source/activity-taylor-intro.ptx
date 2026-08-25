@@ -5,14 +5,8 @@
 -->
 
   <worksheet xml:id="activity-01-intro-activity">
-  <title> Exercises for <xref ref="section-taylor" text="title"/></title>
+  <title> Exercises for Taylor Series and its convergence</title>
 
-  <introduction>
-    <p>
-      If you would like to review this topic before attempting the exercises,
-      click <xref ref="section-taylor" text="title"/>.
-    </p>
-  </introduction>
 
   <!-- Exercises start here.  --> 
 

@@ -3,11 +3,11 @@
   Midterm 2 review problems on limits and continuity
 -->
 <worksheet xml:id="worksheet-exercises-limits" xmlns:xi="http://www.w3.org/2001/XInclude">
-<title>Exercises for <xref ref="chapter-limits-continuity" text="title"/></title>
+<title>Exercises for Limits and Continuity in Higher Dimensions</title>
 
 <introduction>
 <p>
-These problems ask when a limit of a function of two variables exists and how to show that one does not. If you would like to review this topic first, see <xref ref="chapter-limits-continuity" text="title"/>.
+These problems ask when a limit of a function of two variables exists and how to show that one does not.
 </p>
 </introduction>
 

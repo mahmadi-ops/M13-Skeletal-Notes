@@ -34,13 +34,7 @@
 <!-- ================= Conic Sections ================= -->
 <!-- Exercise: Parabolic Antenna (adapted from Math4U, math4u.vsb.cz) -->
 <worksheet xml:id="section-conics-exercises">
-    <title> Exercises for <xref ref="section-conics"  text="title"/></title>
-    <introduction>
-    <p>
-      If you would like to review this topic before attempting the exercises,
-      click <xref ref="section-conics" text="title"/>.
-    </p>
-    </introduction>
+    <title> Exercises for Conic Sections</title>
  <exercise xml:id="exer-parabolic-antenna">
   <title>A Parabolic Antenna</title>
     <introduction>
@@ -412,13 +406,7 @@ containing the two trees.
 
 <!-- ================= Extreme Values and Saddle Points ================= -->
 <worksheet xml:id="subsection-abs-extrema">
-    <title> Exercises for <xref ref="section-extreme-values"  text="title"/></title>
-    <introduction>
-    <p>
-      If you would like to review this topic before attempting the exercises,
-      click <xref ref="section-extreme-values" text="title"/>.
-    </p>
-    </introduction>
+    <title> Exercises for Extreme Values and Saddle Points</title>
 
       <exercise xml:id="ex-extrema-triangle">
         <statement>

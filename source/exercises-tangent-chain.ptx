@@ -3,12 +3,11 @@
   Review problems on tangent planes and differentials
 -->
 <worksheet xml:id="worksheet-exercises-tangent-chain" xmlns:xi="http://www.w3.org/2001/XInclude">
-<title>Exercises for <xref ref="section-tangent-planes-differentials" text="title"/></title>
+<title>Exercises for Tangent Planes and Differentials</title>
 
 <introduction>
 <p>
-These problems find the tangent plane to a graph and lines lying in it. If you would like to review this topic before
-attempting them, see <xref ref="section-tangent-planes-differentials" text="title"/>.
+These problems find the tangent plane to a graph and lines lying in it.
 </p>
 </introduction>
 

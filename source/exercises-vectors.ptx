@@ -3,12 +3,11 @@
   Final exam problems on vectors
 -->
 <worksheet xml:id="worksheet-exercises-vectors" xmlns:xi="http://www.w3.org/2001/XInclude">
-<title>Exercises for <xref ref="chapter-vectors" text="title"/></title>
+<title>Exercises for Vectors</title>
 
 <introduction>
 <p>
-These problems add and subtract vectors given by their endpoints. If you would like to review this topic before
-attempting them, see <xref ref="chapter-vectors" text="title"/>.
+These problems add and subtract vectors given by their endpoints.
 </p>
 </introduction>
 

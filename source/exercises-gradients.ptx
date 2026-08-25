@@ -3,11 +3,11 @@
   Review problems on gradients and directional derivatives
 -->
 <worksheet xml:id="worksheet-exercises-gradients" xmlns:xi="http://www.w3.org/2001/XInclude">
-<title>Exercises for <xref ref="section-directional-derivatives" text="title"/></title>
+<title>Exercises for Directional Derivatives and Gradient Vectors</title>
 
 <introduction>
 <p>
-These problems use the gradient to compute directional derivatives and directions of fastest change. If you would like to review this topic first, see <xref ref="section-directional-derivatives" text="title"/>.
+These problems use the gradient to compute directional derivatives and directions of fastest change.
 </p>
 </introduction>
 

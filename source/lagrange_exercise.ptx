@@ -3,14 +3,8 @@
   Exercise for the Lagrange Multipliers section, collected in the Exercises chapter.
 -->
 <worksheet xml:id="exercises-lagrange">
-  <title> Exercises for <xref ref="section-lagrange-multipliers" text="title"/></title>
+  <title> Exercises for Lagrange Multipliers</title>
 
-  <introduction>
-    <p>
-      If you would like to review this topic before attempting the exercises,
-      click <xref ref="section-lagrange-multipliers" text="title"/>.
-    </p>
-  </introduction>
 
     <exercise xml:id="exer-parallel-tangent-plane">
       <title>Tangent Planes Parallel to a Given Plane</title>

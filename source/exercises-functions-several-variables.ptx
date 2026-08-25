@@ -3,12 +3,11 @@
   Exam problems on functions of several variables
 -->
 <worksheet xml:id="worksheet-exercises-functions-several-variables" xmlns:xi="http://www.w3.org/2001/XInclude">
-<title>Exercises for <xref ref="chapter-functions-several-variables" text="title"/></title>
+<title>Exercises for Functions of Several Variables</title>
 
 <introduction>
 <p>
-These problems find domains, level curves and level surfaces. If you would like to review this topic before
-attempting them, see <xref ref="chapter-functions-several-variables" text="title"/>.
+These problems find domains, level curves and level surfaces.
 </p>
 </introduction>
 

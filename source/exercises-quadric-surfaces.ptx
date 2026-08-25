@@ -5,14 +5,8 @@
 -->
 
 <worksheet xml:id="exercises-quadric-surfaces">
-  <title> Exercises for <xref ref="section-quadric-surfaces" text="title"/></title>
+  <title> Exercises for Quadric Surfaces</title>
 
-  <introduction>
-    <p>
-      If you would like to review this topic before attempting the exercises,
-      click <xref ref="section-quadric-surfaces" text="title"/>.
-    </p>
-  </introduction>
 
   <exercise xml:id="exercise-quadric-graph-match">
     <title>Matching Quadric Surfaces</title>

@@ -3,12 +3,11 @@
   Exam problems on three-dimensional coordinates
 -->
 <worksheet xml:id="worksheet-exercises-3d-coordinates" xmlns:xi="http://www.w3.org/2001/XInclude">
-<title>Exercises for <xref ref="chapter-three-dimensional-coordinates" text="title"/></title>
+<title>Exercises for Three-Dimensional Coordinate Systems</title>
 
 <introduction>
 <p>
-These problems use the distance formula in space and describe regions bounded by spheres. If you would like to review this topic before
-attempting them, see <xref ref="chapter-three-dimensional-coordinates" text="title"/>.
+These problems use the distance formula in space and describe regions bounded by spheres.
 </p>
 </introduction>
 
@@ -480,10 +479,10 @@ zero, with a dotted segment from the origin to the center of the disk.
 <alert>E.</alert> In the <m>yz</m>-plane, <m>y^2 + z^2 = 4</m> is a
 circle of radius <m>2</m> centered at the origin. In space <m>x</m> is
 unrestricted, so the equation represents an infinitely long cylinder of
-radius <m>2</m> whose axis is the <m>x</m>-axis. Compare this with
-<xref ref="example-3d-describe"/>, where the missing variable was
-<m>z</m> and the axis was therefore the <m>z</m>-axis: the axis of the
-cylinder is always the axis of the variable that does not appear. The
+radius <m>2</m> whose axis is the <m>x</m>-axis. Had the missing
+variable been <m>z</m> instead, the axis would have been the
+<m>z</m>-axis: the axis of the cylinder is always the axis of the
+variable that does not appear. The
 left half of <xref ref="fig-ex3d-cylinder-x"/> shows this cylinder.
 </p>
 

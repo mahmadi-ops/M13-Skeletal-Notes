@@ -3,11 +3,11 @@
   Final exam problems on lines and planes in space
 -->
 <worksheet xml:id="worksheet-exercises-lines-planes" xmlns:xi="http://www.w3.org/2001/XInclude">
-<title>Exercises for <xref ref="chapter-lines-planes" text="title"/></title>
+<title>Exercises for Lines and Planes in Space</title>
 
 <introduction>
 <p>
-These final exam problems intersect lines with planes, build a plane from a line, and measure the distance between two lines. If you would like to review this topic first, see <xref ref="chapter-lines-planes" text="title"/>.
+These final exam problems intersect lines with planes, build a plane from a line, and measure the distance between two lines.
 </p>
 </introduction>
 

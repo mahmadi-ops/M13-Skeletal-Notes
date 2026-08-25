@@ -3,12 +3,11 @@
   Review problems on partial derivatives
 -->
 <worksheet xml:id="worksheet-exercises-partial-derivatives" xmlns:xi="http://www.w3.org/2001/XInclude">
-<title>Exercises for <xref ref="chapter-partial-derivatives" text="title"/></title>
+<title>Exercises for Partial Derivatives</title>
 
 <introduction>
 <p>
-These problems compute higher order partial derivatives. If you would like to review this topic before
-attempting them, see <xref ref="chapter-partial-derivatives" text="title"/>.
+These problems compute higher order partial derivatives.
 </p>
 </introduction>
 

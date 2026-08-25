@@ -3,12 +3,11 @@
   Review problems on the chain rule
 -->
 <worksheet xml:id="worksheet-exercises-chain-rule" xmlns:xi="http://www.w3.org/2001/XInclude">
-<title>Exercises for <xref ref="chapter-chain-rule" text="title"/></title>
+<title>Exercises for The Chain Rule</title>
 
 <introduction>
 <p>
-These problems apply the chain rule to functions of several variables. If you would like to review this topic before
-attempting them, see <xref ref="chapter-chain-rule" text="title"/>.
+These problems apply the chain rule to functions of several variables.
 </p>
 </introduction>
 

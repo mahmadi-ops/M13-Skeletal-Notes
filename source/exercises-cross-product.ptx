@@ -3,12 +3,11 @@
   Final exam problems on the cross product
 -->
 <worksheet xml:id="worksheet-exercises-cross-product" xmlns:xi="http://www.w3.org/2001/XInclude">
-<title>Exercises for <xref ref="section-cross-product" text="title"/></title>
+<title>Exercises for The Cross Product</title>
 
 <introduction>
 <p>
-These problems use the cross product and the triple product. If you would like to review this topic before
-attempting them, see <xref ref="section-cross-product" text="title"/>.
+These problems use the cross product and the triple product.
 </p>
 </introduction>
 
