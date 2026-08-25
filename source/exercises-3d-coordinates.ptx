@@ -693,7 +693,7 @@ the top of the solid.
 \coordinate (C) at (-2.5,-2.5,\Cz);
 \coordinate (D) at (2.5,-2.5,\Dz);
 % the cylinder's side wall, drawn as vertical segments up to the plane
-\foreach \angulo in {0,0.01,...,\final}{
+\foreach \angulo in {0,0.012,...,\final}{
   \pgfmathparse{2.0*cos(\angulo r)}
   \pgfmathsetmacro{\px}{\pgfmathresult}
   \pgfmathparse{2.0*sin(\angulo r)}
@@ -765,7 +765,7 @@ region in the x y plane, forming an arched, tunnel-like surface.
 \usetikzlibrary{patterns, math}
 \tdplotsetmaincoords{60}{110}
 \begin{tikzpicture}[tdplot_main_coords,scale=0.85]
-\pgfmathsetmacro{\step}{0.01}
+\pgfmathsetmacro{\step}{0.04}
 % coordinate axes
 \draw[thick,->] (0,0,0) -- (2.5,0,0) node [below left] {\footnotesize$x$};
 \draw[dashed] (0,0,0) -- (-2.5,0,0);
@@ -876,21 +876,21 @@ almost none at the center.
   \draw[cyan,very thick,rotate around z=\angulo,opacity=0.15] plot[domain=0:1,smooth,variable=\t] ({0},{\t},{1.0 - \t*\t});
 }
 % the paraboloid (drawn as circles of constant height)
-\foreach \altura in {0.0125,0.025,...,1.0}{
+\foreach \altura in {0.025,0.05,...,1.0}{
   \pgfmathparse{sqrt(\altura)}
   \pgfmathsetmacro{\radio}{\pgfmathresult}
   \draw[cyan,thick,opacity=0.35] plot[domain=\tini:\tfin,smooth,variable=\t] ({\radio*cos(\t r)},{\radio*sin(\t r)},{1.0 - \altura});
 }
 % first part of the z axis
 \draw[thick,->] (0,0,1.0) -- (0,0,1.5) node [above] {\footnotesize$z$};
-\foreach \altura in {0.0125,0.025,...,1.0}{
+\foreach \altura in {0.025,0.05,...,1.0}{
   \pgfmathparse{sqrt(\altura)}
   \pgfmathsetmacro{\radio}{\pgfmathresult}
   \draw[cyan,thick,opacity=0.35] plot[domain=\tfin:\tend,smooth,variable=\t] ({\radio*cos(\t r)},{\radio*sin(\t r)},{1.0 - \altura});
 }
 \node[blue,right] at (0,0.5,1.125) {$z = 1 - x^2 - y^2$};
 % the outer cylinder wall
-\foreach \angulo in {0,0.01,...,\final}{
+\foreach \angulo in {0,0.012,...,\final}{
   \pgfmathparse{cos(\angulo r)}
   \pgfmathsetmacro{\px}{\pgfmathresult}
   \pgfmathparse{sin(\angulo r)}
@@ -1023,15 +1023,16 @@ flat base of the solid beneath the bowl.
 \begin{tikzpicture}[tdplot_main_coords,scale=0.75]
 \tikzmath{function f(\x) {return \x;};}
 \pgfmathsetmacro{\zini}{0.5*sqrt(2.0)}
-\pgfmathsetmacro{\step}{0.01}
+\pgfmathsetmacro{\step}{0.04}
+\pgfmathsetmacro{\astep}{0.012}
 \pgfmathsetmacro{\zsig}{\zini+\step}
 \pgfmathsetmacro{\nextz}{\zini+0.5*\step}
 \pgfmathsetmacro{\sig}{2.0*\step}
 \pgfmathsetmacro{\tini}{0.5*pi}
-\pgfmathsetmacro{\tnext}{\tini+\step}
+\pgfmathsetmacro{\tnext}{\tini+\astep}
 \pgfmathsetmacro{\tfin}{1.85*pi}
 \pgfmathsetmacro{\tend}{2.5*pi}
-\pgfmathsetmacro{\tNext}{\tfin+\step}
+\pgfmathsetmacro{\tNext}{\tfin+\astep}
 \pgfmathsetmacro{\final}{2.0*pi}
 % coordinate axes
 \draw[thick,->] (0,0,0) -- (3.5,0,0) node [below left] {\footnotesize$x$};
