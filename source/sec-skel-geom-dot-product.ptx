@@ -1,0 +1,1216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Skeletal (fill-in) version of 3.3 The Dot Product.
+
+  Definitions, theorems, summaries, and problem statements are kept;
+  derivations and solutions are replaced by blank workspace boxes, each
+  with a one-line statement of what has to be done.  Content mirrors
+  Dotproduct.ptx of the full lecture notes; every xml:id here is prefixed
+  with "skel-" so the two can coexist.
+
+  Figures: the pictures that set a problem up (the law-of-cosines
+  triangle, the projection triangle, the work diagram, the forces on the
+  incline, and the taste vectors) are reproduced in full, as in the
+  lecture notes, and so are all the videos.  The right triangle of the
+  orthogonality example carries a right-angle marker, which is the answer,
+  so it becomes an empty grid to plot on.  The two tables of angular
+  distances are the answers to their examples, so their entries are left
+  blank for the reader to fill in.
+-->
+<section xml:id="sec-skel-geom-dot-product" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>The Dot Product</title>
+
+<objectives>
+<introduction>
+<p>
+After completing this section, you should be able to:
+</p>
+</introduction>
+
+<ul>
+<li>
+<p>
+Understand the dot product as a way of combining two vectors into a single
+number that measures the extent to which they point in the same direction.
+</p>
+</li>
+<li>
+<p>
+Interpret the sign of the dot product geometrically<mdash/>positive for an
+acute angle, negative for an obtuse angle, and zero for perpendicular
+vectors<mdash/>and recognize orthogonality as the vanishing of the dot product.
+</p>
+</li>
+<li>
+<p>
+Understand how the dot product encodes the angle between two vectors,
+connecting the algebra of vectors to the Law of Cosines.
+</p>
+</li>
+<li>
+<p>
+Interpret the projection of one vector onto another as the component of one
+vector in the direction of the other, and understand the decomposition of a
+vector into parts parallel and perpendicular to a given direction.
+</p>
+</li>
+<li>
+<p>
+Understand work as a physical measure of the effect of a force along a
+direction of motion, and appreciate why the dot product is the natural tool
+for expressing it.
+</p>
+</li>
+<li>
+<p>
+Explain how the dot product is used in data science to measure similarity:
+represent preferences as vectors, compute the cosine similarity and the
+angular distance between them, interpret the result, and extend the
+computation from two dimensions to <m>\mathbb R^n</m>.
+</p>
+</li>
+</ul>
+</objectives>
+
+<!-- ================================================================ -->
+<subsection xml:id="subsec-skel-dot-product">
+<title>The Dot Product and the Angle between Two Vectors</title>
+
+<p>
+Consider two vectors <m>\mathbf u</m> and <m>\mathbf v</m>, and let
+<m>\mathbf w = \mathbf u - \mathbf v</m>, as shown in
+<xref ref="fig-skel-law-of-cosines"/>. By the law of cosines,
+<md xml:id="eq-skel-law-of-cosines" number="yes">
+\|\mathbf w\|^2 = \|\mathbf u\|^2 + \|\mathbf v\|^2 - 2\|\mathbf u\|\|\mathbf v\|\cos\theta.
+</md>
+</p>
+<figure xml:id="fig-skel-law-of-cosines">
+<caption>
+The vectors <m>\mathbf u</m>, <m>\mathbf v</m>, and
+<m>\mathbf w = \mathbf u - \mathbf v</m>, together with the angle
+<m>\theta</m> between <m>\mathbf u</m> and <m>\mathbf v</m>.
+</caption>
+<image width="55%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-skel-law-of-cosines">
+<diagram dimensions="(300,300)" margins="10">
+<definition>u=(1.5,4)</definition>
+<definition>v=(4,1)</definition>
+<definition>w=u-v</definition>
+<coordinates bbox="(-0.5,-0.5,4.5,4.5)">
+<vector at="vec-u" v="u" tail="(0,0)" stroke="blue"/>
+<vector at="vec-v" v="v" tail="(0,0)" stroke="blue"/>
+<vector at="vec-w" v="w" tail="v" stroke="magenta"/>
+<label at="u-label" anchor="(0.75,2)" alignment="nw" color="blue">
+<m>\mathbf u</m>
+</label>
+<label at="v-label" anchor="(2,0.5)" alignment="se" color="blue">
+<m>\mathbf v</m>
+</label>
+<label at="w-label" anchor="(2.75,2.5)" alignment="ne" color="magenta">
+<m>\mathbf w</m>
+</label>
+<angle-marker at="angle-theta" points="(v,(0,0),u)" radius="18" clear-background="no">
+<m>\theta</m>
+</angle-marker>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A triangle formed by the vectors u, v, and w, where w equals u minus v. The vectors u and v are drawn tail to tail from the origin, and w connects the tip of v to the tip of u. The angle theta lies between u and v at the origin.">
+  <annotation ref="vec-u" text="Vector u, drawn from the origin."/>
+  <annotation ref="vec-v" text="Vector v, drawn from the origin."/>
+  <annotation ref="vec-w" text="Vector w, equal to u minus v, drawn from the tip of v to the tip of u."/>
+  <annotation ref="angle-theta" text="The angle theta between u and v, located at the origin."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<figure xml:id="fig-skel-law-of-cosines-video">
+<caption>Proving the law of cosines: drop a perpendicular from the tip of
+<m>\mathbf u</m> and apply the Pythagorean theorem to the right triangle
+whose hypotenuse is <m>\mathbf w = \mathbf u - \mathbf v</m>.</caption>
+<video xml:id="video-skel-law-of-cosines"
+       source="videos/law_of_cosines_1080p.mp4"
+       width="90%" aspect="16:9"/>
+</figure>
+
+<p>
+Now compute <m>\|\mathbf w\|^2</m> a second way, in components, and compare
+the two answers. (Write <m>\mathbf u = \langle u_1,u_2,u_3\rangle</m> and
+<m>\mathbf v = \langle v_1,v_2,v_3\rangle</m>, expand
+<m>\|\mathbf u - \mathbf v\|^2</m> with <xref ref="eq-skel-vec-length"/>, and
+group the result into the three sums <m>\sum u_i^2</m>, <m>\sum v_i^2</m>, and
+<m>\sum u_iv_i</m>. Setting that equal to
+<xref ref="eq-skel-law-of-cosines"/>, two of the three groups cancel; solve
+for what is left.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,15);
+\draw[gray!35] (0,7) -- (15,7);
+\draw[gray!35] (0,3.5) -- (15,3.5);
+\node[anchor=north west, font=\small\itshape] at (0.35,14.7) {In components: $\|\mathbf w\|^2 =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,6.7) {Setting the two expressions equal:};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.2) {Solving for $\cos\theta$:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in three rows, for the component expansion of the length of w squared, for equating it with the law of cosines, and for the resulting formula for the cosine of the angle.</shortdescription>
+</image>
+</sidebyside>
+
+<theorem xml:id="thm-skel-angle-formula">
+<title>Angle between Two Vectors</title>
+<statement>
+<p>
+Let <m>\mathbf u = \langle u_1, u_2, u_3\rangle</m> and
+<m>\mathbf v = \langle v_1, v_2, v_3\rangle</m> be two nonzero vectors, and let
+<m>\theta</m>, with <m>0 \le \theta \le \pi</m>, be the angle between them.
+Then
+<md xml:id="eq-skel-angle" number="yes">
+\begin{aligned}
+\cos\theta \amp = \frac{u_1v_1+u_2v_2+u_3v_3}{\|\mathbf u\|\|\mathbf v\|} \\
+\iff\quad \theta \amp = \cos^{-1}\left(\frac{u_1v_1+u_2v_2+u_3v_3}{\|\mathbf u\|\|\mathbf v\|}\right).
+\end{aligned}
+</md>
+</p>
+</statement>
+</theorem>
+
+<definition xml:id="def-skel-dot-product">
+<title>Dot Product</title>
+<statement>
+<p>
+The term <m>u_1v_1+u_2v_2+u_3v_3</m> in the numerator of
+<xref ref="eq-skel-angle"/> is known as the <term>dot product</term> of the two
+vectors <m>\mathbf u = \langle u_1,u_2,u_3\rangle</m> and
+<m>\mathbf v = \langle v_1,v_2,v_3\rangle</m>, and is denoted
+<m>\mathbf u \cdot \mathbf v</m>.
+</p>
+<p>
+<md xml:id="eq-skel-dot" number="yes">
+\mathbf u \cdot \mathbf v = u_1v_1+u_2v_2+u_3v_3.
+</md>
+</p>
+</statement>
+</definition>
+
+<example xml:id="ex-skel-dot-product-compute">
+<title>Computing a dot product</title>
+<statement>
+<p>
+Let <m>\mathbf u = \langle 1,2,3\rangle</m> and
+<m>\mathbf v = \langle -2,0,4\rangle</m>. Compute
+<m>\mathbf u \cdot \mathbf v</m>, and use it to find the angle between
+<m>\mathbf u</m> and <m>\mathbf v</m>.
+</p>
+
+<p>
+<em>Solution.</em>
+(Multiply corresponding components and add,
+<xref ref="eq-skel-dot"/>. Before reaching for a calculator, use the sign of
+the answer to predict whether the angle is acute or obtuse. Then apply
+<xref ref="eq-skel-angle"/>, and give <m>\theta</m> in both radians and
+degrees.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,13);
+\draw[gray!35] (0,9.5) -- (15,9.5);
+\draw[gray!35] (0,6) -- (15,6);
+\draw[gray!35] (0,3) -- (15,3);
+\node[anchor=north west, font=\small\itshape] at (0.35,12.7) {$\mathbf u\cdot\mathbf v =$};
+\node[anchor=north west, font=\small\itshape] at (7.50,12.7) {so the angle is:};
+\node[anchor=north west, font=\small\itshape] at (0.35,9.2) {$\|\mathbf u\| =$};
+\node[anchor=north west, font=\small\itshape] at (7.50,9.2) {$\|\mathbf v\| =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,5.7) {$\cos\theta =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,2.7) {$\theta =$};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in four rows, for the dot product and the predicted type of angle, for the two lengths, for the cosine of the angle, and for the angle itself.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+</example>
+
+<remark xml:id="skel-remark-orthogonal">
+<title>Orthogonal vectors</title>
+<p>
+If the two vectors <m>\mathbf u</m> and <m>\mathbf v</m> are orthogonal, then
+<m>\theta = \pi/2</m>, which means <m>\mathbf u \cdot \mathbf v = 0</m>.
+Conversely, if <m>\mathbf u</m> and <m>\mathbf v</m> are two vectors such that
+<m>\mathbf u \cdot \mathbf v = 0</m>, then <m>\mathbf u</m> and <m>\mathbf v</m>
+are orthogonal.
+</p>
+<p>
+<md xml:id="eq-skel-orthogonal" number="yes">
+\mathbf u \cdot \mathbf v = 0 \iff \mathbf u \perp \mathbf v.
+</md>
+</p>
+</remark>
+
+<example xml:id="ex-skel-right-triangle">
+<title>A right triangle detected with the dot product</title>
+<statement>
+<p>
+Consider the triangle with vertices <m>A(1,-1)</m>, <m>B(1,1)</m>, and
+<m>C(2,0)</m>. Show that this is a right triangle using the dot product
+and the orthogonality criterion <xref ref="eq-skel-orthogonal"/>.
+</p>
+
+<p>
+<em>Solution.</em>
+(Plot the three vertices on the grid below. Only one vertex can hold the right
+angle; the picture will tell you which. Form the two vectors leaving that
+vertex with <xref ref="eq-skel-vec-components"/>, and take their dot product.)
+</p>
+
+<sidebyside widths="46% 46%">
+<image>
+<latex-image><![CDATA[
+\begin{tikzpicture}[scale=0.62, >=stealth]
+\draw[gray!30, very thin] (-2.5,-2.5) grid (2.5,2.5);
+\draw[->, thick] (-2.5,0) -- (2.9,0) node[right] {$x$};
+\draw[->, thick] (0,-2.5) -- (0,2.9) node[above] {$y$};
+\foreach \x in {-2,-1,1,2} \draw (\x,-0.12) -- (\x,0.12) node[below=4pt, font=\scriptsize] {$\x$};
+\foreach \y in {-2,-1,1,2} \draw (-0.12,\y) -- (0.12,\y) node[left=4pt, font=\scriptsize] {$\y$};
+\end{tikzpicture}
+]]></latex-image>
+<shortdescription>Empty coordinate grid running from negative two and a half to two and a half in both directions, for plotting the triangle with vertices A, B, and C.</shortdescription>
+</image>
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (7,7);
+\draw[gray!35] (0,2.4) -- (7,2.4);
+\node[anchor=north west, font=\small\itshape] at (0.3,6.7) {The two vectors and their dot product:};
+\node[anchor=north west, font=\small\itshape] at (0.3,2.1) {Conclusion:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in two rows, for the two vectors leaving the right-angle vertex together with their dot product, and for the conclusion.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+</example>
+
+<example xml:id="ex-skel-remaining-angles">
+<title>The remaining angles of the triangle</title>
+<statement>
+<p>
+For the triangle of <xref ref="ex-skel-right-triangle"/>, calculate the
+remaining angles.
+</p>
+
+<p>
+<em>Solution.</em>
+(Apply <xref ref="eq-skel-angle"/> at the vertex <m>A</m>, using the two
+vectors that leave it. Both angles come out to familiar multiples of
+<m>\pi</m>, so you should not need a calculator; get the second one without
+computing a second dot product.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,12);
+\draw[gray!35] (0,3.5) -- (15,3.5);
+\node[anchor=north west, font=\small\itshape] at (0.35,11.7) {The angle at $A$:};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.2) {The angle at $B$:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in two rows, one for the computation of the angle at vertex A and one for the angle at vertex B.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+</example>
+
+<paragraphs xml:id="skel-par-properties">
+<title>Properties of the Dot Product</title>
+
+<fact xml:id="fact-skel-properties">
+<statement>
+<p>
+If <m>\mathbf u</m>, <m>\mathbf v</m>, and <m>\mathbf w</m> are any vectors
+and <m>c</m> is a scalar, then
+</p>
+<p>
+<ol>
+<li><p><m>\mathbf u \cdot \mathbf v = \mathbf v \cdot \mathbf u</m></p></li>
+<li><p><m>(c\mathbf u)\cdot \mathbf v = \mathbf u \cdot (c\mathbf v) = c(\mathbf u \cdot \mathbf v)</m></p></li>
+<li><p><m>\mathbf u \cdot (\mathbf v + \mathbf w) = \mathbf u \cdot \mathbf v + \mathbf u \cdot \mathbf w</m></p></li>
+<li><p><m>\mathbf u \cdot \mathbf u = \|\mathbf u\|^2</m></p></li>
+<li><p><m>\mathbf 0 \cdot \mathbf u = 0</m></p></li>
+</ol>
+</p>
+</statement>
+</fact>
+
+<p>
+Prove properties 1, 3, and 4. (Each one is a single line of components from
+<xref ref="eq-skel-dot"/> followed by the matching property of real numbers;
+name that property as you use it. Property 4 is the one worth remembering, so
+say in words what it asserts about <m>\mathbf u \cdot \mathbf u</m>.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,13);
+\draw[gray!35] (0,8.7) -- (15,8.7);
+\draw[gray!35] (0,4.4) -- (15,4.4);
+\node[anchor=north west, font=\small\itshape] at (0.35,12.7) {1.};
+\node[anchor=north west, font=\small\itshape] at (0.35,8.4) {3.};
+\node[anchor=north west, font=\small\itshape] at (0.35,4.1) {4.};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in three labelled rows, one for the proof of each of properties one, three, and four of the dot product.</shortdescription>
+</image>
+</sidebyside>
+</paragraphs>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="subsec-skel-projection">
+<title>Projection of <m>\mathbf u</m> in the Direction of <m>\mathbf v</m></title>
+
+<p>
+The dot product measures how much two vectors point in the same direction. This
+section turns that measurement into a vector: given <m>\mathbf u</m> and
+<m>\mathbf v</m>, we ask how much of <m>\mathbf u</m> lies along <m>\mathbf v</m>.
+The answer is the <term>projection</term> of <m>\mathbf u</m> onto
+<m>\mathbf v</m>, and it lets us split any vector into a part that points along
+<m>\mathbf v</m> and a part perpendicular to it. That decomposition is what makes
+the dot product useful in practice<mdash/>it is how we find the component of a
+force along a direction of motion, as in
+<xref ref="subsec-skel-work"/>, or the component of gravity down a slope.
+</p>
+
+<p>
+The projection of <m>\mathbf u</m> in the direction of <m>\mathbf v</m> is
+denoted <m>\text{proj}_{\mathbf v}\mathbf u</m>, and is shown in
+<xref ref="fig-skel-projection"/>.
+</p>
+
+<figure xml:id="fig-skel-projection">
+<caption>
+The projection <m>\text{proj}_{\mathbf v}\mathbf u</m> of <m>\mathbf u</m>
+in the direction of <m>\mathbf v</m>, together with the perpendicular
+component <m>\mathbf u - \text{proj}_{\mathbf v}\mathbf u</m>.
+</caption>
+<image width="55%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-skel-projection">
+<diagram dimensions="(340,260)" margins="10">
+<coordinates bbox="(-0.5,-1,7,6)">
+<vector at="vec-v" v="(6,0)" tail="(0,0)" stroke="blue"/>
+<vector at="vec-u" v="(4,5)" tail="(0,0)" stroke="blue"/>
+<vector at="vec-proj" v="(4,0)" tail="(0,0)" stroke="maroon" thickness="5"/>
+<vector at="vec-perp" v="(0,5)" tail="(4,0)" stroke="maroon" thickness="5"/>
+<label at="v-label" anchor="(6,-0.3)" alignment="s" color="blue">
+<m>\mathbf v</m>
+</label>
+<label at="u-label" anchor="(2,2.5)" alignment="nw" color="blue">
+<m>\mathbf u</m>
+</label>
+<label at="proj-label" anchor="(2,-0.3)" alignment="s" color="maroon">
+<m>\mathbf u_{\parallel} = \text{proj}_{\mathbf v}\mathbf u</m>
+</label>
+<label at="perp-label" anchor="(4,2.5)" alignment="e" color="maroon">
+<m>\mathbf u_{\perp} = \mathbf u - \mathbf u_{\parallel}</m>
+</label>
+<angle-marker at="angle-theta" points="((6,0),(0,0),(4,5))" radius="23" clear-background="no">
+<m>\theta</m>
+</angle-marker>
+<angle-marker at="right-angle" points="((4,5),(4,0),(0,0))" clear-background="yes"/>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A right triangle showing vector u as the hypotenuse, its projection onto v along the horizontal base, and the perpendicular segment u minus the projection of u onto v.">
+  <annotation ref="vec-v" text="Vector v, along the horizontal direction."/>
+  <annotation ref="vec-u" text="Vector u, drawn from the origin at angle theta above v."/>
+  <annotation ref="vec-proj" text="The projection of u in the direction of v, lying along v."/>
+  <annotation ref="vec-perp" text="The component of u perpendicular to v, equal to u minus the projection of u onto v."/>
+  <annotation ref="angle-theta" text="The angle theta between u and v."/>
+  <annotation ref="right-angle" text="A right angle where the perpendicular component meets v."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+Build the projection formula from that picture. (Read its length off the right
+triangle: <m>\|\text{proj}_{\mathbf v}\mathbf u\| = \|\mathbf u\|\cos\theta</m>.
+Its direction is the unit vector along <m>\mathbf v</m>, which is
+<xref ref="eq-skel-vec-unit"/>. Multiply the two, then replace
+<m>\cos\theta</m> using <xref ref="eq-skel-angle"/> and simplify until only
+<m>\mathbf u\cdot\mathbf v</m> and <m>\|\mathbf v\|</m> remain.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,11);
+\draw[gray!35] (0,7.3) -- (15,7.3);
+\draw[gray!35] (0,3.6) -- (15,3.6);
+\node[anchor=north west, font=\small\itshape] at (0.35,10.7) {Length $\times$ direction:};
+\node[anchor=north west, font=\small\itshape] at (0.35,7.0) {Replacing $\cos\theta$:};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.3) {$\text{proj}_{\mathbf v}\mathbf u =$};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in three rows, for the projection written as a length times a unit direction, for the substitution of the cosine of the angle, and for the simplified projection formula.</shortdescription>
+</image>
+</sidebyside>
+
+<fact xml:id="fact-skel-projection-formula">
+<title>Projection Formula</title>
+<statement>
+<p>
+<md xml:id="eq-skel-proj" number="yes">
+\text{proj}_{\mathbf v}\mathbf u = \left(\frac{\mathbf u\cdot\mathbf v}{\|\mathbf v\|^2}\right)\mathbf v.
+</md>
+</p>
+</statement>
+</fact>
+
+<paragraphs xml:id="skel-par-decomposition">
+<title>Writing <m>\mathbf u</m> as Two Vectors, One Parallel and One Perpendicular to <m>\mathbf v</m></title>
+
+<p>
+As can be seen in <xref ref="fig-skel-projection"/>,
+<m>\text{proj}_{\mathbf v}\mathbf u</m> is parallel to <m>\mathbf v</m>, and
+the vector <m>\mathbf u - \text{proj}_{\mathbf v}\mathbf u</m> is perpendicular
+to it. Also, the sum of these two vectors equals <m>\mathbf u</m>. This means
+we can write <m>\mathbf u</m> as
+<md xml:id="eq-skel-decomposition" number="yes">
+\begin{aligned}
+\mathbf u \amp = \text{proj}_{\mathbf v}\mathbf u + \left(\mathbf u - \text{proj}_{\mathbf v}\mathbf u\right) \\
+\amp = \underbrace{\left(\frac{\mathbf u\cdot\mathbf v}{\|\mathbf v\|^2}\right)\mathbf v}_{\text{parallel to } \mathbf v}
+\;+\; \underbrace{\left(\mathbf u - \left(\frac{\mathbf u\cdot\mathbf v}{\|\mathbf v\|^2}\right)\mathbf v\right)}_{\text{orthogonal to } \mathbf v}.
+\end{aligned}
+</md>
+</p>
+
+<figure xml:id="fig-skel-projection-shadow">
+  <caption>The projection of <m>\overrightarrow{u}</m> onto <m>\overrightarrow{v}</m> as a shadow cast by light from above.</caption>
+  <video xml:id="video-skel-projection-shadow"
+         source="videos/projection_formula_1080p.mp4"
+         width="90%" aspect="16:9"/>
+</figure>
+
+<example xml:id="ex-skel-decomposition">
+<title>Decomposing a vector into parallel and perpendicular parts</title>
+<statement>
+<p>
+Consider the two vectors <m>\mathbf v = \hat{\imath} + \hat{\jmath}</m> and
+<m>\mathbf u = 2\hat{\imath} + 2\hat{\jmath} + 2\hat{k}</m>. Write <m>\mathbf u</m>
+as a sum of two vectors, one of which is parallel to <m>\mathbf v</m> and the
+other perpendicular to it.
+</p>
+
+<p>
+<em>Solution.</em>
+(Note that <m>\mathbf v</m> has no <m>\hat{k}</m> component; write it as a
+vector in space before taking any dot product. Then apply
+<xref ref="eq-skel-proj"/> for the parallel part and subtract, as in
+<xref ref="eq-skel-decomposition"/>, for the perpendicular part. Check your
+answer by dotting the perpendicular part with <m>\mathbf v</m>.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,13);
+\draw[gray!35] (0,9.5) -- (15,9.5);
+\draw[gray!35] (0,5.5) -- (15,5.5);
+\draw[gray!35] (0,2.5) -- (15,2.5);
+\node[anchor=north west, font=\small\itshape] at (0.35,12.7) {$\mathbf u\cdot\mathbf v =$};
+\node[anchor=north west, font=\small\itshape] at (7.50,12.7) {$\|\mathbf v\| =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,9.2) {$\mathbf u_{\parallel} =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,5.2) {$\mathbf u_{\perp} =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,2.2) {Check: $\mathbf u_{\perp}\cdot\mathbf v =$};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in four rows, for the dot product and the length of v, for the parallel component, for the perpendicular component, and for the orthogonality check.</shortdescription>
+</image>
+</sidebyside>
+
+<p>
+To achieve a visual understanding of this decomposition, watch the video below.
+</p>
+<figure xml:id="fig-skel-decompose-3d">
+  <caption>Decomposing <m>\mathbf u = 2\hat{\imath} + 2\hat{\jmath} + 2\hat{k}</m> into
+  <m>\mathbf u_{\parallel} = 2\hat{\imath} + 2\hat{\jmath}</m>, lying in the
+  <m>xy</m>-plane along <m>\mathbf v</m>, and <m>\mathbf u_{\perp} = 2\hat{k}</m>,
+  pointing straight up.</caption>
+  <video xml:id="video-skel-decompose-3d"
+         source="videos/decompose_3d_v3_1080p.mp4"
+         width="90%" aspect="16:9"/>
+</figure>
+</statement>
+</example>
+
+<exercise xml:id="skel-check-projection-decomposition">
+<title>Concept Check</title>
+<statement>
+<p>
+Everything in <xref ref="eq-skel-decomposition"/> rests on the claim read off
+from <xref ref="fig-skel-projection"/>: that
+<m>\text{proj}_{\mathbf v}\mathbf u</m> is parallel to <m>\mathbf v</m>, and
+that <m>\mathbf u - \text{proj}_{\mathbf v}\mathbf u</m> is perpendicular to
+<m>\mathbf v</m>. A picture is not a proof. Explain why each half of the claim
+is true.
+</p>
+<p>
+<ol marker="(a)">
+<li>
+<p>
+For the parallel half, look at the formula for
+<m>\text{proj}_{\mathbf v}\mathbf u</m> in
+<xref ref="fact-skel-projection-formula"/> and say what kind of expression it
+is. Why does that observation alone settle the question?
+</p>
+</li>
+<li>
+<p>
+For the perpendicular half, compute
+<m>\left(\mathbf u - \text{proj}_{\mathbf v}\mathbf u\right)\cdot\mathbf v</m>.
+Justify each step by naming the property of the dot product from
+<xref ref="fact-skel-properties"/> that you used, and then say what the value
+you obtain tells you about the two vectors.
+</p>
+</li>
+</ol>
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,15);
+\draw[gray!35] (0,10.5) -- (15,10.5);
+\node[anchor=north west, font=\small\itshape] at (0.35,14.7) {(a)};
+\node[anchor=north west, font=\small\itshape] at (0.35,10.2) {(b)};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in two labelled rows, one for part a and a taller one for the computation in part b.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+<hint>
+<p>
+In (b), write <m>\text{proj}_{\mathbf v}\mathbf u = c\,\mathbf v</m> where
+<m>c = \dfrac{\mathbf u\cdot\mathbf v}{\|\mathbf v\|^2}</m> is a scalar. In that
+form properties 2 and 3 of <xref ref="fact-skel-properties"/> apply directly,
+and property 4 will simplify <m>\mathbf v\cdot\mathbf v</m>.
+</p>
+</hint>
+</exercise>
+
+</paragraphs>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="subsec-skel-work">
+<title>Application in Physics: Work</title>
+
+<p>
+Consider the scenario in which a constant force <m>\mathbf F</m> causes an object to
+move from point <m>P</m> to point <m>Q</m>, as shown in
+<xref ref="fig-skel-work"/>. The vector <m>\overrightarrow{PQ}</m> is often denoted
+<m>\mathbf D</m> and is referred to as the <term>displacement vector</term>.
+The work done by the force is then
+</p>
+
+<definition xml:id="def-skel-work">
+<title>Work</title>
+<statement>
+<p>
+<md xml:id="eq-skel-work" number="yes">
+\text{Work} = \mathbf F \cdot \mathbf D = \|\mathbf D\|\|\mathbf F\|\cos\theta,
+</md>
+where <m>\left\|\text{proj}_{\mathbf D}\mathbf F\right\| = \|\mathbf F\|\cos\theta</m>
+is the magnitude of the force in the direction of motion, as computed in
+<xref ref="subsec-skel-projection"/>.
+</p>
+</statement>
+</definition>
+
+<figure xml:id="fig-skel-work-force">
+  <caption>A constant force <m>\mathbf F</m> acting on an object causing a displacement from <m>A</m> to <m>B</m>.</caption>
+  <video xml:id="video-skel-work-force"
+         source="videos/work_force_1080p.mp4"
+         width="90%" aspect="16:9"/>
+</figure>
+
+<figure xml:id="fig-skel-work">
+<caption>
+A force <m>\mathbf F</m> displaces an object from <m>P</m> to <m>Q</m> along
+the displacement vector <m>\mathbf D</m>. The reference segment shows the
+magnitude of the force in the direction of motion, <m>\|\mathbf F\|\cos\theta</m>.
+</caption>
+<image width="60%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-skel-work">
+<diagram dimensions="(360,220)" margins="10">
+<definition>P=(0,0)</definition>
+<definition>Q=(4,0)</definition>
+<definition>Fv=(2,1.5)</definition>
+<definition>R=(6,0)</definition>
+<coordinates bbox="(-0.5,-1,7,3)">
+<point at="point-p" p="P" alignment="sw"><m>P</m></point>
+<point at="point-q" p="Q" alignment="s"><m>Q</m></point>
+<vector at="vec-d" v="Q-P" tail="P" stroke="maroon" thickness="5" alignment="s" label-location="0.5">
+<m>\mathbf D</m>
+</vector>
+<vector at="vec-f" v="Fv" tail="Q" stroke="blue" thickness="4" alignment="ne">
+<m>\mathbf F</m>
+</vector>
+<line at="ref-line" endpoints="(Q,R)" stroke="lightgray" thickness="1"/>
+<angle-marker at="angle-theta" points="(R,Q,(6,1.5))" radius="23" clear-background="no">
+<m>\theta</m>
+</angle-marker>
+<label at="label-cos" anchor="(5,-0.4)" clear-background="no">
+<m>\|\mathbf F\|\cos\theta</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A force F acting at Q at angle theta above the direction of motion, together with the displacement vector D from P to Q, and a reference segment showing the magnitude of F times cosine theta, the component of F in the direction of motion." sonify="yes" >
+  <annotation ref="point-p" text="The starting point P." sonify="yes"/>
+  <annotation ref="point-q" text="The ending point Q." sonify="yes"/>
+  <annotation ref="vec-d" text="The displacement vector D, from P to Q." sonify="yes"/>
+  <annotation ref="vec-f" text="The force vector F, acting at Q at angle theta above the direction of motion." sonify="yes"/>
+  <annotation ref="ref-line" text="A horizontal reference segment used to measure the angle theta." sonify="yes"/>
+  <annotation ref="angle-theta" text="The angle theta between the force F and the direction of motion." sonify="yes"/>
+  <annotation ref="label-cos" text="The magnitude of F in the direction of motion, F times cosine theta." sonify="yes"/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<example xml:id="ex-skel-work">
+<title>Computing work done by a force</title>
+<statement>
+<p>
+A force is given by the vector <m>\mathbf F = 8\hat{\imath} - 6\hat{\jmath} + 9\hat{k}</m>
+and moves a particle from the point <m>A(0,10,8)</m> to the point
+<m>B(6,12,20)</m>. Find the work done.
+</p>
+
+<p>
+<em>Solution.</em>
+(Build the displacement vector <m>\mathbf D = \overrightarrow{AB}</m> first,
+with <xref ref="eq-skel-vec-components"/>; the angle <m>\theta</m> is never
+needed. Then apply <xref ref="eq-skel-work"/>, evaluating the dot product with
+<xref ref="eq-skel-dot"/>.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,8);
+\draw[gray!35] (0,4.5) -- (15,4.5);
+\node[anchor=north west, font=\small\itshape] at (0.35,7.7) {$\mathbf D =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,4.2) {Work $=$};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in two rows, one for the displacement vector and one for the work done.</shortdescription>
+</image>
+</sidebyside>
+
+<p>
+For more help, watch the video below.
+</p>
+<figure xml:id="fig-skel-work-hint">
+<caption>Set up the work computation: build the displacement vector first, then take the dot product. What do you get?</caption>
+<video xml:id="video-skel-work-hint"
+       source="videos/work_hint_v2_1080p.mp4"
+       width="90%" aspect="16:9"/>
+</figure>
+</statement>
+</example>
+
+<example xml:id="ex-skel-inclined-plane">
+<title>Gravity on an incline</title>
+<statement>
+<p>
+Suppose a mass of <m>10\text{ kg}</m> is resting on an inclined plane.
+Gravity exerts a force equivalent to <m>mg</m> on the object, where
+<m>g = 9.8\text{ m/s}^2</m> is the gravitational acceleration. Suppose the
+incline is tilted at a <m>30^{\circ}</m> angle. Compute the components of the
+force that are parallel and perpendicular to the inclined plane.
+</p>
+
+<figure xml:id="fig-skel-inclined-forces">
+<caption>Forces acting on a mass on a <m>30^{\circ}</m> incline: the weight
+<m>\overrightarrow{F}</m> resolves into a component <m>\overrightarrow{F}_{\parallel}</m> down the
+slope and a component <m>\overrightarrow{F}_{\perp}</m> into the surface, with
+<m>\overrightarrow{F} = \overrightarrow{F}_{\parallel} + \overrightarrow{F}_{\perp}</m>.</caption>
+<image width="60%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-skel-inclined-forces">
+<diagram dimensions="(350,300)" margins="5">
+<coordinates bbox="(-1,-2,6,4)">
+<!-- Inclined plane: 30-degree ramp with its right-triangle base -->
+<line at="incline-surface" p1="(0,0)" p2="(5.196,3)" stroke="black" thickness="2"/>
+<line at="incline-base" p1="(0,0)" p2="(5.196,0)" stroke="black" thickness="1" dash="4 4"/>
+<line at="incline-vertical" p1="(5.196,0)" p2="(5.196,3)" stroke="black" thickness="1" dash="4 4"/>
+<label at="angle-label" anchor="(1.3,0.25)" alignment="ne"><m>30^{\circ}</m></label>
+
+<!-- Block resting on the incline (rotated to match the slope) -->
+<rectangle at="block" center="(2.398,1.846)" dimensions="(1.2,0.8)"
+           rotate="30" fill="lightgray" stroke="black"/>
+
+<!-- Force vectors from the center of mass; scaled so they add to the weight -->
+<vector at="vec-weight" v="(0,-3)" tail="(2.398,1.846)" stroke="blue" thickness="2"/>
+<label at="weight-label" anchor="(2.75,-1.05)" alignment="e" color="blue"><m>\overrightarrow{F}</m></label>
+
+<vector at="vec-parallel" v="(-1.299,-0.75)" tail="(2.398,1.846)" stroke="red" thickness="2"/>
+<label at="parallel-label" anchor="(0.75,1.05)" alignment="w" color="red"><m>\overrightarrow{F}_{\parallel}</m></label>
+
+<vector at="vec-perp" v="(1.299,-2.25)" tail="(2.398,1.846)" stroke="purple" thickness="2"/>
+<label at="perp-label" anchor="(3.95,-0.4)" alignment="e" color="purple"><m>\overrightarrow{F}_{\perp}</m></label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A block resting on a thirty degree inclined plane, with the weight vector and its two components drawn from the block's center of mass.">
+  <annotation ref="incline-surface" text="The sloped surface of the incline, rising at thirty degrees from the horizontal."/>
+  <annotation ref="block" text="A rectangular block resting on the incline, tilted to lie flush with the slope."/>
+  <annotation ref="vec-weight" text="The weight vector F, pointing straight down from the center of mass."/>
+  <annotation ref="vec-parallel" text="The component of the weight parallel to the incline, pointing down the slope."/>
+  <annotation ref="vec-perp" text="The component of the weight perpendicular to the incline, pointing into the surface."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+<em>Solution.</em>
+(Work in the plane. Write the weight <m>\overrightarrow F</m> first: it has
+magnitude <m>mg</m> and points straight down, so it has no <m>\hat\imath</m>
+component. Next write a unit vector <m>\hat v</m> pointing <em>down</em> the
+slope, at an angle of <m>-\pi/6</m> to the horizontal. Because
+<m>\|\hat v\| = 1</m>, <xref ref="eq-skel-proj"/> collapses to
+<m>(\overrightarrow F\cdot\hat v)\,\hat v</m>. Get
+<m>\overrightarrow F_{\perp}</m> by subtraction, using
+<xref ref="eq-skel-decomposition"/>, and keep the exact values rather than
+decimals.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,15);
+\draw[gray!35] (0,12) -- (15,12);
+\draw[gray!35] (0,9) -- (15,9);
+\draw[gray!35] (0,5) -- (15,5);
+\node[anchor=north west, font=\small\itshape] at (0.35,14.7) {$\|\overrightarrow F\| =$};
+\node[anchor=north west, font=\small\itshape] at (7.50,14.7) {$\overrightarrow F =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,11.7) {$\hat v =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,8.7) {$\overrightarrow F_{\parallel} =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,4.7) {$\overrightarrow F_{\perp} =$};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in four rows, for the magnitude and vector form of the weight, for the unit vector down the slope, for the component parallel to the incline, and for the component perpendicular to it.</shortdescription>
+</image>
+</sidebyside>
+
+<figure xml:id="fig-skel-inclined-video">
+<caption>Decomposing gravity on a <m>30^{\circ}</m> incline: the parallel component
+<m>\overrightarrow{F}_{\parallel} = \operatorname{proj}_{\hat{v}}\overrightarrow{F}</m> pulls the mass down
+the slope, and the perpendicular component
+<m>\overrightarrow{F}_{\perp} = \overrightarrow{F} - \overrightarrow{F}_{\parallel}</m> presses it into the surface.</caption>
+<video xml:id="video-skel-inclined-plane"
+       source="videos/inclined_plane_1080p.mp4"
+       width="100%" aspect="16:9"/>
+</figure>
+</statement>
+</example>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="subsec-skel-data-science">
+<title>Application in Data Science: Measuring Similarity in Tastes</title>
+
+<p>
+Every time a streaming service tells you <q>because you watched
+<em>Sinners</em><ellipsis/></q>, some piece of software has decided that your
+taste resembles the taste of other people in its database. Deciding whose taste
+resembles whose can be framed as a geometry problem, and one tool that can help
+us decide is the dot product.
+</p>
+
+<p>
+The first step is to turn taste into a vector. Fix a list of movies and ask
+each person to rate every one of them on a scale from <m>-5</m> to <m>5</m>,
+where <m>5</m> means <q>loved it</q>, <m>-5</m> means <q>I want those two hours
+back</q>, and <m>0</m> means indifference. Reading the ratings off in the same
+order for everybody turns each person into a vector, and the question
+<q>do these two people have similar taste?</q> becomes a question about the
+angle between two vectors, which by <xref ref="thm-skel-angle-formula"/> is
+exactly what the dot product measures.
+</p>
+
+<definition xml:id="def-skel-angular-distance">
+<title>Angular Distance and Cosine Similarity</title>
+<statement>
+<p>
+Let <m>\mathbf u</m> and <m>\mathbf v</m> be two nonzero vectors. Their
+<term>angular distance</term> is the angle <m>\theta</m> between them, obtained
+from <xref ref="eq-skel-angle"/>,
+<md xml:id="eq-skel-angular-distance" number="yes">
+d_A(\mathbf u,\mathbf v) = \theta
+= \cos^{-1}\left(\frac{\mathbf u \cdot \mathbf v}{\|\mathbf u\|\|\mathbf v\|}\right).
+</md>
+The quantity <m>\dfrac{\mathbf u \cdot \mathbf v}{\|\mathbf u\|\|\mathbf v\|} = \cos\theta</m>
+appearing inside is called the <term>cosine similarity</term> of
+<m>\mathbf u</m> and <m>\mathbf v</m>. The smaller the angular distance, the
+more similar the two vectors.
+</p>
+</statement>
+</definition>
+
+<p>
+Angular distance asks <q>how nearly do these two vectors point the same way?</q>
+Notice that it is completely blind to the lengths of <m>\mathbf u</m> and
+<m>\mathbf v</m>: multiplying either vector by a positive number leaves
+<m>\theta</m> untouched. We will come back to what that means for moviegoers.
+</p>
+
+<paragraphs xml:id="skel-par-two-movies">
+<title>Two Movies at a Time</title>
+
+<p>
+Two movies give vectors in <m>\mathbb R^2</m>, which we can draw. Take two of
+the ten films nominated for Best Picture at the 2026 Academy Awards,
+<em>Sinners</em> and <em>Hamnet</em>, and record each person's rating of
+<em>Sinners</em> as the first component and of <em>Hamnet</em> as the second.
+Mehdi, Norm, and Popcorn rate them as follows:
+<md>
+\begin{aligned}
+\text{Mehdi:} \quad \mathbf u \amp = \langle 4, 5\rangle \\
+\text{Norm:} \quad \mathbf v \amp = \langle 5, 3\rangle \\
+\text{Popcorn:} \quad \mathbf w \amp = \langle -4, -2\rangle.
+\end{aligned}
+</md>
+Mehdi and Norm both enjoyed the two films; Popcorn sat through both of them and
+regretted it. <xref ref="fig-skel-taste-vectors-2d"/> shows the three taste
+vectors.
+</p>
+
+<figure xml:id="fig-skel-taste-vectors-2d">
+<caption>
+The taste vectors <m>\mathbf u</m> (Mehdi), <m>\mathbf v</m> (Norm), and
+<m>\mathbf w</m> (Popcorn). The angle <m>\theta</m> is the angular distance
+between <m>\mathbf u</m> and <m>\mathbf v</m>.
+</caption>
+<image width="65%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-skel-taste-vectors-2d">
+<diagram dimensions="(420,420)" margins="14">
+<definition>m=(4,5)</definition>
+<definition>n=(5,3)</definition>
+<definition>d=(-4,-2)</definition>
+<coordinates bbox="(-7,-7,7,7)">
+<grid-axes at="grid-taste" xlabel="\text{Sinners}" ylabel="\text{Hamnet}"/>
+<vector at="vec-m" v="m" tail="(0,0)" stroke="#0072B2" thickness="2"/>
+<vector at="vec-n" v="n" tail="(0,0)" stroke="#D55E00" thickness="2"/>
+<vector at="vec-d" v="d" tail="(0,0)" stroke="#009E73" thickness="2"/>
+<angle-marker at="angle-mn" points="(n,(0,0),m)" radius="40" clear-background="no">
+<m>\theta</m>
+</angle-marker>
+<label at="face-m" anchor="m" alignment="nw" font-size="26">&#x1F913;</label>
+<label at="face-n" anchor="n" alignment="e" font-size="26">&#x1F60E;</label>
+<label at="face-d" anchor="d" alignment="sw" font-size="26">&#x1F92A;</label>
+<label at="name-m" anchor="(3.2,5.5)" alignment="w">Mehdi</label>
+<label at="name-n" anchor="(5.2,2.6)" alignment="se">Norm</label>
+<label at="name-d" anchor="(-4.2,-2.9)" alignment="s">Popcorn</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A coordinate grid whose horizontal axis is the rating of the film Sinners and whose vertical axis is the rating of the film Hamnet, both running from negative 5 to 5. Three vectors are drawn from the origin: a blue vector to the point 4 comma 5, labeled Mehdi; an orange vector to the point 5 comma 3, labeled Norm; and a green vector to the point negative 4 comma negative 2, labeled Popcorn. The blue and orange vectors point in nearly the same direction and a small angle theta is marked between them, while the green vector points in almost the opposite direction.">
+  <annotation ref="grid-taste" text="A coordinate grid with the Sinners rating on the horizontal axis and the Hamnet rating on the vertical axis."/>
+  <annotation ref="vec-m" text="Mehdi's taste vector u equals 4 comma 5, drawn in blue from the origin."/>
+  <annotation ref="vec-n" text="Norm's taste vector v equals 5 comma 3, drawn in orange from the origin."/>
+  <annotation ref="vec-d" text="Popcorn's taste vector w equals negative 4 comma negative 2, drawn in green from the origin, pointing into the third quadrant."/>
+  <annotation ref="angle-mn" text="The angle theta between u and v, measured at the origin, is about 20 degrees."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<example xml:id="ex-skel-taste-2d">
+<title>Who should watch a movie together?</title>
+<statement>
+<p>
+Using the taste vectors above, rank the three pairs by angular distance.
+</p>
+
+<p>
+<em>Solution.</em>
+(Before computing anything, use <xref ref="fig-skel-taste-vectors-2d"/> and the
+sign of each dot product to predict the ranking. Then fill in
+<xref ref="table-skel-taste-2d"/> using
+<xref ref="eq-skel-angular-distance"/>, working to three decimal places and
+giving the angles in degrees.)
+</p>
+
+<table xml:id="table-skel-taste-2d">
+<title>Angular distance between the three taste vectors.</title>
+<tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+<row header="yes" bottom="major">
+<cell>Pair</cell>
+<cell><m>\mathbf u\cdot\mathbf v</m></cell>
+<cell><m>\cos\theta</m></cell>
+<cell><m>d_A</m></cell>
+</row>
+<row><cell>Mehdi, Norm</cell><cell></cell><cell></cell><cell></cell></row>
+<row><cell>Mehdi, Popcorn</cell><cell></cell><cell></cell><cell></cell></row>
+<row><cell>Norm, Popcorn</cell><cell></cell><cell></cell><cell></cell></row>
+</tabular>
+</table>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,11);
+\draw[gray!35] (0,3.5) -- (15,3.5);
+\node[anchor=north west, font=\small\itshape] at (0.35,10.7) {Lengths and dot products:};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.2) {Who are the movie buddies, and what did the signs already tell you?};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in two rows, one for the lengths and dot products behind the table and one for the conclusion about which pair has the most similar taste.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+</example>
+</paragraphs>
+
+<paragraphs xml:id="skel-par-scale-invariance">
+<title>Angular Distance Ignores Enthusiasm</title>
+
+<p>
+Suppose Ray, Vera, and Gus rate the same two films
+<md>
+\begin{aligned}
+\text{Ray:} \quad \mathbf a \amp = \langle 2, 2\rangle \\
+\text{Vera:} \quad \mathbf b \amp = \langle 5, 4\rangle \\
+\text{Gus:} \quad \mathbf c \amp = \langle 5, 5\rangle,
+\end{aligned}
+</md>
+as in <xref ref="fig-skel-taste-disagree"/>.
+</p>
+
+<figure xml:id="fig-skel-taste-disagree">
+<caption>
+Ray, Vera, and Gus. Ray's vector <m>\mathbf a</m> lies along Gus's vector
+<m>\mathbf c</m>, so their angular distance is <m>0</m>, even though Gus handed
+out far more generous ratings.
+</caption>
+<image width="60%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-skel-taste-disagree">
+<diagram dimensions="(420,330)" margins="14">
+<definition>r=(2,2)</definition>
+<definition>v=(5,4)</definition>
+<definition>g=(5,5)</definition>
+<coordinates bbox="(-0.8,-0.8,7.4,6.4)">
+<grid-axes at="grid-disagree" xlabel="\text{Sinners}" ylabel="\text{Hamnet}"/>
+<vector at="vec-g" v="g" tail="(0,0)" stroke="#009E73" thickness="2"/>
+<vector at="vec-v" v="v" tail="(0,0)" stroke="#D55E00" thickness="2"/>
+<vector at="vec-r" v="r" tail="(0,0)" stroke="#0072B2" thickness="3"/>
+<label at="face-r" anchor="(2.2,1.9)" alignment="se" font-size="24">&#x1F610;</label>
+<label at="face-v" anchor="v" alignment="se" font-size="24">&#x1F929;</label>
+<label at="face-g" anchor="g" alignment="ne" font-size="24">&#x1F973;</label>
+<label at="name-r" anchor="(2.85,1.5)" alignment="e">Ray</label>
+<label at="name-v" anchor="(5.6,3.4)" alignment="e">Vera</label>
+<label at="name-g" anchor="(5.6,5.3)" alignment="e">Gus</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A coordinate grid whose horizontal axis is the rating of Sinners and whose vertical axis is the rating of Hamnet, both running from 0 to about 6. A short thick blue vector runs from the origin to the point 2 comma 2, labeled Ray. A longer green vector runs from the origin to the point 5 comma 5, labeled Gus, and lies along exactly the same line as the blue vector. An orange vector runs from the origin to the point 5 comma 4, labeled Vera, just below the green one.">
+  <annotation ref="grid-disagree" text="A coordinate grid with the Sinners rating on the horizontal axis and the Hamnet rating on the vertical axis."/>
+  <annotation ref="vec-r" text="Ray's taste vector a equals 2 comma 2, drawn as a short thick blue vector from the origin."/>
+  <annotation ref="vec-g" text="Gus's taste vector c equals 5 comma 5, drawn in green from the origin along the same line as Ray's vector."/>
+  <annotation ref="vec-v" text="Vera's taste vector b equals 5 comma 4, drawn in orange from the origin, slightly below Gus's vector."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+Find <m>d_A(\mathbf a,\mathbf c)</m> and <m>d_A(\mathbf b,\mathbf c)</m>.
+(One of the two needs no computation at all: look for a scalar relating the two
+vectors and appeal to the remark after
+<xref ref="def-skel-angular-distance"/>. Then say, in a sentence, what the
+answer means about a cautious rater and an enthusiastic one who rank the films
+the same way.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,12);
+\draw[gray!35] (0,9) -- (15,9);
+\draw[gray!35] (0,4) -- (15,4);
+\node[anchor=north west, font=\small\itshape] at (0.35,11.7) {$d_A(\mathbf a,\mathbf c) =$};
+\node[anchor=north west, font=\small\itshape] at (7.50,11.7) {because};
+\node[anchor=north west, font=\small\itshape] at (0.35,8.7) {$d_A(\mathbf b,\mathbf c) =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.7) {What this says about enthusiasm:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in three rows, for the angular distance between Ray and Gus with its reason, for the angular distance between Vera and Gus, and for the interpretation.</shortdescription>
+</image>
+</sidebyside>
+</paragraphs>
+
+<paragraphs xml:id="skel-par-more-movies">
+<title>More Movies, More Dimensions</title>
+
+<p>
+Nothing above depended on there being exactly two movies. With <m>n</m> movies,
+a person's taste vector is
+<m>\mathbf u = \langle u_1, u_2, \ldots, u_n\rangle</m> in <m>\mathbb R^n</m>,
+the dot product of <xref ref="eq-skel-dot"/> becomes a sum of <m>n</m> products,
+<m>\mathbf u \cdot \mathbf v = \sum_{i=1}^{n} u_i v_i</m>, and the length of a
+vector becomes <m>\|\mathbf u\| = \sqrt{\sum_{i=1}^{n} u_i^2}</m>. The angular
+distance of <xref ref="def-skel-angular-distance"/> carries over verbatim:
+<md xml:id="eq-skel-similarity-n" number="yes">
+d_A(\mathbf u,\mathbf v) = \cos^{-1}\left(
+\frac{\sum_{i=1}^{n} u_i v_i}
+{\sqrt{\sum_{i=1}^{n} u_i^2}\,\sqrt{\sum_{i=1}^{n} v_i^2}}\right).
+</md>
+</p>
+
+<p>
+We can no longer draw the picture, but every formula still applies, and the
+language of <xref ref="skel-remark-orthogonal"/> still means something: two
+taste vectors with <m>\mathbf u \cdot \mathbf v = 0</m> are orthogonal, an
+angular distance of <m>90^\circ</m>, which here says that knowing one person's
+ratings tells you nothing about the other's. This is what makes the dot product
+useful in practice. A streaming service with <m>50{,}000</m> titles works in
+<m>\mathbb R^{50{,}000}</m>, and finding the users nearest to you is still
+nothing more than the arithmetic in <xref ref="eq-skel-similarity-n"/>.
+</p>
+
+<example xml:id="ex-skel-taste-10d">
+<title>All ten nominees</title>
+<statement>
+<p>
+List the ten 2026 Best Picture nominees alphabetically<mdash/><em>Bugonia</em>,
+<em>F1</em>, <em>Frankenstein</em>, <em>Hamnet</em>, <em>Marty Supreme</em>,
+<em>One Battle After Another</em>, <em>The Secret Agent</em>,
+<em>Sentimental Value</em>, <em>Sinners</em>, <em>Train Dreams</em><mdash/>and
+suppose Mehdi, Norm, and Popcorn rate all ten:
+<md>
+\begin{aligned}
+\mathbf u \amp = \langle 3,\,-1,\,2,\,5,\,0,\,5,\,4,\,3,\,4,\,2\rangle \\
+\mathbf v \amp = \langle 1,\,4,\,3,\,3,\,5,\,4,\,0,\,1,\,5,\,-2\rangle \\
+\mathbf w \amp = \langle -2,\,3,\,-3,\,-2,\,4,\,-1,\,-4,\,-5,\,-4,\,-3\rangle.
+\end{aligned}
+</md>
+(The fourth and ninth entries are the <em>Hamnet</em> and <em>Sinners</em>
+ratings from before.) Which pair has the most similar taste?
+</p>
+
+<p>
+<em>Solution.</em>
+(The formula is <xref ref="eq-skel-similarity-n"/>; only the bookkeeping is
+longer. Fill in <xref ref="table-skel-taste-10d"/>, then compare it with
+<xref ref="table-skel-taste-2d"/>: one pair that looked like opposites on two
+films turns out to be nearly orthogonal on ten. Say what that difference
+means.)
+</p>
+
+<table xml:id="table-skel-taste-10d">
+<title>Angular distance across all ten nominees.</title>
+<tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+<row header="yes" bottom="major">
+<cell>Pair</cell>
+<cell><m>\mathbf u\cdot\mathbf v</m></cell>
+<cell><m>\cos\theta</m></cell>
+<cell><m>d_A</m></cell>
+</row>
+<row><cell>Mehdi, Norm</cell><cell></cell><cell></cell><cell></cell></row>
+<row><cell>Mehdi, Popcorn</cell><cell></cell><cell></cell><cell></cell></row>
+<row><cell>Norm, Popcorn</cell><cell></cell><cell></cell><cell></cell></row>
+</tabular>
+</table>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,10);
+\draw[gray!35] (0,3.5) -- (15,3.5);
+\node[anchor=north west, font=\small\itshape] at (0.35,9.7) {Lengths and dot products:};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.2) {Compared with the two-movie table:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in two rows, one for the lengths and dot products of the three ten-dimensional taste vectors and one for the comparison with the two-movie table.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+</example>
+
+<p>
+Ten components are a lot to handle by hand, and a real recommender system deals
+with thousands. The cell below carries out the computation of
+<xref ref="ex-skel-taste-10d"/>. Press <em>Evaluate</em> to run it and check
+the table you just filled in, then edit the ratings and run it again to see
+whose taste your own vector is closest to.
+</p>
+
+<sage>
+<input>
+# ratings of the ten nominees, in alphabetical order
+u = vector([ 3, -1,  2,  5,  0,  5,  4,  3,  4,  2])
+v = vector([ 1,  4,  3,  3,  5,  4,  0,  1,  5, -2])
+w = vector([-2,  3, -3, -2,  4, -1, -4, -5, -4, -3])
+
+def cosine_similarity(a, b):
+    return a.dot_product(b) / (a.norm() * b.norm())
+
+# the angular distance, converted from radians to degrees
+def angular_distance(a, b):
+    return arccos(cosine_similarity(a, b)) * 180 / pi
+
+for name, a, b in [("Mehdi, Norm", u, v),
+                   ("Mehdi, Popcorn", u, w),
+                   ("Norm, Popcorn", v, w)]:
+    print(name, N(cosine_similarity(a, b), digits=3), N(angular_distance(a, b), digits=4))
+</input>
+<output>
+Mehdi, Norm 0.549 56.71
+Mehdi, Popcorn -0.762 139.6
+Norm, Popcorn -0.0744 94.27
+</output>
+</sage>
+</paragraphs>
+
+</subsection>
+
+</section>

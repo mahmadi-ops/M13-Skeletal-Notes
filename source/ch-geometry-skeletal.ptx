@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Skeletal (fill-in) version of Chapter 3, 3D Space and Vector Algebra.
+  Wrapper only: the mathematical content lives in the included files,
+  each of which is a <section> of this chapter.  Sections are added
+  here as their skeletal versions are written.
+-->
+<chapter xml:id="skel-chapter-geometry" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>3D Space and Vector Algebra (Skeletal Notes)</title>
+
+<xi:include href="sec-skel-geom-3d-coordinates.ptx" />
+<xi:include href="sec-skel-geom-vectors.ptx" />
+<xi:include href="sec-skel-geom-dot-product.ptx" />
+<xi:include href="sec-skel-geom-cross-product.ptx" />
+<xi:include href="sec-skel-geom-parametrization.ptx" />
+<xi:include href="sec-skel-geom-lines-planes.ptx" />
+<xi:include href="sec-skel-geom-conics.ptx" />
+<xi:include href="sec-skel-geom-quadric-surfaces.ptx" />
+</chapter>

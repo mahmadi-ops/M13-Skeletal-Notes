@@ -1,0 +1,757 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Skeletal (fill-in) version of 3.6 Lines and Planes in Space.
+
+  Definitions, theorems, summaries, and problem statements are kept;
+  derivations and solutions are replaced by blank workspace boxes, each
+  with a one-line statement of what has to be done.  Content mirrors
+  ch-12-5.ptx of the full lecture notes; every xml:id here is prefixed
+  with "skel-" so the two can coexist.
+
+  Figures: the pictures that set a problem up (the line through P_0, the
+  distance from a point to a line, the normal vector to a plane, the two
+  intersecting planes, and the distance from a point to a plane) are
+  reproduced in full, as in the lecture notes.  The two pictures that
+  answer an example (the line through the two given points, and the
+  intercept triangle) become empty axes to draw on.
+-->
+<section xml:id="sec-skel-geom-lines-planes" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Lines and Planes in Space</title>
+
+<objectives>
+<introduction>
+<p>
+After completing this section, you should be able to:
+</p>
+</introduction>
+
+<ul>
+<li>
+<p>
+Write the vector equation and the parametric equations of a line in
+space from a point on the line and a vector parallel to it.
+</p>
+</li>
+<li>
+<p>
+Compute the distance from a point to a line using the cross product.
+</p>
+</li>
+<li>
+<p>
+Find the equation of a plane from a point on the plane and a normal
+vector, and find the line of intersection of two planes.
+</p>
+</li>
+<li>
+<p>
+Compute the distance from a point to a plane using the projection onto
+the normal vector.
+</p>
+</li>
+</ul>
+</objectives>
+
+<!-- ================================================================ -->
+<subsection xml:id="subsec-skel-lines-vector-eq">
+<title>Vector Equation for a Line in Space</title>
+
+<p>
+Consider a line that passes through the point <m>P_0(x_0,y_0,z_0)</m>
+and is parallel to the vector <m>\mathbf v</m>, as in
+<xref ref="fig-skel-lines-vector-eq"/>. Write down the vector equation of
+that line. (Every point <m>P</m> on the line is reached from <m>P_0</m> by
+travelling some multiple of <m>\mathbf v</m>; the boxed remark in the figure
+says which multiples are allowed. Add that displacement to the position
+vector <m>\mathbf r_0</m> of <m>P_0</m>, and say what the parameter <m>t</m>
+ranges over.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,7);
+\draw[gray!35] (0,3.5) -- (15,3.5);
+\node[anchor=north west, font=\small\itshape] at (0.35,6.7) {$\overrightarrow{P_0P} =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.2) {$\mathbf r(t) =$};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in two rows, one for the displacement from P zero to P and one for the resulting vector equation of the line.</shortdescription>
+</image>
+</sidebyside>
+
+<figure xml:id="fig-skel-lines-vector-eq">
+<caption>
+The line through <m>P_0</m> parallel to <m>\mathbf v</m>. For any point
+<m>P</m> on the line, the vector <m>\overrightarrow{P_0P}</m> is parallel to
+<m>\mathbf v</m>.
+</caption>
+<image width="72%">
+<description>
+<p>
+A three dimensional coordinate system with a blue line passing through
+two labelled points. The point P zero equals x zero comma y zero comma
+z zero sits higher on the line, and the point P equals x comma y comma
+z sits lower. A magenta vector from P zero to P lies along the line,
+and a separate magenta vector v below the line points in the same
+direction, illustrating that the vector P zero P is parallel to v.
+</p>
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[x={(-0.50cm,-0.36cm)}, y={(1cm,0cm)}, z={(0cm,1cm)}, scale=0.85]
+  % axes
+  \draw[-stealth, thick] (0,0,0) -- (4.6,0,0) node[below left] {$x$};
+  \draw[-stealth, thick] (0,0,0) -- (0,5.2,0) node[right] {$y$};
+  \draw[-stealth, thick] (0,0,0) -- (0,0,4.2) node[above] {$z$};
+  % the line through P0 with direction v = (1.1, 1.5, -1.05)
+  \draw[mblue, very thick] (0.35,-0.75,3.55) -- (3.65,3.75,0.40);
+  % points
+  \fill (1.45,0.75,2.50) circle (2pt) node[above right=1pt] {$P_0=(x_0,y_0,z_0)$};
+  \fill (2.55,2.25,1.45) circle (2pt) node[right=2pt] {$P=(x,y,z)$};
+  % vector P0P along the line
+  \draw[-stealth, magenta, very thick] (1.45,0.75,2.50) -- (2.55,2.25,1.45);
+  \node[magenta] at (1.60,1.95,2.35) {$\overrightarrow{P_0P}$};
+  % vector v below the line
+  \draw[-stealth, magenta, very thick] (2.0,1.2,-0.4) -- (3.1,2.7,-1.45);
+  \node[magenta, below] at (3.1,2.7,-1.45) {$\mathbf v$};
+  % boxed remark
+  \node[draw, fill=white, inner sep=3pt] at (0.7,4.3,-1.3) {$\overrightarrow{P_0P} \parallel \mathbf v$};
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
+
+<assemblage xml:id="skel-summary-lines-vector">
+<title>Vector Equation of a Line</title>
+<p>
+<md xml:id="eq-skel-lines-vector" number="yes">
+\mathbf r(t) = \mathbf r_0 + t\,\mathbf v, \quad t \in \R.
+</md>
+</p>
+</assemblage>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="subsec-skel-lines-parametric">
+<title>Parametric Equations for a Line</title>
+
+<p>
+The vector equation <xref ref="eq-skel-lines-vector"/> can be interpreted as
+the following parametric equations, where
+<m>\mathbf v = \langle v_1, v_2, v_3\rangle</m>:
+<md xml:id="eq-skel-lines-parametric" number="yes">
+\begin{aligned}
+x \amp = x_0 + t\,v_1 \\
+y \amp = y_0 + t\,v_2 \\
+z \amp = z_0 + t\,v_3
+\end{aligned}
+\qquad t \in \R.
+</md>
+</p>
+
+<example xml:id="ex-skel-lines-two-points">
+<title>The line through two points</title>
+<statement>
+<p>
+Find the vector equation and the parametric equations of the line that
+passes through the points <m>P_0(2,0,0)</m> and <m>P(1,-1,1)</m>.
+</p>
+
+<p>
+<em>Solution.</em>
+(Neither point is a direction, so first build a vector parallel to the line
+out of the two of them with <xref ref="eq-skel-vec-components"/>. Then take
+<m>\mathbf r_0</m> to be the position vector of either point and apply
+<xref ref="eq-skel-lines-vector"/>, followed by
+<xref ref="eq-skel-lines-parametric"/>. Give the vector equation in both
+component and <m>\hat\imath,\hat\jmath,\hat k</m> form, and sketch the line on
+the axes below.)
+</p>
+
+<sidebyside widths="52% 40%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (8,11);
+\draw[gray!35] (0,8.5) -- (8,8.5);
+\draw[gray!35] (0,5) -- (8,5);
+\node[anchor=north west, font=\small\itshape] at (0.3,10.7) {$\mathbf v =$};
+\node[anchor=north west, font=\small\itshape] at (0.3,8.2) {$\mathbf r(t) =$};
+\node[anchor=north west, font=\small\itshape] at (0.3,4.7) {Parametric equations:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in three rows, for the direction vector, for the vector equation of the line, and for its parametric equations.</shortdescription>
+</image>
+<image>
+<latex-image><![CDATA[
+\begin{tikzpicture}[x={(-0.50cm,-0.36cm)}, y={(1cm,0cm)}, z={(0cm,1cm)}, scale=0.95]
+  \draw[-stealth, thick] (0,0,0) -- (3.6,0,0) node[below left] {$x$};
+  \draw[-stealth, thick] (0,-2.4,0) -- (0,2.6,0) node[right] {$y$};
+  \draw[-stealth, thick] (0,0,0) -- (0,0,2.8) node[above] {$z$};
+  \node[below left=1pt] at (2,0,0) {$2$};
+  \node[right] at (0,1,0) {$1$};
+\end{tikzpicture}
+]]></latex-image>
+<shortdescription>Empty three-dimensional coordinate axes, with the value two marked on the x axis and one on the y axis, for sketching the line through the two given points.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+</example>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="subsec-skel-lines-distance">
+<title>The Distance from a Point to a Line</title>
+
+<p>
+Our goal is to find the distance <m>d</m> of the point <m>S</m> from
+the line <m>L</m>, as shown in <xref ref="fig-skel-lines-dist-line"/>.
+Derive a formula for it. (Read <m>d</m> off the right triangle in the figure
+in terms of <m>\|\overrightarrow{PS}\|</m> and the angle <m>\theta</m>, where
+<m>P</m> is any point on the line. That expression is nearly
+<xref ref="eq-skel-cross-geometric"/> already; supply the missing factor of
+<m>\|\mathbf v\|</m> by multiplying and dividing by it. Note that the answer
+cannot depend on which point <m>P</m> you picked.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,8);
+\draw[gray!35] (0,4) -- (15,4);
+\node[anchor=north west, font=\small\itshape] at (0.35,7.7) {From the triangle, $d =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.7) {As a cross product, $d =$};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in two rows, one for the distance read off the right triangle and one for the same distance written with a cross product.</shortdescription>
+</image>
+</sidebyside>
+
+<assemblage xml:id="skel-summary-lines-distance">
+<title>Distance from a Point to a Line</title>
+<p>
+<md xml:id="eq-skel-lines-distance" number="yes">
+d = \frac{\|\overrightarrow{PS} \times \mathbf v\|}{\|\mathbf v\|}.
+</md>
+</p>
+</assemblage>
+
+<figure xml:id="fig-skel-lines-dist-line">
+<caption>
+The distance of the point <m>S</m> from the line <m>L</m> is
+<m>d = \|\overrightarrow{PS}\|\left|\sin\theta\right|</m>, where <m>P</m> is any point on the
+line.
+</caption>
+<image width="70%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-skel-lines-dist">
+<diagram dimensions="(380,240)" margins="12">
+<coordinates bbox="(-0.6,-1.1,5.4,3.2)">
+<line at="dl-line" endpoints="((-0.35,-0.55),(5.1,1.63))"
+      stroke="black" thickness="3"/>
+<line at="dl-ps" endpoints="((0.9,-0.05),(2.4,2.5))"
+      stroke="#009E73" dash="6 4" thickness="2"/>
+<line at="dl-drop" endpoints="((2.4,2.5),(3.42,0.958))"
+      stroke="#8B1A4A" dash="6 4" thickness="2"/>
+<vector at="dl-v" v="(1.35,0.54)" tail="(2.6,-0.75)"
+        stroke="magenta" thickness="3"/>
+<point at="dl-S" p="(2.4,2.5)" fill="black"/>
+<point at="dl-P" p="(0.9,-0.05)" fill="black"/>
+<label at="dl-S-lab" anchor="(2.4,2.62)" alignment="n">
+<m>S</m>
+</label>
+<label at="dl-P-lab" anchor="(0.85,-0.22)" alignment="s">
+<m>P</m>
+</label>
+<label at="dl-L-lab" anchor="(5.15,1.75)" alignment="ne">
+<m>L</m>
+</label>
+<label at="dl-theta" anchor="(1.42,0.28)" alignment="ne">
+<m>\theta</m>
+</label>
+<label at="dl-d-lab" anchor="(3.15,1.95)" alignment="ne" color="#8B1A4A">
+<m>\|\overrightarrow{PS}\|\left|\sin\theta\right|</m>
+</label>
+<label at="dl-v-lab" anchor="(3.3,-0.6)" alignment="s" color="magenta">
+<m>\mathbf v</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A solid black line L runs up and to the right. A point S floats above the line. A dashed green segment joins a point P on the line to S, making an angle theta with the line. A dashed dark red segment drops from S perpendicularly to the line; its length is the magnitude of P S times the absolute value of sine theta. A magenta vector v below the line shows the line's direction.">
+  <annotation ref="dl-line" text="The line L."/>
+  <annotation ref="dl-S" text="The point S whose distance from the line we want."/>
+  <annotation ref="dl-ps" text="The segment from P to S, which makes an angle theta with the line."/>
+  <annotation ref="dl-drop" text="The perpendicular distance d, equal to the magnitude of P S times the absolute value of sine theta."/>
+  <annotation ref="dl-v" text="The direction vector v of the line."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<example xml:id="ex-skel-lines-distance">
+<title>Distance from a point to a line</title>
+<statement>
+<p>
+Calculate the distance between the point <m>S(1,1,0)</m> and the line
+with the vector equation
+<m>\mathbf r(t) = (2-t)\,\hat{\imath} - t\,\hat{\jmath} + t\,\hat{k}</m>,
+<m>t \in \R</m>.
+</p>
+
+<p>
+<em>Solution.</em>
+(This is the line of <xref ref="ex-skel-lines-two-points"/>. Read
+<m>\mathbf v</m> straight off the vector equation, and get a point <m>P</m> on
+the line by choosing any convenient value of <m>t</m>. Then build
+<m>\overrightarrow{PS}</m> and apply
+<xref ref="eq-skel-lines-distance"/>; the two square roots simplify against
+each other.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,14);
+\draw[gray!35] (0,11) -- (15,11);
+\draw[gray!35] (0,4) -- (15,4);
+\node[anchor=north west, font=\small\itshape] at (0.35,13.7) {$\mathbf v =$};
+\node[anchor=north west, font=\small\itshape] at (5.00,13.7) {$P =$};
+\node[anchor=north west, font=\small\itshape] at (10.00,13.7) {$\overrightarrow{PS} =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,10.7) {$\overrightarrow{PS}\times\mathbf v =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.7) {$d =$};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in three rows, for the direction vector together with a point on the line and the vector P S, for their cross product, and for the distance.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+</example>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="subsec-skel-planes-equation">
+<title>Equation of a Plane in Space</title>
+
+<p>
+Let us assume that we have computed the normal vector <m>\overrightarrow{n}</m>
+to a plane and that we have a point <m>P_0</m> on the plane. A normal vector
+is perpendicular to the plane and hence perpendicular to any vector lying in
+it. Denoting an arbitrary point of the plane by <m>P</m>, as in
+<xref ref="fig-skel-planes-normal"/>, this gives
+<md xml:id="eq-skel-planes-normal" number="yes">
+\overrightarrow{n} \cdot \overrightarrow{P_0P} = 0.
+</md>
+</p>
+
+<figure xml:id="fig-skel-planes-normal">
+<caption>
+The normal vector to a plane is perpendicular to all the vectors in the
+plane.
+</caption>
+<image width="60%">
+<description>
+<p>
+A parallelogram represents a plane seen in perspective. A red vector n
+points straight up from a point P zero on the plane, and a blue vector
+lies in the plane from P zero to another point P. A small right angle
+marker at P zero shows that the two vectors are perpendicular.
+</p>
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[x={(-0.50cm,-0.36cm)}, y={(1cm,0cm)}, z={(0cm,1cm)}, scale=1.0]
+  % the plane
+  \fill[msky, opacity=0.25] (-1.2,-1.6,0) -- (2.6,-1.6,0) -- (2.6,3.0,0) -- (-1.2,3.0,0) -- cycle;
+  \draw[msky!70!black] (-1.2,-1.6,0) -- (2.6,-1.6,0) -- (2.6,3.0,0) -- (-1.2,3.0,0) -- cycle;
+  % points
+  \fill (0.7,0.3,0) circle (2pt) node[below left=1pt] {$P_0$};
+  \fill (1.3,1.9,0) circle (2pt) node[below right=1pt] {$P$};
+  % in-plane vector
+  \draw[-stealth, mblue, very thick] (0.7,0.3,0) -- (1.3,1.9,0);
+  % normal vector
+  \draw[-stealth, red, very thick] (0.7,0.3,0) -- (0.7,0.3,2.3)
+        node[above] {$\overrightarrow{n}$};
+  % right-angle marker, built from the actual in-plane direction (0.6,1.6,0)
+  % normalised, so that one leg lies along the blue vector
+  \draw[semithick] (0.815,0.607,0) -- (0.815,0.607,0.35) -- (0.7,0.3,0.35);
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
+
+<p>
+Turn <xref ref="eq-skel-planes-normal"/> into an equation in <m>x</m>,
+<m>y</m>, and <m>z</m>. (Put <m>P_0(x_0,y_0,z_0)</m>, <m>P(x,y,z)</m> and
+<m>\overrightarrow{n} = \langle A,B,C\rangle</m>, write out
+<m>\overrightarrow{P_0P}</m>, and expand the dot product with
+<xref ref="eq-skel-dot"/>. Then collect the constants on the right to reach
+the standard form, and say what the constant <m>D</m> equals.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,10);
+\draw[gray!35] (0,6.5) -- (15,6.5);
+\draw[gray!35] (0,3) -- (15,3);
+\node[anchor=north west, font=\small\itshape] at (0.35,9.7) {Point-normal form:};
+\node[anchor=north west, font=\small\itshape] at (0.35,6.2) {Standard form:};
+\node[anchor=north west, font=\small\itshape] at (0.35,2.7) {$D =$};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in three rows, for the point-normal form of the equation of a plane, for its standard form, and for the value of the constant D.</shortdescription>
+</image>
+</sidebyside>
+
+<assemblage xml:id="skel-summary-planes-equation">
+<title>Equation of a Plane</title>
+<p>
+<md xml:id="eq-skel-planes-point-normal" number="yes">
+A(x - x_0) + B(y - y_0) + C(z - z_0) = 0,
+</md>
+equivalently
+<md xml:id="eq-skel-planes-standard" number="yes">
+Ax + By + Cz = D, \qquad D = Ax_0 + By_0 + Cz_0.
+</md>
+Notice that the coefficients of <m>x</m>, <m>y</m>, and <m>z</m> in the
+standard form are the components of the normal vector.
+</p>
+</assemblage>
+
+<example xml:id="ex-skel-planes-equation">
+<title>Finding the equation of a plane</title>
+<statement>
+<p>
+Find an equation of the plane through the point <m>P_0(2,4,-1)</m>
+with normal vector <m>\overrightarrow{n} = \langle 2,3,4\rangle</m>. Find the
+intercepts and sketch the plane.
+</p>
+
+<p>
+<em>Solution.</em>
+(Substitute into <xref ref="eq-skel-planes-point-normal"/> and simplify to the
+standard form; watch the sign of <m>z_0</m>. To find an intercept, set the
+other two variables to zero. Sketch only the part of the plane in the first
+octant, which is the triangle joining the three intercepts.)
+</p>
+
+<sidebyside widths="52% 40%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (8,11);
+\draw[gray!35] (0,5) -- (8,5);
+\node[anchor=north west, font=\small\itshape] at (0.3,10.7) {Equation of the plane:};
+\node[anchor=north west, font=\small\itshape] at (0.3,4.7) {$x$-intercept: \qquad $y$-intercept: \qquad $z$-intercept:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in two rows, one for the equation of the plane and one for its three intercepts.</shortdescription>
+</image>
+<image>
+<latex-image><![CDATA[
+\begin{tikzpicture}[x={(-0.50cm,-0.36cm)}, y={(1cm,0cm)}, z={(0cm,1cm)}, scale=0.80]
+  \draw[-stealth, thick] (0,0,0) -- (7.8,0,0) node[above left=1pt] {$x$};
+  \draw[-stealth, thick] (0,0,0) -- (0,5.4,0) node[right] {$y$};
+  \draw[-stealth, thick] (0,0,0) -- (0,0,4.2) node[above] {$z$};
+  \foreach \a in {2,4,6} \node[below left=0pt, font=\scriptsize] at (\a,0,0) {$\a$};
+  \foreach \b in {2,4} \node[right=1pt, font=\scriptsize] at (0,\b,0) {$\b$};
+  \foreach \c in {1,2,3} \node[left=1pt, font=\scriptsize] at (0,0,\c) {$\c$};
+\end{tikzpicture}
+]]></latex-image>
+<shortdescription>Empty three-dimensional coordinate axes with tick values marked, for sketching the part of the plane lying in the first octant.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+</example>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="subsec-skel-planes-intersection">
+<title>Lines of Intersection</title>
+
+<p>
+Suppose we would like to find the line of intersection <m>L</m> of two
+planes with normal vectors <m>\overrightarrow{n}_1</m> and
+<m>\overrightarrow{n}_2</m>, as in
+<xref ref="fig-skel-planes-intersection"/>. To write down the equation of
+<m>L</m> we need a direction vector <m>\mathbf v</m> for it, and the two
+normal vectors are enough to produce one.
+</p>
+
+<p>
+Explain why, and write down <m>\mathbf v</m>. (The line <m>L</m> lies in the
+first plane, so <xref ref="eq-skel-planes-normal"/> says something about
+<m>\overrightarrow n_1</m> and <m>\mathbf v</m>; the same argument applies to
+the second plane. A vector orthogonal to two given vectors is what
+<xref ref="def-skel-cross-product"/> produces. Say what has to be true of the
+two planes for this vector to be nonzero, and why any nonzero multiple of it
+would do just as well.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,10);
+\draw[gray!35] (0,6.5) -- (15,6.5);
+\draw[gray!35] (0,3) -- (15,3);
+\node[anchor=north west, font=\small\itshape] at (0.35,9.7) {Each normal vector is \dots\ to $L$, because:};
+\node[anchor=north west, font=\small\itshape] at (0.35,6.2) {$\mathbf v =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,2.7) {When is this nonzero?};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in three rows, for the relation of each normal vector to the line of intersection, for the direction vector itself, and for the condition under which it is nonzero.</shortdescription>
+</image>
+</sidebyside>
+
+<assemblage xml:id="skel-summary-planes-intersection">
+<title>Direction of the Line of Intersection</title>
+<p>
+<md xml:id="eq-skel-planes-intersection-dir" number="yes">
+\mathbf v = \overrightarrow{n}_1 \times \overrightarrow{n}_2.
+</md>
+</p>
+</assemblage>
+
+<figure xml:id="fig-skel-planes-intersection">
+<caption>
+The cross product of the normal vectors gives the direction vector of
+the line of intersection.
+</caption>
+<image width="66%">
+<description>
+<p>
+Two planes intersect inside a three dimensional box: a horizontal blue
+plane and a slanted pink plane, meeting at an oblique angle rather than
+a right angle. Both normal vectors leave the same marked point on the
+line where the planes meet. The blue vector n one points straight up,
+perpendicular to the blue horizontal plane; the pink vector n two points
+up and to the side, perpendicular to the pink slanted plane. A black vector
+runs along the crease where the planes meet. A legend in the upper right
+names the three vectors: n one, n two, and v equals n one cross n two. A
+square corner mark on either side of the common point, drawn in the colour
+of its normal, shows that each normal makes a right angle with that line.
+</p>
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[x={(-0.32cm,-0.66cm)}, y={(1cm,0cm)}, z={(0cm,1cm)}, scale=0.85]
+  % box
+  \draw[gray!60] (0,0,0) -- (4,0,0) -- (4,5,0) -- (0,5,0) -- cycle;
+  \draw[gray!60] (0,0,4) -- (4,0,4) -- (4,5,4) -- (0,5,4) -- cycle;
+  \draw[gray!60] (0,0,0) -- (0,0,4);
+  \draw[gray!60] (4,0,0) -- (4,0,4);
+  \draw[gray!60] (4,5,0) -- (4,5,4);
+  \draw[gray!60] (0,5,0) -- (0,5,4);
+  % horizontal plane at z = 1.9, drawn in the colour of its normal n_1
+  \fill[msky!60!black, opacity=0.16] (0.3,0.3,1.9) -- (3.7,0.3,1.9) -- (3.7,4.7,1.9) -- (0.3,4.7,1.9) -- cycle;
+  \draw[msky!60!black] (0.3,0.3,1.9) -- (3.7,0.3,1.9) -- (3.7,4.7,1.9) -- (0.3,4.7,1.9) -- cycle;
+  % slanted plane through the same crease, tilted 35 degrees from the vertical
+  % so the two planes meet at an oblique angle; drawn in the colour of n_2
+  \fill[mpink!85!black, opacity=0.16] (0.3,3.318,0.589) -- (3.7,3.318,0.589) -- (3.7,1.482,3.211) -- (0.3,1.482,3.211) -- cycle;
+  \draw[mpink!85!black] (0.3,3.318,0.589) -- (3.7,3.318,0.589) -- (3.7,1.482,3.211) -- (0.3,1.482,3.211) -- cycle;
+  % line of intersection
+  \draw[black, very thick] (0.3,2.4,1.9) -- (3.7,2.4,1.9);
+  % both normals leave the SAME point of the crease, marked with a dot
+  \fill[black] (1.6,2.4,1.9) circle (1.8pt);
+  \draw[-stealth, msky!60!black, very thick] (1.6,2.4,1.9) -- (1.6,2.4,3.3);
+  \draw[-stealth, mpink!85!black, very thick] (1.6,2.4,1.9) -- (1.6,3.547,2.703);
+  % right angles with the line of intersection: equal legs of 0.5, one mark on
+  % each side of the common point so that neither hides the other
+  \draw[msky!60!black, semithick] (2.1,2.4,1.9) -- (2.1,2.4,2.4) -- (1.6,2.4,2.4);
+  \draw[mpink!85!black, semithick] (1.1,2.4,1.9) -- (1.1,2.810,2.187) -- (1.6,2.810,2.187);
+  % direction vector v along the crease
+  \draw[-stealth, black, very thick] (1.6,2.4,1.9) -- (3.1,2.4,1.9);
+  % legend; the font is set so that it prints at body-text size once the
+  % picture is scaled to the width given in the <image> element
+  \node[anchor=north east, draw=gray!60, rounded corners=1.5pt, fill=white,
+        fill opacity=0.92, text opacity=1, inner sep=2.5pt,
+        font=\fontsize{6}{7}\selectfont]
+    at (current bounding box.north east) {%
+    \begin{tabular}{@{}c@{\;}l@{}}
+      \tikz[x=1cm,y=1cm,baseline=-0.5ex]{\draw[-stealth, msky!60!black, very thick] (0,0) -- (0.36,0);}
+        & $\overrightarrow{n}_1$ \\[1.5pt]
+      \tikz[x=1cm,y=1cm,baseline=-0.5ex]{\draw[-stealth, mpink!85!black, very thick] (0,0) -- (0.36,0);}
+        & $\overrightarrow{n}_2$ \\[1.5pt]
+      \tikz[x=1cm,y=1cm,baseline=-0.5ex]{\draw[-stealth, black, very thick] (0,0) -- (0.36,0);}
+        & $\mathbf v = \overrightarrow{n}_1 \times \overrightarrow{n}_2$
+    \end{tabular}};
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
+
+<example xml:id="ex-skel-planes-intersection">
+<title>The line of intersection of two planes</title>
+<statement>
+<p>
+Find the parametric equations of the line of intersection of the two
+planes <m>3x - 6y - 2z = 15</m> and <m>2x + y - 2z = 5</m>.
+</p>
+
+<p>
+<em>Solution.</em>
+(Read the two normal vectors off the standard forms and apply
+<xref ref="eq-skel-planes-intersection-dir"/> for the direction. For a point,
+you are free to fix one coordinate: set <m>z = 0</m> and solve the resulting
+pair of equations in <m>x</m> and <m>y</m>. Then assemble the answer with
+<xref ref="eq-skel-lines-parametric"/>, and check it by substituting your
+point back into both plane equations.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,15);
+\draw[gray!35] (0,12) -- (15,12);
+\draw[gray!35] (0,7) -- (15,7);
+\draw[gray!35] (0,3.5) -- (15,3.5);
+\node[anchor=north west, font=\small\itshape] at (0.35,14.7) {$\overrightarrow{n}_1 =$};
+\node[anchor=north west, font=\small\itshape] at (7.50,14.7) {$\overrightarrow{n}_2 =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,11.7) {$\mathbf v =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,6.7) {A common point $P_0 =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.2) {Parametric equations:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in four rows, for the two normal vectors, for their cross product, for a point common to both planes, and for the parametric equations of the line of intersection.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+</example>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="subsec-skel-planes-distance">
+<title>Distance of a Point from a Plane</title>
+
+<p>
+Our goal here is to find the distance <m>d</m> of the point <m>S</m>
+from a plane, given a point <m>P</m> on the plane and the normal vector
+<m>\overrightarrow{n}</m>, as shown in
+<xref ref="fig-skel-planes-distance"/>. Derive a formula for it. (The
+segment from <m>S</m> to the plane is perpendicular to the plane, so it is
+parallel to <m>\overrightarrow n</m>; that makes <m>d</m> the length of the
+projection of <m>\overrightarrow{PS}</m> onto <m>\overrightarrow n</m>. Take the
+length of <xref ref="eq-skel-proj"/> and simplify, remembering that the
+scalar out front may be negative.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,9);
+\draw[gray!35] (0,4.5) -- (15,4.5);
+\node[anchor=north west, font=\small\itshape] at (0.35,8.7) {$d = \left\|\operatorname{proj}_{\overrightarrow{n}}\overrightarrow{PS}\right\| =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,4.2) {Simplified, $d =$};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in two rows, one for the length of the projection written out and one for the simplified distance formula.</shortdescription>
+</image>
+</sidebyside>
+
+<assemblage xml:id="skel-summary-plane-distance">
+<title>Distance from a point to a plane</title>
+<p>
+<md xml:id="eq-skel-planes-distance" number="yes">
+d = \frac{\left|\overrightarrow{PS}\cdot\overrightarrow{n}\right|}{\|\overrightarrow{n}\|}
+</md>
+</p>
+</assemblage>
+
+<figure xml:id="fig-skel-planes-distance">
+<caption>
+The distance of the point <m>S</m> from the plane is the magnitude of
+the projection of <m>\overrightarrow{PS}</m> onto the normal vector
+<m>\overrightarrow{n}</m>. The corner mark records that the dashed
+segment meets the plane at a right angle, so it is parallel to
+<m>\overrightarrow{n}</m>.
+</caption>
+<image width="66%">
+<description>
+<p>
+A parallelogram represents a plane seen in perspective. From a point P
+on the plane, a blue normal vector n points straight up and a green
+vector points up and to the right to a point S above the plane. A
+dashed dark red segment drops vertically from S to the plane; its
+length d is the distance from S to the plane, which equals the
+magnitude of the projection of P S onto n. A small square corner mark
+where the dashed segment meets the plane shows that the segment is
+perpendicular to the plane.
+</p>
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[x={(-0.50cm,-0.36cm)}, y={(1cm,0cm)}, z={(0cm,1cm)}, scale=1.0]
+  % the plane
+  \fill[msky, opacity=0.20] (-1.4,-1.8,0) -- (2.8,-1.8,0) -- (2.8,3.2,0) -- (-1.4,3.2,0) -- cycle;
+  \draw[msky!70!black] (-1.4,-1.8,0) -- (2.8,-1.8,0) -- (2.8,3.2,0) -- (-1.4,3.2,0) -- cycle;
+  % points
+  \fill (0.4,-0.4,0) circle (2pt) node[below left=1pt] {$P$};
+  \fill (1.4,1.8,2.4) circle (2pt) node[above=2pt] {$S$};
+  \fill (1.4,1.8,0) circle (1.6pt);
+  % normal vector at P
+  \draw[-stealth, mblue, very thick] (0.4,-0.4,0) -- (0.4,-0.4,1.9)
+        node[above] {$\overrightarrow{n}$};
+  % PS vector
+  \draw[-stealth, mgreen, very thick] (0.4,-0.4,0) -- (1.4,1.8,2.4);
+  % vertical distance
+  \draw[mred, dashed, thick] (1.4,1.8,2.4) -- (1.4,1.8,0);
+  % right angle: the dashed segment meets the plane perpendicularly
+  \draw[mred, semithick] (1.4,1.8,0) -- (1.4,2.25,0) -- (1.4,2.25,0.45) -- (1.4,1.8,0.45);
+  \node[mred, right=2pt] at (1.4,1.9,1.95)
+        {$d = \left\|\operatorname{proj}_{\overrightarrow{n}}\overrightarrow{PS}\right\|$};
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
+
+<example xml:id="ex-skel-planes-distance">
+<title>Distance from a point to a plane</title>
+<statement>
+<p>
+Find the distance from the point <m>S(2,3,0)</m> to the plane with
+equation <m>5x + y + z = -1</m>.
+</p>
+
+<p>
+<em>Solution.</em>
+(The normal vector can be read straight off the equation, since it is already
+in the standard form <xref ref="eq-skel-planes-standard"/>. For the point
+<m>P</m>, set two of the coordinates to zero and solve for the third. Then
+apply <xref ref="eq-skel-planes-distance"/>; the answer is not a whole
+number.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,11);
+\draw[gray!35] (0,7.5) -- (15,7.5);
+\draw[gray!35] (0,4) -- (15,4);
+\node[anchor=north west, font=\small\itshape] at (0.35,10.7) {$\overrightarrow{n} =$};
+\node[anchor=north west, font=\small\itshape] at (7.50,10.7) {$P =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,7.2) {$\overrightarrow{PS} =$};
+\node[anchor=north west, font=\small\itshape] at (7.50,7.2) {$\overrightarrow{PS}\cdot\overrightarrow{n} =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.7) {$d =$};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in three rows, for the normal vector and a point on the plane, for the vector P S and its dot product with the normal, and for the distance.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+</example>
+
+</subsection>
+
+</section>

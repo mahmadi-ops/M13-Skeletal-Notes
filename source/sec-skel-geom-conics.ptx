@@ -1,0 +1,1397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Skeletal (fill-in) version of 3.7 Conic Sections.
+
+  Definitions, theorems, summaries, and problem statements are kept;
+  derivations and solutions are replaced by blank workspace boxes, each
+  with a one-line statement of what has to be done.  Content mirrors
+  Conics.ptx of the full lecture notes; every xml:id here is prefixed
+  with "skel-" so the two can coexist.
+
+  Figures: the defining pictures of the three conics, the central box of
+  the hyperbola, the reflector, the whispering gallery, the LORAN
+  geometry and the St Paul's aquatint all set a problem up rather than
+  answering one, so they are reproduced in full, as in the lecture notes,
+  together with the cone-slicing interactive and every animation.  The
+  six plots that answer a worked example are replaced by empty grids to
+  sketch on.
+-->
+<section xml:id="sec-skel-geom-conics" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Conic Sections</title>
+
+  <objectives>
+  <introduction>
+  <p>
+  After completing this section, you should be able to:
+  </p>
+  </introduction>
+
+  <ul>
+  <li>
+  <p>
+  Understand the parabola, ellipse, and hyperbola as curves defined by
+  distance conditions relative to foci and a directrix, rather than merely as
+  graphs of particular equations.
+  </p>
+  </li>
+  <li>
+  <p>
+  Recognize how a single geometric idea<mdash/>a locus of points satisfying a
+  distance condition<mdash/>unifies the three conic sections.
+  </p>
+  </li>
+  <li>
+  <p>
+  Interpret the roles of the focus, directrix, vertices, and axes in
+  determining the shape and orientation of each conic.
+  </p>
+  </li>
+  <li>
+  <p>
+  Understand the reflection properties of the conics and why they explain
+  applications such as parabolic reflectors and whispering galleries.
+  </p>
+  </li>
+  <li>
+  <p>
+  Appreciate how the defining property of the hyperbola underlies
+  position-finding methods such as hyperbolic navigation.
+  </p>
+  </li>
+  </ul>
+  </objectives>
+
+  <introduction>
+    <p>
+      <term>Conic sections</term> are the curves obtained by intersecting a double
+      cone with a plane. There are three types: <term>parabolas</term>,
+      <term>ellipses</term>, and <term>hyperbolas</term>. In this section we give the
+      focus<ndash/>directrix and focal definitions of each, read the key features off the
+      standard equations, and work examples that change the orientation.
+    </p>
+
+    <interactive xml:id="interactive-skel-conic-slicer-manim" iframe="conic-slicer-manim.html" width="100%" aspect="1:1">
+      <instructions>
+        <p>
+        Press <q>Play</q> to watch the plane
+        <m>z = m\,y + 1</m> swing from horizontal to steep in one continuous motion:
+        the circle stretches to an ellipse, opens into a parabola at the instant the
+        plane becomes parallel to the gold ruling on the cone (<m>m = 1</m>), and then
+        breaks into the two branches of a hyperbola once the plane is steep enough to
+        reach the lower nappe. The reading at the lower left compares the tilt of the
+        plane with the <m>45^\circ</m> slant of the cone, which is what decides the
+        three cases. Stop the animation at any time and drag the tilt slider yourself.
+        Drag the figure to change the viewpoint, or press <q>Spin</q> to let it
+        turn.</p>
+      </instructions>
+    </interactive>
+
+    <p>
+      As you watch, record what decides which of the three curves you get.
+    </p>
+
+    <sidebyside width="97%">
+    <image>
+    <latex-image>
+    \begin{tikzpicture}
+    \draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,5.4);
+    \draw[gray!35] (0,3.6) -- (15,3.6);
+    \draw[gray!35] (0,1.8) -- (15,1.8);
+    \node[anchor=north west, font=\small\itshape] at (0.25,5.15) {Ellipse when the tilt is:};
+    \node[anchor=north west, font=\small\itshape] at (0.25,3.35) {Parabola when the tilt is:};
+    \node[anchor=north west, font=\small\itshape] at (0.25,1.55) {Hyperbola when the tilt is:};
+    \end{tikzpicture}
+    </latex-image>
+    <shortdescription>Blank box with three rows, one for the tilt of the cutting plane that produces each of the three conic sections.</shortdescription>
+    </image>
+    </sidebyside>
+  </introduction>
+
+  <!-- ===================== PARABOLA ===================== -->
+  <subsection xml:id="subsec-skel-parabola">
+    <title>Parabola</title>
+    <definition xml:id="def-skel-parabola">
+      <statement>
+        <p>
+          A <term>parabola</term> is the set of points in a plane that are equidistant from a
+          fixed point <m>F</m> (the <term>focus</term>) and a fixed line (the
+          <term>directrix</term>).
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      The standard equation follows from that definition and nothing else. Choose
+      coordinates that make the picture symmetric: put the focus at <m>F(0,p)</m> and the
+      directrix at <m>y = -p</m>, as in <xref ref="fig-skel-parabola-def"/>. Derive the
+      standard form. (Write the equidistance condition for a point <m>P(x,y)</m>: the
+      distance to <m>F</m> comes from <xref ref="eq-skel-3d-distance"/>, and the distance
+      to the directrix is measured straight down to the foot <m>(x,-p)</m>. Both sides are
+      non-negative, so squaring costs nothing; two pairs of terms then cancel.)
+    </p>
+
+    <sidebyside width="97%">
+    <image>
+    <latex-image>
+    \begin{tikzpicture}
+    \draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,12);
+    \draw[gray!35] (0,8) -- (15,8);
+    \draw[gray!35] (0,3.5) -- (15,3.5);
+    \node[anchor=north west, font=\small\itshape] at (0.35,11.7) {The equidistance condition:};
+    \node[anchor=north west, font=\small\itshape] at (0.35,7.7) {After squaring:};
+    \node[anchor=north west, font=\small\itshape] at (0.35,3.2) {Standard form:};
+    \end{tikzpicture}
+    </latex-image>
+    <shortdescription>Blank box in three rows, for the equidistance condition, for the equation after squaring, and for the standard form of the parabola.</shortdescription>
+    </image>
+    </sidebyside>
+
+    <assemblage xml:id="skel-summary-parabola">
+      <title>The Standard Parabola</title>
+      <p>
+        <md xml:id="eq-skel-parabola-standard" number="yes">x^2 = 4py.</md>
+        The vertex is at the origin, the focus at <m>(0,p)</m>, and the directrix is the
+        line <m>y = -p</m>; the vertex sits halfway between them. If <m>p \lt 0</m> the
+        curve opens downward, and interchanging the roles of <m>x</m> and <m>y</m> gives
+        the sideways parabola
+        <md xml:id="eq-skel-parabola-sideways" number="yes">y^2 = 4px.</md>
+      </p>
+    </assemblage>
+
+    <figure xml:id="fig-skel-parabola-def">
+      <caption>The parabola <m>x^2 = 4py</m>. The point <m>P</m> is equidistant from the
+      focus <m>(0,p)</m> and the directrix <m>y=-p</m>.</caption>
+      <image width="65%">
+        <prefigure xmlns="https://prefigure.org" label="skel-parabola-def">
+          <diagram dimensions="(400,246)" margins="8">
+            <definition>pval = 0.6</definition>
+            <definition>f(x) = x^2/(4*pval)</definition>
+            <definition>xP = 1.9</definition>
+            <coordinates bbox="(-2.6, -1.15, 2.6, 2.05)">
+              <axes xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+              <graph at="parabola" function="f" domain="(-2.25, 2.25)" stroke="blue" thickness="2.5"/>
+              <line at="axis-sym" p1="(0,-pval)" p2="(0,1.95)" dash="3 3" stroke="gray" thickness="1"/>
+              <line at="directrix" p1="(-2.45,-pval)" p2="(2.45,-pval)" stroke="red" thickness="2" dash="5 4"/>
+              <label at="dir-label" anchor="(-2.45,-pval)" alignment="ne" offset="(2,4)"><m>\text{directrix: } y=-p</m></label>
+              <point at="focus" p="(0,pval)" fill="black" size="3.5"/>
+              <label at="focus-label" anchor="(0,pval)" alignment="w" offset="(-8,4)"><m>\text{Focus }(0,p)</m></label>
+              <point at="vertex" p="(0,0)" fill="orange" size="3.5"/>
+              <label at="vertex-label" anchor="(0,0)" alignment="se" offset="(6,-2)"><m>\text{vertex}</m></label>
+              <group at="equidistant">
+                <point p="(xP,f(xP))" fill="blue" size="3"/>
+                <label anchor="(xP,f(xP))" alignment="ne" offset="(4,2)"><m>P</m></label>
+                <line p1="(xP,f(xP))" p2="(0,pval)" stroke="green" thickness="2"/>
+                <line p1="(xP,f(xP))" p2="(xP,-pval)" stroke="green" thickness="2"/>
+                <point p="(xP,-pval)" fill="red" size="2.5"/>
+              </group>
+              <label at="eqlabel" anchor="(-1.15,1.5)" alignment="center"><m>x^2 = 4py</m></label>
+            </coordinates>
+            <annotations>
+              <annotation ref="parabola"
+                  text="A parabola opening upward with vertex at the origin, illustrating the defining property that every point is equidistant from a fixed focus and a fixed directrix">
+                <annotation ref="parabola"
+                    text="The parabola x squared equals four p y, shown as a blue upward curve" sonify="yes"/>
+                <annotation ref="focus"
+                    text="The focus, the fixed point at zero comma p on the axis of symmetry"/>
+                <annotation ref="directrix"
+                    text="The directrix, the fixed horizontal line y equals minus p, drawn dashed in red"/>
+                <annotation ref="vertex"
+                    text="The vertex at the origin, the point of the parabola halfway between the focus and the directrix"/>
+                <annotation ref="equidistant"
+                    text="A point P on the parabola with two equal green segments, one to the focus and one dropped perpendicular to the directrix, showing the two distances are equal"/>
+              </annotation>
+            </annotations>
+          </diagram>
+        </prefigure>
+      </image>
+    </figure>
+
+    <figure xml:id="vid-skel-parabola-focus">
+      <caption>Animation: as <m>P</m> moves along the parabola, its distance to the focus
+      always equals its distance to the directrix.</caption>
+      <video xml:id="video-skel-parabola-focus"
+             source="videos/parabola_focus_directrix_1080p.mp4"
+             width="90%" aspect="16:9"/>
+    </figure>
+
+    <example xml:id="ex-skel-parabola-1">
+      <title>From equation to focus and directrix</title>
+      <statement>
+        <p>Find the focus and the directrix of <m>y = -\frac{1}{2}x^2 + x - \frac{1}{2}</m>.</p>
+
+        <p>
+          <em>Solution.</em>
+          (Complete the square in <m>x</m> and rearrange until the equation looks like
+          <xref ref="eq-skel-parabola-standard"/> with <m>x</m> replaced by a shifted
+          variable; that shift locates the vertex. Comparing coefficients then gives
+          <m>p</m>, whose sign tells you which way the curve opens. Sketch the result on
+          the grid, marking the vertex, the focus, and the directrix.)
+        </p>
+
+        <sidebyside widths="52% 44%">
+        <image>
+        <latex-image>
+        \begin{tikzpicture}
+        \draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (8,11);
+        \draw[gray!35] (0,6) -- (8,6);
+        \draw[gray!35] (0,3) -- (8,3);
+        \node[anchor=north west, font=\small\itshape] at (0.3,10.7) {Completing the square:};
+        \node[anchor=north west, font=\small\itshape] at (0.3,5.7) {$4p =$ \qquad so $p =$ \qquad vertex:};
+        \node[anchor=north west, font=\small\itshape] at (0.3,2.7) {Focus: \qquad\qquad Directrix:};
+        \end{tikzpicture}
+        </latex-image>
+        <shortdescription>Blank box in three rows, for completing the square, for the value of p and the vertex, and for the focus and directrix.</shortdescription>
+        </image>
+        <image>
+        <latex-image><![CDATA[
+        \begin{tikzpicture}[scale=1.9, >=stealth]
+        \draw[gray!30, very thin] (-0.4,-1.2) grid[step=0.25] (2.4,0.9);
+        \draw[->, thick] (-0.4,0) -- (2.5,0) node[right] {$x$};
+        \draw[->, thick] (0,-1.2) -- (0,1.0) node[above] {$y$};
+        \foreach \x in {1,2} \draw (\x,-0.04) -- (\x,0.04) node[below=3pt, font=\tiny] {$\x$};
+        \draw (-0.04,0.5) -- (0.04,0.5) node[left=3pt, font=\tiny] {$\tfrac12$};
+        \draw (-0.04,-0.5) -- (0.04,-0.5) node[left=3pt, font=\tiny] {$-\tfrac12$};
+        \draw (-0.04,-1) -- (0.04,-1) node[left=3pt, font=\tiny] {$-1$};
+        \end{tikzpicture}
+        ]]></latex-image>
+        <shortdescription>Empty coordinate grid running from negative one half to two and a half horizontally and negative one and a quarter to one vertically, for sketching the parabola of the example with its focus and directrix.</shortdescription>
+        </image>
+        </sidebyside>
+      </statement>
+    </example>
+
+    <example xml:id="ex-skel-parabola-2">
+      <title>From focus and directrix to equation (a sideways parabola)</title>
+      <statement>
+        <p>
+          Find the equation of the parabola whose focus is <m>(2,0)</m> and whose directrix
+          is the vertical line <m>x = -2</m>. In which direction does it open?
+        </p>
+
+        <p>
+          <em>Solution.</em>
+          (Run <xref ref="def-skel-parabola"/> in reverse, exactly as in the derivation
+          above, but with a <em>vertical</em> directrix, so the distance to it is measured
+          horizontally. Square, expand, and cancel. Decide the direction of opening from
+          the positions of the focus and the directrix, then check <m>p</m> against
+          <xref ref="eq-skel-parabola-sideways"/>.)
+        </p>
+
+        <sidebyside widths="52% 44%">
+        <image>
+        <latex-image>
+        \begin{tikzpicture}
+        \draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (8,11);
+        \draw[gray!35] (0,4) -- (8,4);
+        \node[anchor=north west, font=\small\itshape] at (0.3,10.7) {The equidistance condition, squared and expanded:};
+        \node[anchor=north west, font=\small\itshape] at (0.3,3.7) {Equation: \qquad Opens: \qquad $p =$};
+        \end{tikzpicture}
+        </latex-image>
+        <shortdescription>Blank box in two rows, one for the equidistance condition squared and expanded and one for the equation, the direction of opening, and the value of p.</shortdescription>
+        </image>
+        <image>
+        <latex-image><![CDATA[
+        \begin{tikzpicture}[scale=0.42, >=stealth]
+        \draw[gray!30, very thin] (-3,-5) grid (5.5,5);
+        \draw[->, thick] (-3,0) -- (5.9,0) node[right] {$x$};
+        \draw[->, thick] (0,-5) -- (0,5.4) node[above] {$y$};
+        \foreach \x in {-2,2,4} \draw (\x,-0.12) -- (\x,0.12) node[below=4pt, font=\scriptsize] {$\x$};
+        \foreach \y in {-4,-2,2,4} \draw (-0.12,\y) -- (0.12,\y) node[left=4pt, font=\scriptsize] {$\y$};
+        \end{tikzpicture}
+        ]]></latex-image>
+        <shortdescription>Empty coordinate grid running from negative three to five and a half horizontally and negative five to five vertically, for sketching the sideways parabola with its focus and vertical directrix.</shortdescription>
+        </image>
+        </sidebyside>
+      </statement>
+    </example>
+  </subsection>
+
+  <!-- ===================== ELLIPSE ===================== -->
+  <subsection xml:id="subsec-skel-ellipse">
+    <title>Ellipse</title>
+    <definition xml:id="def-skel-ellipse">
+      <statement>
+        <p>
+          An <term>ellipse</term> is the set of points in a plane the sum of whose distances
+          from two fixed points <m>F_1</m> and <m>F_2</m> (the <term>foci</term>) is constant.
+        </p>
+      </statement>
+    </definition>
+
+    <assemblage xml:id="skel-summary-ellipse">
+      <title>The Standard Ellipse</title>
+      <p>
+        An ellipse centred at the origin with its foci on the <m>x</m>-axis has the
+        standard form
+        <md xml:id="eq-skel-ellipse-standard" number="yes">
+        \frac{x^2}{a^2} + \frac{y^2}{b^2} = 1, \qquad a \gt b.
+        </md>
+        The segment joining <m>(a,0)</m> and <m>(-a,0)</m> is the
+        <term>semi-major axis</term>, the segment joining <m>(0,b)</m> and <m>(0,-b)</m>
+        is the <term>semi-minor axis</term>, and the foci satisfy
+        <m>c^2 = a^2 - b^2 \gt 0</m>.
+      </p>
+    </assemblage>
+
+    <figure xml:id="fig-skel-ellipse-def">
+      <caption>An ellipse with foci <m>F_1(c,0)</m> and <m>F_2(-c,0)</m>. Each slanted
+      segment from <m>(0,b)</m> to a focus has length <m>a</m>.</caption>
+      <image width="65%">
+        <prefigure xmlns="https://prefigure.org" label="skel-ellipse-def">
+          <diagram dimensions="(420,307)" margins="8">
+            <definition>aa = 3.2</definition>
+            <definition>bb = 2.2</definition>
+            <definition>cc = sqrt(aa^2 - bb^2)</definition>
+            <definition>E(x,y) = x^2/aa^2 + y^2/bb^2</definition>
+            <coordinates bbox="(-4.1, -3.0, 4.1, 3.0)">
+              <axes xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+              <implicit-curve at="ellipse" function="E" k="1" stroke="blue" thickness="2.5"/>
+              <group at="focal-radii">
+                <line p1="(0,bb)" p2="(cc,0)" stroke="green" thickness="2"/>
+                <line p1="(0,bb)" p2="(-cc,0)" stroke="orange" thickness="2"/>
+              </group>
+              <label anchor="(cc/2,bb/2)" alignment="ne" offset="(4,2)"><m>a</m></label>
+              <label anchor="(-cc/2,bb/2)" alignment="nw" offset="(-4,2)"><m>a</m></label>
+              <group at="foci">
+                <point p="(cc,0)" fill="red" size="3"/>
+                <point p="(-cc,0)" fill="red" size="3"/>
+              </group>
+              <label anchor="(cc,0)" alignment="s" offset="(0,-6)"><m>F_1(c,0)</m></label>
+              <label anchor="(-cc,0)" alignment="s" offset="(0,-6)"><m>F_2(-c,0)</m></label>
+              <point at="cov-top" p="(0,bb)" fill="green" size="3"/>
+              <label anchor="(0,bb)" alignment="ne" offset="(4,2)"><m>(0,b)</m></label>
+              <label anchor="(0,-bb)" alignment="se" offset="(4,-2)"><m>(0,-b)</m></label>
+              <label at="vx-r" anchor="(aa,0)" alignment="n" offset="(-34,6)"><m>(a,0)</m></label>
+              <label at="vx-l" anchor="(-aa,0)" alignment="n" offset="(34,6)"><m>(-a,0)</m></label>
+              <label at="eqlabel" anchor="(-2.7,2.2)" alignment="center"><m>\frac{x^2}{a^2}+\frac{y^2}{b^2}=1</m></label>
+            </coordinates>
+            <annotations>
+              <annotation ref="ellipse"
+                  text="A horizontal ellipse illustrating the definition of an ellipse as the set of points whose distances to two foci have a constant sum">
+                <annotation ref="ellipse"
+                    text="The ellipse x squared over a squared plus y squared over b squared equals one, a blue oval wider than it is tall" sonify="yes"/>
+                <annotation ref="foci"
+                    text="The two foci F one at c comma zero and F two at minus c comma zero, both on the x axis inside the ellipse"/>
+                <annotation ref="focal-radii"
+                    text="Two segments drawn from the top co-vertex zero comma b to each focus; each has length a, showing that their sum equals two a"/>
+                <annotation ref="cov-top"
+                    text="The top co-vertex at zero comma b, the end of the semi-minor axis"/>
+              </annotation>
+            </annotations>
+          </diagram>
+        </prefigure>
+      </image>
+    </figure>
+
+    <figure xml:id="vid-skel-ellipse-sum">
+      <caption>Animation: as <m>P</m> travels around the ellipse, the sum <m>r_1 + r_2</m>
+      of its distances to the two foci stays fixed at <m>2a = 6</m>.</caption>
+      <video xml:id="video-skel-ellipse-sum"
+             source="videos/ellipse_constant_sum_1080p.mp4"
+             width="90%" aspect="16:9"/>
+    </figure>
+
+    <p>
+      Where do the formulas for <m>a</m> come from? Two evaluations of
+      <xref ref="def-skel-ellipse"/> do all the work. Carry them out. (First put <m>P</m>
+      at the vertex <m>(a,0)</m> and write down the two focal radii in terms of <m>a</m>
+      and <m>c</m>; their sum identifies the constant in the definition. Then put <m>P</m>
+      at the co-vertex <m>(0,b)</m>, where symmetry forces the two radii to be equal, and
+      apply the Pythagorean theorem to the right triangle in
+      <xref ref="fig-skel-ellipse-def"/>. Say which of <m>a</m>, <m>b</m>, <m>c</m> is the
+      hypotenuse, and use that to explain the minus sign.)
+    </p>
+
+    <sidebyside width="97%">
+    <image>
+    <latex-image>
+    \begin{tikzpicture}
+    \draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,12);
+    \draw[gray!35] (0,8) -- (15,8);
+    \draw[gray!35] (0,3.5) -- (15,3.5);
+    \node[anchor=north west, font=\small\itshape] at (0.35,11.7) {At the vertex: $r_1 + r_2 =$};
+    \node[anchor=north west, font=\small\itshape] at (0.35,7.7) {At the co-vertex:};
+    \node[anchor=north west, font=\small\itshape] at (0.35,3.2) {Which is the hypotenuse, and why the minus sign:};
+    \end{tikzpicture}
+    </latex-image>
+    <shortdescription>Blank box in three rows, for the sum of the focal radii at the vertex, for the right triangle at the co-vertex, and for the reason the relation between a, b, and c carries a minus sign.</shortdescription>
+    </image>
+    </sidebyside>
+
+    <assemblage xml:id="skel-summary-ellipse-focal">
+      <title>Focal Relation for the Ellipse</title>
+      <p>
+        <md xml:id="eq-skel-ellipse-focal" number="yes">a^2 = b^2 + c^2 \qquad\Longleftrightarrow\qquad c^2 = a^2 - b^2.</md>
+      </p>
+    </assemblage>
+
+    <figure xml:id="vid-skel-ellipse-formula-a">
+      <caption>Animation: deriving the formula for <m>a</m>. Sliding <m>P</m> to the vertex
+      shows the constant equals <m>2a</m>; sliding it to the co-vertex builds the right
+      triangle giving <m>a^2 = b^2 + c^2</m>.</caption>
+      <video xml:id="video-skel-ellipse-formula-a"
+             source="videos/ellipse_formula_a_1080p.mp4"
+             width="90%" aspect="16:9"/>
+    </figure>
+
+    <example xml:id="ex-skel-ellipse-1">
+      <title>Horizontal ellipse</title>
+      <statement>
+        <p>Sketch the graph of <m>4x^2 + 9y^2 = 36</m> and locate the foci.</p>
+
+        <p>
+          <em>Solution.</em>
+          (Divide through to reach the standard form
+          <xref ref="eq-skel-ellipse-standard"/>, where the right-hand side must be
+          <m>1</m>. The <em>larger</em> denominator sits under the variable along the major
+          axis, which tells you which axis carries the foci; then use
+          <xref ref="eq-skel-ellipse-focal"/>. Sketch the ellipse on the grid and mark both
+          foci.)
+        </p>
+
+        <sidebyside widths="52% 44%">
+        <image>
+        <latex-image>
+        \begin{tikzpicture}
+        \draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (8,10);
+        \draw[gray!35] (0,6.5) -- (8,6.5);
+        \draw[gray!35] (0,3) -- (8,3);
+        \node[anchor=north west, font=\small\itshape] at (0.3,9.7) {Standard form:};
+        \node[anchor=north west, font=\small\itshape] at (0.3,6.2) {$a =$ \qquad $b =$ \qquad major axis:};
+        \node[anchor=north west, font=\small\itshape] at (0.3,2.7) {$c =$ \qquad foci:};
+        \end{tikzpicture}
+        </latex-image>
+        <shortdescription>Blank box in three rows, for the standard form of the ellipse, for the semi-axes and the direction of the major axis, and for c and the foci.</shortdescription>
+        </image>
+        <image>
+        <latex-image><![CDATA[
+        \begin{tikzpicture}[scale=0.62, >=stealth]
+        \draw[gray!30, very thin] (-3.5,-2.5) grid (3.5,2.5);
+        \draw[->, thick] (-3.5,0) -- (3.9,0) node[right] {$x$};
+        \draw[->, thick] (0,-2.5) -- (0,2.9) node[above] {$y$};
+        \foreach \x in {-3,-2,-1,1,2,3} \draw (\x,-0.1) -- (\x,0.1) node[below=4pt, font=\scriptsize] {$\x$};
+        \foreach \y in {-2,-1,1,2} \draw (-0.1,\y) -- (0.1,\y) node[left=4pt, font=\scriptsize] {$\y$};
+        \end{tikzpicture}
+        ]]></latex-image>
+        <shortdescription>Empty coordinate grid running from negative three and a half to three and a half horizontally and negative two and a half to two and a half vertically, for sketching the horizontal ellipse and its foci.</shortdescription>
+        </image>
+        </sidebyside>
+      </statement>
+    </example>
+
+      <figure xml:id="vid-skel-ellipse-find-a">
+        <caption>Animation: in practice, put the equation in standard form and read <m>a^2</m>
+        off the <em>larger</em> denominator; then <m>a</m> is the semi-major axis, measured
+        from the center to a vertex.</caption>
+        <video xml:id="video-skel-ellipse-find-a"
+               source="videos/ellipse_find_a_1080p.mp4"
+               width="90%" aspect="16:9"/>
+      </figure>
+
+    <example xml:id="ex-skel-ellipse-2">
+      <title>A vertical ellipse (foci on the <m>y</m>-axis)</title>
+      <statement>
+        <p>Sketch the graph of <m>25x^2 + 16y^2 = 400</m> and locate the foci.</p>
+
+        <p>
+          <em>Solution.</em>
+          (Same routine as the previous example, with one twist: this time the larger
+          denominator lands under the other variable. Decide from that which axis is the
+          major one <em>before</em> naming <m>a</m> and <m>b</m>, since
+          <xref ref="eq-skel-ellipse-focal"/> requires <m>a \gt b</m>. State where the foci
+          lie and sketch the result.)
+        </p>
+
+        <sidebyside widths="52% 44%">
+        <image>
+        <latex-image>
+        \begin{tikzpicture}
+        \draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (8,10);
+        \draw[gray!35] (0,6.5) -- (8,6.5);
+        \draw[gray!35] (0,3) -- (8,3);
+        \node[anchor=north west, font=\small\itshape] at (0.3,9.7) {Standard form:};
+        \node[anchor=north west, font=\small\itshape] at (0.3,6.2) {$a =$ \qquad $b =$ \qquad major axis:};
+        \node[anchor=north west, font=\small\itshape] at (0.3,2.7) {$c =$ \qquad foci:};
+        \end{tikzpicture}
+        </latex-image>
+        <shortdescription>Blank box in three rows, for the standard form, for the semi-axes and the direction of the major axis, and for c and the foci.</shortdescription>
+        </image>
+        <image>
+        <latex-image><![CDATA[
+        \begin{tikzpicture}[scale=0.5, >=stealth]
+        \draw[gray!30, very thin] (-5,-6) grid (5,6);
+        \draw[->, thick] (-5,0) -- (5.4,0) node[right] {$x$};
+        \draw[->, thick] (0,-6) -- (0,6.4) node[above] {$y$};
+        \foreach \x in {-4,-2,2,4} \draw (\x,-0.12) -- (\x,0.12) node[below=4pt, font=\scriptsize] {$\x$};
+        \foreach \y in {-5,-3,3,5} \draw (-0.12,\y) -- (0.12,\y) node[left=4pt, font=\scriptsize] {$\y$};
+        \end{tikzpicture}
+        ]]></latex-image>
+        <shortdescription>Empty coordinate grid running from negative five to five horizontally and negative six to six vertically, for sketching the vertical ellipse and its foci.</shortdescription>
+        </image>
+        </sidebyside>
+      </statement>
+    </example>
+  </subsection>
+
+  <!-- ===================== HYPERBOLA ===================== -->
+  <subsection xml:id="subsec-skel-hyperbola">
+    <title>Hyperbola</title>
+    <definition xml:id="def-skel-hyperbola">
+      <statement>
+        <p>
+          A <term>hyperbola</term> is the set of points in a plane the <em>difference</em> of
+          whose distances from two fixed points <m>F_1</m> and <m>F_2</m> (the
+          <term>foci</term>) is constant.
+        </p>
+      </statement>
+    </definition>
+
+    <assemblage xml:id="skel-summary-hyperbola">
+      <title>The Standard Hyperbola</title>
+      <p>
+        A hyperbola centred at the origin with its foci on the <m>x</m>-axis has the
+        standard form
+        <md xml:id="eq-skel-hyperbola-standard" number="yes">
+        \frac{x^2}{a^2} - \frac{y^2}{b^2} = 1.
+        </md>
+        Its vertices are <m>(\pm a, 0)</m>, the foci satisfy <m>c^2 = a^2 + b^2</m>, and
+        the asymptotes are <m>y = \pm\dfrac{b}{a}\,x</m>.
+      </p>
+    </assemblage>
+
+    <figure xml:id="fig-skel-hyperbola-def">
+      <caption>A hyperbola opening left and right, with vertices <m>(\pm a,0)</m>, foci
+      <m>(\pm c,0)</m>, and asymptotes <m>y = \pm\frac{b}{a}x</m>.</caption>
+      <image width="65%">
+        <prefigure xmlns="https://prefigure.org" label="skel-hyperbola-def">
+          <diagram dimensions="(420,313)" margins="8">
+            <definition>aa = 2</definition>
+            <definition>bb = 1.6</definition>
+            <definition>cc = sqrt(aa^2 + bb^2)</definition>
+            <definition>H(x,y) = x^2/aa^2 - y^2/bb^2</definition>
+            <coordinates bbox="(-4.3, -3.2, 4.3, 3.2)">
+              <axes xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+              <group at="asymptotes">
+                <line p1="(0,0)" p2="(aa,bb)" stroke="black" thickness="1" dash="5 4" infinite="yes"/>
+                <line p1="(0,0)" p2="(aa,-bb)" stroke="black" thickness="1" dash="5 4" infinite="yes"/>
+              </group>
+              <implicit-curve at="hyperbola" function="H" k="1" stroke="blue" thickness="2.5"/>
+              <label at="asym-label-r" anchor="(3.0,3.0*bb/aa)" alignment="nw" offset="(-2,2)"><m>y=\tfrac{b}{a}x</m></label>
+              <label at="asym-label-l" anchor="(-3.0,3.0*bb/aa)" alignment="ne" offset="(2,2)"><m>y=-\tfrac{b}{a}x</m></label>
+              <group at="foci">
+                <point p="(cc,0)" fill="green" size="3"/>
+                <point p="(-cc,0)" fill="green" size="3"/>
+              </group>
+              <label at="f1-label" anchor="(cc,0)" alignment="s" offset="(14,-6)"><m>F_1(c,0)</m></label>
+              <label at="f2-label" anchor="(-cc,0)" alignment="s" offset="(-14,-6)"><m>F_2(-c,0)</m></label>
+              <group at="vertices">
+                <point p="(aa,0)" fill="red" size="2.5"/>
+                <point p="(-aa,0)" fill="red" size="2.5"/>
+              </group>
+              <label at="v1-label" anchor="(aa,0)" alignment="nw" offset="(-6,6)"><m>V_1</m></label>
+              <label at="v2-label" anchor="(-aa,0)" alignment="ne" offset="(6,6)"><m>V_2</m></label>
+              <label at="eqlabel" anchor="(1.9,-2.7)" alignment="center"><m>\frac{x^2}{a^2}-\frac{y^2}{b^2}=1</m></label>
+            </coordinates>
+            <annotations>
+              <annotation ref="hyperbola"
+                  text="A hyperbola opening left and right, illustrating the definition of a hyperbola as the set of points whose distances to two foci have a constant difference">
+                <annotation ref="hyperbola"
+                    text="The hyperbola x squared over a squared minus y squared over b squared equals one, two blue branches opening left and right" sonify="yes"/>
+                <annotation ref="asymptotes"
+                    text="The two dashed asymptotes through the origin, the lines y equals plus and minus b over a times x, which the branches approach"/>
+                <annotation ref="vertices"
+                    text="The vertices V one at a comma zero and V two at minus a comma zero, where each branch is closest to the center"/>
+                <annotation ref="foci"
+                    text="The foci F one at c comma zero and F two at minus c comma zero, beyond the vertices on the x axis"/>
+              </annotation>
+            </annotations>
+          </diagram>
+        </prefigure>
+      </image>
+    </figure>
+
+    <figure xml:id="vid-skel-hyperbola-diff">
+      <caption>Animation: as <m>P</m> moves along a branch, the absolute difference
+      <m>|r_1 - r_2|</m> of its distances to the foci stays fixed at <m>2a = 8</m>, while
+      the branch hugs its asymptotes.</caption>
+      <video xml:id="video-skel-hyperbola-diff"
+             source="videos/hyperbola_constant_difference_1080p.mp4"
+             width="90%" aspect="16:9"/>
+    </figure>
+
+    <p>
+      The formulas for <m>a</m> arise exactly as they did for the ellipse, with sums
+      replaced by differences. Work them out. (Evaluate
+      <xref ref="def-skel-hyperbola"/> at the vertex <m>(a,0)</m>: the two focal radii are
+      differences of <m>c</m> and <m>a</m>, and subtracting them identifies the constant.
+      For the second relation, use the central box of
+      <xref ref="fig-skel-hyperbola-box"/>, whose corner <m>(a,b)</m> lies at distance
+      <m>c</m> from the centre. Then say which of <m>a</m>, <m>b</m>, <m>c</m> is the
+      hypotenuse this time, and compare with
+      <xref ref="eq-skel-ellipse-focal"/> <mdash/> that single difference is the source of
+      the sign change.)
+    </p>
+
+    <sidebyside width="97%">
+    <image>
+    <latex-image>
+    \begin{tikzpicture}
+    \draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,12);
+    \draw[gray!35] (0,8) -- (15,8);
+    \draw[gray!35] (0,3.5) -- (15,3.5);
+    \node[anchor=north west, font=\small\itshape] at (0.35,11.7) {At the vertex: $|r_1 - r_2| =$};
+    \node[anchor=north west, font=\small\itshape] at (0.35,7.7) {From the central box:};
+    \node[anchor=north west, font=\small\itshape] at (0.35,3.2) {Contrast with the ellipse:};
+    \end{tikzpicture}
+    </latex-image>
+    <shortdescription>Blank box in three rows, for the difference of the focal radii at the vertex, for the right triangle in the central box, and for the contrast with the ellipse.</shortdescription>
+    </image>
+    </sidebyside>
+
+    <assemblage xml:id="skel-summary-hyperbola-focal">
+      <title>Focal Relation for the Hyperbola</title>
+      <p>
+        <md xml:id="eq-skel-hyperbola-focal" number="yes">c^2 = a^2 + b^2 \qquad\Longleftrightarrow\qquad a^2 = c^2 - b^2.</md>
+      </p>
+    </assemblage>
+
+    <figure xml:id="vid-skel-hyperbola-formula-a">
+      <caption>Animation: deriving the formula for <m>a</m>. Sliding <m>P</m> to the vertex
+      shows the constant equals <m>2a</m>; the central box then builds the right triangle
+      giving <m>c^2 = a^2 + b^2</m>.</caption>
+      <video xml:id="video-skel-hyperbola-formula-a"
+             source="videos/hyperbola_formula_a_1080p.mp4"
+             width="90%" aspect="16:9"/>
+    </figure>
+
+    <p>
+      The same box explains the asymptotes. Show where they come from. (Solve
+      <xref ref="eq-skel-hyperbola-standard"/> for <m>y</m>, then factor <m>x</m> out of
+      the square root so that what is left tends to a constant as <m>|x|</m> grows. The
+      limit gives the two lines; the fact that the remaining root is always <em>less</em>
+      than <m>1</m> tells you on which side of them the curve stays. Finally, read the
+      slopes off the diagonals of the central box, and say what they become for a vertical
+      hyperbola <m>\frac{y^2}{a^2} - \frac{x^2}{b^2} = 1</m>.)
+    </p>
+
+    <sidebyside width="97%">
+    <image>
+    <latex-image>
+    \begin{tikzpicture}
+    \draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,14);
+    \draw[gray!35] (0,10) -- (15,10);
+    \draw[gray!35] (0,6.5) -- (15,6.5);
+    \draw[gray!35] (0,3) -- (15,3);
+    \node[anchor=north west, font=\small\itshape] at (0.35,13.7) {Solving for $y$:};
+    \node[anchor=north west, font=\small\itshape] at (0.35,9.7) {The limit as $|x| \to \infty$:};
+    \node[anchor=north west, font=\small\itshape] at (0.35,6.2) {Why the curve never touches its asymptotes:};
+    \node[anchor=north west, font=\small\itshape] at (0.35,2.7) {Slopes for a vertical hyperbola:};
+    \end{tikzpicture}
+    </latex-image>
+    <shortdescription>Blank box in four rows, for solving the standard equation for y, for the limiting lines, for the reason the branches never meet the asymptotes, and for the slopes in the vertical case.</shortdescription>
+    </image>
+    </sidebyside>
+
+    <figure xml:id="fig-skel-hyperbola-box">
+      <caption>The central box has half-width <m>a</m> and half-height <m>b</m>. Its diagonals,
+      extended, are exactly the asymptotes: the diagonal to the corner <m>(a,b)</m> has run
+      <m>a</m> and rise <m>b</m>, hence slope <m>\frac{b}{a}</m>.</caption>
+      <image width="65%">
+        <prefigure xmlns="https://prefigure.org" label="skel-hyperbola-box">
+          <diagram dimensions="(420,313)" margins="8">
+            <definition>aa = 2</definition>
+            <definition>bb = 1.6</definition>
+            <definition>H(x,y) = x^2/aa^2 - y^2/bb^2</definition>
+            <coordinates bbox="(-4.3, -3.2, 4.3, 3.2)">
+              <axes xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+              <rectangle at="box" lower-left="(-aa,-bb)" dimensions="(2*aa, 2*bb)"
+                         fill="none" stroke="gray" thickness="2"/>
+              <group at="asymptotes">
+                <line p1="(0,0)" p2="(aa,bb)" stroke="black" thickness="1" dash="5 4" infinite="yes"/>
+                <line p1="(0,0)" p2="(aa,-bb)" stroke="black" thickness="1" dash="5 4" infinite="yes"/>
+              </group>
+              <group at="diagonals">
+                <line p1="(-aa,-bb)" p2="(aa,bb)" stroke="purple" thickness="2.5"/>
+                <line p1="(-aa,bb)" p2="(aa,-bb)" stroke="purple" thickness="2.5"/>
+              </group>
+              <group at="run-rise">
+                <line p1="(0,0)" p2="(aa,0)" stroke="red" thickness="3"/>
+                <line p1="(aa,0)" p2="(aa,bb)" stroke="green" thickness="3"/>
+              </group>
+              <implicit-curve at="hyperbola" function="H" k="1" stroke="blue" thickness="2.5"/>
+              <group at="vertices">
+                <point p="(aa,0)" fill="red" size="2.5"/>
+                <point p="(-aa,0)" fill="red" size="2.5"/>
+              </group>
+              <point at="corner" p="(aa,bb)" fill="purple" size="3"/>
+              <label at="corner-label" anchor="(aa,bb)" alignment="nw" offset="(-4,4)"><m>(a,b)</m></label>
+              <label at="run-label" anchor="(aa/2,0)" alignment="s" offset="(0,-6)"><m>a</m></label>
+              <label at="rise-label" anchor="(aa,bb/2)" alignment="w" offset="(-6,0)"><m>b</m></label>
+              <label at="asym-label-r" anchor="(3.0,3.0*bb/aa)" alignment="nw" offset="(-2,2)"><m>y=\tfrac{b}{a}x</m></label>
+              <label at="asym-label-l" anchor="(-3.0,3.0*bb/aa)" alignment="ne" offset="(2,2)"><m>y=-\tfrac{b}{a}x</m></label>
+              <label at="box-label" anchor="(-1.05,-2.75)" alignment="center"><m>\text{central box}</m></label>
+            </coordinates>
+            <annotations>
+              <annotation ref="hyperbola"
+                  text="A hyperbola drawn together with its central box, showing that the extended diagonals of the box are the asymptotes">
+                <annotation ref="box"
+                    text="The central box, a rectangle centered at the origin with half-width a and half-height b, so its corners are at plus or minus a comma plus or minus b"/>
+                <annotation ref="diagonals"
+                    text="The two diagonals of the box drawn in purple, from corner to opposite corner through the center"/>
+                <annotation ref="asymptotes"
+                    text="The same two diagonals continued beyond the box as dashed lines, the asymptotes y equals plus and minus b over a times x"/>
+                <annotation ref="run-rise"
+                    text="A red horizontal segment of length a from the center to the vertex, and a green vertical segment of length b from the vertex up to the corner, showing the diagonal has run a and rise b and therefore slope b over a"/>
+                <annotation ref="corner"
+                    text="The corner of the box at a comma b, the point the diagonal passes through"/>
+                <annotation ref="hyperbola"
+                    text="The hyperbola itself, two blue branches opening left and right, each staying inside its asymptotes while drawing closer to them" sonify="yes"/>
+                <annotation ref="vertices"
+                    text="The vertices at plus and minus a comma zero, where each branch meets the box"/>
+              </annotation>
+            </annotations>
+          </diagram>
+        </prefigure>
+      </image>
+    </figure>
+
+    <example xml:id="ex-skel-hyperbola-1">
+      <title>Horizontal hyperbola</title>
+      <statement>
+        <p>Find the foci and asymptotes of the hyperbola <m>9x^2 - 16y^2 = 144</m> and sketch
+        its graph.</p>
+
+        <p>
+          <em>Solution.</em>
+          (Divide to reach <xref ref="eq-skel-hyperbola-standard"/>. The variable with the
+          <em>positive</em> sign decides which way the branches open. Then use
+          <xref ref="eq-skel-hyperbola-focal"/> for <m>c</m>. Sketch the central box first,
+          extend its diagonals for the asymptotes, and hang the branches on the vertices.)
+        </p>
+
+        <sidebyside widths="52% 44%">
+        <image>
+        <latex-image>
+        \begin{tikzpicture}
+        \draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (8,10);
+        \draw[gray!35] (0,6.5) -- (8,6.5);
+        \draw[gray!35] (0,3) -- (8,3);
+        \node[anchor=north west, font=\small\itshape] at (0.3,9.7) {Standard form:};
+        \node[anchor=north west, font=\small\itshape] at (0.3,6.2) {$a =$ \quad $b =$ \quad opens:};
+        \node[anchor=north west, font=\small\itshape] at (0.3,2.7) {$c =$ \quad foci: \quad asymptotes:};
+        \end{tikzpicture}
+        </latex-image>
+        <shortdescription>Blank box in three rows, for the standard form, for a, b and the direction of opening, and for c, the foci and the asymptotes.</shortdescription>
+        </image>
+        <image>
+        <latex-image><![CDATA[
+        \begin{tikzpicture}[scale=0.28, >=stealth]
+        \draw[gray!30, very thin] (-9,-8) grid (9,8);
+        \draw[->, thick] (-9,0) -- (9.6,0) node[right] {$x$};
+        \draw[->, thick] (0,-8) -- (0,8.6) node[above] {$y$};
+        \foreach \x in {-8,-4,4,8} \draw (\x,-0.22) -- (\x,0.22) node[below=4pt, font=\scriptsize] {$\x$};
+        \foreach \y in {-6,-3,3,6} \draw (-0.22,\y) -- (0.22,\y) node[left=4pt, font=\scriptsize] {$\y$};
+        \end{tikzpicture}
+        ]]></latex-image>
+        <shortdescription>Empty coordinate grid running from negative nine to nine horizontally and negative eight to eight vertically, for sketching the horizontal hyperbola with its central box and asymptotes.</shortdescription>
+        </image>
+        </sidebyside>
+      </statement>
+    </example>
+
+      <figure xml:id="vid-skel-hyperbola-find-a">
+        <caption>Animation: in practice, put the equation in standard form and read <m>a^2</m>
+        off the denominator under the <em>positive</em> term; then <m>a</m> is measured along
+        the transverse axis, from the center to a vertex.</caption>
+        <video xml:id="video-skel-hyperbola-find-a"
+               source="videos/hyperbola_find_a_1080p.mp4"
+               width="90%" aspect="16:9"/>
+      </figure>
+
+    <example xml:id="ex-skel-hyperbola-2">
+      <title>A vertical hyperbola (opens up and down)</title>
+      <statement>
+        <p>Find the vertices, foci, and asymptotes of <m>16y^2 - 9x^2 = 144</m> and sketch its
+        graph.</p>
+
+        <p>
+          <em>Solution.</em>
+          (Divide and be careful with the signs: it is the <m>y^2</m>-term that is positive
+          now, so <m>a^2</m> is the denominator underneath it and the branches open up and
+          down. <xref ref="eq-skel-hyperbola-focal"/> is unchanged, but the slopes of the
+          asymptotes are not <m>\pm b/a</m> in this orientation <mdash/> work out what they
+          are.)
+        </p>
+
+        <sidebyside widths="52% 44%">
+        <image>
+        <latex-image>
+        \begin{tikzpicture}
+        \draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (8,10);
+        \draw[gray!35] (0,6.5) -- (8,6.5);
+        \draw[gray!35] (0,3) -- (8,3);
+        \node[anchor=north west, font=\small\itshape] at (0.3,9.7) {Standard form:};
+        \node[anchor=north west, font=\small\itshape] at (0.3,6.2) {$a =$ \quad $b =$ \quad vertices:};
+        \node[anchor=north west, font=\small\itshape] at (0.3,2.7) {$c =$ \quad foci: \quad asymptotes:};
+        \end{tikzpicture}
+        </latex-image>
+        <shortdescription>Blank box in three rows, for the standard form, for a, b and the vertices, and for c, the foci and the asymptotes.</shortdescription>
+        </image>
+        <image>
+        <latex-image><![CDATA[
+        \begin{tikzpicture}[scale=0.28, >=stealth]
+        \draw[gray!30, very thin] (-9,-8) grid (9,8);
+        \draw[->, thick] (-9,0) -- (9.6,0) node[right] {$x$};
+        \draw[->, thick] (0,-8) -- (0,8.6) node[above] {$y$};
+        \foreach \x in {-8,-4,4,8} \draw (\x,-0.22) -- (\x,0.22) node[below=4pt, font=\scriptsize] {$\x$};
+        \foreach \y in {-6,-3,3,6} \draw (-0.22,\y) -- (0.22,\y) node[left=4pt, font=\scriptsize] {$\y$};
+        \end{tikzpicture}
+        ]]></latex-image>
+        <shortdescription>Empty coordinate grid running from negative nine to nine horizontally and negative eight to eight vertically, for sketching the vertical hyperbola with its central box and asymptotes.</shortdescription>
+        </image>
+        </sidebyside>
+      </statement>
+    </example>
+  </subsection>
+
+  <!-- ============== APPLICATION: PARABOLIC REFLECTORS ============== -->
+  <subsection xml:id="subsec-skel-app-reflector">
+    <title>Application: Parabolic Reflectors</title>
+    <p>
+      Satellite dishes, radio telescopes, headlights, and solar cookers are all parabolic in
+      cross-section, and for one reason: a parabola has a <term>reflection property</term>.
+      Every ray travelling parallel to the axis of the parabola reflects off the curve and
+      passes through the <em>focus</em>. Run the argument backwards and a source placed at the
+      focus emits a perfectly parallel beam<mdash/>which is why a headlight is shaped this way too.
+    </p>
+    <p>
+      This is not a coincidence of the shape; it follows from the equidistance definition
+      (<xref ref="def-skel-parabola"/>). For
+      <m>x^2 = 4py</m> the tangent at the point <m>(x_0,\,x_0^2/4p)</m> has slope <m>x_0/2p</m>,
+      and a short computation shows that the incoming vertical ray and the segment from that
+      point to <m>(0,p)</m> make equal angles with the normal. The law of reflection then sends
+      every such ray straight to the focus, so that is where the receiver goes.
+    </p>
+
+    <figure xml:id="fig-skel-parabola-reflector">
+      <caption>A parabolic dish. Rays arriving parallel to the axis (orange) reflect off the
+      dish (red) and all converge on the focus, where the receiver sits.</caption>
+      <image width="70%">
+        <prefigure xmlns="https://prefigure.org" label="skel-parabola-reflector">
+          <diagram dimensions="(400,204)" margins="8">
+            <definition>pval = 0.6</definition>
+            <definition>f(x) = x^2/(4*pval)</definition>
+            <coordinates bbox="(-2.6, -0.6, 2.6, 2.05)">
+              <graph at="dish" function="f" domain="(-2.2, 2.2)" stroke="blue" thickness="3"/>
+              <group at="rays">
+                <line p1="(-2.0, 2.0)" p2="(-2.0, f(-2.0))" stroke="orange" thickness="1.5"/>
+                <line p1="(-2.0, f(-2.0))" p2="(0, pval)" stroke="red" thickness="1.5"/>
+                <line p1="(-1.2, 2.0)" p2="(-1.2, f(-1.2))" stroke="orange" thickness="1.5"/>
+                <line p1="(-1.2, f(-1.2))" p2="(0, pval)" stroke="red" thickness="1.5"/>
+                <line p1="(1.2, 2.0)" p2="(1.2, f(1.2))" stroke="orange" thickness="1.5"/>
+                <line p1="(1.2, f(1.2))" p2="(0, pval)" stroke="red" thickness="1.5"/>
+                <line p1="(2.0, 2.0)" p2="(2.0, f(2.0))" stroke="orange" thickness="1.5"/>
+                <line p1="(2.0, f(2.0))" p2="(0, pval)" stroke="red" thickness="1.5"/>
+              </group>
+              <point at="focus" p="(0,pval)" fill="black" size="4"/>
+              <label at="focus-label" anchor="(0,pval)" alignment="s" offset="(0,-10)"><m>\text{focus (receiver)}</m></label>
+              <label at="ray-label" anchor="(0,1.9)" alignment="center"><m>\text{incoming parallel rays}</m></label>
+            </coordinates>
+            <annotations>
+              <annotation ref="dish"
+                  text="A parabolic reflector: incoming rays parallel to the axis all reflect to the focus">
+                <annotation ref="dish"
+                    text="The parabolic cross-section of the dish, a blue upward curve" sonify="yes"/>
+                <annotation ref="rays"
+                    text="Four vertical incoming rays, each striking the dish and reflecting to a single common point"/>
+                <annotation ref="focus"
+                    text="The focus, where every reflected ray converges; the receiver is placed here"/>
+              </annotation>
+            </annotations>
+          </diagram>
+        </prefigure>
+      </image>
+    </figure>
+
+    <figure xml:id="vid-skel-parabolic-reflector">
+      <caption>Animation: parallel rays strike the dish at different points and all reflect
+      through the single focus.</caption>
+      <video xml:id="video-skel-parabolic-reflector"
+             source="videos/parabolic_reflector_1080p.mp4"
+             width="90%" aspect="16:9"/>
+    </figure>
+
+    <example xml:id="ex-skel-app-reflector">
+      <title>Placing the receiver</title>
+      <statement>
+        <p>
+          A satellite dish has a parabolic cross-section that is <m>4</m> feet wide and <m>1</m>
+          foot deep at its center. How far from the vertex should the receiver be mounted?
+        </p>
+
+        <p>
+          <em>Solution.</em>
+          (Put the vertex at the origin with the dish opening upward, so the cross-section
+          is <xref ref="eq-skel-parabola-standard"/>. Turn the width and the depth into the
+          coordinates of one point on the rim <mdash/> note that the width is measured
+          across the whole dish, not from the axis <mdash/> and substitute to find <m>p</m>.
+          The receiver goes at the focus; give its height above the vertex.)
+        </p>
+
+        <sidebyside width="97%">
+        <image>
+        <latex-image>
+        \begin{tikzpicture}
+        \draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,9);
+        \draw[gray!35] (0,5.5) -- (15,5.5);
+        \draw[gray!35] (0,2.5) -- (15,2.5);
+        \node[anchor=north west, font=\small\itshape] at (0.35,8.7) {A point on the rim:};
+        \node[anchor=north west, font=\small\itshape] at (0.35,5.2) {$p =$};
+        \node[anchor=north west, font=\small\itshape] at (0.35,2.2) {The receiver goes:};
+        \end{tikzpicture}
+        </latex-image>
+        <shortdescription>Blank box in three rows, for a point on the rim of the dish, for the value of p, and for the position of the receiver.</shortdescription>
+        </image>
+        </sidebyside>
+      </statement>
+    </example>
+  </subsection>
+
+  <!-- ============== APPLICATION: WHISPERING GALLERY ============== -->
+  <subsection xml:id="subsec-skel-app-whisper">
+    <title>Application: Whispering Galleries</title>
+    <p>
+      An ellipse has a reflection property of its own: a ray leaving one focus reflects off the
+      ellipse and passes through the <em>other</em> focus. In a room whose ceiling is a
+      half-ellipse<mdash/>the dome of St. Paul's Cathedral, or Statuary Hall in the U.S.
+      Capitol<mdash/>a whisper released at one focus is gathered up by the whole ceiling and
+      delivered to a listener standing at the other focus, while people in between hear nothing.
+    </p>
+    <p>
+      The constant-sum definition (<xref ref="def-skel-ellipse"/>) explains why it works so
+      well. Every path from one focus to the wall and on to the other focus has the
+      <em>same</em> total length, no matter where it strikes. So the reflected sound does not
+      merely arrive at the far focus: it arrives from every direction <em>at the same
+      instant</em>, in phase, and the pieces reinforce one another instead of smearing out.
+      That is what makes a whisper audible across the room.
+    </p>
+
+    <p>
+      Write down that common length, and say why the phrase <q>in phase</q> is the key to
+      the effect. (The length is the constant of <xref ref="def-skel-ellipse"/>, which you
+      identified above.)
+    </p>
+
+    <sidebyside width="97%">
+    <image>
+    <latex-image>
+    \begin{tikzpicture}
+    \draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,6);
+    \draw[gray!35] (0,3.5) -- (15,3.5);
+    \node[anchor=north west, font=\small\itshape] at (0.35,5.7) {Every path has length:};
+    \node[anchor=north west, font=\small\itshape] at (0.35,3.2) {Why that matters:};
+    \end{tikzpicture}
+    </latex-image>
+    <shortdescription>Blank box in two rows, one for the common length of every reflected path and one for why arriving in phase matters.</shortdescription>
+    </image>
+    </sidebyside>
+
+    <figure xml:id="fig-skel-stpauls-1809">
+      <caption>The interior of St. Paul's Cathedral beneath Wren's dome. Hand-coloured
+      aquatint by Thomas Rowlandson and Augustus Pugin, from Ackermann's
+      <pubtitle>Microcosm of London</pubtitle> (1809). Public domain, via
+      <url href="https://www.metmuseum.org/art/collection/search/744873">The Metropolitan
+      Museum of Art</url>.</caption>
+      <image source="images/st-pauls-interior-1809.jpg" width="60%">
+        <description>
+<p>
+A hand-coloured aquatint from 1809 showing the interior of Saint
+        Paul's Cathedral, looking up toward the great dome above the crossing, with
+        small figures of visitors walking the marble floor below.
+</p>
+</description>
+      </image>
+    </figure>
+
+    <figure xml:id="fig-skel-ellipse-whisper">
+      <caption>A whispering gallery seen from above. Five sound paths leave the speaker at one
+      focus, bounce off the elliptical wall, and all arrive at the listener at the other focus.
+      Each path has the same total length <m>2a</m>.</caption>
+      <image width="70%">
+        <prefigure xmlns="https://prefigure.org" label="skel-ellipse-whisper">
+          <diagram dimensions="(420,277)" margins="8">
+            <definition>aa = 3.2</definition>
+            <definition>bb = 2.2</definition>
+            <definition>cc = sqrt(aa^2 - bb^2)</definition>
+            <definition>E(x,y) = x^2/aa^2 + y^2/bb^2</definition>
+            <definition>Px(t) = aa*cos(t)</definition>
+            <definition>Py(t) = bb*sin(t)</definition>
+            <coordinates bbox="(-4.1, -2.7, 4.1, 2.7)">
+              <implicit-curve at="gallery" function="E" k="1" stroke="blue" thickness="3"/>
+              <group at="paths">
+                <line p1="(-cc,0)" p2="(Px(0.6),Py(0.6))" stroke="orange" thickness="1.5"/>
+                <line p1="(Px(0.6),Py(0.6))" p2="(cc,0)" stroke="red" thickness="1.5"/>
+                <line p1="(-cc,0)" p2="(Px(1.6),Py(1.6))" stroke="orange" thickness="1.5"/>
+                <line p1="(Px(1.6),Py(1.6))" p2="(cc,0)" stroke="red" thickness="1.5"/>
+                <line p1="(-cc,0)" p2="(Px(2.5),Py(2.5))" stroke="orange" thickness="1.5"/>
+                <line p1="(Px(2.5),Py(2.5))" p2="(cc,0)" stroke="red" thickness="1.5"/>
+                <line p1="(-cc,0)" p2="(Px(-2.4),Py(-2.4))" stroke="orange" thickness="1.5"/>
+                <line p1="(Px(-2.4),Py(-2.4))" p2="(cc,0)" stroke="red" thickness="1.5"/>
+                <line p1="(-cc,0)" p2="(Px(-0.8),Py(-0.8))" stroke="orange" thickness="1.5"/>
+                <line p1="(Px(-0.8),Py(-0.8))" p2="(cc,0)" stroke="red" thickness="1.5"/>
+              </group>
+              <point at="f2" p="(-cc,0)" fill="black" size="4"/>
+              <label at="f2-label" anchor="(-cc,0)" alignment="sw" offset="(-6,-6)"><m>F_2</m></label>
+              <label at="f2-role" anchor="(-cc,-2.45)" alignment="center"><m>\text{speaker}</m></label>
+              <point at="f1" p="(cc,0)" fill="black" size="4"/>
+              <label at="f1-label" anchor="(cc,0)" alignment="se" offset="(6,-6)"><m>F_1</m></label>
+              <label at="f1-role" anchor="(cc,-2.45)" alignment="center"><m>\text{listener}</m></label>
+            </coordinates>
+            <annotations>
+              <annotation ref="gallery"
+                  text="A whispering gallery: sound leaving one focus reflects off the elliptical wall and reconverges at the other focus">
+                <annotation ref="gallery"
+                    text="The elliptical wall of the gallery, seen from above" sonify="yes"/>
+                <annotation ref="paths"
+                    text="Five sound paths leaving the speaker at one focus, striking the wall at different points, and all arriving at the listener at the other focus"/>
+                <annotation ref="f2" text="One focus, where the speaker whispers"/>
+                <annotation ref="f1" text="The other focus, where the whisper is heard"/>
+              </annotation>
+            </annotations>
+          </diagram>
+        </prefigure>
+      </image>
+    </figure>
+
+    <figure xml:id="vid-skel-whispering-gallery">
+      <caption>Animation: sound leaves one focus in many directions, reflects off the wall, and
+      reconverges at the other focus<mdash/>every path the same length <m>2a</m>.</caption>
+      <video xml:id="video-skel-whispering-gallery"
+             source="videos/whispering_gallery_1080p.mp4"
+             width="90%" aspect="16:9"/>
+    </figure>
+
+    <example xml:id="ex-skel-app-whisper">
+      <title>Where should the listener stand?</title>
+      <statement>
+        <p>
+          A whispering gallery is <m>100</m> feet long and <m>60</m> feet wide. Where should the
+          speaker and the listener stand, and how far does the whisper travel on its way across?
+        </p>
+
+        <p>
+          <em>Solution.</em>
+          (Model the room by <xref ref="eq-skel-ellipse-standard"/> centred at the origin.
+          The length and the width are the <em>full</em> axes, not the semi-axes. Then use
+          <xref ref="eq-skel-ellipse-focal"/> to place the foci, and give the distance
+          between the two people as well as the distance the whisper travels.)
+        </p>
+
+        <sidebyside width="97%">
+        <image>
+        <latex-image>
+        \begin{tikzpicture}
+        \draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,10);
+        \draw[gray!35] (0,7) -- (15,7);
+        \draw[gray!35] (0,3.5) -- (15,3.5);
+        \node[anchor=north west, font=\small\itshape] at (0.35,9.7) {$a =$ \qquad $b =$ \qquad $c =$};
+        \node[anchor=north west, font=\small\itshape] at (0.35,6.7) {They stand at:};
+        \node[anchor=north west, font=\small\itshape] at (0.35,3.2) {The whisper travels:};
+        \end{tikzpicture}
+        </latex-image>
+        <shortdescription>Blank box in three rows, for the semi-axes and the focal distance, for where the two people stand, and for the distance the whisper travels.</shortdescription>
+        </image>
+        </sidebyside>
+      </statement>
+    </example>
+  </subsection>
+
+  <!-- ============== APPLICATION: HYPERBOLIC NAVIGATION ============== -->
+  <subsection xml:id="subsec-skel-app-loran">
+    <title>Application: Hyperbolic Navigation (LORAN)</title>
+    <p>
+      Progress in electrical engineering enabled navigation systems based on the transmission
+      of electromagnetic waves. One example is LORAN-C marine navigation, developed in the
+      United States during World War II. A vessel receives a synchronized signal from a pair
+      of transmitters; the signal from the more distant transmitter arrives later, so the
+      measured delay <m>\Delta t</m> determines the <em>difference</em> between the vessel's
+      distances to the two transmitters,
+      <md>|r_2 - r_1| = v\,\Delta t,</md>
+      where <m>v</m> is the signal speed.
+    </p>
+
+    <p>
+      Say what that single measurement tells the vessel, and what a second one adds.
+      (A constant difference of distances from two fixed points is the defining property in
+      <xref ref="def-skel-hyperbola"/>; name the curve and say what plays the role of the
+      foci and of <m>2a</m>. Then note what extra information the <em>sign</em> of the delay
+      carries, and why one measurement alone is not enough to fix a position.)
+    </p>
+
+    <sidebyside width="97%">
+    <image>
+    <latex-image>
+    \begin{tikzpicture}
+    \draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,9);
+    \draw[gray!35] (0,6) -- (15,6);
+    \draw[gray!35] (0,3) -- (15,3);
+    \node[anchor=north west, font=\small\itshape] at (0.35,8.7) {One delay places the vessel on:};
+    \node[anchor=north west, font=\small\itshape] at (0.35,5.7) {The sign of the delay tells it:};
+    \node[anchor=north west, font=\small\itshape] at (0.35,2.7) {A second pair of stations gives:};
+    \end{tikzpicture}
+    </latex-image>
+    <shortdescription>Blank box in three rows, for the curve a single delay determines, for what the sign of the delay adds, and for what a second measurement contributes.</shortdescription>
+    </image>
+    </sidebyside>
+
+<figure xml:id="fig-skel-hyperbola-loran">
+      <caption>Hyperbolic navigation. The measured delay places the unknown position <m>A</m> on the
+      solid hyperbola with foci at the receivers <m>P_1</m> and <m>P_2</m>; a different delay
+      would place it on the dashed one instead.</caption>
+      <image width="65%">
+        <prefigure xmlns="https://prefigure.org" label="skel-hyperbola-loran">
+          <diagram dimensions="(400,320)" margins="8">
+            <definition>cc = 3</definition>
+            <definition>aa = 1.5</definition>
+            <definition>bb = sqrt(cc^2 - aa^2)</definition>
+            <definition>H(x,y) = x^2/aa^2 - y^2/bb^2</definition>
+            <definition>aa2 = 0.7</definition>
+            <definition>bb2 = sqrt(cc^2 - aa2^2)</definition>
+            <definition>H2(x,y) = x^2/aa2^2 - y^2/bb2^2</definition>
+            <definition>sP = 0.9</definition>
+            <coordinates bbox="(-5.0, -4.0, 5.0, 4.0)">
+              <implicit-curve at="locus2" function="H2" k="1" stroke="gray" thickness="1.5" dash="4 4"/>
+              <implicit-curve at="locus" function="H" k="1" stroke="blue" thickness="3"/>
+              <group at="signals">
+                <line p1="(-cc,0)" p2="(aa*cosh(sP), bb*sinh(sP))" stroke="orange" thickness="2"/>
+                <line p1="(cc,0)" p2="(aa*cosh(sP), bb*sinh(sP))" stroke="green" thickness="2"/>
+              </group>
+              <point at="ship" p="(aa*cosh(sP), bb*sinh(sP))" fill="red" size="4"/>
+              <label at="ship-label" anchor="(aa*cosh(sP), bb*sinh(sP))" alignment="ne" offset="(6,2)"><m>A</m></label>
+              <point at="s2" p="(-cc,0)" fill="black" size="4"/>
+              <label at="sB-label" anchor="(-cc,0)" alignment="s" offset="(-6,-8)"><m>P_2</m></label>
+              <point at="s1" p="(cc,0)" fill="black" size="4"/>
+              <label at="sA-label" anchor="(cc,0)" alignment="s" offset="(4,-8)"><m>P_1</m></label>
+              <label at="locus-label" anchor="(3.75,-2.6)" alignment="center"><m>|r_2-r_1|=2a</m></label>
+              <label at="r2-label" anchor="(-1.2,0.93)" alignment="n" offset="(0,6)"><m>r_2</m></label>
+              <label at="r1-label" anchor="(2.586,1.3)" alignment="e" offset="(6,0)"><m>r_1</m></label>
+            </coordinates>
+            <annotations>
+              <annotation ref="locus"
+                  text="Hyperbolic navigation: a fixed difference in signal arrival times from two receivers places the unknown position A on a hyperbola whose foci are the receivers">
+                <annotation ref="locus"
+                    text="The hyperbola of all positions having the measured time difference from receivers P one and P two" sonify="yes"/>
+                <annotation ref="locus2"
+                    text="A second dashed hyperbola, the locus for a different time difference, showing that each delay picks out its own curve"/>
+                <annotation ref="signals"
+                    text="Two signal paths, of length r one from receiver P one and length r two from receiver P two, meeting at the point A"/>
+                <annotation ref="ship" text="The unknown position A, somewhere on the locus, closer to P one"/>
+                <annotation ref="s1" text="Receiver P one, the nearer focus"/>
+                <annotation ref="s2" text="Receiver P two, the farther focus"/>
+              </annotation>
+            </annotations>
+          </diagram>
+        </prefigure>
+      </image>
+    </figure>
+
+<figure xml:id="vid-skel-hyperbolic-navigation">
+      <caption>Animation: the point <m>A</m> moves, and both signal distances <m>r_1</m> and
+      <m>r_2</m> change<mdash/>but their difference does not, tracing out the hyperbola.</caption>
+      <video xml:id="video-skel-hyperbolic-navigation"
+             source="videos/hyperbolic_navigation_1080p.mp4"
+             width="90%" aspect="16:9"/>
+    </figure>
+
+    <example xml:id="ex-skel-app-loran">
+      <title>Locating a hiker from three receivers</title>
+      <statement>
+        <p>
+          Three receivers <m>P_1</m>, <m>P_2</m>, and <m>P_3</m> are deployed in the landscape.
+          The figure captures the distances we know. Emma's tourist navigation device sends a
+          signal to all three receivers. The signal arrives at receivers <m>P_1</m> and
+          <m>P_3</m> at the same time, and at receiver <m>P_2</m> it arrives
+          <m>80</m> microseconds later. Where is Emma located? Assume the signal travels
+          <m>300{,}000</m> km per second, and determine the position in a suitably chosen
+          coordinate system.
+        </p>
+
+      <figure xml:id="fig-skel-loran-assignment">
+        <caption>The exercise data: <m>P_1</m> and <m>P_2</m> are <m>48</m> km apart, and
+        <m>P_3</m> is <m>36</m> km directly above the point <m>12</m> km beyond
+        <m>P_1</m>.</caption>
+        <image width="75%">
+          <prefigure xmlns="https://prefigure.org" label="skel-loran-assignment">
+          <diagram dimensions="(420,255)" margins="8">
+            <coordinates bbox="(-8, -9, 76, 42)">
+              <line at="baseline" p1="(0,0)" p2="(60,0)" stroke="gray" thickness="1" dash="3 3"/>
+              <line at="riser" p1="(60,0)" p2="(60,36)" stroke="gray" thickness="1" dash="3 3"/>
+              <group at="right-angle">
+                <line p1="(57,0)" p2="(57,3)" stroke="black" thickness="1"/>
+                <line p1="(57,3)" p2="(60,3)" stroke="black" thickness="1"/>
+              </group>
+              <group at="dist-48">
+                <line p1="(0,-5)" p2="(48,-5)" stroke="black" thickness="1"/>
+                <line p1="(0,-6.5)" p2="(0,-3.5)" stroke="black" thickness="1"/>
+                <line p1="(48,-6.5)" p2="(48,-3.5)" stroke="black" thickness="1"/>
+              </group>
+              <label anchor="(24,-5)" alignment="s" offset="(0,-4)"><m>48\ \text{km}</m></label>
+              <group at="dist-12">
+                <line p1="(48,-5)" p2="(60,-5)" stroke="black" thickness="1"/>
+                <line p1="(60,-6.5)" p2="(60,-3.5)" stroke="black" thickness="1"/>
+              </group>
+              <label anchor="(54,-5)" alignment="s" offset="(0,-4)"><m>12\ \text{km}</m></label>
+              <group at="dist-36">
+                <line p1="(65,0)" p2="(65,36)" stroke="black" thickness="1"/>
+                <line p1="(63.5,0)" p2="(66.5,0)" stroke="black" thickness="1"/>
+                <line p1="(63.5,36)" p2="(66.5,36)" stroke="black" thickness="1"/>
+              </group>
+              <label anchor="(65,18)" alignment="e" offset="(5,0)"><m>36\ \text{km}</m></label>
+              <point at="p2" p="(0,0)" fill="black" size="3"/>
+              <label anchor="(0,0)" alignment="n" offset="(0,7)"><m>P_2</m></label>
+              <point at="p1" p="(48,0)" fill="black" size="3"/>
+              <label anchor="(48,0)" alignment="n" offset="(0,7)"><m>P_1</m></label>
+              <point at="p3" p="(60,36)" fill="black" size="3"/>
+              <label anchor="(60,36)" alignment="w" offset="(-7,0)"><m>P_3</m></label>
+            </coordinates>
+            <annotations>
+              <annotation ref="p1"
+                  text="The exercise data: three receivers in the landscape with the known distances between them">
+                <annotation ref="p2" text="Receiver P two, at the left end of a horizontal dotted line"/>
+                <annotation ref="p1" text="Receiver P one, on the same horizontal line, forty eight kilometers to the right of P two"/>
+                <annotation ref="p3" text="Receiver P three, thirty six kilometers directly above the point twelve kilometers to the right of P one"/>
+                <annotation ref="right-angle" text="A small square marking the right angle where the vertical dotted line meets the horizontal one"/>
+              </annotation>
+            </annotations>
+          </diagram>
+          </prefigure>
+        </image>
+      </figure>
+
+        <p>
+          <em>Solution.</em>
+          (Translate each timing fact into geometry first: equal arrival times mean equal
+          distances, which is the degenerate case of
+          <xref ref="def-skel-hyperbola"/> and gives a <em>line</em>; the <m>80</m>
+          microsecond delay gives a genuine hyperbola, so convert it to a distance. Then
+          choose coordinates that make that hyperbola simplest <mdash/> origin at the
+          midpoint of its foci, and one unit equal to the common factor of all the given
+          lengths. Parametrize the line, substitute into the hyperbola, and solve the
+          quadratic. Two points come out; use the branch condition to reject one, and say in
+          physical terms what is wrong with it. Finish by checking the three distances.)
+        </p>
+
+        <sidebyside width="97%">
+        <image>
+        <latex-image>
+        \begin{tikzpicture}
+        \draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,20);
+        \draw[gray!35] (0,17) -- (15,17);
+        \draw[gray!35] (0,14) -- (15,14);
+        \draw[gray!35] (0,11) -- (15,11);
+        \draw[gray!35] (0,6) -- (15,6);
+        \draw[gray!35] (0,3) -- (15,3);
+        \node[anchor=north west, font=\small\itshape] at (0.35,19.7) {The two timing facts, as geometry:};
+        \node[anchor=north west, font=\small\itshape] at (0.35,16.7) {Coordinates, and the three receivers in them:};
+        \node[anchor=north west, font=\small\itshape] at (0.35,13.7) {The line $o$:};
+        \node[anchor=north west, font=\small\itshape] at (0.35,10.7) {The hyperbola $h$:};
+        \node[anchor=north west, font=\small\itshape] at (0.35,5.7) {Solving:};
+        \node[anchor=north west, font=\small\itshape] at (0.35,2.7) {Emma is at: \qquad\qquad Check:};
+        \end{tikzpicture}
+        </latex-image>
+        <shortdescription>Blank box in six rows, for translating the timing facts into geometry, for the choice of coordinates and the positions of the three receivers, for the perpendicular bisector, for the hyperbola, for solving the two together, and for the answer with its check.</shortdescription>
+        </image>
+        </sidebyside>
+      </statement>
+    </example>
+
+    <remark xml:id="rem-skel-loran-two-hyperbolas">
+      <title>What if Emma were not equidistant from <m>P_1</m> and <m>P_3</m>?</title>
+      <p>
+        The exercise was arranged so that the signal reached <m>P_1</m> and <m>P_3</m>
+        simultaneously, and that is what kept the algebra easy: a distance difference of
+        <em>zero</em> is the degenerate case of the hyperbola, and the locus collapses to a
+        straight line, the perpendicular bisector of <m>P_1P_3</m>. We then only had to
+        substitute a linear parametrization into one quadratic equation.
+      </p>
+      <p>
+        If the two arrival times differed, the delay would instead give a <em>nonzero</em>
+        difference <m>\bigl|\,\|AP_3\| - \|AP_1\|\,\bigr| = v\,\Delta t</m>, and Emma would lie on a
+        genuine second hyperbola, with foci <m>P_1</m> and <m>P_3</m><mdash/>tilted, since its
+        focal axis <m>P_1P_3</m> is not parallel to a coordinate axis. Locating her would then
+        mean intersecting the correct branches of <em>two</em> hyperbolas, as in the figure
+        below. Conceptually nothing changes<mdash/>each measurement contributes one curve, and
+        the position is their common point<mdash/>but algebraically we would be solving two
+        quadratic equations together rather than a linear one and a quadratic one.
+      </p>
+    </remark>
+
+<figure xml:id="fig-skel-hyperbola-loran-fix">
+      <caption>Two measurements fix the position. The first delay (receivers <m>P_1</m>,
+      <m>P_2</m>) puts <m>A</m> on the blue branch; the second (receivers <m>P_1</m>,
+      <m>P_3</m>) puts it on the purple branch. The position <m>A</m> is at the crossing,
+      and the dashed segments show the three distances <m>r_1</m>, <m>r_2</m>,
+      <m>r_3</m>.</caption>
+      <image width="65%">
+        <prefigure xmlns="https://prefigure.org" label="skel-hyperbola-loran-fix">
+          <diagram dimensions="(400,324)" margins="8">
+            <definition>sP = 0.9</definition>
+            <definition>Px = 1.5*cosh(sP)</definition>
+            <definition>Py = sqrt(6.75)*sinh(sP)</definition>
+            <definition>k1 = sqrt((Px+3)^2 + Py^2) - sqrt((Px-3)^2 + Py^2)</definition>
+            <definition>k2 = sqrt((Px+1)^2 + (Py-3.8)^2) - sqrt((Px-3)^2 + Py^2)</definition>
+            <definition>H1(x,y) = sqrt((x+3)^2 + y^2) - sqrt((x-3)^2 + y^2)</definition>
+            <definition>H2(x,y) = sqrt((x+1)^2 + (y-3.8)^2) - sqrt((x-3)^2 + y^2)</definition>
+            <coordinates bbox="(-5.0, -3.5, 5.0, 4.6)">
+              <implicit-curve at="locus1" function="H1" k="k1" stroke="blue" thickness="2.5"/>
+              <implicit-curve at="locus2" function="H2" k="k2" stroke="purple" thickness="2.5"/>
+              <group at="dists">
+                <line p1="(Px,Py)" p2="(3,0)" stroke="black" thickness="1.2" dash="4 3"/>
+                <line p1="(Px,Py)" p2="(-3,0)" stroke="black" thickness="1.2" dash="4 3"/>
+                <line p1="(Px,Py)" p2="(-1,3.8)" stroke="black" thickness="1.2" dash="4 3"/>
+                <label at="r1-label" anchor="(2.586,1.3)" alignment="e" offset="(6,0)"><m>r_1</m></label>
+                <label at="r2-label" anchor="(-1.2,0.93)" alignment="n" offset="(0,6)"><m>r_2</m></label>
+                <label at="r3-label" anchor="(0.57,3.23)" alignment="n" offset="(0,5)"><m>r_3</m></label>
+              </group>
+              <group at="legend">
+                <line p1="(-4.9,3.1)" p2="(-1.6,3.1)" stroke="black" thickness="1"/>
+                <line p1="(-4.9,4.5)" p2="(-1.6,4.5)" stroke="black" thickness="1"/>
+                <line p1="(-4.9,3.1)" p2="(-4.9,4.5)" stroke="black" thickness="1"/>
+                <line p1="(-1.6,3.1)" p2="(-1.6,4.5)" stroke="black" thickness="1"/>
+                <line p1="(-4.75,4.1)" p2="(-4.45,4.1)" stroke="blue" thickness="2.5"/>
+                <line p1="(-4.75,3.5)" p2="(-4.45,3.5)" stroke="purple" thickness="2.5"/>
+                <label at="leg1" anchor="(-4.35,4.1)" alignment="e" offset="(3,0)"><m>r_2-r_1=2a</m></label>
+                <label at="leg2" anchor="(-4.35,3.5)" alignment="e" offset="(4,0)"><m>r_3-r_1=2a'</m></label>
+              </group>
+              <point at="ship" p="(Px,Py)" fill="red" size="4"/>
+              <label at="ship-label" anchor="(Px,Py)" alignment="e" offset="(8,0)"><m>A</m></label>
+              <point at="sA" p="(3,0)" fill="black" size="4"/>
+              <label anchor="(3,0)" alignment="se" offset="(2,-6)"><m>P_1</m></label>
+              <point at="sB" p="(-3,0)" fill="black" size="4"/>
+              <label anchor="(-3,0)" alignment="sw" offset="(-2,-6)"><m>P_2</m></label>
+              <point at="sC" p="(-1,3.8)" fill="black" size="4"/>
+              <label anchor="(-1,3.8)" alignment="nw" offset="(0.5,2)"><m>P_3</m></label>
+            </coordinates>
+            <annotations>
+              <annotation ref="locus1"
+                  text="A position fix from two time-difference measurements: the unknown position A lies at the crossing of two hyperbola branches">
+                <annotation ref="locus1"
+                    text="The blue branch of points whose distance difference to receivers P two and P one equals the first measured constant" sonify="yes"/>
+                <annotation ref="locus2"
+                    text="The purple branch of points whose distance difference to receivers P three and P one equals the second measured constant" sonify="yes"/>
+                <annotation ref="dists"
+                    text="Three dashed segments from the position A to the receivers, of lengths r one, r two, and r three"/>
+                <annotation ref="legend"
+                    text="A legend box in the upper left: on the blue curve, r two minus r one equals two a; on the purple curve, r three minus r one equals two a prime"/>
+                <annotation ref="ship" text="The position A, at the single crossing of the two branches"/>
+                <annotation ref="sA" text="Receiver P one, the master receiver shared by both measurements"/>
+                <annotation ref="sB" text="Receiver P two, paired with P one for the first measurement"/>
+                <annotation ref="sC" text="Receiver P three, paired with P one for the second measurement"/>
+              </annotation>
+            </annotations>
+          </diagram>
+        </prefigure>
+      </image>
+    </figure>
+  </subsection>
+</section>

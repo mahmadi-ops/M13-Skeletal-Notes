@@ -1,0 +1,1783 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Skeletal (fill-in) version of 3.4 The Cross Product.
+
+  Definitions, theorems, summaries, and problem statements are kept;
+  derivations and solutions are replaced by blank workspace boxes, each
+  with a one-line statement of what has to be done.  Content mirrors
+  the-cross-product.ptx of the full lecture notes; every xml:id here is
+  prefixed with "skel-" so the two can coexist.
+
+  Figures: every figure in this section sets a problem up rather than
+  answering one (the parallelogram, the two right-hand-rule photographs,
+  the two torque groupings, the biceps diagram, the moving polar frame,
+  the chord, the sign of omega, and omega cross r), so all of them are
+  reproduced in full, as in the lecture notes, together with the videos
+  and the torque interactive.  The two true/false exercises keep their
+  statements; their worked feedback becomes a workspace to justify the
+  answer in.
+-->
+<section xml:id="sec-skel-geom-cross-product" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>The Cross Product</title>
+
+<objectives>
+<introduction>
+<p>
+After completing this section, you should be able to:
+</p>
+</introduction>
+
+<ul>
+<li>
+<p>
+Understand the cross product as an operation that produces a vector
+perpendicular to two given vectors, with its direction fixed by the
+right-hand rule.
+</p>
+</li>
+<li>
+<p>
+Interpret the magnitude of the cross product as the area of the parallelogram
+spanned by the two vectors, and recognize that the cross product is zero
+exactly when the vectors are parallel.
+</p>
+</li>
+<li>
+<p>
+Understand why the geometric and component definitions of the cross product
+describe one and the same object.
+</p>
+</li>
+<li>
+<p>
+Contrast the cross product with the dot product: one returns a vector and
+detects parallelism, while the other returns a scalar and detects
+perpendicularity.
+</p>
+</li>
+<li>
+<p>
+Understand torque as a measure of the turning effect of a force, and
+appreciate the role of cross product in determining torque.
+</p>
+</li>
+<li>
+<p>
+Describe circular motion with the moving unit vectors <m>\hat r</m> and
+<m>\hat\theta</m>, and represent the rate of rotation by the angular
+velocity vector <m>\overrightarrow{\omega}</m> along the axis of rotation.
+</p>
+</li>
+<li>
+<p>
+Use the cross product to obtain the velocity of a rotating object from its
+angular velocity and position, <m>\overrightarrow{v} = \overrightarrow{\omega} \times \overrightarrow{r}</m>.
+</p>
+</li>
+</ul>
+</objectives>
+
+<!-- ================================================================ -->
+<subsection xml:id="subsec-skel-cross-definition">
+<title>Definition and Properties of the Cross Product</title>
+
+<definition xml:id="def-skel-cross-product">
+<title>The Cross Product (First Definition)</title>
+<statement>
+<p>
+Given two vectors <m>\mathbf u</m> and <m>\mathbf v</m> in
+<m>\mathbb R^3</m>, the <term>cross product</term>
+<m>\mathbf u \times \mathbf v</m> is the <em>vector</em> defined by
+<md xml:id="eq-skel-cross-geometric" number="yes">
+\mathbf u \times \mathbf v = \left(\|\mathbf u\|\|\mathbf v\|\sin\theta\right)\hat{n},
+</md>
+where <m>\theta</m>, with <m>0 \le \theta \le \pi</m>, is the angle
+between <m>\mathbf u</m> and <m>\mathbf v</m>, and <m>\hat{n}</m> is
+the unit vector orthogonal to both <m>\mathbf u</m> and <m>\mathbf v</m>
+whose direction is given by the right-hand rule.
+</p>
+</statement>
+</definition>
+
+<p>
+The magnitude of <m>\mathbf u \times \mathbf v</m> is equal to the area
+of the parallelogram built on the two vectors <m>\mathbf u</m> and
+<m>\mathbf v</m>, as shown in <xref ref="fig-skel-parallelogram-area"/>.
+</p>
+
+<figure xml:id="fig-skel-parallelogram-area">
+<caption>
+The parallelogram built on the vectors <m>\mathbf u</m> and
+<m>\mathbf v</m>, with base <m>\|\mathbf v\|</m> and height
+<m>\|\mathbf u\||\sin(\theta)|</m>.
+</caption>
+<image width="55%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-skel-parallelogram-area">
+<diagram dimensions="(381,200)" margins="10">
+<definition>u=(2,3)</definition>
+<definition>v=(5,0)</definition>
+<coordinates bbox="(-0.5,-0.6,7.5,3.6)">
+<line at="par-side-top" endpoints="(u, u+v)" stroke="red" thickness="2"/>
+<line at="par-side-right" endpoints="(v, u+v)" stroke="blue" thickness="2"/>
+<line at="par-height" endpoints="(u, (2,0))" stroke="black" dash="4 4"/>
+<vector at="par-vec-u" v="u" tail="(0,0)" stroke="blue"/>
+<vector at="par-vec-v" v="v" tail="(0,0)" stroke="red"/>
+<label at="par-u-label" anchor="(1,1.5)" alignment="nw" color="blue">
+<m>\mathbf u</m>
+</label>
+<label at="par-v-label" anchor="(2.3,-0.2)" alignment="s" color="red">
+<m>\mathbf v</m>
+</label>
+<label at="par-height-label" anchor="(2.1,1.5)" alignment="e">
+<m>\|\mathbf u\|\sin(\theta)</m>
+</label>
+<angle-marker at="par-angle-theta" points="(v,(0,0),u)" radius="20" clear-background="no">
+<m>\theta</m>
+</angle-marker>
+</coordinates>
+<annotations text="A parallelogram built on the vectors u and v, drawn tail to tail from the origin, with v along the horizontal direction. A dashed vertical segment from the tip of u down to v marks the height of the parallelogram, equal to the length of u times the sine of theta.">
+<annotation ref="par-vec-u" text="Vector u, drawn from the origin at angle theta above v."/>
+<annotation ref="par-vec-v" text="Vector v, along the horizontal direction."/>
+<annotation ref="par-side-top" text="The side of the parallelogram parallel to v, starting at the tip of u."/>
+<annotation ref="par-side-right" text="The side of the parallelogram parallel to u, starting at the tip of v."/>
+<annotation ref="par-height" text="The dashed height of the parallelogram, with length equal to the length of u times the sine of theta."/>
+<annotation ref="par-angle-theta" text="The angle theta between u and v, located at the origin."/>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+Read the area of that parallelogram off the figure, and compare it with
+<xref ref="eq-skel-cross-geometric"/>. (Use base times height, with the base
+<m>\|\mathbf v\|</m> and the height marked in the picture. Say why an absolute
+value is needed on <m>\sin\theta</m> even though
+<xref ref="def-skel-cross-product"/> does not carry one.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,7);
+\draw[gray!35] (0,3) -- (15,3);
+\node[anchor=north west, font=\small\itshape] at (0.35,6.7) {Area $=$ base $\times$ height $=$};
+\node[anchor=north west, font=\small\itshape] at (0.35,2.7) {Why the absolute value:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in two rows, one for the area of the parallelogram as base times height and one for the reason the absolute value of the sine is needed.</shortdescription>
+</image>
+</sidebyside>
+
+<fact xml:id="fact-skel-parallelogram-area">
+<title>Area of the Parallelogram</title>
+<statement>
+<p>
+<md xml:id="eq-skel-parallelogram-area" number="yes">
+\text{Area of the parallelogram}
+= \|\mathbf u\|\|\mathbf v\||\sin\theta|
+= \|\mathbf u \times \mathbf v\|.
+</md>
+</p>
+</statement>
+</fact>
+
+<p>
+The vector <m>\hat{n}</m> is the unit vector that determines the
+direction of <m>\mathbf u \times \mathbf v</m> using the right-hand
+rule. Note that <m>\mathbf u \times \mathbf v</m> is orthogonal
+(perpendicular) to both vectors, as shown in
+<xref ref="fig-skel-cross-product-video"/>.
+</p>
+
+<figure xml:id="fig-skel-cross-product-video">
+<caption>
+The cross product <m>\mathbf u \times \mathbf v</m> points in the
+direction of the unit vector <m>\hat{n}</m>, given by the right-hand
+rule, and is orthogonal to both <m>\mathbf u</m> and <m>\mathbf v</m>;
+its length is <m>\|\mathbf u\|\|\mathbf v\||\sin\theta|</m>.
+</caption>
+<video xml:id="video-skel-cross-product"
+       source="videos/cross_product_3d_1080p.mp4"
+       width="70%" aspect="16:9"/>
+</figure>
+
+<figure xml:id="fig-skel-right-hand-rule-illustration">
+  <caption>Two equivalent right-hand rules for <m>\mathbf{u}\times\mathbf{v}</m>.</caption>
+  <sidebyside widths="48% 48%" margins="2%">
+    <figure xml:id="fig-skel-rhr-imt">
+      <caption>Index<ndash/>Middle<ndash/>Thumb method.</caption>
+      <image source="images/rhr-index-middle-thumb.png" width="100%">
+        <shortdescription>Index finger along u, middle finger along v, thumb along u cross v.</shortdescription>
+      </image>
+    </figure>
+    <figure xml:id="fig-skel-rhr-curl">
+      <caption>Rotating-fingers method.</caption>
+      <image source="images/rhr-rotating-fingers.png" width="100%">
+        <shortdescription>Fingers curl from u toward v, thumb points along u cross v.</shortdescription>
+      </image>
+    </figure>
+  </sidebyside>
+</figure>
+
+<fact xml:id="fact-skel-parallel-vectors">
+<title>Parallel Vectors</title>
+<statement>
+<p>
+From <xref ref="eq-skel-cross-geometric"/>, it follows that the cross product
+of two parallel vectors is zero.
+</p>
+<p>
+<md xml:id="eq-skel-parallel-vectors" number="yes">
+\mathbf u \parallel \mathbf v \iff \mathbf u \times \mathbf v = \mathbf 0,
+\qquad \mathbf u, \mathbf v \neq \mathbf 0.
+</md>
+</p>
+</statement>
+</fact>
+
+<p>
+Say why <xref ref="eq-skel-parallel-vectors"/> follows, in one line. (Which
+factor of <xref ref="eq-skel-cross-geometric"/> vanishes, and for which values
+of <m>\theta</m>? Remember that parallel covers both the same and the opposite
+direction, and note that this is the cross product's counterpart of
+<xref ref="eq-skel-orthogonal"/>.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,5);
+\node[anchor=north west, text=gray!60, font=\footnotesize\itshape]
+  at (0.25,4.75) {workspace};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank workspace for explaining why the cross product of two parallel vectors is the zero vector.</shortdescription>
+</image>
+</sidebyside>
+
+<theorem xml:id="thm-skel-cross-properties">
+<title>Properties of the Cross Product</title>
+<statement>
+<p>
+If <m>\mathbf u</m>, <m>\mathbf v</m>, and <m>\mathbf w</m> are any
+vectors and <m>r</m>, <m>s</m> are scalars, then
+</p>
+
+<p>
+<ol>
+<li><p><m>(r\mathbf u) \times (s\mathbf v) = (rs)(\mathbf u \times \mathbf v)</m></p></li>
+<li><p><m>\mathbf u \times (\mathbf v + \mathbf w) = \mathbf u \times \mathbf v + \mathbf u \times \mathbf w</m></p></li>
+<li><p><m>(\mathbf v + \mathbf w) \times \mathbf u = \mathbf v \times \mathbf u + \mathbf w \times \mathbf u</m></p></li>
+<li><p><m>\mathbf v \times \mathbf u = -(\mathbf u \times \mathbf v)</m></p></li>
+<li><p><m>\mathbf 0 \times \mathbf u = \mathbf 0</m></p></li>
+</ol>
+</p>
+</statement>
+</theorem>
+
+<p>
+Property 4 is the one that has no analogue for the dot product, so prove it.
+(Do not use the geometric definition; use the component formula
+<xref ref="eq-skel-cross-components"/> from the next subsection, and compare
+the first components of the two sides. Then state, in words, what property 4
+says about the order of the two factors.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,9);
+\draw[gray!35] (0,3) -- (15,3);
+\node[anchor=north west, font=\small\itshape] at (0.35,8.7) {First components of $\mathbf v\times\mathbf u$ and $\mathbf u\times\mathbf v$:};
+\node[anchor=north west, font=\small\itshape] at (0.35,2.7) {In words:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in two rows, one for the comparison of the first components of the two cross products and one for the statement in words.</shortdescription>
+</image>
+</sidebyside>
+
+<exercise xml:id="skel-exercise-cross-identity">
+<statement>
+<p>
+Show that
+<m>(\mathbf u - \mathbf v) \times (\mathbf u + \mathbf v) = 2(\mathbf u \times \mathbf v)</m>.
+</p>
+
+<p>
+<em>Solution.</em>
+(Expand with the two distributive properties of
+<xref ref="thm-skel-cross-properties"/>, which gives four terms. Two of them
+vanish by <xref ref="fact-skel-parallel-vectors"/>, and the other two combine
+by property 4 <mdash/> mind the double negative.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,11);
+\draw[gray!35] (0,5.5) -- (15,5.5);
+\node[anchor=north west, font=\small\itshape] at (0.35,10.7) {Expanding:};
+\node[anchor=north west, font=\small\itshape] at (0.35,5.2) {Simplifying:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in two rows, one for the four-term expansion of the product and one for its simplification.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+</exercise>
+
+<example xml:id="ex-skel-cross-geometric">
+<title>Computing a cross product using the first definition</title>
+<statement>
+<p>
+Use <xref ref="def-skel-cross-product"/> to compute
+</p>
+<p>
+<ol>
+<li><p><m>\hat{\imath} \times \hat{\jmath}</m>, and also <m>\hat{\jmath} \times \hat{\imath}</m>;</p></li>
+<li>
+<p>
+<m>\mathbf u \times \mathbf v</m>, where <m>\mathbf u = 4\hat{\imath}</m> and
+<m>\mathbf v</m> is a vector of length <m>3</m> lying in the
+<m>xy</m>-plane, making an angle of <m>30^\circ</m> with <m>\mathbf u</m>
+measured counterclockwise.
+</p>
+</li>
+</ol>
+</p>
+
+<p>
+<em>Solution.</em>
+(In both parts the two vectors lie in the <m>xy</m>-plane, so <m>\hat n</m> can
+only be <m>\hat k</m> or <m>-\hat k</m>; the right-hand rule of
+<xref ref="fig-skel-right-hand-rule-illustration"/> decides which. Take the
+lengths and the angle from the statement, and check that part 1 agrees with
+property 4 of <xref ref="thm-skel-cross-properties"/>. Finish by checking the
+magnitude in part 2 against <xref ref="eq-skel-parallelogram-area"/>.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,14);
+\draw[gray!35] (0,10.5) -- (15,10.5);
+\draw[gray!35] (0,7) -- (15,7);
+\draw[gray!35] (0,3) -- (15,3);
+\node[anchor=north west, font=\small\itshape] at (0.35,13.7) {1. $\hat\imath\times\hat\jmath =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,10.2) {\phantom{1. }$\hat\jmath\times\hat\imath =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,6.7) {2. $\mathbf u\times\mathbf v =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,2.7) {Area check:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in four rows, for i cross j, for j cross i, for the cross product in part two, and for the check against the area of the parallelogram.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+</example>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="subsec-skel-cross-components">
+<title>Second Definition of the Cross Product</title>
+
+<p>
+Writing the vectors in components gives another definition for the cross
+product.
+</p>
+
+<definition xml:id="def-skel-cross-components">
+<title>The Cross Product (Second Definition)</title>
+<statement>
+<p>
+If <m>\mathbf u = \langle u_1, u_2, u_3\rangle</m> and
+<m>\mathbf v = \langle v_1, v_2, v_3\rangle</m>, then
+<md xml:id="eq-skel-cross-components" number="yes">
+\mathbf u \times \mathbf v =
+\langle u_2v_3 - u_3v_2,\; u_3v_1 - u_1v_3,\; u_1v_2 - u_2v_1\rangle.
+</md>
+</p>
+</statement>
+</definition>
+
+<p>
+One way to remember the second definition of the cross product is to
+write it as a determinant:
+<md>
+<mrow>
+\mathbf u \times \mathbf v \amp =
+\begin{vmatrix}
+\hat{\imath} \amp \hat{\jmath} \amp \hat{k} \\
+u_1 \amp u_2 \amp u_3 \\
+v_1 \amp v_2 \amp v_3
+\end{vmatrix}
+</mrow>
+<mrow xml:id="eq-skel-cross-determinant" number="yes">
+\amp =
+\begin{vmatrix} u_2 \amp u_3 \\ v_2 \amp v_3 \end{vmatrix}\hat{\imath}
+- \begin{vmatrix} u_1 \amp u_3 \\ v_1 \amp v_3 \end{vmatrix}\hat{\jmath}
++ \begin{vmatrix} u_1 \amp u_2 \\ v_1 \amp v_2 \end{vmatrix}\hat{k},
+</mrow>
+</md>
+where
+<md xml:id="eq-skel-two-by-two-determinant" number="yes">
+\begin{vmatrix} a \amp b \\ c \amp d \end{vmatrix} = ad - bc.
+</md>
+</p>
+
+<example xml:id="ex-skel-cross-compute">
+<title>Computing a cross product</title>
+<statement>
+<p>
+Calculate the cross product <m>\mathbf u \times \mathbf v</m> if
+<m>\mathbf u = \langle 1,-1,2\rangle</m> and
+<m>\mathbf v = \langle 3,-2,1\rangle</m>.
+</p>
+
+<p>
+<em>Solution.</em>
+(Set up the determinant of <xref ref="eq-skel-cross-determinant"/> with
+<m>\mathbf u</m> in the middle row, expand it with
+<xref ref="eq-skel-two-by-two-determinant"/>, and mind the minus sign on the
+<m>\hat\jmath</m> term. Then check your answer by dotting it with both
+<m>\mathbf u</m> and <m>\mathbf v</m>: by
+<xref ref="def-skel-cross-product"/> both results must vanish.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,12);
+\draw[gray!35] (0,3.5) -- (15,3.5);
+\node[anchor=north west, font=\small\itshape] at (0.35,11.7) {$\mathbf u\times\mathbf v =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.2) {Check:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in two rows, one for the determinant computation of the cross product and one for the orthogonality check.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+</example>
+
+<example xml:id="ex-skel-perpendicular-vector">
+<title>Computing a vector perpendicular to two other vectors</title>
+<statement>
+<p>
+Consider the points <m>A(1,-1,2)</m>, <m>B(2,0,-1)</m>, and
+<m>C(0,-2,3)</m>. Find a unit vector which is orthogonal to both
+<m>\overrightarrow{AB}</m> and <m>\overrightarrow{AC}</m>.
+</p>
+
+<p>
+<em>Solution.</em>
+(Build the two vectors with <xref ref="eq-skel-vec-components"/>, cross them,
+then normalize with <xref ref="eq-skel-vec-unit"/>. One component of the cross
+product comes out zero, which is worth noticing before you take the length.
+There are two unit vectors that work; say what the other one is.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,14);
+\draw[gray!35] (0,11) -- (15,11);
+\draw[gray!35] (0,5) -- (15,5);
+\draw[gray!35] (0,2) -- (15,2);
+\node[anchor=north west, font=\small\itshape] at (0.35,13.7) {$\overrightarrow{AB} =$};
+\node[anchor=north west, font=\small\itshape] at (7.50,13.7) {$\overrightarrow{AC} =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,10.7) {$\overrightarrow{AB}\times\overrightarrow{AC} =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,4.7) {$\hat n =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,1.7) {The other one:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in four rows, for the two vectors, for their cross product, for the unit normal vector, and for the second unit normal vector.</shortdescription>
+</image>
+</sidebyside>
+
+<figure xml:id="fig-skel-normal-vector-video">
+<caption>
+The unit vector <m>\hat{n}</m> is orthogonal to both
+<m>\overrightarrow{AB}</m> and <m>\overrightarrow{AC}</m>, and hence to the plane through the
+points <m>A</m>, <m>B</m>, and <m>C</m>.
+</caption>
+<video xml:id="video-skel-normal-vector"
+       source="videos/normal_vector_3d_1080p.mp4"
+       width="70%" aspect="16:9"/>
+</figure>
+</statement>
+</example>
+
+<example xml:id="ex-skel-triangle-area">
+<title>Computing the area of a triangle</title>
+<statement>
+<p>
+Find the area of the triangle with the vertices <m>A(1,-1,2)</m>,
+<m>B(2,0,-1)</m>, and <m>C(0,-2,3)</m>. Note that these are the same
+points that we had in the previous example.
+</p>
+
+<figure xml:id="fig-skel-triangle-area">
+<caption>
+The triangle built on the vectors <m>\overrightarrow{AB}</m> and <m>\overrightarrow{AC}</m>
+is half of the corresponding parallelogram.
+</caption>
+<image width="55%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-skel-triangle-area">
+<diagram dimensions="(310,200)" margins="10">
+<definition>b=(4,0)</definition>
+<definition>c=(1.5,3)</definition>
+<coordinates bbox="(-0.5,-0.6,6,3.6)">
+<line at="tri-side-bc" endpoints="(c, b)" stroke="black" dash="4 4"/>
+<line at="tri-side-top" endpoints="(c, b+c)" stroke="red" dash="4 4"/>
+<line at="tri-side-right" endpoints="(b, b+c)" stroke="blue" dash="4 4"/>
+<vector at="tri-vec-ac" v="c" tail="(0,0)" stroke="blue"/>
+<vector at="tri-vec-ab" v="b" tail="(0,0)" stroke="red"/>
+<label at="tri-ac-label" anchor="(0.75,1.5)" alignment="nw" color="blue">
+<m>\overrightarrow{AC}</m>
+</label>
+<label at="tri-ab-label" anchor="(2,0)" alignment="s" color="red">
+<m>\overrightarrow{AB}</m>
+</label>
+</coordinates>
+
+<annotations text="A triangle formed by the vectors AB and AC drawn tail to tail from the vertex A, together with a dashed segment from the tip of AC to the tip of AB. Two more dashed segments complete the parallelogram built on AB and AC, showing that the triangle is half of the parallelogram.">
+<annotation ref="tri-vec-ab" text="Vector AB, along the horizontal direction."/>
+<annotation ref="tri-vec-ac" text="Vector AC, drawn from the same tail as AB."/>
+<annotation ref="tri-side-bc" text="The dashed third side of the triangle, from the tip of AC to the tip of AB."/>
+<annotation ref="tri-side-top" text="A dashed side completing the parallelogram, parallel to AB."/>
+<annotation ref="tri-side-right" text="A dashed side completing the parallelogram, parallel to AC."/>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+<em>Solution.</em>
+(No new cross product is needed <mdash/> reuse the one from
+<xref ref="ex-skel-perpendicular-vector"/>. Get the area of the parallelogram
+from <xref ref="eq-skel-parallelogram-area"/>, then read off
+<xref ref="fig-skel-triangle-area"/> what fraction of it the triangle is.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,7);
+\draw[gray!35] (0,3.5) -- (15,3.5);
+\node[anchor=north west, font=\small\itshape] at (0.35,6.7) {Area of the parallelogram $=$};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.2) {Area of the triangle $=$};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in two rows, one for the area of the parallelogram and one for the area of the triangle.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+</example>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="subsec-skel-true-false">
+<title>True or False?</title>
+
+<exercise xml:id="skel-exercise-true-false-1">
+<title>True or False</title>
+<statement correct="yes">
+<p>
+Let <m>\overrightarrow{u}</m> and <m>\overrightarrow{v}</m> be two vectors in
+<m>\mathbb R^3</m>. Then, <m>\overrightarrow{u} \times \text{proj}_{\overrightarrow{v}}\overrightarrow{u}</m>
+is perpendicular to <m>\overrightarrow{u} - \text{proj}_{\overrightarrow{v}}\overrightarrow{u}</m>.
+</p>
+</statement>
+</exercise>
+
+<p>
+Justify your answer. (Dot the two vectors together and distribute, using
+property 3 of <xref ref="fact-skel-properties"/>. A cross product is
+perpendicular to each of its own factors, so both of the resulting terms are
+of a form you already know how to evaluate; then appeal to
+<xref ref="eq-skel-orthogonal"/>.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,9);
+\node[anchor=north west, text=gray!60, font=\footnotesize\itshape]
+  at (0.25,8.75) {workspace};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank workspace for justifying the first true or false statement.</shortdescription>
+</image>
+</sidebyside>
+
+<exercise xml:id="skel-exercise-true-false-2">
+<title>True or False</title>
+<statement correct="yes">
+<p>
+Let <m>\hat{u}</m> and <m>\hat{v}</m> be two standard unit vectors in
+<m>\mathbb R^3</m>. Then,
+<m>\left(\hat{u} \cdot \hat{v}\right)^2 + \left\|\hat{v} \times \hat{u}\right\|^2 = 1</m>.
+</p>
+</statement>
+</exercise>
+
+<p>
+Justify your answer. (Write both terms with the geometric formulas
+<xref ref="eq-skel-angle"/> and <xref ref="eq-skel-cross-geometric"/>, so that
+each carries a factor of <m>\|\hat u\|^2\|\hat v\|^2</m>. A Pythagorean
+identity then collapses what is left. Say which step uses the fact that the
+vectors are <em>unit</em> vectors.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,9);
+\node[anchor=north west, text=gray!60, font=\footnotesize\itshape]
+  at (0.25,8.75) {workspace};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank workspace for justifying the second true or false statement.</shortdescription>
+</image>
+</sidebyside>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="subsec-skel-torque">
+<title>Application: Torque</title>
+
+<p>
+One of the well known physical applications of the cross product is
+<term>torque</term>, the rotational analog of force. A force makes an
+object accelerate; a torque makes it <em>rotate</em>. How effective a
+force is at producing rotation depends not only on its magnitude, but
+also on <em>where</em> it is applied and in <em>what direction</em>.
+Think of pushing a door: pushing hard near the hinge barely moves it,
+while a light push at the doorknob swings it open easily. Pushing at the
+doorknob but <em>toward</em> the hinge does nothing at all. The cross
+product captures all three scenarios and more.
+</p>
+
+<definition xml:id="def-skel-torque">
+<title>Torque</title>
+<statement>
+<p>
+Suppose a force <m>\overrightarrow{F}</m> is applied at a point whose position
+vector relative to the axis of rotation is <m>\overrightarrow{r}</m>. The
+<term>torque</term> produced by <m>\overrightarrow{F}</m> is the vector
+<md xml:id="eq-skel-torque-def" number="yes">
+\overrightarrow{\tau} = \overrightarrow{r} \times \overrightarrow{F}.
+</md>
+</p>
+</statement>
+</definition>
+
+<figure xml:id="fig-skel-int-torque">
+<caption>
+Interactive view of <xref ref="eq-skel-torque-def"/>. The force
+<m>\overrightarrow{F}</m> is applied at the head of <m>\overrightarrow{r}</m>, and the torque
+<m>\overrightarrow{\tau} = \overrightarrow{r} \times \overrightarrow{F}</m> points along the axis of rotation.
+</caption>
+<interactive xml:id="interactive-skel-torque" iframe="torque-cross-product.html" width="100%" aspect="8:7">
+<instructions>
+<p>
+In the left pane the axis of rotation passes through the marked point,
+perpendicular to the screen. Drag the head of the yellow position vector
+<m>\overrightarrow{r}</m> to move the point where the force is applied, and drag the
+head of the red force <m>\overrightarrow{F}</m> to change its size and direction. The
+dashed red line is the line along which the force acts, and the violet
+segment is the lever arm <m>r_\perp = \|\overrightarrow{r}\|\sin\theta</m>, the
+perpendicular distance from the axis to that line. The shaded
+parallelogram built on <m>\overrightarrow{r}</m> and <m>\overrightarrow{F}</m> has area
+<m>\|\overrightarrow{\tau}\|</m>, and the curved arrow shows the sense of the rotation
+the torque produces.
+</p>
+<p>
+The right pane shows the same two vectors in space, together with
+<m>\overrightarrow{\tau} = \overrightarrow{r} \times \overrightarrow{F}</m> along the axis; drag that pane to
+view it from another angle, or press <q>view</q> to restore the original
+one. Press <q>animate</q> to swing <m>\overrightarrow{F}</m> once around the point of
+application: watch <m>\|\overrightarrow{\tau}\|</m> reach its largest value when
+<m>\overrightarrow{F} \perp \overrightarrow{r}</m>, fall to zero when <m>\overrightarrow{F}</m> points
+straight at (or away from) the axis, and reverse direction as the
+rotation changes sense. Either vector can also be moved with the keyboard
+(press <q>Tab</q> to reach its head, then use the arrow keys).
+</p>
+</instructions>
+</interactive>
+</figure>
+
+<p>
+Everything we know about the cross product now translates into physics.
+By <xref ref="eq-skel-cross-geometric"/>, the magnitude of the torque is
+<md xml:id="eq-skel-torque-magnitude" number="yes">
+\|\overrightarrow{\tau}\| = \|\overrightarrow{r}\|\|\overrightarrow{F}\||\sin\theta|,
+</md>
+where <m>\theta</m> is the angle between <m>\overrightarrow{r}</m> and
+<m>\overrightarrow{F}</m>, and the direction of <m>\overrightarrow{\tau}</m> is given by the
+right-hand rule: <m>\overrightarrow{\tau}</m> points along the axis of rotation, and
+curling the fingers of the right hand from <m>\overrightarrow{r}</m> toward
+<m>\overrightarrow{F}</m> gives the sense of the rotation. Torque has units of
+meter-newtons (<m>\text{m}\cdot\text{N}</m>) in SI.
+</p>
+
+<p>
+The quantity in <xref ref="eq-skel-torque-magnitude"/> can be grouped in two
+useful ways, shown in <xref ref="fig-skel-torque-two-groupings"/>. Write down
+the two groupings. (Attach the <m>\sin\theta</m> first to <m>\|\overrightarrow r\|</m>
+and then to <m>\|\overrightarrow F\|</m>; each grouping names a quantity in the
+figure. Then say why the two products are equal.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,7);
+\draw[gray!35] (0,4.7) -- (15,4.7);
+\draw[gray!35] (0,2.4) -- (15,2.4);
+\node[anchor=north west, font=\small\itshape] at (0.35,6.7) {Grouped as a lever arm: $\|\overrightarrow{\tau}\| =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,4.4) {Grouped as a perpendicular force: $\|\overrightarrow{\tau}\| =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,2.1) {Why they agree:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in three rows, for the torque grouped as force times lever arm, for the torque grouped as distance times perpendicular force, and for the reason the two agree.</shortdescription>
+</image>
+</sidebyside>
+
+<figure xml:id="fig-skel-torque-two-groupings">
+<caption>
+The two groupings of <xref ref="eq-skel-torque-magnitude"/>. In both pictures
+the axis of rotation passes through <m>O</m>, perpendicular to the page, the
+force <m>\overrightarrow{F}</m> is applied at <m>P</m>, and <m>\theta</m> is the angle
+between <m>\overrightarrow{r}</m> and <m>\overrightarrow{F}</m>; the two products are equal because
+each is <m>\|\overrightarrow{r}\|\|\overrightarrow{F}\|\sin\theta</m>.
+</caption>
+<sidebyside widths="48% 48%" margins="2%">
+
+<figure xml:id="fig-skel-torque-lever-arm">
+<caption>
+Force times lever arm: <m>\|\overrightarrow{\tau}\| = r_\perp\|\overrightarrow{F}\|</m>.
+</caption>
+<image width="100%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-skel-torque-lever-arm">
+<diagram dimensions="(330,300)" margins="8">
+<coordinates bbox="(-1.1,-3.95,6.5,2.95)">
+
+<line at="la-action" p1="(2.451,-2.212)" p2="(5.721,2.457)"
+      stroke="#D55E00" thickness="1.4" dash="5 4"/>
+<line at="la-rext" p1="(4,0)" p2="(6.0,0)"
+      stroke="#0072B2" thickness="1.2" dash="3 4"/>
+
+<line at="la-lever" endpoints="((0,0), (2.684,-1.879))"
+      stroke="#009E73" thickness="3"/>
+
+<vector at="la-r" v="(4,0)" tail="(0,0)" stroke="#0072B2" thickness="2"/>
+<vector at="la-F" v="(1.491,2.130)" tail="(4,0)" stroke="#D55E00" thickness="2"/>
+
+<angle-marker at="la-theta" points="((5.6,0),(4,0),(5.491,2.130))"
+              radius="30" stroke="black"><m>\theta</m></angle-marker>
+<angle-marker at="la-right" points="((5.721,2.457),(2.684,-1.879),(0,0))"
+              radius="13" stroke="#009E73"/>
+
+<point at="la-O" p="(0,0)" fill="black" radius="3.5"/>
+<point at="la-P" p="(4,0)" fill="black" radius="3.5"/>
+<point at="la-Q" p="(2.684,-1.879)" fill="#009E73" radius="3"/>
+
+<label at="la-Ol" anchor="(-0.12,-0.10)" alignment="sw"><m>O</m></label>
+<label at="la-Pl" anchor="(4.02,0.10)" alignment="nw"><m>P</m></label>
+<label at="la-rl" anchor="(2.0,0.08)" alignment="n" color="#0072B2">
+<m>\overrightarrow{r}</m>
+</label>
+<label at="la-Fl" anchor="(5.30,2.35)" alignment="nw" color="#D55E00">
+<m>\overrightarrow{F}</m>
+</label>
+<label at="la-leverl" anchor="(1.22,-0.86)" alignment="ne" color="#009E73">
+<m>r_\perp</m>
+</label>
+<label at="la-eq1" anchor="(2.75,-3.05)" alignment="c">
+<m>r_\perp = \|\overrightarrow{r}\|\sin\theta</m>
+</label>
+<label at="la-eq2" anchor="(2.75,-3.75)" alignment="c">
+<m>\|\overrightarrow{\tau}\| = r_\perp\|\overrightarrow{F}\|</m>
+</label>
+
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="The axis of rotation passes through the point O, perpendicular to the page, and the force F is applied at the point P at the head of the position vector r. The line along which the force acts is extended backwards past P as a dashed line, and it passes below O. The perpendicular segment from O to that line is the lever arm r perpendicular, whose length is the length of r times the sine of theta. The torque is the length of the force times this lever arm.">
+  <annotation ref="la-r" text="The position vector r, drawn from the axis at O to the point of application P."/>
+  <annotation ref="la-F" text="The force F, drawn from P, making an angle theta with the direction of r."/>
+  <annotation ref="la-action" text="The dashed line along which the force acts, extended in both directions past P."/>
+  <annotation ref="la-lever" text="The lever arm, the perpendicular segment from the axis at O to the line of action of the force."/>
+  <annotation ref="la-right" text="A right angle, showing that the lever arm meets the line of action perpendicularly."/>
+  <annotation ref="la-theta" text="The angle theta at P, between the direction of r and the force F."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<figure xml:id="fig-skel-torque-perp-force">
+<caption>
+Distance times perpendicular force:
+<m>\|\overrightarrow{\tau}\| = \|\overrightarrow{r}\|F_\perp</m>.
+</caption>
+<image width="100%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-skel-torque-perp-force">
+<diagram dimensions="(330,300)" margins="8">
+<coordinates bbox="(-1.1,-3.95,6.5,2.95)">
+
+<line at="fp-boxv" p1="(5.491,0)" p2="(5.491,2.130)"
+      stroke="#999999" thickness="1.2" dash="3 4"/>
+<line at="fp-boxh" p1="(4,2.130)" p2="(5.491,2.130)"
+      stroke="#999999" thickness="1.2" dash="3 4"/>
+
+<vector at="fp-r" v="(4,0)" tail="(0,0)" stroke="#0072B2" thickness="2"/>
+<vector at="fp-Fpar" v="(1.491,0)" tail="(4,0)" stroke="#666666" thickness="2"/>
+<vector at="fp-Fperp" v="(0,2.130)" tail="(4,0)" stroke="#009E73" thickness="3"/>
+<vector at="fp-F" v="(1.491,2.130)" tail="(4,0)" stroke="#D55E00" thickness="2"/>
+
+<angle-marker at="fp-theta" points="((5.6,0),(4,0),(5.491,2.130))"
+              radius="30" stroke="black"><m>\theta</m></angle-marker>
+<angle-marker at="fp-right" points="((5.6,0),(4,0),(4,2.130))"
+              radius="13" stroke="#009E73"/>
+
+<point at="fp-O" p="(0,0)" fill="black" radius="3.5"/>
+<point at="fp-P" p="(4,0)" fill="black" radius="3.5"/>
+
+<label at="fp-Ol" anchor="(-0.12,-0.10)" alignment="sw"><m>O</m></label>
+<label at="fp-Pl" anchor="(3.94,-0.10)" alignment="sw"><m>P</m></label>
+<label at="fp-rl" anchor="(2.0,0.08)" alignment="n" color="#0072B2">
+<m>\overrightarrow{r}</m>
+</label>
+<label at="fp-Fl" anchor="(5.55,2.20)" alignment="ne" color="#D55E00">
+<m>\overrightarrow{F}</m>
+</label>
+<label at="fp-Fperpl" anchor="(3.90,1.15)" alignment="w" color="#009E73">
+<m>F_\perp</m>
+</label>
+<label at="fp-Fparl" anchor="(4.75,-0.12)" alignment="s" color="#666666">
+<m>F_\parallel</m>
+</label>
+<label at="fp-note" anchor="(2.75,-1.95)" alignment="c" color="#666666">
+<m>F_\parallel \text{ produces no rotation}</m>
+</label>
+<label at="fp-eq1" anchor="(2.75,-3.05)" alignment="c">
+<m>F_\perp = \|\overrightarrow{F}\|\sin\theta</m>
+</label>
+<label at="fp-eq2" anchor="(2.75,-3.75)" alignment="c">
+<m>\|\overrightarrow{\tau}\| = \|\overrightarrow{r}\|F_\perp</m>
+</label>
+
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="The same position vector r from the axis at O to the point of application P, with the force F at P split into two pieces by a dashed rectangle. One piece is perpendicular to r and has length the length of F times the sine of theta; the other piece is parallel to r and points straight away from the axis. The torque is the length of r times the perpendicular piece; the parallel piece produces no rotation.">
+  <annotation ref="fp-r" text="The position vector r, drawn from the axis at O to the point of application P."/>
+  <annotation ref="fp-F" text="The force F, drawn from P, making an angle theta with the direction of r."/>
+  <annotation ref="fp-Fperp" text="The component of the force perpendicular to r, of length F perpendicular; this is the part that turns the object."/>
+  <annotation ref="fp-Fpar" text="The component of the force parallel to r, pointing straight away from the axis; this part produces no rotation."/>
+  <annotation ref="fp-right" text="A right angle between the two components of the force."/>
+  <annotation ref="fp-theta" text="The angle theta at P, between the direction of r and the force F."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+</sidebyside>
+</figure>
+
+<p>
+The first grouping, shown in <xref ref="fig-skel-torque-lever-arm"/>, says the
+torque is the force times the
+<term>lever arm</term> <m>r_\perp</m>, the perpendicular distance from
+the axis to the line along which the force acts. The second, shown in
+<xref ref="fig-skel-torque-perp-force"/>, says it is
+the distance <m>\|\overrightarrow{r}\|</m> times <m>F_\perp</m>, the component of the
+force perpendicular to <m>\overrightarrow{r}</m>; the parallel component
+<m>F_\parallel</m> points straight at the axis and produces no rotation.
+</p>
+
+<fact xml:id="fact-skel-zero-torque">
+<title>Zero Torque</title>
+<statement>
+<p>
+By <xref ref="eq-skel-parallel-vectors"/>, if <m>\overrightarrow{F}</m> is parallel to
+<m>\overrightarrow{r}</m> then <m>\overrightarrow{\tau} = \overrightarrow{r} \times \overrightarrow{F} = \overrightarrow{0}</m>: a
+force directed straight at (or away from) the axis produces no rotation.
+This is why you cannot open a door by pushing toward its hinge.
+</p>
+</statement>
+</fact>
+
+<example xml:id="ex-skel-biceps-torque">
+<title>Biceps torque</title>
+<statement>
+<p>
+The biceps muscle exerts a vertical force of
+<m>\|\overrightarrow{F}\| = 700</m> N on the lower arm, attached at a point
+<m>5.0</m> cm from the elbow joint (the axis of rotation). Calculate
+the torque about the elbow when
+</p>
+<p>
+<ol>
+<li><p>the forearm is horizontal, and</p></li>
+<li><p>the forearm makes a <m>30^\circ</m> angle below the horizontal.</p></li>
+</ol>
+</p>
+
+<figure xml:id="fig-skel-biceps-torque">
+  <caption>The biceps exerts a 700 N force on the forearm: (a) forearm horizontal, with the muscle attached 5.0 cm from the elbow axis; (b) forearm at 30<degree/> below horizontal, with lever arm <m>R</m>.</caption>
+  <image source="images/biceps-side-by-side.png" width="100%">
+    <description>
+<p>
+Side-by-side diagrams of an arm. In (a), the forearm is horizontal and a 700 N biceps force acts 5.0 cm from the elbow axis. In (b), the forearm is angled 30 degrees below horizontal, making a 60 degree angle with the vertical, with lever arm R.
+</p>
+</description>
+  </image>
+</figure>
+
+<p>
+<em>Solution.</em>
+(Put the elbow at the origin and keep everything in the plane <m>z = 0</m>, so
+<m>\overrightarrow F</m> points straight up and only <m>\overrightarrow r</m>
+changes between the two parts. Convert the centimeters to meters before you
+start. In part 2 the forearm sits at <m>-30^\circ</m>, so the angle between
+<m>\overrightarrow r</m> and <m>\overrightarrow F</m> is not <m>30^\circ</m>
+<mdash/> read it off the picture. Compute each torque with
+<xref ref="eq-skel-torque-def"/> and check it against
+<xref ref="eq-skel-torque-magnitude"/>. Finish by saying which position
+produces the larger torque and why a gym machine might care.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,16);
+\draw[gray!35] (0,13) -- (15,13);
+\draw[gray!35] (0,7.5) -- (15,7.5);
+\draw[gray!35] (0,3) -- (15,3);
+\node[anchor=north west, font=\small\itshape] at (0.35,15.7) {Setup: $\overrightarrow{F} =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,12.7) {1. Forearm horizontal: $\overrightarrow{r} =$, \quad $\overrightarrow{\tau} =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,7.2) {2. Forearm $30^{\circ}$ below: $\overrightarrow{r} =$, \quad $\overrightarrow{\tau} =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,2.7) {Which is larger, and why it matters:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in four rows, for the force vector, for the position vector and torque with the forearm horizontal, for the same with the forearm thirty degrees below horizontal, and for the comparison of the two.</shortdescription>
+</image>
+</sidebyside>
+
+<figure xml:id="fig-skel-biceps-torque-video">
+<caption>
+The torque <m>\overrightarrow{\tau} = \overrightarrow{r} \times \overrightarrow{F}</m> of the biceps force
+about the elbow. When the forearm drops <m>30^\circ</m> below the
+horizontal, the angle between <m>\overrightarrow{r}</m> and <m>\overrightarrow{F}</m> becomes
+<m>120^\circ</m> and the lever arm <m>r_\perp = \|\overrightarrow{r}\|\sin\theta</m>
+shortens.
+</caption>
+<video xml:id="video-skel-biceps-torque"
+       source="videos/biceps_torque_1080p.mp4"
+       width="70%" aspect="16:9"/>
+</figure>
+</statement>
+</example>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="subsec-skel-circular-motion">
+<title>Application: Circular Motion: Velocity and Angular Velocity</title>
+
+<introduction>
+<p>
+A second physical application of the cross product describes the motion of
+an object travelling in a circle: a rider on a circular track, a ball whirled
+on a string, a point on a spinning wheel, or the moon on its (nearly
+circular) orbit. In each case the object turns about a fixed centre, and the
+natural way to keep track of where it is at time <m>t</m> is not by its
+coordinates <m>x</m> and <m>y</m> but by the single angle <m>\theta(t)</m>
+it has swung through. Our goal is to study how the velocity and the rate of
+change of that angle are related.
+</p>
+</introduction>
+
+<subsubsection xml:id="subsec-skel-polar-frame">
+<title>A Frame that Turns with the Particle</title>
+
+<p>
+Let an object move on a circle of radius <m>r</m> centred at the origin of
+the <m>xy</m>-plane, and let <m>\theta(t)</m> be the angle its position
+makes with the positive <m>x</m>-axis at time <m>t</m>, as in
+<xref ref="fig-skel-polar-frame"/>. At the point <m>P</m> where the particle
+sits we attach two unit vectors:
+<ul>
+<li>
+<p>
+<m>\hat r(t)</m>, pointing radially outward, away from the centre, and
+</p>
+</li>
+<li>
+<p>
+<m>\hat\theta(t)</m>, perpendicular to <m>\hat r(t)</m> and tangent to the
+circle, pointing in the direction of increasing <m>\theta</m>.
+</p>
+</li>
+</ul>
+</p>
+
+<figure xml:id="fig-skel-polar-frame">
+<caption>
+The moving frame at the point <m>P</m>: <m>\hat r(t)</m> points radially
+outward and <m>\hat\theta(t)</m> is tangent to the circle. The fixed vectors
+<m>\hat{\imath}</m> and <m>\hat{\jmath}</m> are drawn at <m>P</m> for comparison; unlike
+<m>\hat r</m> and <m>\hat\theta</m>, they do not turn as the particle moves.
+</caption>
+<image width="62%">
+<description>
+<p>
+A circle of radius r centred at the origin. A particle sits at a point P on
+the circle, its position vector making an angle theta of t with the positive
+x-axis. At P the unit vector r hat points radially outward along the
+position vector, and the unit vector theta hat is perpendicular to it,
+tangent to the circle in the counterclockwise direction. The fixed unit
+vectors i and j are also drawn at P for comparison.
+</p>
+</description>
+      <prefigure xmlns="https://prefigure.org" label="prefigure-skel-polar-frame">
+      <diagram dimensions="(455,430)" margins="14">
+      <coordinates bbox="(-3.5,-3.1,3.9,3.9)">
+
+      <line at="pf-ax" p1="(-3.15,0)" p2="(3.35,0)" stroke="#999999" thickness="1.4"/>
+      <line at="pf-ay" p1="(0,-2.75)" p2="(0,3.35)" stroke="#999999" thickness="1.4"/>
+
+      <circle at="pf-circle" center="(0,0)" radius="2.4"
+              stroke="#9EC5E8" thickness="2" fill="none"/>
+
+      <vector at="pf-r" tail="(0,0)" v="(1.5427,1.8384)" stroke="#666666" thickness="2"/>
+
+      <vector at="pf-i" tail="(1.5427,1.8384)" v="(1,0)" stroke="#9EC5E8" thickness="2"/>
+      <vector at="pf-j" tail="(1.5427,1.8384)" v="(0,1)" stroke="#9EC5E8" thickness="2"/>
+
+      <vector at="pf-rhat" tail="(1.5427,1.8384)" v="(0.6428,0.766)" stroke="#D55E00" thickness="3"/>
+      <vector at="pf-thetahat" tail="(1.5427,1.8384)" v="(-0.766,0.6428)" stroke="#009E73" thickness="3"/>
+
+      <angle-marker font-size="18" at="pf-theta" points="((1,0),(0,0),(0.6428,0.766))"
+                    radius="42" stroke="black"><m>\theta(t)</m></angle-marker>
+
+      <point at="pf-O" p="(0,0)" fill="black" radius="3"/>
+      <point at="pf-P" p="(1.5427,1.8384)" fill="black" radius="3.5"/>
+
+      <label font-size="18" at="pf-Pl" anchor="(1.60,1.76)" alignment="se"><m>P</m></label>
+      <label font-size="18" at="pf-rl" anchor="(0.66,1.00)" alignment="nw" color="#666666"><m>r</m></label>
+      <label font-size="18" at="pf-rhl" anchor="(2.24,2.66)" alignment="ne" color="#D55E00">
+      <m>\hat r(t)</m>
+      </label>
+      <label font-size="18" at="pf-thl" anchor="(0.72,2.54)" alignment="nw" color="#009E73">
+      <m>\hat\theta(t)</m>
+      </label>
+      <label font-size="18" at="pf-il" anchor="(2.60,1.80)" alignment="se" color="#5B9BD5"><m>\hat{\imath}</m></label>
+      <label font-size="18" at="pf-jl" anchor="(1.60,2.88)" alignment="e" color="#5B9BD5"><m>\hat{\jmath}</m></label>
+      <label font-size="18" at="pf-xl" anchor="(3.25,0.05)" alignment="ne"><m>+x</m></label>
+      <label font-size="18" at="pf-yl" anchor="(0.10,3.25)" alignment="e"><m>+y</m></label>
+
+      </coordinates>
+
+      <annotations>
+      <annotation ref="figure" text="A circle of radius r centred at the origin. A particle sits at a point P on the circle, its position vector making an angle theta of t with the positive x axis. At P the unit vector r hat points radially outward along the position vector and the unit vector theta hat is perpendicular to it, tangent to the circle in the counterclockwise direction. The fixed unit vectors i and j are also drawn at P for comparison.">
+        <annotation ref="pf-circle" text="The circular orbit of radius r."/>
+        <annotation ref="pf-r" text="The position vector of the particle, of length r."/>
+        <annotation ref="pf-rhat" text="The unit vector r hat, pointing radially outward from the centre."/>
+        <annotation ref="pf-thetahat" text="The unit vector theta hat, tangent to the circle, perpendicular to r hat."/>
+        <annotation ref="pf-theta" text="The angle theta of t between the positive x axis and the position vector."/>
+      </annotation>
+      </annotations>
+      </diagram>
+      </prefigure>
+</image>
+</figure>
+
+<p>
+Read the components of the moving frame off
+<xref ref="fig-skel-polar-frame"/>, and write down the position vector.
+(<m>\hat r</m> makes the angle <m>\theta</m> with the <m>x</m>-axis, and
+<m>\hat\theta</m> is a quarter turn counterclockwise from it. Then check that
+<m>\hat r</m>, <m>\hat\theta</m>, <m>\hat k</m> is right-handed by computing
+<m>\hat r \times \hat\theta</m> with
+<xref ref="eq-skel-cross-determinant"/>; a Pythagorean identity finishes it.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,13);
+\draw[gray!35] (0,10.5) -- (15,10.5);
+\draw[gray!35] (0,8) -- (15,8);
+\node[anchor=north west, font=\small\itshape] at (0.35,12.7) {$\hat r(t) =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,10.2) {$\hat\theta(t) =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,7.7) {$\overrightarrow{r}(t) =$};
+\node[anchor=north west, font=\small\itshape] at (5.00,7.7) {$\hat r \times \hat\theta =$};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in three rows, for the components of the radial unit vector, for the components of the tangential unit vector, and for the position vector together with the cross product that checks the frame is right-handed.</shortdescription>
+</image>
+</sidebyside>
+
+<assemblage xml:id="skel-summary-polar-frame">
+<title>The Moving Frame</title>
+<p>
+<md>
+<mrow xml:id="eq-skel-rhat" number="yes">\hat r(t) \amp = \cos\theta(t)\,\hat{\imath} + \sin\theta(t)\,\hat{\jmath},</mrow>
+<mrow xml:id="eq-skel-thetahat" number="yes">\hat\theta(t) \amp = -\sin\theta(t)\,\hat{\imath} + \cos\theta(t)\,\hat{\jmath},</mrow>
+<mrow xml:id="eq-skel-position-polar" number="yes">\overrightarrow{r}(t) \amp = r\,\hat r(t).</mrow>
+</md>
+</p>
+</assemblage>
+
+<p>
+The pair <m>\hat{\imath}</m>, <m>\hat{\jmath}</m> is fixed once and for all, while the
+pair <m>\hat r(t)</m>, <m>\hat\theta(t)</m> rides along with the particle and
+turns as it goes; this is exactly what makes the second pair convenient.
+</p>
+
+</subsubsection>
+
+<subsubsection xml:id="subsec-skel-circular-velocity">
+<title>The Velocity in Circular Motion</title>
+
+<p>
+Because the particle moves, the angle <m>\theta</m> depends on <m>t</m>, and
+so do the two moving unit vectors. Differentiate the frame, and then the
+position. (Differentiate <xref ref="eq-skel-rhat"/> and
+<xref ref="eq-skel-thetahat"/> with the chain rule, and recognize each answer
+as a multiple of the <em>other</em> unit vector. Then differentiate
+<xref ref="eq-skel-position-polar"/>, remembering that <m>r</m> is constant on
+a circle. Finish by saying which of <m>\hat r</m>, <m>\hat\theta</m> the
+velocity points along, and why that had to happen for a vector of constant
+length.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,15);
+\draw[gray!35] (0,11.5) -- (15,11.5);
+\draw[gray!35] (0,8) -- (15,8);
+\draw[gray!35] (0,3.5) -- (15,3.5);
+\node[anchor=north west, font=\small\itshape] at (0.35,14.7) {$\dfrac{d\hat r}{dt} =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,11.2) {$\dfrac{d\hat\theta}{dt} =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,7.7) {$\overrightarrow{v}(t) = \dfrac{d\overrightarrow{r}}{dt} =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.2) {Why the velocity has no radial component:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in four rows, for the derivative of the radial unit vector, for the derivative of the tangential unit vector, for the velocity, and for the explanation that the velocity is purely tangential.</shortdescription>
+</image>
+</sidebyside>
+
+<assemblage xml:id="skel-summary-circular-velocity">
+<title>Velocity in Circular Motion</title>
+<p>
+<md xml:id="eq-skel-circular-velocity" number="yes">
+\overrightarrow{v}(t) = r\,\frac{d\theta}{dt}\,\hat\theta(t),
+</md>
+whose <m>\hat\theta</m>-component
+<md xml:id="eq-skel-tangential-velocity" number="yes">
+v_\theta = r\,\frac{d\theta}{dt}
+</md>
+is called the <term>tangential component of the velocity</term>. It is
+positive when the particle turns counterclockwise and negative when it turns
+clockwise.
+</p>
+</assemblage>
+
+<definition xml:id="def-skel-angular-speed">
+<title>Angular Speed</title>
+<statement>
+<p>
+The <term>angular speed</term> of the particle is the magnitude of the rate
+of change of its angle,
+<md xml:id="eq-skel-angular-speed" number="yes">
+\omega = \left|\frac{d\theta}{dt}\right|,
+</md>
+measured in radians per second. By <xref ref="eq-skel-circular-velocity"/>,
+the speed of the particle and its angular speed are related by
+<md xml:id="eq-skel-speed-omega-r" number="yes">
+v = \left\|\overrightarrow{v}\right\| = r\,\omega.
+</md>
+</p>
+</statement>
+</definition>
+
+<p>
+It is worth seeing where <xref ref="eq-skel-speed-omega-r"/> comes from
+geometrically, without any differentiation of unit vectors.
+<xref ref="fig-skel-circular-chord"/> shows the particle moving from
+<m>\overrightarrow{r}(t)</m> to <m>\overrightarrow{r}(t+\Delta t)</m> through a small angle
+<m>\Delta\theta</m>. Recover <xref ref="eq-skel-speed-omega-r"/> from that
+picture. (The two position vectors have the same length, so the triangle is
+isosceles; splitting it down the middle gives the chord length. For small
+angles replace <m>\sin x</m> by the first term of its Maclaurin series, then
+divide by <m>\Delta t</m> and let <m>\Delta t \to 0</m>. Say also what happens
+to the <em>direction</em> of the chord in that limit.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,13);
+\draw[gray!35] (0,10) -- (15,10);
+\draw[gray!35] (0,4) -- (15,4);
+\node[anchor=north west, font=\small\itshape] at (0.35,12.7) {Chord length: $\|\Delta\overrightarrow{r}\| =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,9.7) {Taking the limit:};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.7) {The direction of the chord as $\Delta t \to 0$:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in three rows, for the exact chord length, for the limit that produces the speed, and for the limiting direction of the chord.</shortdescription>
+</image>
+</sidebyside>
+
+<figure xml:id="fig-skel-circular-chord">
+<caption>
+The displacement <m>\Delta\overrightarrow{r}</m> is the chord subtending the angle
+<m>\Delta\theta</m>. For small <m>\Delta\theta</m> the chord is nearly the
+arc, <m>\left\|\Delta\overrightarrow{r}\right\| \approx r\,\Delta\theta</m>, and its
+direction approaches that of the tangent line, along which <m>\overrightarrow{v}</m>
+points.
+</caption>
+<image width="66%">
+<description>
+<p>
+Two position vectors of equal length r are drawn from the centre of a dashed
+circle, separated by a small angle delta theta. The chord delta r joins the
+tip of the first to the tip of the second. A dashed tangent line touches the
+circle at the first point, and the velocity arrow at that point lies along
+it.
+</p>
+</description>
+      <prefigure xmlns="https://prefigure.org" label="prefigure-skel-circular-chord">
+      <diagram dimensions="(470,492)" margins="14">
+      <coordinates bbox="(-3.7,-4.25,3.7,3.5)">
+
+      <circle at="ch-circle" center="(0,0)" radius="2.2"
+              stroke="#9EC5E8" thickness="1.8" fill="none" dash="4 3"/>
+
+      <line at="ch-tangent" p1="(1.7062,1.5553)" p2="(-0.8052,3.0053)"
+            stroke="#999999" thickness="1.4" dash="4 3"/>
+
+      <vector at="ch-r1" tail="(0,0)" v="(1.1000,1.9053)" stroke="#666666" thickness="2"/>
+      <vector at="ch-r2" tail="(0,0)" v="(-0.3820,2.1666)" stroke="#666666" thickness="2"/>
+
+      <vector at="ch-dr" tail="(1.1000,1.9053)" v="(-1.4820,0.2613)" stroke="#D55E00" thickness="3"/>
+      <vector at="ch-v" tail="(1.1000,1.9053)" v="(-1.2990,0.7500)" stroke="#0072B2" thickness="3"/>
+
+      <angle-marker font-size="18" at="ch-dtheta" points="((0.5,0.8660),(0,0),(-0.1736,0.9848))"
+                    radius="52" stroke="black"><m>\Delta\theta</m></angle-marker>
+
+      <point at="ch-O" p="(0,0)" fill="black" radius="3"/>
+      <point at="ch-P1" p="(1.1000,1.9053)" fill="black" radius="3.5"/>
+      <point at="ch-P2" p="(-0.3820,2.1666)" fill="black" radius="3.5"/>
+
+      <label font-size="18" at="ch-r1l" anchor="(1.32,1.98)" alignment="e" color="#666666">
+      <m>\overrightarrow{r}(t)</m>
+      </label>
+      <label font-size="18" at="ch-r2l" anchor="(-0.55,2.24)" alignment="nw" color="#666666">
+      <m>\overrightarrow{r}(t+\Delta t)</m>
+      </label>
+      <label font-size="18" at="ch-drl" anchor="(0.30,1.92)" alignment="s" color="#D55E00">
+      <m>\Delta\overrightarrow{r}</m>
+      </label>
+      <label font-size="18" at="ch-vl" anchor="(-0.10,2.70)" alignment="e" color="#0072B2">
+      <m>\overrightarrow{v}(t)</m>
+      </label>
+      <label font-size="18" at="ch-tl" anchor="(-0.86,3.06)" alignment="nw" color="#666666">
+      <m>\text{tangent line}</m>
+      </label>
+
+      <!-- Plain \| bars, never \left\|...\right\|: a stretchy delimiter makes
+           MathJax emit a nested <svg> inside the label, which browsers render
+           flipped and stacked at the diagram origin. -->
+      <label font-size="18" at="ch-note1" anchor="(0,-2.95)" alignment="c">
+      <m>\|\Delta\overrightarrow{r}\| = 2r\sin\tfrac{\Delta\theta}{2} \approx r\,\Delta\theta</m>
+      </label>
+
+      </coordinates>
+
+      <annotations>
+      <annotation ref="figure" text="Two position vectors of equal length r are drawn from the centre of a dashed circle, separated by a small angle delta theta. The chord delta r joins the tip of the first to the tip of the second. A dashed tangent line touches the circle at the first point, and the velocity arrow at that point lies along it. As delta t tends to zero the chord lines up with the tangent, and its length, two r sine of half delta theta, is approximately r times delta theta.">
+        <annotation ref="ch-r1" text="The position vector at time t."/>
+        <annotation ref="ch-r2" text="The position vector a short time delta t later, the same length but turned through delta theta."/>
+        <annotation ref="ch-dr" text="The displacement delta r, the chord joining the two tips."/>
+        <annotation ref="ch-v" text="The velocity at time t, tangent to the circle."/>
+        <annotation ref="ch-tangent" text="The tangent line to the circle at the position at time t."/>
+        <annotation ref="ch-dtheta" text="The small angle delta theta swept out during the time interval."/>
+      </annotation>
+      </annotations>
+      </diagram>
+      </prefigure>
+</image>
+</figure>
+
+</subsubsection>
+
+<subsubsection xml:id="subsec-skel-angular-velocity-vector">
+<title>Angular Velocity as a Vector</title>
+
+<p>
+So far the rate of turning has been a number, <m>d\theta/dt</m>. But a
+rotation has a direction as well as a rate: the plane of the circle can be
+tilted any which way, and the particle can go around it either way. Both
+pieces of information can be carried by a single vector, provided we point it
+along the axis of rotation rather than along the motion.
+</p>
+
+<definition xml:id="def-skel-angular-velocity">
+<title>Angular Velocity Vector</title>
+<statement>
+<p>
+For an object moving in a circle in the <m>xy</m>-plane about the origin, the
+<term>angular velocity vector</term> is
+<md xml:id="eq-skel-angular-velocity" number="yes">
+\overrightarrow{\omega} = \frac{d\theta}{dt}\,\hat{k} = \omega_z\,\hat{k},
+</md>
+directed along the axis of rotation. Its SI units are
+<m>\text{rad}\cdot\text{s}^{-1}</m>, and the angular speed of
+<xref ref="eq-skel-angular-speed"/> is its magnitude,
+<m>\omega = \left\|\overrightarrow{\omega}\right\| = \left|\omega_z\right|</m>.
+</p>
+</statement>
+</definition>
+
+<p>
+The sign of <m>\omega_z</m> records which way the object goes around, and the
+right-hand rule turns that sign into a direction in space: curl the fingers
+of your right hand in the direction of the motion and your thumb points along
+<m>\overrightarrow{\omega}</m>. The two cases are shown in
+<xref ref="fig-skel-angular-velocity-sign"/>.
+</p>
+
+<figure xml:id="fig-skel-angular-velocity-sign">
+<caption>
+The angular velocity vector points along the axis of rotation, in the
+direction given by the right-hand rule: up the <m>z</m>-axis for
+counterclockwise motion (left), down it for clockwise motion (right). Note
+that <m>\overrightarrow{\omega}</m> is <em>not</em> tangent to the orbit <mdash/> the
+velocity <m>\overrightarrow{v}</m> is.
+</caption>
+<image width="92%">
+<description>
+<p>
+Two panels showing a particle on a circular orbit in the horizontal plane,
+drawn in an oblique view with the z-axis vertical. In the left panel the
+particle circulates counterclockwise as seen from above and the angular
+velocity vector points up along the positive z-direction. In the right panel
+the particle circulates clockwise and the angular velocity vector points down
+along the negative z-direction. In both panels the velocity is tangent to the
+orbit.
+</p>
+</description>
+      <prefigure xmlns="https://prefigure.org" label="prefigure-skel-angular-velocity-sign">
+      <diagram dimensions="(710,372)" margins="14">
+      <definition>orbA(t) = (2.2*cos(t), 0.75*sin(t))</definition>
+      <definition>orbB(t) = (7.4 + 2.2*cos(t), 0.75*sin(t))</definition>
+      <coordinates bbox="(-3.5,-3.7,11.2,4.0)">
+
+      <!-- ============ PANEL A : counterclockwise, omega along +k ============ -->
+      <line at="av-axA" p1="(0,-2.7)" p2="(0,3.05)" stroke="#999999" thickness="1.4"/>
+      <parametric-curve at="av-orbA" function="orbA" domain="(0,6.2832)"
+                        stroke="#9EC5E8" thickness="2"/>
+      <parametric-curve at="av-dirA" function="orbA" domain="(2.0,2.9)"
+                        stroke="#0072B2" thickness="3" arrows="1"/>
+      <vector at="av-rA" tail="(0,0)" v="(1.8021,-0.4302)" stroke="#666666" thickness="2"/>
+      <vector at="av-vA" tail="(1.8021,-0.4302)" v="(1.1237,0.5471)" stroke="#0072B2" thickness="3"/>
+      <vector at="av-wA" tail="(0,0)" v="(0,2.5)" stroke="#D55E00" thickness="4"/>
+      <point at="av-OA" p="(0,0)" fill="black" radius="3"/>
+      <point at="av-PA" p="(1.8021,-0.4302)" fill="black" radius="3.5"/>
+
+      <label font-size="18" at="av-wAl" anchor="(0.14,2.42)" alignment="e" color="#D55E00">
+      <m>\overrightarrow{\omega}</m>
+      </label>
+      <label font-size="18" at="av-zAl" anchor="(0.10,3.05)" alignment="e"><m>+z</m></label>
+      <label font-size="18" at="av-OAl" anchor="(-0.12,-0.10)" alignment="sw"><m>O</m></label>
+      <label font-size="18" at="av-rAl" anchor="(0.98,-0.34)" alignment="s" color="#666666">
+      <m>\overrightarrow{r}</m>
+      </label>
+      <label font-size="18" at="av-vAl" anchor="(3.00,0.18)" alignment="e" color="#0072B2">
+      <m>\overrightarrow{v}</m>
+      </label>
+      <label font-size="18" at="av-topA" anchor="(-3.35,3.60)" alignment="e">
+      <m>\omega_z = \dfrac{d\theta}{dt} > 0</m>
+      </label>
+      <label font-size="18" at="av-botA" anchor="(-3.35,-3.25)" alignment="e">
+      <m>\text{counterclockwise:}\;\; \overrightarrow{\omega} \text{ points along } +\hat{k}</m>
+      </label>
+
+      <!-- ============ PANEL B : clockwise, omega along -k ============ -->
+      <line at="av-axB" p1="(7.4,-2.7)" p2="(7.4,3.05)" stroke="#999999" thickness="1.4"/>
+      <parametric-curve at="av-orbB" function="orbB" domain="(0,6.2832)"
+                        stroke="#9EC5E8" thickness="2"/>
+      <parametric-curve at="av-dirB" function="orbB" domain="(2.9,2.0)"
+                        stroke="#0072B2" thickness="3" arrows="1"/>
+      <vector at="av-rB" tail="(7.4,0)" v="(1.8021,-0.4302)" stroke="#666666" thickness="2"/>
+      <vector at="av-vB" tail="(9.2021,-0.4302)" v="(-1.1237,-0.5471)" stroke="#0072B2" thickness="3"/>
+      <vector at="av-wB" tail="(7.4,0)" v="(0,-2.5)" stroke="#D55E00" thickness="4"/>
+      <point at="av-OB" p="(7.4,0)" fill="black" radius="3"/>
+      <point at="av-PB" p="(9.2021,-0.4302)" fill="black" radius="3.5"/>
+
+      <label font-size="18" at="av-wBl" anchor="(7.54,-2.42)" alignment="e" color="#D55E00">
+      <m>\overrightarrow{\omega}</m>
+      </label>
+      <label font-size="18" at="av-zBl" anchor="(7.50,3.05)" alignment="e"><m>+z</m></label>
+      <label font-size="18" at="av-OBl" anchor="(7.28,-0.10)" alignment="sw"><m>O</m></label>
+      <label font-size="18" at="av-rBl" anchor="(8.34,-0.08)" alignment="n" color="#666666">
+      <m>\overrightarrow{r}</m>
+      </label>
+      <label font-size="18" at="av-vBl" anchor="(8.02,-1.06)" alignment="sw" color="#0072B2">
+      <m>\overrightarrow{v}</m>
+      </label>
+      <label font-size="18" at="av-topB" anchor="(4.45,3.60)" alignment="e">
+      <m>\omega_z = \dfrac{d\theta}{dt} &lt; 0</m>
+      </label>
+      <label font-size="18" at="av-botB" anchor="(4.45,-3.25)" alignment="e">
+      <m>\text{clockwise:}\;\; \overrightarrow{\omega} \text{ points along } -\hat{k}</m>
+      </label>
+
+      </coordinates>
+
+      <annotations>
+      <annotation ref="figure" text="Two panels showing a particle on a circular orbit in the horizontal plane, drawn in an oblique view with the z axis vertical. In the left panel the particle circulates counterclockwise as seen from above, the rate of change of theta is positive, and the angular velocity vector points up along the positive z direction. In the right panel the particle circulates clockwise, the rate of change of theta is negative, and the angular velocity vector points down along the negative z direction. In both panels the velocity is tangent to the orbit and the position vector runs from the centre out to the particle.">
+        <annotation ref="av-orbA" text="The circular orbit in the left panel."/>
+        <annotation ref="av-dirA" text="An arrowhead on the orbit showing counterclockwise circulation."/>
+        <annotation ref="av-wA" text="The angular velocity vector pointing up along the positive z axis."/>
+        <annotation ref="av-vA" text="The velocity of the particle, tangent to the orbit."/>
+        <annotation ref="av-orbB" text="The circular orbit in the right panel."/>
+        <annotation ref="av-dirB" text="An arrowhead on the orbit showing clockwise circulation."/>
+        <annotation ref="av-wB" text="The angular velocity vector pointing down along the negative z axis."/>
+        <annotation ref="av-vB" text="The velocity of the particle, tangent to the orbit."/>
+      </annotation>
+      </annotations>
+      </diagram>
+      </prefigure>
+</image>
+</figure>
+
+</subsubsection>
+
+<subsubsection xml:id="subsec-skel-v-omega-cross-r">
+<title>Velocity as a Cross Product</title>
+
+<p>
+We now have two vectors attached to the motion: the angular velocity
+<m>\overrightarrow{\omega}</m>, along the axis, and the position <m>\overrightarrow{r}</m>, in the
+plane of the circle. The velocity is perpendicular to both, which is precisely
+the job of the cross product.
+</p>
+
+<fact xml:id="fact-skel-velocity-cross-product">
+<title>Velocity and Angular Velocity</title>
+<statement>
+<p>
+For an object in circular motion about the origin,
+<md xml:id="eq-skel-v-omega-cross-r" number="yes">
+\overrightarrow{v} = \overrightarrow{\omega} \times \overrightarrow{r}.
+</md>
+</p>
+</statement>
+</fact>
+
+<p>
+Verify <xref ref="eq-skel-v-omega-cross-r"/>. (Start by computing
+<m>\hat{k} \times \hat r</m> from <xref ref="eq-skel-rhat"/> with the
+determinant; the answer is one of the two frame vectors. Then substitute
+<xref ref="eq-skel-angular-velocity"/> and
+<xref ref="eq-skel-position-polar"/>, pull the scalars out with property 1 of
+<xref ref="thm-skel-cross-properties"/>, and compare with
+<xref ref="eq-skel-circular-velocity"/>.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,13);
+\draw[gray!35] (0,6.5) -- (15,6.5);
+\node[anchor=north west, font=\small\itshape] at (0.35,12.7) {$\hat{k}\times\hat r =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,6.2) {$\overrightarrow{\omega}\times\overrightarrow{r} =$};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in two rows, one for the cross product of k hat with r hat and one for the verification that omega cross r is the velocity.</shortdescription>
+</image>
+</sidebyside>
+
+<p>
+The geometry of the cross product delivers all three features of the velocity
+at once. Fill them in from <xref ref="fig-skel-omega-cross-r"/>, with no
+computation. (For the magnitude, use the angle between <m>\overrightarrow\omega</m>
+and <m>\overrightarrow r</m> in <xref ref="eq-skel-cross-geometric"/>. For the
+direction, use that a cross product is perpendicular to both of its factors.
+For the sense, ask what happens to <m>\overrightarrow\omega \times \overrightarrow r</m>
+when <m>\overrightarrow\omega</m> is reversed.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,10);
+\draw[gray!35] (0,6.7) -- (15,6.7);
+\draw[gray!35] (0,3.4) -- (15,3.4);
+\node[anchor=north west, font=\small\itshape] at (0.35,9.7) {Magnitude:};
+\node[anchor=north west, font=\small\itshape] at (0.35,6.4) {Direction:};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.1) {Sense:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in three labelled rows, for the magnitude, the direction, and the sense of the velocity read off the cross product.</shortdescription>
+</image>
+</sidebyside>
+
+<p>
+There is a bonus. A piece of <m>\overrightarrow{r}</m> running along the axis is parallel
+to <m>\overrightarrow{\omega}</m> and so contributes nothing to the cross product, since
+<m>\hat{k} \times \left(z\,\hat{k}\right) = \overrightarrow{0}</m>. Consequently
+<xref ref="eq-skel-v-omega-cross-r"/> remains true when <m>\overrightarrow{r}</m> is
+measured from <em>any</em> point on the axis of rotation, not just from the
+centre of the circle.
+</p>
+
+<figure xml:id="fig-skel-omega-cross-r">
+<caption>
+The velocity of a particle in circular motion is
+<m>\overrightarrow{v} = \overrightarrow{\omega} \times \overrightarrow{r}</m>. Because <m>\overrightarrow{\omega}</m> and
+<m>\overrightarrow{r}</m> are perpendicular, the speed is <m>\omega r</m>, and the
+right-hand rule places <m>\overrightarrow{v}</m> tangent to the orbit in the direction of
+travel.
+</caption>
+<image width="66%">
+<description>
+<p>
+A circular orbit in the horizontal plane drawn in an oblique view, with the
+z-axis vertical. The angular velocity vector points straight up along the
+z-axis from the centre O. The position vector runs from O out to the particle
+on the orbit, and the velocity vector at the particle is tangent to the
+orbit, equal to the cross product of the angular velocity with the position
+vector.
+</p>
+</description>
+      <prefigure xmlns="https://prefigure.org" label="prefigure-skel-omega-cross-r">
+      <diagram dimensions="(500,450)" margins="14">
+      <definition>orb(t) = (2.6*cos(t), 0.9*sin(t))</definition>
+      <coordinates bbox="(-4.8,-4.6,5.0,4.2)">
+
+      <line at="cr-ax" p1="(0,-2.6)" p2="(0,3.5)" stroke="#999999" thickness="1.4"/>
+      <parametric-curve at="cr-orb" function="orb" domain="(0,6.2832)"
+                        stroke="#9EC5E8" thickness="2"/>
+      <parametric-curve at="cr-dir" function="orb" domain="(2.0,2.9)"
+                        stroke="#0072B2" thickness="3" arrows="1"/>
+
+      <vector at="cr-r" tail="(0,0)" v="(2.2517,-0.45)" stroke="#666666" thickness="2"/>
+      <vector at="cr-v" tail="(2.2517,-0.45)" v="(1.4581,0.8742)" stroke="#0072B2" thickness="3"/>
+      <vector at="cr-w" tail="(0,0)" v="(0,2.9)" stroke="#D55E00" thickness="4"/>
+
+      <point at="cr-O" p="(0,0)" fill="black" radius="3"/>
+      <point at="cr-P" p="(2.2517,-0.45)" fill="black" radius="4"/>
+
+      <label font-size="18" at="cr-wl" anchor="(0.16,2.55)" alignment="e" color="#D55E00">
+      <m>\overrightarrow{\omega} = \dfrac{d\theta}{dt}\,\hat{k}</m>
+      </label>
+      <label font-size="18" at="cr-zl" anchor="(0.10,3.50)" alignment="e"><m>+z</m></label>
+      <label font-size="18" at="cr-Ol" anchor="(-0.12,-0.10)" alignment="sw"><m>O</m></label>
+      <label font-size="18" at="cr-rl" anchor="(1.20,-0.34)" alignment="s" color="#666666">
+      <m>\overrightarrow{r} = r\,\hat r</m>
+      </label>
+      <label font-size="18" at="cr-vl" anchor="(3.78,0.48)" alignment="e" color="#0072B2">
+      <m>\overrightarrow{v} = \overrightarrow{\omega}\times\overrightarrow{r}</m>
+      </label>
+
+      </coordinates>
+
+      <annotations>
+      <annotation ref="figure" text="A circular orbit in the horizontal plane drawn in an oblique view, with the z axis vertical. The angular velocity vector points straight up along the z axis from the centre O. The position vector runs from O out to the particle on the orbit, and the velocity vector at the particle is tangent to the orbit. The velocity is the cross product of the angular velocity with the position vector; since the two factors are perpendicular, the speed is omega times r.">
+        <annotation ref="cr-orb" text="The circular orbit of the particle."/>
+        <annotation ref="cr-dir" text="An arrowhead on the orbit showing the sense of circulation."/>
+        <annotation ref="cr-w" text="The angular velocity vector, pointing up the z axis, perpendicular to the plane of the orbit."/>
+        <annotation ref="cr-r" text="The position vector from the centre out to the particle, equal to r times r hat."/>
+        <annotation ref="cr-v" text="The velocity, equal to the cross product of the angular velocity with the position vector, tangent to the orbit."/>
+      </annotation>
+      </annotations>
+      </diagram>
+      </prefigure>
+</image>
+</figure>
+
+</subsubsection>
+
+<subsubsection xml:id="subsec-skel-circular-motion-examples">
+<title>Examples</title>
+
+<example xml:id="ex-skel-angular-velocity">
+<title>Angular velocity from an angle function</title>
+<statement>
+<p>
+A particle moves in a circle of radius <m>R</m> centred at the origin of the
+<m>xy</m>-plane; at <m>t = 0</m> it is on the positive <m>x</m>-axis. The
+angle it makes with the positive <m>x</m>-axis is
+<m>\theta(t) = At - Bt^3</m>, where <m>A</m> and <m>B</m> are positive
+constants.
+</p>
+<p>
+<ol>
+<li><p>Find the angular velocity vector.</p></li>
+<li><p>Find the velocity vector, in polar coordinates.</p></li>
+<li><p>At what time <m>t_1</m> is the angular velocity zero?</p></li>
+<li>
+<p>
+In which direction does the angular velocity point for <m>t &lt; t_1</m>,
+and for <m>t > t_1</m>?
+</p>
+</li>
+</ol>
+</p>
+
+<p>
+<em>Solution.</em>
+(Everything follows from <m>d\theta/dt</m>, so compute that first, then apply
+<xref ref="eq-skel-angular-velocity"/> and
+<xref ref="eq-skel-circular-velocity"/>. Part 3 is one quadratic equation; keep
+only the positive root and say what the particle is doing at that instant.
+For part 4, the direction is decided by the <em>sign</em> of
+<m>d\theta/dt</m>, not its size.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,14);
+\draw[gray!35] (0,11.5) -- (15,11.5);
+\draw[gray!35] (0,9) -- (15,9);
+\draw[gray!35] (0,6) -- (15,6);
+\draw[gray!35] (0,3) -- (15,3);
+\node[anchor=north west, font=\small\itshape] at (0.35,13.7) {$\dfrac{d\theta}{dt} =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,11.2) {1. $\overrightarrow{\omega}(t) =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,8.7) {2. $\overrightarrow{v}(t) =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,5.7) {3. $t_1 =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,2.7) {4. Before $t_1$: \qquad\qquad After $t_1$:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in five rows, for the rate of change of the angle, the angular velocity vector, the velocity vector, the time at which the angular velocity vanishes, and the direction before and after that time.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+</example>
+
+<example xml:id="ex-skel-turntable">
+<title>A turntable</title>
+<statement>
+<p>
+A record turntable spins at <m>33\tfrac13</m> revolutions per minute,
+counterclockwise when viewed from above. Take the axis of rotation to be the
+<m>z</m>-axis, with the turntable lying in the <m>xy</m>-plane, distances in
+meters.
+</p>
+<p>
+<ol>
+<li><p>Find the angular velocity vector <m>\overrightarrow{\omega}</m>.</p></li>
+<li>
+<p>
+Find the velocity of the point of the record at
+<m>\overrightarrow{r} = \left\langle 0.12,\,0,\,0 \right\rangle</m>, and its speed.
+</p>
+</li>
+</ol>
+</p>
+
+<p>
+<em>Solution.</em>
+(Convert revolutions per minute to radians per second before anything else;
+one revolution is <m>2\pi</m> radians. The sense of rotation fixes the sign of
+<m>\omega_z</m>. Then use <xref ref="eq-skel-v-omega-cross-r"/>, and check the
+speed against <xref ref="eq-skel-speed-omega-r"/>. Confirm that the direction
+you get really is counterclockwise for a point on the positive
+<m>x</m>-axis.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,13);
+\draw[gray!35] (0,9.5) -- (15,9.5);
+\draw[gray!35] (0,3.5) -- (15,3.5);
+\node[anchor=north west, font=\small\itshape] at (0.35,12.7) {1. $\omega =$ \qquad\qquad $\overrightarrow{\omega} =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,9.2) {2. $\overrightarrow{v} =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.2) {Speed, and the check:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in three rows, for the angular speed and angular velocity vector, for the velocity of the point, and for the speed together with its check.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+</example>
+
+<exercise xml:id="skel-exercise-carousel-velocity">
+<title>A carousel</title>
+<statement>
+<p>
+A carousel turns <em>clockwise</em> when viewed from above, making one
+complete turn every <m>12</m> seconds. Taking the axis of rotation as the
+<m>z</m>-axis, find the angular velocity vector, and the velocity of a horse
+located at <m>\overrightarrow{r} = \left\langle 0,\,4,\,0\right\rangle</m> meters.
+</p>
+
+<p>
+<em>Solution.</em>
+(The period is given rather than the frequency, so <m>\omega = 2\pi/T</m>.
+Clockwise from above settles the sign, as in
+<xref ref="fig-skel-angular-velocity-sign"/>. Then apply
+<xref ref="eq-skel-v-omega-cross-r"/>, and check that the direction you get for
+a horse on the positive <m>y</m>-axis really is clockwise.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,12);
+\draw[gray!35] (0,8.5) -- (15,8.5);
+\draw[gray!35] (0,3) -- (15,3);
+\node[anchor=north west, font=\small\itshape] at (0.35,11.7) {$\omega =$ \qquad\qquad $\overrightarrow{\omega} =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,8.2) {$\overrightarrow{v} =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,2.7) {Direction check:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in three rows, for the angular speed and angular velocity vector, for the velocity of the horse, and for the check on its direction.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+</exercise>
+
+</subsubsection>
+
+</subsection>
+
+</section>

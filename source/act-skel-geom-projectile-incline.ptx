@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Skeletal (fill-in) version of the Projectiles on an Inclined Plane
+  activity, which lives inside the Projectile Motion subsection.
+
+  Task statements and hints are kept verbatim; the worked solutions and
+  answers are replaced by blank workspace boxes.  Content mirrors
+  art11-projectile-incline.ptx of the full lecture notes; every xml:id
+  here is prefixed with "skel-" so the two can coexist.
+
+  Figure: the diagram of the incline sets the problem up rather than
+  answering it, so it is reproduced in full, as in the lecture notes.
+  The concluding remark asks a question instead of stating the result.
+-->
+<activity xml:id="activity-skel-projectile-incline">
+  <title>Projectiles on an Inclined Plane</title>
+
+  <introduction>
+    <p>
+      A particle is launched from a point <m>O</m> on an inclined plane and
+      travels in the vertical plane that contains the line of greatest slope
+      through <m>O</m>. The plane makes an angle <m>\beta</m> with the
+      horizontal, and the particle leaves <m>O</m> with initial speed
+      <m>v_0</m> at an elevation <m>\theta</m> to the horizontal. Taking the
+      origin at <m>O</m> with horizontal and vertical axes and neglecting air
+      resistance, the trajectory is the projectile parabola
+      <md>
+        y = x\tan\theta - \frac{g\,x^2}{2\,v_0^2\cos^2\theta}\text{.}
+      </md>
+      Let <m>P</m> be the point where the particle meets the plane again, and
+      let <m>R = OP</m> be the range measured <em>along the plane</em>, so that
+      <m>P = \bigl(R\cos\beta,\ R\sin\beta\bigr)</m>. Work through the tasks
+      below to find the range on the plane, the maximum range for a given
+      <m>v_0</m>, and the time of flight, and then to read off the
+      corresponding results when the particle is fired <em>down</em> the plane.
+    </p>
+
+    <figure xml:id="fig-skel-projectile-incline">
+      <caption>
+        A particle projected up the plane with speed <m>v_0</m> at elevation
+        <m>\theta</m>, striking the incline (angle <m>\beta</m>) at <m>P</m>
+        after travelling a range <m>R=OP</m> along the slope.
+      </caption>
+      <image width="85%" xml:id="image-skel-projectile-incline">
+        <prefigure xmlns="https://prefigure.org" label="prefigure-skel-projectile-incline">
+        <diagram dimensions="(420,280)" margins="5">
+          <definition>f(x) = 1.2*x - 0.1*x^2</definition>
+          <coordinates bbox="(-1.2, -1, 10.5, 5)">
+            <axes at="pi-axes" xlabel="x" ylabel="y" decorations="no"/>
+            <line at="pi-plane" p1="(0,0)" p2="(9.6,3.84)" stroke="black" thickness="2"/>
+            <graph at="pi-path" domain="(0,8)" function="f" stroke="blue" thickness="2"/>
+            <line at="pi-range" p1="(0,0)" p2="(8,3.2)" stroke="black" thickness="1"/>
+            <line at="pi-rise" p1="(8,0)" p2="(8,3.2)" stroke="gray" dash="4"/>
+            <line at="pi-v0" p1="(0,0)" p2="(1.6,1.92)" stroke="red" thickness="2" arrows="1"/>
+            <angle-marker at="pi-beta" points="((1,0),(0,0),(2,0.8))" radius="26" stroke="black"><m>\beta</m></angle-marker>
+            <angle-marker at="pi-theta" points="((1,0),(0,0),(1.6,1.92))" radius="46" stroke="black" offset="(0,10)"><m>\theta</m></angle-marker>
+            <point at="pi-O" p="(0,0)" size="3"/>
+            <point at="pi-P" p="(8,3.2)" size="3"/>
+            <label anchor="(0,0)" alignment="sw"><m>O</m></label>
+            <label anchor="(8,3.2)" alignment="ne" offset="(2,10)"><m>P</m></label>
+            <label anchor="(8,0)" alignment="s"><m>M</m></label>
+            <label anchor="(1.6,1.92)" alignment="nw"><m>v_0</m></label>
+            <label anchor="(4,1.6)" alignment="nw" offset="(-4,6)"><m>R</m></label>
+            <label anchor="(8,1.6)" alignment="e"><m>R\sin\beta</m></label>
+            <label anchor="(4,0)" alignment="s"><m>R\cos\beta</m></label>
+            <label anchor="(6,2.25)" alignment="s"><m>\text{inclined plane}</m></label>
+          </coordinates>
+
+          <annotations>
+          <annotation ref="figure" text="A particle is launched from the point O at the foot of an inclined plane and follows a parabolic path, striking the plane again at the point P. The range O P measured along the plane is labelled R.">
+            <annotation ref="pi-axes" text="Horizontal and vertical axes with origin at the launch point O."/>
+            <annotation ref="pi-plane" text="The inclined plane, a straight line rising to the right from O at angle beta above the horizontal."/>
+            <annotation ref="pi-path" text="The parabolic trajectory of the particle, drawn in blue from O up and over to the landing point P."/>
+            <annotation ref="pi-v0" text="The initial velocity v naught at O, directed at elevation angle theta above the horizontal."/>
+            <annotation ref="pi-range" text="The range R measured along the plane from O to P."/>
+            <annotation ref="pi-rise" text="The vertical rise R sine beta from the foot M on the horizontal up to P."/>
+            <annotation ref="pi-beta" text="The angle beta between the horizontal and the inclined plane."/>
+            <annotation ref="pi-theta" text="The angle theta between the horizontal and the initial velocity."/>
+            <annotation ref="pi-O" text="The launch point O at the origin."/>
+            <annotation ref="pi-P" text="The point P where the particle strikes the plane again."/>
+          </annotation>
+          </annotations>
+        </diagram>
+        </prefigure>
+      </image>
+    </figure>
+  </introduction>
+
+  <task xml:id="task-skel-incline-onpath">
+    <statement>
+      <p>
+        Since <m>P=\bigl(R\cos\beta,\ R\sin\beta\bigr)</m> lies on the
+        trajectory, substitute these coordinates into the parabola and cancel a
+        factor of <m>R</m> to show that
+        <md>
+          \sin\beta = \cos\beta\,\tan\theta
+            - \frac{g\,R\,\cos^2\beta}{2\,v_0^2\cos^2\theta}\text{.}
+        </md>
+      </p>
+
+      <p>
+        (Say why you are allowed to cancel the <m>R</m>.)
+      </p>
+
+      <sidebyside width="97%">
+      <image>
+      <latex-image>
+      \begin{tikzpicture}
+      \draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,8);
+      \node[anchor=north west, text=gray!60, font=\footnotesize\itshape]
+        at (0.25,7.75) {workspace};
+      \end{tikzpicture}
+      </latex-image>
+      <shortdescription>Blank workspace for substituting the coordinates of P into the trajectory and cancelling the factor of R.</shortdescription>
+      </image>
+      </sidebyside>
+    </statement>
+  </task>
+
+  <task xml:id="task-skel-incline-range">
+    <statement>
+      <p>
+        Rearrange the relation from the previous task to isolate <m>R</m>, and
+        use <m>\sin\theta\cos\beta - \cos\theta\sin\beta = \sin(\theta-\beta)</m>
+        to obtain the <term>range up the plane</term>
+        <md>
+          R = \frac{2\,v_0^2\,\sin(\theta-\beta)\cos\theta}{g\cos^2\beta}\text{.}
+        </md>
+      </p>
+
+      <p>
+        (Collect the <m>R</m>-term on one side first, then put the other side
+        over the common denominator <m>\cos\theta</m> so the identity applies.)
+      </p>
+
+      <sidebyside width="97%">
+      <image>
+      <latex-image>
+      \begin{tikzpicture}
+      \draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,10);
+      \draw[gray!35] (0,5) -- (15,5);
+      \node[anchor=north west, font=\small\itshape] at (0.35,9.7) {Collecting the $R$-term:};
+      \node[anchor=north west, font=\small\itshape] at (0.35,4.7) {Solving for $R$:};
+      \end{tikzpicture}
+      </latex-image>
+      <shortdescription>Blank box in two rows, one for collecting the term containing R and one for solving for R.</shortdescription>
+      </image>
+      </sidebyside>
+    </statement>
+  </task>
+
+  <task xml:id="task-skel-incline-maxrange">
+    <statement>
+      <p>
+        Using the identity
+        <m>2\sin(\theta-\beta)\cos\theta = \sin(2\theta-\beta) - \sin\beta</m>,
+        rewrite the range as
+        <md>
+          R = \frac{v_0^2}{g\cos^2\beta}
+              \bigl[\sin(2\theta-\beta) - \sin\beta\bigr]\text{.}
+        </md>
+        For a fixed launch speed <m>v_0</m>, deduce the elevation <m>\theta</m>
+        that maximizes <m>R</m>, and show that the maximum range up the plane is
+        <md>
+          R_{\max} = \frac{v_0^2}{g\,(1+\sin\beta)}\text{.}
+        </md>
+      </p>
+
+      <sidebyside width="97%">
+      <image>
+      <latex-image>
+      \begin{tikzpicture}
+      \draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,13);
+      \draw[gray!35] (0,9.5) -- (15,9.5);
+      \draw[gray!35] (0,6) -- (15,6);
+      \node[anchor=north west, font=\small\itshape] at (0.35,12.7) {The rewritten range:};
+      \node[anchor=north west, font=\small\itshape] at (0.35,9.2) {The optimal elevation, $\theta =$};
+      \node[anchor=north west, font=\small\itshape] at (0.35,5.7) {$R_{\max} =$};
+      \end{tikzpicture}
+      </latex-image>
+      <shortdescription>Blank box in three rows, for the rewritten range, for the elevation that maximizes it, and for the maximum range itself.</shortdescription>
+      </image>
+      </sidebyside>
+    </statement>
+    <hint>
+      <p>
+        With <m>v_0</m>, <m>g</m>, and <m>\beta</m> held constant, only
+        <m>\sin(2\theta-\beta)</m> varies, and it is largest when it equals
+        <m>1</m>. Afterwards use <m>\cos^2\beta = (1-\sin\beta)(1+\sin\beta)</m>.
+      </p>
+    </hint>
+  </task>
+
+  <task xml:id="task-skel-incline-tof">
+    <statement>
+      <p>
+        The horizontal distance <m>OM</m> to the foot of <m>P</m> is covered at
+        the constant horizontal speed <m>v_0\cos\theta</m>. Using
+        <m>OM = R\cos\beta</m>, show that the <term>time of flight</term> is
+        <md>
+          T = \frac{2\,v_0\,\sin(\theta-\beta)}{g\cos\beta}\text{.}
+        </md>
+      </p>
+
+      <p>
+        (Distance equals speed times time in the horizontal direction; then
+        substitute the range you found in
+        <xref ref="task-skel-incline-range"/>.)
+      </p>
+
+      <sidebyside width="97%">
+      <image>
+      <latex-image>
+      \begin{tikzpicture}
+      \draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,8);
+      \node[anchor=north west, font=\small\itshape] at (0.35,7.7) {$T =$};
+      \end{tikzpicture}
+      </latex-image>
+      <shortdescription>Blank workspace for deriving the time of flight from the horizontal distance and speed.</shortdescription>
+      </image>
+      </sidebyside>
+    </statement>
+  </task>
+
+  <task xml:id="task-skel-incline-down">
+    <statement>
+      <p>
+        When the particle is projected <em>down</em> the plane, the geometry is
+        the same with <m>\beta</m> replaced by <m>-\beta</m>. Write down the
+        range, maximum range, and time of flight down the inclined plane.
+      </p>
+
+      <p>
+        (No new work is needed <mdash/> substitute into the three results above,
+        and remember that <m>\sin</m> is odd while <m>\cos</m> is even. Say
+        whether the maximum range down the plane is larger or smaller than the
+        maximum range up it, and whether that is what you would expect.)
+      </p>
+
+      <sidebyside width="97%">
+      <image>
+      <latex-image>
+      \begin{tikzpicture}
+      \draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,12);
+      \draw[gray!35] (0,9) -- (15,9);
+      \draw[gray!35] (0,6) -- (15,6);
+      \draw[gray!35] (0,3) -- (15,3);
+      \node[anchor=north west, font=\small\itshape] at (0.35,11.7) {$R_{\text{down}} =$};
+      \node[anchor=north west, font=\small\itshape] at (0.35,8.7) {$R_{\max,\text{down}} =$};
+      \node[anchor=north west, font=\small\itshape] at (0.35,5.7) {$T_{\text{down}} =$};
+      \node[anchor=north west, font=\small\itshape] at (0.35,2.7) {Larger or smaller than up the plane, and why:};
+      \end{tikzpicture}
+      </latex-image>
+      <shortdescription>Blank box in four rows, for the range down the plane, the maximum range down the plane, the time of flight down the plane, and a comparison with the results up the plane.</shortdescription>
+      </image>
+      </sidebyside>
+    </statement>
+  </task>
+
+  <conclusion>
+    <p>
+      The maximum range up the plane occurs when
+      <m>2\theta - \beta = \dfrac{\pi}{2}</m>. Rearrange that condition into
+      the form <m>\theta - \beta = \dfrac{\pi}{2} - \theta</m>, and interpret
+      each side geometrically: one is the angle the launch direction makes
+      <em>above the incline</em>, the other the angle it makes <em>below the
+      vertical</em>. What does their being equal say about the direction of
+      projection for maximum range?
+    </p>
+
+    <sidebyside width="97%">
+    <image>
+    <latex-image>
+    \begin{tikzpicture}
+    \draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,6);
+    \node[anchor=north west, text=gray!60, font=\footnotesize\itshape]
+      at (0.25,5.75) {workspace};
+    \end{tikzpicture}
+    </latex-image>
+    <shortdescription>Blank workspace for interpreting the condition for maximum range up the inclined plane.</shortdescription>
+    </image>
+    </sidebyside>
+  </conclusion>
+</activity>

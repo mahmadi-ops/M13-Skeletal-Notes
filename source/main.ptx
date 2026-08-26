@@ -42,7 +42,9 @@
     <xi:include href="ch-hyperbolic-skeletal.ptx" />
     <!-- Chapter 2: skeletal (fill-in) notes, Series and Sequences -->
     <xi:include href="ch-series-skeletal.ptx" />
-    <!-- Chapter 3: the problem sets -->
+    <!-- Chapter 3: skeletal (fill-in) notes, 3D Space and Vector Algebra -->
+    <xi:include href="ch-geometry-skeletal.ptx" />
+    <!-- Chapter 4: the problem sets -->
     <xi:include href="exercises.ptx" />
   </book>
 

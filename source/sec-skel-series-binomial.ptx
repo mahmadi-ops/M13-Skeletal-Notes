@@ -276,9 +276,10 @@ coefficients of <m>f(x) = (1+x)^m</m> at <m>x = 0</m>.
 <p>
 The resulting series
 
-<md xml:id="eq-skel-binomial-taylor" number="yes">
-1 + mx + \frac{m(m-1)}{2!}x^2 + \cdots
-+ \frac{m(m-1)(m-2)\cdots(m-k+1)}{k!}x^k + \cdots
+<md>
+<mrow number="no">\amp 1 + mx + \frac{m(m-1)}{2!}x^2 + \cdots</mrow>
+<mrow xml:id="eq-skel-binomial-taylor" number="yes">\amp \quad
++ \frac{m(m-1)(m-2)\cdots(m-k+1)}{k!}x^k + \cdots</mrow>
 </md>
 
 is known as the <term>binomial series</term>.

@@ -1,0 +1,825 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Skeletal (fill-in) version of 3.1 Three-Dimensional Coordinate Systems.
+
+  Definitions, theorems, summaries, and problem statements are kept;
+  derivations and solutions are replaced by blank workspace boxes, each
+  with a one-line statement of what has to be done.  Content mirrors
+  ch-12-1.ptx of the full lecture notes; every xml:id here is prefixed
+  with "skel-" so the two can coexist.
+
+  Figures: plotting a point in space is the skill being learned, so the
+  two point figures become empty sets of axes to draw on.  The right-hand
+  rule, the coordinate planes, the three planes through P(1,1,1), and the
+  sphere are reference pictures rather than exercises, so they are
+  reproduced in full, as in the lecture notes.  The distance figure keeps
+  only the box and the two corners P_1 and P_2: the helper corners, the
+  edge lengths and the diagonals are what the reader adds while deriving
+  the distance formula.
+  The figures answering parts A-G of the last example ARE its solution,
+  so they are replaced by blank axes to sketch on.
+-->
+<section xml:id="sec-skel-geom-3d-coordinates" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Three-Dimensional Coordinate Systems</title>
+
+<objectives>
+<introduction>
+<p>
+After completing this section, you should be able to:
+</p>
+</introduction>
+
+<ul>
+<li>
+<p>
+Locate a point <m>P(a,b,c)</m> in space using the rectangular
+(Cartesian) coordinate system, and check that the axes are arranged
+according to the right-hand rule.
+</p>
+</li>
+<li>
+<p>
+Identify the three coordinate planes and the eight octants, and
+recognize the surfaces described by equations such as <m>x = a</m>,
+<m>y = b</m>, and <m>z = c</m>.
+</p>
+</li>
+<li>
+<p>
+Compute the distance between two points in space, and write the equation
+of a sphere with a given center and radius.
+</p>
+</li>
+<li>
+<p>
+Describe the region of space determined by a collection of equations and
+inequalities, and use completing the square to recognize the equation of
+a sphere.
+</p>
+</li>
+</ul>
+</objectives>
+
+<!-- ================================================================ -->
+<subsection xml:id="subsec-skel-3d-coordinate-system">
+<title>The Rectangular Coordinate System</title>
+
+<p>
+To locate a point in the plane we need two numbers; to locate a point in
+space we need three. In this section we set up the rectangular
+coordinate system in space, which is the setting for everything that
+follows. We then measure distance, describe spheres, and practice
+translating between an equation and the surface or region it represents.
+</p>
+
+<p>
+We will study the Cartesian coordinate system, which is also known as
+the <term>rectangular coordinate system</term>. We choose a point
+<m>O</m> in space, called the <term>origin</term>, and three mutually
+perpendicular lines through it, called the <term>coordinate axes</term>
+and labelled the <m>x</m>-, <m>y</m>-, and <m>z</m>-axis. A point
+<m>P</m> in space is then described by an ordered triple <m>(a,b,c)</m>,
+where <m>a</m>, <m>b</m>, and <m>c</m> are the signed distances from the
+origin along the three axes.
+</p>
+
+<p>
+On the axes below, mark off <m>a</m> units along the <m>x</m>-axis, then
+<m>b</m> units parallel to the <m>y</m>-axis, then <m>c</m> units
+parallel to the <m>z</m>-axis, and label the point <m>P(a,b,c)</m> you
+reach.
+</p>
+
+<sidebyside width="60%">
+<image>
+<latex-image><![CDATA[
+\begin{tikzpicture}[x={(-0.50cm,-0.36cm)}, y={(1cm,0cm)}, z={(0cm,1cm)},
+                    scale=1.05, >=stealth]
+\draw[->, thick] (0,0,0) -- (4.2,0,0) node[below left] {$x$};
+\draw[->, thick] (0,0,0) -- (0,4.6,0) node[right] {$y$};
+\draw[->, thick] (0,0,0) -- (0,0,4.0) node[above] {$z$};
+\node[above left] at (0,0,0) {$O$};
+\end{tikzpicture}
+]]></latex-image>
+<shortdescription>Empty set of three-dimensional coordinate axes labelled x, y, and z, meeting at the origin O, for plotting the point P with coordinates a, b, c.</shortdescription>
+</image>
+</sidebyside>
+
+<p>
+The three axes must follow the <term>right-hand rule</term>: if the
+index finger of the right hand points along the positive <m>x</m>-axis
+and the middle finger points along the positive <m>y</m>-axis, then the
+thumb points along the positive <m>z</m>-axis.
+<xref ref="fig-skel-3d-right-hand"/> illustrates this convention; the
+square corner marks in that figure are a reminder that the three axes are
+mutually orthogonal, so each pair of axes meets at a right angle. Every
+coordinate system in this course is arranged this way.
+</p>
+
+<p>
+The right-hand rule will return in
+<xref ref="sec-skel-geom-cross-product"/>, where we use it in a second
+form to determine the direction of the cross product
+<m>\mathbf u \times \mathbf v</m> of two vectors.
+</p>
+
+<figure xml:id="fig-skel-3d-right-hand">
+<caption>
+The right-hand rule. With the index finger of the right hand along the
+positive <m>x</m>-axis and the middle finger along the positive
+<m>y</m>-axis, the thumb points along the positive <m>z</m>-axis. The
+square corner marks record that the three axes are mutually orthogonal:
+each pair of axes meets at a right angle, even though the drawing on the
+page must distort those angles.
+</caption>
+<image width="55%">
+<description>
+<p>
+A right hand with the index finger extended along the positive x axis,
+the middle finger bent to point along the positive y axis, and the
+thumb extended upward along the positive z axis. A small arc marks the
+angle between the index and middle fingers. Three magenta square corner
+marks at the origin, one for each pair of axes, indicate that the x, y, and z axes
+are mutually perpendicular.
+</p>
+</description>
+<latex-image><![CDATA[
+\usetikzlibrary{angles}
+\definecolor{pinkskin}{RGB}{255, 219, 196}
+\tikzset{thick vector/.style={->, thick}}
+\begin{tikzpicture}[>=stealth]
+  \coordinate (O) at (1.0,0.7); % ORIGIN
+  \coordinate (WT) at ( 2.9,-1.1); % WRIST TOP
+  \coordinate (T1) at ( 2.3, 0.7); % THUMB
+  \coordinate (T2) at ( 1.75, 2.3);
+  \coordinate (T3) at ( 2.0, 3.1);
+  \coordinate (T4) at (1.38, 3.15);
+  \coordinate (T5) at ( 0.9, 2.3);
+  \coordinate (T6) at ( 0.85, 1.2);
+  \coordinate (T7) at ( 0.85, 0.2);
+  \coordinate (I1) at (-1.1, 2.45); % INDEX
+  \coordinate (I2) at (-2.9, 3.45);
+  \coordinate (I3) at (-3.3, 2.9);
+  \coordinate (I4) at (-1.5, 1.8);
+  \coordinate (I5) at (-0.9, 1.1);
+  \coordinate (I6) at (-0.9, 0.3);
+  \coordinate (M1) at (-2.1, 0.9); % MIDDLE
+  \coordinate (M2) at (-3.95,0.55);
+  \coordinate (M3) at (-4.0,-0.15);
+  \coordinate (M4) at (-2.3, 0.05);
+  \coordinate (M5) at (-1.1, 0.20);
+  \coordinate (R1) at (-1.9,-0.1); % RING
+  \coordinate (R2) at (-1.8,-0.7);
+  \coordinate (R3) at (-0.3,-1.5);
+  \coordinate (R4) at ( 0.1,-1.7);
+  \coordinate (R5) at ( 0.1,-1.0);
+  \coordinate (R6) at (-0.5,-0.7);
+  \coordinate (R7) at (-1.2,-0.3);
+  \coordinate (P1) at (-1.9,-1.3); % PINKY
+  \coordinate (P2) at (-0.8,-1.9);
+  \coordinate (P3) at (-0.2,-2.1);
+  \coordinate (P4) at (-0.05,-1.65);
+  \coordinate (W1) at ( 0.4,-2.9); % WRIST BOTTOM
+  \coordinate (W2) at ( 1.6,-3.5);
+
+  % HAND
+  \fill[pinkskin]
+    (WT) -- (T6) -- (I5) -- (M5) -- (R2) -- (P2) -- (W2) to[out=25,in=-90] cycle;
+  \draw[fill=pinkskin]
+    (WT) to[out=120,in=-60] % THUMB
+    (T1) to[out=120,in=-90]
+    (T2) to[out=80,in=-110]
+    (T3) to[out=80,in=50,looseness=1.5] % tip
+    (T4) to[out=-130,in=80]
+    (T5) to[out=-100,in=70]
+    (T6) to[out=-100,in=100]
+    (T7)
+    (T6) to[out=150,in=-30] % INDEX
+    (I1) to[out=150,in=-30]
+    (I2) to[out=150,in=145,looseness=1.7] % tip
+    (I3) to[out=-30,in=150]
+    (I4) to[out=-30,in=105]
+    (I5) to[out=-75,in=90]
+    (I6)
+    (I5) to[out=-170,in=10] % MIDDLE
+    (M1) to[out=-170,in=10]
+    (M2) to[out=-170,in=-175,looseness=1.8] % tip
+    (M3) to[out=5,in=-170]
+    (M4) to[out=10,in=-170] % bottom knuckle
+    (M5)
+    (M5) to[out=-160,in=50] % RING
+    (R1) to[out=-130,in=140,looseness=1.2]
+    (R2) to[out=-30,in=160]
+    (R3) --
+    (R4) to[out=-20,in=-20,looseness=1.5] % tip
+    (R5) --
+    (R6) to[out=140,in=8,looseness=0.9]
+    (R7)
+    (R2) to[out=-160,in=155] % PINKY
+    (P1) to[out=-35,in=150]
+    (P2) to[out=-30,in=160]
+    (P3) to[out=-20,in=-30,looseness=1.5] % tip
+    (R4)
+    (P2) to[out=-50,in=140] % WRIST
+    (W1) to[out=-40,in=160]
+    (W2);
+
+  % FOLDS
+  \draw[very thin] (T5)++(-80:0.3) to[out=40,in=180]++ (25:0.45); % THUMB
+  \draw[very thin] (I1)++(180:0.2) to[out=-160,in=90]++ (-130:0.6); % INDEX
+  \draw[very thin] (I1)++(155:1.3) to[out=-150,in=80]++ (-130:0.55);
+  \draw[very thin] (M4)++(30:0.2) to[out=80,in=-65]++ (95:0.5); % MIDDLE FINGER
+  \draw[very thin] (M3)++(10:0.8) to[out=80,in=-75]++ (90:0.45);
+  \draw[very thin] (M5)++(-140:0.1) to[out=-20,in=90]++ (-54:0.8); % RING
+  \draw[very thin] (R6) to[out=160,in=10]++ (180:0.2);
+  \draw[very thin] (R3)++(155:0.5) to[out=120,in=-100]++ (100:0.2);
+  \draw[very thin] (P2)++(140:0.1) to[out=95,in=-110]++ (80:0.4); % PINKY
+  \draw[very thin] (I5)++(-40:0.45) to[out=-70,in=90]++ (-70:1.7);    % PALM
+  \draw[very thin] (P3)++(-155:0.05) to[out=-120,in=40]++ (-130:0.2); % PALM
+  \draw[very thin] (W2)++(70:1.4) to[out=-175,in=-40]++ (160:1.4); % PALM
+
+  % VECTORS
+  \draw[thick vector]
+    (O) --++ (148:3.3) coordinate (X) node[above=6,left=-6,scale=1.5] {$x$};
+  \draw[thick vector,<->]
+    (O) ++ (-172:3.25) coordinate (Y) node[above=5,left=-6,scale=1.5] {$y$} --
+    (O) --++ (82:3.2) coordinate (Z) node[above=-1,scale=1.5] {$z$};
+  \draw pic[->,draw=black,thick,angle radius=30,angle eccentricity=1.2] {angle = X--O--Y};
+
+  % RIGHT ANGLES: the three axes are mutually perpendicular
+  \draw[magenta, thick] (O) ++ (148:0.55) --++ (188:0.55) --++ (-32:0.55); % x and y
+  \draw[magenta, thick] (O) ++ ( 82:0.55) --++ (148:0.55) --++ (-98:0.55); % z and x
+  \draw[magenta, thick] (O) ++ (188:0.55) --++ ( 82:0.55) --++ (  8:0.55); % y and z
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
+
+<p>
+Now plot the point <m>(-4,3,-5)</m> on the axes below. (Watch the two
+negative signs: decide before you draw which side of the origin each leg
+goes, and which side of the <m>xy</m>-plane the point ends up on. Drawing
+the dashed box whose corners are the origin and the point makes the three
+coordinates easy to read back off.)
+</p>
+
+<sidebyside width="60%">
+<image>
+<latex-image><![CDATA[
+\begin{tikzpicture}[x={(-0.50cm,-0.36cm)}, y={(1cm,0cm)}, z={(0cm,1cm)},
+                    scale=0.72, >=stealth]
+\draw[->, thick] (-5.6,0,0) -- (2.6,0,0) node[below left] {$x$};
+\draw[->, thick] (0,-1.2,0) -- (0,5.2,0) node[right] {$y$};
+\draw[->, thick] (0,0,-6.6) -- (0,0,3.0) node[above] {$z$};
+\node[above right] at (0,0,0) {$0$};
+\end{tikzpicture}
+]]></latex-image>
+<shortdescription>Empty set of three-dimensional coordinate axes, extended in the negative x and negative z directions, for plotting the point negative 4, 3, negative 5.</shortdescription>
+</image>
+</sidebyside>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="subsec-skel-3d-planes-octants">
+<title>Coordinate Planes and Octants</title>
+
+<p>
+The three coordinate axes determine three <term>coordinate planes</term>.
+The <m>xy</m>-plane is the plane containing the <m>x</m>- and
+<m>y</m>-axes, and it is described by the single equation <m>z = 0</m>;
+similarly the <m>xz</m>-plane is <m>y = 0</m> and the <m>yz</m>-plane is
+<m>x = 0</m>. These three planes are shown in
+<xref ref="fig-skel-3d-coordinate-planes"/>.
+</p>
+
+<figure xml:id="fig-skel-3d-coordinate-planes">
+<caption>
+The three coordinate planes: the <m>xy</m>-plane <m>(z=0)</m>, the
+<m>xz</m>-plane <m>(y=0)</m>, and the <m>yz</m>-plane <m>(x=0)</m>. They
+divide space into eight octants.
+</caption>
+<image width="66%">
+<description>
+<p>
+Three shaded rectangles meeting at the origin at right angles represent
+the three coordinate planes. The horizontal one is the x y plane where z
+equals zero, and the two vertical ones are the x z plane where y equals
+zero and the y z plane where x equals zero.
+</p>
+</description>
+<latex-image><![CDATA[
+\begin{tikzpicture}[x={(-0.50cm,-0.36cm)}, y={(1cm,0cm)}, z={(0cm,1cm)},
+                    scale=0.95, >=stealth]
+% xy-plane (z = 0)
+\fill[orange!25, opacity=0.75] (-2.6,-2.6,0) -- (2.6,-2.6,0) --
+                               (2.6,2.6,0) -- (-2.6,2.6,0) -- cycle;
+% xz-plane (y = 0)
+\fill[orange!45, opacity=0.65] (-2.6,0,-2.6) -- (2.6,0,-2.6) --
+                               (2.6,0,2.6) -- (-2.6,0,2.6) -- cycle;
+% yz-plane (x = 0)
+\fill[orange!35, opacity=0.65] (0,-2.6,-2.6) -- (0,2.6,-2.6) --
+                               (0,2.6,2.6) -- (0,-2.6,2.6) -- cycle;
+\draw[->, thick] (0,0,0) -- (3.6,0,0) node[below left] {$x$};
+\draw[->, thick] (0,0,0) -- (0,3.6,0) node[right] {$y$};
+\draw[->, thick] (0,0,0) -- (0,0,3.4) node[above] {$z$};
+\node[above left] at (0,0,0) {$O$};
+\node[align=center] at (-1.5,-1.7,1.9) {$xz$-plane\\ $(y=0)$};
+\node[align=center] at (0,1.9,1.9) {$yz$-plane\\ $(x=0)$};
+\node[align=center] at (1.6,1.5,0) {$xy$-plane\\ $(z=0)$};
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
+
+<p>
+In the plane the two axes create four quadrants; in space the three
+coordinate planes create eight <term>octants</term>. The
+<term>first octant</term> is the one in which <m>x</m>, <m>y</m>, and
+<m>z</m> are all positive.
+</p>
+
+<p>
+From <xref ref="fig-skel-3d-coordinate-planes"/>, record the sign pattern
+of the octant a point lies in. (Fill in the first octant from the
+definition just given, then give the signs of the octant that lies
+directly below it, and say how many of the eight octants have at least
+one negative coordinate.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,5.4);
+\draw[gray!35] (0,3.6) -- (15,3.6);
+\draw[gray!35] (0,1.8) -- (15,1.8);
+\node[anchor=north west, font=\small\itshape] at (0.25,5.15) {First octant, signs of $(x,y,z)$:};
+\node[anchor=north west, font=\small\itshape] at (0.25,3.35) {The octant directly below it:};
+\node[anchor=north west, font=\small\itshape] at (0.25,1.55) {Octants with a negative coordinate:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box with three rows, for the sign pattern of the first octant, the sign pattern of the octant below it, and a count of the octants having a negative coordinate.</shortdescription>
+</image>
+</sidebyside>
+
+<p>
+More generally, equations such as <m>x = a</m>, <m>y = b</m>, and
+<m>z = c</m> represent planes parallel to the <m>yz</m>-,
+<m>xz</m>-, and <m>xy</m>-planes respectively. Each of these equations
+places one restriction on a point of space and leaves the other two
+coordinates free, so each describes a plane. Consequently a point can be
+thought of as the intersection of three such planes: the point
+<m>P(1,1,1)</m> of <xref ref="fig-skel-3d-three-planes"/> is the
+intersection of the planes <m>x = 1</m>, <m>y = 1</m>, and <m>z = 1</m>.
+</p>
+
+<figure xml:id="fig-skel-3d-three-planes">
+<caption>
+A point as the intersection of three planes. The planes <m>x=1</m>,
+<m>y=1</m>, and <m>z=1</m> meet pairwise in three lines, and all three
+lines meet in the single point <m>P(1,1,1)</m>.
+</caption>
+<image width="66%">
+<description>
+<p>
+Three shaded planes, one for x equals 1, one for y equals 1, and one for z
+equals 1, intersect one another at right angles. Each pair of planes meets
+in a red line: the planes x equals 1 and y equals 1 meet in a vertical
+line, the planes x equals 1 and z equals 1 meet in a line running in the y
+direction, and the planes y equals 1 and z equals 1 meet in a line running
+in the x direction. All three red lines cross at the single common point,
+marked in green and labelled P with coordinates 1, 1, 1.
+</p>
+</description>
+<latex-image><![CDATA[
+\begin{tikzpicture}[x={(-0.50cm,-0.36cm)}, y={(1cm,0cm)}, z={(0cm,1cm)},
+                    scale=1.15, >=stealth]
+% plane z = 1 (horizontal, pink)
+\fill[purple!22, opacity=0.85] (-1.7,-1.7,1) -- (1.7,-1.7,1) --
+                               (1.7,1.7,1) -- (-1.7,1.7,1) -- cycle;
+% plane y = 1 (gray)
+\fill[gray!30, opacity=0.7] (-1.7,1,-1.7) -- (1.7,1,-1.7) --
+                            (1.7,1,1.7) -- (-1.7,1,1.7) -- cycle;
+% plane x = 1 (blue)
+\fill[cyan!25, opacity=0.7] (1,-1.7,-1.7) -- (1,1.7,-1.7) --
+                            (1,1.7,1.7) -- (1,-1.7,1.7) -- cycle;
+\draw[->, thick] (0,0,0) -- (2.5,0,0) node[below left] {$x$};
+\draw[->, thick] (0,0,0) -- (0,2.5,0) node[right] {$y$};
+\draw[->, thick] (0,0,0) -- (0,0,2.3) node[above] {$z$};
+% lines of intersection of each pair of planes
+\draw[red!70!black, thick] (1,1,-1.7) -- (1,1,1.7);
+\draw[red!70!black, thick] (1,-1.7,1) -- (1,1.7,1);
+\draw[red!70!black, thick] (-1.7,1,1) -- (1.7,1,1);
+\fill[green!50!black] (1,1,1) circle (2pt);
+\node[green!50!black, above right] at (1,1,1) {$P(1,1,1)$};
+\node[purple!70!black] at (-1.5,-1.2,1) {$z=1$};
+\node[gray!50!black] at (-1.5,1,-1.4) {$y=1$};
+\node[cyan!60!black] at (1,1.5,-1.4) {$x=1$};
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="subsec-skel-3d-distance">
+<title>Distance Between Two Points</title>
+
+<p>
+The distance between two points <m>P_1(x_1,y_1,z_1)</m> and
+<m>P_2(x_2,y_2,z_2)</m> is denoted by <m>\left\|P_1P_2\right\|</m> and can
+be computed with the Pythagorean theorem. As
+<xref ref="fig-skel-3d-distance"/> shows, the segment <m>P_1P_2</m> is
+the diagonal of a rectangular box whose edges are parallel to the
+coordinate axes.
+</p>
+
+<figure xml:id="fig-skel-3d-distance">
+<caption>
+The segment <m>P_1P_2</m> is the diagonal of a box with edges parallel to
+the coordinate axes.
+</caption>
+<image width="70%">
+<description>
+<p>
+A rectangular box with edges parallel to the coordinate axes, drawn in a
+three dimensional coordinate system. The point P one, with coordinates x
+one, y one, z one, sits at the near lower corner of the box, and the point
+P two, with coordinates x two, y two, z two, sits at the opposite upper
+corner.
+</p>
+</description>
+<latex-image><![CDATA[
+% The box and its two opposite corners only: the helper corners, the edge
+% lengths and the two diagonals are what the reader adds while deriving
+% the distance formula.  Orientation matches the video in
+% fig-skel-video-distance-formula: x to the right, y back, z up.
+\begin{tikzpicture}[x={(0.98cm,-0.16cm)}, y={(0.45cm,0.56cm)}, z={(0cm,1cm)},
+                    scale=1.05, >=stealth,
+                    lbl/.style={font=\small}]
+\draw[->, thick] (0,0,0) -- (5.4,0,0) node[below right] {$x$};
+\draw[->, thick] (0,0,0) -- (0,2.6,0) node[above left] {$y$};
+\draw[->, thick] (0,0,0) -- (0,0,4.2) node[left] {$z$};
+% the box, set out along x so the axes stay clear of it
+\coordinate (P1) at (1.6,0.5,0.9);
+\coordinate (P2) at (4.0,2.6,2.9);
+\draw[cyan!65!blue, thin]
+  (1.6,0.5,0.9) -- (4.0,0.5,0.9) -- (4.0,2.6,0.9) -- (1.6,2.6,0.9) -- cycle;
+\draw[cyan!65!blue, thin]
+  (1.6,0.5,2.9) -- (4.0,0.5,2.9) -- (4.0,2.6,2.9) -- (1.6,2.6,2.9) -- cycle;
+\draw[cyan!65!blue, thin] (1.6,0.5,0.9) -- (1.6,0.5,2.9);
+\draw[cyan!65!blue, thin] (4.0,0.5,0.9) -- (4.0,0.5,2.9);
+\draw[cyan!65!blue, thin] (4.0,2.6,0.9) -- (4.0,2.6,2.9);
+\draw[cyan!65!blue, thin] (1.6,2.6,0.9) -- (1.6,2.6,2.9);
+% the two opposite corners
+\fill[red] (P1) circle (2.2pt);
+\fill[red] (P2) circle (2.2pt);
+\node[lbl, red, below left, xshift=16pt, yshift=-5pt] at (P1) {$P_1(x_1,y_1,z_1)$};
+\node[lbl, red, above right]  at (P2) {$P_2(x_2,y_2,z_2)$};
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
+
+<p>
+Derive the distance formula from that box. (First mark the two helper
+corners on <xref ref="fig-skel-3d-distance"/>: the corner
+<m>A(x_2,y_1,z_1)</m>, reached from <m>P_1</m> along the box's base, and
+<m>B(x_2,y_2,z_1)</m>, reached from <m>A</m> across it. Label the three
+edge lengths, then apply the Pythagorean theorem twice: once in the base
+triangle <m>P_1AB</m>, whose right angle is at <m>A</m>, and once in the
+vertical triangle <m>P_1BP_2</m>, whose right angle is at <m>B</m>.
+Substitute the first result into the second.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,10);
+\draw[gray!35] (0,6.6) -- (15,6.6);
+\draw[gray!35] (0,3.3) -- (15,3.3);
+\node[anchor=north west, font=\small\itshape] at (0.35,9.7) {Step 1, in the base: $\|P_1B\|^2 =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,6.3) {Step 2, up the vertical edge: $\|P_1P_2\|^2 =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.0) {Substituting, $\|P_1P_2\| =$};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in three rows, for the Pythagorean theorem in the base triangle, the Pythagorean theorem in the vertical triangle, and the distance formula that results from combining them.</shortdescription>
+</image>
+</sidebyside>
+
+<p>
+Record the formula you obtained here, so it is easy to find later.
+</p>
+
+<assemblage xml:id="skel-summary-3d-distance">
+<title>Distance in Space</title>
+<p>
+For <m>P_1(x_1,y_1,z_1)</m> and <m>P_2(x_2,y_2,z_2)</m>,
+<md xml:id="eq-skel-3d-distance" number="yes">
+\left\|P_1P_2\right\| =
+\sqrt{(x_1-x_2)^2 + (y_1-y_2)^2 + (z_1-z_2)^2}.
+</md>
+</p>
+</assemblage>
+
+<p>
+The video in <xref ref="fig-skel-video-distance-formula"/> builds the box
+of <xref ref="fig-skel-3d-distance"/> one edge at a time and applies the
+Pythagorean theorem twice, in the same two steps. Use it to check the
+derivation you just wrote.
+</p>
+
+<figure xml:id="fig-skel-video-distance-formula">
+<caption>
+Deriving the distance formula in space by applying the Pythagorean
+theorem twice: first in the base triangle <m>P_1AB</m>, then in the
+vertical triangle <m>P_1BP_2</m>.
+</caption>
+<video xml:id="video-skel-distance-formula"
+       source="videos/DistanceFormulaProof.mp4" width="85%"/>
+</figure>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="subsec-skel-3d-spheres">
+<title>Spheres</title>
+
+<p>
+A <term>sphere</term> of radius <m>a</m> is the set of all points
+<m>P(x,y,z)</m> whose distance from a fixed center
+<m>P_0(x_0,y_0,z_0)</m> equals <m>a</m>, as in
+<xref ref="fig-skel-3d-sphere"/>.
+</p>
+
+<figure xml:id="fig-skel-3d-sphere">
+<caption>
+A sphere of radius <m>a</m> centered at
+<m>P_0 = P_0(x_0,y_0,z_0)</m>: the set of all points <m>P(x,y,z)</m> at
+distance <m>a</m> from the center.
+</caption>
+<image width="60%">
+<description>
+<p>
+A shaded sphere with its center marked and a segment of length a drawn
+from the center to a point P on the surface, illustrating that every
+point of the sphere is the same distance a from the center.
+</p>
+</description>
+<latex-image><![CDATA[
+% drawn entirely in the picture plane so the ball, its centre and the
+% radius are guaranteed to line up
+\begin{tikzpicture}[scale=1.0, >=stealth]
+% axes
+\draw[->, thick] (0,0) -- (0,2.9) node[above] {$z$};
+\draw[->, thick] (0,0) -- (3.6,-0.95) node[right] {$y$};
+\draw[->, thick] (0,0) -- (-2.3,-1.05) node[below left] {$x$};
+\node[above left] at (0,0) {$0$};
+% the sphere
+\shade[ball color=orange!30, opacity=0.92] (1.35,0.95) circle (1.05cm);
+% equator, to help read it as a solid
+\draw[orange!55!black, dashed, opacity=0.8]
+  (1.35,0.95) ellipse (1.05cm and 0.3cm);
+% centre and one radius
+\fill[magenta] (1.35,0.95) circle (1.8pt);
+\draw[magenta, very thick, dashed] (1.35,0.95) -- (2.09,1.69);
+\fill[magenta] (2.09,1.69) circle (1.8pt);
+\node[magenta] at (1.58,1.44) {$a$};
+\node[magenta, above right=1pt] at (2.09,1.69) {$P(x,y,z)$};
+% the centre is labelled briefly and pulled clear of the ball with a
+% leader; its coordinates are given in the caption
+\draw[gray, thin] (1.35,0.95) -- (0.45,0.12);
+\node[magenta, below left=0pt] at (0.45,0.12) {$P_0$};
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
+
+<p>
+Turn that description into an equation. (Write the condition
+<q>the distance from <m>P</m> to <m>P_0</m> is <m>a</m></q> using
+<xref ref="eq-skel-3d-distance"/>, then square both sides.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,6.6);
+\draw[gray!35] (0,3.3) -- (15,3.3);
+\node[anchor=north west, font=\small\itshape] at (0.35,6.3) {The condition, before squaring:};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.0) {Equation of the sphere:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in two rows, for the distance condition defining a sphere and for the equation of the sphere obtained by squaring it.</shortdescription>
+</image>
+</sidebyside>
+
+<assemblage xml:id="skel-summary-3d-sphere">
+<title>Equation of a Sphere</title>
+<p>
+The sphere of radius <m>a</m> centered at <m>P_0(x_0,y_0,z_0)</m> is
+<md xml:id="eq-skel-3d-sphere" number="yes">
+(x-x_0)^2 + (y-y_0)^2 + (z-z_0)^2 = a^2.
+</md>
+</p>
+</assemblage>
+
+<example xml:id="ex-skel-3d-complete-square">
+<title>Recognizing a Sphere by Completing the Square</title>
+<statement>
+<p>
+Describe the geometric surface represented by the following equation.
+<md>
+x^2 + y^2 + z^2 + 2x + 4y = 0
+</md>
+</p>
+
+<p>
+<em>Solution.</em>
+(Complete the square in <m>x</m> and in <m>y</m>; there is nothing to do
+in <m>z</m>. Then match the result against
+<xref ref="eq-skel-3d-sphere"/> and read off the center and the radius.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,11);
+\draw[gray!35] (0,4) -- (15,4);
+\node[anchor=north west, font=\small\itshape] at (0.35,10.7) {Completing the square:};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.7) {Center:};
+\node[anchor=north west, font=\small\itshape] at (6.00,3.7) {Radius:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box with a large upper region for completing the square and a lower row split into a space for the center and a space for the radius.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+</example>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="subsec-skel-3d-describing-regions">
+<title>Describing Regions in Space</title>
+
+<p>
+A single equation in <m>x</m>, <m>y</m>, and <m>z</m> normally describes
+a surface, two simultaneous equations describe the curve where two
+surfaces meet, and inequalities describe solid regions. The next example
+collects several of these situations.
+</p>
+
+<example xml:id="ex-skel-3d-describe">
+<title>Describing Equations and Inequalities Geometrically</title>
+<statement>
+<p>
+Describe the geometrical meaning of the following equalities and
+inequalities.
+<ol marker="A.">
+<li><p><m>x = 1</m></p></li>
+<li><p><m>x = 1,\; y = 2</m></p></li>
+<li><p><m>x^2 + y^2 + z^2 = 1</m></p></li>
+<li><p><m>1 \le x^2 + y^2 + z^2 \le 4,\; z \le 0</m></p></li>
+<li><p><m>x^2 + y^2 = 1</m></p></li>
+<li><p><m>x^2 + y^2 = 1,\; -1 \le z \le 1</m></p></li>
+<li><p><m>x^2 + y^2 = 1,\; z = 3</m></p></li>
+</ol>
+</p>
+
+<p>
+<em>Solution.</em>
+(For each part, count how many of the three coordinates are restricted:
+one restriction normally leaves a surface, two leave a curve, and an
+inequality leaves a solid region. In parts <alert>E</alert> through
+<alert>G</alert> notice which variable is left free, and remember that
+what is a circle in the plane sweeps out a cylinder in space. Name each
+object, and give its center, radius, or axis where it has one.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,14);
+\foreach \y in {2,4,6,8,10,12} \draw[gray!35] (0,\y) -- (15,\y);
+\node[anchor=north west, font=\small\itshape] at (0.35,13.7) {A.};
+\node[anchor=north west, font=\small\itshape] at (0.35,11.7) {B.};
+\node[anchor=north west, font=\small\itshape] at (0.35,9.7) {C.};
+\node[anchor=north west, font=\small\itshape] at (0.35,7.7) {D.};
+\node[anchor=north west, font=\small\itshape] at (0.35,5.7) {E.};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.7) {F.};
+\node[anchor=north west, font=\small\itshape] at (0.35,1.7) {G.};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box divided into seven labelled rows, A through G, one for the description of each equation or inequality.</shortdescription>
+</image>
+</sidebyside>
+
+<p>
+Now sketch parts <alert>A</alert>, <alert>B</alert>, <alert>D</alert>,
+and <alert>E</alert> on the four sets of axes below. (Shade a region
+rather than outlining it when the answer is solid, and use a dashed
+outline for a boundary surface that the region does not include.)
+</p>
+
+<sidebyside widths="24% 24% 24% 24%">
+<image>
+<latex-image><![CDATA[
+\begin{tikzpicture}[x={(-0.87cm,-0.5cm)}, y={(0.87cm,-0.5cm)}, z={(0cm,1cm)}, scale=0.8, >=stealth]
+\draw[thick] (-2.2,0,0) -- (0,0,0);
+\draw[->, thick] (0,0,0) -- (3.4,0,0) node[below left] {$x$};
+\draw[thick] (0,-2.4,0) -- (0,0,0);
+\draw[->, thick] (0,0,0) -- (0,2.4,0) node[below right] {$y$};
+\draw[thick] (0,0,-2.4) -- (0,0,0);
+\draw[->, thick] (0,0,0) -- (0,0,2.4) node[above] {$z$};
+\node[anchor=north, font=\small\itshape] at (0,0,-3.0) {A.};
+\end{tikzpicture}
+]]></latex-image>
+<shortdescription>Empty three-dimensional axes labelled A, for sketching the plane x equals 1.</shortdescription>
+</image>
+<image>
+<latex-image><![CDATA[
+\begin{tikzpicture}[x={(-0.87cm,-0.5cm)}, y={(0.87cm,-0.5cm)}, z={(0cm,1cm)}, scale=0.8, >=stealth]
+\draw[thick] (-2.2,0,0) -- (0,0,0);
+\draw[->, thick] (0,0,0) -- (3.4,0,0) node[below left] {$x$};
+\draw[thick] (0,-2.2,0) -- (0,0,0);
+\draw[->, thick] (0,0,0) -- (0,3.4,0) node[below right] {$y$};
+\draw[thick] (0,0,-2.2) -- (0,0,0);
+\draw[->, thick] (0,0,0) -- (0,0,2.2) node[above] {$z$};
+\node[anchor=north, font=\small\itshape] at (0,0,-3.0) {B.};
+\end{tikzpicture}
+]]></latex-image>
+<shortdescription>Empty three-dimensional axes labelled B, for sketching the line where the planes x equals 1 and y equals 2 meet.</shortdescription>
+</image>
+<image>
+<latex-image><![CDATA[
+\begin{tikzpicture}[scale=0.8, >=stealth]
+\draw[->, thick] (0,-2.6) -- (0,2.6) node[above] {$z$};
+\draw[->, thick] (0,0) -- (2.6,-0.7) node[right] {$y$};
+\draw[->, thick] (0,0) -- (-2.2,-1.0) node[below left] {$x$};
+\node[above right] at (0,0) {$0$};
+\node[anchor=north, font=\small\itshape] at (0,-3.0) {D.};
+\end{tikzpicture}
+]]></latex-image>
+<shortdescription>Empty axes drawn in the picture plane, labelled D, for sketching the half spherical shell.</shortdescription>
+</image>
+<image>
+<latex-image><![CDATA[
+\begin{tikzpicture}[scale=0.8, >=stealth]
+\draw[->, thick] (0,-2.6) -- (0,2.6) node[above] {$z$};
+\draw[->, thick] (0,0) -- (2.6,-0.7) node[right] {$y$};
+\draw[->, thick] (0,0) -- (-2.2,-1.0) node[below left] {$x$};
+\node[above right] at (0,0) {$0$};
+\node[anchor=north, font=\small\itshape] at (0,-3.0) {E.};
+\end{tikzpicture}
+]]></latex-image>
+<shortdescription>Empty axes drawn in the picture plane, labelled E, for sketching the infinite cylinder of radius one about the z axis.</shortdescription>
+</image>
+</sidebyside>
+
+<p>
+Parts <alert>F</alert> and <alert>G</alert> are both built from the
+cylinder of part <alert>E</alert>. Sketch them on the axes below, and say
+in one line what changed. (In one part the free variable is restricted to
+an interval; in the other it is pinned to a single value. Only one of the
+two answers is a curve.)
+</p>
+
+<sidebyside widths="46% 46%">
+<image>
+<latex-image><![CDATA[
+\begin{tikzpicture}[scale=0.85, >=stealth]
+\draw[->, thick] (0,-2.6) -- (0,3.0) node[above] {$z$};
+\draw[->, thick] (0,0) -- (2.6,-0.7) node[right] {$y$};
+\draw[->, thick] (0,0) -- (-2.2,-1.0) node[below left] {$x$};
+\node[above right] at (0,0) {$0$};
+\node[anchor=north, font=\small\itshape] at (0,-3.2) {F. $x^2+y^2=1,\;-1\le z\le 1$};
+\end{tikzpicture}
+]]></latex-image>
+<shortdescription>Empty axes labelled F, for sketching the cylinder of radius one cut down to the slab between z equals negative one and z equals one.</shortdescription>
+</image>
+<image>
+<latex-image><![CDATA[
+\begin{tikzpicture}[scale=0.85, >=stealth]
+\draw[->, thick] (0,-2.6) -- (0,3.6) node[above] {$z$};
+\draw[->, thick] (0,0) -- (2.6,-0.7) node[right] {$y$};
+\draw[->, thick] (0,0) -- (-2.2,-1.0) node[below left] {$x$};
+\node[above right] at (0,0) {$0$};
+\node[anchor=north, font=\small\itshape] at (0,-3.2) {G. $x^2+y^2=1,\; z=3$};
+\end{tikzpicture}
+]]></latex-image>
+<shortdescription>Empty axes labelled G, for sketching the circle where the cylinder of radius one meets the plane z equals 3.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+</example>
+
+</subsection>
+
+</section>
