@@ -1,0 +1,676 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Skeletal (fill-in) version of 2.4 The Binomial Series and Applications
+  of Taylor Series.
+
+  Definitions, theorems, summaries, and problem statements are kept;
+  derivations and solutions are replaced by blank workspace boxes, each
+  with a one-line statement of what has to be done.  Content mirrors
+  ch-10-10.ptx of the full lecture notes; every xml:id here is prefixed
+  with "skel-" so the two can coexist.
+
+  Figures: Pascal's triangle is a simple array, so only blank space is
+  left for the student to build it from the coefficients they have just
+  computed.  The counting figure and the square-root plot are complex,
+  so they are reproduced in full, as in the lecture notes.
+-->
+<section xml:id="sec-skel-series-binomial" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>The Binomial Series and Applications of Taylor Series</title>
+
+<objectives>
+<introduction>
+<p>
+After completing this section, you should be able to:
+</p>
+</introduction>
+
+<ul>
+<li>
+<p>
+Write down the binomial series for <m>(1+x)^m</m> and compute the
+binomial coefficients <m>\binom{m}{k}</m> for any real power <m>m</m>.
+</p>
+</li>
+<li>
+<p>
+Explain why the series terminates when <m>m</m> is a non-negative
+integer and is infinite otherwise.
+</p>
+</li>
+<li>
+<p>
+Expand functions such as <m>(x+1)^5</m>, <m>(x+1)^{-2}</m>, and
+<m>(x+1)^{1/2}</m> as binomial series.
+</p>
+</li>
+</ul>
+</objectives>
+
+<introduction>
+<p>
+We have already seen one of the applications of the Taylor series,
+namely approximating a function by a polynomial of degree <m>n</m>. In
+this section we study two more applications of the Taylor series: the
+binomial series and estimating/evaluating non-elementary integrals.
+</p>
+<p>
+<em>These are skeletal notes: the definitions, theorems, and problem
+statements are given, and blank boxes are left wherever a derivation, a
+solution, or a sketch belongs, so that you can fill them in by hand.</em>
+</p>
+</introduction>
+
+<!-- ================================================================ -->
+<subsection xml:id="subsec-skel-binomial-series">
+<title>Binomial Series</title>
+
+<p>
+Before we try powers such as <m>(1+x)^{-2}</m> or <m>\sqrt{1+x}</m>, let
+us look at what happens when the exponent is an ordinary positive
+integer, where nothing beyond multiplication is needed. Multiply out
+<m>(1+x)^1</m>, <m>(1+x)^2</m>, <m>(1+x)^3</m>, and <m>(1+x)^4</m> by
+hand, and write each answer in increasing powers of <m>x</m>.
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,8);
+\node[anchor=north west, font=\small] at (0.35,7.6) {$(1+x)^1 =$};
+\node[anchor=north west, font=\small] at (0.35,5.7) {$(1+x)^2 =$};
+\node[anchor=north west, font=\small] at (0.35,3.8) {$(1+x)^3 =$};
+\node[anchor=north west, font=\small] at (0.35,1.9) {$(1+x)^4 =$};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box with four rows labelled one plus x to the first, second, third, and fourth powers, for multiplying out each expansion by hand.</shortdescription>
+</image>
+</sidebyside>
+
+<p>
+Two features should stand out. First, each expansion <em>stops</em>: the
+power <m>(1+x)^n</m> gives a polynomial with exactly <m>n+1</m> terms.
+Second, the coefficients are far from random. Strip them out and stack
+one row per exponent, starting with the single <m>1</m> of
+<m>(1+x)^0</m> and centering each row below the one before it. The
+result is the array shown in <xref ref="fig-skel-pascals-triangle"/>.
+</p>
+
+<figure xml:id="fig-skel-pascals-triangle">
+<caption>
+Pascal's triangle. Row <m>n</m> holds the coefficients of
+<m>(1+x)^n</m>. Build the first five rows here from the expansions you
+found above.
+</caption>
+<image width="97%">
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,9);
+\node[anchor=north west, font=\small\itshape] at (0.35,8.65) {$n = 0$:};
+\node[anchor=north west, font=\small\itshape] at (0.35,7.20) {$n = 1$:};
+\node[anchor=north west, font=\small\itshape] at (0.35,5.75) {$n = 2$:};
+\node[anchor=north west, font=\small\itshape] at (0.35,4.30) {$n = 3$:};
+\node[anchor=north west, font=\small\itshape] at (0.35,2.85) {$n = 4$:};
+\node[anchor=north west, text=gray!60, font=\footnotesize\itshape]
+  at (0.35,1.20) {write each row centered below the previous one};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box with five rows labelled n equals zero through n equals four, in which to write the coefficients of one plus x to the n, each row centered below the previous one.</shortdescription>
+</image>
+</figure>
+
+<p>
+This array is called <term>Pascal's triangle</term>. Every row starts
+and ends with <m>1</m>, and each remaining entry is the sum of the two
+entries just above it <mdash/> the <m>6</m> in the bottom row, for
+instance, is <m>3 + 3</m>. That rule alone produces the next expansion
+with no multiplying at all. Use it to write down row <m>n = 5</m>, and
+therefore the expansion of <m>(1+x)^5</m>.
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,4.5);
+\node[anchor=north west, font=\small] at (0.35,4.15) {row $n = 5$:};
+\node[anchor=north west, font=\small] at (0.35,2.3) {$(1+x)^5 =$};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box with two rows, one for the fifth row of Pascal's triangle and one for the resulting expansion of one plus x to the fifth power.</shortdescription>
+</image>
+</sidebyside>
+
+<p>
+The triangle tells us <em>what</em> the coefficients are, but not yet
+<em>why</em>. For that, look at where a term of the expansion actually
+comes from. Written out in full, the fourth power is
+
+<md xml:id="eq-skel-fourth-power" number="yes">
+(1+x)^4 = (1+x)(1+x)(1+x)(1+x),
+</md>
+
+and multiplying this out means walking through the four factors,
+picking either the <m>1</m> or the <m>x</m> out of each one, and
+multiplying the four picks together. Every term of the expansion arises
+that way, from one such set of picks. So to land on <m>x^3</m> we must
+take the <m>x</m> from exactly three of the four factors, and the
+<m>1</m> from the single factor left over. The question <q>what is the
+coefficient of <m>x^3</m>?</q> has turned into a counting question:
+<em>in how many ways can we choose <m>3</m> of the <m>4</m> factors to
+hand us an <m>x</m>?</em>
+</p>
+
+<figure xml:id="fig-skel-binomial-choose-x3">
+<caption>
+The four ways to produce <m>x^3</m> from
+<m>(1+x)(1+x)(1+x)(1+x)</m>. Each row picks one term out of every
+factor: an <m>x</m> from three of them (colored arrows) and the
+<m>1</m> from the fourth (gray arrow). Four rows, so the coefficient
+of <m>x^3</m> is <m>4</m>.
+</caption>
+<image width="100%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-skel-binomial-choose-x3">
+<diagram dimensions="(640,420)" margins="10">
+<coordinates bbox="(0.4,-6.4,12.4,0.9)">
+<group at="row-1">
+  <label anchor="(1.60,-0.00)" alignment="c"><m>(1+x)</m></label>
+  <label anchor="(3.60,-0.00)" alignment="c"><m>(1+x)</m></label>
+  <label anchor="(5.60,-0.00)" alignment="c"><m>(1+x)</m></label>
+  <label anchor="(7.60,-0.00)" alignment="c"><m>(1+x)</m></label>
+  <line p1="(1.89,-0.90)" p2="(1.89,-0.30)" stroke="#D55E00" thickness="3" arrows="1"/>
+  <line p1="(3.89,-0.90)" p2="(3.89,-0.30)" stroke="#D55E00" thickness="3" arrows="1"/>
+  <line p1="(5.89,-0.90)" p2="(5.89,-0.30)" stroke="#D55E00" thickness="3" arrows="1"/>
+  <line p1="(7.30,-0.90)" p2="(7.30,-0.30)" stroke="#7F7F7F" thickness="3" arrows="1"/>
+  <label anchor="(9.10,-0.00)" alignment="e"><m>x\cdot x\cdot x\cdot 1 = x^3</m></label>
+</group>
+<group at="row-2">
+  <label anchor="(1.60,-1.75)" alignment="c"><m>(1+x)</m></label>
+  <label anchor="(3.60,-1.75)" alignment="c"><m>(1+x)</m></label>
+  <label anchor="(5.60,-1.75)" alignment="c"><m>(1+x)</m></label>
+  <label anchor="(7.60,-1.75)" alignment="c"><m>(1+x)</m></label>
+  <line p1="(1.89,-2.65)" p2="(1.89,-2.05)" stroke="#D55E00" thickness="3" arrows="1"/>
+  <line p1="(3.89,-2.65)" p2="(3.89,-2.05)" stroke="#D55E00" thickness="3" arrows="1"/>
+  <line p1="(7.89,-2.65)" p2="(7.89,-2.05)" stroke="#D55E00" thickness="3" arrows="1"/>
+  <line p1="(5.30,-2.65)" p2="(5.30,-2.05)" stroke="#7F7F7F" thickness="3" arrows="1"/>
+  <label anchor="(9.10,-1.75)" alignment="e"><m>x\cdot x\cdot 1\cdot x = x^3</m></label>
+</group>
+<group at="row-3">
+  <label anchor="(1.60,-3.50)" alignment="c"><m>(1+x)</m></label>
+  <label anchor="(3.60,-3.50)" alignment="c"><m>(1+x)</m></label>
+  <label anchor="(5.60,-3.50)" alignment="c"><m>(1+x)</m></label>
+  <label anchor="(7.60,-3.50)" alignment="c"><m>(1+x)</m></label>
+  <line p1="(1.89,-4.40)" p2="(1.89,-3.80)" stroke="#D55E00" thickness="3" arrows="1"/>
+  <line p1="(5.89,-4.40)" p2="(5.89,-3.80)" stroke="#D55E00" thickness="3" arrows="1"/>
+  <line p1="(7.89,-4.40)" p2="(7.89,-3.80)" stroke="#D55E00" thickness="3" arrows="1"/>
+  <line p1="(3.30,-4.40)" p2="(3.30,-3.80)" stroke="#7F7F7F" thickness="3" arrows="1"/>
+  <label anchor="(9.10,-3.50)" alignment="e"><m>x\cdot 1\cdot x\cdot x = x^3</m></label>
+</group>
+<group at="row-4">
+  <label anchor="(1.60,-5.25)" alignment="c"><m>(1+x)</m></label>
+  <label anchor="(3.60,-5.25)" alignment="c"><m>(1+x)</m></label>
+  <label anchor="(5.60,-5.25)" alignment="c"><m>(1+x)</m></label>
+  <label anchor="(7.60,-5.25)" alignment="c"><m>(1+x)</m></label>
+  <line p1="(3.89,-6.15)" p2="(3.89,-5.55)" stroke="#D55E00" thickness="3" arrows="1"/>
+  <line p1="(5.89,-6.15)" p2="(5.89,-5.55)" stroke="#D55E00" thickness="3" arrows="1"/>
+  <line p1="(7.89,-6.15)" p2="(7.89,-5.55)" stroke="#D55E00" thickness="3" arrows="1"/>
+  <line p1="(1.30,-6.15)" p2="(1.30,-5.55)" stroke="#7F7F7F" thickness="3" arrows="1"/>
+  <label anchor="(9.10,-5.25)" alignment="e"><m>1\cdot x\cdot x\cdot x = x^3</m></label>
+</group>
+</coordinates>
+
+<annotations>
+  <annotation ref="figure" text="Four rows. Each row shows the product one plus x written four times, with arrows pointing up at the one term picked out of each factor: an x from three of the factors, drawn as orange arrows, and the one from the remaining factor, drawn as a gray arrow. Every row multiplies out to x cubed, and the four rows are the only ways to do it, so the coefficient of x cubed is four.">
+    <annotation ref="row-1" text="The first way: the x is taken from the first, second and third factors, and the one from the fourth factor. Multiplying the four picks gives x times x times x times one, which is x cubed."/>
+    <annotation ref="row-2" text="The second way: the x is taken from the first, second and fourth factors, and the one from the third factor. Multiplying the four picks gives x times x times one times x, which is x cubed."/>
+    <annotation ref="row-3" text="The third way: the x is taken from the first, third and fourth factors, and the one from the second factor. Multiplying the four picks gives x times one times x times x, which is x cubed."/>
+    <annotation ref="row-4" text="The fourth way: the x is taken from the second, third and fourth factors, and the one from the first factor. Multiplying the four picks gives one times x times x times x, which is x cubed."/>
+  </annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+There are four such choices and no others, so multiplying out
+<xref ref="eq-skel-fourth-power"/> produces <m>x^3</m> four times and its
+coefficient is <m>4</m> <mdash/> exactly the entry sitting in the row
+<m>1,\, 4,\, 6,\, 4,\, 1</m>. Nothing here was special to <m>x^3</m> or
+to the fourth power. In <m>(1+x)^n</m> the coefficient of <m>x^k</m>
+counts the ways of choosing <m>k</m> of the <m>n</m> factors to supply
+an <m>x</m>, the remaining <m>n-k</m> factors supplying a <m>1</m>. That
+count is written <m>\binom{n}{k}</m> and read <q>n choose k</q>, and
+counting the choices gives the formula
+
+<md xml:id="eq-skel-binom-factorial" number="yes">
+\binom{n}{k} = \frac{n!}{k!\,(n-k)!}.
+</md>
+</p>
+
+<exercise xml:id="skel-checkpoint-binomial-addition-rule">
+<title>Why Does the Addition Rule Hold?</title>
+<statement>
+<p>
+The addition rule we noticed in the triangle is a consequence of the
+same count. Explain, by sorting the four rows of
+<xref ref="fig-skel-binomial-choose-x3"/> according to what the
+<em>last</em> factor contributes, why
+<m>\binom{4}{3} = \binom{3}{2} + \binom{3}{3}</m>. Then argue in the
+same way that
+<m>\binom{n}{k} = \binom{n-1}{k-1} + \binom{n-1}{k}</m> in general.
+</p>
+
+<p>
+<em>Your answer and reasoning.</em>
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,8);
+\draw[gray!35] (0,4) -- (15,4);
+\node[anchor=north west, font=\small\itshape] at (0.35,7.7) {the case $\binom{4}{3}$:};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.7) {the general case:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in two halves, one for the special case of four choose three and one for the general addition rule.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+<hint>
+<p>
+A choice of <m>k</m> factors out of <m>n</m> either uses the last factor
+or it does not. Count the two kinds of choice separately: if the last
+factor hands over its <m>x</m>, the other <m>k-1</m> <m>x</m>'s must
+come from the first <m>n-1</m> factors; if it hands over its <m>1</m>,
+all <m>k</m> of them must.
+</p>
+</hint>
+</exercise>
+
+<p>
+Putting the count together with the expansion gives the
+<term>Binomial Theorem</term>:
+
+<md xml:id="eq-skel-binomial-theorem" number="yes">
+(1+x)^n = \sum_{k=0}^{n} \binom{n}{k} x^k
+= 1 + nx + \frac{n(n-1)}{2!}x^2 + \cdots + nx^{n-1} + x^n.
+</md>
+</p>
+
+<p>
+But what if the exponent is <em>not</em> a positive integer? Could we
+expand something like <m>(1+x)^{-2}</m>, or
+<m>\sqrt{1+x} = (1+x)^{1/2}</m>, in the same spirit? At first the idea
+seems doomed: the factorial formula
+<xref ref="eq-skel-binom-factorial"/> makes no sense when
+<m>n = \frac12</m>. However, the equivalent <q>falling product</q> form
+
+<md xml:id="eq-skel-binom-falling" number="yes">
+\binom{m}{k} = \frac{m(m-1)(m-2)\cdots(m-k+1)}{k!}
+</md>
+
+asks only that we start at <m>m</m> and multiply <m>k</m> numbers, each
+one less than the previous <mdash/> and that recipe works for
+<em>any</em> real number <m>m</m>. It also explains why the Binomial
+Theorem <xref ref="eq-skel-binomial-theorem"/> terminates: when
+<m>m</m> is a non-negative integer, the factor <m>(m-m) = 0</m>
+eventually appears in the product, killing every coefficient from
+<m>k = m+1</m> on. When <m>m</m> is negative or fractional, no factor is
+ever zero, so the expansion never stops: instead of a polynomial we
+obtain an infinite power series. This bold step beyond the Binomial
+Theorem goes back to Newton, and Taylor series give us exactly the right
+framework to justify it.
+</p>
+
+<p>
+Indeed, the coefficients that <xref ref="eq-skel-binom-falling"/>
+predicts are precisely the Taylor coefficients of <m>(1+x)^m</m> at
+<m>x = 0</m>. Check this: with <m>f(x) = (1+x)^m</m>, differentiate
+repeatedly, evaluate at <m>x = 0</m>, and divide by <m>k!</m> as the
+definition of the Taylor series requires.
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,10);
+\node[anchor=north west, font=\small] at (0.35,9.65) {$f(x) = (1+x)^m$};
+\node[anchor=north west, font=\small] at (0.35,8.05) {$f'(x) =$};
+\node[anchor=north west, font=\small] at (0.35,6.45) {$f''(x) =$};
+\node[anchor=north west, font=\small] at (0.35,4.85) {$f'''(x) =$};
+\node[anchor=north west, font=\small] at (0.35,3.25) {$f^{(k)}(x) =$};
+\node[anchor=north west, font=\small] at (7.60,9.65) {$f(0) =$};
+\node[anchor=north west, font=\small] at (7.60,8.05) {$f'(0) =$};
+\node[anchor=north west, font=\small] at (7.60,6.45) {$f''(0) =$};
+\node[anchor=north west, font=\small] at (7.60,4.85) {$f'''(0) =$};
+\node[anchor=north west, font=\small] at (7.60,3.25) {$f^{(k)}(0) =$};
+\node[anchor=north west, font=\small] at (0.35,1.65) {$\dfrac{f^{(k)}(0)}{k!} =$};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box with rows for the successive derivatives of one plus x to the m, their values at zero, and the resulting Taylor coefficient divided by k factorial.</shortdescription>
+</image>
+</sidebyside>
+
+<p>
+The resulting series
+
+<md xml:id="eq-skel-binomial-taylor" number="yes">
+1 + mx + \frac{m(m-1)}{2!}x^2 + \cdots
++ \frac{m(m-1)(m-2)\cdots(m-k+1)}{k!}x^k + \cdots
+</md>
+
+is known as the <term>binomial series</term>.
+</p>
+
+<assemblage xml:id="skel-summary-binomial-series">
+<title>Binomial Series</title>
+<p>
+For <m>-1 \lt x \lt 1</m>,
+<md xml:id="eq-skel-binomial-series" number="yes">
+(1+x)^m = 1 + \sum_{k=1}^{\infty} \binom{m}{k} x^k
+</md>
+where
+<md>
+\binom{m}{1} = m, \qquad
+\binom{m}{2} = \frac{m(m-1)}{2},
+</md>
+and
+<md>
+<mrow>\binom{m}{k} \amp = \frac{m!}{k!(m-k)!}</mrow>
+<mrow>\amp = \frac{m(m-1)(m-2)\cdots(m-k+2)(m-k+1)}{k!}
+\quad\text{for } k \ge 3.</mrow>
+</md>
+</p>
+</assemblage>
+
+<p>
+<term>Remark:</term> The binomial series
+<xref ref="eq-skel-binomial-series"/> converges for <m>|x| \lt 1</m>. We
+will not prove this in these notes.
+</p>
+
+<example xml:id="ex-skel-binomial-positive">
+<title>The power is a positive integer</title>
+<statement>
+<p>
+Use binomial series to write the function <m>f(x) = (x+1)^5</m> as a
+series.
+</p>
+
+<p>
+<em>Solution.</em>
+(Apply <xref ref="eq-skel-binomial-series"/> with <m>m = 5</m> and write
+out the terms through <m>k = 7</m>. Then compute <m>\binom{5}{6}</m>
+from <xref ref="eq-skel-binom-falling"/>, notice what happens, and say
+what <m>\binom{5}{k}</m> is for every <m>k \gt 5</m>. Compare your final
+answer with the expansion you obtained from Pascal's triangle.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,13);
+\draw[gray!35] (0,8.5) -- (15,8.5);
+\draw[gray!35] (0,5) -- (15,5);
+\node[anchor=north west, font=\small\itshape] at (0.35,12.7) {the series with $m = 5$:};
+\node[anchor=north west, font=\small\itshape] at (0.35,8.2) {$\binom{5}{6} =$};
+\node[anchor=north west, font=\small\itshape] at (5.00,8.2) {$\binom{5}{k}$ for $k > 5$:};
+\node[anchor=north west, font=\small\itshape] at (0.35,4.7) {$(1+x)^5 =$};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in three rows, for the binomial series with m equal to five, the vanishing coefficients beyond k equals five, and the final expansion.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+</example>
+
+<example xml:id="ex-skel-binomial-negative">
+<title>The power is a negative integer</title>
+<statement>
+<p>
+Use binomial series to write the function <m>f(x) = (x+1)^{-2}</m> as a
+series.
+</p>
+
+<p>
+<em>Solution.</em>
+(Apply <xref ref="eq-skel-binomial-series"/> with <m>m = -2</m>. Compute
+<m>\binom{-2}{1}</m> and <m>\binom{-2}{2}</m> first, then find a closed
+formula for <m>\binom{-2}{k}</m> from
+<xref ref="eq-skel-binom-falling"/> <mdash/> every factor is negative,
+so pull the signs out. Finally write out the first several terms, and
+state where the series converges.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,14);
+\draw[gray!35] (0,11) -- (15,11);
+\draw[gray!35] (0,6.5) -- (15,6.5);
+\node[anchor=north west, font=\small\itshape] at (0.35,13.7) {$\binom{-2}{1} =$};
+\node[anchor=north west, font=\small\itshape] at (5.00,13.7) {$\binom{-2}{2} =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,10.7) {$\binom{-2}{k} =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,6.2) {$(1+x)^{-2} =$};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in three rows, for the first two binomial coefficients, the general coefficient, and the resulting series for one plus x to the negative two.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+</example>
+
+<example xml:id="ex-skel-binomial-fractional">
+<title>The power is not an integer</title>
+<statement>
+<p>
+Use binomial series to write the function <m>f(x) = (x+1)^{\frac12}</m>
+as a series. Compute the five non-zero terms.
+</p>
+
+<p>
+<em>Solution.</em>
+(Apply <xref ref="eq-skel-binomial-series"/> with <m>m = \frac12</m>.
+Compute <m>\binom{\frac12}{k}</m> for <m>k = 1, 2, 3, 4</m> from
+<xref ref="eq-skel-binom-falling"/> <mdash/> notice that only the first
+factor is positive <mdash/> then simplify each one and assemble the five
+terms.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,14);
+\draw[gray!35] (0,4) -- (15,4);
+\node[anchor=north west, font=\small\itshape] at (0.35,13.7) {$\binom{\frac12}{1} =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,11.3) {$\binom{\frac12}{2} =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,8.9) {$\binom{\frac12}{3} =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,6.5) {$\binom{\frac12}{4} =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.7) {$(1+x)^{\frac12} =$};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box with four rows for the binomial coefficients of the one half power and a final row for the five term expansion.</shortdescription>
+</image>
+</sidebyside>
+
+<p>
+<xref ref="fig-skel-binomial-sqrt"/> shows the function
+<m>y = \sqrt{1+x}</m> together with the partial sums of this series on
+the interval of convergence <m>-1 \lt x \lt 1</m>. Check that the
+polynomials plotted there agree with the terms you found.
+</p>
+
+<figure xml:id="fig-skel-binomial-sqrt">
+<caption>
+The function <m>y = \sqrt{1+x}</m> and the partial sums of its binomial
+series with two, three, and five terms. On the interval
+<m>-1 \lt x \lt 1</m> the partial sums approach the function.
+</caption>
+<image width="78%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-skel-binomial-sqrt">
+<diagram dimensions="(400,280)" margins="12">
+<definition>f(t) = (t, (1 + t)^(1/2))</definition>
+<definition>q1(t) = (t, 1 + t/2)</definition>
+<definition>q2(t) = (t, 1 + t/2 - t^2/8)</definition>
+<definition>q4(t) = (t, 1 + t/2 - t^2/8 + t^3/16 - 5*t^4/128)</definition>
+<coordinates bbox="(-1.3,-0.35,1.3,1.9)">
+<grid-axes xlabel="x" ylabel="y"/>
+<parametric-curve at="bs-q1" function="q1" domain="(-1.0,1.0)"
+                  stroke="#E69F00" thickness="2"/>
+<parametric-curve at="bs-q2" function="q2" domain="(-1.0,1.0)"
+                  stroke="#0072B2" thickness="2"/>
+<parametric-curve at="bs-q4" function="q4" domain="(-1.0,1.0)"
+                  stroke="#009E73" thickness="2"/>
+<parametric-curve at="bs-f" function="f" domain="(-0.998,1.0)"
+                  stroke="black" thickness="3" dash="7 4"/>
+<label at="bs-f-lab" anchor="(-1.22,1.78)" alignment="e">
+<m>y=\sqrt{1+x}</m>
+</label>
+<label at="bs-q1-lab" anchor="(-1.22,1.55)" alignment="e" color="#E69F00">
+<m>1+\frac{x}{2}</m>
+</label>
+<label at="bs-q2-lab" anchor="(-1.22,1.32)" alignment="e" color="#0072B2">
+<m>1+\frac{x}{2}-\frac{x^2}{8}</m>
+</label>
+<label at="bs-q4-lab" anchor="(-1.22,1.09)" alignment="e" color="#009E73">
+<m>\text{five terms}</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="The curve y equals the square root of one plus x, drawn as a dashed black line on the interval from negative one to one, together with three partial sums of its binomial series: the linear approximation in orange, the quadratic in blue, and the five term partial sum in green. All curves pass through zero comma one, and the five term sum is nearly indistinguishable from the function across the interval.">
+  <annotation ref="bs-f" text="The function y equals the square root of one plus x, dashed black."/>
+  <annotation ref="bs-q1" text="The two term partial sum, one plus x over two."/>
+  <annotation ref="bs-q2" text="The three term partial sum, which adds the quadratic correction."/>
+  <annotation ref="bs-q4" text="The five term partial sum, which is very close to the function on the whole interval."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</statement>
+</example>
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="subsec-skel-binomial-applications">
+<title>Applications</title>
+
+<p>
+Many integrals that arise in practice cannot be expressed in terms of
+elementary functions. Replacing the integrand by its Taylor series and
+integrating term by term produces a series for the integral, and the
+partial sums of that series give numerical estimates whose accuracy we
+can control. Taylor series also give an efficient way to evaluate limits
+of indeterminate form, often faster than repeated applications of
+l'H&#xf4;pital's rule.
+</p>
+
+<example xml:id="ex-skel-binomial-integral-estimate">
+<title>Estimating a non-elementary integral</title>
+<statement>
+<p>
+Use the binomial series to estimate
+
+<md>
+\int_0^{1/3} \frac{1}{\sqrt{1-x^3}} \, dx,
+</md>
+
+and compute an upper bound for the error of your estimate.
+</p>
+
+<p>
+<em>Solution.</em>
+(The antiderivative of <m>\dfrac{1}{\sqrt{1-x^3}}</m> is not an
+elementary function, so replace the integrand by its series: apply
+<xref ref="eq-skel-binomial-series"/> with <m>m = -\frac12</m>,
+substituting <m>-x^3</m> for <m>x</m>. Integrate the result term by
+term, evaluate at the endpoints, and keep the first two terms as your
+estimate. For the error, note that all the terms are positive, so the
+error is exactly the sum of the omitted terms; show that each omitted
+term is less than <m>\frac{1}{27}</m> times the one before it and
+compare with a geometric series, using
+<xref ref="eq-skel-series-geometric-sum"/>.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,20);
+\draw[gray!35] (0,14.5) -- (15,14.5);
+\draw[gray!35] (0,9.5) -- (15,9.5);
+\draw[gray!35] (0,6) -- (15,6);
+\node[anchor=north west, font=\small\itshape] at (0.35,19.7) {series for $\left(1-x^3\right)^{-1/2}$:};
+\node[anchor=north west, font=\small\itshape] at (0.35,14.2) {integrate term by term:};
+\node[anchor=north west, font=\small\itshape] at (0.35,9.2) {two-term estimate:};
+\node[anchor=north west, font=\small\itshape] at (0.35,5.7) {upper bound for the error:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in four rows, for the binomial series of the integrand, the term by term integration, the two term numerical estimate, and the upper bound for the error.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+</example>
+
+<example xml:id="ex-skel-binomial-limit">
+<title>Evaluating a limit</title>
+<statement>
+<p>
+Use series to evaluate
+
+<md>
+\lim_{x \to 0} \frac{\sqrt{1 + \sin x} - 1 - \frac{x}{2}}{x^2}.
+</md>
+</p>
+
+<p>
+<em>Solution.</em>
+(Start from the binomial series for <m>\sqrt{1+u}</m> that you found in
+<xref ref="ex-skel-binomial-fractional"/>. Near <m>x = 0</m> the
+quantity <m>\sin x</m> is small, so substitute <m>u = \sin x</m>, then
+replace <m>\sin x</m> by its Maclaurin series
+<m>\sin x = x - \frac{x^3}{3!} + \cdots</m> and collect powers of
+<m>x</m> up to <m>x^3</m>. Subtract <m>1 + \frac{x}{2}</m>, divide by
+<m>x^2</m>, and take the limit. Which coefficient decides the answer?)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,18);
+\draw[gray!35] (0,15) -- (15,15);
+\draw[gray!35] (0,9) -- (15,9);
+\draw[gray!35] (0,5.5) -- (15,5.5);
+\node[anchor=north west, font=\small\itshape] at (0.35,17.7) {$\sqrt{1+u} =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,14.7) {$\sqrt{1+\sin x} =$};
+\node[anchor=north west, font=\small\itshape] at (5.00,14.7) {(collect powers of $x$)};
+\node[anchor=north west, font=\small\itshape] at (0.35,8.7) {numerator:};
+\node[anchor=north west, font=\small\itshape] at (0.35,5.2) {the limit:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in four rows, for the binomial series of the square root, the substituted and collected series, the numerator, and the value of the limit.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+</example>
+
+<p>
+In the second example the constant terms and the <m>\frac{x}{2}</m>
+terms cancel exactly, so the limit is decided by the coefficient of
+<m>x^2</m> in the series for <m>\sqrt{1+\sin x}</m>. Evaluating the same
+limit by l'H&#xf4;pital's rule would require differentiating the
+numerator twice, a much longer computation.
+</p>
+</subsection>
+
+</section>

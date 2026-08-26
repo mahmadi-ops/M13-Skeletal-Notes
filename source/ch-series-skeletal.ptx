@@ -11,4 +11,5 @@
 <xi:include href="sec-skel-series-infinite.ptx" />
 <xi:include href="sec-skel-series-taylor.ptx" />
 <xi:include href="sec-skel-series-taylor-convergence.ptx" />
+<xi:include href="sec-skel-series-binomial.ptx" />
 </chapter>
