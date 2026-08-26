@@ -65,11 +65,8 @@ solution, or a sketch belongs, so that you can fill them in by hand.</em>
 <title>Binomial Series</title>
 
 <p>
-Before we try powers such as <m>(1+x)^{-2}</m> or <m>\sqrt{1+x}</m>, let
-us look at what happens when the exponent is an ordinary positive
-integer, where nothing beyond multiplication is needed. Multiply out
-<m>(1+x)^1</m>, <m>(1+x)^2</m>, <m>(1+x)^3</m>, and <m>(1+x)^4</m> by
-hand, and write each answer in increasing powers of <m>x</m>.
+Start with a positive integer exponent, where nothing beyond
+multiplication is needed. Multiply out by hand.
 </p>
 
 <sidebyside width="97%">
@@ -88,19 +85,15 @@ hand, and write each answer in increasing powers of <m>x</m>.
 </sidebyside>
 
 <p>
-Two features should stand out. First, each expansion <em>stops</em>: the
-power <m>(1+x)^n</m> gives a polynomial with exactly <m>n+1</m> terms.
-Second, the coefficients are far from random. Strip them out and stack
-one row per exponent, starting with the single <m>1</m> of
-<m>(1+x)^0</m> and centering each row below the one before it. The
-result is the array shown in <xref ref="fig-skel-pascals-triangle"/>.
+Two things to notice: how many terms does <m>(1+x)^n</m> have, and what
+pattern do the coefficients follow? Strip the coefficients out and stack
+one row per exponent, each row centered below the one before it.
 </p>
 
 <figure xml:id="fig-skel-pascals-triangle">
 <caption>
 Pascal's triangle. Row <m>n</m> holds the coefficients of
-<m>(1+x)^n</m>. Build the first five rows here from the expansions you
-found above.
+<m>(1+x)^n</m>.
 </caption>
 <image width="97%">
 <latex-image>
@@ -120,128 +113,60 @@ found above.
 </figure>
 
 <p>
-This array is called <term>Pascal's triangle</term>. Every row starts
-and ends with <m>1</m>, and each remaining entry is the sum of the two
-entries just above it <mdash/> the <m>6</m> in the bottom row, for
-instance, is <m>3 + 3</m>. That rule alone produces the next expansion
-with no multiplying at all. Use it to write down row <m>n = 5</m>, and
-therefore the expansion of <m>(1+x)^5</m>.
+This array is called <term>Pascal's triangle</term>. Every row starts and
+ends with <m>1</m>. State the rule that produces each remaining entry
+from the row above it, use it to write row <m>n = 5</m>, and read off
+<m>(1+x)^5</m>.
 </p>
 
 <sidebyside width="97%">
 <image>
 <latex-image>
 \begin{tikzpicture}
-\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,4.5);
-\node[anchor=north west, font=\small] at (0.35,4.15) {row $n = 5$:};
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,7);
+\draw[gray!35] (0,4.5) -- (15,4.5);
+\node[anchor=north west, font=\small\itshape] at (0.35,6.7) {the rule:};
+\node[anchor=north west, font=\small] at (0.35,4.2) {row $n = 5$:};
 \node[anchor=north west, font=\small] at (0.35,2.3) {$(1+x)^5 =$};
 \end{tikzpicture}
 </latex-image>
-<shortdescription>Blank box with two rows, one for the fifth row of Pascal's triangle and one for the resulting expansion of one plus x to the fifth power.</shortdescription>
+<shortdescription>Blank box with rows for the addition rule of Pascal's triangle, the fifth row of the triangle, and the resulting expansion of one plus x to the fifth power.</shortdescription>
 </image>
 </sidebyside>
 
 <p>
 The triangle tells us <em>what</em> the coefficients are, but not yet
-<em>why</em>. For that, look at where a term of the expansion actually
-comes from. Written out in full, the fourth power is
+<em>why</em>. Written out in full, the fourth power is
 
 <md xml:id="eq-skel-fourth-power" number="yes">
 (1+x)^4 = (1+x)(1+x)(1+x)(1+x),
 </md>
 
-and multiplying this out means walking through the four factors,
-picking either the <m>1</m> or the <m>x</m> out of each one, and
-multiplying the four picks together. Every term of the expansion arises
-that way, from one such set of picks. So to land on <m>x^3</m> we must
-take the <m>x</m> from exactly three of the four factors, and the
-<m>1</m> from the single factor left over. The question <q>what is the
-coefficient of <m>x^3</m>?</q> has turned into a counting question:
-<em>in how many ways can we choose <m>3</m> of the <m>4</m> factors to
-hand us an <m>x</m>?</em>
+and every term of the expansion comes from picking either the <m>1</m>
+or the <m>x</m> out of each factor. So <m>x^3</m> needs the <m>x</m>
+from three of the four factors and the <m>1</m> from the one left over.
+List the ways, and read off the coefficient of <m>x^3</m>.
 </p>
 
-<figure xml:id="fig-skel-binomial-choose-x3">
-<caption>
-The four ways to produce <m>x^3</m> from
-<m>(1+x)(1+x)(1+x)(1+x)</m>. Each row picks one term out of every
-factor: an <m>x</m> from three of them (colored arrows) and the
-<m>1</m> from the fourth (gray arrow). Four rows, so the coefficient
-of <m>x^3</m> is <m>4</m>.
-</caption>
-<image width="100%">
-<prefigure xmlns="https://prefigure.org" label="prefigure-skel-binomial-choose-x3">
-<diagram dimensions="(640,420)" margins="10">
-<coordinates bbox="(0.4,-6.4,12.4,0.9)">
-<group at="row-1">
-  <label anchor="(1.60,-0.00)" alignment="c"><m>(1+x)</m></label>
-  <label anchor="(3.60,-0.00)" alignment="c"><m>(1+x)</m></label>
-  <label anchor="(5.60,-0.00)" alignment="c"><m>(1+x)</m></label>
-  <label anchor="(7.60,-0.00)" alignment="c"><m>(1+x)</m></label>
-  <line p1="(1.89,-0.90)" p2="(1.89,-0.30)" stroke="#D55E00" thickness="3" arrows="1"/>
-  <line p1="(3.89,-0.90)" p2="(3.89,-0.30)" stroke="#D55E00" thickness="3" arrows="1"/>
-  <line p1="(5.89,-0.90)" p2="(5.89,-0.30)" stroke="#D55E00" thickness="3" arrows="1"/>
-  <line p1="(7.30,-0.90)" p2="(7.30,-0.30)" stroke="#7F7F7F" thickness="3" arrows="1"/>
-  <label anchor="(9.10,-0.00)" alignment="e"><m>x\cdot x\cdot x\cdot 1 = x^3</m></label>
-</group>
-<group at="row-2">
-  <label anchor="(1.60,-1.75)" alignment="c"><m>(1+x)</m></label>
-  <label anchor="(3.60,-1.75)" alignment="c"><m>(1+x)</m></label>
-  <label anchor="(5.60,-1.75)" alignment="c"><m>(1+x)</m></label>
-  <label anchor="(7.60,-1.75)" alignment="c"><m>(1+x)</m></label>
-  <line p1="(1.89,-2.65)" p2="(1.89,-2.05)" stroke="#D55E00" thickness="3" arrows="1"/>
-  <line p1="(3.89,-2.65)" p2="(3.89,-2.05)" stroke="#D55E00" thickness="3" arrows="1"/>
-  <line p1="(7.89,-2.65)" p2="(7.89,-2.05)" stroke="#D55E00" thickness="3" arrows="1"/>
-  <line p1="(5.30,-2.65)" p2="(5.30,-2.05)" stroke="#7F7F7F" thickness="3" arrows="1"/>
-  <label anchor="(9.10,-1.75)" alignment="e"><m>x\cdot x\cdot 1\cdot x = x^3</m></label>
-</group>
-<group at="row-3">
-  <label anchor="(1.60,-3.50)" alignment="c"><m>(1+x)</m></label>
-  <label anchor="(3.60,-3.50)" alignment="c"><m>(1+x)</m></label>
-  <label anchor="(5.60,-3.50)" alignment="c"><m>(1+x)</m></label>
-  <label anchor="(7.60,-3.50)" alignment="c"><m>(1+x)</m></label>
-  <line p1="(1.89,-4.40)" p2="(1.89,-3.80)" stroke="#D55E00" thickness="3" arrows="1"/>
-  <line p1="(5.89,-4.40)" p2="(5.89,-3.80)" stroke="#D55E00" thickness="3" arrows="1"/>
-  <line p1="(7.89,-4.40)" p2="(7.89,-3.80)" stroke="#D55E00" thickness="3" arrows="1"/>
-  <line p1="(3.30,-4.40)" p2="(3.30,-3.80)" stroke="#7F7F7F" thickness="3" arrows="1"/>
-  <label anchor="(9.10,-3.50)" alignment="e"><m>x\cdot 1\cdot x\cdot x = x^3</m></label>
-</group>
-<group at="row-4">
-  <label anchor="(1.60,-5.25)" alignment="c"><m>(1+x)</m></label>
-  <label anchor="(3.60,-5.25)" alignment="c"><m>(1+x)</m></label>
-  <label anchor="(5.60,-5.25)" alignment="c"><m>(1+x)</m></label>
-  <label anchor="(7.60,-5.25)" alignment="c"><m>(1+x)</m></label>
-  <line p1="(3.89,-6.15)" p2="(3.89,-5.55)" stroke="#D55E00" thickness="3" arrows="1"/>
-  <line p1="(5.89,-6.15)" p2="(5.89,-5.55)" stroke="#D55E00" thickness="3" arrows="1"/>
-  <line p1="(7.89,-6.15)" p2="(7.89,-5.55)" stroke="#D55E00" thickness="3" arrows="1"/>
-  <line p1="(1.30,-6.15)" p2="(1.30,-5.55)" stroke="#7F7F7F" thickness="3" arrows="1"/>
-  <label anchor="(9.10,-5.25)" alignment="e"><m>1\cdot x\cdot x\cdot x = x^3</m></label>
-</group>
-</coordinates>
-
-<annotations>
-  <annotation ref="figure" text="Four rows. Each row shows the product one plus x written four times, with arrows pointing up at the one term picked out of each factor: an x from three of the factors, drawn as orange arrows, and the one from the remaining factor, drawn as a gray arrow. Every row multiplies out to x cubed, and the four rows are the only ways to do it, so the coefficient of x cubed is four.">
-    <annotation ref="row-1" text="The first way: the x is taken from the first, second and third factors, and the one from the fourth factor. Multiplying the four picks gives x times x times x times one, which is x cubed."/>
-    <annotation ref="row-2" text="The second way: the x is taken from the first, second and fourth factors, and the one from the third factor. Multiplying the four picks gives x times x times one times x, which is x cubed."/>
-    <annotation ref="row-3" text="The third way: the x is taken from the first, third and fourth factors, and the one from the second factor. Multiplying the four picks gives x times one times x times x, which is x cubed."/>
-    <annotation ref="row-4" text="The fourth way: the x is taken from the second, third and fourth factors, and the one from the first factor. Multiplying the four picks gives one times x times x times x, which is x cubed."/>
-  </annotation>
-</annotations>
-</diagram>
-</prefigure>
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,10);
+\draw[gray!35] (0,2.5) -- (15,2.5);
+\node[anchor=north west, font=\small\itshape] at (0.35,9.7) {the ways to pick three $x$'s:};
+\node[anchor=north west, font=\small\itshape] at (0.35,2.2) {coefficient of $x^3$:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in two parts, one for listing the ways of choosing three of the four factors to supply an x, and one for the resulting coefficient of x cubed.</shortdescription>
 </image>
-</figure>
+</sidebyside>
 
 <p>
-There are four such choices and no others, so multiplying out
-<xref ref="eq-skel-fourth-power"/> produces <m>x^3</m> four times and its
-coefficient is <m>4</m> <mdash/> exactly the entry sitting in the row
-<m>1,\, 4,\, 6,\, 4,\, 1</m>. Nothing here was special to <m>x^3</m> or
-to the fourth power. In <m>(1+x)^n</m> the coefficient of <m>x^k</m>
-counts the ways of choosing <m>k</m> of the <m>n</m> factors to supply
-an <m>x</m>, the remaining <m>n-k</m> factors supplying a <m>1</m>. That
-count is written <m>\binom{n}{k}</m> and read <q>n choose k</q>, and
-counting the choices gives the formula
+In general the coefficient of <m>x^k</m> in <m>(1+x)^n</m> counts the
+ways of choosing <m>k</m> of the <m>n</m> factors to supply an <m>x</m>.
+That count is written <m>\binom{n}{k}</m>, read <q>n choose k</q>, and
+equals
 
 <md xml:id="eq-skel-binom-factorial" number="yes">
 \binom{n}{k} = \frac{n!}{k!\,(n-k)!}.
@@ -252,40 +177,28 @@ counting the choices gives the formula
 <title>Why Does the Addition Rule Hold?</title>
 <statement>
 <p>
-The addition rule we noticed in the triangle is a consequence of the
-same count. Explain, by sorting the four rows of
-<xref ref="fig-skel-binomial-choose-x3"/> according to what the
-<em>last</em> factor contributes, why
-<m>\binom{4}{3} = \binom{3}{2} + \binom{3}{3}</m>. Then argue in the
-same way that
-<m>\binom{n}{k} = \binom{n-1}{k-1} + \binom{n-1}{k}</m> in general.
-</p>
-
-<p>
-<em>Your answer and reasoning.</em>
+The rule you wrote down for Pascal's triangle is a consequence of the
+same count. Explain why
+<m>\binom{n}{k} = \binom{n-1}{k-1} + \binom{n-1}{k}</m>.
 </p>
 
 <sidebyside width="97%">
 <image>
 <latex-image>
 \begin{tikzpicture}
-\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,8);
-\draw[gray!35] (0,4) -- (15,4);
-\node[anchor=north west, font=\small\itshape] at (0.35,7.7) {the case $\binom{4}{3}$:};
-\node[anchor=north west, font=\small\itshape] at (0.35,3.7) {the general case:};
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,7);
+\node[anchor=north west, text=gray!60, font=\footnotesize\itshape]
+  at (0.25,6.75) {workspace};
 \end{tikzpicture}
 </latex-image>
-<shortdescription>Blank box in two halves, one for the special case of four choose three and one for the general addition rule.</shortdescription>
+<shortdescription>Blank workspace for explaining the addition rule for binomial coefficients.</shortdescription>
 </image>
 </sidebyside>
 </statement>
 <hint>
 <p>
 A choice of <m>k</m> factors out of <m>n</m> either uses the last factor
-or it does not. Count the two kinds of choice separately: if the last
-factor hands over its <m>x</m>, the other <m>k-1</m> <m>x</m>'s must
-come from the first <m>n-1</m> factors; if it hands over its <m>1</m>,
-all <m>k</m> of them must.
+or it does not. Count the two kinds of choice separately.
 </p>
 </hint>
 </exercise>
@@ -301,36 +214,41 @@ Putting the count together with the expansion gives the
 </p>
 
 <p>
-But what if the exponent is <em>not</em> a positive integer? Could we
-expand something like <m>(1+x)^{-2}</m>, or
-<m>\sqrt{1+x} = (1+x)^{1/2}</m>, in the same spirit? At first the idea
-seems doomed: the factorial formula
-<xref ref="eq-skel-binom-factorial"/> makes no sense when
-<m>n = \frac12</m>. However, the equivalent <q>falling product</q> form
+What if the exponent is <em>not</em> a positive integer <mdash/> say
+<m>-2</m>, or <m>\frac12</m>? The factorial formula
+<xref ref="eq-skel-binom-factorial"/> makes no sense there, but the
+equivalent <q>falling product</q> form
 
 <md xml:id="eq-skel-binom-falling" number="yes">
 \binom{m}{k} = \frac{m(m-1)(m-2)\cdots(m-k+1)}{k!}
 </md>
 
 asks only that we start at <m>m</m> and multiply <m>k</m> numbers, each
-one less than the previous <mdash/> and that recipe works for
-<em>any</em> real number <m>m</m>. It also explains why the Binomial
-Theorem <xref ref="eq-skel-binomial-theorem"/> terminates: when
-<m>m</m> is a non-negative integer, the factor <m>(m-m) = 0</m>
-eventually appears in the product, killing every coefficient from
-<m>k = m+1</m> on. When <m>m</m> is negative or fractional, no factor is
-ever zero, so the expansion never stops: instead of a polynomial we
-obtain an infinite power series. This bold step beyond the Binomial
-Theorem goes back to Newton, and Taylor series give us exactly the right
-framework to justify it.
+one less than the previous, and that recipe works for <em>any</em> real
+<m>m</m>. Use it to explain why the expansion stops in one case and not
+in the other.
 </p>
 
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,9);
+\draw[gray!35] (0,4.5) -- (15,4.5);
+\node[anchor=north west, font=\small\itshape] at (0.35,8.7) {$m$ a non-negative integer:};
+\node[anchor=north west, font=\small\itshape] at (0.35,4.2) {$m$ negative or fractional:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in two halves, for explaining why the coefficients eventually vanish when m is a non-negative integer and never vanish otherwise.</shortdescription>
+</image>
+</sidebyside>
+
 <p>
-Indeed, the coefficients that <xref ref="eq-skel-binom-falling"/>
-predicts are precisely the Taylor coefficients of <m>(1+x)^m</m> at
-<m>x = 0</m>. Check this: with <m>f(x) = (1+x)^m</m>, differentiate
-repeatedly, evaluate at <m>x = 0</m>, and divide by <m>k!</m> as the
-definition of the Taylor series requires.
+So a negative or fractional <m>m</m> gives an infinite power series
+rather than a polynomial. Newton took that step; Taylor series justify
+it. Check that the coefficients
+<xref ref="eq-skel-binom-falling"/> predicts really are the Taylor
+coefficients of <m>f(x) = (1+x)^m</m> at <m>x = 0</m>.
 </p>
 
 <sidebyside width="97%">
@@ -403,11 +321,9 @@ series.
 
 <p>
 <em>Solution.</em>
-(Apply <xref ref="eq-skel-binomial-series"/> with <m>m = 5</m> and write
-out the terms through <m>k = 7</m>. Then compute <m>\binom{5}{6}</m>
-from <xref ref="eq-skel-binom-falling"/>, notice what happens, and say
-what <m>\binom{5}{k}</m> is for every <m>k \gt 5</m>. Compare your final
-answer with the expansion you obtained from Pascal's triangle.)
+(Apply <xref ref="eq-skel-binomial-series"/> with <m>m = 5</m>, writing
+out the terms through <m>k = 7</m>. Then compute <m>\binom{5}{6}</m>, and
+compare your answer with the expansion you got from Pascal's triangle.)
 </p>
 
 <sidebyside width="97%">
@@ -439,12 +355,9 @@ series.
 
 <p>
 <em>Solution.</em>
-(Apply <xref ref="eq-skel-binomial-series"/> with <m>m = -2</m>. Compute
-<m>\binom{-2}{1}</m> and <m>\binom{-2}{2}</m> first, then find a closed
-formula for <m>\binom{-2}{k}</m> from
-<xref ref="eq-skel-binom-falling"/> <mdash/> every factor is negative,
-so pull the signs out. Finally write out the first several terms, and
-state where the series converges.)
+(Apply <xref ref="eq-skel-binomial-series"/> with <m>m = -2</m>. In the
+general coefficient every factor is negative, so pull the signs out.
+State where the series converges.)
 </p>
 
 <sidebyside width="97%">
@@ -477,10 +390,7 @@ as a series. Compute the five non-zero terms.
 <p>
 <em>Solution.</em>
 (Apply <xref ref="eq-skel-binomial-series"/> with <m>m = \frac12</m>.
-Compute <m>\binom{\frac12}{k}</m> for <m>k = 1, 2, 3, 4</m> from
-<xref ref="eq-skel-binom-falling"/> <mdash/> notice that only the first
-factor is positive <mdash/> then simplify each one and assemble the five
-terms.)
+Only the first factor of each coefficient is positive.)
 </p>
 
 <sidebyside width="97%">
@@ -501,10 +411,9 @@ terms.)
 </sidebyside>
 
 <p>
-<xref ref="fig-skel-binomial-sqrt"/> shows the function
-<m>y = \sqrt{1+x}</m> together with the partial sums of this series on
-the interval of convergence <m>-1 \lt x \lt 1</m>. Check that the
-polynomials plotted there agree with the terms you found.
+Check your answer against <xref ref="fig-skel-binomial-sqrt"/>, which
+plots <m>y = \sqrt{1+x}</m> with the partial sums of this series on the
+interval of convergence <m>-1 \lt x \lt 1</m>.
 </p>
 
 <figure xml:id="fig-skel-binomial-sqrt">
