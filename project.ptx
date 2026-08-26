@@ -12,7 +12,10 @@
          these exercises are auto-graded on Runestone. -->
     <target name="runestone" format="html" platform="runestone"
             publication="publication-runestone.ptx" />
-    <target name="print" format="pdf" publication="publication-print.ptx" />
+    <!-- output-filename is what the "PDF" button in the navbar links to;
+         scripts/build-site.sh copies it next to the web pages. -->
+    <target name="print" format="pdf" publication="publication-print.ptx"
+            output-filename="math13-skeletal-notes.pdf" />
   </targets>
 </project>
 

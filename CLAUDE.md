@@ -59,8 +59,31 @@ See `.claude/skills/skeletonize/SKILL.md` for the full rules. In short:
 pretext build web      # output/web
 pretext build print    # output/print (PDF — this is what students annotate)
 pretext view web
+
+scripts/build-site.sh  # both, with the PDF copied into output/web
 ```
 
-Validate XML before building: `xmllint --noout source/<file>.ptx`.
+Validate XML before building: `xmllint --noout source/<file>.ptx`
+(or `python3 -c "import xml.etree.ElementTree as ET; ET.parse('source/<file>.ptx')"`
+where xmllint is not installed).
+
+### The PDF button
+
+The navbar carries a **PDF** button linking to `math13-skeletal-notes.pdf`
+next to the HTML pages. Three pieces have to stay in step:
+
+- `project.ptx` — the print target's `output-filename`.
+- `scripts/build-site.sh` — copies that file into `output/web/`.
+- `assets/custom.js` — `PDF_HREF`, the button it injects into the navbar.
+
+`scripts/build-site.sh` is what CI runs, so a plain `pretext build web`
+leaves the button pointing at a file that is not there. That is only a
+local-preview wrinkle; use the script when you want to check the button.
+
+Do **not** give the print target a `deploy-dir` to publish the PDF: that
+makes it a deploy target, which switches `pretext deploy` from its
+"default_target" strategy to Pelican and would publish all 154 MB of
+`output/print` rather than the 3 MB PDF.
+
 Deployed to GitHub Pages by `.github/workflows/pretext-deploy.yml`
 at https://mahmadi-ops.github.io/M13-Skeletal-Notes/

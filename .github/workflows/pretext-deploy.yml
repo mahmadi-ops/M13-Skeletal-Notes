@@ -76,8 +76,11 @@ jobs:
       - name: install local ptx files
         run: pretext --version
 
-      - name: build deploy targets
-        run: pretext build --deploys
+      # Builds the web target and the print target, and drops the PDF next to
+      # the HTML pages so the navbar's "PDF" button resolves. `pretext deploy`
+      # then copies output/web wholesale to the staging area.
+      - name: build site (web + PDF)
+        run: scripts/build-site.sh
 
       - name: run deploy
         run: pretext deploy --no-push
