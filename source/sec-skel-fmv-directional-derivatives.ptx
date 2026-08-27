@@ -69,8 +69,8 @@ of <m>f</m>.
 
 <introduction>
 <p>
-Recall that the partial derivatives <m>f_x</m> and <m>f_y</m> correspond
-to the rate of change of <m>z = f(x,y)</m> in the <m>\hat{\imath}</m> and
+Recall from <xref ref="sec-skel-fmv-partial-derivatives"/> that the partial
+derivatives <m>f_x</m> and <m>f_y</m> correspond to the rate of change of <m>z = f(x,y)</m> in the <m>\hat{\imath}</m> and
 <m>\hat{\jmath}</m> directions. In this section, we generalize this notion
 to the rate of change of <m>z = f(x,y)</m> in an arbitrary direction
 <m>\hat{u}</m>, which is a unit vector of the form
@@ -1458,6 +1458,5 @@ perpendicular to it.
 </subsection>
 
 <xi:include href="subsec-skel-fmv-scalar-fields.ptx"/>
-<xi:include href="exercises-skel-fmv-gradient-applications.ptx"/>
 
 </section>

@@ -41,10 +41,14 @@ and 4.5/4.7's three companion files → `subsec-skel-fmv-scalar-fields.ptx`,
 (`LagrangeMultipliers.ptx`). Chapter 4 therefore numbers 4.1–4.6 here,
 which does not line up with the full notes.
 
-Two traps when writing a new section, both of which cost a build:
-XML comments may not contain `--` (use parentheses), and a bare `<` or
-`>` inside a `latex-image` that is not wrapped in `CDATA` has to be
-written `&lt;` / `&gt;`.
+Three traps when writing a new section, each of which costs a build:
+
+- XML comments may not contain `--` (use parentheses instead).
+- A bare `<` or `>` inside a `latex-image` that is not wrapped in `CDATA`
+  has to be written `&lt;` / `&gt;`.
+- `\$` in a `latex-image` is a *literal* dollar, not math mode, so any
+  `\Delta`, `\to` etc. after it lands in text mode and LaTeX fails. Easy
+  to introduce when generating a tikz box from a script that escapes `$`.
 
 ## The skeletonizing recipe
 

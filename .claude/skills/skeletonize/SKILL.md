@@ -123,11 +123,17 @@ detail. Match it.
   the decision made about its figures.
 - `xmllint --noout source/<file>.ptx`, then `scripts/build-site.sh`, and
   read the log for `PTX:ERROR` and unresolved-xref warnings.
-- Two XML traps that each cost a full build: a comment may not contain a
-  double hyphen (write the aside in parentheses instead), and a bare `<`
+- Three traps that each cost a full build: a comment may not contain a
+  double hyphen (write the aside in parentheses instead); a bare `<`
   or `>` inside a `latex-image` that is not wrapped in `CDATA` must be
   written `&lt;` / `&gt;` — easy to hit in a tikz label such as
-  `{$H < 0$:}`.
+  `{$H < 0$:}`; and `\$` inside a `latex-image` is a literal dollar, so
+  anything mathematical after it compiles in text mode and fails.
+- When the lecture notes have moved on, refresh before editing:
+  `scripts/sync-lecture-notes.sh`, then re-pull every spliced figure. A
+  refresh re-imports upstream captions, so any `<xref>` in them pointing
+  at a figure you replaced with a blank grid comes back broken — re-run
+  the xref check afterwards, not just before.
 - Check every `<xref>` resolves before building, which is far faster than
   waiting for the log:
 

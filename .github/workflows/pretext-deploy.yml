@@ -37,6 +37,20 @@ on:
   # Runs on demand
   workflow_dispatch:
 
+# Only one deploy at a time. Every run ends by force-pushing gh-pages, so
+# several in flight at once race to publish and the last to *finish* wins --
+# which is not necessarily the newest commit. A burst of pushes once stacked
+# ten concurrent builds this way. Grouping them means a new push cancels the
+# older run instead of competing with it, so what goes live is always the
+# most recent commit.
+#
+# The group is keyed by ref, so a manual workflow_dispatch on main shares it
+# with pushes to main (as it should, since they publish the same site), while
+# a run on any other ref would queue separately.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: write
 

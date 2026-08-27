@@ -3,11 +3,11 @@
   Review problems on gradients and directional derivatives
 -->
 <worksheet xml:id="worksheet-exercises-gradients" xmlns:xi="http://www.w3.org/2001/XInclude">
-<title>Exercises for Directional Derivatives and Gradient Vectors</title>
+<title>Exercises for <xref ref="sec-skel-fmv-directional-derivatives" text="title"/></title>
 
 <introduction>
 <p>
-These problems use the gradient to compute directional derivatives and directions of fastest change.
+These problems use the gradient to compute directional derivatives and directions of fastest change. If you would like to review this topic first, see <xref ref="sec-skel-fmv-directional-derivatives" text="title"/>.
 </p>
 </introduction>
 
@@ -124,21 +124,21 @@ centered at <m>(1,2)</m>. Along the line <m>y = x+1</m> the gradient
 <title>True or False</title>
 <statement correct="yes">
 <p>
-If <m>\vec u = \langle a, b\rangle</m> is a unit vector and <m>f</m>
+If <m>\hat{u} = \langle a, b\rangle</m> is a unit vector and <m>f</m>
 has continuous second partials, then
 <md>
-D^2_{\vec u} f(x,y) = f_{xx}a^2 + 2f_{xy}ab + f_{yy}b^2,
+D^2_{\hat{u}} f(x,y) = f_{xx}a^2 + 2f_{xy}ab + f_{yy}b^2,
 </md>
-where <m>D^2_{\vec u} f = D_{\vec u}\left[D_{\vec u} f(x,y)\right]</m>.
+where <m>D^2_{\hat{u}} f = D_{\hat{u}}\left[D_{\hat{u}} f(x,y)\right]</m>.
 </p>
 </statement>
 <feedback>
 <p>
 We have that
 <md>
-D^2_{\vec u} f
-= D_{\vec u}\left[D_{\vec u} f(x,y)\right]
-= D_{\vec u}\left[a f_x + b f_y\right].
+D^2_{\hat{u}} f
+= D_{\hat{u}}\left[D_{\hat{u}} f(x,y)\right]
+= D_{\hat{u}}\left[a f_x + b f_y\right].
 </md>
 This simplifies to
 <md>
@@ -156,15 +156,15 @@ Clairaut's Theorem.
 <title>True or False</title>
 <statement correct="yes">
 <p>
-<m>D_{\vec i + \vec j}\,f(x,y) = f_x + f_y</m>.
+<m>D_{\hat{\imath} + \hat{\jmath}}\,f(x,y) = f_x + f_y</m>.
 </p>
 </statement>
 <feedback>
 <p>
 Since
-<m>\vec i + \vec j = \langle 1, 1\rangle</m>,
+<m>\hat{\imath} + \hat{\jmath} = \langle 1, 1\rangle</m>,
 <md>
-D_{\vec i + \vec j}\,f(x,y)
+D_{\hat{\imath} + \hat{\jmath}}\,f(x,y)
 = \nabla f(x,y) \cdot \langle 1, 1\rangle
 = f_x + f_y.
 </md>
@@ -219,26 +219,26 @@ rate of change is the length of the gradient, i.e.
 <p>
 Half of the fastest possible rate of height increase at point
 <m>(1,0,1)</m> is <m>\frac12 \cdot 2 = 1</m>. Let
-<m>\vec u = \langle a, b\rangle</m> be a unit vector in the desired
+<m>\hat{u} = \langle a, b\rangle</m> be a unit vector in the desired
 direction. Then the directional derivative
-<m>D_{\vec u}(1,0) = 1</m> is the desired rate of change of height at
-<m>(1,0,1)</m> in the direction of <m>\vec u</m>; it can be calculated
+<m>D_{\hat{u}}(1,0) = 1</m> is the desired rate of change of height at
+<m>(1,0,1)</m> in the direction of <m>\hat{u}</m>; it can be calculated
 using the dot product with the gradient:
 <md>
-1 = D_{\vec u}(1,0)
-= \vec u \cdot \nabla z(1,0)
+1 = D_{\hat{u}}(1,0)
+= \hat{u} \cdot \nabla z(1,0)
 = \langle a, b\rangle \cdot \langle 2, 0\rangle
 = 2a + 0b = 2a.
 </md>
 Thus, <m>a = \frac12</m> and <m>b</m> must be such that
-<m>\vec u = \left\langle \frac12, b\right\rangle</m> is unit, i.e.
+<m>\hat{u} = \left\langle \frac12, b\right\rangle</m> is unit, i.e.
 <m>\left(\frac12\right)^2 + b^2 = 1</m>, from which
 <m>b^2 = \frac34</m> and <m>b = \pm\frac{\sqrt3}{2}</m>. Therefore,
 the desired directions in which the height is increasing at a rate
 equal to half of the fastest possible rate are
-<m>\vec u_1 = \left\langle \frac12, \frac{\sqrt3}{2}\right\rangle</m>
+<m>\hat{u}_1 = \left\langle \frac12, \frac{\sqrt3}{2}\right\rangle</m>
 and
-<m>\vec u_2 = \left\langle \frac12, -\frac{\sqrt3}{2}\right\rangle</m>.
+<m>\hat{u}_2 = \left\langle \frac12, -\frac{\sqrt3}{2}\right\rangle</m>.
 </p>
 </li>
 </ol>
@@ -256,7 +256,7 @@ temperature <m>T</m> at any point <m>(x,y)</m> is given by
 <li>
 <p>
 What is the rate of change in temperature at <m>(0,0)</m> in the
-direction of <m>3\,\mathbf i - 4\,\mathbf j</m>?
+direction of <m>3\,\hat{\imath} - 4\,\hat{\jmath}</m>?
 </p>
 </li>
 <li>
@@ -288,9 +288,9 @@ We first compute the gradient:
 \qquad T_y(0,0) = 1,</mrow>
 </md>
 so <m>\nabla T\big|_{(0,0)} = \langle 1, 1\rangle</m>. The direction
-vector is <m>\vec u = \langle 3, -4\rangle</m> with
-<m>\|\vec u\| = \sqrt{9 + 16} = 5</m>, so the unit vector is
-<m>\hat u = \dfrac{\vec u}{\|\vec u\|}
+vector is <m>\overrightarrow{u} = \langle 3, -4\rangle</m> with
+<m>\|\overrightarrow{u}\| = \sqrt{9 + 16} = 5</m>, so the unit vector is
+<m>\hat u = \dfrac{\overrightarrow{u}}{\|\overrightarrow{u}\|}
 = \left\langle \dfrac35, -\dfrac45\right\rangle</m>. Hence
 <md>
 \left(D_{\hat u} T\right)_{(0,0)}
@@ -413,14 +413,14 @@ occurs.
 <p>
 The gradient is
 <md>
-\nabla f = \left(\frac{2x}{x^2+y^2}\right)\mathbf i
-+ \left(\frac{2y}{x^2+y^2}\right)\mathbf j,
+\nabla f = \left(\frac{2x}{x^2+y^2}\right)\hat{\imath}
++ \left(\frac{2y}{x^2+y^2}\right)\hat{\jmath},
 </md>
 so at <m>(-4,3)</m>,
 <md>
 <mrow>\nabla f(-4,3)
-\amp = \left(-\frac{8}{25}\right)\mathbf i
-+ \left(\frac{6}{25}\right)\mathbf j,</mrow>
+\amp = \left(-\frac{8}{25}\right)\hat{\imath}
++ \left(\frac{6}{25}\right)\hat{\jmath},</mrow>
 <mrow>\|\nabla f(-4,3)\|
 \amp = \sqrt{\frac{100}{(25)^2}} = \frac{10}{25}
 = \frac25.</mrow>
@@ -428,7 +428,7 @@ so at <m>(-4,3)</m>,
 The direction of maximum increase is
 <md>
 \hat u = \frac{\nabla f(-4,3)}{\|\nabla f(-4,3)\|}
-= \left(-\frac45\right)\mathbf i + \left(\frac35\right)\mathbf j,
+= \left(-\frac45\right)\hat{\imath} + \left(\frac35\right)\hat{\jmath},
 </md>
 and the maximum rate of increase is
 <md>
@@ -453,7 +453,7 @@ at <m>P_0</m>.
 <li>
 <p>
 Find the directional derivative of <m>f(x,y)</m> at <m>P_0</m> in the
-direction given by <m>\vec v = \langle -1, 1\rangle</m>.
+direction given by <m>\overrightarrow{v} = \langle -1, 1\rangle</m>.
 </p>
 </li>
 </ol>
@@ -463,9 +463,9 @@ direction given by <m>\vec v = \langle -1, 1\rangle</m>.
 <p>
 The gradient is
 <md>
-<mrow>\nabla f \amp = \left(2x e^{3y}\right)\mathbf i
-+ \left(3x^2 e^{3y}\right)\mathbf j,</mrow>
-<mrow>\nabla f\big|_{(-1,0)} \amp = -2\,\mathbf i + 3\,\mathbf j,
+<mrow>\nabla f \amp = \left(2x e^{3y}\right)\hat{\imath}
++ \left(3x^2 e^{3y}\right)\hat{\jmath},</mrow>
+<mrow>\nabla f\big|_{(-1,0)} \amp = -2\,\hat{\imath} + 3\,\hat{\jmath},
 \qquad
 \left\|\nabla f\big|_{(-1,0)}\right\| = \sqrt{13}.</mrow>
 </md>
@@ -475,8 +475,8 @@ The gradient is
 The direction of most rapid decrease is opposite to the gradient:
 <md>
 -\frac{\nabla f}{\|\nabla f\|}
-= \left(\frac{2}{\sqrt{13}}\right)\mathbf i
-- \left(\frac{3}{\sqrt{13}}\right)\mathbf j
+= \left(\frac{2}{\sqrt{13}}\right)\hat{\imath}
+- \left(\frac{3}{\sqrt{13}}\right)\hat{\jmath}
 = \left\langle \frac{2}{\sqrt{13}}, -\frac{3}{\sqrt{13}}
 \right\rangle.
 </md>
@@ -484,8 +484,8 @@ The direction of most rapid decrease is opposite to the gradient:
 </li>
 <li>
 <p>
-The unit vector in the direction of <m>\vec v</m> is
-<m>\hat u = \dfrac{\vec v}{\|\vec v\|}
+The unit vector in the direction of <m>\overrightarrow{v}</m> is
+<m>\hat u = \dfrac{\overrightarrow{v}}{\|\overrightarrow{v}\|}
 = \left\langle -\dfrac{1}{\sqrt2}, \dfrac{1}{\sqrt2}\right\rangle</m>,
 so
 <md>
@@ -529,7 +529,7 @@ Find the derivatives of <m>f(x,y)</m> in these directions at
 <p>
 The gradient is
 <md>
-<mrow>\nabla f \amp = (2x + y)\,\mathbf i + (x + 2y)\,\mathbf j,</mrow>
+<mrow>\nabla f \amp = (2x + y)\,\hat{\imath} + (x + 2y)\,\hat{\jmath},</mrow>
 <mrow>\left(\nabla f\right)_{(-1,1)} \amp = \langle -1, 1\rangle,
 \qquad
 \left\|\left(\nabla f\right)_{(-1,1)}\right\| = \sqrt2.</mrow>
@@ -597,7 +597,7 @@ the derivative of <m>T</m> at <m>(1,1,1)</m> obtains its smallest
 <li>
 <p>
 the derivative of <m>T</m> at <m>(1,1,1)</m> in the direction of the
-<em>vector</em> <m>-\mathbf i + 2\,\mathbf j + 2\,\mathbf k</m> is
+<em>vector</em> <m>-\hat{\imath} + 2\,\hat{\jmath} + 2\,\hat{k}</m> is
 <m>2</m> <degree/>C/m.
 </p>
 </li>
@@ -635,7 +635,7 @@ Hence <m>-\nabla T</m> is a positive multiple of
 
 <p>
 The third piece of information fixes <m>c</m>. The unit vector in the
-direction of <m>-\mathbf i + 2\,\mathbf j + 2\,\mathbf k</m> is
+direction of <m>-\hat{\imath} + 2\,\hat{\jmath} + 2\,\hat{k}</m> is
 <m>\frac13\langle -1, 2, 2\rangle</m>, since
 <m>\|\langle -1,2,2\rangle\| = 3</m>, so
 <md>
@@ -726,9 +726,9 @@ A function increases fastest in the direction of its gradient:
 \nabla T = \langle 4y, 4x, 6z\rangle,
 \qquad
 \nabla T\big|_{(2,0,1)} = \langle 0, 8, 6\rangle
-= 8\,\mathbf j + 6\,\mathbf k.
+= 8\,\hat{\jmath} + 6\,\hat{k}.
 </md>
-So head in the direction <m>8\,\mathbf j + 6\,\mathbf k</m>
+So head in the direction <m>8\,\hat{\jmath} + 6\,\hat{k}</m>
 (equivalently, the unit vector
 <m>\left\langle 0, \frac45, \frac35\right\rangle</m>).
 </p>
@@ -769,7 +769,7 @@ unit of distance travelled, so by the linear approximation
 <ol marker="A.">
 <li>
 <p>
-Let <m>u_1 = \frac{1}{\sqrt2}\mathbf i + \frac{1}{\sqrt2}\mathbf j</m>.
+Let <m>u_1 = \frac{1}{\sqrt2}\hat{\imath} + \frac{1}{\sqrt2}\hat{\jmath}</m>.
 Estimate <m>D_{u_1}f(4,3)</m>.
 </p>
 </li>
@@ -1027,7 +1027,7 @@ A sheet of metal of varying density occupies the <m>xy</m>-plane. At
 the point <m>(x,y)</m>, the density is
 <m>100 + 0.1xy + 0.1y^2</m>. We move away from the point
 <m>(10,10)</m> in the direction
-<m>\frac35\mathbf i + \frac45\mathbf j</m>. Use the directional
+<m>\frac35\hat{\imath} + \frac45\hat{\jmath}</m>. Use the directional
 derivative to estimate about how far we'll have to go for the density
 to increase by <m>6</m>.
 </p>
@@ -1059,6 +1059,255 @@ s \approx \frac{6}{3} = 2 \text{ units}.
 </md>
 </p>
 </solution>
+</exercise>
+
+<p>
+The three problems that close this set repeat the three questions of
+<xref ref="ex-skel-two-runners"/> in a different physical setting: find the
+direction of most rapid decrease, the rate along a prescribed direction,
+and the directions of no change.
+</p>
+
+<exercise xml:id="ex-electrostatic-plate">
+  <title>Electric Potential on a Coated Plate</title>
+  <statement>
+    <p>
+      The electric potential on a thin coated plate, in volts, is
+      <md>V(x,y) = 100 - 2x^2 - 6y^2,</md>
+      with <m>x</m> and <m>y</m> in centimeters. Consider the point <m>P_0(2,1)</m>.
+    </p>
+    <p>
+      <ol>
+        <li>
+          <p>
+            Find <m>\nabla V</m> at <m>P_0</m> and the electric field
+            <m>\mathbf E = -\nabla V</m> there. Along which unit vector does the
+            potential drop most rapidly, and at what rate?
+          </p>
+        </li>
+        <li>
+          <p>
+            A test charge is nudged along
+            <m>\hat{u} = \tfrac{4}{5}\hat{\imath} - \tfrac{3}{5}\hat{\jmath}</m>. Compute
+            <m>D_{\hat{u}}V</m> at <m>P_0</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Find the two unit vectors along which the potential does not change, and name
+            the curve they are tangent to.
+          </p>
+        </li>
+      </ol>
+    </p>
+  
+  </statement>
+  <answer>
+    <p>
+      <ol>
+        <li>
+          <p>
+            <m>\nabla V = -4x\,\hat{\imath} - 12y\,\hat{\jmath}</m>, so
+            <m>(\nabla V)_{(2,1)} = -8\,\hat{\imath} - 12\,\hat{\jmath}</m> and
+            <m>\mathbf E = 8\,\hat{\imath} + 12\,\hat{\jmath}</m> V/cm. The potential drops
+            fastest along <m>\hat{u} = \tfrac{1}{\sqrt{13}}(2\,\hat{\imath} + 3\,\hat{\jmath})</m>,
+            at the rate <m>-\|\nabla V\| = -4\sqrt{13} \approx -14.4</m> V/cm.
+          </p>
+        </li>
+        <li>
+          <p>
+            <md>D_{\hat{u}}V = (-8)\left(\tfrac{4}{5}\right)
+                + (-12)\left(-\tfrac{3}{5}\right) = \tfrac{4}{5} = 0.8</md>
+            in V/cm. The potential rises slightly along this heading.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\hat{u} = \pm\tfrac{1}{\sqrt{13}}(3\,\hat{\imath} - 2\,\hat{\jmath})</m>. These are
+            tangent to the equipotential ellipse <m>2x^2 + 6y^2 = 14</m> through <m>P_0</m>,
+            and they are orthogonal to <m>\mathbf E</m>, as they must be.
+          </p>
+        </li>
+      </ol>
+    </p>
+    <figure xml:id="figure-potential-plate">
+      <caption>The potential <m>V(x,y) = 100 - 2x^2 - 6y^2</m> on the plate. One route holds <m>V = 86</m> V along the equipotential <m>2x^2 + 6y^2 = 14</m>; the other follows a field line, on which <m>D_{\hat{u}}V = -\|\nabla V\|</m> at every point.</caption>
+      <interactive xml:id="interactive-potential-plate"
+                   iframe="potential-plate-3d.html"
+                   width="100%" aspect="16:10"/>
+    </figure>
+  </answer>
+</exercise>
+
+<exercise xml:id="ex-fall-line">
+  <title>The Fall Line on a Ski Slope</title>
+  <statement>
+    <p>
+      A mountainside has elevation, in feet,
+      <md>h(x,y) = 3000 - 0.0004x^2 - 0.001y^2,</md>
+      with <m>x</m> and <m>y</m> in feet. A skier stands at <m>P_0(200,100)</m>. Her
+      gravitational potential energy is <m>U = mgh</m>, so the downhill force she feels is
+      a positive multiple of <m>-\nabla h</m>.
+    </p>
+    <p>
+      <ol>
+        <li>
+          <p>
+            Find the <term>fall line</term>, the unit vector of steepest descent, and the
+            grade of the slope there, expressed as a percent (feet dropped per hundred feet
+            travelled).
+          </p>
+        </li>
+        <li>
+          <p>
+            A traverse is a route on which she neither climbs nor descends. Find the two
+            unit vectors that accomplish this.
+          </p>
+        </li>
+        <li>
+          <p>
+            She wants a gentler line of exactly <m>12\%</m> grade. Using
+            <m>D_{\hat{u}}h = \|\nabla h\|\cos\theta</m>, find the angle <m>\theta</m>
+            between her heading and the fall line.
+          </p>
+        </li>
+      </ol>
+    </p>
+  
+  </statement>
+  <answer>
+    <p>
+      <ol>
+        <li>
+          <p>
+            <m>\nabla h = -0.0008x\,\hat{\imath} - 0.002y\,\hat{\jmath}</m>, so
+            <m>(\nabla h)_{(200,100)} = -0.16\,\hat{\imath} - 0.20\,\hat{\jmath}</m>. Steepest
+            descent is along
+            <m>\hat{u} = \tfrac{1}{\sqrt{41}}(4\,\hat{\imath} + 5\,\hat{\jmath})</m>, and
+            <m>\|\nabla h\| = \sqrt{0.0656} \approx 0.256</m>, a grade of about
+            <m>25.6\%</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\hat{u} = \pm\tfrac{1}{\sqrt{41}}(5\,\hat{\imath} - 4\,\hat{\jmath})</m>, tangent
+            to the contour line of constant elevation through <m>P_0</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos\theta = 0.12/0.256 \approx 0.469</m>, so
+            <m>\theta \approx 62^\circ</m> off the fall line, on either side.
+          </p>
+        </li>
+      </ol>
+    </p>
+  
+    <figure xml:id="figure-alpha-tangent">
+      <caption>
+        Part (a) says the grade is <m>\|\nabla h\| = 0.2561</m>. Here is what that
+        number is, on the hill itself. The vertical plane through <m>P_0</m> in the
+        direction <m>\hat{u}</m> cuts the surface in the gold curve; the red line
+        is that curve's tangent at <m>P_0</m>; and <m>\alpha</m> is the angle it
+        makes with the horizontal. Since <m>\tan\alpha = D_{\hat{u}}h</m>, the
+        grade <em>is</em> the tangent of that angle. Swing <m>\hat{u}</m> with the
+        slider: <m>\alpha</m> is largest along the fall line, where
+        <m>\tan\alpha = 0.2561</m> and <m>\alpha = 14.4^\circ</m>, and it closes to
+        nothing along the contour, where the tangent line lies flat.
+      </caption>
+      <interactive xml:id="interactive-alpha-tangent"
+                   iframe="alpha-tangent.html"
+                   width="100%" aspect="1:1"/>
+    </figure>
+    <figure xml:id="figure-fall-line">
+      <caption>The mountainside <m>h(x,y) = 3000 - 0.0004x^2 - 0.001y^2</m>. Compare the fall line, the level traverse, and the <m>12\%</m> line. Watch the grade readout drift away from <m>12\%</m> as the skier leaves <m>P_0</m>, since the angle in part (c) is computed at <m>P_0</m> only.</caption>
+      <interactive xml:id="interactive-fall-line"
+                   iframe="fall-line-3d.html"
+                   width="100%" aspect="16:10"/>
+    </figure>
+  </answer>
+</exercise>
+
+<exercise xml:id="ex-isobars-low">
+  <title>Sailing the Isobars of a Low</title>
+  <statement>
+    <p>
+      Near the center of a low-pressure system the sea-level pressure, in millibars, is
+      modeled by
+      <md>P(x,y) = 988 + 0.004\left(x^2 + y^2\right),</md>
+      with <m>x</m> and <m>y</m> in miles from the center of the low. A ship sits at
+      <m>P_0(20,10)</m>.
+    </p>
+    <p>
+      <ol>
+        <li>
+          <p>
+            Find the pressure at the ship and <m>\nabla P</m> there. The
+            pressure-gradient force per unit volume of air is a positive multiple of
+            <m>-\nabla P</m>; in which unit direction does it push, and what is
+            <m>\|\nabla P\|</m> in millibars per mile?
+          </p>
+        </li>
+        <li>
+          <p>
+            A second ship 40 miles from the center reports a stronger wind. Using this
+            model, explain why <m>\|\nabla P\|</m> supports that report.
+          </p>
+        </li>
+        <li>
+          <p>
+            The captain decides to hold a constant barometer reading. Give the two
+            possible unit headings at <m>P_0</m>, and describe the shape of the full route.
+          </p>
+        </li>
+      </ol>
+    </p>
+  
+  </statement>
+  <answer>
+    <p>
+      <ol>
+        <li>
+          <p>
+            <m>P(20,10) = 988 + 0.004(500) = 990</m> mb, and
+            <m>\nabla P = 0.008x\,\hat{\imath} + 0.008y\,\hat{\jmath}</m> gives
+            <m>(\nabla P)_{(20,10)} = 0.16\,\hat{\imath} + 0.08\,\hat{\jmath}</m>. The force
+            points along
+            <m>-\mathbf u = -\tfrac{1}{\sqrt{5}}(2\,\hat{\imath} + \hat{\jmath})</m>, that is,
+            inward toward the low, and
+            <m>\|\nabla P\| = 0.08\sqrt{5} \approx 0.18</m> mb/mi.
+          </p>
+        </li>
+        <li>
+          <p>
+            Here <m>\|\nabla P\| = 0.008\sqrt{x^2+y^2}</m> grows linearly with distance from
+            the center, so at 40 miles it is <m>0.32</m> mb/mi, nearly double the value at
+            the first ship. (Real storms reverse this trend close to the eye; the model is
+            only reasonable over a limited annulus.)
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\mathbf u = \pm\tfrac{1}{\sqrt{5}}(\hat{\imath} - 2\,\hat{\jmath})</m>. Since the
+            level curves of <m>P</m> are the circles <m>x^2+y^2 = \text{constant}</m>,
+            holding the barometer steady means circling the storm at a fixed radius of
+            <m>\sqrt{500} \approx 22.4</m> miles.
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p>
+      Use the interactive figure to explore the problem further geometrically,
+      switching between the two headings and watching how the barometer responds as
+      the ship moves.
+    </p>
+    <figure xml:id="figure-isobars-low">
+      <caption>The pressure field <m>P(x,y) = 988 + 0.004(x^2+y^2)</m> around a low. One heading circles the eye at constant <m>990</m> mb; the other runs outward along <m>\nabla P</m>. The distance readout shows why <m>\|\nabla P\| = 0.008r</m> grows with radius.</caption>
+      <interactive xml:id="interactive-isobars-low"
+                   iframe="isobars-low-3d.html"
+                   width="100%" aspect="16:10"/>
+    </figure>
+  </answer>
 </exercise>
 
 </worksheet>
