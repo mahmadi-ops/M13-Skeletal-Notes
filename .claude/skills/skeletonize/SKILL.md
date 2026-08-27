@@ -121,5 +121,42 @@ detail. Match it.
   included from a chapter wrapper `ch-<name>-skeletal.ptx`.
 - Open each file with a comment recording the original it mirrors and
   the decision made about its figures.
-- `xmllint --noout source/<file>.ptx`, then `pretext build web`, and
+- `xmllint --noout source/<file>.ptx`, then `scripts/build-site.sh`, and
   read the log for `PTX:ERROR` and unresolved-xref warnings.
+- Two XML traps that each cost a full build: a comment may not contain a
+  double hyphen (write the aside in parentheses instead), and a bare `<`
+  or `>` inside a `latex-image` that is not wrapped in `CDATA` must be
+  written `&lt;` / `&gt;` — easy to hit in a tikz label such as
+  `{$H < 0$:}`.
+- Check every `<xref>` resolves before building, which is far faster than
+  waiting for the log:
+
+```bash
+python3 - <<'EOF'
+import re, glob
+ids, refs = set(), {}
+for f in glob.glob('source/*.ptx'):
+    s = open(f).read()
+    ids |= set(re.findall(r'xml:id="([^"]+)"', s))
+    for m in re.finditer(r'<xref ref="([^"]+)"', s):
+        refs.setdefault(m.group(1), set()).add(f)
+for r, v in sorted((r, v) for r, v in refs.items() if r not in ids):
+    print("UNRESOLVED", r, sorted(v))
+EOF
+```
+
+## 7. Reusing figures instead of retyping them
+
+A figure kept in full should be copied out of the original rather than
+retyped: the prefigure and tikz blocks run to hundreds of lines, and the
+`<shortdescription>`s and accessibility annotations must survive intact.
+Write the draft with `{{FIG:<source-file>:<figure-id>}}` placeholders and
+expand them with `splice-figures.py`, alongside this file, which splices
+the named `<figure>` in and rewrites its identifiers into this book's
+convention — `fig-skel-x`, not `skel-fig-x`:
+
+```bash
+python3 .claude/skills/skeletonize/splice-figures.py source/<draft>.ptx
+```
+
+Chapters 3 and 4 were both built this way.

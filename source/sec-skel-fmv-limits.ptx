@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Skeletal (fill-in) version of 4.2 Limits and Continuity in Higher
+  Dimensions.
+
+  Definitions, theorems, summaries, and problem statements are kept;
+  derivations and solutions are replaced by blank workspace boxes, each
+  with a one-line statement of what has to be done.  Content mirrors
+  ch-14-2.ptx of the full lecture notes; every xml:id here is prefixed
+  with "skel-" so the two can coexist.
+
+  Figures: all three pictures in this section set a problem up rather
+  than answering one (the sheaf of approach paths, the three paths to
+  the origin, and the family of straight lines with the parabola that
+  defeats them), so they are reproduced in full, as in the lecture notes.
+  Each is followed by boxes asking the reader to compute what the picture
+  only asserts.
+-->
+<section xml:id="sec-skel-fmv-limits" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Limits and Continuity in Higher Dimensions</title>
+
+<objectives>
+<introduction>
+<p>
+After completing this section, you should be able to:
+</p>
+</introduction>
+
+<ul>
+<li>
+<p>
+Explain what it means for
+<m>\lim_{(x,y)\to(a,b)} f(x,y)</m> to exist, and why the value must be
+the same along every path of approach.
+</p>
+</li>
+<li>
+<p>
+Evaluate limits of functions of two variables using direct substitution,
+algebraic simplification, and the limit laws.
+</p>
+</li>
+<li>
+<p>
+Show that a limit does not exist by finding two paths along which the
+function approaches different values.
+</p>
+</li>
+<li>
+<p>
+Decide whether a function of two variables is continuous at a point, and
+identify the points at which a piecewise-defined function fails to be
+continuous.
+</p>
+</li>
+</ul>
+</objectives>
+
+<introduction>
+<p>
+For <m>y = f(x)</m>, we could ask what value the function approaches when
+<m>x</m> approaches <m>a \in \R</m>, and there were two possible
+directions (from the left and from the right) to approach <m>x = a</m>,
+which we denoted by <m>\lim_{x\to a^-} f(x)</m> and
+<m>\lim_{x\to a^+} f(x)</m>. If
+<m>\lim_{x\to a^-} f(x) = \lim_{x\to a^+} f(x) = L \in \R</m>, then
+<m>\lim_{x\to a} f(x) = L</m>.
+</p>
+<p>
+In two variables the situation is richer, because there are infinitely
+many directions, and indeed infinitely many curved paths, along which a
+point can approach <m>(a,b)</m>. This section makes that precise and
+develops the tools for computing such limits, and for showing that a
+limit fails to exist.
+</p>
+</introduction>
+
+<!-- ================================================================ -->
+<subsection xml:id="subsec-skel-lim-two-variable">
+<title>Limits of Two-Variable Functions</title>
+
+<p>
+<xref ref="fig-skel-lim-paths"/> shows a few of the infinitely many paths
+along which a point can approach <m>(a,b)</m>. With that picture in front
+of you, write down what it takes for the limit to exist, and what it takes
+to show that it does not.
+</p>
+
+<figure xml:id="fig-skel-lim-paths">
+<caption>
+A few of the infinitely many paths along which a point can approach
+<m>(a,b)</m>. The paths may be straight lines or curves, and they may
+arrive from any direction.
+</caption>
+<image width="66%">
+<prefigure xmlns="https://prefigure.org" label="skel-prefigure-lim-paths">
+<diagram dimensions="(400,300)" margins="12">
+<definition>p1(t) = (1.55 + 0.95*sin(2.6*t), 2.55 - 1.55*t)</definition>
+<definition>p2(t) = (1.55 - 1.7*t + 0.35*t^2, 0.35 + 0.65*t)</definition>
+<definition>p3(t) = (1.55 + 1.85*t, 1.0 + 0.72*t^2)</definition>
+<definition>p4(t) = (1.55 + 1.9*t - 0.55*t^2, 1.0 - 0.95*t^2)</definition>
+<coordinates bbox="(-0.55,-0.5,4.2,3.2)">
+<axes at="lp-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+<parametric-curve at="lp-c1" function="p1" domain="(0,1)"
+                  stroke="#009E73" thickness="2.5"/>
+<parametric-curve at="lp-c2" function="p2" domain="(0,1)"
+                  stroke="#009E73" thickness="2.5"/>
+<parametric-curve at="lp-c3" function="p3" domain="(0,1)"
+                  stroke="#009E73" thickness="2.5"/>
+<parametric-curve at="lp-c4" function="p4" domain="(0,1)"
+                  stroke="#009E73" thickness="2.5"/>
+<vector at="lp-a1" v="(-0.16,-0.30)" tail="(1.71,1.30)"
+        stroke="#009E73" thickness="2"/>
+<vector at="lp-a2" v="(0.30,-0.12)" tail="(1.25,1.12)"
+        stroke="#009E73" thickness="2"/>
+<line at="lp-hx" endpoints="((0,1.0),(1.55,1.0))" stroke="#D55E00"
+      dash="3 3" thickness="1.5"/>
+<line at="lp-hy" endpoints="((1.55,0),(1.55,1.0))" stroke="#D55E00"
+      dash="3 3" thickness="1.5"/>
+<point at="lp-P" p="(1.55,1.0)" fill="#D55E00"/>
+<label at="lp-P-lab" anchor="(1.62,1.03)" alignment="e" color="#D55E00">
+<m>(a,b)</m>
+</label>
+<label at="lp-a" anchor="(1.55,-0.06)" alignment="s" color="#D55E00">
+<m>a</m>
+</label>
+<label at="lp-b" anchor="(-0.06,1.0)" alignment="w" color="#D55E00">
+<m>b</m>
+</label>
+<label at="lp-x" anchor="(4.0,-0.04)" alignment="se"><m>x</m></label>
+<label at="lp-y" anchor="(-0.04,3.05)" alignment="nw"><m>y</m></label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A coordinate plane with the point a comma b marked in orange, located by dashed lines dropped to the two axes. Four green curves of different shapes come in towards that point from different directions, two of them carrying arrowheads, showing that a point may approach a comma b along infinitely many different paths.">
+  <annotation ref="lp-P" text="The point a comma b that is being approached."/>
+  <annotation ref="lp-c1" text="One path approaching the point from above, curving as it comes in."/>
+  <annotation ref="lp-c2" text="A second path approaching from the upper left."/>
+  <annotation ref="lp-c3" text="A third path approaching from the right along a curve."/>
+  <annotation ref="lp-c4" text="A fourth path approaching from below. For the limit to exist, the function must approach the same value along every one of these paths."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+(One of the two is a statement about <em>every</em> path and the other
+about just <em>two</em> of them; that asymmetry is the whole working
+method of this section, so make it explicit. Then say why the
+one-variable test, checking the limit from the left and from the right,
+is not enough here.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,10);
+\draw[gray!35] (0,6.7) -- (15,6.7);
+\draw[gray!35] (0,3.4) -- (15,3.4);
+\node[anchor=north west, font=\small\itshape] at (0.35,9.7) {The limit exists if:};
+\node[anchor=north west, font=\small\itshape] at (0.35,6.4) {To show it does not exist, it is enough to:};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.1) {Why left and right are not enough:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in three rows, for the condition under which the limit exists, for the way to show it does not, and for why the one-variable test does not carry over.</shortdescription>
+</image>
+</sidebyside>
+
+<theorem xml:id="thm-skel-lim-properties">
+<title>Properties of Limits</title>
+<statement>
+<p>
+The following rules hold if <m>L</m>, <m>M</m>, and <m>k</m> are real
+numbers and
+<md>
+\lim_{(x,y)\to(x_0,y_0)} f(x,y) = L
+\qquad \text{and} \qquad
+\lim_{(x,y)\to(x_0,y_0)} g(x,y) = M.
+</md>
+</p>
+<p>
+<alert>1. Sum Rule:</alert>
+<m>\displaystyle \lim_{(x,y)\to(x_0,y_0)} \bigl(f(x,y)+g(x,y)\bigr)
+= L + M</m>
+</p>
+<p>
+<alert>2. Difference Rule:</alert>
+<m>\displaystyle \lim_{(x,y)\to(x_0,y_0)} \bigl(f(x,y)-g(x,y)\bigr)
+= L - M</m>
+</p>
+<p>
+<alert>3. Product Rule:</alert>
+<m>\displaystyle \lim_{(x,y)\to(x_0,y_0)} \bigl(f(x,y)\cdot g(x,y)\bigr)
+= L \cdot M</m>
+</p>
+<p>
+<alert>4. Constant Multiple Rule:</alert>
+<m>\displaystyle \lim_{(x,y)\to(x_0,y_0)} k f(x,y) = kL</m>
+for any number <m>k</m>
+</p>
+<p>
+<alert>5. Quotient Rule:</alert>
+<m>\displaystyle \lim_{(x,y)\to(x_0,y_0)} \frac{f(x,y)}{g(x,y)}
+= \frac{L}{M}</m>, provided <m>M \neq 0</m>
+</p>
+<p>
+<alert>6. Power Rule:</alert> If <m>r</m> and <m>s</m> are integers with
+no common factors and <m>s \neq 0</m>, then
+<m>\displaystyle \lim_{(x,y)\to(x_0,y_0)} \bigl(f(x,y)\bigr)^{r/s}
+= L^{r/s}</m>, provided <m>L^{r/s}</m> is a real number. (If <m>s</m> is
+even, we assume that <m>L \gt 0</m>.)
+</p>
+</statement>
+</theorem>
+
+<example xml:id="ex-skel-lim-substitution">
+<title>Evaluating a Limit by Direct Substitution</title>
+<statement>
+<p>
+Evaluate
+<md>
+\lim_{(x,y)\to(2,2\pi)} \frac{x}{y} + \cos(xy).
+</md>
+</p>
+
+<p>
+<em>Solution.</em>
+(Nothing here is indeterminate, so take the two pieces separately by
+direct substitution and then reassemble them. Name the rule from
+<xref ref="thm-skel-lim-properties"/> that lets you split the limit in
+the first place.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,8);
+\draw[gray!35] (0,4) -- (15,4);
+\node[anchor=north west, font=\small\itshape] at (0.35,7.7) {The two pieces:};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.7) {Recombining (rule used: \qquad\qquad ):};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in two rows, one for the two limits taken separately and one for recombining them with the named rule.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+</example>
+
+<example xml:id="ex-skel-lim-dne">
+<title>A Limit That Does Not Exist</title>
+<statement>
+<p>
+Consider the function <m>f(x,y) = \dfrac{xy}{x^2+y^2}</m>. Does
+<m>\lim_{(x,y)\to(0,0)} f(x,y)</m> exist?
+</p>
+
+<p>
+<em>Solution.</em>
+(Substituting gives <m>0/0</m>, so approach along the three paths drawn in
+<xref ref="fig-skel-lim-three-paths"/> instead. Restrict <m>f</m> to each
+path first <mdash/> along <m>y=0</m> it becomes a function of <m>x</m>
+alone <mdash/> and notice that each restriction is <em>constant</em>, so no
+limit needs taking. Then apply the test you wrote down above.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,12);
+\draw[gray!35] (0,9.5) -- (15,9.5);
+\draw[gray!35] (0,7) -- (15,7);
+\draw[gray!35] (0,3.5) -- (15,3.5);
+\node[anchor=north west, font=\small\itshape] at (0.35,11.7) {Along $y=0$: $f(x,0) =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,9.2) {Along $x=0$: $f(0,y) =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,6.7) {Along $y=x$: $f(x,x) =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.2) {Conclusion:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in four rows, one for the function restricted to each of the three paths and one for the conclusion about the limit.</shortdescription>
+</image>
+</sidebyside>
+
+<figure xml:id="fig-skel-lim-three-paths">
+<caption>
+Three paths of approach to the origin for
+<m>f(x,y) = \frac{xy}{x^2+y^2}</m>. The function is constantly <m>0</m>
+along the two axes and constantly <m>\frac12</m> along the line
+<m>y=x</m>, so no single value is approached and the limit does not
+exist.
+</caption>
+<image width="62%">
+<prefigure xmlns="https://prefigure.org" label="skel-prefigure-lim-three-paths">
+<diagram dimensions="(360,300)" margins="12">
+<definition>diag(t) = (t, t)</definition>
+<coordinates bbox="(-2.4,-2.2,2.6,2.4)">
+<axes at="tp-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+<parametric-curve at="tp-diag" function="diag" domain="(-1.95,1.95)"
+                  stroke="#D55E00" thickness="2.5"/>
+<line at="tp-xaxis" endpoints="((-2.1,0),(2.1,0))" stroke="#D55E00"
+      thickness="2.5"/>
+<line at="tp-yaxis" endpoints="((0,-1.9),(0,1.9))" stroke="#D55E00"
+      thickness="2.5"/>
+<point at="tp-O" p="(0,0)" fill="#D55E00"/>
+<label at="tp-diag-lab" anchor="(1.72,1.86)" alignment="ne" color="#D55E00">
+<m>y=x</m>
+</label>
+<label at="tp-f-diag" anchor="(1.05,0.62)" alignment="se" color="#D55E00">
+<m>f=\tfrac12</m>
+</label>
+<label at="tp-f-x" anchor="(1.85,-0.12)" alignment="se" color="#D55E00">
+<m>f=0</m>
+</label>
+<label at="tp-f-y" anchor="(-0.14,1.62)" alignment="nw" color="#D55E00">
+<m>f=0</m>
+</label>
+<label at="tp-x" anchor="(2.42,-0.04)" alignment="se"><m>x</m></label>
+<label at="tp-y" anchor="(-0.04,2.25)" alignment="nw"><m>y</m></label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="The x and y axes and the diagonal line y equals x, all drawn in orange and all passing through the origin. The two axes are labelled f equals zero and the diagonal is labelled f equals one half, showing that the function takes different constant values along different lines through the origin.">
+  <annotation ref="tp-xaxis" text="The path along the x axis, where y equals zero. Along it the function is constantly zero."/>
+  <annotation ref="tp-yaxis" text="The path along the y axis, where x equals zero. Along it the function is also constantly zero."/>
+  <annotation ref="tp-diag" text="The path along the line y equals x. Along it the function is constantly one half, a different value, so the limit at the origin does not exist."/>
+  <annotation ref="tp-O" text="The origin, the point being approached."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</statement>
+</example>
+
+<example xml:id="ex-skel-lim-simplify">
+<title>Evaluating a Limit by Simplifying</title>
+<statement>
+<p>
+Evaluate
+<md>
+\lim_{(x,y)\to(1,1)}
+\frac{\frac{x^2}{2} - xy + \frac{y^2}{2}}{x^2 - y^2}.
+</md>
+</p>
+
+<p>
+<em>Solution.</em>
+(Direct substitution gives <m>0/0</m> again, but this time the expression
+factors: pull <m>\tfrac12</m> out of the numerator to reveal a perfect
+square, and factor the denominator as a difference of squares. One factor
+then cancels <mdash/> say why that is legitimate as
+<m>(x,y) \to (1,1)</m> <mdash/> and what remains submits to direct
+substitution.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,11);
+\draw[gray!35] (0,7) -- (15,7);
+\draw[gray!35] (0,3) -- (15,3);
+\node[anchor=north west, font=\small\itshape] at (0.35,10.7) {Factoring:};
+\node[anchor=north west, font=\small\itshape] at (0.35,6.7) {Why the cancellation is legitimate:};
+\node[anchor=north west, font=\small\itshape] at (0.35,2.7) {The limit:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in three rows, for factoring the quotient, for justifying the cancellation, and for the resulting limit.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+</example>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="subsec-skel-lim-continuity">
+<title>Continuity</title>
+
+<definition xml:id="def-skel-continuity-two-variables">
+<title>Continuity at a Point and on the Domain</title>
+<statement>
+<p>
+A function <m>f(x,y)</m> is <term>continuous at the point</term>
+<m>(x_0,y_0)</m> if
+</p>
+<p>
+<alert>1.</alert> <m>f</m> is defined at <m>(x_0,y_0)</m>,
+</p>
+<p>
+<alert>2.</alert>
+<m>\displaystyle \lim_{(x,y)\to(x_0,y_0)} f(x,y)</m> exists,
+</p>
+<p>
+<alert>3.</alert>
+<m>\displaystyle \lim_{(x,y)\to(x_0,y_0)} f(x,y) = f(x_0,y_0)</m>.
+</p>
+<p>
+A function is <term>continuous</term> if it is continuous at every point
+of its domain.
+</p>
+</statement>
+</definition>
+
+<example xml:id="ex-skel-cont-2xy">
+<title>Continuity Everywhere Except at the Origin</title>
+<statement>
+<p>
+Show that the function
+<md>
+f(x,y) =
+\begin{cases}
+\dfrac{2xy}{x^2+y^2} \amp (x,y) \neq (0,0)\
+0 \amp (x,y) = (0,0)
+\end{cases}
+</md>
+is continuous everywhere except at <m>(x,y) = (0,0)</m>.
+</p>
+
+<p>
+<em>Solution.</em>
+(Two separate arguments. Away from the origin, say what kind of function
+this is and which rule of <xref ref="thm-skel-lim-properties"/> then
+settles continuity in one step. At the origin, the work is
+<xref ref="ex-skel-lim-dne"/> again with a factor of <m>2</m>; give the two
+paths and the value along each, and name the condition of
+<xref ref="def-skel-continuity-two-variables"/> that fails.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,13);
+\draw[gray!35] (0,8.5) -- (15,8.5);
+\draw[gray!35] (0,3.5) -- (15,3.5);
+\node[anchor=north west, font=\small\itshape] at (0.35,12.7) {Away from the origin:};
+\node[anchor=north west, font=\small\itshape] at (0.35,8.2) {At the origin, two paths:};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.2) {Condition that fails:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in three rows, for continuity away from the origin, for the two paths at the origin, and for the condition of the definition that fails.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+</example>
+
+<example xml:id="ex-skel-cont-xy2">
+<title>A Discontinuity Detected by a Curved Path</title>
+<statement>
+<p>
+Show that the function
+<md>
+f(x,y) =
+\begin{cases}
+\dfrac{xy^2}{x^2+y^4} \amp (x,y) \neq (0,0)\
+0 \amp (x,y) = (0,0)
+\end{cases}
+</md>
+is discontinuous at <m>(x,y) = (0,0)</m>.
+</p>
+
+<p>
+<em>Solution.</em>
+(Start with the whole family of straight lines <m>y = mx</m> at once,
+keeping <m>m</m> as a letter; simplify <m>f(x,mx)</m> and take
+<m>x \to 0</m>. You should get the same answer for every <m>m</m> <mdash/>
+which is exactly why this example is here, so say what it does
+<em>not</em> prove. Then look at the degrees in the denominator to see
+which curved path would make the two terms balance, and try it.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,14);
+\draw[gray!35] (0,10) -- (15,10);
+\draw[gray!35] (0,7) -- (15,7);
+\draw[gray!35] (0,3.5) -- (15,3.5);
+\node[anchor=north west, font=\small\itshape] at (0.35,13.7) {Along $y=mx$: $f(x,mx) =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,9.7) {What this does not prove:};
+\node[anchor=north west, font=\small\itshape] at (0.35,6.7) {A curved path that balances the denominator:};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.2) {Conclusion:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in four rows, for the function along the family of straight lines, for what that computation fails to prove, for a curved path that gives a different value, and for the conclusion.</shortdescription>
+</image>
+</sidebyside>
+
+<figure xml:id="fig-skel-lim-parabola-path">
+<caption>
+Every straight line through the origin gives the limit <m>0</m>, but
+along the parabola <m>x = y^2</m> the function is constantly
+<m>\frac12</m>. A limit must agree along <em>all</em> paths, not merely
+all straight ones.
+</caption>
+<image width="66%">
+<prefigure xmlns="https://prefigure.org" label="skel-prefigure-lim-parabola">
+<diagram dimensions="(380,320)" margins="12">
+<definition>par(t) = (t^2, t)</definition>
+<coordinates bbox="(-1.5,-1.85,2.6,1.85)">
+<axes at="pp-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+<line at="pp-l1" endpoints="((-1.25,-0.42),(1.25,0.42))" stroke="#7F7F7F"
+      thickness="1.5"/>
+<line at="pp-l2" endpoints="((-1.25,-1.0),(1.25,1.0))" stroke="#7F7F7F"
+      thickness="1.5"/>
+<line at="pp-l3" endpoints="((-1.25,0.42),(1.25,-0.42))" stroke="#7F7F7F"
+      thickness="1.5"/>
+<line at="pp-l4" endpoints="((-1.25,1.0),(1.25,-1.0))" stroke="#7F7F7F"
+      thickness="1.5"/>
+<line at="pp-l5" endpoints="((-1.25,1.6),(1.25,-1.6))" stroke="#7F7F7F"
+      thickness="1.5"/>
+<line at="pp-l6" endpoints="((-1.25,-1.6),(1.25,1.6))" stroke="#7F7F7F"
+      thickness="1.5"/>
+<parametric-curve at="pp-par" function="par" domain="(-1.35,1.35)"
+                  stroke="#D55E00" thickness="3"/>
+<point at="pp-O" p="(0,0)" fill="black"/>
+<label at="pp-par-lab" anchor="(1.9,1.32)" alignment="e" color="#D55E00">
+<m>x=y^2:\; f=\tfrac12</m>
+</label>
+<label at="pp-lines-lab" anchor="(-1.35,-1.55)" alignment="sw" color="#7F7F7F">
+<m>y=mx:\; f\to 0</m>
+</label>
+<label at="pp-x" anchor="(2.45,-0.04)" alignment="se"><m>x</m></label>
+<label at="pp-y" anchor="(-0.04,1.72)" alignment="nw"><m>y</m></label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A coordinate plane with six grey straight lines of different slopes all passing through the origin, and one thick orange parabola opening to the right, also passing through the origin. The grey lines are labelled f tends to zero and the parabola is labelled f equals one half.">
+  <annotation ref="pp-l2" text="One of the straight paths y equals m x through the origin. Along every such line the function tends to zero."/>
+  <annotation ref="pp-par" text="The parabola x equals y squared. Along this curved path the function is constantly one half, which is why the limit fails to exist even though every straight line gives zero."/>
+  <annotation ref="pp-O" text="The origin, where the function is defined to be zero."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+There is a second route to the same conclusion. Give it. (Once you know
+the value along the curved path, you do not need a second path at all:
+compare that value with <m>f(0,0)</m> and use condition <alert>3</alert>
+of <xref ref="def-skel-continuity-two-variables"/> directly.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,6);
+\node[anchor=north west, text=gray!60, font=\footnotesize\itshape]
+  at (0.25,5.75) {workspace};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank workspace for the alternative argument that the function is discontinuous at the origin.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+</example>
+
+</subsection>
+
+</section>

@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Pulled into directional-derivatives.ptx by XInclude.
+     Must be the LAST division of the section. -->
+
+<exercises xml:id="exercises-skel-gradient-applications">
+  <title>Exercises: Scalar Fields and Potentials</title>
+
+  <introduction>
+    <p>
+      Each exercise below repeats the three questions of
+      <xref ref="ex-skel-two-runners"/> in a different physical setting: find the direction of
+      most rapid decrease, the rate along a prescribed direction, and the directions of no
+      change.
+    </p>
+  </introduction>
+
+  <exercise xml:id="ex-skel-electrostatic-plate">
+    <title>Electric Potential on a Coated Plate</title>
+    <statement>
+      <p>
+        The electric potential on a thin coated plate, in volts, is
+        <md>V(x,y) = 100 - 2x^2 - 6y^2,</md>
+        with <m>x</m> and <m>y</m> in centimeters. Consider the point <m>P_0(2,1)</m>.
+      </p>
+      <p>
+        <ol>
+          <li>
+            <p>
+              Find <m>\nabla V</m> at <m>P_0</m> and the electric field
+              <m>\mathbf E = -\nabla V</m> there. Along which unit vector does the
+              potential drop most rapidly, and at what rate?
+            </p>
+          </li>
+          <li>
+            <p>
+              A test charge is nudged along
+              <m>\hat{u} = \tfrac{4}{5}\hat{\imath} - \tfrac{3}{5}\hat{\jmath}</m>. Compute
+              <m>D_{\hat{u}}V</m> at <m>P_0</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              Find the two unit vectors along which the potential does not change, and name
+              the curve they are tangent to.
+            </p>
+          </li>
+        </ol>
+      </p>
+    
+    
+      <p>
+        <em>Solution.</em>
+        (The field is minus the gradient, so compute <m>\nabla V</m> first and then negate. In part 2 the direction is already a unit vector <mdash/> check that before using <xref ref="eq-skel-dirderiv-gradient-relation"/>, and mind the sign of the answer. In part 3 solve <m>\nabla V\cdot\hat u = 0</m> together with <m>\|\hat u\| = 1</m>, then name the curve those vectors are tangent to.)
+      </p>
+
+      <sidebyside width="97%">
+      <image>
+      <latex-image>
+      \begin{tikzpicture}
+      \draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,15);
+      \draw[gray!35] (0,10) -- (15,10);
+      \draw[gray!35] (0,5) -- (15,5);
+      \node[anchor=north west, font=\small\itshape] at (0.35,14.7) {1.};
+      \node[anchor=north west, font=\small\itshape] at (0.35,9.7) {2.};
+      \node[anchor=north west, font=\small\itshape] at (0.35,4.7) {3.};
+      \end{tikzpicture}
+      </latex-image>
+      <shortdescription>Blank box in three labelled rows, one for each part of the exercise.</shortdescription>
+      </image>
+      </sidebyside>
+
+      <p>
+        Check your answers against the figure below.
+      </p>
+<figure xml:id="figure-skel-potential-plate">
+        <caption>The potential <m>V(x,y) = 100 - 2x^2 - 6y^2</m> on the plate. One route holds <m>V = 86</m> V along the equipotential <m>2x^2 + 6y^2 = 14</m>; the other follows a field line, on which <m>D_{\hat{u}}V = -\|\nabla V\|</m> at every point.</caption>
+        <interactive xml:id="interactive-skel-potential-plate"
+                     iframe="potential-plate-3d.html"
+                     width="100%" aspect="16:10"/>
+      </figure>
+    </statement>
+  </exercise>
+
+  <exercise xml:id="ex-skel-fall-line">
+    <title>The Fall Line on a Ski Slope</title>
+    <statement>
+      <p>
+        A mountainside has elevation, in feet,
+        <md>h(x,y) = 3000 - 0.0004x^2 - 0.001y^2,</md>
+        with <m>x</m> and <m>y</m> in feet. A skier stands at <m>P_0(200,100)</m>. Her
+        gravitational potential energy is <m>U = mgh</m>, so the downhill force she feels is
+        a positive multiple of <m>-\nabla h</m>.
+      </p>
+      <p>
+        <ol>
+          <li>
+            <p>
+              Find the <term>fall line</term>, the unit vector of steepest descent, and the
+              grade of the slope there, expressed as a percent (feet dropped per hundred feet
+              travelled).
+            </p>
+          </li>
+          <li>
+            <p>
+              A traverse is a route on which she neither climbs nor descends. Find the two
+              unit vectors that accomplish this.
+            </p>
+          </li>
+          <li>
+            <p>
+              She wants a gentler line of exactly <m>12\%</m> grade. Using
+              <m>D_{\hat{u}}h = \|\nabla h\|\cos\theta</m>, find the angle <m>\theta</m>
+              between her heading and the fall line.
+            </p>
+          </li>
+        </ol>
+      </p>
+    
+    
+      <p>
+        <em>Solution.</em>
+        (The fall line is the direction of steepest <em>descent</em>, so it points along <m>-\nabla h</m>; the grade is the magnitude of the gradient, converted to a percent. Part 2 is the pair of directions orthogonal to it. For part 3, put the desired grade into <xref ref="eq-skel-dirderiv-cos-theta"/> and solve for <m>\theta</m>; there are two headings, one either side.)
+      </p>
+
+      <sidebyside width="97%">
+      <image>
+      <latex-image>
+      \begin{tikzpicture}
+      \draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,15);
+      \draw[gray!35] (0,10) -- (15,10);
+      \draw[gray!35] (0,5) -- (15,5);
+      \node[anchor=north west, font=\small\itshape] at (0.35,14.7) {1.};
+      \node[anchor=north west, font=\small\itshape] at (0.35,9.7) {2.};
+      \node[anchor=north west, font=\small\itshape] at (0.35,4.7) {3.};
+      \end{tikzpicture}
+      </latex-image>
+      <shortdescription>Blank box in three labelled rows, one for each part of the exercise.</shortdescription>
+      </image>
+      </sidebyside>
+
+      <p>
+        Check your answers against the figure below.
+      </p>
+<figure xml:id="figure-skel-alpha-tangent">
+        <caption>
+          Part (a) says the grade is <m>\|\nabla h\| = 0.2561</m>. Here is what that
+          number is, on the hill itself. The vertical plane through <m>P_0</m> in the
+          direction <m>\hat{u}</m> cuts the surface in the gold curve; the red line
+          is that curve's tangent at <m>P_0</m>; and <m>\alpha</m> is the angle it
+          makes with the horizontal. Since <m>\tan\alpha = D_{\hat{u}}h</m>, the
+          grade <em>is</em> the tangent of that angle. Swing <m>\hat{u}</m> with the
+          slider: <m>\alpha</m> is largest along the fall line, where
+          <m>\tan\alpha = 0.2561</m> and <m>\alpha = 14.4^\circ</m>, and it closes to
+          nothing along the contour, where the tangent line lies flat.
+        </caption>
+        <interactive xml:id="interactive-skel-alpha-tangent"
+                     iframe="alpha-tangent.html"
+                     width="100%" aspect="1:1"/>
+      </figure>
+<figure xml:id="figure-skel-fall-line">
+        <caption>The mountainside <m>h(x,y) = 3000 - 0.0004x^2 - 0.001y^2</m>. Compare the fall line, the level traverse, and the <m>12\%</m> line. Watch the grade readout drift away from <m>12\%</m> as the skier leaves <m>P_0</m>, since the angle in part (c) is computed at <m>P_0</m> only.</caption>
+        <interactive xml:id="interactive-skel-fall-line"
+                     iframe="fall-line-3d.html"
+                     width="100%" aspect="16:10"/>
+      </figure>
+    </statement>
+  </exercise>
+
+  <exercise xml:id="ex-skel-isobars-low">
+    <title>Sailing the Isobars of a Low</title>
+    <statement>
+      <p>
+        Near the center of a low-pressure system the sea-level pressure, in millibars, is
+        modeled by
+        <md>P(x,y) = 988 + 0.004\left(x^2 + y^2\right),</md>
+        with <m>x</m> and <m>y</m> in miles from the center of the low. A ship sits at
+        <m>P_0(20,10)</m>.
+      </p>
+      <p>
+        <ol>
+          <li>
+            <p>
+              Find the pressure at the ship and <m>\nabla P</m> there. The
+              pressure-gradient force per unit volume of air is a positive multiple of
+              <m>-\nabla P</m>; in which unit direction does it push, and what is
+              <m>\|\nabla P\|</m> in millibars per mile?
+            </p>
+          </li>
+          <li>
+            <p>
+              A second ship 40 miles from the center reports a stronger wind. Using this
+              model, explain why <m>\|\nabla P\|</m> supports that report.
+            </p>
+          </li>
+          <li>
+            <p>
+              The captain decides to hold a constant barometer reading. Give the two
+              possible unit headings at <m>P_0</m>, and describe the shape of the full route.
+            </p>
+          </li>
+        </ol>
+      </p>
+    
+    
+      <p>
+        <em>Solution.</em>
+        (Same three questions once more, now with pressure. Work out <m>\nabla P</m> at the point, then read off the direction of most rapid decrease, the rate along the given heading, and the two directions along which the pressure holds steady. Say which of these the wind would actually follow, and why.)
+      </p>
+
+      <sidebyside width="97%">
+      <image>
+      <latex-image>
+      \begin{tikzpicture}
+      \draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,15);
+      \draw[gray!35] (0,10) -- (15,10);
+      \draw[gray!35] (0,5) -- (15,5);
+      \node[anchor=north west, font=\small\itshape] at (0.35,14.7) {1.};
+      \node[anchor=north west, font=\small\itshape] at (0.35,9.7) {2.};
+      \node[anchor=north west, font=\small\itshape] at (0.35,4.7) {3.};
+      \end{tikzpicture}
+      </latex-image>
+      <shortdescription>Blank box in three labelled rows, one for each part of the exercise.</shortdescription>
+      </image>
+      </sidebyside>
+
+      <p>
+        Check your answers against the figure below.
+      </p>
+<figure xml:id="figure-skel-isobars-low">
+        <caption>The pressure field <m>P(x,y) = 988 + 0.004(x^2+y^2)</m> around a low. One heading circles the eye at constant <m>990</m> mb; the other runs outward along <m>\nabla P</m>. The distance readout shows why <m>\|\nabla P\| = 0.008r</m> grows with radius.</caption>
+        <interactive xml:id="interactive-skel-isobars-low"
+                     iframe="isobars-low-3d.html"
+                     width="100%" aspect="16:10"/>
+      </figure>
+    </statement>
+  </exercise>
+</exercises>

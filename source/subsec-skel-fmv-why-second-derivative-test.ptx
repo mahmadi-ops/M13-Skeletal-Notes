@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Skeletal (fill-in) version of the "Why the Second Derivative Test
+  Works" subsection, included by 4.7.
+
+  This subsection is one continuous derivation, so almost all of it
+  becomes workspace: the headings and the statement of what each step is
+  for are kept, and the algebra is left to the reader.  Content mirrors
+  why-second-derivative-test.ptx of the full lecture notes; every xml:id
+  here is prefixed with "skel-" so the two can coexist.
+
+  Figure: the animation of the rotating slice is kept, since it is how a
+  reader checks the sign argument they have just written out.
+-->
+<subsection xml:id="subsec-skel-fmv-why-second-derivative-test">
+<title>Why the Second Derivative Test Works</title>
+
+<p>
+Where do the conditions of
+<xref ref="thm-skel-second-derivative-test"/> come from? The key idea is
+to take the directional derivative <em>twice</em>. At a critical point
+every direction looks flat to the first derivative, so we ask the second
+derivative how the surface <em>curves</em> as we walk away from the point
+in each direction. The video animates the argument; the equations that
+appear in it are the ones you will derive below.
+</p>
+
+<figure xml:id="fig-skel-why-sdt-video">
+<caption>
+Slicing a surface through a critical point in a rotating unit
+direction <m>\mathbf{u}</m>. The second directional derivative
+<m>D^2_{\mathbf{u}}f</m> is the curvature of the slice: one sign for
+all directions gives a local extremum, both signs give a saddle point,
+and completing the square shows that the discriminant
+<m>H = f_{xx}f_{yy} - f_{xy}^2</m> decides between the two.
+</caption>
+<video xml:id="video-skel-why-sdt"
+       source="videos/second_derivative_test_1080p.mp4"
+       width="70%" aspect="16:9"/>
+</figure>
+
+<!-- ================================================================ -->
+<paragraphs xml:id="skel-par-sdt-slice">
+<title>Slicing the surface in a direction <m>\mathbf{u}</m></title>
+
+<p>
+Suppose <m>f(x,y)</m> has continuous first and second partial
+derivatives near a critical point <m>(a,b)</m>, so that
+<m>f_x(a,b) = f_y(a,b) = 0</m>. Fix a unit vector
+<m>\mathbf{u} = (u_1, u_2)</m> and walk away from the critical point
+along the line through <m>(a,b)</m> in the direction of
+<m>\mathbf{u}</m>. Write down the height of the surface above that line
+as a single-variable function <m>g(t)</m>. (Parametrize the line as in
+<xref ref="eq-skel-line-through-P0"/>, then feed it into <m>f</m>. This
+<m>g</m> is the <term>slice</term> cut by the vertical plane through
+<m>(a,b)</m> containing <m>\mathbf u</m>.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,5);
+\node[anchor=north west, font=\small\itshape] at (0.35,4.7) {$g(t) =$};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank workspace for the single-variable function that gives the height of the surface along the line.</shortdescription>
+</image>
+</sidebyside>
+</paragraphs>
+
+<!-- ================================================================ -->
+<paragraphs xml:id="skel-par-sdt-first">
+<title>The first directional derivative</title>
+
+<p>
+Differentiate <m>g</m> once, and evaluate at the critical point. (Use
+<xref ref="eq-skel-chain-rule-two"/>; the two inner derivatives are
+constants, read straight off the parametrization. Recognize the result as
+something already named in
+<xref ref="subsec-skel-gradient-vector"/>. Then set <m>t = 0</m> and use
+the hypothesis <mdash/> the answer is the same for <em>every</em>
+<m>\mathbf u</m>, which is exactly why one derivative cannot tell the
+three cases apart. Say that in a sentence.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,10);
+\draw[gray!35] (0,6.5) -- (15,6.5);
+\draw[gray!35] (0,3.5) -- (15,3.5);
+\node[anchor=north west, font=\small\itshape] at (0.35,9.7) {$g'(t) =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,6.2) {$g'(0) =$ \qquad for every $\mathbf u$, because:};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.2) {So the first derivative cannot distinguish:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in three rows, for the first derivative of the slice, for its value at the critical point, and for why that value settles nothing.</shortdescription>
+</image>
+</sidebyside>
+</paragraphs>
+
+<!-- ================================================================ -->
+<paragraphs xml:id="skel-par-sdt-second">
+<title>The second directional derivative</title>
+
+<p>
+Differentiate once more. (Apply the chain rule to each of the two terms
+of <m>g'(t)</m>, remembering that <m>f_x</m> and <m>f_y</m> are
+themselves functions of <m>x</m> and <m>y</m>. Four second partials
+appear, but <xref ref="thm-skel-mixed-derivative"/> lets two of them be
+combined; the result is a quadratic in <m>u_1</m> and <m>u_2</m>.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,11);
+\draw[gray!35] (0,4) -- (15,4);
+\node[anchor=north west, font=\small\itshape] at (0.35,10.7) {Differentiating again:};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.7) {$D^2_{\mathbf u} f =$};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in two rows, for differentiating the first directional derivative and for the resulting quadratic expression.</shortdescription>
+</image>
+</sidebyside>
+
+<assemblage xml:id="skel-summary-sdt-second">
+<title>The Second Directional Derivative</title>
+<p>
+<md xml:id="eq-skel-sdt-second" number="yes">
+D^2_{\mathbf{u}}f
+= f_{xx}\, u_1^2 + 2 f_{xy}\, u_1 u_2 + f_{yy}\, u_2^2 .
+</md>
+</p>
+</assemblage>
+
+<p>
+The number <m>g''(0) = D^2_{\mathbf{u}}f(a,b)</m> is the
+<term>curvature of the slice</term> at the critical point. Say what its
+sign means, and then what the single-variable second derivative test,
+applied to <m>g</m>, gives in each of three cases. (A positive value
+means the slice is concave one way, a negative value the other. Then ask
+what must be true <em>across all directions</em> for a local minimum, for
+a local maximum, and for a saddle.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,11);
+\draw[gray!35] (0,8) -- (15,8);
+\draw[gray!35] (0,5.5) -- (15,5.5);
+\draw[gray!35] (0,3) -- (15,3);
+\node[anchor=north west, font=\small\itshape] at (0.35,10.7) {Positive means \dots \qquad negative means \dots};
+\node[anchor=north west, font=\small\itshape] at (0.35,7.7) {Local minimum if:};
+\node[anchor=north west, font=\small\itshape] at (0.35,5.2) {Local maximum if:};
+\node[anchor=north west, font=\small\itshape] at (0.35,2.7) {Saddle point if:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in four rows, for the meaning of the sign of the second directional derivative and for the condition across all directions in each of the three cases.</shortdescription>
+</image>
+</sidebyside>
+
+<p>
+Writing <m>\mathbf{u} = (\cos\theta, \sin\theta)</m> turns
+<xref ref="eq-skel-sdt-second"/> into a function of the direction angle
+alone. Write it down, and evaluate it for the three surfaces of
+<xref ref="ex-skel-marble-stability"/>. (Two of the three come out
+<em>constant</em> in <m>\theta</m>, which is the whole story for those
+surfaces; the third does not, and a double-angle identity puts it in a
+form where you can count how often it changes sign in a full turn.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,11);
+\draw[gray!35] (0,7.5) -- (15,7.5);
+\node[anchor=north west, font=\small\itshape] at (0.35,10.7) {$D^2_{\mathbf u} f(\theta) =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,7.2) {For (i): \qquad for (ii): \qquad for the saddle:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in two rows, for the second directional derivative as a function of the direction angle and for its value on each of the three sample surfaces.</shortdescription>
+</image>
+</sidebyside>
+</paragraphs>
+
+<!-- ================================================================ -->
+<paragraphs xml:id="skel-par-sdt-square">
+<title>Completing the square: the discriminant appears</title>
+
+<p>
+Checking the sign of <xref ref="eq-skel-sdt-second"/> one direction at a
+time is impossible; there are infinitely many directions. Instead,
+assume <m>f_{xx} \neq 0</m>, multiply <xref ref="eq-skel-sdt-second"/> by
+<m>f_{xx}</m>, and complete the square in <m>u_1</m>. (Multiplying first
+is what makes the square come out with integer coefficients. Group the
+<m>u_1^2</m> and <m>u_1u_2</m> terms into a perfect square, and see what
+has to be added back. Check your work by expanding the square again.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,12);
+\draw[gray!35] (0,8) -- (15,8);
+\draw[gray!35] (0,3.5) -- (15,3.5);
+\node[anchor=north west, font=\small\itshape] at (0.35,11.7) {$f_{xx}\cdot D^2_{\mathbf u} f =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,7.7) {Completing the square:};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.2) {Check by expanding:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in three rows, for the product with the second partial derivative, for completing the square, and for the check.</shortdescription>
+</image>
+</sidebyside>
+
+<assemblage xml:id="skel-summary-sdt-square">
+<title>The Completed Square</title>
+<p>
+<md xml:id="eq-skel-sdt-square" number="yes">
+f_{xx}\cdot D^2_{\mathbf{u}}f
+= \left(f_{xx} u_1 + f_{xy} u_2\right)^2
++ \left(f_{xx} f_{yy} - f_{xy}^2\right) u_2^2 .
+</md>
+</p>
+</assemblage>
+
+<p>
+Now say what has been gained. (Every term on the right of
+<xref ref="eq-skel-sdt-square"/> is a square except one coefficient
+<mdash/> name it, and match it against
+<xref ref="eq-skel-hessian"/>. How many numbers now control the sign of
+<m>D^2_{\mathbf u}f</m> in <em>all</em> directions at once, and which
+are they?)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,6);
+\draw[gray!35] (0,3) -- (15,3);
+\node[anchor=north west, font=\small\itshape] at (0.35,5.7) {The one coefficient that is not a square:};
+\node[anchor=north west, font=\small\itshape] at (0.35,2.7) {The sign in all directions is controlled by:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in two rows, for the coefficient that is not a perfect square and for the two numbers that control the sign in every direction.</shortdescription>
+</image>
+</sidebyside>
+</paragraphs>
+
+<!-- ================================================================ -->
+<paragraphs xml:id="skel-par-sdt-cases">
+<title>Reading off the four cases</title>
+
+<p>
+Work through the three cases from
+<xref ref="eq-skel-sdt-square"/>.
+</p>
+
+<p>
+(For <m>H \gt 0</m>: both terms on the right are non-negative, and they
+cannot vanish together <mdash/> check the two possibilities
+<m>u_2 = 0</m> and <m>u_2 \neq 0</m> separately. Conclude that
+<m>D^2_{\mathbf u}f</m> has a fixed sign, and say which. Note also that
+<m>H \gt 0</m> rules out <m>f_{xx} = 0</m>; show why.)
+</p>
+
+<p>
+(For <m>H \lt 0</m>: the two terms now compete, so find <em>two</em>
+directions giving opposite signs. One is <m>\mathbf u = (1,0)</m>; for
+the other, choose <m>\mathbf u</m> so that the perfect square vanishes
+<mdash/> the bracket in <xref ref="eq-skel-sdt-square"/> tells you which
+direction that is.)
+</p>
+
+<p>
+(For <m>H = 0</m>: what does <xref ref="eq-skel-sdt-square"/> collapse
+to, and in which direction does it vanish? Say what the second derivative
+can and cannot tell you there.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,18);
+\draw[gray!35] (0,12) -- (15,12);
+\draw[gray!35] (0,6) -- (15,6);
+\node[anchor=north west, font=\small\itshape] at (0.35,17.7) {$H &gt; 0$:};
+\node[anchor=north west, font=\small\itshape] at (0.35,11.7) {$H &lt; 0$:};
+\node[anchor=north west, font=\small\itshape] at (0.35,5.7) {$H = 0$:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in three labelled rows, one for each case of the sign of the discriminant.</shortdescription>
+</image>
+</sidebyside>
+
+<p>
+These are precisely conditions (i)<ndash/>(iv) of
+<xref ref="thm-skel-second-derivative-test"/>. One technical remark: the
+argument above examines only straight-line slices through
+<m>(a,b)</m>, which by itself is not quite enough (a function can
+increase along every line yet fail to have a local minimum). The full
+proof replaces <m>f</m> near <m>(a,b)</m> by its second-order Taylor
+expansion; continuity of the second partials guarantees that when
+<m>H \neq 0</m> the quadratic form <m>D^2_{\mathbf{u}}f</m> keeps its
+sign uniformly on a small disk around <m>(a,b)</m>, which upgrades the
+line-by-line conclusion to a genuine local one.
+</p>
+</paragraphs>
+
+</subsection>

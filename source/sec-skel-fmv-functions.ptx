@@ -1,0 +1,731 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Skeletal (fill-in) version of 4.1 Functions of Several Variables.
+
+  Definitions, theorems, summaries, and problem statements are kept;
+  derivations and solutions are replaced by blank workspace boxes, each
+  with a one-line statement of what has to be done.  Content mirrors
+  ch-14-1.ptx of the full lecture notes; every xml:id here is prefixed
+  with "skel-" so the two can coexist.
+
+  Figures: the surfaces are three-dimensional plots no reader can draw by
+  hand in a lecture, so they are reproduced in full, as in the lecture
+  notes, and the reader is asked to read properties off them.  The two
+  contour maps ARE the answer to their exercise, so they become empty
+  grids to draw the level curves on.
+-->
+<section xml:id="sec-skel-fmv-functions" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Functions of Several Variables</title>
+
+<objectives>
+<introduction>
+<p>
+After completing this section, you should be able to:
+</p>
+</introduction>
+
+<ul>
+<li>
+<p>
+Evaluate a function <m>z = f(x,y)</m> of two variables, describe its
+domain as a region of the plane, and recognize its graph as a surface in
+space.
+</p>
+</li>
+<li>
+<p>
+Find and sketch the level curves <m>f(x,y) = c</m> of a function of two
+variables, and read a contour map.
+</p>
+</li>
+<li>
+<p>
+Explain the relationship between the level curves drawn on the surface
+and the contour map drawn in the <m>xy</m>-plane.
+</p>
+</li>
+<li>
+<p>
+Describe the level surfaces <m>f(x,y,z) = c</m> of a function of three
+variables.
+</p>
+</li>
+</ul>
+</objectives>
+
+<introduction>
+<p>
+So far we have studied functions that take one real number as input and
+return one real number as output. Many quantities, however, depend on
+more than one input: the temperature at a point of a metal plate depends
+on two coordinates, and the temperature in a room depends on three. In
+this section we study functions of two variables, whose graphs are
+surfaces in space, and we develop two ways of visualizing them, namely
+level curves and contour maps. At the end we look at functions of three
+variables, which we visualize by their level surfaces.
+</p>
+</introduction>
+
+<!-- ================================================================ -->
+<subsection xml:id="subsec-skel-fsv-functions-two-variables">
+<title>Functions of Two Variables</title>
+
+<p>
+As an example consider <m>z = f(x,y) = 1 - x^2 - y^2</m>. This function
+takes a pair of real numbers <m>x, y \in \R</m> as its input and as an
+output gives a real number <m>z \in \R</m>. Evaluate it at the point
+<m>P_0(0.5, 0.5)</m>, and describe its domain. (Substituting is one line.
+For the domain, ask which pairs <m>(x,y)</m> the formula accepts, and then
+which of those keep <m>z</m> from going negative <mdash/> the disk drawn in
+<xref ref="fig-skel-fsv-mapping"/> is the second of these.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,7);
+\draw[gray!35] (0,3.5) -- (15,3.5);
+\node[anchor=north west, font=\small\itshape] at (0.35,6.7) {$f(0.5,0.5) =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.2) {Domain:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in two rows, one for the value of the function at the given point and one for its domain.</shortdescription>
+</image>
+</sidebyside>
+
+<figure xml:id="fig-skel-fsv-mapping">
+<caption>
+The function <m>f</m> takes a point <m>(x,y)</m> of the disk
+<m>x^2+y^2 \le 1</m> and returns the single number <m>z = f(x,y)</m>. The
+point <m>P_0(0.5,0.5)</m> is sent to <m>f(0.5,0.5) = 0.5</m>.
+</caption>
+<image width="92%">
+<prefigure xmlns="https://prefigure.org" label="skel-prefigure-fsv-mapping">
+<diagram dimensions="(600,270)" margins="12">
+<definition>bt(t) = ((1-t)^2*1.05 + 2*t*(1-t)*4.0 + t^2*7.0, (1-t)^2*1.25 + 2*t*(1-t)*3.15 + t^2*0.42)</definition>
+<definition>bb(t) = ((1-t)^2*0.28 + 2*t*(1-t)*3.3 + t^2*6.55, (1-t)^2*(-0.62) + 2*t*(1-t)*(-2.05) + t^2*0.05)</definition>
+<coordinates bbox="(-2.6,-2.6,9.4,3.5)">
+<circle at="fm-disk" center="(0,0)" radius="1.9"
+        fill="#7F7F7F" fill-opacity="0.28" stroke="#0072B2" thickness="2.5"/>
+<vector at="fm-xaxis" v="(4.15,0)" tail="(-2.1,0)" stroke="black" thickness="2"/>
+<vector at="fm-yaxis" v="(0,5.0)" tail="(0,-2.2)" stroke="black" thickness="2"/>
+<vector at="fm-zaxis" v="(4.0,0)" tail="(5.0,0.25)" stroke="black" thickness="2"/>
+<parametric-curve at="fm-top" function="bt" domain="(0,0.95)"
+                  stroke="#7F7F7F" dash="5 4" thickness="2"/>
+<vector at="fm-top-arrow" v="(0.300,-0.261)" tail="(6.700,0.681)"
+        stroke="#7F7F7F" thickness="2"/>
+<parametric-curve at="fm-bot" function="bb" domain="(0,0.95)"
+                  stroke="#7F7F7F" dash="5 4" thickness="2"/>
+<vector at="fm-bot-arrow" v="(0.324,0.201)" tail="(6.226,-0.151)"
+        stroke="#7F7F7F" thickness="2"/>
+<point at="fm-P0" p="(0.956,0.956)" fill="#8B1A4A"/>
+<point at="fm-P" p="(-0.674,-1.165)" fill="#0072B2"/>
+<point at="fm-fP0" p="(7.35,0.25)" fill="#8B1A4A"/>
+<point at="fm-fP" p="(6.55,0.25)" fill="#0072B2"/>
+<label at="fm-disk-lab" anchor="(-1.0,2.0)" alignment="n">
+<m>x^2+y^2\le 1</m>
+</label>
+<label at="fm-x" anchor="(2.1,-0.15)" alignment="se"><m>x</m></label>
+<label at="fm-y" anchor="(0.15,2.8)" alignment="e"><m>y</m></label>
+<label at="fm-z" anchor="(9.15,0.25)" alignment="e"><m>z</m></label>
+<label at="fm-P0-lab" anchor="(0.883,1.103)" alignment="nw" color="#8B1A4A">
+<m>P_0(0.5,0.5)</m>
+</label>
+<label at="fm-P-lab" anchor="(-0.674,-1.03)" alignment="n" color="#0072B2">
+<m>P(x,y)</m>
+</label>
+<label at="fm-fP0-lab" anchor="(7.45,-0.05)" alignment="se" color="#8B1A4A">
+<m>f(0.5,0.5)=0.5</m>
+</label>
+<label at="fm-fP-lab" anchor="(6.4,0.5)" alignment="nw" color="#0072B2">
+<m>z=f(x,y)</m>
+</label>
+<label at="fm-f1" anchor="(6.85,0.55)" alignment="n" color="#7F7F7F">
+<m>f</m>
+</label>
+<label at="fm-f2" anchor="(6.35,-0.25)" alignment="s" color="#7F7F7F">
+<m>f</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="On the left, a shaded disk in the x y plane represents the domain, the set of points with x squared plus y squared at most one. Two points are marked in it: P nought at zero point five, zero point five, and a general point P. On the right is a horizontal z axis carrying the two output values. Dashed grey arrows labelled f run from each input point to its output value.">
+  <annotation ref="fm-disk" text="The domain of f: the disk of radius one, consisting of all points with x squared plus y squared at most one."/>
+  <annotation ref="fm-P0" text="The sample input point P nought with coordinates zero point five, zero point five."/>
+  <annotation ref="fm-fP0" text="Its output, f of zero point five and zero point five, which equals zero point five, marked on the z axis."/>
+  <annotation ref="fm-P" text="A general input point P with coordinates x and y."/>
+  <annotation ref="fm-fP" text="Its output z equals f of x y on the z axis."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+If we repeat this process for all the points inside the disk, we have a
+set of points in 3D of the form <m>P(x, y, f(x,y))</m>, which represent a
+surface known as a <term>paraboloid</term>. The surface is the
+<term>graph</term> of the function, and it is drawn in
+<xref ref="fig-skel-fsv-paraboloid"/>. Notice that the point
+<m>P_0(0.5,0.5)</m> of the domain sits in the <m>xy</m>-plane, while the
+corresponding point of the graph lies directly above it.
+</p>
+
+<figure xml:id="fig-skel-fsv-paraboloid">
+<caption>
+The graph of <m>z = f(x,y) = 1 - x^2 - y^2</m> over the disk
+<m>x^2+y^2 \le 1</m>. The point <m>P_0(0.5,0.5,0)</m> of the domain lies
+in the <m>xy</m>-plane and the corresponding point
+<m>P(0.5,0.5,0.5)</m> lies on the surface directly above it.
+</caption>
+<image width="72%">
+<description>
+<p>
+A dome shaped surface, the graph of z equals one minus x squared minus y
+squared, sitting above a shaded disk in the x y plane. A dashed vertical
+segment joins the point P nought in the disk to the point P on the
+surface directly above it.
+</p>
+</description>
+<latex-image><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[
+  width=11cm, height=8.5cm,
+  view={-35}{20},
+  xmin=-1.35, xmax=1.35, ymin=-1.35, ymax=1.35, zmin=0, zmax=1.15,
+  xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+  xtick={-1,0,1}, ytick={-1,0,1}, ztick={0,0.5,1},
+  clip=false,
+]
+% the disk in the xy-plane
+\addplot3[surf, shader=flat, fill=gray!35, draw=gray!45,
+          fill opacity=0.35, draw opacity=0.3,
+          domain=0:1, y domain=0:360, samples=12, samples y=37]
+  ({x*cos(y)},{x*sin(y)},{0});
+% the paraboloid z = 1 - x^2 - y^2 over the disk
+\addplot3[surf, shader=flat, fill=gray!55, draw=gray!60,
+          fill opacity=0.55, draw opacity=0.4,
+          domain=0:1, y domain=0:360, samples=16, samples y=41,
+          z buffer=sort]
+  ({x*cos(y)},{x*sin(y)},{1-x^2});
+% the rim of the disk
+\addplot3[very thick, blue!65!black, domain=0:360, samples=90]
+  ({cos(x)},{sin(x)},{0});
+% P0 in the plane and P on the surface
+\addplot3[only marks, mark=*, mark size=1.7, color=purple!70!black]
+  coordinates {(0.5,0.5,0)};
+\addplot3[only marks, mark=*, mark size=1.7, color=purple!70!black]
+  coordinates {(0.5,0.5,0.5)};
+\draw[gray, dashed, thick] (axis cs:0.5,0.5,0) -- (axis cs:0.5,0.5,0.5);
+\node[purple!70!black, below] at (axis cs:0.5,0.52,-0.02) {$P_0$};
+\node[purple!70!black, above right] at (axis cs:0.5,0.5,0.5) {$P$};
+\node[blue!65!black, anchor=west] at (axis description cs:1.02,0.16)
+  {$x^2+y^2=1$};
+\node[gray!30!black, anchor=west] at (axis description cs:1.02,0.62)
+  {$z=1-x^2-y^2$};
+\end{axis}
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
+
+<p>
+Read the coordinates of that point of the graph off
+<xref ref="fig-skel-fsv-paraboloid"/>, and say in one line how the graph
+of a function of two variables differs from the graph of a function of one
+variable. (The third coordinate is the number you computed above. For the
+comparison, count dimensions: what does the input live in, and what does
+the graph live in?)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,6);
+\draw[gray!35] (0,3) -- (15,3);
+\node[anchor=north west, font=\small\itshape] at (0.35,5.7) {$P =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,2.7) {A graph of one variable is a \dots, of two variables a \dots};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in two rows, one for the coordinates of the point on the surface and one for the comparison between graphs of one and of two variables.</shortdescription>
+</image>
+</sidebyside>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="subsec-skel-fsv-level-curves">
+<title>Level Curves and Contour Maps</title>
+
+<p>
+Functions of two variables can be visualized by means of
+<term>level curves</term>. These are curves that connect points where the
+function <m>z = f(x,y)</m> takes on a given value <m>c</m>. Take again
+<m>z = f(x,y) = 1 - x^2 - y^2</m> and find its level curves. (Set
+<m>f(x,y) = c</m> and rearrange until only <m>x^2 + y^2</m> is on the
+left; the shape should then be recognizable at a glance. Say what curve
+you get and what its radius is, and note for which values of <m>c</m>
+there is no curve at all.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,9);
+\draw[gray!35] (0,5.5) -- (15,5.5);
+\draw[gray!35] (0,2.5) -- (15,2.5);
+\node[anchor=north west, font=\small\itshape] at (0.35,8.7) {Setting $f(x,y) = c$:};
+\node[anchor=north west, font=\small\itshape] at (0.35,5.2) {The curve is a \dots\ of radius \dots};
+\node[anchor=north west, font=\small\itshape] at (0.35,2.2) {No curve when:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in three rows, for the equation of the level curve, for the shape and radius, and for the values of c that give no curve.</shortdescription>
+</image>
+</sidebyside>
+
+<assemblage xml:id="skel-summary-fsv-level-curves">
+<title>Level Curves of <m>f(x,y) = 1-x^2-y^2</m></title>
+<p>
+<md xml:id="eq-skel-fsv-level-curves" number="yes">
+1 - x^2 - y^2 = c
+\quad\Longleftrightarrow\quad
+x^2 + y^2 = 1 - c.
+</md>
+</p>
+</assemblage>
+
+<p>
+Fill in the radius for each value of <m>c</m> below, then look at
+<xref ref="fig-skel-fsv-level-curves-3d"/>, where these curves are drawn
+on the surface itself as intersections with the horizontal planes
+<m>z = c</m>. (Notice which way round it goes: larger <m>c</m> gives the
+<em>smaller</em> circle. Say why, from the shape of the surface.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,7.5);
+\draw[gray!35] (0,3) -- (15,3);
+\node[anchor=north west, font=\small\itshape] at (0.35,7.2) {$c=-2:$};
+\node[anchor=north west, font=\small\itshape] at (5.35,7.2) {$c=-1:$};
+\node[anchor=north west, font=\small\itshape] at (10.35,7.2) {$c=0:$};
+\node[anchor=north west, font=\small\itshape] at (0.35,5.2) {$c=\tfrac12:$};
+\node[anchor=north west, font=\small\itshape] at (5.35,5.2) {$c=\tfrac34:$};
+\node[anchor=north west, font=\small\itshape] at (0.35,2.7) {Why larger $c$ gives a smaller circle:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box with five slots for the radii at the given values of c and a row for why a larger value of c gives a smaller circle.</shortdescription>
+</image>
+</sidebyside>
+
+<figure xml:id="fig-skel-fsv-level-curves-3d">
+<caption>
+Level curves of <m>f(x,y) = 1 - x^2 - y^2</m> drawn on the surface. The
+curve at height <m>c</m> is the intersection of the graph with the
+horizontal plane <m>z = c</m>; higher values of <m>c</m> give smaller
+circles.
+</caption>
+<image width="76%">
+<description>
+<p>
+A dome shaped surface with several horizontal circles drawn on it at
+different heights, each in a different colour. The circles are small near
+the top of the dome and grow larger further down.
+</p>
+</description>
+<latex-image><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[
+  width=11.5cm, height=9.5cm,
+  view={-35}{18},
+  xmin=-1.9, xmax=1.9, ymin=-1.9, ymax=1.9, zmin=-2.4, zmax=1.3,
+  xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+  xtick={-1,0,1}, ytick={-1,0,1}, ztick={1,0,-1,-2},
+  clip=false,
+]
+% the surface, drawn down to z = -2.2
+\addplot3[surf, shader=flat, fill=gray!45, draw=gray!55,
+          fill opacity=0.42, draw opacity=0.3,
+          domain=0:1.79, y domain=0:360, samples=13, samples y=31,
+          z buffer=sort]
+  ({x*cos(y)},{x*sin(y)},{1-x^2});
+% level curves at c = 3/4, 1/2, 0, -1, -2  (radii sqrt(1-c))
+\addplot3[very thick, orange, domain=0:360, samples=48]
+  ({0.5*cos(x)},{0.5*sin(x)},{0.75});
+\addplot3[very thick, purple!70!black, domain=0:360, samples=48]
+  ({0.7071*cos(x)},{0.7071*sin(x)},{0.5});
+\addplot3[very thick, cyan!60!black, domain=0:360, samples=48]
+  ({cos(x)},{sin(x)},{0});
+\addplot3[very thick, green!50!black, domain=0:360, samples=48]
+  ({1.4142*cos(x)},{1.4142*sin(x)},{-1});
+\addplot3[very thick, black, domain=0:360, samples=48]
+  ({1.7321*cos(x)},{1.7321*sin(x)},{-2});
+% labels
+\node[orange, anchor=west] at (axis description cs:1.02,0.86)
+  {$z=3/4$};
+\node[purple!70!black, anchor=west] at (axis description cs:1.02,0.76)
+  {$z=1/2$};
+\node[cyan!60!black, anchor=west] at (axis description cs:1.02,0.66)
+  {$z=0$};
+\node[green!50!black, anchor=west] at (axis description cs:1.02,0.44)
+  {$z=-1$};
+\node[black, anchor=west] at (axis description cs:1.02,0.22)
+  {$z=-2$};
+\end{axis}
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
+
+<p>
+Projecting those level curves down into the <m>xy</m>-plane gives the
+<term>contour map</term> (or <term>contour plot</term>) of the function.
+Draw it on the grid below, labelling each circle with its value of
+<m>c</m>. (A contour map is flat but still records the shape of the
+surface: after drawing it, say what close-together contours mean and what
+far-apart ones mean.)
+</p>
+
+<sidebyside widths="46% 46%">
+<image>
+<latex-image><![CDATA[
+\begin{tikzpicture}[scale=0.85, >=stealth]
+\draw[gray!30, very thin] (-2.1,-2.1) grid[step=0.5] (2.1,2.1);
+\draw[->, thick] (-2.1,0) -- (2.4,0) node[right] {$x$};
+\draw[->, thick] (0,-2.1) -- (0,2.4) node[above] {$y$};
+\foreach \x in {-2,-1,1,2} \draw (\x,-0.08) -- (\x,0.08) node[below=4pt, font=\scriptsize] {$\x$};
+\foreach \y in {-2,-1,1,2} \draw (-0.08,\y) -- (0.08,\y) node[left=4pt, font=\scriptsize] {$\y$};
+\end{tikzpicture}
+]]></latex-image>
+<shortdescription>Empty coordinate grid running from negative two to two in both directions, for drawing the contour map of the function.</shortdescription>
+</image>
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (7,7);
+\draw[gray!35] (0,3.5) -- (7,3.5);
+\node[anchor=north west, font=\small\itshape] at (0.3,6.7) {Contours close together:};
+\node[anchor=north west, font=\small\itshape] at (0.3,3.2) {Contours far apart:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in two rows, for what closely spaced contours indicate and what widely spaced contours indicate.</shortdescription>
+</image>
+</sidebyside>
+
+<example xml:id="ex-skel-fsv-level-curves">
+<title>Sketching Level Curves</title>
+<statement>
+<p>
+Sketch some level curves of the function
+<m>g(x,y) = x^2 + \dfrac{y^2}{4}</m>.
+</p>
+
+<p>
+<em>Solution.</em>
+(Set <m>g(x,y) = c</m>. For <m>c \gt 0</m> the result is a conic you met
+in <xref ref="sec-skel-geom-conics"/>; name it, and give its two semi-axes
+in terms of <m>c</m>. Then sketch the curves for several values of
+<m>c</m> on the grid, and say which direction they are stretched in and by
+how much. What happens when <m>c = 0</m>, and when <m>c \lt 0</m>?)
+</p>
+
+<sidebyside widths="52% 40%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (8,11);
+\draw[gray!35] (0,7.5) -- (8,7.5);
+\draw[gray!35] (0,4) -- (8,4);
+\node[anchor=north west, font=\small\itshape] at (0.3,10.7) {Setting $g(x,y)=c$:};
+\node[anchor=north west, font=\small\itshape] at (0.3,7.2) {Shape, and its semi-axes:};
+\node[anchor=north west, font=\small\itshape] at (0.3,3.7) {$c = 0$: \qquad\qquad $c \lt 0$:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in three rows, for the equation of the level curve, for its shape and semi-axes, and for the two degenerate cases.</shortdescription>
+</image>
+<image>
+<latex-image><![CDATA[
+\begin{tikzpicture}[scale=0.9, >=stealth]
+\draw[gray!30, very thin] (-1.5,-2.4) grid[step=0.25] (1.5,2.4);
+\draw[->, thick] (-1.5,0) -- (1.8,0) node[right] {$x$};
+\draw[->, thick] (0,-2.4) -- (0,2.7) node[above] {$y$};
+\foreach \x in {-1,1} \draw (\x,-0.07) -- (\x,0.07) node[below=3pt, font=\scriptsize] {$\x$};
+\foreach \y in {-2,-1,1,2} \draw (-0.07,\y) -- (0.07,\y) node[left=3pt, font=\scriptsize] {$\y$};
+\end{tikzpicture}
+]]></latex-image>
+<shortdescription>Empty coordinate grid taller than it is wide, running from negative one and a half to one and a half horizontally and negative two and a half to two and a half vertically, for sketching the elliptical level curves.</shortdescription>
+</image>
+</sidebyside>
+
+<p>
+The surface <m>z = g(x,y)</m> itself is shown in
+<xref ref="fig-skel-fsv-elliptic-paraboloid"/>; it is the
+<term>elliptic paraboloid</term> of
+<xref ref="subsec-skel-elliptical-paraboloid"/>. Use it to check the
+curves you drew.
+</p>
+
+<figure xml:id="fig-skel-fsv-elliptic-paraboloid">
+<caption>
+The elliptic paraboloid <m>z = g(x,y) = x^2 + \frac{y^2}{4}</m>. Slicing
+it with a horizontal plane <m>z = c</m> produces the ellipses you drew
+above.
+</caption>
+<image width="72%">
+<description>
+<p>
+A bowl shaped surface opening upwards, wider in the y direction than in
+the x direction, with several horizontal elliptical rings drawn on it at
+different heights.
+</p>
+</description>
+<latex-image><![CDATA[
+\begin{tikzpicture}
+\begin{axis}[
+  width=11cm, height=8.5cm,
+  view={-40}{18},
+  xmin=-1.25, xmax=1.25, ymin=-2.5, ymax=2.5, zmin=0, zmax=1.2,
+  xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+  xtick={-1,0,1}, ytick={-2,0,2}, ztick={0,0.5,1},
+  clip=false,
+]
+% surface z = x^2 + y^2/4, drawn in "elliptic polar" coordinates so the
+% domain is exactly the region where z <= 1
+\addplot3[surf, shader=flat, fill=green!45!black, draw=green!35!black,
+          fill opacity=0.35, draw opacity=0.35,
+          domain=0:1, y domain=0:360, samples=13, samples y=31,
+          z buffer=sort]
+  ({x*cos(y)},{2*x*sin(y)},{x^2});
+% a few level ellipses on the surface
+\addplot3[very thick, green!25!black, domain=0:360, samples=48]
+  ({0.4472*cos(x)},{0.8944*sin(x)},{0.2});
+\addplot3[very thick, green!45!black, domain=0:360, samples=48]
+  ({0.6325*cos(x)},{1.2649*sin(x)},{0.4});
+\addplot3[very thick, green!60!black, domain=0:360, samples=48]
+  ({0.7746*cos(x)},{1.5492*sin(x)},{0.6});
+\addplot3[very thick, yellow!70!black, domain=0:360, samples=48]
+  ({cos(x)},{2*sin(x)},{1});
+\node[green!35!black, anchor=west] at (axis description cs:1.02,0.72)
+  {$z=x^2+y^2/4$};
+\end{axis}
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
+</statement>
+</example>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="subsec-skel-fsv-level-surfaces">
+<title>More Than Two Variables: Level Surfaces</title>
+
+<p>
+It is not possible to draw the graph of a function of more than two
+variables. The graph of a function <m>f(x,y,z)</m> would consist of the
+set of points <m>(x, y, z, f(x,y,z))</m> in four-dimensional space
+<m>\R^4</m>. However, it is possible to draw the
+<term>level surfaces</term> of a function of three variables
+<m>f(x,y,z)</m>. These are the surfaces with equation
+<md xml:id="eq-skel-fsv-level-surface" number="yes">
+f(x,y,z) = c.
+</md>
+</p>
+
+<p>
+Identify the level surfaces of <m>f(x,y,z) = x^2 + y^2 + z^2</m>, then
+check your answer against <xref ref="fig-skel-fsv-level-spheres"/>. (Write
+out <xref ref="eq-skel-fsv-level-surface"/> for this <m>f</m> and compare
+it with <xref ref="eq-skel-3d-sphere"/>. Give the radius in terms of
+<m>c</m>, and say what happens for <m>c \lt 0</m> and for <m>c = 0</m>.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,7);
+\draw[gray!35] (0,3.5) -- (15,3.5);
+\node[anchor=north west, font=\small\itshape] at (0.35,6.7) {The level surfaces are \dots\ of radius \dots};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.2) {$c = 0$: \qquad\qquad $c \lt 0$:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in two rows, one for the family of level surfaces and their radius and one for the two degenerate cases.</shortdescription>
+</image>
+</sidebyside>
+
+<figure xml:id="fig-skel-fsv-level-spheres">
+<caption>
+The level surfaces of <m>f(x,y,z) = x^2+y^2+z^2</m> are spheres. Shown
+here are <m>x^2+y^2+z^2 = 1</m>, <m>x^2+y^2+z^2 = 4</m>, and
+<m>x^2+y^2+z^2 = 9</m>, cut away so the inner ones are visible.
+</caption>
+<image width="66%">
+<description>
+<p>
+Three concentric spheres of radii one, two and three, drawn cut away so
+that the smaller spheres inside can be seen. Each sphere is a level
+surface on which the function x squared plus y squared plus z squared is
+constant.
+</p>
+</description>
+<latex-image><![CDATA[
+\begin{tikzpicture}[scale=1.0, >=stealth]
+% three cut-away hemispheres, drawn in the picture plane
+\begin{scope}
+  % outer, radius 3 -> drawn at 2.4cm
+  \fill[cyan!30, opacity=0.55] (-2.4,0) arc (180:360:2.4cm) arc (0:180:2.4cm and 0.62cm);
+  \draw[cyan!55!black] (-2.4,0) arc (180:360:2.4cm);
+  \draw[cyan!55!black] (-2.4,0) arc (180:0:2.4cm and 0.62cm);
+  % middle, radius 2 -> 1.6cm
+  \fill[orange!35, opacity=0.6] (-1.6,0) arc (180:360:1.6cm) arc (0:180:1.6cm and 0.42cm);
+  \draw[orange!60!black] (-1.6,0) arc (180:360:1.6cm);
+  \draw[orange!60!black] (-1.6,0) arc (180:0:1.6cm and 0.42cm);
+  % inner, radius 1 -> 0.8cm
+  \fill[green!45, opacity=0.75] (-0.8,0) arc (180:360:0.8cm) arc (0:180:0.8cm and 0.2cm);
+  \draw[green!45!black] (-0.8,0) arc (180:360:0.8cm);
+  \draw[green!45!black] (-0.8,0) arc (180:0:0.8cm and 0.2cm);
+\end{scope}
+% axes
+\draw[->, thick] (0,0) -- (0,3.1) node[above] {$z$};
+\draw[->, thick] (0,0) -- (3.3,-0.85) node[right] {$y$};
+\draw[->, thick] (0,0) -- (-2.9,-1.3) node[below left] {$x$};
+% labels
+\node[green!35!black, anchor=west]  at (2.6,1.9) {$x^2+y^2+z^2=1$};
+\node[orange!60!black, anchor=west] at (2.6,1.35) {$x^2+y^2+z^2=4$};
+\node[cyan!55!black, anchor=west]   at (2.6,0.8) {$x^2+y^2+z^2=9$};
+\draw[gray, thin] (2.55,1.9) -- (0.42,0.42);
+\draw[gray, thin] (2.55,1.35) -- (1.05,0.95);
+\draw[gray, thin] (2.55,0.8) -- (1.75,1.5);
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
+
+<p>
+For functions of four or more variables we can no longer visualize the
+graph or the level surfaces, and we must rely on intuition developed
+through the study of functions of two and three variables.
+</p>
+
+<example xml:id="ex-skel-fsv-level-surfaces">
+<title>Level Surfaces of a Function of Three Variables</title>
+<statement>
+<p>
+Describe the level surfaces of <m>g(x,y,z) = x^2 + y^2 - z^2</m>.
+</p>
+
+<p>
+<em>Solution.</em>
+(Three cases, decided by the sign of <m>c</m>. Take <m>c = 0</m> first and
+solve for <m>z</m>. For <m>c \neq 0</m> the surfaces are the hyperboloids
+of <xref ref="subsec-skel-hyperboloids"/>; decide the number of sheets not
+by drawing but by asking, for each <m>c</m>, which values of <m>z</m> are
+possible <mdash/> rearrange so that one side is a square and see whether it
+can vanish.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,13);
+\draw[gray!35] (0,9) -- (15,9);
+\draw[gray!35] (0,4.5) -- (15,4.5);
+\node[anchor=north west, font=\small\itshape] at (0.35,12.7) {$c = 0$:};
+\node[anchor=north west, font=\small\itshape] at (0.35,8.7) {$c \gt 0$:};
+\node[anchor=north west, font=\small\itshape] at (0.35,4.2) {$c \lt 0$:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in three labelled rows, one for each sign of the constant c, for describing the corresponding level surface.</shortdescription>
+</image>
+</sidebyside>
+
+<figure xml:id="fig-skel-fsv-hyperboloids">
+<caption>
+Level surfaces of <m>g(x,y,z) = x^2+y^2-z^2</m>. For <m>c \gt 0</m> the
+surface is a hyperboloid of one sheet, for <m>c = 0</m> it is a cone, and
+for <m>c \lt 0</m> it is a hyperboloid of two sheets.
+</caption>
+<image width="98%">
+<description>
+<p>
+Three surfaces side by side. On the left a hyperboloid of one sheet, a
+connected surface pinched in at the middle like a cooling tower. In the
+middle a double cone meeting at a point at the origin. On the right a
+hyperboloid of two sheets, consisting of two separate bowls, one opening
+upwards above the origin and one opening downwards below it.
+</p>
+</description>
+<latex-image><![CDATA[
+\begin{tikzpicture}
+% ============ left: one sheet, c > 0 ============
+\begin{axis}[
+  name=one,
+  width=6.4cm, height=7.0cm,
+  view={-35}{16},
+  xmin=-2.2, xmax=2.2, ymin=-2.2, ymax=2.2, zmin=-1.8, zmax=1.8,
+  hide axis, clip=false,
+]
+% x^2 + y^2 - z^2 = 1  ->  r = sqrt(1 + z^2)
+\addplot3[surf, shader=flat, fill=cyan!35, draw=cyan!55!black,
+          fill opacity=0.55, draw opacity=0.45,
+          domain=-1.5:1.5, y domain=0:360, samples=16, samples y=41,
+          z buffer=sort]
+  ({sqrt(1+x^2)*cos(y)},{sqrt(1+x^2)*sin(y)},{x});
+\node at (axis cs:0,0,-2.5) {$g(x,y,z)=c\;\;(c>0)$};
+\end{axis}
+% ============ middle: the cone, c = 0 ============
+\begin{axis}[
+  name=cone, at={(one.east)}, anchor=west, xshift=2mm,
+  width=6.4cm, height=7.0cm,
+  view={-35}{16},
+  xmin=-2.2, xmax=2.2, ymin=-2.2, ymax=2.2, zmin=-1.8, zmax=1.8,
+  hide axis, clip=false,
+]
+% x^2 + y^2 = z^2  ->  r = |z|
+\addplot3[surf, shader=flat, fill=orange!30, draw=orange!60!black,
+          fill opacity=0.55, draw opacity=0.45,
+          domain=-1.7:1.7, y domain=0:360, samples=16, samples y=41,
+          z buffer=sort]
+  ({abs(x)*cos(y)},{abs(x)*sin(y)},{x});
+\node at (axis cs:0,0,-2.5) {$g(x,y,z)=0$};
+\end{axis}
+% ============ right: two sheets, c < 0 ============
+\begin{axis}[
+  name=two, at={(cone.east)}, anchor=west, xshift=2mm,
+  width=6.4cm, height=7.0cm,
+  view={-35}{16},
+  xmin=-2.2, xmax=2.2, ymin=-2.2, ymax=2.2, zmin=-1.8, zmax=1.8,
+  hide axis, clip=false,
+]
+% x^2 + y^2 - z^2 = -1  ->  r = sqrt(z^2 - 1),  |z| >= 1
+\addplot3[surf, shader=flat, fill=green!35, draw=green!45!black,
+          fill opacity=0.6, draw opacity=0.45,
+          domain=1:1.75, y domain=0:360, samples=12, samples y=41,
+          z buffer=sort]
+  ({sqrt(x^2-1)*cos(y)},{sqrt(x^2-1)*sin(y)},{x});
+\addplot3[surf, shader=flat, fill=green!35, draw=green!45!black,
+          fill opacity=0.6, draw opacity=0.45,
+          domain=-1.75:-1, y domain=0:360, samples=12, samples y=41,
+          z buffer=sort]
+  ({sqrt(x^2-1)*cos(y)},{sqrt(x^2-1)*sin(y)},{x});
+\node at (axis cs:0,0,-2.5) {$g(x,y,z)=c\;\;(c<0)$};
+\end{axis}
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
+</statement>
+</example>
+
+</subsection>
+
+</section>

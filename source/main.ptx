@@ -44,7 +44,9 @@
     <xi:include href="ch-series-skeletal.ptx" />
     <!-- Chapter 3: skeletal (fill-in) notes, 3D Space and Vector Algebra -->
     <xi:include href="ch-geometry-skeletal.ptx" />
-    <!-- Chapter 4: the problem sets -->
+    <!-- Chapter 4: skeletal (fill-in) notes, Functions of Multiple Variables -->
+    <xi:include href="ch-functions-multiple-variables-skeletal.ptx" />
+    <!-- Chapter 5: the problem sets -->
     <xi:include href="exercises.ptx" />
   </book>
 

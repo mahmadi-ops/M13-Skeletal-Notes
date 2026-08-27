@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Skeletal (fill-in) version of Chapter 4, Functions of Multiple
+  Variables.  Wrapper only: the mathematical content lives in the
+  included files, each of which is a <section> of this chapter.
+
+  4.6 (Tangent Planes and Differentials) and 4.8 (Lagrange Multipliers)
+  have no skeletal version yet, so the numbering here runs 4.1-4.6 rather
+  than matching the full lecture notes.
+-->
+<chapter xml:id="skel-chapter-functions-multiple-variables" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Functions of Multiple Variables (Skeletal Notes)</title>
+
+<xi:include href="sec-skel-fmv-functions.ptx" />
+<xi:include href="sec-skel-fmv-limits.ptx" />
+<xi:include href="sec-skel-fmv-partial-derivatives.ptx" />
+<xi:include href="sec-skel-fmv-chain-rule.ptx" />
+<xi:include href="sec-skel-fmv-directional-derivatives.ptx" />
+<xi:include href="sec-skel-fmv-extreme-values.ptx" />
+</chapter>
