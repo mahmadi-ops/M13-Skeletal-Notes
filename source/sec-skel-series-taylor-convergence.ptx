@@ -52,7 +52,8 @@ approximation? That is, how can we estimate the magnitude of
 <xref ref="thm-skel-remainder-theorem"/> will enable us to answer these
 questions. We begin by stating Taylor's formula and the remainder
 estimation theorem, and then use them to bound the error in a Taylor
-approximation.
+approximation, discuss some applications of these theorems, and close
+with the proof of the remainder theorem.
 </p>
 <p>
 <em>These are skeletal notes: the theorems and problem statements are
@@ -221,8 +222,7 @@ replace <m>|f^{(n+1)}(c)|</m> by its upper bound <m>M</m>.
 <p>
 <alert>You are not expected to know the proof of Taylor's formula
 itself</alert>, only to understand the statement and its implications.
-The proof is given in the full lecture notes; see
-<xref ref="subsec-skel-taylor-further"/>.
+The proof is worked through in <xref ref="subsec-skel-taylor-proof"/>.
 </p>
 </subsection>
 
@@ -606,38 +606,777 @@ The error of the degree <m>n</m> approximation to <m>\sin(x)</m> on
 </subsection>
 
 <!-- ================================================================ -->
-<subsection xml:id="subsec-skel-taylor-further">
-<title>Going further</title>
+<subsection xml:id="subsec-skel-taylor-applications">
+<title>Applications of Taylor Series and Remainder Theorem</title>
+
+<introduction>
+<p>
+Physicists often use Taylor series to approximate functions in order to
+simplify calculations. The first example is the kinetic energy of an object
+in relativistic mechanics. The second example is the approximation
+of the period of a pendulum. We will discuss the error in using these
+approximations and when it is valid to use them. Additionally, we will
+discuss how to use the Taylor series to estimate the value of <m>\pi</m>
+in the last example.
+</p>
+</introduction>
+
+<subsubsection xml:id="subsubsec-skel-relativistic-ke">
+<title>Approximating Relativistic Kinetic Energy</title>
 
 <p>
-The full lecture notes continue this section with two more subsections,
-which are <em>not</em> reproduced in these skeletal notes:
+In relativistic mechanics, the mass of an object moving with velocity
+<m>v</m> is given by:
+<md xml:id="eq-skel-relativistic-mass" number="yes">
+m = \frac{m_0}{\sqrt{1 - \frac{v^2}{c^2}}}
+</md>
+where <m>m_0</m> is the rest mass of the object and <m>c</m> is the speed
+of light. Then the kinetic energy of an object of mass <m>m</m> moving
+with velocity <m>v</m> is:
+<md xml:id="eq-skel-relativistic-ke" number="yes">
+K = mc^2-m_0c^2
+</md>
 </p>
 
-<ul>
-<li>
 <p>
-<em>Applications of Taylor Series and the Remainder Theorem.</em> The
-remainder bound of <xref ref="thm-skel-remainder-theorem"/> is used to
-show that the Newtonian kinetic energy formula is accurate at everyday
-speeds, to justify the small-angle approximation
-<m>\sin\theta \approx \theta</m> for a pendulum, and to control the error
-in two ways of approximating <m>\pi</m>.
+In the case when <m>v \ll c</m>, we can use the Taylor series to
+approximate the kinetic energy. In <xref ref="ex-skel-newtonian-ke"/> we
+will show that the kinetic energy can be approximated by the formula
+<m>K \approx \frac{1}{2} m_0v^2</m> when <m>v \ll c</m>. See
+<xref ref="fig-skel-ke-cartoon"/> for a comparison of the relativistic
+kinetic energy and its Newtonian approximation.
 </p>
-</li>
-<li>
+
+      <figure xml:id="fig-skel-ke-cartoon">
+  <caption>Relativistic versus Newtonian kinetic energy. The relativistic
+  energy races toward a wall at the speed of light <m>c</m>, while the
+  Newtonian energy follows a gentle parabola; the two are approximately in agreement only when
+  <m>v \ll c</m>.</caption>
+  <image width="65%">
+    <prefigure xmlns="https://prefigure.org" label="skel-ke-cartoon">
+      <diagram dimensions="(440,330)" margins="8">
+        <!-- Cartoonish: relativistic KE races toward the "wall" at v=c;
+             Newtonian KE ambles along a gentle parabola. Natural units c=1, m0=1. -->
+        <definition>Krel(v) = 1/sqrt(1 - v^2) - 1</definition>
+        <definition>Knewt(v) = v^2/2</definition>
+        <coordinates bbox="(-0.08, -0.22, 1.2, 2.35)">
+          <axes at="axes" xlabel="v" decorations="no" arrows="1"/>
+          <!-- the cosmic speed-limit "wall" at v = c, with hatching -->
+          <group at="wall">
+            <line p1="(1, 0)" p2="(1, 2.3)" stroke="gray" thickness="2.5"/>
+            <repeat parameter="k=0..10">
+              <line p1="(1, 0.02 + 0.21*k)" p2="(1.07, 0.13 + 0.21*k)"
+                    stroke="gray" thickness="1.5"/>
+            </repeat>
+          </group>
+          <!-- chunky curves -->
+          <graph at="newtonian" function="Knewt" domain="(0, 1.16)"
+                 stroke="green" thickness="4.5"/>
+          <graph at="relativistic" function="Krel" domain="(0, 0.95)"
+                 stroke="blue" thickness="4.5"/>
+          <!-- axis landmarks -->
+          <label at="c-label" anchor="(1, 0)" alignment="s" offset="(0,-1)"><m>c</m></label>
+          <label at="origin-label" anchor="(0, 0)" alignment="sw"><m>0</m></label>
+          <!-- playful direct labels -->
+          <label at="rel-label" anchor="(0.86, Krel(0.86))" alignment="nw" offset="(-6,8)">
+            <m>\text{Relativistic}\, K</m>
+          </label>
+          <label at="newt-label" anchor="(0.84, Knewt(0.84))" alignment="s" offset="(0,-17)">
+            <m>\text{Newtonian} \,K</m>
+          </label>
+          <!-- callout: the two agree when v is small -->
+          <label at="agree-label" anchor="(0.28, 0.62)" alignment="n">
+            <m>\text{For}\, v \ll c: K_{\text{rel}} \approx K_{\text{new}}</m>
+          </label>
+          <line at="agree-arrow" p1="(0.30, 0.55)" p2="(0.42, 0.14)"
+                stroke="black" thickness="2" arrows="1"/>
+        </coordinates>
+        <annotations>
+          <annotation ref="relativistic"
+              text="A comparison of relativistic and Newtonian kinetic energy versus speed v. The relativistic energy races upward toward a wall at the speed of light c, while the Newtonian energy ambles along a gentle parabola">
+            <annotation ref="relativistic"
+                text="The relativistic kinetic energy, which shoots up without bound as v approaches the speed of light c"
+                sonify="yes"/>
+            <annotation ref="newtonian"
+                text="The Newtonian kinetic energy, a gentle parabola that stays finite and matches the relativistic curve only when v is much less than c"
+                sonify="yes"/>
+            <annotation ref="wall"
+                text="A hatched wall at v equals c, the speed of light, a barrier the relativistic energy approaches but never reaches"/>
+          </annotation>
+        </annotations>
+      </diagram>
+    </prefigure>
+  </image>
+</figure>
+
+<example xml:id="ex-skel-newtonian-ke">
+<title>Newtonian kinetic energy as an approximation to relativistic kinetic energy when <m>v \ll c</m></title>
+<statement>
 <p>
-<em>Proof of the remainder theorem.</em> The argument rests on the mean
-value theorem. You are not expected to know it, only to understand the
-statement of <xref ref="thm-skel-taylor-formula"/> and its implications.
+Show that the kinetic energy of an object moving with velocity
+<m>v</m> can be approximated by the formula
+<m>K \approx \frac{1}{2} m_0v^2</m> when <m>v \ll c</m>.
 </p>
-</li>
-</ul>
 
 <p>
-Both are worth reading if you are interested, and neither is needed for
-anything that follows. See the full lecture notes for the details.
+<em>Solution.</em>
+(Substitute <xref ref="eq-skel-relativistic-mass"/> into
+<xref ref="eq-skel-relativistic-ke"/> and set
+<m>x = \frac{v^2}{c^2}</m>, so that everything runs through the Taylor
+series
+<md xml:id="eq-skel-inv-sqrt-series" number="yes">
+\frac{1}{\sqrt{1-x}} = 1 + \frac{1}{2}x + \frac{3}{8}x^2
++ \frac{5}{16}x^3 + \cdots .
+</md>
+Substitute back and say which term survives when <m>v \ll c</m>.)
 </p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,10);
+\draw[gray!35] (0,6.7) -- (15,6.7);
+\draw[gray!35] (0,3.4) -- (15,3.4);
+\node[anchor=north west, font=\small\itshape] at (0.35,9.7) {$K$ in terms of $x$:};
+\node[anchor=north west, font=\small\itshape] at (0.35,6.4) {expanded with the series:};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.1) {back in terms of $v$ and $c$:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in three rows, for rewriting the kinetic energy in terms of x, for the series expansion, and for the result in terms of v and c.</shortdescription>
+</image>
+</sidebyside>
+
+<p>
+When <m>v \ll c</m>, the higher order terms in the series become
+negligible, and we can approximate the kinetic energy as:
+<md xml:id="eq-skel-newtonian-ke" number="yes">
+K \approx \frac{1}{2} m_0v^2.
+</md>
+</p>
+</statement>
+<hint>
+<p>
+We can use the Taylor series for <m>f(x) = \frac{1}{\sqrt{1 - x}}</m> at
+<m>x=0</m> to approximate <m>K</m>. Use <m>x = \frac{v^2}{c^2}</m>.
+</p>
+</hint>
+</example>
+
+<example xml:id="ex-skel-error-newtonian-ke">
+<title>Estimating the error in using the Newtonian kinetic energy formula to approximate the relativistic kinetic energy</title>
+<statement>
+<p>
+Assume that a car a moving with a velocity of <m>v = 30 m/s </m>
+(<m>\approx 67</m> miles per hour). Use the remainder's theorem
+to estimate the error in using the Newtonian kinetic energy formula
+<xref ref="eq-skel-newtonian-ke"/> to approximate
+the relativistic kinetic energy of the car. The speed of light is
+<m>c = 3 \times 10^8 m/s</m>.
+</p>
+
+<p>
+<em>Solution.</em>
+(Keeping only the first term of <xref ref="eq-skel-inv-sqrt-series"/>
+means using the degree-<m>1</m> Taylor polynomial, so the error is
+<m>R_1</m> of <xref ref="eq-skel-taylor-remainder"/>. Bound
+<m>f''(x) = \frac{3}{4}(1-x)^{-5/2}</m> as in
+<xref ref="rmk-skel-error-upper-bound"/> (it is increasing), then
+substitute <m>v/c = 10^{-7}</m>. Close with one sentence on what the size
+of the bound says.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,10);
+\draw[gray!35] (0,6.7) -- (15,6.7);
+\draw[gray!35] (0,3.4) -- (15,3.4);
+\node[anchor=north west, font=\small\itshape] at (0.35,9.7) {$R_1(x)$ and its upper bound:};
+\node[anchor=north west, font=\small\itshape] at (0.35,6.4) {substituting $v/c = 10^{-7}$:};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.1) {conclusion:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in three rows, for the remainder and its bound, for the numerical substitution, and for the conclusion about the quality of the approximation.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+</example>
+
+</subsubsection>
+
+<subsubsection xml:id="subsubsec-skel-pendulum-small-angle">
+<title>Small-Angle Approximation for a Pendulum</title>
+
+<p>
+We begin this section by briefly reviewing the forces acting on a simple
+pendulum and how the small-angle approximation allows us to treat its
+motion as simple harmonic motion.
+</p>
+
+<p>
+The bob moves along the arc, so only the component of gravity
+<em>tangent</em> to that arc drives the motion. Resolving the weight
+<m>m\overrightarrow{\mathbf{g}}</m> into a component along the string
+(<m>mg\cos\theta</m>, balanced by the string tension
+<m>\overrightarrow{\mathbf{F}}_T</m>) and a component tangent to the arc,
+as shown in <xref ref="fig-skel-pendulum-forces"/>, gives the restoring
+force
+<md xml:id="eq-skel-pendulum-force" number="yes">
+F = -mg\sin\theta .
+</md>
+</p>
+
+<p>
+The minus sign indicates that the force always points back toward the
+equilibrium (straight-down) position. This is <em>not</em> Hooke's law: the
+force is proportional to <m>\sin\theta</m>, not to the displacement itself,
+so the motion is not exactly simple harmonic. Writing the arc displacement
+as <m>x = \ell\theta</m>, we would need <m>F</m> to be proportional to
+<m>x</m><mdash/>that is, to <m>\theta</m><mdash/>for the motion to be simple
+harmonic.
+</p>
+
+<p>
+The small-angle approximation bridges this gap. From the Taylor series
+<md xml:id="eq-skel-sin-series" number="yes">
+\sin\theta = \theta - \frac{\theta^3}{3!} + \frac{\theta^5}{5!} - \cdots,
+</md>
+when <m>\theta</m> is small (in radians) the higher-order terms are
+negligible and <m>\sin\theta \approx \theta</m>. The restoring force then
+becomes
+<md>
+F \approx -mg\theta = -\frac{mg}{\ell}\,x,
+</md>
+which <em>is</em> Hooke's law <m>F = -kx</m> with effective spring constant
+<m>k = \dfrac{mg}{\ell}</m>.
+</p>
+
+<p>
+This is exactly what fixes the period. Newton's second law
+<m>F = ma = m\dfrac{d^2x}{dt^2}</m> turns Hooke's law into the equation of
+motion
+<md>
+m\frac{d^2x}{dt^2} = -\frac{mg}{\ell}\,x,
+\qquad\text{that is,}\qquad
+\frac{d^2x}{dt^2} = -\frac{g}{\ell}\,x .
+</md>
+Notice that the mass cancels. The equation says that <m>x</m> is a function
+whose second derivative is a negative multiple of itself, and the functions
+with that property are the sines and cosines: writing
+<m>\omega^2 = \dfrac{g}{\ell}</m>, every solution has the form
+<md>
+x(t) = A\cos(\omega t) + B\sin(\omega t),
+\qquad \omega = \sqrt{\frac{g}{\ell}} ,
+</md>
+which you can verify by differentiating twice. The number <m>\omega</m> is
+the angular frequency, and <m>\cos(\omega t)</m> and <m>\sin(\omega t)</m>
+repeat when <m>\omega t</m> increases by <m>2\pi</m>. So the motion repeats
+after a time <m>T</m> with <m>\omega T = 2\pi</m>, giving
+<md xml:id="eq-skel-pendulum-period" number="yes">
+T = \frac{2\pi}{\omega} = 2\pi\sqrt{\frac{\ell}{g}} .
+</md>
+</p>
+
+<p>
+Thus, for small swings the pendulum behaves as a simple harmonic
+oscillator, with the period <xref ref="eq-skel-pendulum-period"/>, which is
+independent of both the amplitude and the mass. Taylor's Remainder Theorem
+(see <xref ref="ex-skel-small-angle-pendulum"/>) enables us to quantify how
+small <m>\theta</m> must be for this approximation.
+</p>
+
+        <figure xml:id="fig-skel-pendulum-forces">
+  <caption>Forces on a simple pendulum. The weight <m>m\overrightarrow{\mathbf{g}}</m>
+  resolves into a component <m>mg\cos\theta</m> along the string (balanced by
+  the tension <m>\overrightarrow{\mathbf{F}}_T</m>) and a component <m>mg\sin\theta</m>
+  tangent to the arc, which acts as the restoring force.</caption>
+  <image width="70%">
+    <prefigure xmlns="https://prefigure.org" label="skel-pendulum-forces">
+      <diagram dimensions="(360,400)" margins="8">
+        <definition>theta = radians(33)</definition>
+        <definition>fscale = 0.6</definition>
+        <definition>ft = 0.62</definition>
+        <definition>pivot = (0, 0)</definition>
+        <definition>bob = (sin(theta), -cos(theta))</definition>
+        <definition>mgEnd = (sin(theta), -cos(theta) - fscale)</definition>
+        <definition>ftEnd = (sin(theta) - ft*sin(theta), -cos(theta) + ft*cos(theta))</definition>
+        <definition>sinEnd = (sin(theta) - fscale*sin(theta)*cos(theta), -cos(theta) - fscale*sin(theta)*sin(theta))</definition>
+        <definition>cosEnd = (sin(theta) + fscale*cos(theta)*sin(theta), -cos(theta) - fscale*cos(theta)*cos(theta))</definition>
+        <coordinates bbox="(-0.55, -1.62, 1.08, 0.18)" aspect-ratio="1">
+          <line p1="(-0.4, 0)" p2="(0.4, 0)" thickness="2"/>
+          <repeat parameter="k=0..7">
+            <line p1="(-0.38 + 0.11*k, 0)" p2="(-0.32 + 0.11*k, 0.07)" thickness="1"/>
+          </repeat>
+          <line p1="pivot" p2="(0, -1.18)" dash="5 4" stroke="gray" thickness="1"/>
+          <arc center="pivot" radius="1" range="(236, 304)" dash="4 4" stroke="gray" thickness="1"/>
+          <line at="string" p1="pivot" p2="bob" thickness="2"/>
+          <label anchor="(0.5*bob[0], 0.5*bob[1])" alignment="e"><m>\ell</m></label>
+          <angle-marker points="((0,-0.55), pivot, bob)" radius="42"><m>\theta</m></angle-marker>
+          <line p1="(0, -cos(theta))" p2="bob" dash="4 4" stroke="gray" thickness="1"/>
+          <label anchor="(0.5*bob[0], -cos(theta))" alignment="n" offset="(0,3)"><m>\ell\sin\theta</m></label>
+          <label anchor="(0.25, -0.9)" alignment="s"><m>x</m></label>
+          <line at="FT" p1="bob" p2="ftEnd" stroke="magenta" thickness="3" arrows="1"/>
+          <label anchor="ftEnd" alignment="ne" offset="(3,3)" color="magenta"><m>\overrightarrow{\mathbf{F}}_T</m></label>
+          <line at="mgvec" p1="bob" p2="mgEnd" stroke="magenta" thickness="3" arrows="1"/>
+          <label anchor="mgEnd" alignment="s" offset="(0,-3)" color="magenta"><m>m\overrightarrow{\mathbf{g}}</m></label>
+          <line at="mgsin" p1="bob" p2="sinEnd" stroke="magenta" thickness="2" arrows="1"/>
+          <label anchor="sinEnd" alignment="sw" offset="(-4,-2)"><m>mg\sin\theta</m></label>
+          <line at="mgcos" p1="bob" p2="cosEnd" dash="4 3" stroke="magenta" thickness="2" arrows="1"/>
+          <label anchor="cosEnd" alignment="se" offset="(4.7,-2)"><m>mg\cos\theta</m></label>
+          <point p="bob" fill="green" size="9"/>
+          <label anchor="bob" alignment="e" offset="(9,2)"><m>m</m></label>
+        </coordinates>
+        <annotations>
+          <annotation ref="string"
+              text="A simple pendulum: a bob of mass m on a string of length l making an angle theta with the vertical. The weight m g points straight down and is resolved into two components: m g cosine theta along the string, balanced by the tension F sub T, and m g sine theta tangent to the arc, which is the restoring force driving the motion">
+            <annotation ref="string" text="The string of length l at angle theta from the vertical"/>
+            <annotation ref="FT" text="The tension F sub T, directed along the string toward the pivot" sonify="yes"/>
+            <annotation ref="mgvec" text="The weight m g, directed straight down" sonify="yes"/>
+            <annotation ref="mgsin" text="The tangential component m g sine theta, the restoring force" sonify="yes"/>
+            <annotation ref="mgcos" text="The radial component m g cosine theta, along the string" sonify="yes"/>
+          </annotation>
+        </annotations>
+      </diagram>
+    </prefigure>
+  </image>
+</figure>
+
+<p component="print">
+An animation of these forces <mdash/> the weight resolving into its radial
+and tangential components as the pendulum swings <mdash/> accompanies the
+online version of these notes.
+</p>
+<sidebyside component="web" width="90%">
+<figure xml:id="fig-skel-pendulum-forces-video">
+<caption>
+Forces on a simple pendulum. The weight <m>m\overrightarrow{g}</m> resolves
+into a radial component <m>mg\cos\theta</m> along the string, balanced by
+the tension <m>\overrightarrow{F}_T</m>, and a tangential component
+<m>mg\sin\theta</m> directed toward equilibrium, which acts as the
+restoring force. For small angles, <m>\sin\theta \approx \theta</m> gives
+<m>F \approx -\dfrac{mg}{\ell}x</m>.
+</caption>
+<video xml:id="video-skel-pendulum-forces" source="videos/pendulum_forces.mp4" width="90%" preview="default"/>
+</figure>
+</sidebyside>
+
+<example xml:id="ex-skel-small-angle-pendulum">
+<title>Simple Harmonic Motion of a Pendulum as an Approximation</title>
+<statement>
+<p>
+Use the remainder theorem to analyze the claim made in Giancoli's textbook
+that for small angles, <m>\sin\theta \approx \theta</m>. Specifically,
+show that the error is less than <m>1\%</m> for angles below
+<m>15^\circ</m>.
+</p>
+<p>
+Here is the exact quote from Giancoli's textbook:
+</p>
+<blockquote>
+<p>
+<q>For angles less than <m>15^\circ</m>, the difference between
+<m>\theta</m> (in radians) and <m>\sin\theta</m> is less than
+<m>1\%</m>.</q>
+</p>
+</blockquote>
+
+<p>
+<em>Solution.</em>
+(Replacing <m>\sin\theta</m> by <m>\theta</m> uses
+<m>p_1 = p_2 = \theta</m> of <xref ref="eq-skel-sin-series"/>, so the
+error is <m>R_2</m>. Bound it with <xref ref="eq-skel-taylor-remainder"/>
+and <m>|\cos c| \le 1</m>, divide by <m>\theta</m> to make the error
+<em>relative</em>, and find the angle at which that bound reaches
+<m>1\%</m>. Compare with Giancoli's <m>15^\circ</m>.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,12);
+\draw[gray!35] (0,8) -- (15,8);
+\draw[gray!35] (0,4) -- (15,4);
+\node[anchor=north west, font=\small\itshape] at (0.35,11.7) {$R_2(\theta)$ and its bound:};
+\node[anchor=north west, font=\small\itshape] at (0.35,7.7) {the relative error bound:};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.7) {the $1\%$ threshold, versus $15^\circ$:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in three rows, for the remainder bound, for the relative error bound, and for locating the one percent threshold and comparing it with fifteen degrees.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+</example>
+
+</subsubsection>
+
+<subsubsection xml:id="subsubsec-skel-approximating-pi">
+<title>Approximating the value of <m>\pi</m> using Taylor series</title>
+
+<p>
+In this subsection, we will discuss how to approximate the value of
+<m>\pi</m> using Taylor series. We will use the Taylor series for
+<m>\arctan(x)</m>, which centered at <m>a = 0</m> is
+<md>
+<mrow xml:id="eq-skel-arctan-series" number="yes">\arctan(x) \amp = \sum_{k=0}^{\infty} \frac{(-1)^k}{2k+1}\, x^{2k+1}</mrow>
+<mrow>\amp = x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7} + \cdots, \qquad |x| \le 1.</mrow>
+</md>
+</p>
+
+<example xml:id="ex-skel-approx-pi-arctan">
+<title>Approximating <m>\pi</m> using the Taylor series for <m>\arctan(x)</m></title>
+<statement>
+<p>
+Use the Taylor series for <m>\arctan(x)</m> to approximate the value of
+<m>\pi</m>. Use Taylor's Remainder Theorem to find an upper bound for the
+error in this approximation, and show that the error decreases as the
+order <m>n</m> of the Taylor polynomial increases.
+</p>
+
+<p>
+<em>Solution.</em>
+(Evaluate <xref ref="eq-skel-arctan-series"/> at <m>x = 1</m>, where
+<m>\arctan(1) = \frac{\pi}{4}</m>. For the error, feed the derivative
+bound <xref ref="eq-skel-arctan-deriv-bound"/> below into
+<xref ref="eq-skel-remainder-bound"/> with <m>M = n!</m> and multiply by
+<m>4</m>; you should land on <xref ref="eq-skel-pi-error-bound"/>.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,10);
+\draw[gray!35] (0,6.7) -- (15,6.7);
+\draw[gray!35] (0,3.4) -- (15,3.4);
+\node[anchor=north west, font=\small\itshape] at (0.35,9.7) {$\pi$ from the series at $x=1$:};
+\node[anchor=north west, font=\small\itshape] at (0.35,6.4) {$|R_n(1)|$ from the remainder bound:};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.1) {the error bound for $\pi$, and its limit as $n \to \infty$:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in three rows, for the series approximation of pi, for the remainder bound, and for the resulting error bound and its behaviour as n grows.</shortdescription>
+</image>
+</sidebyside>
+
+<p>
+For the record: the derivatives of <m>f(x) = \arctan(x)</m> satisfy
+<md xml:id="eq-skel-arctan-deriv-bound" number="yes">
+\left|f^{(n+1)}(t)\right| \le n! \quad \text{for all } t \in \mathbb{R},
+</md>
+and the resulting error bound is
+<md xml:id="eq-skel-pi-error-bound" number="yes">
+\left|\pi - 4\,T_n(1)\right| \le \frac{4}{n+1}.
+</md>
+The bound goes to zero as <m>n \to \infty</m>, but very slowly: to
+guarantee an error of at most <m>0.01</m> one needs <m>n \ge 399</m>.
+</p>
+</statement>
+</example>
+
+<conclusion>
+<p>
+As we saw in the previous example, Taylor series approached <m>\pi</m>
+very slowly. In the project below, we will see how to use the so-called
+Euler's formula to approximate <m>\pi</m> much faster. As you may know,
+there are many other methods to approximate <m>\pi</m>, which we will not
+cover here.
+</p>
+
+<project xml:id="proj-skel-euler-pi">
+<title>Computing <m>\pi</m> with Euler's identity</title>
+
+<introduction>
+<p>
+In <xref ref="ex-skel-approx-pi-arctan"/> we approximated <m>\pi</m> by
+evaluating the Taylor series <xref ref="eq-skel-arctan-series"/> at
+<m>x = 1</m>, and Taylor's Remainder Theorem gave the error bound
+<xref ref="eq-skel-pi-error-bound"/>, which decreases very slowly. In this
+guided problem we compute <m>\pi</m> far more efficiently using
+<term>Euler's identity</term>
+<md xml:id="eq-skel-euler-identity" number="yes">
+\arctan\left(\tfrac{1}{2}\right) + \arctan\left(\tfrac{1}{3}\right) = \frac{\pi}{4},
+</md>
+which lets us evaluate the Taylor series at the small arguments
+<m>x = \tfrac12</m> and <m>x = \tfrac13</m>, where it converges much
+faster.
+</p>
+</introduction>
+
+<task>
+<title>Proving Euler's identity</title>
+<statement>
+<p>
+Let <m>\alpha = \arctan\left(\tfrac12\right)</m> and
+<m>\beta = \arctan\left(\tfrac13\right)</m>. Use the addition formula
+<md>
+\tan(\alpha + \beta) = \frac{\tan\alpha + \tan\beta}{1 - \tan\alpha\,\tan\beta}
+</md>
+to prove that <m>\alpha + \beta = \dfrac{\pi}{4}</m>.
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,7);
+\draw[gray!35] (0,3.5) -- (15,3.5);
+\node[anchor=north west, font=\small\itshape] at (0.35,6.7) {$\tan(\alpha+\beta) =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.2) {why $\alpha+\beta$ must be $\pi/4$ and not another angle:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in two rows, for computing the tangent of the sum and for the argument pinning down the angle.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+<hint>
+<p>
+Compute <m>\tan(\alpha+\beta)</m> first. Then explain why
+<m>\alpha + \beta</m> must lie in the interval
+<m>\left(0, \tfrac{\pi}{2}\right)</m>, and why this pins down its value.
+</p>
+</hint>
+</task>
+
+<task>
+<title>The approximation</title>
+<statement>
+<p>
+Let <m>T_n(x)</m> be the Taylor polynomial of order <m>n</m> for
+<m>\arctan(x)</m> centered at <m>0</m>. Use Euler's identity
+<xref ref="eq-skel-euler-identity"/> to explain why
+<md>
+\pi \approx 4\left[\,T_n\!\left(\tfrac12\right) + T_n\!\left(\tfrac13\right)\right].
+</md>
+Write out this approximation explicitly for <m>n = 3</m>.
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,7);
+\draw[gray!35] (0,3.5) -- (15,3.5);
+\node[anchor=north west, font=\small\itshape] at (0.35,6.7) {why the approximation holds:};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.2) {the case $n = 3$, as a number:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in two rows, for justifying the approximation and for evaluating it at n equals three.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+<hint>
+<p>
+Multiply <xref ref="eq-skel-euler-identity"/> by <m>4</m> and replace each
+arctangent by its Taylor polynomial.
+</p>
+</hint>
+</task>
+
+<task>
+<title>Bounding the error with the Remainder Theorem</title>
+<statement>
+<p>
+In <xref ref="ex-skel-approx-pi-arctan"/> we showed that the derivatives
+of <m>f(x) = \arctan(x)</m> satisfy
+<xref ref="eq-skel-arctan-deriv-bound"/>. Use
+<xref ref="eq-skel-remainder-bound"/> to show that for <m>|x| \le 1</m>
+<md>
+\left|\arctan(x) - T_n(x)\right| \le \frac{|x|^{n+1}}{n+1},
+</md>
+and conclude that
+<md>
+\left|\pi - 4\left[\,T_n\!\left(\tfrac12\right) + T_n\!\left(\tfrac13\right)\right]\right|
+\le \frac{4}{n+1}\left[\left(\tfrac12\right)^{n+1} + \left(\tfrac13\right)^{n+1}\right].
+</md>
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,8);
+\draw[gray!35] (0,4) -- (15,4);
+\node[anchor=north west, font=\small\itshape] at (0.35,7.7) {the bound on $|\arctan(x) - T_n(x)|$:};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.7) {combining the two remainders:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in two rows, for bounding the arctangent remainder and for combining the two remainders into the stated bound.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+<hint>
+<p>
+Apply <xref ref="eq-skel-remainder-bound"/> with <m>M = n!</m> exactly as
+in <xref ref="ex-skel-approx-pi-arctan"/>, but keep the factor
+<m>|x|^{n+1}</m>. Then use the triangle inequality on the two remainders.
+</p>
+</hint>
+</task>
+
+<task>
+<title>How much better is it?</title>
+<statement>
+<p>
+Evaluate the error bound for <m>n = 9</m> and compare it with the bound
+<m>\tfrac{4}{10} = 0.4</m> obtained in
+<xref ref="ex-skel-approx-pi-arctan"/> for the same order. Then find the
+smallest <m>n</m> for which the bound guarantees an error of at most
+<m>10^{-6}</m>.
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,7);
+\draw[gray!35] (0,3.5) -- (15,3.5);
+\node[anchor=north west, font=\small\itshape] at (0.35,6.7) {the bound at $n = 9$, versus $0.4$:};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.2) {the smallest $n$ with bound at most $10^{-6}$:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in two rows, for evaluating the bound at n equals nine and for finding the smallest n meeting the tolerance.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+<hint>
+<p>
+For the second part, the term <m>\left(\tfrac12\right)^{n+1}</m>
+dominates; try increasing odd values of <m>n</m>.
+</p>
+</hint>
+</task>
+
+<conclusion>
+<p component="web">
+The video below shows the approximation
+<m>4\left[T_n\!\left(\tfrac12\right) + T_n\!\left(\tfrac13\right)\right]</m>
+converging to <m>\pi</m>, and compares its error, together with the
+Remainder-Theorem bound, against the much slower method at <m>x = 1</m>.
+</p>
+<p component="print">
+An animation of the approximation
+<m>4\left[T_n\!\left(\tfrac12\right) + T_n\!\left(\tfrac13\right)\right]</m>
+converging to <m>\pi</m>, with its error compared against the much slower
+method at <m>x = 1</m>, accompanies the online version of these notes.
+</p>
+<sidebyside component="web" width="90%">
+<figure xml:id="fig-skel-euler-pi-video">
+<caption>
+The error of Euler's-identity approximation (with its bound
+<m>\frac{4}{n+1}\left[\left(\frac12\right)^{n+1} + \left(\frac13\right)^{n+1}\right]</m>)
+decreasing geometrically as <m>n</m> increases, compared with the series
+at <m>x=1</m>.
+</caption>
+<video xml:id="video-skel-euler-pi-error" source="videos/euler-pi-error.mp4" width="85%"/>
+</figure>
+</sidebyside>
+</conclusion>
+</project>
+</conclusion>
+
+</subsubsection>
 </subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="subsec-skel-taylor-proof">
+<title>Proof of the remainder theorem</title>
+
+<p>
+In this subsection, we will provide a proof of the remainder theorem.
+</p>
+<p>
+Let <m>f</m> be a function that has <m>n+1</m> continuous derivatives on
+an open interval <m>I</m> containing <m>a</m>. We want to show that for
+each <m>x\in I</m> and for each positive integer <m>n</m>, there exists a
+number <m>c</m> between <m>a</m> and <m>x</m> such that
+<md>
+f(x) = p_n(x) + R_n(x),
+</md>
+where
+<md>
+p_n(x) = \sum_{k=0}^{n} \frac{f^{(k)}(a)}{k!} (x-a)^k,
+</md>
+and
+<md>
+R_n(x) = \frac{f^{(n+1)}(c)}{(n+1)!} (x-a)^{n+1}.
+</md>
+</p>
+<p>
+To prove this, we will first prove the following lemma:
+</p>
+
+<lemma xml:id="lemma-skel-mvt-zeros">
+<statement>
+<p>
+Let <m>f(x)</m> be a function that is <m>(n+1)</m>-times differentiable.
+Also, suppose that
+<m>f(a) = f'(a) = f''(a) = ... = f^{(n)}(a) = 0</m> and <m>f(x) = 0</m>,
+where <m>x\neq a</m>. Then there exists a number <m>c</m> between
+<m>a</m> and <m>x</m> such that <m>f^{(n+1)}(c) = 0</m>.
+</p>
+</statement>
+</lemma>
+
+<p>
+<em>Proof.</em>
+(Apply the mean value theorem repeatedly: first to <m>f</m> on the
+interval from <m>a</m> to <m>x</m>, then to <m>f'</m> on the interval it
+produces, and so on, until it delivers a point where
+<m>f^{(n+1)}</m> vanishes.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,10);
+\draw[gray!35] (0,6.7) -- (15,6.7);
+\draw[gray!35] (0,3.4) -- (15,3.4);
+\node[anchor=north west, font=\small\itshape] at (0.35,9.7) {first application, producing $c_1$:};
+\node[anchor=north west, font=\small\itshape] at (0.35,6.4) {second application, producing $c_2$:};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.1) {continuing to $c_{n+1}$:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in three rows, for the repeated applications of the mean value theorem producing the points c one, c two, and finally c n plus one.</shortdescription>
+</image>
+</sidebyside>
+
+<remark xml:id="rmk-skel-zero-error-function">
+<title>The error function and its derivatives are zero at the point of expansion</title>
+<p>
+Note that for the error function <m>R_n(x) = f(x) - p_n(x)</m>, we have
+<m>R_n(a) = R_n'(a) = R_n''(a) = ... = R_n^{(n)}(a) = 0</m>.
+</p>
+</remark>
+
+<p>
+<em>Completing the proof.</em>
+(Assume <m>x \neq a</m> and construct
+<m>g(t) = R_n(t) - \frac{R_n(x)}{(x-a)^{n+1}} (t-a)^{n+1}</m>. Check,
+using <xref ref="rmk-skel-zero-error-function"/>, that <m>g</m> satisfies
+the hypotheses of the lemma; then compute <m>g^{(n+1)}(c)</m> and solve
+for <m>R_n(x)</m>.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,10);
+\draw[gray!35] (0,6.7) -- (15,6.7);
+\draw[gray!35] (0,3.4) -- (15,3.4);
+\node[anchor=north west, font=\small\itshape] at (0.35,9.7) {$g$ satisfies the lemma because:};
+\node[anchor=north west, font=\small\itshape] at (0.35,6.4) {$g^{(n+1)}(c) = 0$ gives:};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.1) {solving for $R_n(x)$:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in three rows, for checking the lemma's hypotheses, for the equation from the vanishing derivative, and for solving for the remainder.</shortdescription>
+</image>
+</sidebyside>
+
+</subsection>
+
 
 </section>

@@ -56,7 +56,10 @@ continuous.
 </ul>
 </objectives>
 
-<introduction>
+<!-- ================================================================ -->
+<subsection xml:id="subsec-skel-lim-two-variable">
+<title>Limits of Two-Variable Functions</title>
+
 <p>
 For <m>y = f(x)</m>, we could ask what value the function approaches when
 <m>x</m> approaches <m>a \in \R</m>, and there were two possible
@@ -145,11 +148,6 @@ point can approach <m>(a,b)</m>. This section makes that precise and
 develops the tools for computing such limits, and for showing that a
 limit fails to exist.
 </p>
-</introduction>
-
-<!-- ================================================================ -->
-<subsection xml:id="subsec-skel-lim-two-variable">
-<title>Limits of Two-Variable Functions</title>
 
 <p>
 <xref ref="fig-skel-lim-paths"/> shows a few of the infinitely many paths
