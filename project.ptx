@@ -16,6 +16,7 @@
          scripts/build-site.sh copies it next to the web pages. -->
     <target name="print" format="pdf" publication="publication-print.ptx"
             output-filename="math13-skeletal-notes.pdf" />
+    <target name="latex" format="latex" publication="publication-print.ptx" />
   </targets>
 </project>
 
