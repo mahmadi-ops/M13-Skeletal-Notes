@@ -1,0 +1,1562 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Skeletal (fill-in) version of 4.7 Lagrange Multipliers.
+
+  Definitions, theorems, summaries, and problem statements are kept;
+  derivations and solutions are replaced by blank workspace boxes, each
+  with a one-line statement of what has to be done.  Content mirrors
+  LagrangeMultipliers.ptx of the full lecture notes; every xml:id here is
+  prefixed with "skel-" so the two can coexist.
+
+  Figures: all seven are reproduced in full.  The two schematics and the
+  two videos carry the argument for collinearity, and the three level
+  curve pictures (the family of level curves, the ellipse with its
+  hyperbolas, the circle with its level circles) are far past what a
+  student can draw in class, so each is kept and followed by a box that
+  asks for what has to be read off it.
+
+  The closing remark on the two-variable case is optional reading rather
+  than class work, so it is kept in full, figures and all.
+-->
+<section xml:id="sec-skel-fmv-lagrange" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Lagrange Multipliers</title>
+
+<objectives>
+<introduction>
+<p>
+After completing this section, you should be able to:
+</p>
+</introduction>
+
+<ul>
+<li>
+<p>
+Recognize a constrained optimization problem: finding the maximum and
+minimum values of a function <m>f</m> when its inputs are restricted by a
+constraint of the form <m>g = 0</m>, such as a curve in the plane or a
+surface in space.
+</p>
+</li>
+<li>
+<p>
+Explain geometrically why, at a constrained extremum, the gradient
+vectors <m>\nabla f</m> and <m>\nabla g</m> must be collinear, and why
+the level curve of <m>f</m> through the extremum is tangent to the
+constraint curve there.
+</p>
+</li>
+<li>
+<p>
+State the method of Lagrange multipliers and use it to find the extrema
+of a function subject to a constraint.
+</p>
+</li>
+<li>
+<p>
+Solve shortest-distance problems with Lagrange multipliers, and compare
+the method with the direct approach that uses the normal vector.
+</p>
+</li>
+</ul>
+</objectives>
+
+<introduction>
+<p>
+Constrained optimizations are everywhere. A robot tracing a surface must
+keep its hand on that surface, so its coordinates must satisfy the
+equation of the surface at all times; planning the robot's motion is then
+a problem of optimizing time, distance, or energy expense subject to that
+constraint. Fitting a line to data points in an image can also be posed
+as a constrained optimization problem. In
+<xref ref="sec-skel-fmv-extreme-values"/> we found the extreme values of
+a function <m>f(x,y)</m> over regions of the plane. In this section we
+learn how to find the extrema of a function whose domain is restricted to
+a subset of the plane such as a curve, namely the problem
+<md xml:id="eq-skel-lagrange-problem" number="yes">
+\begin{aligned}
+\amp \text{maximize or minimize } f(x,y) \\
+\amp \text{subject to the constraint } g(x,y) = 0.
+\end{aligned}
+</md>
+More generally, one can impose several constraints on a function of many
+variables; here we work with a single constraint on a function of two or
+three variables.
+</p>
+<p>
+<em>These are skeletal notes: the definitions, theorems, and problem
+statements are given, and blank boxes are left wherever a derivation, a
+solution, or a sketch belongs, so that you can fill them in by hand.</em>
+</p>
+</introduction>
+
+<!-- ================================================================ -->
+<subsection xml:id="subsec-skel-lagrange-method">
+<title>The Method of Lagrange Multipliers</title>
+
+<subsubsection xml:id="subsubsec-skel-lagrange-collinear">
+<title>Why the Gradients Must Be Collinear</title>
+
+<p>
+The set of points satisfying the constraint <m>g(x,y) = 0</m> is a curve
+<m>C</m> in the plane: it is precisely the level curve of <m>g</m> of
+value <m>0</m>. We showed in
+<xref ref="thm-skel-gradient-perp-level-curve"/> that the gradient of a
+function is perpendicular to its level curves, so at every point of
+<m>C</m> where <m>\nabla g \neq \mathbf 0</m>,
+<md xml:id="eq-skel-lagrange-gradg-perp" number="yes">
+\nabla g \cdot \hat{T} = 0,
+</md>
+where <m>\hat{T}</m> is a unit vector tangent to <m>C</m> at that point.
+To stay on the curve, any small motion away from the point must be along
+the tangent direction <m>\hat{T}</m>.
+</p>
+
+<p>
+How does <m>f</m> change as we move along <m>C</m>? By
+<xref ref="eq-skel-dirderiv-gradient-relation"/>, the rate of change of
+<m>f</m> in the direction of the unit tangent vector <m>\hat{T}</m> is
+the directional derivative
+<md xml:id="eq-skel-lagrange-rate-along-C" number="yes">
+D_{\hat{T}} f = \nabla f \cdot \hat{T}.
+</md>
+<xref ref="fig-skel-lagrange-tangent"/> shows a point of <m>C</m> where
+this rate is not zero.
+</p>
+
+<figure xml:id="fig-skel-lagrange-tangent">
+<caption>
+A point of the constraint curve <m>g(x,y)=0</m> that is not a constrained
+extremum. The gradient <m>\nabla g</m> is perpendicular to the curve by
+<xref ref="thm-skel-gradient-perp-level-curve"/>, but <m>\nabla f</m> is not:
+it has a nonzero component (dashed) along the tangent direction
+<m>\hat{T}</m>, so <m>f</m> is still changing as we move along the
+curve.
+</caption>
+<image width="70%">
+<prefigure xmlns="https://prefigure.org" label="skel-prefigure-lagrange-tangent">
+<diagram dimensions="(440,250)" margins="10">
+<definition>c(t) = (1.4*t, 1.1*sin(t))</definition>
+<coordinates bbox="(-3.7,-1.7,3.7,2.3)">
+<parametric-curve at="lt-C" function="c" domain="(-2.4,2.4)"
+                  stroke="#009E73" thickness="2.5"/>
+<line at="lt-ra1" endpoints="((1.100,0.781),(1.028,0.901))"
+      stroke="black" thickness="1.5"/>
+<line at="lt-ra2" endpoints="((1.028,0.901),(0.908,0.829))"
+      stroke="black" thickness="1.5"/>
+<line at="lt-proj" endpoints="((0.980,0.709),(1.623,1.095))"
+      stroke="#D55E00" dash="5 4" thickness="2"/>
+<line at="lt-drop" endpoints="((1.185,1.823),(1.623,1.095))"
+      stroke="#7F7F7F" dash="3 4" thickness="1"/>
+<vector at="lt-T" v="(0.943,0.567)" tail="(0.980,0.709)"
+        stroke="#0072B2" thickness="3"/>
+<vector at="lt-gradg" v="(-0.515,0.857)" tail="(0.980,0.709)"
+        stroke="#009E73" thickness="3"/>
+<vector at="lt-gradf" v="(0.205,1.114)" tail="(0.980,0.709)"
+        stroke="#D55E00" thickness="3"/>
+<point at="lt-P" p="(0.980,0.709)" fill="black" alignment="se">
+<m>P</m>
+</point>
+<label at="lt-C-label" anchor="(-2.3,-1.35)" alignment="e" color="#009E73">
+<m>g(x,y)=0</m>
+</label>
+<label at="lt-T-label" anchor="(2.05,1.28)" alignment="e" color="#0072B2">
+<m>\hat{T}</m>
+</label>
+<label at="lt-gradg-label" anchor="(0.35,1.66)" alignment="nw" color="#009E73">
+<m>\nabla g</m>
+</label>
+<label at="lt-gradf-label" anchor="(1.24,1.95)" alignment="n" color="#D55E00">
+<m>\nabla f</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A wavy green curve represents the constraint g of x y equals 0. At a point P on the curve, a blue arrow T is tangent to the curve, a green arrow, the gradient of g, is perpendicular to the curve, and a red arrow, the gradient of f, points in a different direction. A dashed red segment along the tangent shows the component of the gradient of f in the tangent direction. A small square marks the right angle between T and the gradient of g.">
+  <annotation ref="lt-C" text="The constraint curve, where g of x y equals 0, drawn in green."/>
+  <annotation ref="lt-P" text="A point P on the constraint curve that is not a constrained extremum."/>
+  <annotation ref="lt-T" text="The tangent vector T, drawn in blue: any motion that stays on the curve must be along T."/>
+  <annotation ref="lt-gradg" text="The gradient of g, drawn in green, perpendicular to the constraint curve because the curve is a level curve of g."/>
+  <annotation ref="lt-gradf" text="The gradient of f, drawn in red. It is not perpendicular to the curve at P."/>
+  <annotation ref="lt-proj" text="The component of the gradient of f along the tangent direction, drawn as a dashed red segment. Because it is nonzero, f changes as we move along the curve, so P is not an extremum."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+<em>Derivation.</em>
+(Say first why the point drawn in
+<xref ref="fig-skel-lagrange-tangent"/> cannot be a constrained extremum
+<mdash/> what happens to <m>f</m> along <m>\hat{T}</m>, and what happens
+along <m>-\hat{T}</m>. Then write what
+<xref ref="eq-skel-lagrange-rate-along-C"/> must equal at a point that
+<em>is</em> a constrained extremum, put it beside
+<xref ref="eq-skel-lagrange-gradg-perp"/>, and finish the argument: in
+the plane, the vectors perpendicular to one nonzero vector all lie on a
+single line.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,13);
+\draw[gray!35] (0,8.7) -- (15,8.7);
+\draw[gray!35] (0,4.4) -- (15,4.4);
+\node[anchor=north west, font=\small\itshape] at (0.35,12.7) {why the point in the figure is not an extremum:};
+\node[anchor=north west, font=\small\itshape] at (0.35,8.4) {at a constrained extremum:};
+\node[anchor=north west, font=\small\itshape] at (0.35,4.1) {what the two conditions together force:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in three rows: why a point where the rate of change along the curve is nonzero cannot be an extremum, the condition that holds at a constrained extremum, and the conclusion drawn from it together with the perpendicularity of the gradient of g.</shortdescription>
+</image>
+</sidebyside>
+
+<assemblage xml:id="skel-summary-lagrange-collinear">
+<title>Collinear Gradients at a Constrained Extremum</title>
+<p>
+At a constrained local maximum or minimum, a small motion along the curve
+produces no change in <m>f</m>, so
+<md xml:id="eq-skel-lagrange-gradf-perp" number="yes">
+\nabla f \cdot \hat{T} = 0.
+</md>
+Both gradients are then perpendicular to <m>\hat{T}</m>, hence collinear:
+there exists some number <m>\lambda \in \R</m> such that
+<md xml:id="eq-skel-lagrange-collinear" number="yes">
+\nabla f = \lambda\, \nabla g.
+</md>
+</p>
+</assemblage>
+
+<p>
+<xref ref="fig-skel-lagrange-level-curves"/> puts
+<xref ref="eq-skel-lagrange-collinear"/> in a picture, by superposing the
+constraint curve <m>g(x,y) = 0</m> onto the family of level curves of
+<m>f</m>, that is, the curves <m>f(x,y) = c</m>. In the figure,
+<m>c_1 \lt c^* \lt c_3 \lt c_4 \lt c_5</m>.
+</p>
+
+<figure xml:id="fig-skel-lagrange-level-curves">
+<caption>
+The constraint curve <m>g(x,y)=0</m> superposed on the family of level
+curves of <m>f</m>, with <m>c_1 \lt c^* \lt c_3 \lt c_4 \lt c_5</m>. At
+the constrained minimum <m>(x^*,y^*)</m>, the level curve
+<m>f = c^*</m> is tangent to the constraint curve and the two gradients
+are collinear: <m>\nabla f = \lambda\,\nabla g</m>. Here they point in
+opposite directions, so <m>\lambda \lt 0</m>; it is only the
+collinearity that matters.
+</caption>
+<image width="62%">
+<prefigure xmlns="https://prefigure.org" label="skel-prefigure-lagrange-level-curves">
+<diagram dimensions="(365,365)" margins="10">
+<definition>c1(t) = (1.0*cos(t), 1.0*sin(t))</definition>
+<definition>cs(t) = (1.5*cos(t), 1.5*sin(t))</definition>
+<definition>c3(t) = (2.0*cos(t), 2.0*sin(t))</definition>
+<definition>c4(t) = (2.5*cos(t), 2.5*sin(t))</definition>
+<definition>c5(t) = (3.0*cos(t), 3.0*sin(t))</definition>
+<definition>gc(t) = (t, -1.5 - 0.25*t^2)</definition>
+<coordinates bbox="(-3.6,-3.7,3.6,3.5)">
+<parametric-curve at="lc-c1" function="c1" domain="(0,6.2832)"
+                  stroke="#7F7F7F" thickness="1.5"/>
+<parametric-curve at="lc-c3" function="c3" domain="(0,6.2832)"
+                  stroke="#7F7F7F" thickness="1.5"/>
+<parametric-curve at="lc-c4" function="c4" domain="(0,6.2832)"
+                  stroke="#7F7F7F" thickness="1.5"/>
+<parametric-curve at="lc-c5" function="c5" domain="(0,6.2832)"
+                  stroke="#7F7F7F" thickness="1.5"/>
+<parametric-curve at="lc-cstar" function="cs" domain="(0,6.2832)"
+                  stroke="#D55E00" thickness="2"/>
+<parametric-curve at="lc-g" function="gc" domain="(-2.55,2.55)"
+                  stroke="#009E73" thickness="2.5"/>
+<vector at="lc-gradf" v="(0,-0.95)" tail="(0,-1.5)"
+        stroke="#D55E00" thickness="3"/>
+<vector at="lc-gradg" v="(0,0.8)" tail="(0,-1.5)"
+        stroke="#009E73" thickness="3"/>
+<point at="lc-P1" p="(-2.3,-2.823)" fill="black" alignment="w">
+<m>(x_1,y_1)</m>
+</point>
+<point at="lc-P2" p="(2.3,-2.823)" fill="black" alignment="e">
+<m>(x_2,y_2)</m>
+</point>
+<point at="lc-Pstar" p="(0,-1.5)" fill="black" alignment="se">
+<m>(x^*,y^*)</m>
+</point>
+<label at="lc-c1-label" anchor="(0,1.12)" alignment="c">
+<m>f=c_1</m>
+</label>
+<label at="lc-cstar-label" anchor="(-1.28,1.28)" alignment="c" color="#D55E00">
+<m>f=c^*</m>
+</label>
+<label at="lc-c3-label" anchor="(0,2.12)" alignment="c">
+<m>f=c_3</m>
+</label>
+<label at="lc-c4-label" anchor="(-1.88,1.88)" alignment="c">
+<m>f=c_4</m>
+</label>
+<label at="lc-c5-label" anchor="(0,3.12)" alignment="c">
+<m>f=c_5</m>
+</label>
+<label at="lc-g-label" anchor="(-2.5,-3.45)" alignment="e" color="#009E73">
+<m>g(x,y)=0</m>
+</label>
+<label at="lc-gradf-label" anchor="(0.14,-2.42)" alignment="e" color="#D55E00">
+<m>\nabla f</m>
+</label>
+<label at="lc-gradg-label" anchor="(0.14,-0.72)" alignment="e" color="#009E73">
+<m>\nabla g</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="Five concentric circles are level curves of f, with values c 1, c star, c 3, c 4, c 5 increasing outward. A green parabola-shaped constraint curve, g of x y equals 0, opens downward and touches the circle f equals c star, drawn in red, at its highest point, labeled x star y star. At that point a red arrow, the gradient of f, points down and a green arrow, the gradient of g, points up: the two gradients are collinear. Two other marked points, x 1 y 1 and x 2 y 2, lie on the constraint curve on either side.">
+  <annotation ref="lc-g" text="The constraint curve, where g of x y equals 0, drawn in green. It crosses the outer level curves of f and is tangent to the level curve f equals c star."/>
+  <annotation ref="lc-cstar" text="The level curve f equals c star, drawn in red, tangent to the constraint curve at the point x star y star."/>
+  <annotation ref="lc-c1" text="The level curve f equals c 1, with c 1 less than c star. The constraint curve never reaches it, so the value c 1 is not attained subject to the constraint."/>
+  <annotation ref="lc-Pstar" text="The constrained minimum, the point x star y star, where the constraint curve is tangent to the level curve f equals c star."/>
+  <annotation ref="lc-gradf" text="The gradient of f at the constrained minimum, drawn in red, perpendicular to the level curve f equals c star."/>
+  <annotation ref="lc-gradg" text="The gradient of g at the constrained minimum, drawn in green, perpendicular to the constraint curve. It is collinear with the gradient of f, here pointing in the opposite direction, so lambda is negative."/>
+  <annotation ref="lc-P1" text="The point x 1 y 1 on the constraint curve. Moving from it toward x star y star, the motion has a component opposite the gradient of f, so the value of f decreases."/>
+  <annotation ref="lc-P2" text="The point x 2 y 2 on the constraint curve. Moving from x star y star toward it, the motion has a component along the gradient of f, so the value of f increases."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+Read the figure by imagining a point moving along the constraint curve
+from <m>(x_1,y_1)</m> to <m>(x_2,y_2)</m>.
+(At each stage compare the direction of travel with <m>\nabla f</m>: the
+sign of that comparison is the sign of the change in <m>f</m>. Say which
+value of <m>f</m> is attained at <m>(x^*,y^*)</m>, why the motion there is
+perpendicular to both gradients, and what that makes the level curve
+<m>f = c^*</m> and the constraint curve do to each other at that point.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,13);
+\draw[gray!35] (0,9.75) -- (15,9.75);
+\draw[gray!35] (0,6.5) -- (15,6.5);
+\draw[gray!35] (0,3.25) -- (15,3.25);
+\node[anchor=north west, font=\small\itshape] at (0.35,12.7) {on the way in, from $(x_1,y_1)$:};
+\node[anchor=north west, font=\small\itshape] at (0.35,9.45) {at $(x^*,y^*)$:};
+\node[anchor=north west, font=\small\itshape] at (0.35,6.2) {on the way out, to $(x_2,y_2)$:};
+\node[anchor=north west, font=\small\itshape] at (0.35,2.95) {the two curves at $(x^*,y^*)$:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in four rows for reading the figure: how the value of the function changes on the way in, what happens at the constrained minimum, how it changes on the way out, and the relationship between the level curve and the constraint curve there.</shortdescription>
+</image>
+</sidebyside>
+
+<figure xml:id="fig-skel-lagrange-collinear-video">
+<caption>
+<xref ref="fig-skel-lagrange-level-curves"/>, set moving. A point travels
+along the constraint curve from <m>(x_1,y_1)</m> to <m>(x_2,y_2)</m>
+carrying the unit tangent <m>\hat{T}</m> (blue) and <m>\nabla f</m>
+(red); the shaded band on <m>\hat{T}</m> is the component of
+<m>\nabla f</m> along the direction of travel, and the gauge beside the
+picture reads off the value of <m>f</m>. The component is negative and
+shrinking on the way in, zero at <m>(x^*,y^*)</m>, and positive on the
+way out, so <m>f</m> falls to the constrained minimum <m>c^*</m> and
+rises again. Since <m>\hat{T}</m> is perpendicular to <m>\nabla g</m>
+as well, the two gradients are collinear there,
+<xref ref="eq-skel-lagrange-collinear"/>, and the level curve
+<m>f = c^*</m> is tangent to the constraint curve.
+</caption>
+<video xml:id="video-skel-lagrange-collinear"
+       source="videos/lagrange_collinear_manim.mp4"
+       width="100%" aspect="16:9"/>
+</figure>
+
+<p>
+Suppose we find the set <m>S</m> of points <m>(x,y)</m> satisfying the
+two equations
+<md>
+<mrow>g(x,y) \amp= 0,</mrow>
+<mrow>\nabla f \amp= \lambda\, \nabla g \quad \text{for some } \lambda.</mrow>
+</md>
+Then <m>S</m> contains the local extrema of <m>f</m> subject to the
+constraint <m>g(x,y) = 0</m>. The same reasoning applies to functions of
+three variables: there the constraint <m>g(x,y,z) = 0</m> defines a level
+surface of <m>g</m>, the gradient <m>\nabla g</m> is perpendicular to
+that surface, and at a constrained extremum <m>\nabla f</m> can have no
+component tangent to the surface, so once again <m>\nabla f</m> and
+<m>\nabla g</m> must be collinear.
+</p>
+
+</subsubsection>
+
+<!-- ================================================================ -->
+<subsubsection xml:id="subsubsec-skel-lagrange-statement">
+<title>Stating the Method</title>
+
+<theorem xml:id="thm-skel-lagrange-multipliers">
+<title>The Method of Lagrange Multipliers</title>
+<statement>
+<p>
+Let <m>f(x,y,z)</m> and <m>g(x,y,z)</m> be differentiable functions. To
+find the local maximum and minimum values of <m>f</m> subject to the
+constraint <m>g(x,y,z) = 0</m>, find the values of <m>x</m>, <m>y</m>,
+<m>z</m>, and <m>\lambda</m> that simultaneously satisfy the equations
+<md xml:id="eq-skel-lagrange-method" number="yes">
+\nabla f = \lambda\, \nabla g
+\qquad \text{and} \qquad
+g(x,y,z) = 0.
+</md>
+For functions of two variables <m>f(x,y)</m> and <m>g(x,y)</m>, the same
+equations apply, with the variable <m>z</m> omitted.
+</p>
+</statement>
+</theorem>
+
+<p>
+The number <m>\lambda</m> is called a <term>Lagrange multiplier</term>.
+The equation <m>\nabla f = \lambda\,\nabla g</m> is a vector equation,
+so it holds component by component; together with the constraint it
+gives four equations in the four unknowns <m>x</m>, <m>y</m>, <m>z</m>,
+<m>\lambda</m> (three equations in <m>x</m>, <m>y</m>, <m>\lambda</m>
+for functions of two variables). Notice that we are usually not
+interested in the value of <m>\lambda</m> itself: it is an auxiliary
+unknown that we eliminate along the way while solving for the
+coordinates of the candidate points.
+</p>
+
+</subsubsection>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="subsec-skel-lagrange-examples">
+<title>Examples</title>
+
+<subsubsection xml:id="subsubsec-skel-lagrange-example-ellipse">
+<title>Extrema on an Ellipse</title>
+
+<p>
+In the first example, we find the greatest and smallest values of a
+function whose domain is restricted to a curve in the plane, namely an
+ellipse.
+</p>
+
+<example xml:id="ex-skel-lagrange-ellipse">
+<title>Extrema of <m>f(x,y) = xy</m> on an Ellipse</title>
+<statement>
+<p>
+Find the greatest and smallest values that the function
+<m>f(x,y) = xy</m> takes over the ellipse
+<md xml:id="eq-skel-lagrange-ellipse" number="yes">
+\frac{x^2}{8} + \frac{y^2}{2} = 1.
+</md>
+</p>
+</statement>
+
+<p>
+<em>Solution.</em>
+(First rewrite <xref ref="eq-skel-lagrange-ellipse"/> in the form
+<m>g = 0</m> that <xref ref="eq-skel-lagrange-method"/> requires, then
+compute both gradients and read the vector equation one component at a
+time. Substituting one component equation into the other clears <m>x</m>
+and leaves an equation in <m>\lambda</m> alone; it has a second root
+<m>y = 0</m>, which must be discarded <mdash/> say why. Finish with the
+constraint, evaluate <m>f</m> at the points you get, and say what makes
+the largest and smallest of those values the <em>absolute</em>
+extrema.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,16);
+\draw[gray!35] (0,13) -- (15,13);
+\draw[gray!35] (0,10) -- (15,10);
+\draw[gray!35] (0,6.5) -- (15,6.5);
+\draw[gray!35] (0,3.5) -- (15,3.5);
+\node[anchor=north west, font=\small\itshape] at (0.35,15.7) {$g(x,y) = 0$:};
+\node[anchor=north west, font=\small\itshape] at (0.35,12.7) {$\nabla f$ and $\nabla g$:};
+\node[anchor=north west, font=\small\itshape] at (0.35,9.7) {the component equations:};
+\node[anchor=north west, font=\small\itshape] at (0.35,6.2) {$\lambda$, and the points on the ellipse:};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.2) {the values of $f$, and the absolute extrema:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in five rows: the constraint written in the form g equals zero, the two gradients, the component equations of the multiplier condition, the multiplier together with the points found from the constraint, and the values of the function with the absolute maximum and minimum.</shortdescription>
+</image>
+</sidebyside>
+</example>
+
+<figure xml:id="fig-skel-lagrange-ellipse-prefigure">
+<caption>
+The ellipse <m>\frac{x^2}{8} + \frac{y^2}{2} = 1</m> and the level
+curves of <m>f(x,y) = xy</m>. The hyperbolas <m>xy = \pm 2</m> are
+tangent to the ellipse at the four extremal points, where
+<m>\nabla f = \lambda\,\nabla g</m>. The two gradients are drawn at all
+four points: at the maxima <m>(\pm 2, \pm 1)</m> they point the same way
+(<m>\lambda = 2</m>), and at the minima <m>(\mp 2, \pm 1)</m> they point
+in opposite directions (<m>\lambda = -2</m>). Where they overlap, the two
+arrows are drawn slightly apart so both are visible.
+</caption>
+<image width="85%">
+<prefigure xmlns="https://prefigure.org" label="skel-prefigure-lagrange-ellipse">
+<diagram dimensions="(460,300)" margins="10">
+<definition>el(t) = (2.8284*cos(t), 1.4142*sin(t))</definition>
+<definition>h2a(t) = (t, 2/t)</definition>
+<definition>h2b(t) = (t, -2/t)</definition>
+<definition>h1a(t) = (t, 1/t)</definition>
+<definition>h1b(t) = (t, -1/t)</definition>
+<coordinates bbox="(-4.3,-2.75,4.3,2.75)">
+<axes at="ee-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+<parametric-curve at="ee-h1-q1" function="h1a" domain="(0.42,4.2)"
+                  stroke="#7F7F7F" thickness="1.5"/>
+<parametric-curve at="ee-h1-q3" function="h1a" domain="(-4.2,-0.42)"
+                  stroke="#7F7F7F" thickness="1.5"/>
+<parametric-curve at="ee-hm1-q2" function="h1b" domain="(-4.2,-0.42)"
+                  stroke="#7F7F7F" thickness="1.5"/>
+<parametric-curve at="ee-hm1-q4" function="h1b" domain="(0.42,4.2)"
+                  stroke="#7F7F7F" thickness="1.5"/>
+<parametric-curve at="ee-h2-q1" function="h2a" domain="(0.8,4.2)"
+                  stroke="#D55E00" thickness="2"/>
+<parametric-curve at="ee-h2-q3" function="h2a" domain="(-4.2,-0.8)"
+                  stroke="#D55E00" thickness="2"/>
+<parametric-curve at="ee-hm2-q2" function="h2b" domain="(-4.2,-0.8)"
+                  stroke="#D55E00" thickness="2"/>
+<parametric-curve at="ee-hm2-q4" function="h2b" domain="(0.8,4.2)"
+                  stroke="#D55E00" thickness="2"/>
+<parametric-curve at="ee-ellipse" function="el" domain="(0,6.2832)"
+                  stroke="#009E73" thickness="2.5"/>
+<vector at="ee-gradf" v="(0.55,1.10)" tail="(2,1)"
+        stroke="#D55E00" thickness="3"/>
+<vector at="ee-gradg" v="(0.275,0.55)" tail="(2.063,0.969)"
+        stroke="#009E73" thickness="3"/>
+<vector at="ee-gradf-max2" v="(-0.55,-1.10)" tail="(-2,-1)"
+        stroke="#D55E00" thickness="3"/>
+<vector at="ee-gradg-max2" v="(-0.275,-0.55)" tail="(-2.063,-0.969)"
+        stroke="#009E73" thickness="3"/>
+<vector at="ee-gradf-min1" v="(0.55,-1.10)" tail="(-2,1)"
+        stroke="#D55E00" thickness="3"/>
+<vector at="ee-gradg-min1" v="(-0.275,0.55)" tail="(-2,1)"
+        stroke="#009E73" thickness="3"/>
+<vector at="ee-gradf-min2" v="(-0.55,1.10)" tail="(2,-1)"
+        stroke="#D55E00" thickness="3"/>
+<vector at="ee-gradg-min2" v="(0.275,-0.55)" tail="(2,-1)"
+        stroke="#009E73" thickness="3"/>
+<point at="ee-max1" p="(2,1)" fill="black" alignment="w">
+<m>(2,1)</m>
+</point>
+<point at="ee-max2" p="(-2,-1)" fill="black" alignment="e">
+<m>(-2,-1)</m>
+</point>
+<point at="ee-min1" p="(-2,1)" fill="black" alignment="e">
+<m>(-2,1)</m>
+</point>
+<point at="ee-min2" p="(2,-1)" fill="black" alignment="w">
+<m>(2,-1)</m>
+</point>
+<label at="ee-h2-label" anchor="(3.75,0.85)" alignment="w" color="#D55E00">
+<m>xy=2</m>
+</label>
+<label at="ee-hm2-label" anchor="(-3.6,1.35)" alignment="e" color="#D55E00">
+<m>xy=-2</m>
+</label>
+<label at="ee-h1-label" anchor="(-4.2,-0.5)" alignment="e">
+<m>xy=1</m>
+</label>
+<label at="ee-ellipse-label" anchor="(-4.2,1.9)" alignment="e" color="#009E73">
+<m>\frac{x^2}{8}+\frac{y^2}{2}=1</m>
+</label>
+<label at="ee-gradf-label" anchor="(2.62,2.14)" alignment="ne" color="#D55E00">
+<m>\nabla f</m>
+</label>
+<label at="ee-gradg-label" anchor="(2.45,1.48)" alignment="e" color="#009E73">
+<m>\nabla g</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="The x y plane with a green ellipse centered at the origin and several hyperbolas that are level curves of f equals x y. The red hyperbolas x y equals 2 and x y equals negative 2 are tangent to the ellipse at the four points 2 comma 1, negative 2 comma negative 1, negative 2 comma 1, and 2 comma negative 1. At each of the four points a red arrow shows the gradient of f and a green arrow shows the gradient of g, and in every case the two arrows are collinear. At the two maximum points, 2 comma 1 and negative 2 comma negative 1, they point in the same direction, so lambda is positive; at the two minimum points, negative 2 comma 1 and 2 comma negative 1, they point in opposite directions, so lambda is negative.">
+  <annotation ref="ee-ellipse" text="The constraint ellipse, x squared over 8 plus y squared over 2 equals 1, drawn in green."/>
+  <annotation ref="ee-h2-q1" text="The branch of the level curve x y equals 2 in the first quadrant, drawn in red, tangent to the ellipse at the point 2 comma 1, where f attains its maximum value 2."/>
+  <annotation ref="ee-h2-q3" text="The branch of the level curve x y equals 2 in the third quadrant, drawn in red, tangent to the ellipse at the point negative 2 comma negative 1, where f also attains its maximum value 2."/>
+  <annotation ref="ee-hm2-q2" text="The branch of the level curve x y equals negative 2 in the second quadrant, drawn in red, tangent to the ellipse at negative 2 comma 1, where f attains its minimum value negative 2."/>
+  <annotation ref="ee-hm2-q4" text="The branch of the level curve x y equals negative 2 in the fourth quadrant, drawn in red, tangent to the ellipse at 2 comma negative 1, where f also attains its minimum value negative 2."/>
+  <annotation ref="ee-h1-q1" text="The level curves x y equals 1 and x y equals negative 1, drawn in gray, which cross the ellipse instead of being tangent to it: the values 1 and negative 1 are attained but are not extreme values."/>
+  <annotation ref="ee-max1" text="The point 2 comma 1, where the absolute maximum value 2 is attained."/>
+  <annotation ref="ee-gradf" text="The gradient of f at the point 2 comma 1, drawn in red: it equals i plus 2 j."/>
+  <annotation ref="ee-gradg" text="The gradient of g at the point 2 comma 1, drawn in green: it equals one half i plus j, so the gradient of f is exactly twice the gradient of g, and lambda equals 2. The two arrows are drawn slightly apart so both are visible."/>
+  <annotation ref="ee-gradf-max2" text="The gradient of f at the point negative 2 comma negative 1, drawn in red: it equals negative i minus 2 j."/>
+  <annotation ref="ee-gradg-max2" text="The gradient of g at the point negative 2 comma negative 1, drawn in green: it equals negative one half i minus j, so again the gradient of f is twice the gradient of g and lambda equals 2. The two arrows point the same way and are drawn slightly apart so both are visible."/>
+  <annotation ref="ee-gradf-min1" text="The gradient of f at the point negative 2 comma 1, drawn in red: it equals i minus 2 j, pointing into the ellipse."/>
+  <annotation ref="ee-gradg-min1" text="The gradient of g at the point negative 2 comma 1, drawn in green: it equals negative one half i plus j, pointing out of the ellipse. The two arrows lie along the same line but point in opposite directions, so the gradient of f is negative 2 times the gradient of g and lambda equals negative 2."/>
+  <annotation ref="ee-gradf-min2" text="The gradient of f at the point 2 comma negative 1, drawn in red: it equals negative i plus 2 j, pointing into the ellipse."/>
+  <annotation ref="ee-gradg-min2" text="The gradient of g at the point 2 comma negative 1, drawn in green: it equals one half i minus j, pointing out of the ellipse. Here too the two gradients are collinear and opposite, so lambda equals negative 2."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+The figure is worth checking against the answer.
+(Pick the point <m>(2,1)</m>, compute <m>\nabla f</m> and <m>\nabla g</m>
+there, and confirm that one is a multiple of the other with exactly the
+<m>\lambda</m> you found. Then say what the level curves <m>xy = \pm 2</m>
+do to the ellipse at the four extremal points, and what the gray level
+curves <m>xy = \pm 1</m> do instead.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,9);
+\draw[gray!35] (0,4.5) -- (15,4.5);
+\node[anchor=north west, font=\small\itshape] at (0.35,8.7) {the two gradients at $(2,1)$, and $\lambda$:};
+\node[anchor=north west, font=\small\itshape] at (0.35,4.2) {the extremal level curves, and the others:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in two rows, one for the two gradients at the point two comma one with the multiplier relating them, and one for how the extremal level curves and the remaining level curves meet the ellipse.</shortdescription>
+</image>
+</sidebyside>
+
+</subsubsection>
+
+<!-- ================================================================ -->
+<subsubsection xml:id="subsubsec-skel-lagrange-example-distance">
+<title>Shortest Distance to a Plane</title>
+
+<p>
+In <xref ref="ex-skel-shortest-distance"/> we found the shortest
+distance from a point to a plane by substituting the equation of the
+plane into the distance function and minimizing the resulting function
+of two variables with the second derivative test. In the next example we
+solve the same problem with Lagrange multipliers, and then once more
+using the normal vector to the plane.
+</p>
+
+<example xml:id="ex-skel-lagrange-distance">
+<title>Shortest Distance to a Plane, Revisited</title>
+<statement>
+<p>
+Find the shortest distance from the point <m>(1,0,-2)</m> to the plane
+<m>x + 2y + z = 4</m>.
+</p>
+</statement>
+
+<p>
+<em>Solution.</em>
+(Minimize the <em>square</em> of the distance rather than the distance
+itself, and say why that is legitimate. Write the plane as <m>g = 0</m>,
+take both gradients, and solve the three component equations for
+<m>x</m>, <m>y</m> and <m>z</m> in terms of <m>\lambda</m>; the
+constraint then pins <m>\lambda</m> down in one line. Report the closest
+point and the distance.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,15);
+\draw[gray!35] (0,11.6) -- (15,11.6);
+\draw[gray!35] (0,8.2) -- (15,8.2);
+\draw[gray!35] (0,4.2) -- (15,4.2);
+\node[anchor=north west, font=\small\itshape] at (0.35,14.7) {$f$ to minimize, and $g$:};
+\node[anchor=north west, font=\small\itshape] at (0.35,11.3) {$\nabla f$ and $\nabla g$:};
+\node[anchor=north west, font=\small\itshape] at (0.35,7.9) {$x$, $y$, $z$ in terms of $\lambda$, then $\lambda$:};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.9) {the closest point, and the distance:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in four rows: the function to minimize together with the constraint function, the two gradients, the coordinates in terms of the multiplier followed by the value of the multiplier, and the closest point with the resulting distance.</shortdescription>
+</image>
+</sidebyside>
+</example>
+
+<figure xml:id="fig-skel-lagrange-plane-prefigure">
+<caption>
+A schematic, edge-on view of the plane <m>x + 2y + z = 4</m> and the
+point <m>P_0(1,0,-2)</m>. The shortest segment from <m>P_0</m> to the
+plane is along the normal vector <m>\mathbf n</m>; the dashed segments,
+which reach the plane in any other direction, are longer.
+</caption>
+<image width="75%">
+<prefigure xmlns="https://prefigure.org" label="skel-prefigure-lagrange-plane">
+<diagram dimensions="(450,290)" margins="10">
+<coordinates bbox="(-1.0,-0.8,4.3,2.5)">
+<line at="pd-plane" endpoints="((-0.6,2.25),(3.6,0.15))"
+      stroke="#009E73" thickness="2.5"/>
+<line at="pd-far1" endpoints="((0.8,-0.4),(-0.3,2.1))"
+      stroke="#7F7F7F" dash="5 4" thickness="1.5"/>
+<line at="pd-far2" endpoints="((0.8,-0.4),(2.9,0.5))"
+      stroke="#7F7F7F" dash="5 4" thickness="1.5"/>
+<line at="pd-ra1" endpoints="((1.714,1.093),(1.647,0.959))"
+      stroke="black" thickness="1.5"/>
+<line at="pd-ra2" endpoints="((1.647,0.959),(1.513,1.026))"
+      stroke="black" thickness="1.5"/>
+<vector at="pd-seg" v="(0.78,1.56)" tail="(0.8,-0.4)"
+        stroke="#D55E00" thickness="3"/>
+<vector at="pd-n" v="(0.335,0.671)" tail="(3.1,0.4)"
+        stroke="#0072B2" thickness="3"/>
+<point at="pd-P0" p="(0.8,-0.4)" fill="black" alignment="s">
+<m>P_0(1,0,-2)</m>
+</point>
+<point at="pd-P" p="(1.58,1.16)" fill="black" alignment="w">
+<m>P\left(\frac{11}{6},\frac{5}{3},-\frac{7}{6}\right)</m>
+</point>
+<label at="pd-plane-label" anchor="(-0.5,2.32)" alignment="e" color="#009E73">
+<m>x+2y+z=4</m>
+</label>
+<label at="pd-d-label" anchor="(1.32,0.38)" alignment="e" color="#D55E00">
+<m>d=\frac{5}{6}\sqrt{6}</m>
+</label>
+<label at="pd-n-label" anchor="(4.25,1.45)" alignment="w" color="#0072B2">
+<m>\mathbf n=\hat{\imath}+2\,\hat{\jmath}+\hat{k}</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A schematic edge-on view. A green slanted line represents the plane x plus 2 y plus z equals 4. Below it is the point P 0 with coordinates 1, 0, negative 2. A red arrow runs from P 0 perpendicularly to the plane, meeting it at the closest point P with coordinates 11 sixths, 5 thirds, negative 7 sixths; a small square marks the right angle. Two dashed gray segments from P 0 reach the plane at other points and are visibly longer. A blue arrow on the plane shows the normal vector n equals i plus 2 j plus k.">
+  <annotation ref="pd-plane" text="The plane x plus 2 y plus z equals 4, drawn edge-on as a green line."/>
+  <annotation ref="pd-P0" text="The point P 0 with coordinates 1, 0, negative 2, lying off the plane."/>
+  <annotation ref="pd-seg" text="The shortest segment, drawn in red, from P 0 to the plane. It has length d equals five sixths times the square root of 6 and meets the plane at a right angle."/>
+  <annotation ref="pd-P" text="The closest point P on the plane, with coordinates 11 sixths, 5 thirds, negative 7 sixths."/>
+  <annotation ref="pd-n" text="The normal vector n equals i plus 2 j plus k of the plane, drawn in blue. The shortest segment from P 0 is parallel to it."/>
+  <annotation ref="pd-far1" text="A dashed segment from P 0 to another point of the plane, longer than the perpendicular segment."/>
+  <annotation ref="pd-far2" text="A second dashed segment from P 0 to another point of the plane, also longer than the perpendicular segment."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+<em>Another solution, using the normal to the plane.</em>
+(<xref ref="fig-skel-lagrange-plane-prefigure"/> says that the shortest
+segment meets the plane at a right angle, so
+<m>\overrightarrow{P_0 P}</m> is parallel to the normal vector
+<m>\mathbf n</m> of the plane <mdash/> read <m>\mathbf n</m> off the
+coefficients. Write that parallelism with a scalar, substitute into the
+equation of the plane, and check that you land on the same point as
+before.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,11);
+\draw[gray!35] (0,7.3) -- (15,7.3);
+\draw[gray!35] (0,3.6) -- (15,3.6);
+\node[anchor=north west, font=\small\itshape] at (0.35,10.7) {$\mathbf n$, and $\overrightarrow{P_0 P}$ parallel to it:};
+\node[anchor=north west, font=\small\itshape] at (0.35,7.0) {substituting into the plane:};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.3) {the point, and the distance:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in three rows: the normal vector with the parallelism condition on the segment, the substitution into the equation of the plane, and the resulting point and distance.</shortdescription>
+</image>
+</sidebyside>
+
+<p>
+The two solutions are more closely related than they look.
+(Write <m>\nabla f</m> at the closest point in terms of
+<m>\overrightarrow{P_0 P}</m>, and <m>\nabla g</m> in terms of
+<m>\mathbf n</m>. Then say in one sentence what the Lagrange condition
+<xref ref="eq-skel-lagrange-collinear"/> is asserting geometrically.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,6);
+\node[anchor=north west, font=\small\itshape] at (0.35,5.7) {$\nabla f$, $\nabla g$, and what $\nabla f = \lambda \nabla g$ says here:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box for writing the two gradients at the closest point in geometric terms and stating what the collinearity condition means there.</shortdescription>
+</image>
+</sidebyside>
+
+</subsubsection>
+
+<!-- ================================================================ -->
+<subsubsection xml:id="subsubsec-skel-lagrange-example-circle">
+<title>Absolute Extrema on a Circle</title>
+
+<example xml:id="ex-skel-lagrange-circle">
+<title>Absolute Extrema on a Circle</title>
+<statement>
+<p>
+Find the absolute maximum and minimum of
+<m>f(x,y) = x^2 + y^2 - 2x + 2y + 5</m>, given the constraint
+<m>x^2 + y^2 = 4</m>.
+</p>
+</statement>
+
+<p>
+Completing the squares shows that
+<md xml:id="eq-skel-lagrange-circle-square" number="yes">
+f(x,y) = (x-1)^2 + (y+1)^2 + 3,
+</md>
+so the graph of <m>f</m> is a paraboloid with vertex at
+<m>(1,-1,3)</m>, and the level curves of <m>f</m> are the circles
+<m>(x-1)^2 + (y+1)^2 = c - 3</m> centered at <m>(1,-1)</m>. The
+constraint <m>g(x,y) = x^2 + y^2 - 4 = 0</m> is a circle of radius
+<m>2</m> centered at the origin. Restricting <m>f</m> to that circle
+traces a curve on the paraboloid, and we are after the highest and
+lowest points of that curve.
+</p>
+
+<p>
+<em>Solution.</em>
+(Compute both gradients and read
+<xref ref="eq-skel-lagrange-method"/> component by component. Here adding
+the two component equations is what unlocks the system: it factors, and
+one of the two cases it offers is impossible <mdash/> substitute that
+value of <m>\lambda</m> back and say what goes wrong. The other case
+plus the constraint gives the points; evaluate <m>f</m> there using
+<xref ref="eq-skel-lagrange-circle-square"/>, and say why these are the
+absolute extrema.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,16);
+\draw[gray!35] (0,13) -- (15,13);
+\draw[gray!35] (0,9.5) -- (15,9.5);
+\draw[gray!35] (0,6) -- (15,6);
+\draw[gray!35] (0,3) -- (15,3);
+\node[anchor=north west, font=\small\itshape] at (0.35,15.7) {$\nabla f$ and $\nabla g$:};
+\node[anchor=north west, font=\small\itshape] at (0.35,12.7) {the component equations:};
+\node[anchor=north west, font=\small\itshape] at (0.35,9.2) {adding them, and the case that fails:};
+\node[anchor=north west, font=\small\itshape] at (0.35,5.7) {the points on the constraint circle:};
+\node[anchor=north west, font=\small\itshape] at (0.35,2.7) {the values of $f$, and the absolute extrema:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in five rows: the two gradients, the component equations, the equation obtained by adding them together with the case that has to be ruled out, the points found from the constraint, and the values of the function with the absolute extrema.</shortdescription>
+</image>
+</sidebyside>
+</example>
+
+<p>
+There is a second, purely geometric route to the same two numbers.
+(By <xref ref="eq-skel-lagrange-circle-square"/>, on any point of the
+plane <m>f</m> is <m>3</m> plus the square of the distance to
+<m>(1,-1)</m>. Find the points of the constraint circle farthest from and
+nearest to <m>(1,-1)</m> <mdash/> the center of that circle is the origin,
+and <m>(1,-1)</m> sits inside it <mdash/> and recompute the two extreme
+values from their distances.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,9);
+\draw[gray!35] (0,4.5) -- (15,4.5);
+\node[anchor=north west, font=\small\itshape] at (0.35,8.7) {farthest point and its distance, and the value of $f$:};
+\node[anchor=north west, font=\small\itshape] at (0.35,4.2) {nearest point and its distance, and the value of $f$:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in two rows, one for the point of the constraint circle farthest from the vertex with its distance and the value of the function there, and one for the nearest point treated the same way.</shortdescription>
+</image>
+</sidebyside>
+
+<p>
+Note also that in <xref ref="fig-skel-lagrange-circle-prefigure"/> the
+gradients <m>\nabla f</m> and <m>\nabla g</m> point in the same direction
+at both extrema, but with different multipliers.
+(Get each one from the component equation <m>x - 1 = \lambda x</m>.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,5);
+\draw[gray!35] (0,2.5) -- (15,2.5);
+\node[anchor=north west, font=\small\itshape] at (0.35,4.7) {$\lambda$ at the minimum:};
+\node[anchor=north west, font=\small\itshape] at (0.35,2.2) {$\lambda$ at the maximum:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in two rows, one for the value of the multiplier at the constrained minimum and one for its value at the constrained maximum.</shortdescription>
+</image>
+</sidebyside>
+
+<p>
+The video below animates this picture. The completed-square form
+<xref ref="eq-skel-lagrange-circle-square"/> shows that, with no
+constraint, <m>f</m> would take its least possible value <m>3</m> at the
+vertex <m>(1,-1)</m><mdash/>the bottom of the paraboloid. But that vertex
+lies <em>inside</em> the constraint circle (a distance
+<m>\sqrt 2 \lt 2</m> from the origin), so it is not available to us here:
+the method of Lagrange multipliers instead locates the highest and lowest
+points of <m>f</m> <em>along</em> the circle. As the level circles of
+<m>f</m> expand outward from <m>(1,-1)</m>, the first one to reach the
+constraint circle gives the constrained minimum and the last gives the
+maximum; at each of these contacts the two circles are tangent and
+<m>\nabla f</m> is parallel to <m>\nabla g</m>.
+</p>
+
+<figure xml:id="fig-skel-lagrange-circle-video">
+<caption>
+The extrema of <m>f</m> on the constraint circle <m>x^2 + y^2 = 4</m>
+(green). Over that circle the paraboloid carries the light blue curve,
+and we are after its highest and lowest points. The level circles of
+<m>f</m> (red), centered at the vertex <m>(1,-1)</m> where <m>f = 3</m>,
+expand until they touch the constraint circle; the first contact is the
+constrained minimum <m>B</m> and the last is the maximum <m>A</m>, and at
+both the gradients <m>\nabla f</m> and <m>\nabla g</m> line up,
+<m>\nabla f = \lambda\,\nabla g</m>.
+</caption>
+<video xml:id="video-skel-lagrange-example3"
+       source="videos/lagrange_circle_extrema_manim.mp4"
+       width="100%" aspect="16:9"/>
+</figure>
+
+<figure xml:id="fig-skel-lagrange-circle-prefigure">
+<caption>
+The constraint circle <m>x^2 + y^2 = 4</m> and three level curves of
+<m>f(x,y) = x^2+y^2-2x+2y+5</m>, which are circles centered at
+<m>(1,-1)</m>. The extreme level curves <m>f = 9 \pm 4\sqrt 2</m> are
+tangent to the constraint circle, while an intermediate level curve
+(dashed) crosses it. At each point of tangency
+<m>\nabla f = \lambda\,\nabla g</m>.
+</caption>
+<image width="80%">
+<prefigure xmlns="https://prefigure.org" label="skel-prefigure-lagrange-circle">
+<diagram dimensions="(430,395)" margins="10">
+<definition>cc(t) = (2*cos(t), 2*sin(t))</definition>
+<definition>lmin(t) = (1 + 0.5858*cos(t), -1 + 0.5858*sin(t))</definition>
+<definition>lmax(t) = (1 + 3.4142*cos(t), -1 + 3.4142*sin(t))</definition>
+<definition>lmid(t) = (1 + 2*cos(t), -1 + 2*sin(t))</definition>
+<coordinates bbox="(-4.0,-4.7,4.9,3.4)">
+<axes at="cl-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
+<parametric-curve at="cl-lmid" function="lmid" domain="(0,6.2832)"
+                  stroke="#7F7F7F" dash="6 4" thickness="1.5"/>
+<parametric-curve at="cl-lmin" function="lmin" domain="(0,6.2832)"
+                  stroke="#D55E00" thickness="2"/>
+<parametric-curve at="cl-lmax" function="lmax" domain="(0,6.2832)"
+                  stroke="#D55E00" thickness="2"/>
+<parametric-curve at="cl-constraint" function="cc" domain="(0,6.2832)"
+                  stroke="#009E73" thickness="2.5"/>
+<line at="cl-leader" endpoints="((0.55,-1.5),(-1.45,-2.42))"
+      stroke="#7F7F7F" thickness="1"/>
+<vector at="cl-gradf-max" v="(-1.448,1.448)" tail="(-1.414,1.414)"
+        stroke="#D55E00" thickness="3"/>
+<vector at="cl-gradg-max" v="(-0.848,0.848)" tail="(-1.357,1.471)"
+        stroke="#009E73" thickness="3"/>
+<vector at="cl-gradf-min" v="(0.248,-0.248)" tail="(1.456,-1.372)"
+        stroke="#D55E00" thickness="3"/>
+<vector at="cl-gradg-min" v="(0.848,-0.848)" tail="(1.372,-1.456)"
+        stroke="#009E73" thickness="3"/>
+<point at="cl-center" p="(1,-1)" fill="black"/>
+<line at="cl-center-leader" endpoints="((0.80,-1.55),(0.70,-1.83))"
+      stroke="#7F7F7F" thickness="1"/>
+<label at="cl-center-label" anchor="(0.66,-1.95)" alignment="s">
+<m>(1,-1)</m>
+</label>
+<point at="cl-max" p="(-1.414,1.414)" fill="black" alignment="sw">
+<m>(-\sqrt 2,\sqrt 2)</m>
+</point>
+<point at="cl-min" p="(1.414,-1.414)" fill="black"/>
+<line at="cl-min-leader" endpoints="((1.45,-1.55),(1.8,-2.9))"
+      stroke="#7F7F7F" thickness="1"/>
+<label at="cl-min-label" anchor="(1.8,-3.0)" alignment="s">
+<m>(\sqrt 2,-\sqrt 2)</m>
+</label>
+<label at="cl-constraint-label" anchor="(2.15,0.95)" alignment="e" color="#009E73">
+<m>x^2+y^2=4</m>
+</label>
+<label at="cl-lmax-label" anchor="(1.05,2.5)" alignment="n" color="#D55E00">
+<m>f=9+4\sqrt 2</m>
+</label>
+<label at="cl-lmin-label" anchor="(-1.55,-2.5)" alignment="w" color="#D55E00">
+<m>f=9-4\sqrt 2</m>
+</label>
+<label at="cl-lmid-label" anchor="(3.02,-1.62)" alignment="e" color="#7F7F7F">
+<m>f=7</m>
+</label>
+<label at="cl-gradf-max-label" anchor="(-2.9,2.9)" alignment="nw" color="#D55E00">
+<m>\nabla f</m>
+</label>
+<label at="cl-gradg-max-label" anchor="(-2.15,2.32)" alignment="e" color="#009E73">
+<m>\nabla g</m>
+</label>
+<label at="cl-gradf-min-label" anchor="(1.78,-1.58)" alignment="e" color="#D55E00">
+<m>\nabla f</m>
+</label>
+<label at="cl-gradg-min-label" anchor="(2.3,-2.42)" alignment="se" color="#009E73">
+<m>\nabla g</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="The x y plane with a green circle of radius 2 centered at the origin, the constraint, and three circles centered at the point 1 comma negative 1, which are level curves of f. A small red circle, f equals 9 minus 4 root 2, is tangent to the constraint circle from inside at the point root 2 comma negative root 2. A large red circle, f equals 9 plus 4 root 2, is tangent to the constraint circle from outside at the point negative root 2 comma root 2. A dashed gray circle, f equals 7, crosses the constraint circle at two points. At each tangency point, red and green arrows show the gradients of f and g pointing in the same direction.">
+  <annotation ref="cl-constraint" text="The constraint circle, x squared plus y squared equals 4, drawn in green, centered at the origin with radius 2."/>
+  <annotation ref="cl-lmax" text="The level curve f equals 9 plus 4 root 2, drawn in red: the largest circle centered at 1 comma negative 1 that still meets the constraint circle. It is tangent to it at negative root 2 comma root 2, where the absolute maximum is attained."/>
+  <annotation ref="cl-lmin" text="The level curve f equals 9 minus 4 root 2, drawn in red: the smallest circle centered at 1 comma negative 1 that meets the constraint circle. It is tangent to it at root 2 comma negative root 2, where the absolute minimum is attained."/>
+  <annotation ref="cl-lmid" text="The intermediate level curve f equals 7, drawn dashed in gray. It crosses the constraint circle at two points instead of being tangent, so the value 7 is attained but is not an extreme value."/>
+  <annotation ref="cl-center" text="The point 1 comma negative 1, the common center of the level curves of f and the location of the minimum of the unconstrained paraboloid."/>
+  <annotation ref="cl-max" text="The point negative root 2 comma root 2, where f attains its absolute maximum 9 plus 4 root 2 on the circle."/>
+  <annotation ref="cl-min" text="The point root 2 comma negative root 2, where f attains its absolute minimum 9 minus 4 root 2 on the circle."/>
+  <annotation ref="cl-gradf-max" text="The gradient of f at the maximum point, drawn in red, pointing away from the constraint circle in the same direction as the gradient of g. Here lambda equals 1 plus 1 over root 2."/>
+  <annotation ref="cl-gradg-max" text="The gradient of g at the maximum point, drawn in green, drawn slightly apart from the gradient of f so both are visible."/>
+  <annotation ref="cl-gradf-min" text="The gradient of f at the minimum point, drawn in red. It is shorter than the gradient of g, since lambda equals 1 minus 1 over root 2 is less than 1."/>
+  <annotation ref="cl-gradg-min" text="The gradient of g at the minimum point, drawn in green, collinear with the gradient of f."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+</subsubsection>
+
+<!-- ================================================================ -->
+<subsubsection xml:id="subsubsec-skel-lagrange-n-variables">
+<title>The Method in <m>n</m> Variables</title>
+
+<p>
+Nothing in the reasoning behind
+<xref ref="thm-skel-lagrange-multipliers"/> depended on the inputs being
+two or three numbers. The constraint <m>g = 0</m> still describes a set
+of points on which we are allowed to move; <m>\nabla g</m> is still
+perpendicular to that set; and at a constrained extremum <m>f</m> still
+cannot be changing along any direction we are allowed to move in, so
+<m>\nabla f</m> can have no component tangent to the constraint set. As
+before, the only way for a vector to be perpendicular to every allowed
+direction is for it to point along <m>\nabla g</m>. So the method reads
+the same way for any number of variables.
+</p>
+
+<theorem xml:id="thm-skel-lagrange-n-variables">
+<title>The Method of Lagrange Multipliers in <m>n</m> Variables</title>
+<statement>
+<p>
+Let <m>f</m> and <m>g</m> be differentiable functions of the <m>n</m>
+variables <m>x_1, x_2, \ldots, x_n</m>. To find the local maximum and
+minimum values of <m>f</m> subject to the constraint
+<m>g(x_1, x_2, \ldots, x_n) = 0</m>, find the values of
+<m>x_1, x_2, \ldots, x_n</m> and <m>\lambda</m> that simultaneously
+satisfy the equations
+<md xml:id="eq-skel-lagrange-n-method" number="yes">
+\nabla f = \lambda\, \nabla g
+\qquad \text{and} \qquad
+g(x_1, x_2, \ldots, x_n) = 0 .
+</md>
+</p>
+</statement>
+</theorem>
+
+<p>
+Here the gradient has <m>n</m> components,
+<md>
+\nabla f = \left(\frac{\partial f}{\partial x_1},\
+\frac{\partial f}{\partial x_2},\ \ldots,\
+\frac{\partial f}{\partial x_n}\right),
+</md>
+and likewise for <m>\nabla g</m>. Reading
+<xref ref="eq-skel-lagrange-n-method"/> one component at a time turns it
+into
+<md>
+<mrow>\frac{\partial f}{\partial x_j} \amp= \lambda\,
+\frac{\partial g}{\partial x_j}, \qquad j = 1, 2, \ldots, n,</mrow>
+</md>
+which together with <m>g = 0</m> is a system of <m>n+1</m> equations in
+the <m>n+1</m> unknowns <m>x_1, x_2, \ldots, x_n, \lambda</m>. For
+<m>n = 2</m> and <m>n = 3</m> this is exactly
+<xref ref="eq-skel-lagrange-method"/>. The bookkeeping grows, but the
+strategy does not: eliminate <m>\lambda</m>, solve for the candidate
+points, and then compare the values of <m>f</m> there.
+</p>
+
+<p>
+One habit does need adjusting. In
+<xref ref="ex-skel-lagrange-ellipse"/> and
+<xref ref="ex-skel-lagrange-circle"/> the constraint curve was closed and
+bounded, so the Extreme Value Theorem guaranteed in advance that the
+absolute maximum and minimum existed and were among the candidate points.
+In <m>n</m> variables a constraint set is often unbounded, and then no
+such guarantee comes for free: after solving the system we must argue
+separately that the point we found really is the extremum we are after.
+The example below does exactly that.
+</p>
+
+</subsubsection>
+
+<!-- ================================================================ -->
+<subsubsection xml:id="subsubsec-skel-lagrange-hm-gm">
+<title>An Inequality Between Two Means</title>
+
+<p>
+Our last application of the method is not an optimization problem at
+first sight: it is an inequality, valid for any number of positive
+numbers, which turns into a constrained optimization problem as soon as
+the right quantity is held fixed. For positive numbers
+<m>x_1, x_2, \ldots, x_n</m>, the <term>harmonic mean</term> and the
+<term>geometric mean</term><fn>You are not expected to have met these
+averages before, and nothing later in the course depends on them. The
+<term>arithmetic mean</term> <m>A = \frac{x_1 + \cdots + x_n}{n}</m> is
+the ordinary average. The <term>geometric mean</term>
+<m>G = \sqrt[n]{x_1 \cdots x_n}</m> is the number that, repeated <m>n</m>
+times, has the same <em>product</em>: for <m>n = 2</m> it is the side of
+a square with the same area as an <m>a</m>-by-<m>b</m> rectangle, and it
+is the right average for growth factors, since an investment that grows
+by factors <m>x_1, \ldots, x_n</m> in successive years grows in total as
+though it had grown by the constant factor <m>G</m> each year. The
+<term>harmonic mean</term> <m>H = \frac{n}{1/x_1 + \cdots + 1/x_n}</m> is
+the reciprocal of the average of the reciprocals, and it is the right
+average for rates: drive one mile at <m>30</m> mph and the next at
+<m>60</m> mph and your average speed over the two miles is the harmonic
+mean <m>40</m> mph, not the arithmetic mean <m>45</m> mph.</fn> are
+<md xml:id="eq-skel-hm-gm-definitions" number="yes">
+H = \frac{n}{1/x_1 + 1/x_2 + \cdots + 1/x_n},
+\qquad
+G = \sqrt[n]{x_1 x_2 \cdots x_n} .
+</md>
+The example below proves that <m>H \le G</m> always, with equality
+exactly when all the numbers are the same. If you are curious about
+where these two averages come from, and about what the inequality
+amounts to for two numbers, where it can be both checked by hand and
+seen in a picture, read
+<xref ref="remark-skel-hm-gm-two-variables"/> after the example; it is
+optional.
+</p>
+
+<example xml:id="ex-skel-lagrange-hm-gm">
+<title>The Harmonic Mean Never Exceeds the Geometric Mean</title>
+<statement>
+<p>
+Let <m>n \ge 2</m> and let <m>x_1, x_2, \ldots, x_n</m> be positive real
+numbers. Use the method of Lagrange multipliers to prove that
+<md xml:id="eq-skel-hm-gm-claim" number="yes">
+\frac{n}{1/x_1 + 1/x_2 + \cdots + 1/x_n}
+\;\le\; \sqrt[n]{x_1 x_2 \cdots x_n},
+</md>
+that is, <m>H \le G</m>, with equality if and only if
+<m>x_1 = x_2 = \cdots = x_n</m>.
+</p>
+</statement>
+
+<p>
+The difficulty is that both sides vary at once. The remedy is to hold
+the right-hand side still: <m>G = \sqrt[n]{x_1 \cdots x_n}</m> depends on
+the numbers only through their product, so it is <em>constant</em> on
+each surface where that product is constant. Write
+<m>g(x_1, \ldots, x_n) = x_1x_2\cdots x_n</m> for that product, fix a
+constant <m>C \gt 0</m>, and work on
+<md xml:id="eq-skel-hm-gm-surface" number="yes">
+\begin{aligned}
+S_C = \bigl\{\, (x_1, \ldots, x_n) : \amp\ x_j \gt 0
+  \text{ for all } j, \\
+\amp\ g(x_1, \ldots, x_n) = C \,\bigr\},
+\end{aligned}
+</md>
+on which <m>G = \sqrt[n]{C}</m> at every single point.
+</p>
+
+<p>
+<em>Setting up.</em>
+(Say why proving the claim on one such <m>S_C</m> proves it for every
+list of positive numbers. Then turn <q>maximize <m>H</m></q> into a
+minimization: <m>H = n/F</m> for a quantity <m>F</m> you should name, and
+<m>F</m> is positive, so the two problems have the same solution. State
+the constrained problem you are about to solve.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,10);
+\draw[gray!35] (0,6.6) -- (15,6.6);
+\draw[gray!35] (0,3.3) -- (15,3.3);
+\node[anchor=north west, font=\small\itshape] at (0.35,9.7) {why one surface $S_C$ is enough:};
+\node[anchor=north west, font=\small\itshape] at (0.35,6.3) {$F =$ \qquad and why maximizing $H$ minimizes $F$:};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.0) {the problem to solve:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in three rows: why working on a single constant product surface suffices, the quantity whose reciprocal gives the harmonic mean together with the reason maximizing one minimizes the other, and the statement of the constrained problem.</shortdescription>
+</image>
+</sidebyside>
+
+<p>
+<em>The minimum exists, and the method can find it.</em>
+(Two ways of drifting to the edge of <m>S_C</m> have to be ruled out:
+one coordinate going to <m>0</m>, and one going to infinity <mdash/>
+remember that the product is pinned at <m>C</m>, so the second drags
+another coordinate along with it. Show that <m>F</m> grows without bound
+in both cases. Then compute <m>\nabla g</m>, simplify each entry using
+<m>g = C</m>, and check that it is never <m>\mathbf 0</m> on
+<m>S_C</m>.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,11);
+\draw[gray!35] (0,5.5) -- (15,5.5);
+\node[anchor=north west, font=\small\itshape] at (0.35,10.7) {$F$ at the two kinds of edge, and what follows:};
+\node[anchor=north west, font=\small\itshape] at (0.35,5.2) {$\nabla g$ on $S_C$, and why it is nonzero:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in two rows, one for the behavior of the sum of reciprocals near the two kinds of boundary and the conclusion that a minimum is attained, and one for the gradient of the constraint function on the surface with the reason it never vanishes.</shortdescription>
+</image>
+</sidebyside>
+
+<p>
+<em>Solving the system.</em>
+(Apply <xref ref="eq-skel-lagrange-n-method"/> to <m>F</m> and <m>g</m>.
+Differentiating <m>g</m> with respect to <m>x_k</m> leaves the product of
+all the <em>other</em> factors; multiplying the resulting equation
+through by <m>x_k^2</m> restores the missing factor and leaves one spare
+copy of <m>x_k</m>, so the whole product <m>C</m> appears. Note what
+<m>\lambda = 0</m> would say, rule it out, and then solve for
+<m>x_k</m>. The answer does not depend on <m>k</m> <mdash/> that is the
+point <mdash/> so use the constraint to pin down the common value.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,14);
+\draw[gray!35] (0,10.5) -- (15,10.5);
+\draw[gray!35] (0,7) -- (15,7);
+\draw[gray!35] (0,3.5) -- (15,3.5);
+\node[anchor=north west, font=\small\itshape] at (0.35,13.7) {the $k$th equation:};
+\node[anchor=north west, font=\small\itshape] at (0.35,10.2) {multiplied through by $x_k^2$:};
+\node[anchor=north west, font=\small\itshape] at (0.35,6.7) {ruling out $\lambda = 0$, and solving for $x_k$:};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.2) {the one Lagrange point of $S_C$:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in four rows: the k th component equation of the multiplier condition, the same equation cleared of fractions, the argument ruling out a zero multiplier together with the solution for each coordinate, and the single Lagrange point on the surface.</shortdescription>
+</image>
+</sidebyside>
+
+<p>
+<em>Finishing.</em>
+(Evaluate <m>F</m> at that point and turn it into a value of <m>H</m>;
+compare with <m>G = \sqrt[n]{C}</m>. Then explain why <em>every other</em>
+point of <m>S_C</m> gives a strictly larger <m>F</m>, and so a strictly
+smaller <m>H</m> <mdash/> there is only one Lagrange point. Finally, say
+which <m>S_C</m> an arbitrary list of positive numbers lies on, and read
+off <xref ref="eq-skel-hm-gm-claim"/> together with its equality case.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,13);
+\draw[gray!35] (0,9) -- (15,9);
+\draw[gray!35] (0,5) -- (15,5);
+\node[anchor=north west, font=\small\itshape] at (0.35,12.7) {$F$ and $H$ at the Lagrange point:};
+\node[anchor=north west, font=\small\itshape] at (0.35,8.7) {why every other point gives $H \le G$ strictly:};
+\node[anchor=north west, font=\small\itshape] at (0.35,4.7) {the conclusion, and the equality case:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in three rows: the values of the sum of reciprocals and of the harmonic mean at the Lagrange point, the reason every other point of the surface gives a strict inequality, and the final statement of the claim with its equality case.</shortdescription>
+</image>
+</sidebyside>
+</example>
+
+<p>
+One last observation costs nothing and doubles the yield.
+(Apply <xref ref="eq-skel-hm-gm-claim"/> not to the numbers <m>x_j</m>
+themselves but to their reciprocals <m>y_j = 1/x_j</m>. Work out what the
+harmonic mean and the geometric mean of the <m>y_j</m> are in terms of
+the arithmetic mean <m>A</m> and the geometric mean <m>G</m> of the
+<m>x_j</m>, then invert the resulting inequality <mdash/> both sides are
+positive, so the direction flips.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,10);
+\draw[gray!35] (0,5) -- (15,5);
+\node[anchor=north west, font=\small\itshape] at (0.35,9.7) {$H$ and $G$ of the reciprocals:};
+\node[anchor=north west, font=\small\itshape] at (0.35,4.7) {the inequality that results:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in two rows, one for the harmonic and geometric means of the reciprocals expressed through the means of the original numbers, and one for the inequality that follows.</shortdescription>
+</image>
+</sidebyside>
+
+<assemblage xml:id="skel-summary-hm-gm-chain">
+<title>The Three Means</title>
+<p>
+Applying <xref ref="eq-skel-hm-gm-claim"/> to the reciprocals gives the
+celebrated inequality between the geometric and arithmetic means,
+<md xml:id="eq-skel-gm-am" number="yes">
+\sqrt[n]{x_1x_2\cdots x_n} \;\le\; \frac{x_1 + x_2 + \cdots + x_n}{n} ,
+</md>
+again with equality exactly when all the <m>x_j</m> are equal. Together
+with the example this establishes the full chain
+<md xml:id="eq-skel-hm-gm-chain" number="yes">
+H \le G \le A
+</md>
+for any number of positive numbers<mdash/>the general form of what
+<xref ref="fig-skel-hm-gm-semicircle"/> shows for two.
+</p>
+</assemblage>
+
+<remark xml:id="remark-skel-hm-gm-two-variables">
+<title>For the Curious: the Two-Variable Case and a Picture</title>
+<p>
+This remark is optional, and nothing later in the course depends on it.
+It is here for the reader curious about what the inequality just proved
+actually says. For two numbers it can be checked with nothing but
+algebra and, better, read off a single picture, along with the
+arithmetic mean for good measure.
+</p>
+<p>
+For <m>n = 2</m> no calculus is needed at all. Write the two positive
+numbers as <m>a</m> and <m>b</m>. Then
+<md xml:id="eq-skel-hm-gm-two-var" number="yes">
+H = \frac{2}{\frac1a + \frac1b} = \frac{2ab}{a+b},
+\qquad
+G = \sqrt{ab},
+</md>
+and since <m>a + b \gt 0</m> and <m>\sqrt{ab} \gt 0</m> we may multiply
+and divide freely without reversing the inequality:
+<md>
+<mrow>\frac{2ab}{a+b} \le \sqrt{ab}
+\amp\;\Longleftrightarrow\; 2ab \le \sqrt{ab}\,(a+b)</mrow>
+<mrow>\amp\;\Longleftrightarrow\; 2\sqrt{ab} \le a + b</mrow>
+<mrow>\amp\;\Longleftrightarrow\; 0 \le a - 2\sqrt{ab} + b
+= \left(\sqrt a - \sqrt b\,\right)^2 ,</mrow>
+</md>
+where the second line divides through by <m>\sqrt{ab} \gt 0</m>, using
+<m>ab = \sqrt{ab}\cdot\sqrt{ab}</m>. The last line is true for every
+choice of <m>a</m> and <m>b</m>, and it is an equality exactly when
+<m>\sqrt a = \sqrt b</m>, that is, when <m>a = b</m>.
+</p>
+<p>
+The middle line of that chain is worth a second look. It says
+<m>\sqrt{ab} \le \frac{a+b}{2}</m>, so for two numbers the statement
+<m>H \le G</m> is the very same statement as <m>G \le A</m>, where
+<m>A</m> is the arithmetic mean. The two-variable case therefore carries
+the whole chain <xref ref="eq-skel-hm-gm-chain"/> on its own, without any
+appeal to <xref ref="eq-skel-gm-am"/>.
+</p>
+<p>
+All three means can be read off a single picture, and the geometric mean
+is the interesting one. It comes from a fact about right triangles: the
+altitude drawn from the right angle to the hypotenuse is the geometric
+mean of the two pieces into which it cuts the hypotenuse. In
+<xref ref="fig-skel-hm-gm-altitude"/> the right angle is at <m>C</m>, the
+altitude <m>CD</m> has length <m>h</m>, and it splits the hypotenuse into
+pieces of lengths <m>a</m> and <m>b</m>. The two small triangles
+<m>ADC</m> and <m>CDB</m> are both similar to the whole triangle
+<m>ACB</m>, hence to each other, so matching the short leg of one against
+the long leg of the other gives
+<md xml:id="eq-skel-hm-gm-altitude" number="yes">
+\frac{a}{h} = \frac{h}{b}
+\quad\Longrightarrow\quad
+h^2 = ab
+\quad\Longrightarrow\quad
+h = \sqrt{ab} = G .
+</md>
+</p>
+<p>
+Now lay the two lengths <m>a</m> and <m>b</m> end to end and draw the
+semicircle having the resulting segment as its diameter, as in
+<xref ref="fig-skel-hm-gm-semicircle"/>. The radius is
+<m>\frac{a+b}{2} = A</m>, drawn vertically at the center <m>O</m>. Any
+triangle inscribed in a semicircle has a right angle at the point on the
+arc, so the vertical segment <m>DC</m> erected where <m>a</m> meets
+<m>b</m> is precisely the altitude of
+<xref ref="eq-skel-hm-gm-altitude"/>: its length is <m>G = \sqrt{ab}</m>.
+Finally drop a perpendicular from <m>D</m> to the radius <m>OC</m>,
+meeting it at <m>M</m>. Applying <xref ref="eq-skel-hm-gm-altitude"/> a
+second time, now to the right triangle <m>ODC</m> with its right angle at
+<m>D</m>, gives <m>DC^2 = CM \cdot CO</m>, so
+<md>
+CM = \frac{DC^2}{CO} = \frac{G^2}{A} = \frac{ab}{\frac{a+b}{2}}
+   = \frac{2ab}{a+b} = H .
+</md>
+The chain <xref ref="eq-skel-hm-gm-chain"/> is now visible rather than
+computed: <m>CM \le CD</m> because a leg of the right triangle
+<m>CMD</m> cannot exceed its hypotenuse, and <m>CD \le CO</m> for the
+same reason in the right triangle <m>ODC</m>. Both become equalities
+exactly when <m>D</m> coincides with <m>O</m>, that is, when
+<m>a = b</m>.
+</p>
+</remark>
+
+<figure xml:id="fig-skel-hm-gm-altitude">
+<caption>
+The altitude from the right angle of a right triangle is the geometric
+mean of the two pieces of the hypotenuse. Here the right angle is at
+<m>C</m>, the altitude <m>CD</m> has length <m>h</m>, and it cuts the
+hypotenuse into pieces of lengths <m>a = 4</m> and <m>b = 1</m>; the
+similar triangles <m>ADC</m> and <m>CDB</m> give
+<m>h = \sqrt{ab} = 2</m>.
+</caption>
+<image width="70%">
+<prefigure xmlns="https://prefigure.org" label="skel-prefigure-hm-gm-altitude">
+<diagram dimensions="(450,268)" margins="10">
+<definition>A=(0,0)</definition>
+<definition>B=(5,0)</definition>
+<definition>C=(4,2)</definition>
+<definition>D=(4,0)</definition>
+<coordinates bbox="(-0.6,-1.0,5.6,2.7)">
+<polygon at="ga-tri-left" points="(A,D,C)" fill="#9EC5E8"
+         stroke="none" opacity="0.35"/>
+<polygon at="ga-tri-right" points="(D,B,C)" fill="#E69F00"
+         stroke="none" opacity="0.30"/>
+<triangle at="ga-triangle" vertices="(A,B,C)" stroke="black"
+          thickness="2.5"/>
+<line at="ga-altitude" endpoints="(C,D)" stroke="#0072B2"
+      thickness="2.5"/>
+<angle-marker at="ga-right-c" points="(A,C,B)" radius="14"
+              clear-background="yes"/>
+<angle-marker at="ga-right-d" points="(B,D,C)" radius="12"
+              clear-background="yes"/>
+<point at="ga-a" p="A" fill="black" alignment="sw"><m>A</m></point>
+<point at="ga-b" p="B" fill="black" alignment="se"><m>B</m></point>
+<point at="ga-c" p="C" fill="black" alignment="ne"><m>C</m></point>
+<point at="ga-d" p="D" fill="black" alignment="s"><m>D</m></point>
+<label at="ga-label-a" anchor="(2,-0.12)" alignment="s">
+<m>a</m>
+</label>
+<label at="ga-label-b" anchor="(4.5,-0.12)" alignment="s">
+<m>b</m>
+</label>
+<label at="ga-label-h" anchor="(3.82,1.18)" alignment="w" color="#0072B2">
+<m>h=\sqrt{ab}</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A right triangle A B C with the right angle at C. The hypotenuse A B is horizontal, running from A on the left to B on the right. The altitude from C meets the hypotenuse at right angles at the point D, splitting it into a left piece of length a and a right piece of length b. The altitude itself has length h. The two small triangles A D C and D B C, shaded in different colors, are similar to the whole triangle and to each other, which forces a over h to equal h over b, so h is the square root of a b, the geometric mean of a and b.">
+  <annotation ref="ga-triangle" text="The right triangle A B C, with the right angle at the top vertex C and the hypotenuse A B along the bottom."/>
+  <annotation ref="ga-right-c" text="The right angle marker at C, on the hypotenuse A B."/>
+  <annotation ref="ga-altitude" text="The altitude from C down to the point D on the hypotenuse, drawn in blue, of length h equal to the square root of a b."/>
+  <annotation ref="ga-right-d" text="The right angle marker at D, showing that the altitude meets the hypotenuse perpendicularly."/>
+  <annotation ref="ga-tri-left" text="The left small triangle A D C, shaded light blue, with legs a and h. It is similar to the whole triangle."/>
+  <annotation ref="ga-tri-right" text="The right small triangle D B C, shaded light orange, with legs b and h. It too is similar to the whole triangle, so the ratio a to h equals the ratio h to b."/>
+  <annotation ref="ga-label-a" text="The label a for the left piece of the hypotenuse, from A to D, of length 4."/>
+  <annotation ref="ga-label-b" text="The label b for the right piece of the hypotenuse, from D to B, of length 1."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<figure xml:id="fig-skel-hm-gm-semicircle">
+<caption>
+The three means of <m>a = 4</m> and <m>b = 1</m> in one picture. The
+semicircle has the segment of length <m>a+b</m> as its diameter, so its
+radius is the arithmetic mean <m>A = 2.5</m>, drawn in red at the center
+<m>O</m>. The vertical segment <m>DC</m> erected where <m>a</m> meets
+<m>b</m> is the altitude of the inscribed right triangle, so its length is
+the geometric mean <m>G = 2</m>, drawn in blue. The perpendicular from
+<m>D</m> to the radius <m>OC</m> cuts off the piece <m>CM</m>, whose
+length is the harmonic mean <m>H = 1.6</m>, drawn in purple. Since a leg
+of a right triangle is never longer than its hypotenuse,
+<m>H \le G \le A</m>.
+</caption>
+<image width="78%">
+<prefigure xmlns="https://prefigure.org" label="skel-prefigure-hm-gm-semicircle">
+<diagram dimensions="(450,283)" margins="10">
+<definition>P=(0,0)</definition>
+<definition>Q=(5,0)</definition>
+<definition>O=(2.5,0)</definition>
+<definition>D=(4,0)</definition>
+<definition>C=(4,2)</definition>
+<definition>M=(3.04,0.72)</definition>
+<definition>T=(2.5,2.5)</definition>
+<coordinates bbox="(-0.6,-1.0,5.6,2.9)">
+<arc at="sc-arc" center="O" radius="2.5" range="(0,180)" degrees="yes"
+     stroke="black" thickness="2.5"/>
+<line at="sc-diameter" endpoints="(P,Q)" stroke="black" thickness="2.5"/>
+<line at="sc-chord-left" endpoints="(P,C)" stroke="#7F7F7F"
+      thickness="1.5"/>
+<line at="sc-chord-right" endpoints="(C,Q)" stroke="#7F7F7F"
+      thickness="1.5"/>
+<angle-marker at="sc-right-c" points="(P,C,Q)" radius="12"
+              clear-background="yes" stroke="#7F7F7F"/>
+<line at="sc-radius" endpoints="(O,C)" stroke="black" thickness="1.5"/>
+<line at="sc-perp" endpoints="(D,M)" stroke="black" thickness="1.5"/>
+<angle-marker at="sc-right-m" points="(D,M,C)" radius="11"
+              clear-background="yes"/>
+<line at="sc-mean-a" endpoints="(O,T)" stroke="#D55E00" thickness="3.5"/>
+<line at="sc-mean-g" endpoints="(D,C)" stroke="#0072B2" thickness="3.5"/>
+<line at="sc-mean-h" endpoints="(M,C)" stroke="#7A5AA8" thickness="3.5"/>
+<line at="sc-tick-p" endpoints="((0,-0.3),(0,-0.56))" stroke="#7F7F7F"
+      thickness="1.5"/>
+<line at="sc-tick-d" endpoints="((4,-0.3),(4,-0.56))" stroke="#7F7F7F"
+      thickness="1.5"/>
+<line at="sc-tick-q" endpoints="((5,-0.3),(5,-0.56))" stroke="#7F7F7F"
+      thickness="1.5"/>
+<line at="sc-brace" endpoints="((0,-0.56),(5,-0.56))" stroke="#7F7F7F"
+      thickness="1.5"/>
+<point at="sc-o" p="O" fill="black"/>
+<point at="sc-d" p="D" fill="black"/>
+<point at="sc-c" p="C" fill="black" alignment="ne"><m>C</m></point>
+<point at="sc-m" p="M" fill="black" alignment="w"><m>M</m></point>
+<label at="sc-label-o" anchor="(2.42,-0.2)" alignment="sw">
+<m>O</m>
+</label>
+<label at="sc-label-d" anchor="(4.02,-0.2)" alignment="se">
+<m>D</m>
+</label>
+<label at="sc-label-a-piece" anchor="(2.0,-0.64)" alignment="s">
+<m>a</m>
+</label>
+<label at="sc-label-b-piece" anchor="(4.5,-0.64)" alignment="s">
+<m>b</m>
+</label>
+<label at="sc-label-mean-a" anchor="(2.42,1.35)" alignment="w"
+       color="#D55E00">
+<m>A</m>
+</label>
+<label at="sc-label-mean-g" anchor="(4.08,1.0)" alignment="e"
+       color="#0072B2">
+<m>G</m>
+</label>
+<label at="sc-label-mean-h" anchor="(3.46,1.44)" alignment="nw"
+       color="#7A5AA8">
+<m>H</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A semicircle drawn on a horizontal diameter of length a plus b, with a equal to 4 on the left and b equal to 1 on the right, meeting at the point D. The center of the semicircle is O. Three segments in the picture have lengths equal to the three means of a and b. A red vertical segment from O up to the top of the arc is the radius, whose length is the arithmetic mean 2.5. A blue vertical segment from D up to the point C on the arc is the altitude of the inscribed right triangle, whose length is the geometric mean 2. A purple segment along the radius O C, running from C back to the foot M of the perpendicular dropped from D, has length equal to the harmonic mean 1.6. Because a leg of a right triangle is never longer than its hypotenuse, the harmonic mean is at most the geometric mean, which is at most the arithmetic mean.">
+  <annotation ref="sc-arc" text="The semicircle whose diameter is the segment of length a plus b, that is, of length 5."/>
+  <annotation ref="sc-diameter" text="The diameter, split at the point D into a left piece of length a equal to 4 and a right piece of length b equal to 1."/>
+  <annotation ref="sc-mean-a" text="The arithmetic mean, drawn in red: the vertical radius from the center O to the top of the arc, of length a plus b over 2, which is 2.5."/>
+  <annotation ref="sc-mean-g" text="The geometric mean, drawn in blue: the vertical segment from D up to the point C on the arc, of length the square root of a b, which is 2."/>
+  <annotation ref="sc-mean-h" text="The harmonic mean, drawn in purple: the piece of the radius O C running from C back to M, of length 2 a b over a plus b, which is 1.6."/>
+  <annotation ref="sc-chord-left" text="The chord from the left end of the diameter to the point C on the arc, one leg of the inscribed right triangle, drawn in gray."/>
+  <annotation ref="sc-chord-right" text="The chord from C to the right end of the diameter, the other leg of the inscribed right triangle, drawn in gray."/>
+  <annotation ref="sc-right-c" text="The right angle marker at C: any triangle inscribed in a semicircle has a right angle at the point on the arc, which is why the blue segment is an altitude from a right angle and therefore the geometric mean."/>
+  <annotation ref="sc-radius" text="The radius from the center O out to the point C on the arc. Its length is also the arithmetic mean 2.5, and the purple harmonic mean is the part of it nearest C."/>
+  <annotation ref="sc-perp" text="The perpendicular dropped from D to the radius O C, meeting it at the point M."/>
+  <annotation ref="sc-right-m" text="The right angle marker at M, showing that D M is perpendicular to the radius O C."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+</subsubsection>
+
+</subsection>
+
+</section>

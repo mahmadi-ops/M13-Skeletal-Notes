@@ -537,7 +537,7 @@ Show that the function
 <md>
 f(x,y) =
 \begin{cases}
-\dfrac{2xy}{x^2+y^2} \amp (x,y) \neq (0,0)\
+\dfrac{2xy}{x^2+y^2} \amp (x,y) \neq (0,0)\\
 0 \amp (x,y) = (0,0)
 \end{cases}
 </md>
@@ -580,7 +580,7 @@ Show that the function
 <md>
 f(x,y) =
 \begin{cases}
-\dfrac{xy^2}{x^2+y^4} \amp (x,y) \neq (0,0)\
+\dfrac{xy^2}{x^2+y^4} \amp (x,y) \neq (0,0)\\
 0 \amp (x,y) = (0,0)
 \end{cases}
 </md>

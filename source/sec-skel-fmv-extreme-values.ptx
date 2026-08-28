@@ -433,7 +433,7 @@ and it is easiest to remember as a determinant:
 <md xml:id="eq-skel-hessian" number="yes">
 H(x,y) =
 \begin{vmatrix}
-f_{xx} \amp f_{xy} \
+f_{xx} \amp f_{xy} \\
 f_{xy} \amp f_{yy}
 \end{vmatrix}
 = f_{xx}f_{yy} - f_{xy}^2.

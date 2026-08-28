@@ -27,7 +27,18 @@ Chapter map (full notes → this book):
 | Ch 1 · Hyperbolic Functions (7.3)    | `ch-7-3.ptx`                          | `ch-hyperbolic-skeletal.ptx` |
 | Ch 2 · Series and Sequences          | `ch-10-2`, `ch-10-8`, `ch-10-10`      | `ch-series-skeletal.ptx` + `sec-skel-series-*.ptx` |
 | Ch 3 · 3D Space and Vector Algebra   | `ch-12-1`, `ch-12-2`, `Dotproduct`, `the-cross-product`, `Parametrization`, `ch-12-5`, `Conics`, `QuadricSurface` | `ch-geometry-skeletal.ptx` + `sec-skel-geom-*.ptx` |
-| Ch 4 · Functions of Multiple Variables | `ch-14-1`…`ch-14-4`, `directional-derivatives`, `extreme-values-saddle-points` | `ch-functions-multiple-variables-skeletal.ptx` + `sec-skel-fmv-*.ptx` |
+| Ch 4 · Functions of Multiple Variables | `ch-14-1`…`ch-14-4`, `directional-derivatives`, `TangentPlanesDifferentials`, `extreme-values-saddle-points`, `LagrangeMultipliers` | `ch-functions-multiple-variables-skeletal.ptx` + `sec-skel-fmv-*.ptx` |
+
+The sparse checkout covers `source/` and `publication/` only, so a
+section that keeps a video or an interactive needs its asset pulled
+separately and copied into `assets/`:
+
+```bash
+git -C .reference/lecture-notes sparse-checkout set --no-cone \
+    source publication assets/videos/<name>.mp4
+```
+
+Reset it to `source publication` afterwards so the cache stays small.
 
 Where a section of the full notes `xi:include`s a file of its own, the
 skeletal section includes a skeletal copy of it too:
@@ -35,11 +46,6 @@ skeletal section includes a skeletal copy of it too:
 and 4.5/4.7's three companion files → `subsec-skel-fmv-scalar-fields.ptx`,
 `exercises-skel-fmv-gradient-applications.ptx`, and
 `subsec-skel-fmv-why-second-derivative-test.ptx`.
-
-**Not yet written:** 4.6 Tangent Planes and Differentials
-(`TangentPlanesDifferentials.ptx`) and 4.8 Lagrange Multipliers
-(`LagrangeMultipliers.ptx`). Chapter 4 therefore numbers 4.1–4.6 here,
-which does not line up with the full notes.
 
 Three traps when writing a new section, each of which costs a build:
 

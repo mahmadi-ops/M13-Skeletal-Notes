@@ -1,0 +1,1333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Skeletal (fill-in) version of 4.6 Tangent Planes and Differentials.
+
+  Definitions, theorems, summaries, and problem statements are kept;
+  derivations and solutions are replaced by blank workspace boxes, each
+  with a one-line statement of what has to be done.  Content mirrors
+  TangentPlanesDifferentials.ptx of the full lecture notes; every xml:id
+  here is prefixed with "skel-" so the two can coexist.
+
+  Figures: every figure in this section is a surface, a prefigure
+  schematic, or a zoomed plot that no student can draw by hand in class,
+  so all of them are reproduced in full.  Each one sits AFTER the box
+  whose work it illustrates, so it reads as a check rather than as the
+  answer.  The video and the interactive tangent-plane builder are kept,
+  the interactive gated to the web target with a print note beside it.
+-->
+<section xml:id="sec-skel-fmv-tangent-planes" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Tangent Planes and Differentials</title>
+
+<objectives>
+<introduction>
+<p>
+After completing this section, you should be able to:
+</p>
+</introduction>
+
+<ul>
+<li>
+<p>
+Derive the equation of the tangent plane to the surface <m>z = f(x,y)</m>
+at a point <m>P_0(x_0, y_0, f(x_0,y_0))</m> from the slopes
+<m>f_x(x_0,y_0)</m> and <m>f_y(x_0,y_0)</m> of the two tangent lines in
+the planes <m>y = y_0</m> and <m>x = x_0</m>.
+</p>
+</li>
+<li>
+<p>
+Find the normal vector <m>\mathbf n = \nabla w \Big|_{P_0}</m> of the
+tangent plane, where <m>w(x,y,z) = f(x,y) - z</m>, and write the
+parametric equations of the normal line to the surface at <m>P_0</m>.
+</p>
+</li>
+<li>
+<p>
+Estimate the change <m>\Delta f</m> in the value of <m>f</m> produced by
+moving a small distance <m>ds</m> away from <m>P_0</m> in the direction
+of a unit vector <m>\hat{u}</m>, using the differential
+<m>df = \left(\nabla f \Big|_{P_0} \cdot \hat{u}\right) ds</m>.
+</p>
+</li>
+<li>
+<p>
+Find the linearization <m>L(x,y)</m> of a differentiable function at a
+point and use the tangent plane as a linear approximation of the surface.
+</p>
+</li>
+</ul>
+</objectives>
+
+<introduction>
+<p>
+Recall from <xref ref="sec-skel-fmv-partial-derivatives"/> that the
+partial derivative <m>f_x(x_0,y_0)</m> is the slope of the tangent line
+to the curve cut from the surface <m>z = f(x,y)</m> by the plane
+<m>y = y_0</m>, and that <m>f_y(x_0,y_0)</m> is the slope of the tangent
+line to the curve cut by the plane <m>x = x_0</m>. In this section we put
+these two tangent lines together: the plane containing both of them is
+the tangent plane to the surface at <m>P_0(x_0, y_0, f(x_0,y_0))</m>. We
+find its equation, use its normal vector to write the equation of the
+normal line to the surface, estimate the change in <m>f</m> caused by
+moving a small distance away from <m>P_0</m> in a given direction, and
+finally use the tangent plane to linearize <m>f</m> near a point.
+</p>
+<p>
+<em>These are skeletal notes: the definitions, theorems, and problem
+statements are given, and blank boxes are left wherever a derivation, a
+solution, or a sketch belongs, so that you can fill them in by hand.</em>
+</p>
+</introduction>
+
+<!-- ================================================================ -->
+<subsection xml:id="subsec-skel-tp-equation">
+<title>Equation of the Tangent Plane</title>
+
+<p>
+We use what we learned about the partial derivatives and slopes of
+tangent lines to calculate the equation of the tangent plane to the
+surface <m>z = f(x,y)</m> at <m>P_0(x_0, y_0, f(x_0,y_0))</m>. Start with
+a general plane through <m>P_0</m>,
+<md xml:id="eq-skel-tp-plane-general" number="yes">
+A(x - x_0) + B(y - y_0) + C(z - z_0) = 0,
+\qquad z_0 = f(x_0,y_0),
+</md>
+and identify its coefficients.
+</p>
+
+<p>
+<em>Derivation.</em>
+(Solve <xref ref="eq-skel-tp-plane-general"/> for <m>z - z_0</m>. Setting
+<m>y = y_0</m> leaves the tangent line lying in the plane
+<m>y = y_0</m>, so its slope must be one of the two partial derivatives;
+do the same with <m>x = x_0</m>. Then substitute the two slopes back and
+clear the denominator.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,13);
+\draw[gray!35] (0,9.75) -- (15,9.75);
+\draw[gray!35] (0,6.5) -- (15,6.5);
+\draw[gray!35] (0,3.25) -- (15,3.25);
+\node[anchor=north west, font=\small\itshape] at (0.35,12.7) {solved for $z-z_0$:};
+\node[anchor=north west, font=\small\itshape] at (0.35,9.45) {the slice $y=y_0$, and the slope it names:};
+\node[anchor=north west, font=\small\itshape] at (0.35,6.2) {the slice $x=x_0$, and the slope it names:};
+\node[anchor=north west, font=\small\itshape] at (0.35,2.95) {the tangent plane:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in four rows: the general plane equation solved for z minus z nought, the slice in the plane y equals y nought with the slope it identifies, the slice in the plane x equals x nought with the slope it identifies, and the resulting equation of the tangent plane.</shortdescription>
+</image>
+</sidebyside>
+
+<assemblage xml:id="skel-summary-tp-tangent-plane">
+<title>The Tangent Plane</title>
+<p>
+The equation of the <term>tangent plane to the surface</term>
+<m>z = f(x,y)</m> at <m>P_0(x_0, y_0, f(x_0,y_0))</m> is
+<md xml:id="eq-skel-tp-tangent-plane" number="yes">
+f_x(x_0,y_0)(x - x_0) + f_y(x_0,y_0)(y - y_0) - (z - z_0) = 0.
+</md>
+</p>
+</assemblage>
+
+<p>
+<xref ref="fig-skel-tp-plane-normal"/> shows the two tangent lines inside
+the planes <m>y = y_0</m> and <m>x = x_0</m>, together with the plane
+that contains both of them.
+</p>
+
+<figure xml:id="fig-skel-tp-plane-normal">
+<caption>
+The two vertical planes <m>y = y_0</m> and <m>x = x_0</m> cut the surface
+<m>z = f(x,y)</m> along the green and amber curves of
+<xref ref="fig-skel-pd-tangent-x"/> and <xref ref="fig-skel-pd-tangent-y"/>, whose
+tangent lines at <m>P_0</m> have slopes <m>f_x(x_0,y_0)</m> and
+<m>f_y(x_0,y_0)</m>.
+The tangent plane at <m>P_0</m> contains both tangent lines, and its
+normal vector is <m>\mathbf n = \nabla w \Big|_{P_0}</m>. Equivalently,
+<m>\mathbf n</m> is given (up to sign) by the cross product of the
+direction vectors <m>\hat{\imath} + f_x(x_0,y_0)\,\hat{k}</m> and
+<m>\hat{\jmath} + f_y(x_0,y_0)\,\hat{k}</m> of the two tangent lines.
+</caption>
+<image width="85%">
+<description>
+<p>
+A grey dome-shaped surface, the graph of z equals f of x y, with the pink
+tangent plane touching it at the magenta point P 0. The green curve cut
+by the plane y equals y 0 and the amber curve cut by the plane x equals
+x 0 run across the surface through P 0, drawn in the same colors as the
+two partial derivative figures. The blue tangent line to the green curve
+at P 0 and the dark red tangent line to the amber curve at P 0 lie inside
+the tangent plane, and a black arrow, the normal vector n, points away
+from the plane at P 0, perpendicular to both tangent lines. A legend above
+the picture names each of these seven elements.
+</p>
+</description>
+<latex-image><![CDATA[
+\begin{tikzpicture}[font=\fontfamily{phv}\selectfont]
+\begin{axis}[
+  width=12cm, height=9.5cm,
+  view={-35}{20},
+  xmin=-2.3, xmax=2.3, ymin=-2.3, ymax=2.3, zmin=0, zmax=5.2,
+  xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+  ticks=none,
+  clip=false,
+  % the legend of fig-cr-saddle: above the axes, two columns, Helvetica
+  legend cell align=left,
+  legend columns=2,
+  legend style={
+    at={(0.5,1.03)}, anchor=south,
+    draw=gray!50, fill=white, fill opacity=0.92, text opacity=1,
+    inner sep=5pt, row sep=2pt,
+    /tikz/every even column/.append style={column sep=10pt},
+    font=\fontfamily{phv}\fontsize{10}{12.5}\selectfont,
+  },
+]
+% the surface z = f(x,y); same surface, point and styling as the
+% partial-derivative figures fig-pd-tangent-x and fig-pd-tangent-y
+\addplot3[surf, shader=flat, draw=gray!55, fill=gray!30,
+          fill opacity=0.35, draw opacity=0.4,
+          domain=-2:2, y domain=-2:2, samples=15, forget plot]
+  {3 - 0.25*x^2 - 0.45*y^2};
+% the tangent plane at P0 (pink)
+\addplot3[surf, shader=flat, samples=2, domain=-1:2, y domain=-1:2,
+          fill=red!30, fill opacity=0.45, draw=red!50!black, draw opacity=0.6,
+          forget plot]
+  {2.825 - 0.25*(x-0.5) - 0.45*(y-0.5)};
+% intersection curve with y = y0 (green, as in fig-pd-tangent-x);
+% samples y=0 keeps this a single curve -- without it pgfplots closes the
+% parabola with a straight chord
+\addplot3[very thick, green!50!black, domain=-2:2, samples=33, samples y=0,
+          forget plot]
+  ({x},{0.5},{2.8875 - 0.25*x^2});
+% intersection curve with x = x0 (amber, as in fig-pd-tangent-y)
+\addplot3[very thick, orange, domain=-2:2, samples=33, samples y=0,
+          forget plot]
+  ({0.5},{x},{2.9375 - 0.45*x^2});
+% tangent line at P0 in the plane y = y0 (blue, as in fig-pd-tangent-x)
+\addplot3[very thick, cyan!60!black, domain=-1.4:1.4, samples=2, samples y=0,
+          forget plot]
+  ({0.5+x},{0.5},{2.825 - 0.25*x});
+% tangent line at P0 in the plane x = x0 (dark red, as in fig-pd-tangent-y)
+\addplot3[very thick, purple!60!black, domain=-1.4:1.4, samples=2, samples y=0,
+          forget plot]
+  ({0.5},{0.5+x},{2.825 - 0.45*x});
+% the normal vector n (black)
+\draw[-stealth, black, very thick]
+  (axis cs:0.5,0.5,2.825) -- (axis cs:0.75,0.95,3.83);
+% the point P0 (magenta, as P in the partial-derivative figures)
+\addplot3[only marks, mark=*, mark size=1.9, color=magenta, forget plot]
+  coordinates {(0.5,0.5,2.825)};
+\node[magenta, anchor=north, font=\fontfamily{phv}\selectfont]
+  at (axis cs:0.5,0.3,2.66) {$P_0$};
+% the legend, built by hand so that the surface gets an entry too
+\addlegendimage{area legend, draw=gray!55, fill=gray!30, fill opacity=0.35}
+\addlegendentry{$z=f(x,y)$}
+\addlegendimage{area legend, fill=red!30, fill opacity=0.45,
+                draw=red!50!black}
+\addlegendentry{tangent plane at $P_0$}
+\addlegendimage{very thick, green!50!black}
+\addlegendentry{$z=f(x,y_0)$, cut by $y=y_0$}
+\addlegendimage{very thick, orange}
+\addlegendentry{$z=f(x_0,y)$, cut by $x=x_0$}
+\addlegendimage{very thick, cyan!60!black}
+\addlegendentry{tangent line in $y=y_0$}
+\addlegendimage{very thick, purple!60!black}
+\addlegendentry{tangent line in $x=x_0$}
+\addlegendimage{-stealth, black, very thick}
+\addlegendentry{$\mathbf n$: normal at $P_0$}
+\end{axis}
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
+
+<p>
+The same plane can be reached a second way, through a gradient. Write the
+equation of the surface as <m>w(x,y,z) = f(x,y) - z = 0</m>, so that the
+surface is a level surface of <m>w</m>.
+</p>
+
+<p>
+<em>Derivation.</em>
+(Compute the three partial derivatives of <m>w</m> and assemble
+<m>\nabla w</m>; the third one is where the <m>-\hat{k}</m> comes from.
+Evaluate at <m>P_0</m> and compare the result with the coefficients of
+<xref ref="eq-skel-tp-tangent-plane"/> <mdash/> they should be the same
+three numbers. Say why that makes <m>\nabla w \big|_{P_0}</m> normal to
+the tangent plane.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,9);
+\draw[gray!35] (0,4.5) -- (15,4.5);
+\node[anchor=north west, font=\small\itshape] at (0.35,8.7) {$\nabla w =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,4.2) {at $P_0$, and why it is normal to the plane:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in two rows, one for the gradient of w and one for its value at P nought together with the reason it is normal to the tangent plane.</shortdescription>
+</image>
+</sidebyside>
+
+<assemblage xml:id="skel-summary-tp-normal-vector">
+<title>The Normal Vector</title>
+<p>
+The <term>normal vector to the tangent plane</term> of
+<m>z = f(x,y)</m> at <m>P_0</m> is
+<md xml:id="eq-skel-tp-normal-vector" number="yes">
+\mathbf n = \nabla w \Big|_{P_0}
+= f_x(x_0,y_0)\,\hat{\imath} + f_y(x_0,y_0)\,\hat{\jmath} - \hat{k},
+\qquad w(x,y,z) = f(x,y) - z.
+</md>
+Equivalently, <m>\mathbf n</m> is given (up to sign) by the cross product
+of the direction vectors <m>\hat{\imath} + f_x(x_0,y_0)\,\hat{k}</m> and
+<m>\hat{\jmath} + f_y(x_0,y_0)\,\hat{k}</m> of the two tangent lines.
+</p>
+</assemblage>
+
+<p component="web">
+<xref ref="fig-skel-tp-plane-interactive"/> rebuilds the picture above one
+layer at a time, so each ingredient of the construction can be seen
+arriving: the two slices with their tangent lines first, then the
+tangent plane that contains both lines, and finally the normal vector.
+</p>
+<p component="print">
+An interactive figure that rebuilds the picture above one layer at a time
+<mdash/> the two slices with their tangent lines, then the tangent plane
+that contains both lines, then the normal vector <mdash/> accompanies the
+online version of these notes.
+</p>
+
+<sidebyside component="web" width="100%">
+<figure xml:id="fig-skel-tp-plane-interactive">
+<caption>
+The construction of <xref ref="fig-skel-tp-plane-normal"/>, one layer at a
+time. The plane <m>y = y_0</m> cuts the surface along the green curve of
+<xref ref="fig-skel-pd-tangent-x"/>, whose tangent line at <m>P_0</m> has
+slope <m>f_x(x_0,y_0)</m>; the plane <m>x = x_0</m> cuts it along the
+amber curve of <xref ref="fig-skel-pd-tangent-y"/>, whose tangent line has
+slope <m>f_y(x_0,y_0)</m>. The tangent plane contains both tangent
+lines, and <m>\mathbf n = \langle f_x, f_y, -1\rangle</m> stands
+perpendicular to it.
+</caption>
+<!-- aspect 6:5 rather than 3:2: like limit-paths-manim.html, the equation
+     card and the readout sit in a bar above the picture (and the caption in
+     a strip below it) rather than overlaying it, so the frame needs the
+     extra height to keep the surface itself the same size. -->
+<interactive xml:id="interactive-skel-tp-plane"
+             iframe="tangent-plane-manim.html" width="100%" aspect="6:5">
+<instructions>
+<p>
+The surface and the point <m>P_0</m> are those of the figure above. Add
+the layers with the buttons <mdash/> the slice <m>y = y_0</m> with its
+blue tangent line, the slice <m>x = x_0</m> with its dark red tangent
+line, the pink tangent plane, and the normal vector <m>\mathbf n</m>
+<mdash/> in any order, or press <q>Build it up</q> to watch them arrive
+one at a time. The values of <m>f_x</m>, <m>f_y</m> and <m>\mathbf n</m>
+are collected in the panel above the picture. <q>Side view</q> looks
+straight down the <m>y</m> axis so the slope of the blue tangent line can
+be read directly, <q>Spin</q> turns the picture, and dragging rotates it
+by hand.
+</p>
+</instructions>
+</interactive>
+</figure>
+</sidebyside>
+
+<p component="web">
+Everything in <xref ref="fig-skel-tp-plane-normal"/> can also be explored
+interactively in the <dataurl source="tangent-plane-explorer.html">Tangent
+Plane Explorer</dataurl>, which opens in a new tab. It builds the picture
+up one layer at a time <mdash/> the surface, the point <m>P_0</m>, the two
+cutting planes and the curves they cut, the two tangent lines, the tangent
+plane, and finally <m>\mathbf n</m> <mdash/> for any of several surfaces.
+Drag <m>P_0</m> around and rotate the figure to see for yourself that the
+tangent plane always contains both tangent lines and that <m>\mathbf n</m>
+always stands at a right angle to it.
+</p>
+
+<p>
+Finally, <m>\mathbf n</m> is the direction vector of the line normal to
+the surface at <m>P_0</m>.
+</p>
+
+<p>
+<em>Derivation.</em>
+(A line is determined by a point on it and a direction vector; you have
+both. Write its parametric equations, using
+<xref ref="eq-skel-tp-normal-vector"/> for the direction.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,6);
+\node[anchor=north west, font=\small\itshape] at (0.35,5.7) {the normal line at $P_0$:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box for the parametric equations of the normal line to the surface at P nought.</shortdescription>
+</image>
+</sidebyside>
+
+<assemblage xml:id="skel-summary-tp-normal-line">
+<title>The Normal Line</title>
+<p>
+The parametric equations of the <term>normal line to the surface</term>
+<m>z = f(x,y)</m> at <m>P_0(x_0, y_0, f(x_0,y_0))</m> are
+<md xml:id="eq-skel-tp-normal-line" number="yes">
+\begin{aligned}
+x(t) \amp= x_0 + f_x(x_0,y_0)\,t \\
+y(t) \amp= y_0 + f_y(x_0,y_0)\,t \\
+z(t) \amp= f(x_0,y_0) - t
+\end{aligned}
+\qquad t \in \R.
+</md>
+</p>
+</assemblage>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="subsec-skel-tp-example-paraboloid">
+<title>Tangent Plane and Normal Line to a Surface</title>
+
+<p>
+In the first example, we find the normal line and the tangent plane to a
+paraboloid at a given point.
+</p>
+
+<example xml:id="ex-skel-tp-paraboloid">
+<title>Tangent Plane and Normal Line to a Paraboloid</title>
+<statement>
+<p>
+Consider the surface <m>z = f(x,y) = -x^2 - y^2</m> and the point
+<m>P_0(1, 1, -2)</m>.
+<ol marker="A.">
+<li>
+<p>
+Find the equation of the normal line to the surface at <m>P_0</m>.
+</p>
+</li>
+<li>
+<p>
+Find the equation of the tangent plane to the surface at <m>P_0</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+
+<p>
+<em>Solution.</em>
+(<alert>A.</alert> Take <m>w = -x^2 - y^2 - z</m>, compute
+<m>\mathbf n = \nabla w \big|_{P_0}</m> by
+<xref ref="eq-skel-tp-normal-vector"/>, and feed its components into
+<xref ref="eq-skel-tp-normal-line"/>.
+<alert>B.</alert> The components of <m>\mathbf n</m> are already the
+coefficients of the plane, so only the constant term is left: get it from
+<m>\mathbf n \cdot \overrightarrow{OP_0}</m>. Check both answers against
+<xref ref="fig-skel-tp-example-paraboloid"/>.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,14);
+\draw[gray!35] (0,9.3) -- (15,9.3);
+\draw[gray!35] (0,5.6) -- (15,5.6);
+\node[anchor=north west, font=\small\itshape] at (0.35,13.7) {A. $\nabla w$, and $\mathbf n$ at $P_0$:};
+\node[anchor=north west, font=\small\itshape] at (0.35,9.0) {the normal line:};
+\node[anchor=north west, font=\small\itshape] at (0.35,5.3) {B. the tangent plane:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in three rows: the gradient of w and the normal vector at P nought, the parametric equations of the normal line, and the equation of the tangent plane.</shortdescription>
+</image>
+</sidebyside>
+</example>
+
+<figure xml:id="fig-skel-tp-example-paraboloid">
+<caption>
+The graph of <m>z = -x^2 - y^2</m>, the tangent plane
+<m>-2x - 2y - z = -2</m> (green), and the normal line
+<m>x = 1-2t</m>, <m>y = 1-2t</m>, <m>z = -2-t</m> (black) at the point
+<m>P_0(1,1,-2)</m>.
+</caption>
+<image width="80%">
+<description>
+<p>
+A downward-opening paraboloid drawn as a blue mesh, the graph of z equals
+negative x squared minus y squared. A green tangent plane patch touches
+the surface at the red point P 0 with coordinates 1, 1, negative 2, on
+the side of the dome. A black line passes through P 0 perpendicular to
+the plane: the normal line to the surface. A legend above the axes names
+the surface, the point P 0, the tangent plane and the normal line.
+</p>
+</description>
+<latex-image>
+\begin{tikzpicture}[font=\fontfamily{phv}\fontsize{10}{12.5}\selectfont]
+\begin{axis}[
+  width=11.5cm, height=10cm,
+  view={-40}{25},
+  xmin=-2.3, xmax=2.9, ymin=-2.3, ymax=2.9, zmin=-8.3, zmax=2.4,
+  xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+  xtick={-2,0,2}, ytick={-2,0,2}, ztick={2,0,-2,-4,-6,-8},
+  clip=false,
+  % the legend of fig-cr-saddle: above the axes, two columns, Helvetica, so
+  % that nothing has to be named by a callout line inside the picture
+  legend cell align=left,
+  legend columns=2,
+  legend style={
+    at={(0.5,1.03)}, anchor=south,
+    draw=gray!50, fill=white, fill opacity=0.92, text opacity=1,
+    inner sep=5pt, row sep=2pt,
+    /tikz/every even column/.append style={column sep=10pt},
+    font=\fontfamily{phv}\fontsize{10}{12.5}\selectfont,
+  },
+]
+% the surface z = -x^2 - y^2 (blue mesh)
+\addplot3[surf, shader=flat, fill=blue!8, draw=blue!60,
+          fill opacity=0.85, draw opacity=0.9, forget plot,
+          domain=-2:2, y domain=-2:2, samples=17, z buffer=sort]
+  {-x^2 - y^2};
+% the tangent plane -2x - 2y - z = -2 (green)
+\addplot3[surf, shader=flat, samples=2, domain=0.2:1.8, y domain=0.2:1.8,
+          fill=green!45!gray, fill opacity=0.50, draw=green!25!black,
+          draw opacity=0.7, forget plot]
+  {2 - 2*x - 2*y};
+% the normal line (1-2t, 1-2t, -2-t) (black)
+\addplot3[very thick, black, samples=2, domain=-0.55:0.4, forget plot]
+  ({1-2*x},{1-2*x},{-2-x});
+% the point P0, ringed in white so it reads against the surface
+\addplot3[only marks, mark=*, mark size=2.2, color=red, forget plot,
+          mark options={fill=red, draw=white, line width=0.5pt}]
+  coordinates {(1,1,-2)};
+% the legend: the two surfaces on the left, the point and the line on the right
+\addlegendimage{area legend, draw=blue!60, fill=blue!8}
+\addlegendentry{the surface $z=-x^2-y^2$}
+\addlegendimage{only marks, mark=*, mark size=2.2, color=red,
+                mark options={fill=red, draw=white, line width=0.5pt}}
+\addlegendentry{$P_0(1,1,-2)$}
+\addlegendimage{area legend, draw=green!25!black, fill=green!45!gray,
+                fill opacity=0.5}
+\addlegendentry{the tangent plane $-2x-2y-z=-2$}
+\addlegendimage{very thick, black}
+\addlegendentry{the normal line $(1-2t,\,1-2t,\,-2-t)$}
+\end{axis}
+\end{tikzpicture}
+</latex-image>
+</image>
+</figure>
+
+<p>
+<xref ref="fig-skel-tp-normal-vector-video"/> works through this
+computation from the start: it builds the gradient <m>\nabla w</m>,
+evaluates it at <m>P_0</m> to get the normal vector, and then draws the
+normal line and the tangent plane on the surface. Note that the video
+takes the normal vector in the outward direction,
+<m>\mathbf n = -\nabla w \big|_{P_0} = \langle 2, 2, 1\rangle</m>, which
+is the opposite of the <m>\nabla w \big|_{P_0}</m> used above; either
+choice gives the same normal line and the same tangent plane, since the
+two vectors differ only by the factor <m>-1</m>.
+</p>
+
+<figure xml:id="fig-skel-tp-normal-vector-video">
+<caption>
+Computing the normal vector for <xref ref="ex-skel-tp-paraboloid"/>. The
+surface, the point <m>P_0(1,1,-2)</m>, the gradient computation, the
+normal vector, the normal line, and the tangent plane are built up in
+turn, followed by a slow rotation of the finished figure.
+</caption>
+<video xml:id="video-skel-tp-computing-normal-vector"
+       source="videos/ComputingNormalVector.mp4"
+       width="90%"/>
+</figure>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="subsec-skel-tp-change">
+<title>Estimating the Change in a Particular Direction</title>
+
+<p>
+Before turning to functions of two variables, it is worth recalling the
+analogous idea from single-variable calculus. For a differentiable
+function <m>y = f(x)</m>, moving a small distance <m>dx</m> away from a
+point <m>x</m> changes the height of the curve by an amount that can be
+estimated from the slope <m>f'(x)</m>: the resulting
+<term>differential</term> is
+<md xml:id="eq-skel-tp-1d-df" number="yes">
+df = f'(x)\,dx.
+</md>
+As <xref ref="fig-skel-tp-linear-approx-1d"/> shows, this differential
+closely approximates the actual change in the function,
+<m>\Delta f = f(x+dx) - f(x)</m>, as long as <m>dx</m> is small.
+</p>
+
+<figure xml:id="fig-skel-tp-linear-approx-1d">
+<caption>
+The tangent line at <m>x</m> approximates <m>y = f(x)</m> near
+<m>x + dx</m>. The differential <m>df = f'(x)\,dx</m>, found by walking
+along the tangent line, closely approximates the actual change
+<m>\Delta f = f(x+dx) - f(x)</m>, found by walking along the curve.
+</caption>
+<image width="72%">
+<description>
+<p>
+The graph of a curve y equals f of x. At a point x on the curve, a
+right triangle formed by the tangent line has horizontal leg d x and
+vertical leg d f, equal to f prime of x times d x. A separate vertical
+bracket to the left, labeled delta f, compares this to the actual rise
+of the curve, f of x plus d x minus f of x, and a bracket to the right
+shows the differential d f equals f prime of x times d x next to the
+baseline height f of x.
+</p>
+</description>
+<prefigure xmlns="https://prefigure.org" label="skel-prefigure-tp-linear-approx-1d">
+<diagram dimensions="(500,340)" margins="14">
+<definition>curve(t) = (t, exp(0.35*t))</definition>
+<coordinates bbox="(-1.3,-0.5,6.2,4.9)">
+<vector at="la-xaxis" tail="(-0.3,0)" v="(6.3,0)" stroke="black" thickness="2"/>
+<vector at="la-yaxis" tail="(0,-0.3)" v="(0,5.1)" stroke="black" thickness="2"/>
+<parametric-curve at="la-curve" function="curve" domain="(0,4.3)"
+                   arrows="1" stroke="#D55E00" thickness="2"/>
+<line at="la-guide1" p1="(2.5,0)" p2="(2.5,2.398875)"
+      stroke="#7F7F7F" thickness="1.3" dash="4 3"/>
+<line at="la-guide2" p1="(2.5,2.398875)" p2="(0,2.398875)"
+      stroke="#7F7F7F" thickness="1.3" dash="4 3"/>
+<line at="la-guide3" p1="(3.5,0)" p2="(3.5,3.404166)"
+      stroke="#7F7F7F" thickness="1.3" dash="4 3"/>
+<line at="la-guide4" p1="(3.5,3.404166)" p2="(0,3.404166)"
+      stroke="#7F7F7F" thickness="1.3" dash="4 3"/>
+<line at="la-tick1" p1="(3.5,2.398875)" p2="(5.6,2.398875)"
+      stroke="#7F7F7F" thickness="1.1" dash="1 2"/>
+<line at="la-tick2" p1="(3.5,3.238482)" p2="(5.6,3.238482)"
+      stroke="#7F7F7F" thickness="1.1" dash="1 2"/>
+<polygon at="la-triangle" points="((2.5,2.398875),(3.5,3.238482),(3.5,2.398875))"
+         closed="yes" stroke="#0072B2" thickness="2.5" fill="none" linejoin="round"/>
+<vector at="la-dx" tail="(2.5,1.898875)" v="(1.0,0)" arrow-width="6"
+        stroke="black" thickness="1"/>
+<vector at="la-dx-back" tail="(3.5,1.898875)" v="(-1.0,0)" arrow-width="6"
+        stroke="black" thickness="1"/>
+<vector at="la-dfx-approx" tail="(4.6,2.398875)" v="(0,0.839607)" arrow-width="6"
+        stroke="black" thickness="1"/>
+<vector at="la-dfx-approx-back" tail="(4.6,3.238482)" v="(0,-0.839607)" arrow-width="6"
+        stroke="black" thickness="1"/>
+<vector at="la-dfx-actual" tail="(1.375,2.398875)" v="(0,1.005291)" arrow-width="6"
+        stroke="black" thickness="1"/>
+<vector at="la-dfx-actual-back" tail="(1.375,3.404166)" v="(0,-1.005291)" arrow-width="6"
+        stroke="black" thickness="1"/>
+<vector at="la-fx-base" tail="(4.6,2.398875)" v="(0,-2.398875)" arrow-width="6"
+        stroke="black" thickness="1"/>
+<vector at="la-fx-base-back" tail="(4.6,0)" v="(0,2.398875)" arrow-width="6"
+        stroke="black" thickness="1"/>
+<label at="la-xlabel" anchor="(6.0,-0.15)" alignment="n"><m>x</m></label>
+<label at="la-ylabel" anchor="(-0.05,4.8)" alignment="w"><m>y</m></label>
+<label at="la-curvelabel" anchor="(3.5,4.05)" alignment="w" color="#D55E00">
+<m>y=f(x)</m>
+</label>
+<label at="la-x-tick" anchor="(2.5,-0.1)" alignment="s"><m>x</m></label>
+<label at="la-xdx-tick" anchor="(3.5,-0.1)" alignment="s">
+<m>x+dx</m>
+</label>
+<label at="la-fx-tick" anchor="(-0.05,2.398875)" alignment="w"><m>f(x)</m></label>
+<label at="la-fxdx-tick" anchor="(-0.05,3.404166)" alignment="w">
+<m>f(x+dx)</m>
+</label>
+<label at="la-dx-label" anchor="(3.0,1.898875)" alignment="c" clear-background="yes">
+<m>dx</m>
+</label>
+<label at="la-dfx-approx-label" anchor="(4.6,2.818679)" alignment="e" clear-background="yes">
+<m>df=f'(x)\,dx</m>
+</label>
+<label at="la-dfx-actual-label" anchor="(1.2,2.90152)" alignment="w">
+<m>\Delta f</m>
+</label>
+<label at="la-fx-base-label" anchor="(4.6,1.199438)" alignment="w" clear-background="yes">
+<m>f(x)</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="The graph of a function y equals f of x, showing how the tangent line at x approximates the function near x plus d x.">
+  <annotation ref="la-curve" text="The graph of the function y equals f of x."/>
+  <annotation ref="la-triangle" text="A right triangle formed by the tangent line at x, with horizontal leg d x and vertical leg d f, equal to f prime of x times d x."/>
+  <annotation ref="la-dfx-actual" text="The actual change in the function, delta f, equal to f of x plus d x minus f of x, measured on the curve."/>
+  <annotation ref="la-dfx-approx" text="The differential predicted by the tangent line, d f equals f prime of x times d x."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+The same question arises for a function of two variables. The
+difference is that near a point in the plane there is no longer a
+single direction to move in <mdash/> moving away from a point requires
+both a distance and a direction. Consider the function <m>z = f(x,y)</m>,
+a point <m>P_0(x_0,y_0)</m> in its domain, and a unit vector
+<m>\hat{u} = u_1\,\hat{\imath} + u_2\,\hat{\jmath}</m>. The question is:
+</p>
+
+<blockquote>
+<p>
+<em>How can we estimate the change in <m>f</m> (<m>\Delta f</m>) as a
+result of moving a small distance (<m>ds</m>) away from <m>P_0</m> in the
+direction <m>\hat{u}</m>?</em>
+</p>
+</blockquote>
+
+<p>
+<em>Derivation.</em>
+(Write the displacement of length <m>ds</m> in the direction
+<m>\hat{u}</m> in components, add it to <m>P_0</m> to name the point it
+reaches, and write down the change it causes in the value of <m>f</m>.
+Check the length of your displacement vector: it has to come to
+<m>ds</m>. Then follow it in
+<xref ref="fig-skel-tp-change-schematic"/>.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,10);
+\draw[gray!35] (0,6.6) -- (15,6.6);
+\draw[gray!35] (0,3.3) -- (15,3.3);
+\node[anchor=north west, font=\small\itshape] at (0.35,9.7) {the displacement $\hat{u}\,ds$, and its length:};
+\node[anchor=north west, font=\small\itshape] at (0.35,6.3) {the point $P$ it reaches:};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.0) {$\Delta f =$};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in three rows: the displacement vector in components with its length, the point it reaches, and the resulting change in the value of the function.</shortdescription>
+</image>
+</sidebyside>
+
+<assemblage xml:id="skel-summary-tp-delta-f">
+<title>The Exact Change</title>
+<p>
+Moving away from <m>P_0(x_0,y_0)</m> by the distance <m>ds</m> in the
+direction <m>\hat{u}</m> takes us to
+<m>P(x_0 + u_1\,ds,\; y_0 + u_2\,ds)</m> and causes the change
+<md xml:id="eq-skel-tp-delta-f" number="yes">
+\Delta f = f(x_0 + u_1\,ds,\; y_0 + u_2\,ds) - f(x_0, y_0)
+</md>
+in the value of the function.
+</p>
+</assemblage>
+
+<figure xml:id="fig-skel-tp-change-schematic">
+<caption>
+Moving away from <m>P_0(x_0,y_0)</m> by the distance <m>ds</m> in the
+direction <m>\hat{u} = \langle u_1, u_2 \rangle</m> causes the change
+<m>\Delta f = f(x_0 + u_1\,ds,\; y_0 + u_2\,ds) - f(x_0,y_0)</m> in the
+value of the function.
+</caption>
+<image width="95%">
+<prefigure xmlns="https://prefigure.org" label="skel-prefigure-tp-change">
+<diagram dimensions="(575,235)" margins="10">
+<definition>beztop(t) = ((1-t)^2*1.5 + 2*t*(1-t)*4.4 + t^2*7.6, (1-t)^2*1.55 + 2*t*(1-t)*3.35 + t^2*1.18)</definition>
+<definition>bezbot(t) = ((1-t)^2*0.7 + 2*t*(1-t)*3.6 + t^2*6.45, (1-t)^2*0.82 + 2*t*(1-t)*(-0.75) + t^2*0.78)</definition>
+<coordinates bbox="(-0.9,-1.0,10.45,3.6)">
+<vector at="cs-xaxis" v="(4.0,0)" tail="(-0.5,0)" stroke="black" thickness="2"/>
+<vector at="cs-yaxis" v="(0,3.0)" tail="(0,-0.5)" stroke="black" thickness="2"/>
+<vector at="cs-zaxis" v="(4.3,0)" tail="(5.1,1.0)" stroke="black" thickness="2"/>
+<parametric-curve at="cs-ftop" function="beztop" domain="(0,0.95)"
+                  stroke="#7F7F7F" dash="5 4" thickness="2"/>
+<vector at="cs-ftop-arrow" v="(0.248,-0.168)" tail="(7.281,1.387)"
+        stroke="#7F7F7F" thickness="2"/>
+<parametric-curve at="cs-fbot" function="bezbot" domain="(0,0.95)"
+                  stroke="#7F7F7F" dash="5 4" thickness="2"/>
+<vector at="cs-fbot-arrow" v="(0.264,0.142)" tail="(6.165,0.635)"
+        stroke="#7F7F7F" thickness="2"/>
+<vector at="cs-u1" v="(0.651,0)" tail="(0.7,0.9)" stroke="#E69F00" thickness="3"/>
+<vector at="cs-u2" v="(0,0.546)" tail="(1.351,0.9)" stroke="#009E73" thickness="3"/>
+<vector at="cs-uds" v="(0.651,0.546)" tail="(0.7,0.9)" stroke="black" thickness="3"/>
+<point at="cs-P0" p="(0.7,0.9)" fill="#0072B2" alignment="w">
+<m>P_0(x_0,y_0)</m>
+</point>
+<point at="cs-P" p="(1.351,1.446)" fill="#D55E00" alignment="ne">
+<m>P(x_0+u_1\,ds,\; y_0+u_2\,ds)</m>
+</point>
+<point at="cs-fP0" p="(6.6,1.0)" fill="#0072B2"/>
+<point at="cs-fP" p="(7.75,1.0)" fill="#D55E00"/>
+<label at="cs-x-label" anchor="(3.62,0.1)" alignment="e">
+<m>x</m>
+</label>
+<label at="cs-y-label" anchor="(-0.18,2.3)" alignment="w">
+<m>y</m>
+</label>
+<label at="cs-z-label" anchor="(9.5,1.0)" alignment="e">
+<m>z</m>
+</label>
+<label at="cs-header1" anchor="(-0.6,3.35)" alignment="e">
+<m>\hat{u} = u_1\,\hat{\imath} + u_2\,\hat{\jmath}</m>
+</label>
+<label at="cs-header2" anchor="(-0.6,2.9)" alignment="e">
+<m>\hat{u}\,ds = u_1\,ds\,\hat{\imath} + u_2\,ds\,\hat{\jmath},\quad \|\hat{u}\,ds\| = ds</m>
+</label>
+<label at="cs-u1-label" anchor="(1.0,0.8)" alignment="s" color="#E69F00">
+<m>u_1\,ds\,\hat{\imath}</m>
+</label>
+<label at="cs-u2-label" anchor="(1.43,1.12)" alignment="e" color="#009E73">
+<m>u_2\,ds\,\hat{\jmath}</m>
+</label>
+<label at="cs-uds-label" anchor="(0.72,1.42)" alignment="nw" color="black">
+<m>\hat{u}\,ds</m>
+</label>
+<label at="cs-fP0-label" anchor="(6.55,1.18)" alignment="n" color="#0072B2">
+<m>f(x_0,y_0)</m>
+</label>
+<label at="cs-fP-label" anchor="(7.95,0.68)" alignment="s" color="#D55E00">
+<m>f(x_0+u_1\,ds,\; y_0+u_2\,ds)</m>
+</label>
+<label at="cs-deltaf-label" anchor="(3.55,-0.62)" alignment="e">
+<m>\Delta f = f(x_0+u_1\,ds,\; y_0+u_2\,ds) - f(x_0,y_0)</m>
+</label>
+<label at="cs-ftop-label" anchor="(5.4,2.35)" alignment="n" color="#7F7F7F">
+<m>f</m>
+</label>
+<label at="cs-fbot-label" anchor="(3.0,-0.2)" alignment="s" color="#7F7F7F">
+<m>f</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="On the left, the x y plane shows a point P 0 with coordinates x 0 y 0. A black arrow u d s leaves P 0 in the direction of the unit vector u, ending at the point P with coordinates x 0 plus u 1 d s, y 0 plus u 2 d s. Its horizontal component u 1 d s i is drawn in orange and its vertical component u 2 d s j in green. On the right, a horizontal z axis carries the two output values: f of x 0 y 0 in blue and f of the moved point in red. Two dashed gray arrows labeled f map P 0 and P to their output values, and the difference of the outputs is the change delta f.">
+  <annotation ref="cs-P0" text="The starting point P 0 with coordinates x 0, y 0."/>
+  <annotation ref="cs-uds" text="The displacement u d s: moving away from P 0 a small distance d s in the direction of the unit vector u."/>
+  <annotation ref="cs-u1" text="The horizontal component of the displacement, u 1 d s times i, drawn in orange."/>
+  <annotation ref="cs-u2" text="The vertical component of the displacement, u 2 d s times j, drawn in green."/>
+  <annotation ref="cs-P" text="The point P reached after the displacement, with coordinates x 0 plus u 1 d s, y 0 plus u 2 d s."/>
+  <annotation ref="cs-fbot" text="The function f maps the starting point P 0 to the output value f of x 0 y 0, marked in blue on the z axis."/>
+  <annotation ref="cs-ftop" text="The function f maps the moved point P to the output value f of x 0 plus u 1 d s, y 0 plus u 2 d s, marked in red on the z axis."/>
+  <annotation ref="cs-deltaf-label" text="The change in f, delta f, is the difference between the two output values on the z axis."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+Computing <xref ref="eq-skel-tp-delta-f"/> exactly means evaluating
+<m>f</m> twice. The directional derivative gives an estimate that costs
+only one gradient.
+</p>
+
+<p>
+<em>Derivation.</em>
+(<xref ref="eq-skel-dirderiv-gradient-relation"/> gives the rate at which
+<m>f</m> changes per unit distance travelled in the direction
+<m>\hat{u}</m>. Multiply by the distance actually travelled, and say why
+the result is only an estimate of
+<xref ref="eq-skel-tp-delta-f"/> rather than equal to it.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,8);
+\draw[gray!35] (0,3.5) -- (15,3.5);
+\node[anchor=north west, font=\small\itshape] at (0.35,7.7) {the rate, and the estimate it gives:};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.2) {why it is only an estimate:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in two rows, one for the rate of change along the direction and the estimated change it produces, and one for the reason the result is an approximation.</shortdescription>
+</image>
+</sidebyside>
+
+<assemblage xml:id="skel-summary-tp-df">
+<title>The Differential</title>
+<p>
+The rate of change of <m>f</m> at <m>P_0</m> in the direction
+<m>\hat{u}</m> is
+<md xml:id="eq-skel-tp-dirderiv" number="yes">
+\left(\frac{df}{ds}\right)_{\hat{u}, P_0}
+= \nabla f \Big|_{P_0} \cdot \hat{u},
+</md>
+so the change in <m>f</m> over a distance <m>ds</m> is estimated by
+<md xml:id="eq-skel-tp-df" number="yes">
+\Delta f \approx df
+= \left(\nabla f \Big|_{P_0} \cdot \hat{u}\right) ds.
+</md>
+The quantity <m>df</m> is called the <term>differential</term> of
+<m>f</m>.
+</p>
+</assemblage>
+
+<example xml:id="ex-skel-tp-change">
+<title>Estimating the Change in a Given Direction</title>
+<statement>
+<p>
+Consider the function <m>f(x,y) = 1 + x^2 + y^2</m>, the point
+<m>P_0(1,1)</m>, and the unit vector
+<m>\hat{u} = \frac{1}{\sqrt 2}\,\hat{\imath} +
+\frac{1}{\sqrt 2}\,\hat{\jmath}</m>. Estimate the change in the value of
+<m>f</m> as a result of moving away from <m>P_0(1,1)</m> in the
+direction of <m>\hat{u}</m> by <m>0.1</m> units.
+</p>
+</statement>
+
+<p>
+<em>Solution.</em>
+(The question hands you <m>ds</m>; read it off first. Compute
+<m>\nabla f</m>, evaluate it at <m>P_0</m>, and apply
+<xref ref="eq-skel-tp-df"/>. Then compute the exact change from
+<xref ref="eq-skel-tp-delta-f"/> as well <mdash/> the two squares are the
+same, so the algebra is short <mdash/> and state by how much the estimate
+is off. <xref ref="fig-skel-tp-example-change-zoom"/> is that gap, drawn.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,14);
+\draw[gray!35] (0,10.5) -- (15,10.5);
+\draw[gray!35] (0,4) -- (15,4);
+\node[anchor=north west, font=\small\itshape] at (0.35,13.7) {$ds =$ \qquad $\nabla f$, and $\nabla f$ at $P_0$:};
+\node[anchor=north west, font=\small\itshape] at (0.35,10.2) {$df =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.7) {the exact $\Delta f$, and the error $\Delta f - df$:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in three rows: the step size with the gradient and its value at P nought, the estimated change, and the exact change together with the difference between the two.</shortdescription>
+</image>
+</sidebyside>
+</example>
+
+<figure xml:id="fig-skel-tp-example-change">
+<caption>
+The graph of <m>z = 1 + x^2 + y^2</m> and the vertical
+plane <m>x - y = 0</m> that contains the direction <m>\hat{u}</m>.
+Moving from <m>P_0(1,1,0)</m> by <m>ds = 0.1</m> along <m>\hat{u}</m>
+moves the input point (light blue), and the value of <m>f</m> climbs
+along the black intersection curve from <m>f(1,1) = 3</m> (green) to the
+orange point.
+</caption>
+<image xml:id="image-skel-tp-change-3d" width="75%">
+<description>
+<p>
+An upward-opening gray paraboloid, the graph of z equals 1 plus x squared
+plus y squared, cut by a green vertical plane through the line y equals
+x. The plane meets the surface along a black parabola, and the branch of
+that parabola through the point 1, 1 faces the viewer. On the base plane,
+a black arrow shows the unit vector u leaving the point 1, 1, 0. Four
+points are marked: the input point 1, 1, 0 in dark red, the moved input
+point in light blue just beyond it, the output point 1, 1, 3 in green on
+the curve, and the moved output point in orange on the curve; a dashed
+gray segment joins each input point to its output point. A legend below
+the picture names the surface, the plane, the curve, the vector u, and
+the four points.
+</p>
+</description>
+<latex-image>
+\begin{tikzpicture}[font=\large]
+\begin{axis}[
+  width=11cm, height=10.5cm,
+  view={115}{26},
+  xmin=-2.4, xmax=2.7, ymin=-2.4, ymax=2.7, zmin=0, zmax=6.4,
+  xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+  xtick={-2,0,2}, ytick={-2,0,2}, ztick={1,2,3,4,5,6},
+  clip=false,
+  legend style={
+    at={(0.5,-0.10)}, anchor=north, font=\normalsize,
+    draw=gray!50, fill=white,
+    cells={anchor=west}, legend columns=2,
+    row sep=1pt, column sep=8pt,
+  },
+]
+% the paraboloid z = 1 + x^2 + y^2 (gray, drawn over a disk)
+\addplot3[surf, shader=flat, fill=gray!40, draw=gray!55,
+          fill opacity=0.30, draw opacity=0.35,
+          domain=0:2.1, y domain=0:360, samples=18, samples y=37,
+          z buffer=sort, forget plot]
+  ({x*cos(y)},{x*sin(y)},{1+x^2});
+% the vertical plane x - y = 0 (green)
+\addplot3[surf, shader=flat, samples=2, domain=-1.7:1.7, y domain=0:6.2,
+          fill=green!50, fill opacity=0.30, draw=green!40!black,
+          draw opacity=0.5, forget plot]
+  ({x},{x},{y});
+% the intersection curve z = 1 + 2t^2 over the line y = x (black); samples
+% y=0 keeps this a single curve -- without it pgfplots closes the parabola
+% with a straight chord across the top
+\addplot3[very thick, black, domain=-1.6:1.6, samples=41, samples y=0,
+          forget plot]
+  ({x},{x},{1+2*x^2});
+% the unit vector u at (1,1,0)
+\draw[-stealth, black, very thick]
+  (axis cs:1,1,0) -- (axis cs:1.45,1.45,0);
+\node[black, anchor=south west] at (axis cs:1.25,1.25,0.05) {$\hat{u}$};
+% dashed connectors from each input point up to its output value
+\draw[gray!55, dashed] (axis cs:1,1,0) -- (axis cs:1,1,3);
+\draw[gray!55, dashed]
+  (axis cs:1.0707,1.0707,0) -- (axis cs:1.0707,1.0707,3.2929);
+% the points
+\addplot3[only marks, mark=*, mark size=1.7, color=purple!70!black,
+          forget plot]
+  coordinates {(1,1,0)};
+\addplot3[only marks, mark=*, mark size=1.7, color=cyan!70!black,
+          forget plot]
+  coordinates {(1.0707,1.0707,0)};
+\addplot3[only marks, mark=*, mark size=1.7, color=green!55!black,
+          forget plot]
+  coordinates {(1,1,3)};
+\addplot3[only marks, mark=*, mark size=1.7, color=orange, forget plot]
+  coordinates {(1.0707,1.0707,3.2929)};
+% legend
+\addlegendimage{area legend, fill=gray!40, fill opacity=0.30, draw=gray!55}
+\addlegendentry{$z=1+x^2+y^2$}
+\addlegendimage{area legend, fill=green!50, fill opacity=0.30,
+                draw=green!40!black}
+\addlegendentry{plane $x-y=0$}
+\addlegendimage{very thick, black}
+\addlegendentry{curve cut by the plane}
+\addlegendimage{-stealth, black, very thick}
+\addlegendentry{$\hat{u}=\frac{1}{\sqrt2}\hat{\imath}+\frac{1}{\sqrt2}\hat{\jmath}$}
+\addlegendimage{only marks, mark=*, mark size=1.7, color=purple!70!black}
+\addlegendentry{$P_0=(1,1,0)$}
+\addlegendimage{only marks, mark=*, mark size=1.7, color=cyan!70!black}
+\addlegendentry{$P=P_0+\hat{u}\,ds$}
+\addlegendimage{only marks, mark=*, mark size=1.7, color=green!55!black}
+\addlegendentry{$f(P_0)=3$}
+\addlegendimage{only marks, mark=*, mark size=1.7, color=orange}
+\addlegendentry{$f(P)\approx3.29$}
+\end{axis}
+\end{tikzpicture}
+</latex-image>
+</image>
+</figure>
+
+<figure xml:id="fig-skel-tp-example-change-zoom">
+<caption>
+The curve of <xref ref="fig-skel-tp-example-change"/> plotted against the
+distance <m>s</m> travelled along <m>\hat{u}</m>, together with its
+tangent line at <m>P_0</m>. The window starts at <m>s = 0.05</m>, past
+the stretch where the two are indistinguishable, so that the gap between
+them can be seen: at <m>s = ds = 0.1</m> the tangent line has risen by
+<m>df \approx 0.283</m> to <m>3.283</m>, while the curve itself has risen
+by <m>\Delta f \approx 0.293</m> to <m>3.293</m>.
+</caption>
+<image xml:id="image-skel-tp-change-zoom" width="65%">
+<description>
+<p>
+A two dimensional graph zoomed into the neighborhood of the moved point.
+The horizontal axis is the distance s travelled from P 0 in the direction
+of u, running from 0.05 to 0.15 rather than from 0, so that the two
+graphs are far enough apart to be told apart; the vertical axis is z,
+running from about 3.13 to about 3.46. A black curve is the value of f
+along u, and a blue dashed line is its tangent line at P 0. The line
+stays just below the curve and the gap between them widens to the right.
+At s equals d s equals 0.1, dashed guide lines pick out the two heights:
+the tangent line reaches the blue point at 3.283, the estimate 3 plus d
+f, and the curve reaches the orange point at 3.293, the exact value of f
+at the moved point. A callout labels the gap between the two points as
+delta f minus d f equals 0.01. A legend below the picture names the
+curve, the tangent line, and the two marked values.
+</p>
+</description>
+<latex-image>
+\begin{tikzpicture}[font=\large]
+\begin{axis}[
+  width=10.667cm, height=11.078cm,
+  xmin=0.048, xmax=0.153, ymin=3.128, ymax=3.462,
+  xlabel={$s$: distance from $P_0$ along $\hat{u}$},
+  ylabel={$z$},
+  xtick={0.05,0.075,0.1,0.125,0.15},
+  xticklabels={$0.05$,,$ds=0.1$,,$0.15$},
+  ytick={3.15,3.2,3.25,3.3,3.35,3.4,3.45},
+  yticklabel style={/pgf/number format/fixed, /pgf/number format/precision=2},
+  axis lines=left,
+  clip=false,
+  legend style={
+    at={(0.5,-0.145)}, anchor=north, font=\normalsize,
+    draw=gray!50, fill=white,
+    cells={anchor=west}, legend columns=2,
+    row sep=1pt, column sep=6pt,
+  },
+]
+% guide lines at the two heights reached over ds = 0.1
+\draw[gray!60, dashed] (axis cs:0.048,3.28284) -- (axis cs:0.1115,3.28284);
+\draw[gray!60, dashed] (axis cs:0.048,3.29284) -- (axis cs:0.1115,3.29284);
+\draw[gray!60, dashed] (axis cs:0.1,3.128) -- (axis cs:0.1,3.29284);
+% f along u: z = 3 + 2 sqrt2 s + s^2
+\addplot[very thick, black, domain=0.048:0.152, samples=61, forget plot]
+  {3 + 2*sqrt(2)*x + x^2};
+% the tangent line at s = 0
+\addplot[very thick, blue!70!black, dashed, domain=0.048:0.152, samples=2,
+         forget plot]
+  {3 + 2*sqrt(2)*x};
+% the gap between the two at s = ds
+\node[purple!70!black, anchor=west, font=\normalsize]
+  at (axis cs:0.1095,3.2465) {$\Delta f-df=0.01$};
+\draw[purple!70!black, thin, -stealth]
+  (axis cs:0.1155,3.2525) -- (axis cs:0.1105,3.2865);
+% the points
+\addplot[only marks, mark=*, mark size=1.6, color=blue!70!black,
+         forget plot]
+  coordinates {(0.1,3.28284)};
+\addplot[only marks, mark=*, mark size=1.6, color=orange, forget plot]
+  coordinates {(0.1,3.29284)};
+% legend
+\addlegendimage{very thick, black}
+\addlegendentry{$f$ along $\hat{u}$}
+\addlegendimage{very thick, blue!70!black, dashed}
+\addlegendentry{tangent line at $P_0$}
+\addlegendimage{only marks, mark=*, mark size=1.6, color=blue!70!black}
+\addlegendentry{estimate $3+df=3.283$}
+\addlegendimage{only marks, mark=*, mark size=1.6, color=orange}
+\addlegendentry{exact $f(P)=3.293$}
+\end{axis}
+\end{tikzpicture}
+</latex-image>
+</image>
+</figure>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="subsec-skel-tp-linearization">
+<title>Linearizing <m>z = f(x,y)</m></title>
+
+<p>
+Before generalizing to two variables, recall how a differentiable
+function <m>y = f(x)</m> is approximated near a point <m>x_0</m> by its
+tangent line. This line passes through <m>\bigl(x_0, f(x_0)\bigr)</m>
+with slope <m>f'(x_0)</m>, so it is the graph of the linear function
+<md xml:id="eq-skel-tp-linearization-1d" number="yes">
+L(x) = f(x_0) + f'(x_0)(x - x_0).
+</md>
+As <xref ref="fig-skel-tp-linearization-1d"/> shows, <m>L(x)</m> matches
+both the value and the slope of <m>f</m> at <m>x_0</m>, so its graph hugs
+the curve nearby.
+</p>
+
+<figure xml:id="fig-skel-tp-linearization-1d">
+<caption>
+The tangent line <m>L(x) = f(x_0) + f'(x_0)(x-x_0)</m> approximates
+<m>y = f(x)</m> near <m>x_0</m>.
+</caption>
+<image width="72%">
+<description>
+<p>
+The graph of a curve y equals f of x and its tangent line at the point
+x0. The tangent line passes through the point P0 with coordinates x0,
+f of x0, matching both the height and the slope of the curve there.
+</p>
+</description>
+<prefigure xmlns="https://prefigure.org" label="skel-prefigure-tp-linearization-1d">
+<diagram dimensions="(500,340)" margins="14">
+<definition>x0 = 2.5</definition>
+<definition>fx(x) = exp(0.35*x)</definition>
+<coordinates bbox="(-1.3,-0.5,6.2,4.9)">
+<vector at="lz-xaxis" tail="(-0.3,0)" v="(6.3,0)" stroke="black" thickness="2"/>
+<vector at="lz-yaxis" tail="(0,-0.3)" v="(0,5.1)" stroke="black" thickness="2"/>
+<graph at="lz-curve" function="fx" domain="(0,4.3)"
+       arrows="1" stroke="#D55E00" thickness="2"/>
+<tangent-line at="lz-tangent" function="fx" point="x0" infinite="yes"
+              stroke="#0072B2" thickness="2"/>
+<line at="lz-guidex" p1="(2.5,0)" p2="(2.5,2.398875)"
+      stroke="#7F7F7F" thickness="1.3" dash="4 3"/>
+<line at="lz-guidey" p1="(2.5,2.398875)" p2="(0,2.398875)"
+      stroke="#7F7F7F" thickness="1.3" dash="4 3"/>
+<point at="lz-P0" p="(2.5,2.398875)" fill="black" radius="3"/>
+<label at="lz-xlabel" anchor="(6.0,-0.15)" alignment="n"><m>x</m></label>
+<label at="lz-ylabel" anchor="(-0.05,4.8)" alignment="w"><m>y</m></label>
+<label at="lz-curvelabel" anchor="(0.6,1.55)" alignment="n" color="#D55E00">
+<m>y=f(x)</m>
+</label>
+<!-- both labels sit below the tangent line, where the picture is empty:
+     the curve is convex, so it stays above the line everywhere -->
+<label at="lz-tangentlabel" anchor="(4.95,4.456)" alignment="se" color="#0072B2">
+<m>L(x)</m>
+</label>
+<label at="lz-x0-tick" anchor="(2.5,-0.1)" alignment="s"><m>x_0</m></label>
+<label at="lz-fx0-tick" anchor="(-0.05,2.398875)" alignment="w"><m>f(x_0)</m></label>
+<label at="lz-P0-label" anchor="(2.66,2.33)" alignment="se"><m>P_0</m></label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="The graph of a function y equals f of x and its tangent line at the point x0.">
+  <annotation ref="lz-curve" text="The graph of the function y equals f of x."/>
+  <annotation ref="lz-tangent" text="The tangent line to the graph at the point P0, given by L of x equals f of x0 plus f prime of x0 times x minus x0."/>
+  <annotation ref="lz-P0" text="The point P0 with coordinates x0, f of x0, where the tangent line touches the curve."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+The same idea extends to a function of two variables <m>z = f(x,y)</m>.
+Near a point <m>P_0(x_0,y_0,f(x_0,y_0))</m> on the surface, the
+<term>tangent plane</term> plays the role that the tangent line played
+above, and the single slope <m>f'(x_0)</m> is replaced by the two
+partial derivatives <m>f_x(x_0,y_0)</m> and <m>f_y(x_0,y_0)</m> <mdash/>
+one for the rate of change in each coordinate direction. The resulting
+linear approximation is called the <term>linearization</term> of
+<m>f</m>, defined as follows.
+</p>
+
+<definition xml:id="def-skel-tp-linearization">
+<statement>
+<p>
+The <term>linearization</term> of a differentiable function
+<m>f(x,y)</m> at a point <m>(x_0,y_0)</m> is the function
+<md xml:id="eq-skel-tp-linearization" number="yes">
+L(x,y) = f_x(x_0,y_0)(x - x_0) + f_y(x_0,y_0)(y - y_0) + f(x_0,y_0).
+</md>
+The linearized function <m>L(x,y)</m> can be used as an approximation for
+<m>f(x,y)</m> near <m>(x_0,y_0)</m>.
+</p>
+</statement>
+</definition>
+
+<p>
+This is not a new object.
+(Solve <xref ref="eq-skel-tp-tangent-plane"/> for <m>z</m> and compare
+what you get with <xref ref="eq-skel-tp-linearization"/>. Then say, in
+one sentence, what the graph of <m>L</m> is.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,5);
+\node[anchor=north west, font=\small\itshape] at (0.35,4.7) {the tangent plane solved for $z$, and what the graph of $L$ is:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box for solving the tangent plane equation for z and identifying the graph of the linearization.</shortdescription>
+</image>
+</sidebyside>
+
+<example xml:id="ex-skel-tp-linearization">
+<title>Linear Approximation of a Function</title>
+<statement>
+<p>
+Consider the function <m>f(x,y) = -2x^2 - 2xy^3 - 2x</m>. Approximate
+<m>f(x,y)</m> near the point
+<m>P_0\left(-0.5,\, -0.5,\, f(-0.5,-0.5)\right)</m> with a linear
+function <m>L(x,y)</m>.
+</p>
+</statement>
+
+<p>
+<em>Solution.</em>
+(Evaluate <m>f</m>, <m>f_x</m> and <m>f_y</m> at <m>(-0.5,-0.5)</m>
+<mdash/> three numbers, and the fractions stay small if you keep them as
+fractions <mdash/> then assemble
+<xref ref="eq-skel-tp-linearization"/>. Leave <m>L</m> in the
+point-slope form of that equation rather than expanding it, so the point
+of tangency stays visible.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,13);
+\draw[gray!35] (0,5) -- (15,5);
+\node[anchor=north west, font=\small\itshape] at (0.35,12.7) {$f$, $f_x$ and $f_y$ at $(-0.5,-0.5)$:};
+\node[anchor=north west, font=\small\itshape] at (0.35,4.7) {$L(x,y) =$};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in two rows, one for the values of the function and its two partial derivatives at the point, and one for the resulting linearization.</shortdescription>
+</image>
+</sidebyside>
+</example>
+
+<figure xml:id="fig-skel-tp-example-linearization">
+<caption>
+The graph of <m>z = -2x^2 - 2xy^3 - 2x</m> and the tangent plane at
+<m>P_0\left(-\frac12, -\frac12, \frac38\right)</m>, whose equation is
+<m>z = L(x,y) = \frac14\left(x+\frac12\right) +
+\frac34\left(y+\frac12\right) + \frac38</m>. The view is close in on
+<m>P_0</m>, where the plane hugs the surface, so that <m>L(x,y)</m>
+approximates <m>f(x,y)</m>; farther out the surface curves away from the
+plane. The arrow at <m>P_0</m> is the normal direction to the surface.
+</caption>
+<image width="85%">
+<description>
+<p>
+A blue mesh surface, the graph of z equals negative 2 x squared minus 2 x
+y cubed minus 2 x, seen close up around the point P 0. A flat dark red
+patch of the tangent plane z equals L of x y cuts through the mesh,
+touching it at the green point P 0 with coordinates negative one half,
+negative one half, three eighths: near P 0 the patch and the surface are
+indistinguishable, while away from P 0 the surface curves down and away
+from the flat patch. A long black arrow leaves P 0 at right angles to the
+patch, showing the normal direction to the surface there. A legend below
+the picture names the surface, the tangent plane, the point P 0, and the
+normal direction.
+</p>
+</description>
+<latex-image>
+\begin{tikzpicture}[font=\large]
+\begin{axis}[
+  width=10.26cm, height=10.01cm,
+  view={-125}{25},
+  % equal data units on all three axes, so the normal direction really is
+  % drawn at a right angle to the tangent plane instead of being sheared
+  % by different per-axis scales
+  unit vector ratio=1 1 1,
+  xmin=-0.96, xmax=-0.04, ymin=-0.96, ymax=-0.04, zmin=-0.46, zmax=0.66,
+  xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+  xtick={-0.8,-0.6,-0.4,-0.2}, ytick={-0.8,-0.6,-0.4,-0.2},
+  ztick={-0.4,-0.2,0,0.2,0.4,0.6},
+  clip=false,
+  legend style={
+    at={(0.5,-0.08)}, anchor=north, font=\normalsize,
+    draw=gray!50, fill=white,
+    cells={anchor=west}, legend columns=2,
+    row sep=1pt, column sep=8pt,
+  },
+]
+% the surface z = -2x^2 - 2xy^3 - 2x (blue mesh)
+\addplot3[surf, shader=flat, fill=blue!8, draw=blue!60,
+          fill opacity=0.85, draw opacity=0.9,
+          domain=-0.8:-0.2, y domain=-0.8:-0.2, samples=19,
+          z buffer=sort, forget plot]
+  {-2*x^2 - 2*x*y^3 - 2*x};
+% the tangent plane patch z = L(x,y) at P0 (dark red)
+\addplot3[surf, shader=flat, samples=2, domain=-0.72:-0.28,
+          y domain=-0.72:-0.28,
+          fill=red!50!black, fill opacity=0.55, draw=red!30!black,
+          forget plot]
+  {0.25*(x+0.5) + 0.75*(y+0.5) + 0.375};
+% the normal direction at P0
+\draw[-stealth, black, line width=1.1pt]
+  (axis cs:-0.5,-0.5,0.375) -- (axis cs:-0.567,-0.702,0.644);
+% the point P0
+\addplot3[only marks, mark=*, mark size=1.9, color=green!60!black,
+          forget plot]
+  coordinates {(-0.5,-0.5,0.375)};
+% legend
+\addlegendimage{area legend, fill=blue!8, draw=blue!60}
+\addlegendentry{$z=-2x^2-2xy^3-2x$}
+\addlegendimage{area legend, fill=red!50!black, fill opacity=0.55,
+                draw=red!30!black}
+\addlegendentry{tangent plane $z=L(x,y)$}
+\addlegendimage{only marks, mark=*, mark size=1.9, color=green!60!black}
+\addlegendentry{$P_0\left(-\frac12,-\frac12,\frac38\right)$}
+\addlegendimage{-stealth, black, line width=1.1pt}
+\addlegendentry{normal direction at $P_0$}
+\end{axis}
+\end{tikzpicture}
+</latex-image>
+</image>
+</figure>
+
+</subsection>
+
+</section>
