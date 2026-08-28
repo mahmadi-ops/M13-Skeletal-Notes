@@ -590,14 +590,20 @@ the tangent line and the point.
 </image>
 </figure>
 
-<p>
+<p component="web">
 <xref ref="fig-skel-pd-elliptic-interactive"/> puts the two slices in one
 picture you can cut open yourself: choose a plane, watch the parabola it leaves
 on the dome, and see the tangent line appear at <m>P</m>. Use it to confirm the
 comparison you just made <mdash/> the surface should fall away twice as fast in
 one direction as the other.
 </p>
+<p component="print">
+An interactive figure putting the two slices in one picture <mdash/> the dome
+cut open by either plane, with the parabola it leaves and the tangent line at
+<m>P</m> <mdash/> accompanies the online version of these notes.
+</p>
 
+<sidebyside component="web" width="100%">
 <figure xml:id="fig-skel-pd-elliptic-interactive">
 <caption>
 <xref ref="fig-skel-pd-elliptic-x"/> and <xref ref="fig-skel-pd-elliptic-y"/>, to
@@ -622,6 +628,7 @@ true steepness; dragging turns it by hand.
 </instructions>
 </interactive>
 </figure>
+</sidebyside>
 
 </statement>
 </example>

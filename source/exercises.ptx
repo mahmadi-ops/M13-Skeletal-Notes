@@ -417,11 +417,17 @@ containing the two trees.
             <m>y</m>-axes and the line <m>x+y=4</m>.
           </p>
 
+          <p component="print">
+            An interactive step-by-step hint for this problem accompanies the
+            online version of these notes.
+          </p>
+          <sidebyside component="web" width="80%">
           <interactive
             xml:id="hints-extrema-triangle"
-            width="80%"
+            width="100%"
             aspect="5:4"
             iframe="iframe/hint-extrema-triangle.html"/>
+          </sidebyside>
         </statement>
 
          <solution>

@@ -402,14 +402,20 @@ exist.
 </image>
 </figure>
 
-<p>
+<p component="web">
 <xref ref="fig-skel-lim-paths-interactive"/> puts those same three paths on the
 surface itself. Click a path on the floor of the figure, or the matching button
 beneath it, and the piece of the surface above that path is drawn in. Use it to
 check the three values you found, and say in one line what the picture shows
 about why no single limit exists.
 </p>
+<p component="print">
+An interactive figure lifting those same three paths onto the surface itself
+<mdash/> each path drawn in at its own height, so the two different values
+are visible at once <mdash/> accompanies the online version of these notes.
+</p>
 
+<sidebyside component="web" width="100%">
 <figure xml:id="fig-skel-lim-paths-interactive">
 <caption>
 The three paths of <xref ref="fig-skel-lim-three-paths"/>, lifted onto the
@@ -418,22 +424,27 @@ lifts to a path at height <m>0</m>, while <m>y=x</m> lifts to one at
 height <m>\frac12</m>, so the two approaches deliver two different
 numbers and the limit cannot exist.
 </caption>
+<!-- aspect 6:5 rather than 3:2: the equation card and the value readout sit
+     in a bar above the picture (and the caption in a strip below it) instead
+     of overlaying it, so the frame needs the extra height to keep the
+     surface itself the same size. -->
 <interactive xml:id="interactive-skel-lim-paths"
-             iframe="limit-paths-manim.html" width="100%" aspect="3:2">
+             iframe="limit-paths-manim.html" width="100%" aspect="6:5">
 <instructions>
 <p>
 The floor of the picture is the <m>xy</m>-plane and the surface above it
 is <m>z = f(x,y) = \frac{xy}{x^2+y^2}</m>. The three coloured lines on the
 floor are the paths <m>y=0</m>, <m>x=0</m> and <m>y=x</m>; click one, or
 use the buttons, to draw the part of the surface lying over it. The value
-that path approaches is written beside it and collected in the panel at
-the top right. <q>Approach <m>(0,0)</m></q> slides a point in along every
+that path approaches is written beside it and collected in the panel
+above the picture. <q>Approach <m>(0,0)</m></q> slides a point in along every
 chosen path at once, <q>Top view</q> looks straight down at the three
 lines, and dragging turns the picture.
 </p>
 </instructions>
 </interactive>
 </figure>
+</sidebyside>
 
 <sidebyside width="97%">
 <image>

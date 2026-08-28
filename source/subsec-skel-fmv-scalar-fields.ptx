@@ -171,6 +171,10 @@
         right angle.
       </p>
 
+<p component="print">
+An interactive figure of the two routes from <m>P_0</m> in the temperature field <mdash/> the runner on the level curve holding a steady reading while the other route heats up <mdash/> accompanies the online version of these notes.
+</p>
+<sidebyside component="web" width="100%">
 <figure xml:id="figure-skel-isotherm-runner">
       <caption>
         Two routes from <m>P_0(1,1)</m> in the field
@@ -193,6 +197,7 @@
         </instructions>
       </interactive>
     </figure>
+</sidebyside>
     </statement>
   </example>
 

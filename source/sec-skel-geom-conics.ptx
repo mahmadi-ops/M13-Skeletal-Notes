@@ -70,6 +70,13 @@
       standard equations, and work examples that change the orientation.
     </p>
 
+    <p component="print">
+      An interactive figure of the slicing itself <mdash/> the plane swinging
+      from horizontal to steep, the section stretching from circle to ellipse,
+      opening into a parabola and breaking into a hyperbola <mdash/>
+      accompanies the online version of these notes.
+    </p>
+    <sidebyside component="web" width="100%">
     <interactive xml:id="interactive-skel-conic-slicer-manim" iframe="conic-slicer-manim.html" width="100%" aspect="1:1">
       <instructions>
         <p>
@@ -85,9 +92,13 @@
         turn.</p>
       </instructions>
     </interactive>
+    </sidebyside>
 
-    <p>
+    <p component="web">
       As you watch, record what decides which of the three curves you get.
+    </p>
+    <p component="print">
+      Record what decides which of the three curves you get.
     </p>
 
     <sidebyside width="97%">

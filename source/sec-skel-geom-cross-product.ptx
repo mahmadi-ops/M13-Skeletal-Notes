@@ -686,6 +686,10 @@ vector relative to the axis of rotation is <m>\overrightarrow{r}</m>. The
 </statement>
 </definition>
 
+<p component="print">
+An interactive view of the torque <m>\overrightarrow{\tau} = \overrightarrow{r} \times \overrightarrow{F}</m> <mdash/> the force swung around the head of <m>\overrightarrow{r}</m>, with the torque vector responding <mdash/> accompanies the online version of these notes.
+</p>
+<sidebyside component="web" width="100%">
 <figure xml:id="fig-skel-int-torque">
 <caption>
 Interactive view of <xref ref="eq-skel-torque-def"/>. The force
@@ -720,6 +724,7 @@ rotation changes sense. Either vector can also be moved with the keyboard
 </instructions>
 </interactive>
 </figure>
+</sidebyside>
 
 <p>
 Everything we know about the cross product now translates into physics.

@@ -180,6 +180,10 @@ starting, write down what you expect a trace to be, and why.
   </sidebyside>
  </figure>
 
+ <p component="print">
+ An interactive figure slicing the elliptical paraboloid <m>z = \frac{x^2}{4} + \frac{y^2}{9}</m> with the planes <m>x = c</m>, <m>y = c</m> and <m>z = c</m> accompanies the online version of these notes.
+ </p>
+ <sidebyside component="web" width="100%">
  <figure xml:id="fig-skel-elliptical-paraboloid-slices">
   <caption>
     Slicing the elliptical paraboloid <m>z = \frac{x^2}{4} + \frac{y^2}{9}</m> with planes <m>x = c</m>, <m>y = c</m>, and <m>z = c</m>.
@@ -196,6 +200,7 @@ starting, write down what you expect a trace to be, and why.
     </instructions>
   </interactive>
  </figure>
+ </sidebyside>
 
  <figure xml:id="fig-skel-elliptical-paraboloid-video">
   <caption>
@@ -297,6 +302,13 @@ starting, write down what you expect a trace to be, and why.
   </sidebyside>
  </figure>
 
+ <p component="print">
+ An interactive figure slicing the hyperbolic paraboloid
+ <m>z = \frac{x^2}{4} - \frac{y^2}{9}</m> with the planes <m>x = c</m>,
+ <m>y = c</m> and <m>z = c</m> accompanies the online version of these
+ notes.
+ </p>
+ <sidebyside component="web" width="100%">
  <figure xml:id="fig-skel-hyperbolic-paraboloid-slices">
   <caption>
     Slicing the hyperbolic paraboloid <m>z = \frac{x^2}{4} - \frac{y^2}{9}</m> with planes <m>x = c</m>, <m>y = c</m>, and <m>z = c</m>.
@@ -313,6 +325,7 @@ starting, write down what you expect a trace to be, and why.
     </instructions>
   </interactive>
  </figure>
+ </sidebyside>
 
  <figure xml:id="fig-skel-hyperbolic-paraboloid-video">
   <caption>
@@ -413,6 +426,10 @@ starting, write down what you expect a trace to be, and why.
   </sidebyside>
  </figure>
 
+ <p component="print">
+ An interactive figure slicing the ellipsoid with the planes <m>x = c</m>, <m>y = c</m> and <m>z = c</m> accompanies the online version of these notes.
+ </p>
+ <sidebyside component="web" width="100%">
  <figure xml:id="fig-skel-ellipsoid-slices">
   <caption>
     Slicing the ellipsoid <m>\frac{x^2}{4} + \frac{y^2}{9} + \frac{z^2}{16} = 1</m> with planes <m>x = c</m>, <m>y = c</m>, and <m>z = c</m>.
@@ -429,6 +446,7 @@ starting, write down what you expect a trace to be, and why.
     </instructions>
   </interactive>
  </figure>
+ </sidebyside>
 
  <figure xml:id="fig-skel-ellipsoid-video">
   <caption>
@@ -531,6 +549,10 @@ starting, write down what you expect a trace to be, and why.
   </sidebyside>
  </figure>
 
+ <p component="print">
+ An interactive figure slicing the elliptic cone with the planes <m>x = c</m>, <m>y = c</m> and <m>z = c</m> accompanies the online version of these notes.
+ </p>
+ <sidebyside component="web" width="100%">
  <figure xml:id="fig-skel-elliptic-cone-slices">
   <caption>
     Slicing the elliptic cone <m>z^2 = \frac{x^2}{4} + \frac{y^2}{9}</m> with planes <m>x = c</m>, <m>y = c</m>, and <m>z = c</m>.
@@ -547,6 +569,7 @@ starting, write down what you expect a trace to be, and why.
     </instructions>
   </interactive>
  </figure>
+ </sidebyside>
 
  <figure xml:id="fig-skel-elliptic-cone-video">
   <caption>
@@ -672,6 +695,10 @@ from a hyperboloid of two sheets.
   </sidebyside>
  </figure>
 
+ <p component="print">
+ An interactive figure slicing the hyperboloid of one sheet with the planes <m>x = c</m>, <m>y = c</m> and <m>z = c</m> accompanies the online version of these notes.
+ </p>
+ <sidebyside component="web" width="100%">
  <figure xml:id="fig-skel-hyperboloid-one-sheet-slices">
   <caption>
     Slicing the hyperboloid of one sheet with planes <m>x = c</m>, <m>y = c</m>,
@@ -690,6 +717,7 @@ from a hyperboloid of two sheets.
     </instructions>
   </interactive>
  </figure>
+ </sidebyside>
 
  <figure xml:id="fig-skel-hyperboloid-one-sheet-video">
   <caption>
@@ -781,6 +809,10 @@ from a hyperboloid of two sheets.
   </sidebyside>
  </figure>
 
+ <p component="print">
+ An interactive figure slicing the hyperboloid of two sheets with the planes <m>x = c</m>, <m>y = c</m> and <m>z = c</m> accompanies the online version of these notes.
+ </p>
+ <sidebyside component="web" width="100%">
  <figure xml:id="fig-skel-hyperboloid-two-sheets-slices">
   <caption>
     Slicing the hyperboloid of two sheets with planes <m>x = c</m>, <m>y = c</m>,
@@ -799,6 +831,7 @@ from a hyperboloid of two sheets.
     </instructions>
   </interactive>
  </figure>
+ </sidebyside>
 
  <figure xml:id="fig-skel-hyperboloid-two-sheets-video">
   <caption>
@@ -985,12 +1018,29 @@ from a hyperboloid of two sheets.
     </image>
   </figure>
 
-  <p>
+  <p component="web">
     <term>Hyperbolic paraboloid.</term>  The saddle is <term>doubly ruled</term>:
     through every point pass two straight lines that lie entirely on the surface,
     just like the flat traces <mdash/> the two crossing lines in the plane
     <m>z = 0</m> <mdash/> that appear when we slice it in
     <xref ref="fig-skel-hyperbolic-paraboloid-slices"/>.  A doubly curved roof
+    can therefore be built out of straight beams, or poured over straight
+    formwork, which makes the hyperbolic paraboloid both strong and inexpensive to
+    build.  It is the shape of many <q>saddle</q> roofs and of Félix Candela's
+    thin concrete shells <mdash/> and, on a smaller scale, of a Pringles potato
+    chip.  The benefit is efficiency: a thin shell of this shape carries its load
+    by compression and tension acting within the surface rather than by bending,
+    so it can roof a very wide span with only a few inches of material.
+    Encyclopaedia Britannica's article on
+    <url href="https://www.britannica.com/technology/shell-structure-building-construction" visual="britannica.com/technology/shell-structure-building-construction">shell structures</url>
+    describes how such curved roofs are engineered from straight lines.
+  </p>
+  <p component="print">
+    <term>Hyperbolic paraboloid.</term>  The saddle is <term>doubly ruled</term>:
+    through every point pass two straight lines that lie entirely on the surface,
+    just like the flat traces <mdash/> the two crossing lines in the plane
+    <m>z = 0</m> <mdash/> that appear when the surface is sliced with the plane
+    <m>z = 0</m>.  A doubly curved roof
     can therefore be built out of straight beams, or poured over straight
     formwork, which makes the hyperbolic paraboloid both strong and inexpensive to
     build.  It is the shape of many <q>saddle</q> roofs and of Félix Candela's

@@ -137,6 +137,10 @@ quotient itself as <m>s</m> shrinks, so that the limit can be watched
 rather than only read.
 </p>
 
+<p component="print">
+An interactive view of this definition <mdash/> the point <m>P</m> moving the distance <m>s</m> from <m>P_0</m> along <m>\hat{u}</m>, with the secant slope approaching the directional derivative as <m>s \to 0</m> <mdash/> accompanies the online version of these notes.
+</p>
+<sidebyside component="web" width="100%">
 <figure xml:id="fig-skel-int-dirderiv-setup-3d">
 <caption>
 Interactive view of the definition of the directional derivative. The point <m>P</m> moves the distance <m>s</m> from <m>P_0</m> along <m>\hat{u}</m>, and the secant slope approaches <m>\left(D_{\hat{u}} f\right)_{P_0}</m> as <m>s \to 0</m>.
@@ -161,6 +165,7 @@ to view it from a different angle, or press <q>Rotate</q> to spin it.
 </instructions>
 </interactive>
 </figure>
+</sidebyside>
 
 <figure xml:id="fig-skel-dirderiv-setup-prefigure">
 <caption>
@@ -229,6 +234,10 @@ the tangent line, whose slope is the directional derivative
        width="100%" aspect="16:9"/>
 </figure>
 
+<p component="print">
+An interactive figure of the difference quotient as a function of the direction angle and the step <m>s</m> accompanies the online version of these notes.
+</p>
+<sidebyside component="web" width="100%">
 <figure xml:id="fig-skel-int-dirderiv-definition">
 <caption>
 The difference quotient <m>\big(f(P)-f(P_0)\big)/s</m> for <m>f(x,y)=1+x^2+y^2</m> at <m>P_0(1,1)</m>, as functions of the direction angle and the step <m>s</m>.
@@ -247,6 +256,7 @@ quotient <m>\big(f(P) - f(P_0)\big)/s</m> with its limit as
 </instructions>
 </interactive>
 </figure>
+</sidebyside>
 
 <example xml:id="ex-skel-dirderiv-definition">
 <title>Example I</title>
@@ -308,6 +318,10 @@ check it by differentiating <m>g</m> directly.)
 </image>
 </sidebyside>
 
+<p component="print">
+An animation of the secant rotating onto the tangent line at <m>P_0</m> as <m>s \to 0</m> accompanies the online version of these notes.
+</p>
+<sidebyside component="web" width="100%">
 <figure xml:id="fig-skel-int-dirderiv-secant-3d-manim">
 <caption>
 The secant through <m>(P_0, f(P_0))</m> and <m>(P, f(P))</m> on the
@@ -333,6 +347,7 @@ change the viewpoint, or press <q>Spin</q> to let it turn.
 </instructions>
 </interactive>
 </figure>
+</sidebyside>
 </statement>
 </example>
 
@@ -783,7 +798,7 @@ the right angle is not a coincidence of the point <m>(1,1)</m>.
 
 <task xml:id="task-skel-perp-interactive">
 <statement>
-<p>
+<p component="web">
 Now drag the red point in
 <xref ref="fig-skel-int-gradient-level-curves"/> to several locations,
 including points on the axes and points far from the origin. Confirm that
@@ -791,7 +806,16 @@ the gradient arrow always meets the level curve at a right angle, and
 describe how the length of the arrow changes as the point moves away from
 the origin. Can you place the point where the gradient vanishes?
 </p>
+<p component="print">
+An interactive figure <mdash/> the gradient arrow drawn at a draggable
+point, together with the level curve through it <mdash/> accompanies the
+online version of these notes. Here, use the formula
+<m>\nabla f = 2x\,\hat{\imath} + 2y\,\hat{\jmath}</m> to describe how the
+length of the arrow changes as the point moves away from the origin, and
+to say where the gradient vanishes.
+</p>
 
+<sidebyside component="web" width="100%">
 <figure xml:id="fig-skel-int-gradient-level-curves">
 <caption>
 The gradient <m>\nabla f</m> of <m>f(x,y)=1+x^2+y^2</m> at a movable point, shown with the level curve through that point, illustrating that <m>\nabla f</m> is perpendicular to the level curves.
@@ -809,6 +833,7 @@ which <m>f</m> increases.
 </instructions>
 </interactive>
 </figure>
+</sidebyside>
 
 <sidebyside width="97%">
 <image>
@@ -988,6 +1013,10 @@ level curve <m>f = 3</m>, and its dashed projection in the
 </image>
 </figure>
 
+<p component="print">
+An animation of the tangent to the sliced surface tipping from steepest ascent through level to steepest descent as <m>\hat{u}</m> turns accompanies the online version of these notes.
+</p>
+<sidebyside component="web" width="100%">
 <figure xml:id="fig-skel-int-dirderiv-surface-slice-manim">
 <caption>
 The same slice, animated: the tangent to the sliced surface at
@@ -1012,6 +1041,7 @@ viewpoint, or press <q>Spin</q>.
 </instructions>
 </interactive>
 </figure>
+</sidebyside>
 </statement>
 </example>
 
@@ -1133,12 +1163,20 @@ change in the two directions orthogonal to <m>\nabla f</m>.
 <title>Verifying the Three Special Directions</title>
 
 <introduction>
-<p>
+<p component="web">
 The three cases above are all consequences of the single formula
 <xref ref="eq-skel-dirderiv-cos-theta"/>. In this activity you will derive
 them yourself and then check your answers against
 <xref ref="fig-skel-int-gradient-direction-angle"/>, where <m>\hat{u}</m>
 can be dragged around the circle of directions.
+</p>
+<p component="print">
+The three cases above are all consequences of the single formula
+<xref ref="eq-skel-dirderiv-cos-theta"/>. In this activity you will derive
+them yourself. An interactive figure for checking your answers <mdash/>
+<m>\hat{u}</m> dragged around the circle of directions, with
+<m>D_{\hat{u}} f</m> read out <mdash/> accompanies the online version of
+these notes.
 </p>
 </introduction>
 
@@ -1229,6 +1267,7 @@ answers to the previous task. As you drag, at what angle does the reading
 change most quickly, and at what angle is it momentarily stationary?
 </p>
 
+<sidebyside component="web" width="100%">
 <figure xml:id="fig-skel-int-gradient-direction-angle">
 <caption>
 The directional derivative <m>D_{\hat{u}} f = \|\nabla f\|\cos\theta</m> as the unit vector <m>\hat{u}</m> rotates around <m>P_0</m>.
@@ -1246,6 +1285,7 @@ decrease), and a direction orthogonal to <m>\nabla f</m> (no change).
 </instructions>
 </interactive>
 </figure>
+</sidebyside>
 
 <sidebyside width="97%">
 <image>
@@ -1337,6 +1377,10 @@ each is placed relative to that curve.)
 </image>
 </sidebyside>
 
+<p component="print">
+An animation of <m>D_{\hat{u}} f</m> sweeping between <m>\|\nabla f\|</m> and <m>-\|\nabla f\|</m> as <m>\hat{u}</m> turns accompanies the online version of these notes.
+</p>
+<sidebyside component="web" width="100%">
 <figure xml:id="fig-skel-int-gradient-max-directions-manim">
 <caption>
 The same three directions, animated: <m>D_{\hat{u}} f</m> sweeping
@@ -1359,7 +1403,12 @@ time and drag <m>\hat{u}</m> on the picture, or use the slider.
 </instructions>
 </interactive>
 </figure>
+</sidebyside>
 
+<p component="print">
+A matching animated 3D view of the tangent line tipping as <m>\hat{u}</m> turns accompanies the online version of these notes.
+</p>
+<sidebyside component="web" width="100%">
 <figure xml:id="fig-skel-int-gradient-max-directions-3d-manim">
 <caption>
 The same 3D view, animated: the tangent to the sliced surface at
@@ -1383,6 +1432,7 @@ press <q>Spin</q>.
 </instructions>
 </interactive>
 </figure>
+</sidebyside>
 </statement>
 </example>
 

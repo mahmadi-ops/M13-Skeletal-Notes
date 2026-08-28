@@ -1130,12 +1130,20 @@ and the directions of no change.
         </li>
       </ol>
     </p>
+    <p component="print">
+      An interactive figure of the plate <mdash/> the equipotential route at
+      <m>V = 86</m> V and the field-line route side by side, with the
+      potential read out as the point moves <mdash/> accompanies the online
+      version of these notes.
+    </p>
+    <sidebyside component="web" width="100%">
     <figure xml:id="figure-potential-plate">
       <caption>The potential <m>V(x,y) = 100 - 2x^2 - 6y^2</m> on the plate. One route holds <m>V = 86</m> V along the equipotential <m>2x^2 + 6y^2 = 14</m>; the other follows a field line, on which <m>D_{\hat{u}}V = -\|\nabla V\|</m> at every point.</caption>
       <interactive xml:id="interactive-potential-plate"
                    iframe="potential-plate-3d.html"
                    width="100%" aspect="16:10"/>
     </figure>
+    </sidebyside>
   </answer>
 </exercise>
 
@@ -1203,6 +1211,14 @@ and the directions of no change.
       </ol>
     </p>
   
+    <p component="print">
+      Two interactive figures accompany the online version of these notes:
+      one shows the grade as the angle <m>\alpha</m> of the tangent line cut
+      by a swinging vertical plane through <m>P_0</m>, and the other compares
+      the fall line, the level traverse, and the <m>12\%</m> line on the
+      mountainside itself.
+    </p>
+    <sidebyside component="web" width="100%">
     <figure xml:id="figure-alpha-tangent">
       <caption>
         Part (a) says the grade is <m>\|\nabla h\| = 0.2561</m>. Here is what that
@@ -1219,12 +1235,15 @@ and the directions of no change.
                    iframe="alpha-tangent.html"
                    width="100%" aspect="1:1"/>
     </figure>
+    </sidebyside>
+    <sidebyside component="web" width="100%">
     <figure xml:id="figure-fall-line">
       <caption>The mountainside <m>h(x,y) = 3000 - 0.0004x^2 - 0.001y^2</m>. Compare the fall line, the level traverse, and the <m>12\%</m> line. Watch the grade readout drift away from <m>12\%</m> as the skier leaves <m>P_0</m>, since the angle in part (c) is computed at <m>P_0</m> only.</caption>
       <interactive xml:id="interactive-fall-line"
                    iframe="fall-line-3d.html"
                    width="100%" aspect="16:10"/>
     </figure>
+    </sidebyside>
   </answer>
 </exercise>
 
@@ -1296,17 +1315,24 @@ and the directions of no change.
         </li>
       </ol>
     </p>
-    <p>
+    <p component="web">
       Use the interactive figure to explore the problem further geometrically,
       switching between the two headings and watching how the barometer responds as
       the ship moves.
     </p>
+    <p component="print">
+      An interactive figure of the pressure field <mdash/> the two headings
+      switchable, with the barometer responding as the ship moves <mdash/>
+      accompanies the online version of these notes.
+    </p>
+    <sidebyside component="web" width="100%">
     <figure xml:id="figure-isobars-low">
       <caption>The pressure field <m>P(x,y) = 988 + 0.004(x^2+y^2)</m> around a low. One heading circles the eye at constant <m>990</m> mb; the other runs outward along <m>\nabla P</m>. The distance readout shows why <m>\|\nabla P\| = 0.008r</m> grows with radius.</caption>
       <interactive xml:id="interactive-isobars-low"
                    iframe="isobars-low-3d.html"
                    width="100%" aspect="16:10"/>
     </figure>
+    </sidebyside>
   </answer>
 </exercise>
 

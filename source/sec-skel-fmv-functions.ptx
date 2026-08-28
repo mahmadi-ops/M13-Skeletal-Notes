@@ -744,12 +744,19 @@ upwards above the origin and one opening downwards below it.
 </image>
 </figure>
 
-<p>
+<p component="web">
 <xref ref="fig-skel-fsv-level-surface-morph"/> animates the transition. Watch
 what happens to the surface as <m>c</m> passes through zero, and check it
 against the three cases you just wrote down.
 </p>
+<p component="print">
+An animation of the transition <mdash/> the hyperboloid of two sheets closing
+up into the cone and opening out into the hyperboloid of one sheet as
+<m>c</m> passes through zero <mdash/> accompanies the online version of these
+notes.
+</p>
 
+<sidebyside component="web" width="100%">
 <figure xml:id="fig-skel-fsv-level-surface-morph">
 <caption>
 The same three cases, animated. As <m>c</m> passes through zero the
@@ -777,6 +784,7 @@ on screen faintly, so you can watch both hyperboloids hug it as
 </instructions>
 </interactive>
 </figure>
+</sidebyside>
 
 </statement>
 </example>

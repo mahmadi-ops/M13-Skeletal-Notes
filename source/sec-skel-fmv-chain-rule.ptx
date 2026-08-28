@@ -426,7 +426,7 @@ surface, the circle, the curve and the three marked points.
 </image>
 </figure>
 
-<p>
+<p component="web">
 <xref ref="fig-skel-cr-saddle-interactive"/> sets that picture moving. Send the
 point round the circle with the slider, or jump straight to
 <m>t = 0</m>, <m>t = \pi/4</m> and <m>t = \pi/2</m>; the readout carries both
@@ -435,7 +435,14 @@ against the reading at <m>t = \pi/2</m>, and note how many times the curve
 climbs and falls in one trip round the circle <mdash/> your formula for
 <m>dw/dt</m> should predict that.
 </p>
+<p component="print">
+An animation of that picture <mdash/> the point going round the circle with
+the height <m>w</m> and the rate <m>dw/dt</m> read out, so the value you
+computed can be checked at <m>t = \pi/2</m> <mdash/> accompanies the online
+version of these notes.
+</p>
 
+<sidebyside component="web" width="100%">
 <figure xml:id="fig-skel-cr-saddle-interactive">
 <caption>
 <xref ref="fig-skel-cr-saddle"/>, set moving. Send the point round the circle
@@ -461,6 +468,7 @@ picture to turn it.
 </instructions>
 </interactive>
 </figure>
+</sidebyside>
 
 </statement>
 </example>
