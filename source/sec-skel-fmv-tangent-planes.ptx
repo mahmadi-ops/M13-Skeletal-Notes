@@ -72,11 +72,6 @@ normal line to the surface, estimate the change in <m>f</m> caused by
 moving a small distance away from <m>P_0</m> in a given direction, and
 finally use the tangent plane to linearize <m>f</m> near a point.
 </p>
-<p>
-<em>These are skeletal notes: the definitions, theorems, and problem
-statements are given, and blank boxes are left wherever a derivation, a
-solution, or a sketch belongs, so that you can fill them in by hand.</em>
-</p>
 </introduction>
 
 <!-- ================================================================ -->
@@ -90,14 +85,13 @@ surface <m>z = f(x,y)</m> at <m>P_0(x_0, y_0, f(x_0,y_0))</m>. Start with
 a general plane through <m>P_0</m>,
 <md xml:id="eq-skel-tp-plane-general" number="yes">
 A(x - x_0) + B(y - y_0) + C(z - z_0) = 0,
-\qquad z_0 = f(x_0,y_0),
+\qquad z_0 = f(x_0,y_0).
 </md>
-and identify its coefficients.
 </p>
 
 <p>
-<em>Derivation.</em>
-(Solve <xref ref="eq-skel-tp-plane-general"/> for <m>z - z_0</m>. Setting
+Identify <m>A</m>, <m>B</m> and <m>C</m> by looking at the plane one
+slice at a time. (Solve <xref ref="eq-skel-tp-plane-general"/> for <m>z - z_0</m>. Setting
 <m>y = y_0</m> leaves the tangent line lying in the plane
 <m>y = y_0</m>, so its slope must be one of the two partial derivatives;
 do the same with <m>x = x_0</m>. Then substitute the two slopes back and
@@ -252,8 +246,8 @@ surface is a level surface of <m>w</m>.
 </p>
 
 <p>
-<em>Derivation.</em>
-(Compute the three partial derivatives of <m>w</m> and assemble
+Take the gradient of that level function. (Compute the three partial
+derivatives of <m>w</m> and assemble
 <m>\nabla w</m>; the third one is where the <m>-\hat{k}</m> comes from.
 Evaluate at <m>P_0</m> and compare the result with the coefficients of
 <xref ref="eq-skel-tp-tangent-plane"/> <mdash/> they should be the same
@@ -354,13 +348,8 @@ always stands at a right angle to it.
 
 <p>
 Finally, <m>\mathbf n</m> is the direction vector of the line normal to
-the surface at <m>P_0</m>.
-</p>
-
-<p>
-<em>Derivation.</em>
-(A line is determined by a point on it and a direction vector; you have
-both. Write its parametric equations, using
+the surface at <m>P_0</m>. (A line is determined by a point on it and a
+direction vector; you have both. Write its parametric equations, using
 <xref ref="eq-skel-tp-normal-vector"/> for the direction.)
 </p>
 
@@ -425,13 +414,31 @@ Find the equation of the tangent plane to the surface at <m>P_0</m>.
 </statement>
 
 <p>
-<em>Solution.</em>
-(<alert>A.</alert> Take <m>w = -x^2 - y^2 - z</m>, compute
+<em>A.</em>
+(Take <m>w = -x^2 - y^2 - z</m> and compute
 <m>\mathbf n = \nabla w \big|_{P_0}</m> by
-<xref ref="eq-skel-tp-normal-vector"/>, and feed its components into
-<xref ref="eq-skel-tp-normal-line"/>.
-<alert>B.</alert> The components of <m>\mathbf n</m> are already the
-coefficients of the plane, so only the constant term is left: get it from
+<xref ref="eq-skel-tp-normal-vector"/>, then feed its components into
+<xref ref="eq-skel-tp-normal-line"/>.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,10);
+\draw[gray!35] (0,4.5) -- (15,4.5);
+\node[anchor=north west, font=\small\itshape] at (0.35,9.7) {$\nabla w$, and $\mathbf n$ at $P_0$:};
+\node[anchor=north west, font=\small\itshape] at (0.35,4.2) {the normal line:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in two rows, one for the gradient of w and the normal vector at P nought, and one for the parametric equations of the normal line.</shortdescription>
+</image>
+</sidebyside>
+
+<p>
+<em>B.</em>
+(The components of <m>\mathbf n</m> are already the coefficients of the
+plane, so only the constant term is left: get it from
 <m>\mathbf n \cdot \overrightarrow{OP_0}</m>. Check both answers against
 <xref ref="fig-skel-tp-example-paraboloid"/>.)
 </p>
@@ -440,15 +447,11 @@ coefficients of the plane, so only the constant term is left: get it from
 <image>
 <latex-image>
 \begin{tikzpicture}
-\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,14);
-\draw[gray!35] (0,9.3) -- (15,9.3);
-\draw[gray!35] (0,5.6) -- (15,5.6);
-\node[anchor=north west, font=\small\itshape] at (0.35,13.7) {A. $\nabla w$, and $\mathbf n$ at $P_0$:};
-\node[anchor=north west, font=\small\itshape] at (0.35,9.0) {the normal line:};
-\node[anchor=north west, font=\small\itshape] at (0.35,5.3) {B. the tangent plane:};
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,7);
+\node[anchor=north west, font=\small\itshape] at (0.35,6.7) {the tangent plane:};
 \end{tikzpicture}
 </latex-image>
-<shortdescription>Blank box in three rows: the gradient of w and the normal vector at P nought, the parametric equations of the normal line, and the equation of the tangent plane.</shortdescription>
+<shortdescription>Blank box for the equation of the tangent plane to the paraboloid at P nought.</shortdescription>
 </image>
 </sidebyside>
 </example>
@@ -686,8 +689,8 @@ direction <m>\hat{u}</m>?</em>
 </blockquote>
 
 <p>
-<em>Derivation.</em>
-(Write the displacement of length <m>ds</m> in the direction
+Answer the question by following the displacement. (Write the
+displacement of length <m>ds</m> in the direction
 <m>\hat{u}</m> in components, add it to <m>P_0</m> to name the point it
 reaches, and write down the change it causes in the value of <m>f</m>.
 Check the length of your displacement vector: it has to come to
@@ -821,10 +824,6 @@ value of the function.
 Computing <xref ref="eq-skel-tp-delta-f"/> exactly means evaluating
 <m>f</m> twice. The directional derivative gives an estimate that costs
 only one gradient.
-</p>
-
-<p>
-<em>Derivation.</em>
 (<xref ref="eq-skel-dirderiv-gradient-relation"/> gives the rate at which
 <m>f</m> changes per unit distance travelled in the direction
 <m>\hat{u}</m>. Multiply by the distance actually travelled, and say why
