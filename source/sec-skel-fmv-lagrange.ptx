@@ -8,12 +8,15 @@
   LagrangeMultipliers.ptx of the full lecture notes; every xml:id here is
   prefixed with "skel-" so the two can coexist.
 
-  Figures: all seven are reproduced in full.  The two schematics and the
+  Figures: all eight are reproduced in full.  The two schematics and the
   two videos carry the argument for collinearity, and the three level
   curve pictures (the family of level curves, the ellipse with its
   hyperbolas, the circle with its level circles) are far past what a
   student can draw in class, so each is kept and followed by a box that
-  asks for what has to be read off it.
+  asks for what has to be read off it.  The jewelry-box drawing of the
+  cost-of-a-box exercise (moved into this section from the exercises
+  worksheet, mirroring the full notes) is also kept in full, with the
+  solution replaced by a workspace box.
 
   The closing remark on the two-variable case is optional reading rather
   than class work, so it is kept in full, figures and all.
@@ -427,8 +430,9 @@ coordinates of the candidate points.
 
 <!-- ================================================================ -->
 <subsection xml:id="subsec-skel-lagrange-examples">
-<title>Examples</title>
+<title>Examples: Functions of Two Variables</title>
 
+<!-- ================================================================ -->
 <subsubsection xml:id="subsubsec-skel-lagrange-example-ellipse">
 <title>Extrema on an Ellipse</title>
 
@@ -615,164 +619,6 @@ curves <m>xy = \pm 1</m> do instead.)
 \end{tikzpicture}
 </latex-image>
 <shortdescription>Blank box in two rows, one for the two gradients at the point two comma one with the multiplier relating them, and one for how the extremal level curves and the remaining level curves meet the ellipse.</shortdescription>
-</image>
-</sidebyside>
-
-</subsubsection>
-
-<!-- ================================================================ -->
-<subsubsection xml:id="subsubsec-skel-lagrange-example-distance">
-<title>Shortest Distance to a Plane</title>
-
-<p>
-In <xref ref="ex-skel-shortest-distance"/> we found the shortest
-distance from a point to a plane by substituting the equation of the
-plane into the distance function and minimizing the resulting function
-of two variables with the second derivative test. In the next example we
-solve the same problem with Lagrange multipliers, and then once more
-using the normal vector to the plane.
-</p>
-
-<example xml:id="ex-skel-lagrange-distance">
-<title>Shortest Distance to a Plane, Revisited</title>
-<statement>
-<p>
-Find the shortest distance from the point <m>(1,0,-2)</m> to the plane
-<m>x + 2y + z = 4</m>.
-</p>
-</statement>
-
-<p>
-<em>Solution.</em>
-(Minimize the <em>square</em> of the distance rather than the distance
-itself, and say why that is legitimate. Write the plane as <m>g = 0</m>,
-take both gradients, and solve the three component equations for
-<m>x</m>, <m>y</m> and <m>z</m> in terms of <m>\lambda</m>; the
-constraint then pins <m>\lambda</m> down in one line. Report the closest
-point and the distance.)
-</p>
-
-<sidebyside width="97%">
-<image>
-<latex-image>
-\begin{tikzpicture}
-\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,15);
-\draw[gray!35] (0,11.6) -- (15,11.6);
-\draw[gray!35] (0,8.2) -- (15,8.2);
-\draw[gray!35] (0,4.2) -- (15,4.2);
-\node[anchor=north west, font=\small\itshape] at (0.35,14.7) {$f$ to minimize, and $g$:};
-\node[anchor=north west, font=\small\itshape] at (0.35,11.3) {$\nabla f$ and $\nabla g$:};
-\node[anchor=north west, font=\small\itshape] at (0.35,7.9) {$x$, $y$, $z$ in terms of $\lambda$, then $\lambda$:};
-\node[anchor=north west, font=\small\itshape] at (0.35,3.9) {the closest point, and the distance:};
-\end{tikzpicture}
-</latex-image>
-<shortdescription>Blank box in four rows: the function to minimize together with the constraint function, the two gradients, the coordinates in terms of the multiplier followed by the value of the multiplier, and the closest point with the resulting distance.</shortdescription>
-</image>
-</sidebyside>
-</example>
-
-<figure xml:id="fig-skel-lagrange-plane-prefigure">
-<caption>
-A schematic, edge-on view of the plane <m>x + 2y + z = 4</m> and the
-point <m>P_0(1,0,-2)</m>. The shortest segment from <m>P_0</m> to the
-plane is along the normal vector <m>\mathbf n</m>; the dashed segments,
-which reach the plane in any other direction, are longer.
-</caption>
-<image width="75%">
-<prefigure xmlns="https://prefigure.org" label="skel-prefigure-lagrange-plane">
-<diagram dimensions="(450,290)" margins="10">
-<coordinates bbox="(-1.0,-0.8,4.3,2.5)">
-<line at="pd-plane" endpoints="((-0.6,2.25),(3.6,0.15))"
-      stroke="#009E73" thickness="2.5"/>
-<line at="pd-far1" endpoints="((0.8,-0.4),(-0.3,2.1))"
-      stroke="#7F7F7F" dash="5 4" thickness="1.5"/>
-<line at="pd-far2" endpoints="((0.8,-0.4),(2.9,0.5))"
-      stroke="#7F7F7F" dash="5 4" thickness="1.5"/>
-<line at="pd-ra1" endpoints="((1.714,1.093),(1.647,0.959))"
-      stroke="black" thickness="1.5"/>
-<line at="pd-ra2" endpoints="((1.647,0.959),(1.513,1.026))"
-      stroke="black" thickness="1.5"/>
-<vector at="pd-seg" v="(0.78,1.56)" tail="(0.8,-0.4)"
-        stroke="#D55E00" thickness="3"/>
-<vector at="pd-n" v="(0.335,0.671)" tail="(3.1,0.4)"
-        stroke="#0072B2" thickness="3"/>
-<point at="pd-P0" p="(0.8,-0.4)" fill="black" alignment="s">
-<m>P_0(1,0,-2)</m>
-</point>
-<point at="pd-P" p="(1.58,1.16)" fill="black" alignment="w">
-<m>P\left(\frac{11}{6},\frac{5}{3},-\frac{7}{6}\right)</m>
-</point>
-<label at="pd-plane-label" anchor="(-0.5,2.32)" alignment="e" color="#009E73">
-<m>x+2y+z=4</m>
-</label>
-<label at="pd-d-label" anchor="(1.32,0.38)" alignment="e" color="#D55E00">
-<m>d=\frac{5}{6}\sqrt{6}</m>
-</label>
-<label at="pd-n-label" anchor="(4.25,1.45)" alignment="w" color="#0072B2">
-<m>\mathbf n=\hat{\imath}+2\,\hat{\jmath}+\hat{k}</m>
-</label>
-</coordinates>
-
-<annotations>
-<annotation ref="figure" text="A schematic edge-on view. A green slanted line represents the plane x plus 2 y plus z equals 4. Below it is the point P 0 with coordinates 1, 0, negative 2. A red arrow runs from P 0 perpendicularly to the plane, meeting it at the closest point P with coordinates 11 sixths, 5 thirds, negative 7 sixths; a small square marks the right angle. Two dashed gray segments from P 0 reach the plane at other points and are visibly longer. A blue arrow on the plane shows the normal vector n equals i plus 2 j plus k.">
-  <annotation ref="pd-plane" text="The plane x plus 2 y plus z equals 4, drawn edge-on as a green line."/>
-  <annotation ref="pd-P0" text="The point P 0 with coordinates 1, 0, negative 2, lying off the plane."/>
-  <annotation ref="pd-seg" text="The shortest segment, drawn in red, from P 0 to the plane. It has length d equals five sixths times the square root of 6 and meets the plane at a right angle."/>
-  <annotation ref="pd-P" text="The closest point P on the plane, with coordinates 11 sixths, 5 thirds, negative 7 sixths."/>
-  <annotation ref="pd-n" text="The normal vector n equals i plus 2 j plus k of the plane, drawn in blue. The shortest segment from P 0 is parallel to it."/>
-  <annotation ref="pd-far1" text="A dashed segment from P 0 to another point of the plane, longer than the perpendicular segment."/>
-  <annotation ref="pd-far2" text="A second dashed segment from P 0 to another point of the plane, also longer than the perpendicular segment."/>
-</annotation>
-</annotations>
-</diagram>
-</prefigure>
-</image>
-</figure>
-
-<p>
-<em>Another solution, using the normal to the plane.</em>
-(<xref ref="fig-skel-lagrange-plane-prefigure"/> says that the shortest
-segment meets the plane at a right angle, so
-<m>\overrightarrow{P_0 P}</m> is parallel to the normal vector
-<m>\mathbf n</m> of the plane <mdash/> read <m>\mathbf n</m> off the
-coefficients. Write that parallelism with a scalar, substitute into the
-equation of the plane, and check that you land on the same point as
-before.)
-</p>
-
-<sidebyside width="97%">
-<image>
-<latex-image>
-\begin{tikzpicture}
-\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,11);
-\draw[gray!35] (0,7.3) -- (15,7.3);
-\draw[gray!35] (0,3.6) -- (15,3.6);
-\node[anchor=north west, font=\small\itshape] at (0.35,10.7) {$\mathbf n$, and $\overrightarrow{P_0 P}$ parallel to it:};
-\node[anchor=north west, font=\small\itshape] at (0.35,7.0) {substituting into the plane:};
-\node[anchor=north west, font=\small\itshape] at (0.35,3.3) {the point, and the distance:};
-\end{tikzpicture}
-</latex-image>
-<shortdescription>Blank box in three rows: the normal vector with the parallelism condition on the segment, the substitution into the equation of the plane, and the resulting point and distance.</shortdescription>
-</image>
-</sidebyside>
-
-<p>
-The two solutions are more closely related than they look.
-(Write <m>\nabla f</m> at the closest point in terms of
-<m>\overrightarrow{P_0 P}</m>, and <m>\nabla g</m> in terms of
-<m>\mathbf n</m>. Then say in one sentence what the Lagrange condition
-<xref ref="eq-skel-lagrange-collinear"/> is asserting geometrically.)
-</p>
-
-<sidebyside width="97%">
-<image>
-<latex-image>
-\begin{tikzpicture}
-\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,6);
-\node[anchor=north west, font=\small\itshape] at (0.35,5.7) {$\nabla f$, $\nabla g$, and what $\nabla f = \lambda \nabla g$ says here:};
-\end{tikzpicture}
-</latex-image>
-<shortdescription>Blank box for writing the two gradients at the closest point in geometric terms and stating what the collinearity condition means there.</shortdescription>
 </image>
 </sidebyside>
 
@@ -1013,6 +859,267 @@ tangent to the constraint circle, while an intermediate level curve
 </figure>
 
 </subsubsection>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="subsec-skel-lagrange-three-variables">
+<title>Examples: Functions of Three Variables</title>
+
+<!-- ================================================================ -->
+<subsubsection xml:id="subsubsec-skel-lagrange-example-distance">
+<title>Shortest Distance to a Plane</title>
+
+<p>
+In <xref ref="ex-skel-shortest-distance"/> we found the shortest
+distance from a point to a plane by substituting the equation of the
+plane into the distance function and minimizing the resulting function
+of two variables with the second derivative test. In the next example we
+solve the same problem with Lagrange multipliers, and then once more
+using the normal vector to the plane.
+</p>
+
+<example xml:id="ex-skel-lagrange-distance">
+<title>Shortest Distance to a Plane, Revisited</title>
+<statement>
+<p>
+Find the shortest distance from the point <m>(1,0,-2)</m> to the plane
+<m>x + 2y + z = 4</m>.
+</p>
+</statement>
+
+<p>
+<em>Solution.</em>
+(Minimize the <em>square</em> of the distance rather than the distance
+itself, and say why that is legitimate. Write the plane as <m>g = 0</m>,
+take both gradients, and solve the three component equations for
+<m>x</m>, <m>y</m> and <m>z</m> in terms of <m>\lambda</m>; the
+constraint then pins <m>\lambda</m> down in one line. Report the closest
+point and the distance.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,15);
+\draw[gray!35] (0,11.6) -- (15,11.6);
+\draw[gray!35] (0,8.2) -- (15,8.2);
+\draw[gray!35] (0,4.2) -- (15,4.2);
+\node[anchor=north west, font=\small\itshape] at (0.35,14.7) {$f$ to minimize, and $g$:};
+\node[anchor=north west, font=\small\itshape] at (0.35,11.3) {$\nabla f$ and $\nabla g$:};
+\node[anchor=north west, font=\small\itshape] at (0.35,7.9) {$x$, $y$, $z$ in terms of $\lambda$, then $\lambda$:};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.9) {the closest point, and the distance:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in four rows: the function to minimize together with the constraint function, the two gradients, the coordinates in terms of the multiplier followed by the value of the multiplier, and the closest point with the resulting distance.</shortdescription>
+</image>
+</sidebyside>
+</example>
+
+<figure xml:id="fig-skel-lagrange-plane-prefigure">
+<caption>
+A schematic, edge-on view of the plane <m>x + 2y + z = 4</m> and the
+point <m>P_0(1,0,-2)</m>. The shortest segment from <m>P_0</m> to the
+plane is along the normal vector <m>\mathbf n</m>; the dashed segments,
+which reach the plane in any other direction, are longer.
+</caption>
+<image width="75%">
+<prefigure xmlns="https://prefigure.org" label="skel-prefigure-lagrange-plane">
+<diagram dimensions="(450,290)" margins="10">
+<coordinates bbox="(-1.0,-0.8,4.3,2.5)">
+<line at="pd-plane" endpoints="((-0.6,2.25),(3.6,0.15))"
+      stroke="#009E73" thickness="2.5"/>
+<line at="pd-far1" endpoints="((0.8,-0.4),(-0.3,2.1))"
+      stroke="#7F7F7F" dash="5 4" thickness="1.5"/>
+<line at="pd-far2" endpoints="((0.8,-0.4),(2.9,0.5))"
+      stroke="#7F7F7F" dash="5 4" thickness="1.5"/>
+<line at="pd-ra1" endpoints="((1.714,1.093),(1.647,0.959))"
+      stroke="black" thickness="1.5"/>
+<line at="pd-ra2" endpoints="((1.647,0.959),(1.513,1.026))"
+      stroke="black" thickness="1.5"/>
+<vector at="pd-seg" v="(0.78,1.56)" tail="(0.8,-0.4)"
+        stroke="#D55E00" thickness="3"/>
+<vector at="pd-n" v="(0.335,0.671)" tail="(3.1,0.4)"
+        stroke="#0072B2" thickness="3"/>
+<point at="pd-P0" p="(0.8,-0.4)" fill="black" alignment="s">
+<m>P_0(1,0,-2)</m>
+</point>
+<point at="pd-P" p="(1.58,1.16)" fill="black" alignment="w">
+<m>P\left(\frac{11}{6},\frac{5}{3},-\frac{7}{6}\right)</m>
+</point>
+<label at="pd-plane-label" anchor="(-0.5,2.32)" alignment="e" color="#009E73">
+<m>x+2y+z=4</m>
+</label>
+<label at="pd-d-label" anchor="(1.32,0.38)" alignment="e" color="#D55E00">
+<m>d=\frac{5}{6}\sqrt{6}</m>
+</label>
+<label at="pd-n-label" anchor="(4.25,1.45)" alignment="w" color="#0072B2">
+<m>\mathbf n=\hat{\imath}+2\,\hat{\jmath}+\hat{k}</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="A schematic edge-on view. A green slanted line represents the plane x plus 2 y plus z equals 4. Below it is the point P 0 with coordinates 1, 0, negative 2. A red arrow runs from P 0 perpendicularly to the plane, meeting it at the closest point P with coordinates 11 sixths, 5 thirds, negative 7 sixths; a small square marks the right angle. Two dashed gray segments from P 0 reach the plane at other points and are visibly longer. A blue arrow on the plane shows the normal vector n equals i plus 2 j plus k.">
+  <annotation ref="pd-plane" text="The plane x plus 2 y plus z equals 4, drawn edge-on as a green line."/>
+  <annotation ref="pd-P0" text="The point P 0 with coordinates 1, 0, negative 2, lying off the plane."/>
+  <annotation ref="pd-seg" text="The shortest segment, drawn in red, from P 0 to the plane. It has length d equals five sixths times the square root of 6 and meets the plane at a right angle."/>
+  <annotation ref="pd-P" text="The closest point P on the plane, with coordinates 11 sixths, 5 thirds, negative 7 sixths."/>
+  <annotation ref="pd-n" text="The normal vector n equals i plus 2 j plus k of the plane, drawn in blue. The shortest segment from P 0 is parallel to it."/>
+  <annotation ref="pd-far1" text="A dashed segment from P 0 to another point of the plane, longer than the perpendicular segment."/>
+  <annotation ref="pd-far2" text="A second dashed segment from P 0 to another point of the plane, also longer than the perpendicular segment."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+
+<p>
+<em>Another solution, using the normal to the plane.</em>
+(<xref ref="fig-skel-lagrange-plane-prefigure"/> says that the shortest
+segment meets the plane at a right angle, so
+<m>\overrightarrow{P_0 P}</m> is parallel to the normal vector
+<m>\mathbf n</m> of the plane <mdash/> read <m>\mathbf n</m> off the
+coefficients. Write that parallelism with a scalar, substitute into the
+equation of the plane, and check that you land on the same point as
+before.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,11);
+\draw[gray!35] (0,7.3) -- (15,7.3);
+\draw[gray!35] (0,3.6) -- (15,3.6);
+\node[anchor=north west, font=\small\itshape] at (0.35,10.7) {$\mathbf n$, and $\overrightarrow{P_0 P}$ parallel to it:};
+\node[anchor=north west, font=\small\itshape] at (0.35,7.0) {substituting into the plane:};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.3) {the point, and the distance:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in three rows: the normal vector with the parallelism condition on the segment, the substitution into the equation of the plane, and the resulting point and distance.</shortdescription>
+</image>
+</sidebyside>
+
+<p>
+The two solutions are more closely related than they look.
+(Write <m>\nabla f</m> at the closest point in terms of
+<m>\overrightarrow{P_0 P}</m>, and <m>\nabla g</m> in terms of
+<m>\mathbf n</m>. Then say in one sentence what the Lagrange condition
+<xref ref="eq-skel-lagrange-collinear"/> is asserting geometrically.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,6);
+\node[anchor=north west, font=\small\itshape] at (0.35,5.7) {$\nabla f$, $\nabla g$, and what $\nabla f = \lambda \nabla g$ says here:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box for writing the two gradients at the closest point in geometric terms and stating what the collinearity condition means there.</shortdescription>
+</image>
+</sidebyside>
+
+</subsubsection>
+
+<!-- ================================================================ -->
+<subsubsection xml:id="subsubsec-skel-lagrange-example-box">
+<title>Minimizing the Cost of a Box</title>
+
+<exercise xml:id="exer-skel-jewelry-box">
+<title>Minimizing the cost of a box</title>
+
+<statement>
+<p>
+A jewelry box is to be constructed of material that costs
+<dollar/>1 per square inch for the bottom, <dollar/>2 per square
+inch for the sides, and <dollar/>5 per square inch for the top.
+If the total volume is to be <m>96 \text{ in}^3</m>, what
+dimensions will minimize the total cost of construction?
+</p>
+
+<figure xml:id="fig-skel-jewelry-box">
+<caption>
+The box with dimensions <m>x</m>, <m>y</m>, <m>z</m>: bottom and
+top of area <m>xy</m>, and sides of areas <m>xz</m> and
+<m>yz</m>.
+</caption>
+<image xml:id="img-skel-jewelry-box" width="45%">
+<description>
+A rectangular box drawn in three dimensions, with the
+horizontal edges of the base labeled x and y and the vertical
+edge labeled z.
+</description>
+<latex-image label="skel-jewelry-box">
+\begin{tikzpicture}[line join=round, scale=1.0]
+\def\W{4}   % x : front width
+\def\H{2.5} % z : height
+\def\OX{1.5}\def\OY{0.85} % oblique offsets for the y depth
+% faces
+\fill[orange!30] (0,0) rectangle (\W,\H);
+\fill[orange!50]
+  (0,\H) -- (\OX,\H+\OY) -- (\W+\OX,\H+\OY) -- (\W,\H) -- cycle;
+\fill[orange!40]
+  (\W,0) -- (\W+\OX,\OY) -- (\W+\OX,\H+\OY) -- (\W,\H) -- cycle;
+% hidden edges
+\draw[orange!60!black, dashed]
+  (0,0) -- (\OX,\OY) -- (\W+\OX,\OY);
+\draw[orange!60!black, dashed] (\OX,\OY) -- (\OX,\H+\OY);
+% visible edges
+\draw[orange!60!black, thick] (0,0) rectangle (\W,\H);
+\draw[orange!60!black, thick]
+  (0,\H) -- (\OX,\H+\OY) -- (\W+\OX,\H+\OY) -- (\W,\H);
+\draw[orange!60!black, thick]
+  (\W,0) -- (\W+\OX,\OY) -- (\W+\OX,\H+\OY);
+% dimension labels
+\node[below] at (\W/2, 0) {$x$};
+\node[below right] at (\W + 0.5*\OX, 0.5*\OY) {$y$};
+\node[right] at (\W+\OX, \OY + 0.5*\H) {$z$};
+\end{tikzpicture}
+</latex-image>
+</image>
+</figure>
+</statement>
+</exercise>
+
+<p>
+<em>Solution.</em>
+(Write the total cost of the six faces as <m>C(x,y,z)</m> <mdash/> the
+bottom and the top both have area <m>xy</m> but carry different
+prices <mdash/> and the volume requirement as <m>g = 0</m>. Set up the
+Lagrange system; multiplying its three equations by <m>x</m>, <m>y</m>,
+<m>z</m> respectively makes every right-hand side <m>\lambda xyz</m>, so
+the left-hand sides can be compared in pairs. Finish with the constraint
+and report the three dimensions.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,14);
+\draw[gray!35] (0,10.5) -- (15,10.5);
+\draw[gray!35] (0,7) -- (15,7);
+\draw[gray!35] (0,3.5) -- (15,3.5);
+\node[anchor=north west, font=\small\itshape] at (0.35,13.7) {the cost $C(x,y,z)$, and the constraint $g = 0$:};
+\node[anchor=north west, font=\small\itshape] at (0.35,10.2) {the Lagrange system:};
+\node[anchor=north west, font=\small\itshape] at (0.35,6.7) {comparing the equations in pairs:};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.2) {the constraint, and the dimensions:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in four rows: the total cost function together with the volume constraint, the three equations of the Lagrange system, the relations obtained by comparing them in pairs, and the substitution into the constraint with the resulting dimensions.</shortdescription>
+</image>
+</sidebyside>
+
+</subsubsection>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="subsec-skel-lagrange-functions-n-variables">
+<title>Functions of <m>n</m> Variables</title>
 
 <!-- ================================================================ -->
 <subsubsection xml:id="subsubsec-skel-lagrange-n-variables">
