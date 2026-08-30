@@ -381,10 +381,13 @@ surface, the circle, the curve and the three marked points.
 % which the pdf-to-svg step flattens to a low-resolution bitmap and leaves the
 % rim of the disc visibly pixelated. Flat cells stay vector, and at this mesh
 % density they read as a continuous gradient anyway.
+% The mesh is coarser than the full notes' copy (13 x 49, not 17 x 97): in
+% this book's print run the z-buffered cell list of the finer mesh pushed
+% xelatex past its main memory and truncated the PDF at this very page.
 \addplot3[surf, shader=flat corner, point meta=z,
           fill opacity=0.8, draw=mapped color, draw opacity=0.8, line width=0.1pt,
           z buffer=sort, forget plot,
-          domain=0:1.32, y domain=0:360, samples=17, samples y=97]
+          domain=0:1.32, y domain=0:360, samples=13, samples y=49]
   ({x*cos(y)},{x*sin(y)},{x^2*cos(y)*sin(y)});
 % the unit circle in the xy-plane
 \addplot3[very thick, violet!75!black, forget plot, domain=0:360, samples=64]
