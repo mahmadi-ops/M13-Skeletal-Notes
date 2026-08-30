@@ -93,8 +93,21 @@ jobs:
       # Builds the web target and the print target, and drops the PDF next to
       # the HTML pages so the navbar's "PDF" button resolves. `pretext deploy`
       # then copies output/web wholesale to the staging area.
+      #
+      # extra_mem_top/bot: this book's PDF holds hundreds of tikz pictures
+      # (every workspace box, plus the pgfplots surfaces), whose paths are
+      # token lists in TeX's main memory. At xelatex's default ceiling
+      # (main_memory=5000000) the print run dies mid-book with "TeX capacity
+      # exceeded" and ships a truncated PDF (page-count guard in
+      # scripts/build-site.sh catches it). Kpathsea reads these two values
+      # from the environment at runtime, no format rebuild needed:
+      # extra_mem_top extends the token/char region, extra_mem_bot the
+      # box/glue region.
       - name: build site (web + PDF)
         run: scripts/build-site.sh
+        env:
+          extra_mem_top: "50000000"
+          extra_mem_bot: "20000000"
 
       - name: run deploy
         run: pretext deploy --no-push
