@@ -135,8 +135,9 @@ following series?
 <p>
 <md>
 <mrow>\lim_{n\to\infty} \frac{(5n+3)^{2n}}{(7n^2+2)^{n}}
-\amp = \lim_{n\to\infty} \left(\frac{(5n+3)^2}{7n^2+2}\right)^{n}
-= \lim_{n\to\infty} \left(\frac{25n^2 + 30n + 9}{7n^2+2}\right)^{n}</mrow>
+\amp = \lim_{n\to\infty} \left(\frac{(5n+3)^2}{7n^2+2}\right)^{n}</mrow>
+<mrow>\amp = \lim_{n\to\infty}
+\left(\frac{25n^2 + 30n + 9}{7n^2+2}\right)^{n}</mrow>
 <mrow>\amp = \lim_{n\to\infty} \left(\frac{25}{7}\right)^{n} = \infty
 \;\Rightarrow\; \text{the series diverges.}</mrow>
 </md>
@@ -206,8 +207,8 @@ setting <m>n = -1</m> gives <m>-B = 1</m>, so <m>B = -1</m>; and
 setting <m>n = -2</m> gives <m>2C = 1</m>, so <m>C = \frac12</m>.
 Hence
 <md>
-<mrow>\amp \sum_{n=1}^{\infty} \frac{1}{n(n+1)(n+2)}
-= \sum_{n=1}^{\infty} \frac12\left(\frac1n - \frac{2}{n+1}
+<mrow>\amp \sum_{n=1}^{\infty} \frac{1}{n(n+1)(n+2)}</mrow>
+<mrow>\amp = \sum_{n=1}^{\infty} \frac12\left(\frac1n - \frac{2}{n+1}
 + \frac{1}{n+2}\right)</mrow>
 <mrow>\amp = \frac12 \sum_{n=1}^{\infty}
 \left(\frac1n - \frac{1}{n+1}\right)
@@ -217,7 +218,8 @@ Hence
 \left(\frac1n - \frac{1}{n+1}\right)
 - \frac12 \sum_{n=2}^{\infty}
 \left(\frac1n - \frac{1}{n+1}\right)</mrow>
-<mrow>\amp = \frac12\left(1 - \frac12\right)
+<mrow>\amp = \frac12\left(1 - \frac12\right)</mrow>
+<mrow>\amp \qquad
 + \underbrace{\frac12 \sum_{n=2}^{\infty}
 \left(\frac1n - \frac{1}{n+1}\right)
 - \frac12 \sum_{n=2}^{\infty}
@@ -231,11 +233,11 @@ Hence
 This is a geometric series with <m>a = 1</m> and
 <m>r = \frac{1}{e^2}</m>:
 <md>
-\sum_{n=0}^{\infty} e^{-2n}
-= \sum_{n=0}^{\infty} \left(\frac{1}{e^2}\right)^{n}
-= \sum_{n=1}^{\infty} \left(\frac{1}{e^2}\right)^{n-1}
-= \frac{1}{1 - \frac{1}{e^2}}
-= \frac{e^2}{e^2 - 1}.
+<mrow>\sum_{n=0}^{\infty} e^{-2n}
+\amp = \sum_{n=0}^{\infty} \left(\frac{1}{e^2}\right)^{n}
+= \sum_{n=1}^{\infty} \left(\frac{1}{e^2}\right)^{n-1}</mrow>
+<mrow>\amp = \frac{1}{1 - \frac{1}{e^2}}
+= \frac{e^2}{e^2 - 1}.</mrow>
 </md>
 </p>
 </li>
@@ -265,10 +267,10 @@ diverges.
 <li>
 <p>
 <md>
-\sum_{n=2}^{\infty} \frac{2}{3^n}
-= \sum_{n=2}^{\infty} 2\left(\frac13\right)^{n}
-= \frac{2}{1-\frac13} - \left(2 + \frac23\right)
-= 3 - \frac83 = \frac13,
+<mrow>\sum_{n=2}^{\infty} \frac{2}{3^n}
+\amp = \sum_{n=2}^{\infty} 2\left(\frac13\right)^{n}</mrow>
+<mrow>\amp = \frac{2}{1-\frac13} - \left(2 + \frac23\right)
+= 3 - \frac83 = \frac13,</mrow>
 </md>
 where the terms for <m>n = 0</m> and <m>n = 1</m> need to be
 subtracted.
@@ -384,9 +386,10 @@ Find the sum of the convergent series
 Recall <m>\cos x = \displaystyle\sum_{n=0}^{\infty}
 \frac{(-1)^n x^{2n}}{(2n)!}</m>. With <m>x = 5</m>,
 <md>
-\cos(5) = \sum_{n=0}^{\infty} \frac{(-1)^n 5^{2n}}{(2n)!}
-= \sum_{n=0}^{\infty} \frac{(-1)^n 25^{n}}{(2n)!}
-= \sum_{n=0}^{\infty} \frac{(-25)^{n}}{(2n)!},
+<mrow>\cos(5) \amp = \sum_{n=0}^{\infty}
+  \frac{(-1)^n 5^{2n}}{(2n)!}
+= \sum_{n=0}^{\infty} \frac{(-1)^n 25^{n}}{(2n)!}</mrow>
+<mrow>\amp = \sum_{n=0}^{\infty} \frac{(-25)^{n}}{(2n)!},</mrow>
 </md>
 so the sum is <m>\cos(5)</m>.
 </p>

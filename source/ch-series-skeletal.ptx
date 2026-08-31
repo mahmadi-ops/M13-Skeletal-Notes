@@ -6,7 +6,7 @@
   here as their skeletal versions are written.
 -->
 <chapter xml:id="skel-chapter-series-sequences" xmlns:xi="http://www.w3.org/2001/XInclude">
-<title>Series and Sequences (Skeletal Notes)</title>
+<title>Series and Sequences</title>
 
 <xi:include href="sec-skel-series-infinite.ptx" />
 <xi:include href="sec-skel-series-taylor.ptx" />

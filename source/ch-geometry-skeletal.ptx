@@ -6,7 +6,7 @@
   here as their skeletal versions are written.
 -->
 <chapter xml:id="skel-chapter-geometry" xmlns:xi="http://www.w3.org/2001/XInclude">
-<title>3D Space and Vector Algebra (Skeletal Notes)</title>
+<title>3D Space and Vector Algebra</title>
 
 <xi:include href="sec-skel-geom-3d-coordinates.ptx" />
 <xi:include href="sec-skel-geom-vectors.ptx" />

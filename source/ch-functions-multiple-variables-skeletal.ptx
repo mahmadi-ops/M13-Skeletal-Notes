@@ -8,7 +8,7 @@
   same order, so the numbering here matches the lecture notes.
 -->
 <chapter xml:id="skel-chapter-functions-multiple-variables" xmlns:xi="http://www.w3.org/2001/XInclude">
-<title>Functions of Multiple Variables (Skeletal Notes)</title>
+<title>Functions of Multiple Variables</title>
 
 <xi:include href="sec-skel-fmv-functions.ptx" />
 <xi:include href="sec-skel-fmv-limits.ptx" />
