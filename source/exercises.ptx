@@ -1,17 +1,18 @@
 <chapter xml:id="section-exercises" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Exercises</title>
 
-<!-- ================= Hyperbolic Functions ================= -->
-<xi:include href="exercises-hyperbolic.ptx"/>
+<!-- ================= Assignment 1 ================= -->
+<xi:include href="assignment-1-hyperbolic.ptx"/>
 
-<!-- ================= Infinite Series ================= -->
-<xi:include href="exercises-infinite-series.ptx"/>
+<!-- ================= Assignment 2 ================= -->
+<xi:include href="assignment-2-series-taylor.ptx"/>
 
-<!-- ================= Taylor Series and its convergence ================= -->
-<xi:include href="activity-taylor-intro.ptx"/>
+<!-- ================= Assignment 3 ================= -->
+<xi:include href="assignment-3-taylor-convergence-binomial.ptx"/>
 
-<!-- ================= The Binomial Series ================= -->
-<xi:include href="exercises-binomial-series.ptx"/>
+<!-- ================= Review Problems #1 ================= -->
+<!-- Everything from the four topics above that was not assigned. -->
+<xi:include href="review-problems-1.ptx"/>
 
 <!-- ================= Three-Dimensional Coordinate Systems ================= -->
 <xi:include href="exercises-3d-coordinates.ptx"/>
