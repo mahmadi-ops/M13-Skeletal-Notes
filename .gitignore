@@ -112,3 +112,7 @@ codechat_config.yaml
 
 # Read-only cache of the full lecture notes (see scripts/sync-lecture-notes.sh)
 .reference/
+
+# Personal Claude Code permission rules for this machine. Shared project
+# settings belong in .claude/settings.json, which stays tracked.
+.claude/settings.local.json
