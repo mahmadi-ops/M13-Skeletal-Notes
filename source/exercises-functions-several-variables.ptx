@@ -133,28 +133,13 @@ Let <m>g</m> be a function of 3 variables defined by
 <md>
 g(x,y,z) = \sqrt{4x^2 + y^2 + 9z^2}.
 </md>
-<ol marker="A.">
-<li>
-<p>
 Find the equation for the level surface of <m>g</m> through the point
 <m>\left(2, \sqrt{11}, 1\right)</m> and sketch this level surface.
 Label any points where the surface crosses a coordinate axis AND label
 the value of <m>g</m> on the surface.
 </p>
-</li>
-<li>
-<p>
-Find the equation of the normal line to the level surface you found in
-part A at the point <m>\left(2, \sqrt{11}, 1\right)</m>.
-</p>
-</li>
-</ol>
-</p>
 </statement>
 <solution>
-<p>
-<ol marker="A.">
-<li>
 <p>
 Evaluating <m>g</m> at the given point,
 <md>
@@ -174,32 +159,6 @@ This is an <term>ellipsoid</term> with semi-axes <m>3</m>, <m>6</m>,
 and <m>2</m>. It crosses the axes at <m>(\pm 3, 0, 0)</m>,
 <m>(0, \pm 6, 0)</m>, and <m>(0, 0, \pm 2)</m>. See
 <xref ref="fig-rw17-ellipsoid"/>.
-</p>
-</li>
-<li>
-<p>
-A normal vector to the level surface at a point is
-<m>\nabla g</m> there; since <m>g = \sqrt{F}</m> with
-<m>F = 4x^2 + y^2 + 9z^2</m>, the gradients <m>\nabla g</m> and
-<m>\nabla F</m> are parallel, so we may use the simpler one:
-<md>
-\nabla F = \langle 8x, 2y, 18z\rangle,
-\qquad
-\nabla F\big|_{\left(2,\sqrt{11},1\right)}
-= \left\langle 16, 2\sqrt{11}, 18\right\rangle
-= 2\left\langle 8, \sqrt{11}, 9\right\rangle.
-</md>
-Hence the normal line through <m>\left(2, \sqrt{11}, 1\right)</m> is
-<md>
-\mathbf r(t)
-= \left\langle 2, \sqrt{11}, 1\right\rangle
-+ t\left\langle 8, \sqrt{11}, 9\right\rangle,
-</md>
-i.e. <m>x = 2 + 8t</m>, <m>y = \sqrt{11}\,(1 + t)</m>,
-<m>z = 1 + 9t</m>, <m>t \in \R</m>.
-</p>
-</li>
-</ol>
 </p>
 
 <figure xml:id="fig-rw17-ellipsoid">
