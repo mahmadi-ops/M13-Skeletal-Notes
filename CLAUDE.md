@@ -12,8 +12,8 @@ panel (https://claude.ai/code/artifact/806060e5-7cc7-41fe-bee1-014bc1fbc2aa).
 solution locking/releasing are all posted from here**; the completed
 lecture notes are posted from `mahmadi-ops/M13-Mehdi`, whose `CLAUDE.md`
 holds the full desk rulebook (request kinds, standing authorization to
-commit panel-initiated changes to `main`, the syllabus-row step, the
-SOLUTION-LOCKED convention). Repo-specific facts:
+commit panel-initiated changes to `main`, the SOLUTION-LOCKED
+convention). Repo-specific facts:
 
 - `scripts/desk_action.py` maps every section, assignment, and review
   set to its `<xi:include>` and toggles it with the UNPOSTED wrapper;
@@ -29,11 +29,10 @@ SOLUTION-LOCKED convention). Repo-specific facts:
   `<solution>`/`<answer>`/`<hint>` blocks in SOLUTION-LOCKED markers;
   `release` (after the due date) removes only the marker lines; `relock`
   re-wraps.
-- Syllabus rows (repo `mahmadi-ops/MATH13-Syllabus-Fall2026`):
-  `Skeletal notes: <topic>`, `Assignment <n>` (with due date), `Review
-  Problems #<n>`, `Solutions: Assignment <n>` — each linking to
-  `https://mahmadi-ops.github.io/M13-Skeletal-Notes/<xml-id>.html`
-  (assignments are `worksheet-assignment-<n>.html`).
+- Postings are tracked only on the desk panel — the syllabus's
+  posted-materials table was removed at the instructor's request, so no
+  posting action touches the syllabus repo. Page filenames come from
+  xml:ids (assignments are `worksheet-assignment-<n>.html`).
 
 ## Where the content comes from
 
