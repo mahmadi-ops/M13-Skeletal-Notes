@@ -4,6 +4,36 @@ PreTeXt book of *skeletal* (fill-in) lecture notes for SCU's MATH 13.
 Students complete them by hand — printed, or annotated on an iPad over
 the PDF — while the derivation is done in class.
 
+## The Posting Desk
+
+This book is one of three repos driven by the instructor's Posting Desk
+panel (https://claude.ai/code/artifact/806060e5-7cc7-41fe-bee1-014bc1fbc2aa).
+**Skeletal notes, the ten assignments, the four review problem sets, and
+solution locking/releasing are all posted from here**; the completed
+lecture notes are posted from `mahmadi-ops/M13-Mehdi`, whose `CLAUDE.md`
+holds the full desk rulebook (request kinds, standing authorization to
+commit panel-initiated changes to `main`, the SOLUTION-LOCKED
+convention). Repo-specific facts:
+
+- `scripts/desk_action.py` maps every section, assignment, and review
+  set to its `<xi:include>` and toggles it with the UNPOSTED wrapper;
+  `.github/workflows/desk-requests.yml` applies `desk-requests/*.json`
+  committed by the panel and dispatches `pretext-deploy.yml`.
+- The self-contained assignments (all but 7) and review sets 1/3/4
+  toggle instantly; the sections and the pairs A7↔RP3, A5→RP2 are
+  cross-referenced from other live pages, so those requests queue for
+  Claude, who takes the referencing worksheets down or up together.
+- Solutions here are **public by default** (`publication.ptx` shows
+  divisional solutions; the AI tutor in the Exercises introduction
+  assumes that). A `lock` request wraps an assignment's
+  `<solution>`/`<answer>`/`<hint>` blocks in SOLUTION-LOCKED markers;
+  `release` (after the due date) removes only the marker lines; `relock`
+  re-wraps.
+- Postings are tracked only on the desk panel — the syllabus's
+  posted-materials table was removed at the instructor's request, so no
+  posting action touches the syllabus repo. Page filenames come from
+  xml:ids (assignments are `worksheet-assignment-<n>.html`).
+
 ## Where the content comes from
 
 Every section here is a transformation of a section of the **full
