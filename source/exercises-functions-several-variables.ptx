@@ -86,8 +86,8 @@ other.
                   stroke="#0072B2" thickness="2.5"/>
 <parametric-curve at="bc-2" function="d2" domain="(0,4)"
                   stroke="#0072B2" thickness="2.5"/>
-<point at="bc-P" p="(2,1.1)" fill="#D55E00"/>
-<label at="bc-P-lab" anchor="(2.05,1.0)" alignment="se" color="#D55E00">
+<point at="bc-P" p="(2.269,1.1)" fill="#D55E00"/>
+<label at="bc-P-lab" anchor="(2.32,1.0)" alignment="se" color="#D55E00">
 <m>P</m>
 </label>
 <label at="bc-l1" anchor="(-0.25,0.05)" alignment="e">
