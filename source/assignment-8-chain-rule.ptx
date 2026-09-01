@@ -1,11 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  Assignment 8: The Chain Rule.
+  Assignment 8: The Chain Rule, and Directional Derivatives and Gradient
+  Vectors.
 
   The first four problems of the old worksheet "Exercises for The Chain
   Rule" (rev-tp-4, rev-tp-5, rm2-cr-1 and rw21-1), split out into an
-  assignment at the instructor's request.  The worksheet's last problem
-  (pp-29) went to review-problems-3.ptx.
+  assignment at the instructor's request; its last problem (pp-29) went to
+  review-problems-3.ptx.  Then the odd-numbered problems of the old
+  worksheet "Exercises for Directional Derivatives and Gradient Vectors"
+  (rev-gr-1, rev-gr-3, rm2-gr-2, rw23-3, rw21-8, rw17-8, pp-31,
+  ex-electrostatic-plate and ex-isobars-low); its even-numbered problems
+  went to review-problems-3.ptx as well.
+
+  From that gradients worksheet: rw23-3 and rw17-8 were originally stated
+  for functions of three variables and were rewritten for functions of two
+  at the instructor's request (rw23-3 loses the vector (1,0,-1) and its
+  gradient becomes (1,1); rw17-8 keeps its 3-4-5 directions with gradient
+  (6,-3)).  In pp-31 the marked points sit at exact positions: P is the
+  peak of the f=12 curve, Q is midway between f=2 and f=4, R midway
+  between f=10 and f=12, and the f=2, f=0 and Q labels carry leaders.
+  The paragraph introducing the three closing "two runners" problems was
+  reworded, since one of the three (ex-fall-line) went to Review Problems.
 -->
 <worksheet xml:id="worksheet-assignment-8" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Assignment 8</title>
@@ -16,8 +31,11 @@ These problems apply the chain rule to functions of several variables:
 differentiating a composition both by the chain rule and by substitution,
 deciding a True/False statement about a rate along a curve, proving Euler's
 relation for homogeneous functions, and working through a dependency tree
-with two intermediate levels. If you would like to review the material
-first, see <xref ref="sec-skel-fmv-chain-rule" text="title"/>.
+with two intermediate levels. They then use the gradient to compute
+directional derivatives, find directions of fastest change, and read a
+contour map. If you would like to review the material first, see
+<xref ref="sec-skel-fmv-chain-rule" text="title"/> and
+<xref ref="sec-skel-fmv-directional-derivatives" text="title"/>.
 </p>
 </introduction>
 
@@ -282,6 +300,842 @@ Similarly,
 </md>
 </p>
 </solution>
+</exercise>
+
+<!-- ===== From the old worksheet "Exercises for Directional Derivatives
+     and Gradient Vectors": its odd-numbered problems ===== -->
+<exercise xml:id="rev-gr-1">
+<statement>
+<p>
+Consider <m>f(x,y) = e^{-r^4}</m> where <m>r = \sqrt{x^2+y^2}</m>.
+Compute its directional derivative at <m>(0,0)</m> with respect to the
+unit vectors in (polar) directions
+<m>\theta = 0, \dfrac{\pi}{4}, \dfrac{\pi}{2}</m>. What about any
+other angle?
+</p>
+</statement>
+<solution>
+<p>
+The function is symmetric with respect to rotations around the origin,
+so all the directional derivatives will be equal. Therefore it is
+sufficient to compute the derivative for <m>\theta = 0</m>, i.e.
+<m>\dfrac{\partial f}{\partial x}</m>:
+<md>
+\frac{\partial f}{\partial x}
+= \frac{\partial}{\partial x} e^{-(x^2+y^2)^2}
+= -2(x^2+y^2)\cdot 2x\, e^{-(x^2+y^2)^2}.
+</md>
+Plugging in <m>x = y = 0</m> we see that this is zero. Hence the
+directional derivative at <m>(0,0)</m> is <m>0</m> in the directions
+<m>\theta = 0, \dfrac{\pi}{4}, \dfrac{\pi}{2}</m>, and by the same
+symmetry it is <m>0</m> for every other angle as well.
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rev-gr-3">
+<title>True or False</title>
+<statement correct="yes">
+<p>
+If <m>\hat{u} = \langle a, b\rangle</m> is a unit vector and <m>f</m>
+has continuous second partials, then
+<md>
+D^2_{\hat{u}} f(x,y) = f_{xx}a^2 + 2f_{xy}ab + f_{yy}b^2,
+</md>
+where <m>D^2_{\hat{u}} f = D_{\hat{u}}\left[D_{\hat{u}} f(x,y)\right]</m>.
+</p>
+<p>
+Justify your answer fully: give a proof if the statement is true, or a
+counterexample if it is false.
+</p>
+</statement>
+<feedback>
+<p>
+We have that
+<md>
+D^2_{\hat{u}} f
+= D_{\hat{u}}\left[D_{\hat{u}} f(x,y)\right]
+= D_{\hat{u}}\left[a f_x + b f_y\right].
+</md>
+This simplifies to
+<md>
+\langle a f_{xx} + b f_{xy},\; a f_{xy} + b f_{yy}\rangle
+\cdot \langle a, b\rangle
+= f_{xx}a^2 + 2f_{xy}ab + f_{yy}b^2.
+</md>
+Note we needed <m>f</m> to have continuous second partials to invoke
+Clairaut's Theorem.
+</p>
+</feedback>
+</exercise>
+
+<exercise xml:id="rm2-gr-2">
+<title>A mountain lion on a mountain</title>
+<statement>
+<p>
+A mountain lion runs on a mountain whose height above the point
+<m>(x,y)</m> is <m>z = x^2 + \sin^2(xy)</m>.
+<ol marker="A.">
+<li>
+<p>
+In which direction(s) should the mountain lion run from point
+<m>(1, 0, 1)</m> so that the height is increasing at the fastest
+possible rate? What is this fastest rate?
+</p>
+</li>
+<li>
+<p>
+In which direction(s) should the mountain lion run from point
+<m>(1, 0, 1)</m> so that the height is increasing at <em>half</em> of
+the fastest possible rate?
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="A.">
+<li>
+<p>
+The fastest possible rate of increase is attained in the direction of
+the gradient:
+<md>
+\nabla z = \left\langle \frac{\partial z}{\partial x},
+\frac{\partial z}{\partial y}\right\rangle
+= \left\langle 2x + 2\sin(xy)\cos(xy)\,y,\;
+2\sin(xy)\cos(xy)\,x\right\rangle.
+</md>
+At <m>(1, 0, 1)</m>, this gradient is simply
+<m>\nabla z(1,0) = \langle 2, 0\rangle</m>, and the fastest possible
+rate of change is the length of the gradient, i.e.
+<m>\|\nabla z(1,0)\| = \|\langle 2,0\rangle\| = 2</m>.
+</p>
+</li>
+<li>
+<p>
+Half of the fastest possible rate of height increase at point
+<m>(1,0,1)</m> is <m>\frac12 \cdot 2 = 1</m>. Let
+<m>\hat{u} = \langle a, b\rangle</m> be a unit vector in the desired
+direction. Then the directional derivative
+<m>D_{\hat{u}}(1,0) = 1</m> is the desired rate of change of height at
+<m>(1,0,1)</m> in the direction of <m>\hat{u}</m>; it can be calculated
+using the dot product with the gradient:
+<md>
+1 = D_{\hat{u}}(1,0)
+= \hat{u} \cdot \nabla z(1,0)
+= \langle a, b\rangle \cdot \langle 2, 0\rangle
+= 2a + 0b = 2a.
+</md>
+Thus, <m>a = \frac12</m> and <m>b</m> must be such that
+<m>\hat{u} = \left\langle \frac12, b\right\rangle</m> is unit, i.e.
+<m>\left(\frac12\right)^2 + b^2 = 1</m>, from which
+<m>b^2 = \frac34</m> and <m>b = \pm\frac{\sqrt3}{2}</m>. Therefore,
+the desired directions in which the height is increasing at a rate
+equal to half of the fastest possible rate are
+<m>\hat{u}_1 = \left\langle \frac12, \frac{\sqrt3}{2}\right\rangle</m>
+and
+<m>\hat{u}_2 = \left\langle \frac12, -\frac{\sqrt3}{2}\right\rangle</m>.
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rw23-3">
+<statement>
+<p>
+Suppose that <m>f(x,y)</m> is a function of two variables and let
+<md>
+\hat u = \frac{1}{\sqrt2}\langle 1, -1\rangle, \qquad
+\hat v = \langle 0, 1\rangle.
+</md>
+Suppose that at a point <m>P_0(a,b)</m>,
+<md>
+<mrow>\left(D_{\hat u} f\right)_{P_0} \amp = 0,</mrow>
+<mrow>\left(D_{\hat v} f\right)_{P_0} \amp = 1.</mrow>
+</md>
+<ol marker="A.">
+<li>
+<p>
+Find <em>the direction</em> of the maximum rate of change at
+<m>P_0(a,b)</m>.
+</p>
+</li>
+<li>
+<p>
+Find the maximum rate of change at <m>P_0(a,b)</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="A.">
+<li>
+<p>
+Using
+<m>\left(D_{\hat u} f\right)_{P_0}
+= \nabla f\big|_{P_0}\cdot\hat u</m>, the two conditions become
+<md>
+<mrow>\left(D_{\hat u} f\right)_{P_0} = 0
+\;\Rightarrow\;
+\langle f_x, f_y\rangle \cdot
+\frac{1}{\sqrt2}\langle 1, -1\rangle
+= \frac{1}{\sqrt2}\left(f_x - f_y\right) = 0</mrow>
+<mrow>\qquad \Rightarrow\; f_x = f_y,</mrow>
+<mrow>\left(D_{\hat v} f\right)_{P_0} = 1
+\;\Rightarrow\;
+\langle f_x, f_y\rangle \cdot \langle 0, 1\rangle
+= f_y = 1.</mrow>
+</md>
+Hence <m>\nabla f\big|_{P_0} = \langle 1, 1\rangle</m>, and the
+direction of the maximum rate of change at <m>P_0</m> is given by
+<md>
+\hat u = \frac{\nabla f\big|_{P_0}}{\left\|\nabla f\big|_{P_0}\right\|}
+= \frac{1}{\sqrt2}\langle 1, 1\rangle.
+</md>
+</p>
+</li>
+<li>
+<p>
+<m>\left\|\nabla f\big|_{P_0}\right\| = \sqrt{1 + 1} = \sqrt2</m>
+is the maximum rate of change.
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rw21-8">
+<statement>
+<p>
+Consider the function <m>f(x,y) = x^2 e^{3y}</m> and the point
+<m>P_0 = (-1, 0)</m>.
+<ol marker="A.">
+<li>
+<p>
+Find the direction in which <m>f(x,y)</m> decreases the most rapidly
+at <m>P_0</m>.
+</p>
+</li>
+<li>
+<p>
+Find the directional derivative of <m>f(x,y)</m> at <m>P_0</m> in the
+direction given by <m>\overrightarrow{v} = \langle -1, 1\rangle</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+The gradient is
+<md>
+<mrow>\nabla f \amp = \left(2x e^{3y}\right)\hat{\imath}
++ \left(3x^2 e^{3y}\right)\hat{\jmath},</mrow>
+<mrow>\nabla f\big|_{(-1,0)} \amp = -2\,\hat{\imath} + 3\,\hat{\jmath},
+\qquad
+\left\|\nabla f\big|_{(-1,0)}\right\| = \sqrt{13}.</mrow>
+</md>
+<ol marker="A.">
+<li>
+<p>
+The direction of most rapid decrease is opposite to the gradient:
+<md>
+-\frac{\nabla f}{\|\nabla f\|}
+= \left(\frac{2}{\sqrt{13}}\right)\hat{\imath}
+- \left(\frac{3}{\sqrt{13}}\right)\hat{\jmath}
+= \left\langle \frac{2}{\sqrt{13}}, -\frac{3}{\sqrt{13}}
+\right\rangle.
+</md>
+</p>
+</li>
+<li>
+<p>
+The unit vector in the direction of <m>\overrightarrow{v}</m> is
+<m>\hat u = \dfrac{\overrightarrow{v}}{\|\overrightarrow{v}\|}
+= \left\langle -\dfrac{1}{\sqrt2}, \dfrac{1}{\sqrt2}\right\rangle</m>,
+so
+<md>
+D_{\hat u} f
+= \nabla f \cdot \hat u
+= \langle -2, 3\rangle \cdot
+\left\langle -\frac{1}{\sqrt2}, \frac{1}{\sqrt2}\right\rangle
+= \frac{5}{\sqrt2}.
+</md>
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rw17-8">
+<statement>
+<p>
+Suppose the temperature (in degrees Celsius) at a point
+<m>(x,y)</m> is given by <m>T(x,y)</m>, where <m>T</m> is a
+continuous function that has continuous partial derivatives, and
+distances in the <m>xy</m>-plane are measured in meters. We are given
+the following information about <m>T</m> at the point
+<m>(x,y) = (1,1)</m>:
+<ul>
+<li>
+<p>
+<m>T(1,1) = 20</m> <degree/>C,
+</p>
+</li>
+<li>
+<p>
+the derivative of <m>T</m> at <m>(1,1)</m> obtains its smallest
+(i.e. most negative) value in the direction toward the <em>point</em>
+<m>(-1, 2)</m>,
+</p>
+</li>
+<li>
+<p>
+the derivative of <m>T</m> at <m>(1,1)</m> in the direction of the
+<em>vector</em> <m>4\,\hat{\imath} + 3\,\hat{\jmath}</m> is
+<m>3</m> <degree/>C/m.
+</p>
+</li>
+</ul>
+<ol marker="A.">
+<li>
+<p>
+Find the derivative of <m>T</m> at <m>(1,1)</m> in the direction
+toward the <em>point</em> <m>(4,-3)</m>.
+</p>
+</li>
+<li>
+<p>
+If you start at <m>(1,1)</m> and move along a straight path toward
+the point <m>(4,-3)</m>, <em>approximately</em> how far will you
+have to go in this direction until the temperature reaches
+<m>24</m> <degree/>C?
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+First we determine <m>\nabla T</m> at <m>(1,1)</m>. The derivative
+is most negative in the direction of <m>-\nabla T</m>, and the
+direction from <m>(1,1)</m> toward <m>(-1,2)</m> is
+<md>
+\langle -1-1,\; 2-1\rangle = \langle -2, 1\rangle.
+</md>
+Hence <m>-\nabla T</m> is a positive multiple of
+<m>\langle -2, 1\rangle</m>, i.e.
+<m>\nabla T = c\,\langle 2, -1\rangle</m> for some <m>c \gt 0</m>.
+</p>
+
+<p>
+The third piece of information fixes <m>c</m>. The unit vector in the
+direction of <m>4\,\hat{\imath} + 3\,\hat{\jmath}</m> is
+<m>\frac15\langle 4, 3\rangle</m>, since
+<m>\|\langle 4,3\rangle\| = 5</m>, so
+<md>
+3 = \nabla T \cdot \frac15\langle 4, 3\rangle
+= \frac{c}{5}\Big(8 - 3\Big)
+= c
+\;\Rightarrow\; c = 3.
+</md>
+Therefore
+<md>
+\nabla T\big|_{(1,1)}
+= 3\langle 2, -1\rangle
+= \langle 6, -3\rangle.
+</md>
+</p>
+
+<p>
+<ol marker="A.">
+<li>
+<p>
+The direction from <m>(1,1)</m> toward <m>(4,-3)</m> is
+<m>\langle 3, -4\rangle</m>, whose length is <m>5</m>, so the unit
+vector is <m>\hat u = \left\langle \frac35, -\frac45\right\rangle</m>
+and
+<md>
+\left(D_{\hat u} T\right)_{(1,1)}
+= \langle 6, -3\rangle \cdot
+\left\langle \frac35, -\frac45\right\rangle
+= \frac{18}{5} + \frac{12}{5}
+= 6 \; {}^{\circ}\text{C}/\text{m}.
+</md>
+</p>
+</li>
+<li>
+<p>
+The temperature must rise from <m>20</m> <degree/>C to <m>24</m>
+<degree/>C, i.e. <m>\Delta T = 4</m> <degree/>C, and along this
+direction it rises at approximately <m>6</m> <degree/>C per meter.
+Using the linear approximation
+<m>\Delta T \approx \left(D_{\hat u}T\right) \cdot s</m>, where
+<m>s</m> is the distance travelled,
+<md>
+s \approx \frac{\Delta T}{D_{\hat u}T} = \frac46 = \frac23
+\approx 0.67 \text{ meters}.
+</md>
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="pp-31">
+<statement>
+<p>
+<m>f</m> is a <q>nice</q> function of <m>x</m> and <m>y</m> (i.e.
+<m>f</m> is continuous and its partials exist). In
+<xref ref="fig-pp-contours"/> are shown the level curves
+<m>f(x,y) = 0, 2, 4, 6, 8, 10, 12</m>.
+<ol marker="A.">
+<li>
+<p>
+Let <m>u_1 = \frac{1}{\sqrt2}\hat{\imath} + \frac{1}{\sqrt2}\hat{\jmath}</m>.
+Estimate <m>D_{u_1}f(4,3)</m>.
+</p>
+</li>
+<li>
+<p>
+Estimate <m>D_{u_1}f(1,2)</m>.
+</p>
+</li>
+<li>
+<p>
+Draw on the diagram a unit vector pointing in the same direction as
+<m>\nabla f(1,2)</m>.
+</p>
+</li>
+<li>
+<p>
+At <m>P</m>, draw a unit vector and label it <m>u_2</m>, such that
+<m>D_{u_2}f(P) \lt 0</m>.
+</p>
+</li>
+<li>
+<p>
+Estimate <m>\dfrac{\partial f}{\partial x}(P)</m>.
+</p>
+</li>
+<li>
+<p>
+Which appears bigger, <m>\dfrac{\partial f}{\partial y}(Q)</m> or
+<m>\dfrac{\partial f}{\partial y}(R)</m>?
+</p>
+</li>
+</ol>
+</p>
+
+<figure xml:id="fig-pp-contours">
+<caption>
+Level curves of <m>f</m> at the values
+<m>0, 2, 4, 6, 8, 10, 12</m>. The marked point <m>P</m> is the highest
+point of the <m>f = 12</m> curve; <m>Q</m> lies midway between the
+<m>f = 2</m> and <m>f = 4</m> curves; <m>R</m> lies midway between the
+<m>f = 10</m> and <m>f = 12</m> curves.
+</caption>
+<image width="88%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-pp-contours">
+<diagram dimensions="(470,420)" margins="12">
+<definition>c0(t) = (t, -0.30 + 2.2/((1 + exp(-(t-1)/0.55))*(1 + exp((t-4.2)/0.9))))</definition>
+<definition>c2(t) = (t, -0.08 + 2.2/((1 + exp(-(t-1)/0.55))*(1 + exp((t-4.2)/0.9))))</definition>
+<definition>c4(t) = (t, 0.17 + 2.2/((1 + exp(-(t-1)/0.55))*(1 + exp((t-4.2)/0.9))))</definition>
+<definition>c6(t) = (t, 0.75 + 2.2/((1 + exp(-(t-1)/0.55))*(1 + exp((t-4.2)/0.9))))</definition>
+<definition>c8(t) = (t, 1.88 + 2.2/((1 + exp(-(t-1)/0.55))*(1 + exp((t-4.2)/0.9))))</definition>
+<definition>c10(t) = (t, 2.98 + 2.2/((1 + exp(-(t-1)/0.55))*(1 + exp((t-4.2)/0.9))))</definition>
+<definition>c12(t) = (t, 3.90 + 2.2/((1 + exp(-(t-1)/0.55))*(1 + exp((t-4.2)/0.9))))</definition>
+<coordinates bbox="(-0.5,-1.35,8.3,6.6)">
+<grid-axes xlabel="x" ylabel="y"/>
+<parametric-curve at="ct-0" function="c0" domain="(0.15,6.3)"
+                  stroke="#0072B2" thickness="2"/>
+<parametric-curve at="ct-2" function="c2" domain="(0.15,6.3)"
+                  stroke="#0072B2" thickness="2"/>
+<parametric-curve at="ct-4" function="c4" domain="(0.15,6.3)"
+                  stroke="#0072B2" thickness="2"/>
+<parametric-curve at="ct-6" function="c6" domain="(0.15,6.3)"
+                  stroke="#0072B2" thickness="2"/>
+<parametric-curve at="ct-8" function="c8" domain="(0.15,6.3)"
+                  stroke="#0072B2" thickness="2"/>
+<parametric-curve at="ct-10" function="c10" domain="(0.15,6.3)"
+                  stroke="#0072B2" thickness="2"/>
+<parametric-curve at="ct-12" function="c12" domain="(0.15,6.3)"
+                  stroke="#0072B2" thickness="2"/>
+<!-- P is the peak of the f=12 curve; Q is midway between f=2 and f=4,
+     R midway between f=10 and f=12, so each point's position is exact. -->
+<point at="ct-P" p="(2.4,5.697)" fill="#D55E00"/>
+<point at="ct-Q" p="(5.2,0.59)" fill="#D55E00"/>
+<point at="ct-R" p="(4.6,4.298)" fill="#D55E00"/>
+<line at="ct-Q-lead" endpoints="((5.24,0.64),(5.42,0.86))"
+      stroke="#D55E00" thickness="1.5"/>
+<label at="ct-P-lab" anchor="(2.4,5.82)" alignment="n" color="#D55E00">
+<m>P</m>
+</label>
+<label at="ct-Q-lab" anchor="(5.45,0.90)" alignment="e" color="#D55E00">
+<m>Q</m>
+</label>
+<label at="ct-R-lab" anchor="(4.72,4.30)" alignment="e" color="#D55E00">
+<m>R</m>
+</label>
+<!-- The f=2 and f=0 labels do not fit beside their curves, so each is
+     set below and joined to its curve by a leader. -->
+<line at="ct-lead2" endpoints="((6.35,0.114),(6.70,-0.41))"
+      stroke="#7F7F7F" thickness="1"/>
+<line at="ct-lead0" endpoints="((6.35,-0.106),(6.70,-1.01))"
+      stroke="#7F7F7F" thickness="1"/>
+<label at="ct-l12" anchor="(6.45,4.094)" alignment="e">
+<m>f=12</m>
+</label>
+<label at="ct-l10" anchor="(6.45,3.174)" alignment="e">
+<m>f=10</m>
+</label>
+<label at="ct-l8" anchor="(6.45,2.074)" alignment="e">
+<m>f=8</m>
+</label>
+<label at="ct-l6" anchor="(6.45,0.944)" alignment="e">
+<m>f=6</m>
+</label>
+<label at="ct-l4" anchor="(6.45,0.364)" alignment="e">
+<m>f=4</m>
+</label>
+<label at="ct-l2" anchor="(6.75,-0.45)" alignment="e">
+<m>f=2</m>
+</label>
+<label at="ct-l0" anchor="(6.75,-1.05)" alignment="e">
+<m>f=0</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="Seven level curves of f, labelled zero through twelve from the bottom up. Each curve rises steeply from the left, reaches a hump near x equals two point four, and then descends gently to the right. The low valued curves are bunched tightly together near the x axis on the right, where the point Q sits, while the high valued curves are widely spaced near the top right, where the point R sits. The point P sits at the very top of the f equals twelve curve, where that curve is horizontal.">
+  <annotation ref="ct-P" text="The point P, on the f equals twelve level curve at its highest point, where that curve is horizontal."/>
+  <annotation ref="ct-Q" text="The point Q, at the lower right, exactly midway between the f equals two and f equals four level curves, which are only about one quarter of a unit apart."/>
+  <annotation ref="ct-R" text="The point R, at the upper right, exactly midway between the f equals ten and f equals twelve level curves, which are about one unit apart."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</statement>
+<solution>
+<p>
+<ol marker="A.">
+<li>
+<p>
+The directional derivative <m>D_{u_1}f(4,3)</m> tells us roughly how
+much <m>f</m> increases if we move <em>one unit</em> from
+<m>(4,3)</m> in the direction <m>u_1</m>, i.e. diagonally up and to
+the right at <m>45^{\circ}</m>. Starting at <m>(4,3)</m> and moving
+one unit that way lands us near <m>(4.7, 3.7)</m>, which is about two
+contours further along, and each contour step is <m>\Delta f = 2</m>
+spread over roughly one unit of travel. Reading the map,
+<md>
+D_{u_1}f(4,3) \approx 2.
+</md>
+</p>
+</li>
+<li>
+<p>
+At <m>(1,2)</m> the level curve through that point is climbing at
+roughly <m>45^{\circ}</m>, i.e. the level curve is
+<em>parallel</em> to <m>u_1</m>. Moving along a level curve does not
+change the value of <m>f</m>, so
+<md>
+D_{u_1}f(1,2) \approx 0.
+</md>
+</p>
+</li>
+<li>
+<p>
+The gradient is perpendicular to the level curve and points in the
+direction of <em>increase</em>. At <m>(1,2)</m> the level curve runs
+up and to the right at about <m>45^{\circ}</m>, and <m>f</m>
+increases as we move upward, so <m>\nabla f(1,2)</m> points up and to
+the <em>left</em>, i.e. in the direction
+<m>\frac{1}{\sqrt2}\langle -1, 1\rangle</m>. See
+<xref ref="fig-pp-contours-answer"/>.
+</p>
+</li>
+<li>
+<p>
+We need any direction of <em>decrease</em> at <m>P</m>, i.e. any
+direction pointing toward the lower-valued level curves (toward
+<m>f = 10</m>, not away from it). Since the level curves below
+<m>P</m> have smaller values, <m>u_2 = \langle 0, -1\rangle</m>
+(straight down) works. See <xref ref="fig-pp-contours-answer"/>.
+</p>
+</li>
+<li>
+<p>
+<m>P</m> sits at the very top of its level curve, where the curve is
+<em>horizontal</em>. Walking in the <m>+x</m> direction from
+<m>P</m> therefore keeps us on the same level curve for a while, so
+<m>f</m> does not change to first order:
+<md>
+\frac{\partial f}{\partial x}(P) \approx 0.
+</md>
+</p>
+</li>
+<li>
+<p>
+<m>\dfrac{\partial f}{\partial y}</m> measures how fast <m>f</m>
+changes as we move straight up, which is large where the contours are
+close together and small where they are far apart. At <m>Q</m> we only
+have to go up about <m>0.25</m> units to move from one contour to the
+next, so
+<m>\dfrac{\partial f}{\partial y}(Q) \approx \dfrac{2}{0.25} = 8</m>.
+At <m>R</m> we must go up about <m>1</m> unit for the same change, so
+<m>\dfrac{\partial f}{\partial y}(R) \approx \dfrac{2}{1} = 2</m>.
+Hence <m>\dfrac{\partial f}{\partial y}(Q)</m> is bigger.
+</p>
+</li>
+</ol>
+</p>
+
+<figure xml:id="fig-pp-contours-answer">
+<caption>
+The vectors asked for in parts C and D: <m>\nabla f(1,2)</m> points
+perpendicular to the level curve toward increasing <m>f</m>, while
+<m>u_2</m> at <m>P</m> points toward decreasing <m>f</m>.
+</caption>
+<image width="88%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-pp-contours-answer">
+<diagram dimensions="(470,420)" margins="12">
+<definition>c0(t) = (t, -0.30 + 2.2/((1 + exp(-(t-1)/0.55))*(1 + exp((t-4.2)/0.9))))</definition>
+<definition>c2(t) = (t, -0.08 + 2.2/((1 + exp(-(t-1)/0.55))*(1 + exp((t-4.2)/0.9))))</definition>
+<definition>c4(t) = (t, 0.17 + 2.2/((1 + exp(-(t-1)/0.55))*(1 + exp((t-4.2)/0.9))))</definition>
+<definition>c6(t) = (t, 0.75 + 2.2/((1 + exp(-(t-1)/0.55))*(1 + exp((t-4.2)/0.9))))</definition>
+<definition>c8(t) = (t, 1.88 + 2.2/((1 + exp(-(t-1)/0.55))*(1 + exp((t-4.2)/0.9))))</definition>
+<definition>c10(t) = (t, 2.98 + 2.2/((1 + exp(-(t-1)/0.55))*(1 + exp((t-4.2)/0.9))))</definition>
+<definition>c12(t) = (t, 3.90 + 2.2/((1 + exp(-(t-1)/0.55))*(1 + exp((t-4.2)/0.9))))</definition>
+<coordinates bbox="(-0.5,-1.35,8.3,6.6)">
+<grid-axes xlabel="x" ylabel="y"/>
+<parametric-curve at="ca-0" function="c0" domain="(0.15,6.3)"
+                  stroke="#7F7F7F" thickness="1.5"/>
+<parametric-curve at="ca-2" function="c2" domain="(0.15,6.3)"
+                  stroke="#7F7F7F" thickness="1.5"/>
+<parametric-curve at="ca-4" function="c4" domain="(0.15,6.3)"
+                  stroke="#7F7F7F" thickness="1.5"/>
+<parametric-curve at="ca-6" function="c6" domain="(0.15,6.3)"
+                  stroke="#7F7F7F" thickness="1.5"/>
+<parametric-curve at="ca-8" function="c8" domain="(0.15,6.3)"
+                  stroke="#7F7F7F" thickness="1.5"/>
+<parametric-curve at="ca-10" function="c10" domain="(0.15,6.3)"
+                  stroke="#7F7F7F" thickness="1.5"/>
+<parametric-curve at="ca-12" function="c12" domain="(0.15,6.3)"
+                  stroke="#7F7F7F" thickness="1.5"/>
+<vector at="ca-grad" v="(-0.71,0.71)" tail="(1,2)"
+        stroke="#009E73" thickness="3"/>
+<vector at="ca-u2" v="(0,-1)" tail="(2.4,5.697)"
+        stroke="#D55E00" thickness="3"/>
+<point at="ca-pt12" p="(1,2)" fill="#009E73"/>
+<point at="ca-P" p="(2.4,5.697)" fill="#D55E00"/>
+<label at="ca-grad-lab" anchor="(0.34,2.84)" alignment="ne" color="#009E73">
+<m>\nabla f(1,2)</m>
+</label>
+<label at="ca-u2-lab" anchor="(2.62,4.82)" alignment="e" color="#D55E00">
+<m>u_2</m>
+</label>
+<label at="ca-P-lab" anchor="(2.4,5.82)" alignment="n" color="#D55E00">
+<m>P</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="The same seven level curves, drawn in gray. A green arrow at the point one comma two points up and to the left, perpendicular to the level curve there; it is labelled gradient of f at one comma two. A vermillion arrow at P points straight down and is labelled u two.">
+  <annotation ref="ca-grad" text="The gradient at one comma two, perpendicular to the level curve and pointing toward larger values of f."/>
+  <annotation ref="ca-u2" text="The vector u two at P, pointing straight down toward smaller values of f, so the directional derivative there is negative."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</solution>
+</exercise>
+
+<p>
+The two problems that close this assignment repeat the three questions of
+<xref ref="ex-skel-two-runners"/> in two more physical settings: find the
+direction of most rapid decrease, the rate along a prescribed direction,
+and the directions of no change.
+</p>
+
+<exercise xml:id="ex-electrostatic-plate">
+  <title>Electric Potential on a Coated Plate</title>
+  <statement>
+    <p>
+      The electric potential on a thin coated plate, in volts, is
+      <md>V(x,y) = 100 - 2x^2 - 6y^2,</md>
+      with <m>x</m> and <m>y</m> in centimeters. Consider the point <m>P_0(2,1)</m>.
+    </p>
+    <p>
+      <ol>
+        <li>
+          <p>
+            Find <m>\nabla V</m> at <m>P_0</m> and the electric field
+            <m>\mathbf E = -\nabla V</m> there. Along which unit vector does the
+            potential drop most rapidly, and at what rate?
+          </p>
+        </li>
+        <li>
+          <p>
+            A test charge is nudged along
+            <m>\hat{u} = \tfrac{4}{5}\hat{\imath} - \tfrac{3}{5}\hat{\jmath}</m>. Compute
+            <m>D_{\hat{u}}V</m> at <m>P_0</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Find the two unit vectors along which the potential does not change, and name
+            the curve they are tangent to.
+          </p>
+        </li>
+      </ol>
+    </p>
+  
+  </statement>
+  <answer>
+    <p>
+      <ol>
+        <li>
+          <p>
+            <m>\nabla V = -4x\,\hat{\imath} - 12y\,\hat{\jmath}</m>, so
+            <m>(\nabla V)_{(2,1)} = -8\,\hat{\imath} - 12\,\hat{\jmath}</m> and
+            <m>\mathbf E = 8\,\hat{\imath} + 12\,\hat{\jmath}</m> V/cm. The potential drops
+            fastest along <m>\hat{u} = \tfrac{1}{\sqrt{13}}(2\,\hat{\imath} + 3\,\hat{\jmath})</m>,
+            at the rate <m>-\|\nabla V\| = -4\sqrt{13} \approx -14.4</m> V/cm.
+          </p>
+        </li>
+        <li>
+          <p>
+            <md>D_{\hat{u}}V = (-8)\left(\tfrac{4}{5}\right)
+                + (-12)\left(-\tfrac{3}{5}\right) = \tfrac{4}{5} = 0.8</md>
+            in V/cm. The potential rises slightly along this heading.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\hat{u} = \pm\tfrac{1}{\sqrt{13}}(3\,\hat{\imath} - 2\,\hat{\jmath})</m>. These are
+            tangent to the equipotential ellipse <m>2x^2 + 6y^2 = 14</m> through <m>P_0</m>,
+            and they are orthogonal to <m>\mathbf E</m>, as they must be.
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p component="print">
+      An interactive figure of the plate <mdash/> the equipotential route at
+      <m>V = 86</m> V and the field-line route side by side, with the
+      potential read out as the point moves <mdash/> accompanies the online
+      version of these notes.
+    </p>
+    <sidebyside component="web" width="100%">
+    <figure xml:id="figure-potential-plate">
+      <caption>The potential <m>V(x,y) = 100 - 2x^2 - 6y^2</m> on the plate. One route holds <m>V = 86</m> V along the equipotential <m>2x^2 + 6y^2 = 14</m>; the other follows a field line, on which <m>D_{\hat{u}}V = -\|\nabla V\|</m> at every point.</caption>
+      <interactive xml:id="interactive-potential-plate"
+                   iframe="potential-plate-3d.html"
+                   width="100%" aspect="16:10"/>
+    </figure>
+    </sidebyside>
+  </answer>
+</exercise>
+
+<exercise xml:id="ex-isobars-low">
+  <title>Sailing the Isobars of a Low</title>
+  <statement>
+    <p>
+      Near the center of a low-pressure system the sea-level pressure, in millibars, is
+      modeled by
+      <md>P(x,y) = 988 + 0.004\left(x^2 + y^2\right),</md>
+      with <m>x</m> and <m>y</m> in miles from the center of the low. A ship sits at
+      <m>P_0(20,10)</m>.
+    </p>
+    <p>
+      <ol>
+        <li>
+          <p>
+            Find the pressure at the ship and <m>\nabla P</m> there. The
+            pressure-gradient force per unit volume of air is a positive multiple of
+            <m>-\nabla P</m>; in which unit direction does it push, and what is
+            <m>\|\nabla P\|</m> in millibars per mile?
+          </p>
+        </li>
+        <li>
+          <p>
+            A second ship 40 miles from the center reports a stronger wind. Using this
+            model, explain why <m>\|\nabla P\|</m> supports that report.
+          </p>
+        </li>
+        <li>
+          <p>
+            The captain decides to hold a constant barometer reading. Give the two
+            possible unit headings at <m>P_0</m>, and describe the shape of the full route.
+          </p>
+        </li>
+      </ol>
+    </p>
+  
+  </statement>
+  <answer>
+    <p>
+      <ol>
+        <li>
+          <p>
+            <m>P(20,10) = 988 + 0.004(500) = 990</m> mb, and
+            <m>\nabla P = 0.008x\,\hat{\imath} + 0.008y\,\hat{\jmath}</m> gives
+            <m>(\nabla P)_{(20,10)} = 0.16\,\hat{\imath} + 0.08\,\hat{\jmath}</m>. The force
+            points along
+            <m>-\mathbf u = -\tfrac{1}{\sqrt{5}}(2\,\hat{\imath} + \hat{\jmath})</m>, that is,
+            inward toward the low, and
+            <m>\|\nabla P\| = 0.08\sqrt{5} \approx 0.18</m> mb/mi.
+          </p>
+        </li>
+        <li>
+          <p>
+            Here <m>\|\nabla P\| = 0.008\sqrt{x^2+y^2}</m> grows linearly with distance from
+            the center, so at 40 miles it is <m>0.32</m> mb/mi, nearly double the value at
+            the first ship. (Real storms reverse this trend close to the eye; the model is
+            only reasonable over a limited annulus.)
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\mathbf u = \pm\tfrac{1}{\sqrt{5}}(\hat{\imath} - 2\,\hat{\jmath})</m>. Since the
+            level curves of <m>P</m> are the circles <m>x^2+y^2 = \text{constant}</m>,
+            holding the barometer steady means circling the storm at a fixed radius of
+            <m>\sqrt{500} \approx 22.4</m> miles.
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p component="web">
+      Use the interactive figure to explore the problem further geometrically,
+      switching between the two headings and watching how the barometer responds as
+      the ship moves.
+    </p>
+    <p component="print">
+      An interactive figure of the pressure field <mdash/> the two headings
+      switchable, with the barometer responding as the ship moves <mdash/>
+      accompanies the online version of these notes.
+    </p>
+    <sidebyside component="web" width="100%">
+    <figure xml:id="figure-isobars-low">
+      <caption>The pressure field <m>P(x,y) = 988 + 0.004(x^2+y^2)</m> around a low. One heading circles the eye at constant <m>990</m> mb; the other runs outward along <m>\nabla P</m>. The distance readout shows why <m>\|\nabla P\| = 0.008r</m> grows with radius.</caption>
+      <interactive xml:id="interactive-isobars-low"
+                   iframe="isobars-low-3d.html"
+                   width="100%" aspect="16:10"/>
+    </figure>
+    </sidebyside>
+  </answer>
 </exercise>
 
 </worksheet>

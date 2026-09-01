@@ -12,7 +12,32 @@
   for Partial Derivatives" (q2-3); the other problems of both of those
   worksheets also went to Assignment 7.  Last comes the final problem of
   the old worksheet "Exercises for The Chain Rule" (pp-29), whose first
-  four problems became Assignment 8 (assignment-8-chain-rule.ptx).
+  four problems became Assignment 8 (assignment-8-chain-rule.ptx), and the
+  even-numbered problems of the old worksheet "Exercises for Directional
+  Derivatives and Gradient Vectors" (rev-gr-2, rm2-gr-1, rf-6, rs19-7,
+  rw22-7, pp-30, pp-32 and ex-fall-line), whose odd-numbered problems went
+  to Assignment 8 too.
+
+  From that gradients worksheet: pp-30 was originally stated for a function
+  of three variables and was rewritten for two at the instructor's request,
+  using T = 3x^2 + 8xy + y^2 at (1,0), where T = 3 and the gradient is
+  (6,8) of length 10.  ex-fall-line is one of the three closing "two
+  runners" problems, so the paragraph introducing them was reworded here
+  for a single problem.
+
+  Then problems 9 and 11 of the old worksheet "Exercises for Tangent Planes
+  and Differentials" (pp-40 and q2-2); the rest of that worksheet became
+  Assignment 9 (assignment-9-tangent-planes.ptx).
+
+  Last come two of the three Chapter 4 problems of the dissolved Interactive
+  Problem Set (rs-tf-directional and rs-clickable-error; its Chapter 3
+  problems went to review-problems-2.ptx).  The third, the card sort
+  rs-cardsort-critical, sat here too until Assignment 10 was created; being on
+  the second derivative test, it moved on to review-problems-4.ptx.
+
+  Those Runestone problems are DEV-schema elements, so validate this file
+  with the CLI's dev schema option; the stable schema reports false positives
+  on them.  See CLAUDE.md for which markup triggers which question type.
 
   For now this worksheet sits directly after Assignment 7; more problems
   from the Chapter 4 topics may join it later.
@@ -23,12 +48,14 @@
 <introduction>
 <p>
 These are problems from the Chapter 4 topics that were not assigned in
-Assignments 7 and 8, collected here for review. They are not assigned, but they are
+Assignments 7, 8 and 9, collected here for review. They are not assigned, but they are
 fair game on an exam. If you would like to review the material first, see
 <xref ref="sec-skel-fmv-functions" text="title"/>,
 <xref ref="sec-skel-fmv-limits" text="title"/>,
-<xref ref="sec-skel-fmv-partial-derivatives" text="title"/> and
-<xref ref="sec-skel-fmv-chain-rule" text="title"/>.
+<xref ref="sec-skel-fmv-partial-derivatives" text="title"/>,
+<xref ref="sec-skel-fmv-chain-rule" text="title"/>,
+<xref ref="sec-skel-fmv-directional-derivatives" text="title"/> and
+<xref ref="sec-skel-fmv-tangent-planes" text="title"/>.
 </p>
 </introduction>
 
@@ -528,6 +555,676 @@ At <m>(r,\theta) = \left(3, \frac{\pi}{2}\right)</m> we have
 </md>
 </p>
 </solution>
+</exercise>
+
+<!-- ===== From the old worksheet "Exercises for Directional Derivatives
+     and Gradient Vectors": its even-numbered problems ===== -->
+<exercise xml:id="rev-gr-2">
+<statement>
+<p>
+Find all points at which the direction of fastest change of the
+function <m>f(x,y) = x^2 + y^2 - 2x - 4y</m> is
+<m>\langle 1, 1\rangle</m>.
+</p>
+</statement>
+<solution>
+<p>
+The direction of fastest change is
+<m>\nabla f(x,y) = \langle 2x-2,\, 2y-4\rangle</m>, so we need to
+find all points <m>(x,y)</m> such that
+<m>\nabla f(x,y) = k\langle 1,1\rangle</m>. Then
+<md>
+2x - 2 = k \quad\text{and}\quad 2y - 4 = k,
+</md>
+so
+<md>
+2x - 2 = 2y - 4 \;\Rightarrow\; y = x + 1.
+</md>
+Hence, the direction of fastest change is <m>\langle 1,1\rangle</m>
+at all points on the line <m>y = x + 1</m>. See
+<xref ref="fig-rev-gr-line"/>.
+</p>
+
+<figure xml:id="fig-rev-gr-line">
+<caption>
+Level curves of <m>f(x,y) = x^2+y^2-2x-4y</m>, which are circles
+centered at <m>(1,2)</m>. Along the line <m>y = x+1</m> the gradient
+<m>\nabla f</m> points in the direction <m>\langle 1,1\rangle</m>.
+</caption>
+<image width="66%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-rev-gr-line">
+<diagram dimensions="(340,320)" margins="12">
+<definition>c1(t) = (1 + 0.8*cos(t), 2 + 0.8*sin(t))</definition>
+<definition>c2(t) = (1 + 1.6*cos(t), 2 + 1.6*sin(t))</definition>
+<definition>c3(t) = (1 + 2.4*cos(t), 2 + 2.4*sin(t))</definition>
+<coordinates bbox="(-2.1,-1.1,4.3,5.1)">
+<grid-axes xlabel="x" ylabel="y"/>
+<parametric-curve at="gr-c1" function="c1" domain="(0,6.2832)"
+                  stroke="#56B4E9" thickness="2"/>
+<parametric-curve at="gr-c2" function="c2" domain="(0,6.2832)"
+                  stroke="#56B4E9" thickness="2"/>
+<parametric-curve at="gr-c3" function="c3" domain="(0,6.2832)"
+                  stroke="#56B4E9" thickness="2"/>
+<line at="gr-line" endpoints="((-1.9,-0.9),(3.9,4.9))"
+      stroke="#8B1A4A" thickness="3"/>
+<point at="gr-center" p="(1,2)" fill="#7F7F7F"/>
+<vector at="gr-v1" v="(0.75,0.75)" tail="(1.566,2.566)"
+        stroke="#D55E00" thickness="3"/>
+<vector at="gr-v2" v="(0.75,0.75)" tail="(2.131,3.131)"
+        stroke="#D55E00" thickness="3"/>
+<vector at="gr-v3" v="(0.75,0.75)" tail="(2.697,3.697)"
+        stroke="#D55E00" thickness="3"/>
+<label at="gr-line-lab" anchor="(-1.05,-0.95)" alignment="e" color="#8B1A4A">
+<m>y=x+1</m>
+</label>
+<label at="gr-grad-lab" anchor="(2.30,-0.78)" alignment="e" color="#D55E00">
+<m>\nabla f \parallel \langle 1,1\rangle</m>
+</label>
+<label at="gr-center-lab" anchor="(1.12,1.82)" alignment="se" color="#7F7F7F">
+<m>(1,2)</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="Three concentric blue circles centered at the point one comma two are level curves of f. A dark red line with slope one, y equals x plus one, passes through the center. At three points on this line outside the smallest circle, orange arrows of equal length point up and to the right in the direction one comma one, perpendicular to the circles.">
+  <annotation ref="gr-c1" text="A level curve of f: a circle centered at one comma two."/>
+  <annotation ref="gr-line" text="The line y equals x plus one, through the center of the circles, where the gradient points in the direction one comma one."/>
+  <annotation ref="gr-v1" text="The gradient direction one comma one at a point on the line, perpendicular to the level curves."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</solution>
+</exercise>
+
+<exercise xml:id="rm2-gr-1">
+<title>True or False</title>
+<statement correct="yes">
+<p>
+<m>D_{\hat{\imath} + \hat{\jmath}}\,f(x,y) = f_x + f_y</m>.
+</p>
+<p>
+Justify your answer fully: give a proof if the statement is true, or a
+counterexample if it is false.
+</p>
+</statement>
+<feedback>
+<p>
+Since
+<m>\hat{\imath} + \hat{\jmath} = \langle 1, 1\rangle</m>,
+<md>
+D_{\hat{\imath} + \hat{\jmath}}\,f(x,y)
+= \nabla f(x,y) \cdot \langle 1, 1\rangle
+= f_x + f_y.
+</md>
+</p>
+</feedback>
+</exercise>
+
+<exercise xml:id="rf-6">
+<statement>
+<p>
+A metal plate is placed on the <m>xy</m>-plane in such a way that the
+temperature <m>T</m> at any point <m>(x,y)</m> is given by
+<m>T = e^x(\sin x + \sin y)</m> <degree/>C.
+<ol marker="A.">
+<li>
+<p>
+What is the rate of change in temperature at <m>(0,0)</m> in the
+direction of <m>3\,\hat{\imath} - 4\,\hat{\jmath}</m>?
+</p>
+</li>
+<li>
+<p>
+At <m>(0,0)</m>, in what direction is the temperature increasing most
+rapidly?
+</p>
+</li>
+<li>
+<p>
+At <m>(0,0)</m>, in what direction is the temperature decreasing most
+rapidly?
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="A.">
+<li>
+<p>
+We first compute the gradient:
+<md>
+<mrow>T_x \amp = e^x(\sin x + \sin y) + e^x\cos x</mrow>
+<mrow>\amp = e^x(\sin x + \cos x + \sin y),
+\qquad T_x(0,0) = 1,</mrow>
+<mrow>T_y \amp = e^x \cos y,
+\qquad T_y(0,0) = 1,</mrow>
+</md>
+so <m>\nabla T\big|_{(0,0)} = \langle 1, 1\rangle</m>. The direction
+vector is <m>\overrightarrow{u} = \langle 3, -4\rangle</m> with
+<m>\|\overrightarrow{u}\| = \sqrt{9 + 16} = 5</m>, so the unit vector is
+<m>\hat u = \dfrac{\overrightarrow{u}}{\|\overrightarrow{u}\|}
+= \left\langle \dfrac35, -\dfrac45\right\rangle</m>. Hence
+<md>
+\left(D_{\hat u} T\right)_{(0,0)}
+= \nabla T\big|_{(0,0)} \cdot \hat u
+= \langle 1, 1\rangle \cdot
+\left\langle \frac35, -\frac45\right\rangle
+= -\frac15.
+</md>
+</p>
+</li>
+<li>
+<p>
+The temperature increases most rapidly in the direction of the
+gradient:
+<md>
+\hat u = \frac{\nabla T\big|_{(0,0)}}{\left\|\nabla T\big|_{(0,0)}\right\|}
+= \left\langle \frac{1}{\sqrt2}, \frac{1}{\sqrt2}\right\rangle.
+</md>
+</p>
+</li>
+<li>
+<p>
+The temperature decreases most rapidly in the direction opposite to
+the gradient:
+<md>
+\hat u = -\frac{\nabla T\big|_{(0,0)}}{\left\|\nabla T\big|_{(0,0)}\right\|}
+= \left\langle -\frac{1}{\sqrt2}, -\frac{1}{\sqrt2}\right\rangle.
+</md>
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rs19-7">
+<statement>
+<p>
+Calculate the maximum rate of change of <m>f(x,y) = \ln(x^2+y^2)</m>
+at the point <m>(-4, 3)</m> and determine the direction in which it
+occurs.
+</p>
+</statement>
+<solution>
+<p>
+The gradient is
+<md>
+\nabla f = \left(\frac{2x}{x^2+y^2}\right)\hat{\imath}
++ \left(\frac{2y}{x^2+y^2}\right)\hat{\jmath},
+</md>
+so at <m>(-4,3)</m>,
+<md>
+<mrow>\nabla f(-4,3)
+\amp = \left(-\frac{8}{25}\right)\hat{\imath}
++ \left(\frac{6}{25}\right)\hat{\jmath},</mrow>
+<mrow>\|\nabla f(-4,3)\|
+\amp = \sqrt{\frac{100}{(25)^2}} = \frac{10}{25}
+= \frac25.</mrow>
+</md>
+The direction of maximum increase is
+<md>
+\hat u = \frac{\nabla f(-4,3)}{\|\nabla f(-4,3)\|}
+= \left(-\frac45\right)\hat{\imath} + \left(\frac35\right)\hat{\jmath},
+</md>
+and the maximum rate of increase is
+<md>
+\left(D_{\hat u} f\right)_{P_0} = \|\nabla f(-4,3)\| = \frac25.
+</md>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rw22-7">
+<statement>
+<p>
+Consider the function <m>f(x,y) = x^2 + xy + y^2</m>.
+<ol marker="A.">
+<li>
+<p>
+Find the directions in which <m>f(x,y)</m> increases and decreases
+most rapidly at <m>P_0(-1,1)</m>.
+</p>
+</li>
+<li>
+<p>
+Find the derivatives of <m>f(x,y)</m> in these directions at
+<m>P_0(-1,1)</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="A.">
+<li>
+<p>
+The gradient is
+<md>
+<mrow>\nabla f \amp = (2x + y)\,\hat{\imath} + (x + 2y)\,\hat{\jmath},</mrow>
+<mrow>\left(\nabla f\right)_{(-1,1)} \amp = \langle -1, 1\rangle,
+\qquad
+\left\|\left(\nabla f\right)_{(-1,1)}\right\| = \sqrt2.</mrow>
+</md>
+The function increases most rapidly in the direction of the gradient,
+<md>
+\hat u_1 = \frac{\left(\nabla f\right)_{(-1,1)}}
+{\left\|\left(\nabla f\right)_{(-1,1)}\right\|}
+= \left\langle -\frac{1}{\sqrt2}, \frac{1}{\sqrt2}\right\rangle,
+</md>
+and decreases most rapidly in the opposite direction,
+<md>
+\hat u_2 = -\frac{\left(\nabla f\right)_{(-1,1)}}
+{\left\|\left(\nabla f\right)_{(-1,1)}\right\|}
+= \left\langle \frac{1}{\sqrt2}, -\frac{1}{\sqrt2}\right\rangle.
+</md>
+</p>
+</li>
+<li>
+<p>
+The directional derivatives are
+<md>
+<mrow>\left(D_{\hat u_1} f\right)_{P_0}
+\amp = \left(\nabla f\right)_{(-1,1)} \cdot \hat u_1
+= \frac{1}{\sqrt2} + \frac{1}{\sqrt2}
+= \sqrt2
+= \left\|\left(\nabla f\right)_{(-1,1)}\right\|,</mrow>
+<mrow>\left(D_{\hat u_2} f\right)_{P_0}
+\amp = \left(\nabla f\right)_{(-1,1)} \cdot \hat u_2
+= -\frac{1}{\sqrt2} - \frac{1}{\sqrt2}
+= -\sqrt2
+= -\left\|\left(\nabla f\right)_{(-1,1)}\right\|.</mrow>
+</md>
+As expected, the largest possible rate of change is
+<m>\|\nabla f\|</m> and the smallest is <m>-\|\nabla f\|</m>.
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="pp-30">
+<statement>
+<p>
+In the <m>xy</m>-plane, the temperature at the point <m>(x,y)</m> is
+given by <m>T(x,y) = 3x^2 + 8xy + y^2</m>. You're at <m>(1,0)</m>
+where the temperature is <m>3^{\circ}</m>. Brrrr!
+<ol marker="A.">
+<li>
+<p>
+In what direction should you go, from <m>(1,0)</m>, in order to warm
+up the fastest?
+</p>
+</li>
+<li>
+<p>
+What is the directional derivative in that direction at the point
+<m>(1,0)</m>?
+</p>
+</li>
+<li>
+<p>
+If you walk <m>0.2</m> units in that direction, by about how many
+degrees will you warm up?
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<ol marker="A.">
+<li>
+<p>
+A function increases fastest in the direction of its gradient:
+<md>
+\nabla T = \langle 6x + 8y,\; 8x + 2y\rangle,
+\qquad
+\nabla T\big|_{(1,0)} = \langle 6, 8\rangle
+= 6\,\hat{\imath} + 8\,\hat{\jmath}.
+</md>
+So head in the direction <m>6\,\hat{\imath} + 8\,\hat{\jmath}</m>
+(equivalently, the unit vector
+<m>\left\langle \frac35, \frac45\right\rangle</m>).
+</p>
+</li>
+<li>
+<p>
+In the direction of the gradient, the directional derivative equals
+the length of the gradient:
+<md>
+\left(D_{\hat u}T\right)_{(1,0)}
+= \left\|\nabla T\big|_{(1,0)}\right\|
+= \sqrt{36 + 64} = 10.
+</md>
+</p>
+</li>
+<li>
+<p>
+The directional derivative is the rate of change of temperature per
+unit of distance travelled, so by the linear approximation
+<md>
+\Delta T \approx \left(D_{\hat u}T\right) \cdot s
+= 10 \times 0.2 = 2^{\circ}.
+</md>
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="pp-32">
+<statement>
+<p>
+A sheet of metal of varying density occupies the <m>xy</m>-plane. At
+the point <m>(x,y)</m>, the density is
+<m>100 + 0.1xy + 0.1y^2</m>. We move away from the point
+<m>(10,10)</m> in the direction
+<m>\frac35\hat{\imath} + \frac45\hat{\jmath}</m>. Use the directional
+derivative to estimate about how far we'll have to go for the density
+to increase by <m>6</m>.
+</p>
+</statement>
+<solution>
+<p>
+Let <m>\rho(x,y) = 100 + 0.1xy + 0.1y^2</m>. Then
+<md>
+\nabla \rho = \langle 0.1y,\; 0.1x + 0.2y\rangle,
+\qquad
+\nabla \rho\big|_{(10,10)} = \langle 1,\; 1 + 2\rangle
+= \langle 1, 3\rangle.
+</md>
+The given direction is already a unit vector, since
+<m>\left(\frac35\right)^2 + \left(\frac45\right)^2 = 1</m>, so
+<md>
+D_{\hat u}\rho(10,10)
+= \langle 1, 3\rangle \cdot \left\langle \frac35, \frac45\right\rangle
+= \frac35 + \frac{12}{5} = 3.
+</md>
+</p>
+
+<p>
+So the density increases at about <m>3</m> units of density per unit
+of distance. To gain <m>6</m> units of density we therefore need to
+travel approximately
+<md>
+s \approx \frac{6}{3} = 2 \text{ units}.
+</md>
+</p>
+</solution>
+</exercise>
+
+<p>
+The problem that closes this set repeats the three questions of
+<xref ref="ex-skel-two-runners"/> in a different physical setting: find the
+direction of most rapid decrease, the rate along a prescribed direction,
+and the directions of no change.
+</p>
+
+<exercise xml:id="ex-fall-line">
+  <title>The Fall Line on a Ski Slope</title>
+  <statement>
+    <p>
+      A mountainside has elevation, in feet,
+      <md>h(x,y) = 3000 - 0.0004x^2 - 0.001y^2,</md>
+      with <m>x</m> and <m>y</m> in feet. A skier stands at <m>P_0(200,100)</m>. Her
+      gravitational potential energy is <m>U = mgh</m>, so the downhill force she feels is
+      a positive multiple of <m>-\nabla h</m>.
+    </p>
+    <p>
+      <ol>
+        <li>
+          <p>
+            Find the <term>fall line</term>, the unit vector of steepest descent, and the
+            grade of the slope there, expressed as a percent (feet dropped per hundred feet
+            travelled).
+          </p>
+        </li>
+        <li>
+          <p>
+            A traverse is a route on which she neither climbs nor descends. Find the two
+            unit vectors that accomplish this.
+          </p>
+        </li>
+        <li>
+          <p>
+            She wants a gentler line of exactly <m>12\%</m> grade. Using
+            <m>D_{\hat{u}}h = \|\nabla h\|\cos\theta</m>, find the angle <m>\theta</m>
+            between her heading and the fall line.
+          </p>
+        </li>
+      </ol>
+    </p>
+  
+  </statement>
+  <answer>
+    <p>
+      <ol>
+        <li>
+          <p>
+            <m>\nabla h = -0.0008x\,\hat{\imath} - 0.002y\,\hat{\jmath}</m>, so
+            <m>(\nabla h)_{(200,100)} = -0.16\,\hat{\imath} - 0.20\,\hat{\jmath}</m>. Steepest
+            descent is along
+            <m>\hat{u} = \tfrac{1}{\sqrt{41}}(4\,\hat{\imath} + 5\,\hat{\jmath})</m>, and
+            <m>\|\nabla h\| = \sqrt{0.0656} \approx 0.256</m>, a grade of about
+            <m>25.6\%</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\hat{u} = \pm\tfrac{1}{\sqrt{41}}(5\,\hat{\imath} - 4\,\hat{\jmath})</m>, tangent
+            to the contour line of constant elevation through <m>P_0</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\cos\theta = 0.12/0.256 \approx 0.469</m>, so
+            <m>\theta \approx 62^\circ</m> off the fall line, on either side.
+          </p>
+        </li>
+      </ol>
+    </p>
+  
+    <p component="print">
+      Two interactive figures accompany the online version of these notes:
+      one shows the grade as the angle <m>\alpha</m> of the tangent line cut
+      by a swinging vertical plane through <m>P_0</m>, and the other compares
+      the fall line, the level traverse, and the <m>12\%</m> line on the
+      mountainside itself.
+    </p>
+    <sidebyside component="web" width="100%">
+    <figure xml:id="figure-alpha-tangent">
+      <caption>
+        Part (a) says the grade is <m>\|\nabla h\| = 0.2561</m>. Here is what that
+        number is, on the hill itself. The vertical plane through <m>P_0</m> in the
+        direction <m>\hat{u}</m> cuts the surface in the gold curve; the red line
+        is that curve's tangent at <m>P_0</m>; and <m>\alpha</m> is the angle it
+        makes with the horizontal. Since <m>\tan\alpha = D_{\hat{u}}h</m>, the
+        grade <em>is</em> the tangent of that angle. Swing <m>\hat{u}</m> with the
+        slider: <m>\alpha</m> is largest along the fall line, where
+        <m>\tan\alpha = 0.2561</m> and <m>\alpha = 14.4^\circ</m>, and it closes to
+        nothing along the contour, where the tangent line lies flat.
+      </caption>
+      <interactive xml:id="interactive-alpha-tangent"
+                   iframe="alpha-tangent.html"
+                   width="100%" aspect="1:1"/>
+    </figure>
+    </sidebyside>
+    <sidebyside component="web" width="100%">
+    <figure xml:id="figure-fall-line">
+      <caption>The mountainside <m>h(x,y) = 3000 - 0.0004x^2 - 0.001y^2</m>. Compare the fall line, the level traverse, and the <m>12\%</m> line. Watch the grade readout drift away from <m>12\%</m> as the skier leaves <m>P_0</m>, since the angle in part (c) is computed at <m>P_0</m> only.</caption>
+      <interactive xml:id="interactive-fall-line"
+                   iframe="fall-line-3d.html"
+                   width="100%" aspect="16:10"/>
+    </figure>
+    </sidebyside>
+  </answer>
+</exercise>
+
+<!-- ===== From the old worksheet "Exercises for Tangent Planes and
+     Differentials": its problems 9 and 11 ===== -->
+<exercise xml:id="pp-40">
+<statement>
+<p>
+You measure the magnitude of a force <m>F</m> to be <m>6</m>, but
+there could be an error of at most <m>\pm 0.3</m>. You measure a mass
+<m>M</m> to be <m>3</m> with an error of at most <m>\pm 0.1</m>. You
+are trying to use these two to approximate the magnitude of the
+acceleration <m>A</m>. We have <m>A = \dfrac{F}{M}</m>. Use the
+principle of the differential to find an upper bound on the absolute
+value of the error when assuming <m>A = 2</m>.
+</p>
+</statement>
+<solution>
+<p>
+Treat <m>A</m> as a function of the two measured quantities,
+<m>A(F,M) = \dfrac{F}{M}</m>. Its differential is
+<md>
+dA = \frac{\partial A}{\partial F}\,dF
++ \frac{\partial A}{\partial M}\,dM
+= \frac{1}{M}\,dF - \frac{F}{M^2}\,dM.
+</md>
+At the measured values <m>F = 6</m> and <m>M = 3</m> (where indeed
+<m>A = 2</m>), the coefficients are <m>\frac13</m> and
+<m>-\frac{6}{9} = -\frac23</m>.
+</p>
+
+<p>
+Taking absolute values and using the triangle inequality with the
+worst-case errors <m>|dF| \le 0.3</m> and <m>|dM| \le 0.1</m>,
+<md>
+|dA| \le \frac{1}{3}|dF| + \frac{2}{3}|dM|
+\le \frac13(0.3) + \frac23(0.1)
+= 0.1 + \frac{1}{15}
+= \frac16.
+</md>
+So the error in the value <m>A = 2</m> is at most about
+<m>\frac16 \approx 0.167</m>.
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="q2-2">
+<statement>
+<p>
+Let <m>g(x,y) = \sin(xy)</m>, and note that
+<m>g\!\left(\pi, \tfrac13\right) = \tfrac{\sqrt3}{2}</m>. Use an
+appropriate partial derivative to approximate
+<m>g\!\left(\pi, \tfrac13 + \tfrac1{20}\right)</m>.
+</p>
+</statement>
+<solution>
+<p>
+Only <m>y</m> changes, by <m>\Delta y = \tfrac1{20}</m>, so we need
+<m>g_y</m>. Treating <m>x</m> as a constant and using the chain rule,
+<md>
+g_y(x,y) = x\cos(xy) .
+</md>
+</p>
+
+<p>
+At the point <m>\left(\pi, \tfrac13\right)</m> we have
+<m>xy = \tfrac{\pi}{3}</m> and <m>\cos\!\left(\tfrac{\pi}{3}\right)
+= \tfrac12</m>, so
+<md>
+g_y\!\left(\pi, \tfrac13\right) = \pi \cdot \frac12 = \frac{\pi}{2} .
+</md>
+</p>
+
+<p>
+Therefore
+<md>
+<mrow>g\!\left(\pi, \tfrac13 + \tfrac1{20}\right)
+  \amp \approx g\!\left(\pi, \tfrac13\right)
+       + g_y\!\left(\pi, \tfrac13\right)\cdot \frac{1}{20}</mrow>
+<mrow>\amp = \frac{\sqrt3}{2} + \frac{\pi}{2}\cdot\frac{1}{20}</mrow>
+<mrow>\amp = \frac{\sqrt3}{2} + \frac{\pi}{40} \approx 0.944 .</mrow>
+</md>
+The exact value is
+<m>\sin\!\left(\tfrac{23\pi}{60}\right) \approx 0.933</m>, so again the
+approximation is quite good.
+</p>
+</solution>
+</exercise>
+
+<!-- ===== From the Interactive Problem Set (exercises-runestone-samples.ptx):
+     its three Chapter 4 problems.  These use dev-schema elements. ===== -->
+<exercise xml:id="rs-tf-directional">
+<title>True or False</title>
+<statement correct="no">
+<p>
+If every directional derivative <m>D_{\mathbf u}f(P_0)</m> exists at a point
+<m>P_0</m>, then <m>f</m> must be continuous at <m>P_0</m>.
+</p>
+<p>
+Justify your answer fully: give a proof if the statement is true, or a
+counterexample if it is false.
+</p>
+</statement>
+<feedback>
+<p>
+False, and the failure is dramatic. Let
+<md>
+f(x,y) = \frac{x^2 y}{x^4 + y^2}\ \text{ for } (x,y)\ne(0,0),
+\qquad f(0,0) = 0 .
+</md>
+For a unit vector <m>\mathbf u = \langle a,b\rangle</m> with <m>b \ne 0</m>,
+<md>
+D_{\mathbf u}f(0,0) = \lim_{t\to 0}\frac{f(ta,tb)}{t}
+ = \lim_{t\to 0}\frac{a^2 b}{t^2a^4 + b^2} = \frac{a^2}{b},
+</md>
+and <m>D_{\mathbf u}f(0,0) = 0</m> when <m>b = 0</m>. So <em>every</em>
+directional derivative exists. Yet along the parabola <m>y = mx^2</m>,
+<md>
+f(x,mx^2) = \frac{m}{1+m^2},
+</md>
+which depends on <m>m</m> — different parabolas approach different values,
+so <m>\lim_{(x,y)\to(0,0)}f</m> does not exist and <m>f</m> is not
+continuous at the origin. Existence of directional derivatives is a
+statement about behavior along <em>straight lines</em> only; continuity
+requires control along <em>every</em> approach.
+</p>
+</feedback>
+</exercise>
+
+<exercise xml:id="rs-clickable-error">
+<title>Find the Error</title>
+<statement>
+<p>
+Below is a student's computation of the derivative of
+<m>f(x,y) = x^2 y</m> at the point <m>(1,2)</m> in the direction of
+<m>\vec v = \langle 3,4\rangle</m>. Exactly one line contains the error.
+Click on that line.
+</p>
+</statement>
+<feedback>
+<p>
+The error is in the third line. The formula
+<m>D_{\mathbf u}f = \nabla f\cdot\mathbf u</m> requires a <em>unit</em>
+vector. Since <m>\left|\vec v\right| = 5</m>, the correct direction is
+<m>\mathbf u = \left\langle \tfrac35, \tfrac45 \right\rangle</m>, giving
+<md>
+D_{\mathbf u}f(1,2) = 4\cdot\tfrac35 + 1\cdot\tfrac45 = \frac{16}{5} = 3.2,
+</md>
+not <m>16</m>. Lines 1, 2 and 4 are each correct given the line before
+them — line 4 faithfully reports the (wrong) number produced by line 3.
+</p>
+</feedback>
+<areas>
+<p><area correct="no"><m>\nabla f = \left\langle 2xy,\; x^2\right\rangle</m></area></p>
+<p><area correct="no"><m>\nabla f(1,2) = \left\langle 4,\; 1\right\rangle</m></area></p>
+<p><area correct="yes"><m>D_{\vec v}f(1,2) = \nabla f(1,2)\cdot\vec v
+  = (4)(3) + (1)(4) = 16</m></area></p>
+<p><area correct="no">So the directional derivative equals <m>16</m>.</area></p>
+</areas>
 </exercise>
 
 </worksheet>

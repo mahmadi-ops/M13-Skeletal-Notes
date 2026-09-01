@@ -16,7 +16,14 @@
 
   rs-multiselect-quadrics ("Which of These Are Hyperboloids?") was moved here
   from the Interactive Problem Set (exercises-runestone-samples.ptx), where it
-  filled the multiple-select slot.
+  filled the multiple-select slot.  That worksheet has since been dissolved,
+  and its three Chapter 3 problems (rs-mc-vector-identity,
+  rs-fillin-skew-lines and rs-parsons-no-work) close this file; its Chapter 4
+  problems went to review-problems-3.ptx.
+
+  Those Runestone problems are DEV-schema elements, so validate this file
+  with the CLI's dev schema option; the stable schema reports false positives
+  on them.  See CLAUDE.md for which markup triggers which question type.
 
   exercise-quadric-graph-match was marked R2 but has since been moved to
   Assignment 6 at the instructor's request.
@@ -3308,6 +3315,227 @@ flat base of the solid beneath the bowl.
 </image>
 </figure>
 </solution>
+</exercise>
+
+<!-- ===== From the Interactive Problem Set (exercises-runestone-samples.ptx):
+     its three Chapter 3 problems.  These use dev-schema elements. ===== -->
+<exercise xml:id="rs-mc-vector-identity">
+<title>Which Identity Fails?</title>
+<statement>
+<p>
+Exactly one of the following is <em>not</em> valid for all vectors
+<m>\vec a, \vec b, \vec c</m> in <m>\R^3</m>. Which one?
+</p>
+</statement>
+<choices randomize="yes">
+
+<choice>
+<statement>
+<p><m>\vec a\cdot(\vec b\times\vec c) = (\vec a\times\vec b)\cdot\vec c</m></p>
+</statement>
+<feedback>
+<p>
+This one is valid. Both sides equal the determinant with rows
+<m>\vec a,\vec b,\vec c</m>, so the dot and the cross may be interchanged.
+</p>
+</feedback>
+</choice>
+
+<choice correct="yes">
+<statement>
+<p><m>\vec a\times(\vec b\times\vec c) = (\vec a\times\vec b)\times\vec c</m></p>
+</statement>
+<feedback>
+<p>
+Correct — the cross product is <em>not associative</em>. Take
+<m>\vec a = \vec b = \mathbf i</m> and <m>\vec c = \mathbf j</m>. Then
+<md>
+\mathbf i\times(\mathbf i\times\mathbf j) = \mathbf i\times\mathbf k
+ = -\mathbf j,
+\qquad
+(\mathbf i\times\mathbf i)\times\mathbf j = \vec 0\times\mathbf j = \vec 0 .
+</md>
+The left side lies in the plane of <m>\vec b</m> and <m>\vec c</m>; the
+right side lies in the plane of <m>\vec a</m> and <m>\vec b</m>. There is no
+reason for those to agree.
+</p>
+</feedback>
+</choice>
+
+<choice>
+<statement>
+<p><m>\vec a\times(\vec b + \vec c) = \vec a\times\vec b + \vec a\times\vec c</m></p>
+</statement>
+<feedback>
+<p>
+This one is valid — the cross product <em>is</em> distributive over
+addition. (It is only associativity that fails.)
+</p>
+</feedback>
+</choice>
+
+<choice>
+<statement>
+<p><m>\vec a\times(\vec b\times\vec c)
+   = (\vec a\cdot\vec c)\,\vec b - (\vec a\cdot\vec b)\,\vec c</m></p>
+</statement>
+<feedback>
+<p>
+This one is valid: it is the <q>BAC-CAB</q> triple product expansion. It
+looks the most exotic of the four, which is exactly why it is worth
+remembering that it is true.
+</p>
+</feedback>
+</choice>
+
+</choices>
+</exercise>
+
+<exercise xml:id="rs-fillin-skew-lines">
+<title>Distance Between Skew Lines</title>
+<statement>
+<p>
+Consider the two lines
+<md>
+<mrow>L_1: \amp \quad \vec r = \langle 1,0,2\rangle
+   + t\,\langle 2,-1,1\rangle,</mrow>
+<mrow>L_2: \amp \quad \vec r = \langle 0,3,-1\rangle
+   + s\,\langle 1,2,-1\rangle .</mrow>
+</md>
+They are skew. Let <m>\vec u,\vec v</m> be the direction vectors and let
+<m>\vec w</m> join a point of <m>L_1</m> to a point of <m>L_2</m>.
+</p>
+<p>
+The absolute value of the scalar triple product
+<m>\left|\vec w\cdot(\vec u\times\vec v)\right|</m> equals
+<var width="6"/>.
+</p>
+<p>
+The distance between the two lines, to three decimal places, is
+<var width="8"/>.
+</p>
+</statement>
+<setup>
+<var>
+<condition number="5">
+<feedback><p>Correct.</p></feedback>
+</condition>
+<condition number="-5">
+<feedback>
+<p>
+Nearly — the triple product itself is <m>-5</m>, but the question asks for
+its <em>absolute value</em>.
+</p>
+</feedback>
+</condition>
+</var>
+<var>
+<condition number="0.845" tolerance="0.001">
+<feedback><p>Correct.</p></feedback>
+</condition>
+<condition number="5.916" tolerance="0.002">
+<feedback>
+<p>
+That is <m>\left|\vec u\times\vec v\right| = \sqrt{35}</m>, the
+<em>denominator</em>. You still need to divide the triple product by it.
+</p>
+</feedback>
+</condition>
+<condition number="0.141" tolerance="0.002">
+<feedback>
+<p>
+You appear to have divided by <m>35</m> rather than by
+<m>\sqrt{35}</m>.
+</p>
+</feedback>
+</condition>
+</var>
+</setup>
+<hint>
+<p>
+The vector <m>\vec u\times\vec v</m> is perpendicular to both lines, so the
+distance is the length of the projection of <m>\vec w</m> onto it:
+<m>d = \left|\vec w\cdot(\vec u\times\vec v)\right| /
+\left|\vec u\times\vec v\right|</m>.
+</p>
+</hint>
+<solution>
+<p>
+With <m>\vec u = \langle 2,-1,1\rangle</m> and
+<m>\vec v = \langle 1,2,-1\rangle</m>,
+<md>
+\vec u\times\vec v =
+\begin{vmatrix}
+\mathbf i \amp \mathbf j \amp \mathbf k \\
+2 \amp -1 \amp 1 \\
+1 \amp 2 \amp -1
+\end{vmatrix}
+= \langle -1,\, 3,\, 5\rangle,
+\qquad
+\left|\vec u\times\vec v\right| = \sqrt{35}.
+</md>
+Taking <m>\vec w = \langle 0,3,-1\rangle - \langle 1,0,2\rangle
+= \langle -1,3,-3\rangle</m>,
+<md>
+\vec w\cdot(\vec u\times\vec v) = 1 + 9 - 15 = -5,
+\qquad
+d = \frac{5}{\sqrt{35}} = \frac{\sqrt{35}}{7} \approx 0.845 .
+</md>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rs-parsons-no-work">
+<title>Why a Magnetic Field Cannot Change a Particle's Speed</title>
+<statement>
+<p>
+Arrange the steps below into a correct proof that the magnetic force does no
+work, and therefore that a charged particle in a magnetic field moves at
+constant speed.
+</p>
+</statement>
+<!--
+  Keep the content of each <m> on ONE source line inside a <block>.  Parsons
+  blocks are line-oriented, so a newline inside the math splits the \( \)
+  delimiters across two lines and MathJax leaves the LaTeX as literal text.
+-->
+<blocks randomize="yes">
+<block order="1">
+<p>
+Let a particle of mass <m>m</m> and charge <m>q</m> move with velocity
+<m>\vec v</m> through a magnetic field <m>\vec B</m>.
+</p>
+</block>
+<block order="2">
+<p>
+The force on the particle is <m>\vec F = q\,\vec v\times\vec B</m>.
+</p>
+</block>
+<block order="3">
+<p>
+By definition, a cross product is perpendicular to both of its factors, so
+<m>\vec v\times\vec B</m> is perpendicular to <m>\vec v</m>.
+</p>
+</block>
+<block order="4">
+<p>
+Hence <m>\vec F\cdot\vec v = q\left(\vec v\times\vec B\right)\cdot\vec v = 0</m>.
+</p>
+</block>
+<block order="5">
+<p>
+The kinetic energy satisfies
+<m>\dfrac{d}{dt}\left(\tfrac12 m\,\vec v\cdot\vec v\right) = m\,\vec v\cdot\dfrac{d\vec v}{dt} = \vec F\cdot\vec v</m>.
+</p>
+</block>
+<block order="6">
+<p>
+Therefore <m>\dfrac{d}{dt}\left(\tfrac12 m v^2\right) = 0</m>, so <m>v</m>
+is constant: the field changes the particle's direction but never its
+speed.
+</p>
+</block>
+</blocks>
 </exercise>
 
 </worksheet>

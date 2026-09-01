@@ -76,6 +76,48 @@ See `.claude/skills/skeletonize/SKILL.md` for the full rules. In short:
 - A header comment in each file records which original it mirrors and
   what was done with the figures.
 
+## Runestone interactive exercises
+
+A handful of auto-gradable Runestone problems live in `review-problems-2.ptx`
+(three Chapter 3 ones) and `review-problems-3.ptx` (three Chapter 4 ones).
+They came from a sampler worksheet, `exercises-runestone-samples.ptx`, that
+held one example of each question type; the sampler was dissolved into the
+review sets once the formats had been evaluated. What it established:
+
+| Type | Markup that triggers it |
+| ---- | ----------------------- |
+| `truefalse` | `statement/@correct` |
+| `multiplechoice` | `statement` + `choices` (2+ correct choices give checkboxes) |
+| `fillin-basic` | `statement//var` (answers live in a sibling `setup`) |
+| `parson` | `statement` + `blocks` |
+| `cardsort` | `statement` + `cardsort` |
+| `clickablearea` | `statement` + `areas` |
+
+(see `pretext-assembly.xsl`, `mode="exercise-interactive-attribute"`).
+
+Three types are unused. **`matching`** is unusable here: PreTeXt emits no
+static representation for it, so on the web target the exercise renders as a
+bare title with no statement and no items — reproduced with a minimal example
+under both 2.44.0 and 2.45.0. A multiple-select `multiplechoice` is the
+substitute. **`coding`** (an ActiveCode cell) has no role in this course.
+**`shortanswer`** (`statement` + `response`, instructor-graded) shows its
+response box only on Runestone — the static template in
+`pretext-runestone-static.xsl` skips the `response` element, so a web build
+shows the prompt alone. That is PreTeXt's design, not a defect.
+
+Two more things to know:
+
+- All but `truefalse` are **dev-schema** elements, so the two review-problems
+  files that hold them must be validated with the CLI's dev schema option;
+  the stable schema reports false positives on them.
+- A Parsons block is line-oriented: keep the content of each `<m>` on one
+  source line, or the newline splits the `\( \)` delimiters and MathJax
+  leaves the LaTeX as literal text.
+
+Hints, answers and solutions are suppressed in the Runestone build by
+`publication/publication-runestone.ptx`; due dates and release are set in the
+Runestone instructor dashboard, not in the source.
+
 ## Building
 
 ```bash
