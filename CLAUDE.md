@@ -23,6 +23,15 @@ convention). Repo-specific facts:
   toggle instantly; the sections and the pairs A7↔RP3, A5→RP2 are
   cross-referenced from other live pages, so those requests queue for
   Claude, who takes the referencing worksheets down or up together.
+- Chapters 2-4 and the Exercises chapter are wrappers holding only
+  `<xi:include>`s, and PreTeXt rejects an empty chapter or an empty book.
+  `sync_containers()` therefore drops a chapter from `main.ptx` once its last
+  section is unposted, brings it back when a section is posted, and swaps in
+  `ch-coming-soon.ptx` (a contentless placeholder chapter) while nothing else
+  is live. Never hand-edit those chapter includes; run the script.
+- `frontmatter.ptx` is always live, so it must never `<xref>` anything that
+  can be unposted -- its two references to the Exercises chapter were made
+  plain text for exactly that reason.
 - Solutions here are **public by default** (`publication.ptx` shows
   divisional solutions; the AI tutor in the Exercises introduction
   assumes that). A `lock` request wraps an assignment's

@@ -18,6 +18,24 @@ import re
 import sys
 
 SRC = "source"
+MAIN = "source/main.ptx"
+
+# Chapter wrapper -> its include href in main.ptx.  These chapters hold only
+# <xi:include>s, so once every section inside one is unposted the chapter is
+# empty and PreTeXt rejects it; it therefore has to leave the book too, and
+# come back as soon as one of its sections is posted again.  exercises.ptx is
+# the same story for the assignments and review sets.
+CONTAINERS = {
+    "source/ch-series-skeletal.ptx": "ch-series-skeletal.ptx",
+    "source/ch-geometry-skeletal.ptx": "ch-geometry-skeletal.ptx",
+    "source/ch-functions-multiple-variables-skeletal.ptx": "ch-functions-multiple-variables-skeletal.ptx",
+    "source/exercises.ptx": "exercises.ptx",
+}
+
+# A book needs a chapter, so this placeholder stands in while every real
+# chapter is unposted, and is dropped again as soon as one is posted.
+PLACEHOLDER = "ch-coming-soon.ptx"
+FIXTURES = {PLACEHOLDER, "frontmatter.ptx"}
 
 # topic key -> (file holding its include, include href)
 TOPICS = {
@@ -141,6 +159,31 @@ def files_referencing(ref_id):
     return hits
 
 
+def live_includes(path):
+    """The unwrapped <xi:include> hrefs of a file.  Wrapped ones are inside
+    XML comments, so stripping comments leaves exactly what is in the book."""
+    text = re.sub(r"<!--.*?-->", "", read(path), flags=re.S)
+    return re.findall(r'<xi:include\s+href="\.?/?([^"]+)"\s*/>', text)
+
+
+def sync_containers():
+    """Keep the book structurally valid after a toggle: a chapter with no live
+    sections leaves main.ptx, one with sections is in it, and the placeholder
+    chapter appears only when nothing else is left."""
+    for path, href in CONTAINERS.items():
+        if not os.path.exists(path):
+            continue
+        if live_includes(path):
+            post_include(MAIN, href)
+        else:
+            unpost_include(MAIN, href)
+    real = [h for h in live_includes(MAIN) if h not in FIXTURES]
+    if real:
+        unpost_include(MAIN, PLACEHOLDER)
+    else:
+        post_include(MAIN, PLACEHOLDER)
+
+
 def main():
     if len(sys.argv) != 3 or sys.argv[1] not in ("post-notes", "unpost-notes"):
         sys.exit(__doc__)
@@ -207,6 +250,8 @@ def main():
             else:
                 bail("unpost %s: dependency fixing did not converge" % key)
         print("unpost-notes %s: %s" % (key, state))
+
+    sync_containers()
 
     leftover = dangling_refs() - baseline
     if leftover:

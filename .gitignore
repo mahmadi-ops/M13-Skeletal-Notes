@@ -116,3 +116,7 @@ codechat_config.yaml
 # Personal Claude Code permission rules for this machine. Shared project
 # settings belong in .claude/settings.json, which stays tracked.
 .claude/settings.local.json
+
+# Python bytecode
+__pycache__/
+*.pyc

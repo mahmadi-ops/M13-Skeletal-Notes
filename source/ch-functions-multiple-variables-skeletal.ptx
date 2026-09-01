@@ -10,12 +10,12 @@
 <chapter xml:id="skel-chapter-functions-multiple-variables" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Functions of Multiple Variables</title>
 
-<xi:include href="sec-skel-fmv-functions.ptx" />
-<xi:include href="sec-skel-fmv-limits.ptx" />
-<xi:include href="sec-skel-fmv-partial-derivatives.ptx" />
-<xi:include href="sec-skel-fmv-chain-rule.ptx" />
-<xi:include href="sec-skel-fmv-directional-derivatives.ptx" />
-<xi:include href="sec-skel-fmv-tangent-planes.ptx" />
-<xi:include href="sec-skel-fmv-extreme-values.ptx" />
-<xi:include href="sec-skel-fmv-lagrange.ptx" />
+<!-- UNPOSTED <xi:include href="sec-skel-fmv-functions.ptx" /> UNPOSTED -->
+<!-- UNPOSTED <xi:include href="sec-skel-fmv-limits.ptx" /> UNPOSTED -->
+<!-- UNPOSTED <xi:include href="sec-skel-fmv-partial-derivatives.ptx" /> UNPOSTED -->
+<!-- UNPOSTED <xi:include href="sec-skel-fmv-chain-rule.ptx" /> UNPOSTED -->
+<!-- UNPOSTED <xi:include href="sec-skel-fmv-directional-derivatives.ptx" /> UNPOSTED -->
+<!-- UNPOSTED <xi:include href="sec-skel-fmv-tangent-planes.ptx" /> UNPOSTED -->
+<!-- UNPOSTED <xi:include href="sec-skel-fmv-extreme-values.ptx" /> UNPOSTED -->
+<!-- UNPOSTED <xi:include href="sec-skel-fmv-lagrange.ptx" /> UNPOSTED -->
 </chapter>

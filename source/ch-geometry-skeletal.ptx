@@ -8,12 +8,12 @@
 <chapter xml:id="skel-chapter-geometry" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>3D Space and Vector Algebra</title>
 
-<xi:include href="sec-skel-geom-3d-coordinates.ptx" />
-<xi:include href="sec-skel-geom-vectors.ptx" />
-<xi:include href="sec-skel-geom-dot-product.ptx" />
-<xi:include href="sec-skel-geom-cross-product.ptx" />
-<xi:include href="sec-skel-geom-parametrization.ptx" />
-<xi:include href="sec-skel-geom-lines-planes.ptx" />
-<xi:include href="sec-skel-geom-conics.ptx" />
-<xi:include href="sec-skel-geom-quadric-surfaces.ptx" />
+<!-- UNPOSTED <xi:include href="sec-skel-geom-3d-coordinates.ptx" /> UNPOSTED -->
+<!-- UNPOSTED <xi:include href="sec-skel-geom-vectors.ptx" /> UNPOSTED -->
+<!-- UNPOSTED <xi:include href="sec-skel-geom-dot-product.ptx" /> UNPOSTED -->
+<!-- UNPOSTED <xi:include href="sec-skel-geom-cross-product.ptx" /> UNPOSTED -->
+<!-- UNPOSTED <xi:include href="sec-skel-geom-parametrization.ptx" /> UNPOSTED -->
+<!-- UNPOSTED <xi:include href="sec-skel-geom-lines-planes.ptx" /> UNPOSTED -->
+<!-- UNPOSTED <xi:include href="sec-skel-geom-conics.ptx" /> UNPOSTED -->
+<!-- UNPOSTED <xi:include href="sec-skel-geom-quadric-surfaces.ptx" /> UNPOSTED -->
 </chapter>

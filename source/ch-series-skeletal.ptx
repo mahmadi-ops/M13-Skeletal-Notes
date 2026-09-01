@@ -8,8 +8,8 @@
 <chapter xml:id="skel-chapter-series-sequences" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Series and Sequences</title>
 
-<xi:include href="sec-skel-series-infinite.ptx" />
-<xi:include href="sec-skel-series-taylor.ptx" />
-<xi:include href="sec-skel-series-taylor-convergence.ptx" />
-<xi:include href="sec-skel-series-binomial.ptx" />
+<!-- UNPOSTED <xi:include href="sec-skel-series-infinite.ptx" /> UNPOSTED -->
+<!-- UNPOSTED <xi:include href="sec-skel-series-taylor.ptx" /> UNPOSTED -->
+<!-- UNPOSTED <xi:include href="sec-skel-series-taylor-convergence.ptx" /> UNPOSTED -->
+<!-- UNPOSTED <xi:include href="sec-skel-series-binomial.ptx" /> UNPOSTED -->
 </chapter>

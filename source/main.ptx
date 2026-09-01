@@ -39,15 +39,18 @@
    <!-- <xi:include href="introduction.ptx" /> -->
 
     <!-- Chapter 1: skeletal (fill-in) notes, 7.3 Hyperbolic Functions -->
-    <xi:include href="ch-hyperbolic-skeletal.ptx" />
+    <!-- UNPOSTED <xi:include href="ch-hyperbolic-skeletal.ptx" /> UNPOSTED -->
     <!-- Chapter 2: skeletal (fill-in) notes, Series and Sequences -->
-    <xi:include href="ch-series-skeletal.ptx" />
+    <!-- UNPOSTED <xi:include href="ch-series-skeletal.ptx" /> UNPOSTED -->
     <!-- Chapter 3: skeletal (fill-in) notes, 3D Space and Vector Algebra -->
-    <xi:include href="ch-geometry-skeletal.ptx" />
+    <!-- UNPOSTED <xi:include href="ch-geometry-skeletal.ptx" /> UNPOSTED -->
     <!-- Chapter 4: skeletal (fill-in) notes, Functions of Multiple Variables -->
-    <xi:include href="ch-functions-multiple-variables-skeletal.ptx" />
+    <!-- UNPOSTED <xi:include href="ch-functions-multiple-variables-skeletal.ptx" /> UNPOSTED -->
     <!-- Chapter 5: the problem sets -->
-    <xi:include href="exercises.ptx" />
+    <!-- UNPOSTED <xi:include href="exercises.ptx" /> UNPOSTED -->
+    <!-- Placeholder, in the book only while everything else is unposted;
+         scripts/desk_action.py toggles it automatically. -->
+    <xi:include href="ch-coming-soon.ptx" />
   </book>
 
 </pretext>
