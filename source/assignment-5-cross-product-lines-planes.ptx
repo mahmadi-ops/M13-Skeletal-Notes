@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  Assignment 5: The Cross Product, Parametrization, Lines and Planes, and
-  Conic Sections.
+  Assignment 5: The Cross Product, Parametrization, and Lines and Planes.
 
   Built from the problems marked A5 in the instructor's markup of the old
   worksheets "Exercises for The Cross Product", "Exercises for Parametrization
   of Plane Curves", "Exercises for Lines and Planes in Space" and "Exercises
   for Conic Sections".  The problems marked R2 went to review-problems-2.ptx.
+  The three conic-section problems (pp-20, exer-parabola-focus-directrix and
+  pp-21) later moved to assignment-6-quadric-surfaces.ptx.
 
   Three problems the markup crossed out were dropped: the old rw17-2 (an
   airplane trajectory meeting z = x - y^2 + 16, whose tangent plane belongs to
   Chapter 4), the old pp-16 (dy/dx for x = 2 - t - t^3, y = 3t^2 - 6t + 1) and
   the old m2b-3 (the plane containing the parabola r(t) = <t+1, 2t, 2+3t-t^2>).
-
-  exer-parabola-focus-directrix is new, added at the markup's request as a
-  parabola counterpart to the hyperbola problem pp-20.
 
   Notation: m2b-1c in review-problems-2.ptx was the problem the markup asked
   to restate with \vec u and \vec v; m2b-4 sits beside it and was renamed the
@@ -27,13 +25,11 @@
 <p>
 These problems use the cross product to build normal vectors, areas and
 orthogonal directions, parametrize plane curves and curves of intersection in
-space, intersect lines with planes and measure distances between them, and
-identify conic sections from their equations. If you would like to review the
-material first, see
+space, and intersect lines with planes and measure distances between them. If
+you would like to review the material first, see
 <xref ref="sec-skel-geom-cross-product" text="title"/>,
-<xref ref="sec-skel-geom-parametrization" text="title"/>,
-<xref ref="sec-skel-geom-lines-planes" text="title"/> and
-<xref ref="sec-skel-geom-conics" text="title"/>.
+<xref ref="sec-skel-geom-parametrization" text="title"/> and
+<xref ref="sec-skel-geom-lines-planes" text="title"/>.
 </p>
 </introduction>
 
@@ -692,200 +688,6 @@ As a check, at <m>t=-3</m> we get
 </md>
 as required. The distance from <m>Q</m> to the line is
 <m>\|\vec{QP}\| = \sqrt{9+9+9} = 3\sqrt3</m>.
-</p>
-</solution>
-</exercise>
-
-<exercise xml:id="pp-20">
-<statement>
-<p>
-Find the equation of the hyperbola with asymptotes <m>y = 3x</m> and
-<m>y = -3x</m> passing through the point <m>(0,2)</m>.
-</p>
-</statement>
-<solution>
-<p>
-Since the hyperbola meets the <m>y</m>-axis (at <m>(0,2)</m>) it opens
-up and down, so it has the form
-<md>
-\frac{y^2}{a^2} - \frac{x^2}{b^2} = 1,
-</md>
-whose asymptotes are <m>y = \pm\dfrac{a}{b}x</m>. Setting
-<m>x = 0</m>, <m>y = 2</m> gives <m>a = 2</m>, and matching the
-asymptote slopes,
-<md>
-\frac{a}{b} = 3 \;\Rightarrow\; b = \frac{a}{3} = \frac23.
-</md>
-Therefore
-<md>
-\frac{y^2}{4} - \frac{x^2}{\frac49} = 1
-\;\Rightarrow\;
-\frac{y^2}{4} - \frac{9x^2}{4} = 1
-\;\Rightarrow\;
-y^2 - 9x^2 = 4.
-</md>
-See <xref ref="fig-pp-hyperbola"/>.
-</p>
-
-<figure xml:id="fig-pp-hyperbola">
-<caption>
-The hyperbola <m>y^2 - 9x^2 = 4</m> with its asymptotes
-<m>y = \pm 3x</m>, passing through <m>(0,2)</m> and <m>(0,-2)</m>.
-</caption>
-<image width="60%">
-<prefigure xmlns="https://prefigure.org" label="prefigure-pp-hyperbola">
-<diagram dimensions="(300,280)" margins="12">
-<definition>hup(t) = (t, 2*(1 + 9*t^2/4)^(1/2))</definition>
-<definition>hdn(t) = (t, -2*(1 + 9*t^2/4)^(1/2))</definition>
-<coordinates bbox="(-2.4,-6.2,2.4,6.2)">
-<grid-axes xlabel="x" ylabel="y"/>
-<line at="hy-a1" endpoints="((-1.95,-5.85),(1.95,5.85))"
-      stroke="#7F7F7F" dash="6 4" thickness="2"/>
-<line at="hy-a2" endpoints="((-1.95,5.85),(1.95,-5.85))"
-      stroke="#7F7F7F" dash="6 4" thickness="2"/>
-<parametric-curve at="hy-up" function="hup" domain="(-1.85,1.85)"
-                  stroke="#0072B2" thickness="3"/>
-<parametric-curve at="hy-dn" function="hdn" domain="(-1.85,1.85)"
-                  stroke="#0072B2" thickness="3"/>
-<point at="hy-v1" p="(0,2)" fill="#D55E00"/>
-<point at="hy-v2" p="(0,-2)" fill="#D55E00"/>
-<label at="hy-v1-lab" anchor="(0.15,2.1)" alignment="ne" color="#D55E00">
-<m>(0,2)</m>
-</label>
-<label at="hy-a-lab" anchor="(1.6,4.2)" alignment="se" color="#7F7F7F">
-<m>y=3x</m>
-</label>
-</coordinates>
-
-<annotations>
-<annotation ref="figure" text="A hyperbola with two branches opening up and down, passing through zero comma two and zero comma negative two. Two dashed gray lines of slope three and negative three through the origin are its asymptotes.">
-  <annotation ref="hy-up" text="The upper branch, with vertex at zero comma two."/>
-  <annotation ref="hy-dn" text="The lower branch, with vertex at zero comma negative two."/>
-  <annotation ref="hy-a1" text="The asymptote y equals three x."/>
-</annotation>
-</annotations>
-</diagram>
-</prefigure>
-</image>
-</figure>
-</solution>
-</exercise>
-
-<exercise xml:id="exer-parabola-focus-directrix">
-<statement>
-<p>
-Find the equation of the parabola with vertex at the origin and axis of
-symmetry the <m>y</m>-axis, passing through the point <m>(4,2)</m>.
-Then find its focus and its directrix.
-</p>
-</statement>
-<solution>
-<p>
-The vertex is at the origin and the axis of symmetry is the
-<m>y</m>-axis, so the parabola has the form
-<md>
-x^2 = 4py,
-</md>
-whose focus is <m>(0,p)</m> and whose directrix is the line
-<m>y = -p</m>. Only the one number <m>p</m> is unknown, and the point
-<m>(4,2)</m> pins it down:
-<md>
-4^2 = 4p(2) \;\Rightarrow\; 16 = 8p \;\Rightarrow\; p = 2.
-</md>
-Therefore
-<md>
-x^2 = 8y, \qquad\text{that is}\qquad y = \frac{x^2}{8}.
-</md>
-Since <m>p = 2 \gt 0</m> the parabola opens upward, its focus is
-<m>(0,2)</m> and its directrix is the horizontal line <m>y = -2</m>.
-</p>
-
-<p>
-As a check on the defining property of a parabola, the point
-<m>(4,2)</m> is at distance
-<m>\sqrt{(4-0)^2 + (2-2)^2} = 4</m> from the focus and at distance
-<m>2 - (-2) = 4</m> from the directrix, and the two agree.
-See <xref ref="fig-parabola-focus-directrix"/>.
-</p>
-
-<figure xml:id="fig-parabola-focus-directrix">
-<caption>
-The parabola <m>x^2 = 8y</m> through <m>(4,2)</m>, with focus
-<m>(0,2)</m> and directrix <m>y = -2</m>. The point of the curve is
-the same distance from the focus as from the directrix.
-</caption>
-<image width="60%">
-<prefigure xmlns="https://prefigure.org" label="prefigure-parabola-focus-directrix">
-<diagram dimensions="(300,280)" margins="12">
-<definition>par(t) = (t, t^2/8)</definition>
-<coordinates bbox="(-6.4,-3.4,6.4,6.4)">
-<grid-axes xlabel="x" ylabel="y"/>
-<line at="pf-dir" endpoints="((-6,-2),(6,-2))"
-      stroke="#7F7F7F" dash="6 4" thickness="2"/>
-<parametric-curve at="pf-curve" function="par" domain="(-6,6)"
-                  stroke="#0072B2" thickness="3"/>
-<line at="pf-r1" endpoints="((0,2),(4,2))"
-      stroke="#009E73" thickness="2"/>
-<line at="pf-r2" endpoints="((4,2),(4,-2))"
-      stroke="#009E73" thickness="2"/>
-<point at="pf-focus" p="(0,2)" fill="#D55E00"/>
-<point at="pf-P" p="(4,2)" fill="#D55E00"/>
-<label at="pf-focus-lab" anchor="(-0.2,2.2)" alignment="nw" color="#D55E00">
-<m>F(0,2)</m>
-</label>
-<label at="pf-P-lab" anchor="(4.2,2.2)" alignment="ne" color="#D55E00">
-<m>(4,2)</m>
-</label>
-<label at="pf-dir-lab" anchor="(-3.4,-2.1)" alignment="sw" color="#7F7F7F">
-<m>y=-2</m>
-</label>
-</coordinates>
-
-<annotations>
-<annotation ref="figure" text="An upward opening parabola with vertex at the origin, passing through the point four comma two. A dashed horizontal line at y equals negative two is the directrix, and the focus is marked at zero comma two. Two green segments of equal length four join the point four comma two to the focus and straight down to the directrix.">
-  <annotation ref="pf-curve" text="The parabola x squared equals eight y, opening upward from its vertex at the origin."/>
-  <annotation ref="pf-dir" text="The directrix, the dashed horizontal line y equals negative two."/>
-  <annotation ref="pf-focus" text="The focus at zero comma two."/>
-  <annotation ref="pf-P" text="The point four comma two on the parabola."/>
-  <annotation ref="pf-r1" text="The horizontal segment of length four from the focus to the point on the parabola."/>
-  <annotation ref="pf-r2" text="The vertical segment of length four from that point down to the directrix."/>
-</annotation>
-</annotations>
-</diagram>
-</prefigure>
-</image>
-</figure>
-</solution>
-</exercise>
-
-<exercise xml:id="pp-21">
-<statement>
-<p>
-Two trees grow 100 feet apart. A 120 foot rope is attached to the
-first tree at a height of 100 feet and to the second tree at a height
-of 50 feet. A child folds an empty plastic water bottle over the rope
-and rappels from the high end of the rope to the low end. At each
-moment, the rope is taut. The point where the water bottle is folded
-over the rope traces a path. Ignoring the numbers, state what kind of
-curve the path makes: line, ellipse, parabola or hyperbola.
-</p>
-</statement>
-<solution>
-<p>
-Let <m>A</m> and <m>B</m> be the two attachment points and <m>P</m>
-the point where the bottle folds over the taut rope. Because the rope
-is taut and has fixed total length, the two straight segments
-<m>\overline{AP}</m> and <m>\overline{PB}</m> together always use up
-the whole rope:
-<md>
-|AP| + |PB| = 120 \text{ feet} \qquad\text{(constant).}
-</md>
-This is precisely the defining property of an <term>ellipse</term>
-with foci <m>A</m> and <m>B</m>. (The curve exists because
-<m>120 \gt |AB|</m>: the distance between the attachment points is
-<m>\sqrt{100^2 + 50^2} \approx 111.8 \lt 120</m> feet.) So the path is
-an arc of an <term>ellipse</term>, lying in the vertical plane
-containing the two trees.
 </p>
 </solution>
 </exercise>
