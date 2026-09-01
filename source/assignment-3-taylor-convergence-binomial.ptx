@@ -29,6 +29,7 @@ For approximately what values of <m>x</m> can we replace
 no greater than <m>4 \times 10^{-3}</m>?
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="3" due="2026-10-07"
 <solution>
 <p>
 Here <m>a = 0</m>, and the cubic <m>x - \dfrac{x^3}{3!}</m> is
@@ -128,6 +129,7 @@ at most <m>4\times 10^{-3}</m>.
 </image>
 </figure>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rev-ser-7">
@@ -138,6 +140,7 @@ approximating <m>f(x) = e^x</m> by <m>T_2(x) = 1 + x + x^2</m> on the
 interval <m>\left[-\dfrac56, \dfrac56\right]</m>.
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="3" due="2026-10-07"
 <solution>
 <p>
 From the remainder theorem, we know that
@@ -217,6 +220,7 @@ lines.
 </image>
 </figure>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rev-ser-8">
@@ -239,6 +243,7 @@ Estimate the maximum error when approximating
 </ol>
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="3" due="2026-10-07"
 <solution>
 <p>
 <ol marker="A.">
@@ -339,6 +344,7 @@ graphs are nearly identical.
 </image>
 </figure>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="exer-dipole-field">
@@ -410,6 +416,9 @@ graphs are nearly identical.
           <m>d/r^3</m>.
         </p>
     </statement>
+    <!-- Dipole axial field: E = k(q/r^2 - q/(r+d)^2). Natural units k=q=d=1.
+             Leading Taylor term for d << r is 2qd/(4 pi eps0 r^3), proportional to d/r^3. -->
+    <!-- SOLUTION-LOCKED assignment="3" due="2026-10-07"
     <solution>
         <p>To approximate the electric field <m>E</m> at point <m>P</m> 
            for <m>d \ll r</m>, we can use the Taylor series expansion for 
@@ -464,8 +473,6 @@ which shows that the leading term is proportional to <m>d/r^3</m>.</p>
   <image width="65%">
     <prefigure xmlns="https://prefigure.org" label="dipole-field">
       <diagram dimensions="(420,320)" margins="8">
-        <!-- Dipole axial field: E = k(q/r^2 - q/(r+d)^2). Natural units k=q=d=1.
-             Leading Taylor term for d << r is 2qd/(4 pi eps0 r^3), proportional to d/r^3. -->
         <definition>Eexact(r) = 1/r^2 - 1/(r+1)^2</definition>
         <definition>Elead(r) = 2/r^3</definition>
         <coordinates bbox="(1.15, -0.04, 6.4, 0.66)">
@@ -494,6 +501,7 @@ which shows that the leading term is proportional to <m>d/r^3</m>.</p>
   </image>
 </figure>
     </solution>   
+    END SOLUTION-LOCKED -->
     
 </exercise>
 
@@ -521,6 +529,7 @@ be examined.
       valid?
     </p>
   </statement>
+  <!-- SOLUTION-LOCKED assignment="3" due="2026-10-07"
   <hint>
     <p>
       The dominant error comes from the <em>next</em> term in the expansion.
@@ -530,11 +539,15 @@ be examined.
       leading term and keep only the largest contribution.
     </p>
   </hint>
+  END SOLUTION-LOCKED -->
+  <!-- SOLUTION-LOCKED assignment="3" due="2026-10-07"
   <answer>
     <p>
       <m>d \lesssim \dfrac{2}{3}(0.01)\,r \approx 0.020\ \text{cm} = 0.20\ \text{mm}.</m>
     </p>
   </answer>
+  END SOLUTION-LOCKED -->
+  <!-- SOLUTION-LOCKED assignment="3" due="2026-10-07"
   <solution>
     <p>
       From the Taylor expansion,
@@ -569,6 +582,7 @@ be examined.
       two curves visibly merge as <m>r</m> grows relative to <m>d</m>.
     </p>
   </solution>
+  END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rf-1">
@@ -579,6 +593,7 @@ Use a <term>binomial series</term> to represent the function
 sigma notation.
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="3" due="2026-10-07"
 <solution>
 <p>
 We start from the binomial series with <m>m = -1</m>:
@@ -610,6 +625,7 @@ f(x) = 2x\,\frac{1}{1-x}
 </md>
 </p>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="exer-binomial-maclaurin">
@@ -632,6 +648,7 @@ the Maclaurin series for
 </ol>
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="3" due="2026-10-07"
 <solution>
 <p>
 <ol marker="A.">
@@ -680,6 +697,7 @@ Here <m>m = \frac17</m>, so
 </ol>
 </p>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="exer-binomial-cube-root">
@@ -689,6 +707,7 @@ Expand the quantity <m>\sqrt[3]{P+t}</m> about <m>0</m> in powers of
 <m>\dfrac{t}{P}</m>. Give four nonzero terms.
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="3" due="2026-10-07"
 <solution>
 <p>
 The binomial series expands <m>(1+x)^m</m>, so first factor <m>P</m> out
@@ -718,6 +737,7 @@ Now apply the binomial series with <m>m = \frac13</m> and
 </md>
 </p>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="m1-4">
@@ -730,6 +750,7 @@ f(x) = 1 + 2x + 3x^2 + 4x^3 + 5x^4 + \cdots
 Find the exact value of <m>\displaystyle\int_0^{1/13} f(x)\,dx</m>.
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="3" due="2026-10-07"
 <solution>
 <p>
 First we identify <m>f</m>. Its general term is <m>(n+1)x^n</m>, so
@@ -763,6 +784,7 @@ Now we integrate. An antiderivative of <m>(1-x)^{-2}</m> is
 </md>
 </p>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="exer-integral-cos-over-x">
@@ -772,6 +794,7 @@ Evaluate <m>\displaystyle\int \frac{\cos x - 1}{x}\,dx</m> as an infinite
 series. Give the first three nonzero terms.
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="3" due="2026-10-07"
 <solution>
 <p>
 The integrand has no elementary antiderivative, so expand it as a series
@@ -798,6 +821,7 @@ Integrating term by term,
 </md>
 </p>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="exer-series-limit-cos2x">
@@ -809,6 +833,7 @@ Use Taylor series to evaluate
 </md>
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="3" due="2026-10-07"
 <solution>
 <p>
 The quotient has the indeterminate form <m>\frac00</m>. Replace the
@@ -845,6 +870,7 @@ Each remaining series is continuous at <m>0</m> with a nonzero value
 there, so only the two leading coefficients matter.
 </p>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="m1-6">
@@ -873,6 +899,7 @@ term? When is it reasonable?
 </ol>
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="3" due="2026-10-07"
 <solution>
 <p>
 <term>(a)</term> The point of the problem is to get the expression into
@@ -921,6 +948,7 @@ object stays close to the surface: the first term we discard is
 only about <m>0.3\%</m>.
 </p>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 </worksheet>

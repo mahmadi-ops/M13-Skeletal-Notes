@@ -83,6 +83,7 @@ Find a vector orthogonal to both <m>\mathbf v</m> and
 </ol>
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="5" due="2026-10-23"
 <solution>
 <p>
 <ol marker="A.">
@@ -119,6 +120,7 @@ Dividing by <m>5</m> gives the simpler answer
 </ol>
 </p>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="m2b-4">
@@ -140,6 +142,7 @@ Suppose <m>\|\vec u\| = 3</m>, <m>\|\vec v\| = 4</m> and
 </ol>
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="5" due="2026-10-23"
 <solution>
 <p>
 <term>(a)</term> Let <m>\theta</m> be the angle between the two
@@ -178,6 +181,7 @@ As a sanity check, <m>2\sqrt3 \approx 3.46</m>, which is less than
 <m>\|\vec v\| = 4</m>, as a shadow must be.
 </p>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rf-2">
@@ -192,6 +196,7 @@ represented by the following parametric equations, then graph it:
 </md>
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="5" due="2026-10-23"
 <solution>
 <p>
 From the second equation, <m>y + 1 = e^t</m>, and hence
@@ -252,6 +257,7 @@ for <m>0 \le t \le \ln(2)</m>, from <m>(1,0)</m> to <m>(4,1)</m>.
 </image>
 </figure>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rw23-8">
@@ -265,6 +271,7 @@ Assume that the curve is traced <term>counter-clockwise</term> as the
 parameter increases.
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="5" due="2026-10-23"
 <solution>
 <p>
 We complete the squares:
@@ -326,6 +333,7 @@ and <m>\frac52</m>, traced counter-clockwise.
 </image>
 </figure>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="pp-15">
@@ -346,6 +354,7 @@ Which axis is perpendicular to the plane <m>x = 4</m>?
 </ol>
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="5" due="2026-10-23"
 <solution>
 <p>
 <ol marker="A.">
@@ -372,6 +381,7 @@ to it.
 </ol>
 </p>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="m2a-2">
@@ -392,6 +402,7 @@ Parametrize the entire curve using one parametrization.
 </ol>
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="5" due="2026-10-23"
 <solution>
 <p>
 <term>(a)</term> Divide both sides by <m>100</m> to put the equation in
@@ -496,6 +507,7 @@ the entire ellipse exactly once, counterclockwise, starting at the
 right vertex <m>\left(\tfrac32,-4\right)</m>.
 </p>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rf-4">
@@ -509,6 +521,7 @@ planes:
 </md>
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="5" due="2026-10-23"
 <solution>
 <p>
 The normal vectors are <m>\vec n_1 = \langle 2, 1, -1\rangle</m> and
@@ -540,6 +553,7 @@ the vector equation of the line of intersection is
 </md>
 </p>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rw21-5">
@@ -551,6 +565,7 @@ and parallel to the plane <m>-3x - y + 2z = 0</m>, in which the
 coefficient of <m>x</m> is <m>-3</m>.
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="5" due="2026-10-23"
 <solution>
 <p>
 Since the desired plane is parallel to <m>-3x - y + 2z = 0</m>, it has
@@ -568,6 +583,7 @@ from the point-normal form,
 </md>
 </p>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rs19-5">
@@ -580,6 +596,7 @@ Calculate the distance between the following two lines:
 </md>
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="5" due="2026-10-23"
 <solution>
 <p>
 We notice that the two lines are parallel (both have direction vector
@@ -610,6 +627,7 @@ d = \frac{\left\|\vec{PS} \times \mathbf v\right\|}{\|\mathbf v\|}
 </md>
 </p>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="pp-17">
@@ -620,6 +638,7 @@ normal to the plane containing <m>(0,1,1)</m>, <m>(-1,2,4)</m> and
 <m>(3,0,1)</m>.
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="5" due="2026-10-23"
 <solution>
 <p>
 From <xref ref="pp-13"/>, the plane through those three points has
@@ -632,6 +651,7 @@ x = 2 + 3t, \qquad y = 1 + 9t, \qquad z = 1 - 2t,
 </md>
 </p>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="m2b-5">
@@ -644,6 +664,7 @@ x = 4+t, \qquad y = -1-2t, \qquad z = 5+t .
 Find the point on <m>L</m> that is closest to <m>(-2,2,-1)</m>.
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="5" due="2026-10-23"
 <solution>
 <p>
 Write <m>Q = (-2,2,-1)</m> and let
@@ -690,6 +711,7 @@ as required. The distance from <m>Q</m> to the line is
 <m>\|\vec{QP}\| = \sqrt{9+9+9} = 3\sqrt3</m>.
 </p>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 </worksheet>

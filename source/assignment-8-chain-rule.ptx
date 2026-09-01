@@ -52,6 +52,7 @@ t = \frac{x-y}{2},
 using both the chain rule and by plugging in <m>s</m> and <m>t</m>.
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="8" due="2026-11-13"
 <solution>
 <p>
 Using the chain rule:
@@ -76,6 +77,7 @@ f(s(x,y), t(x,y))
 and easily obtain the same partial derivatives.
 </p>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rev-tp-5">
@@ -149,6 +151,7 @@ If <m>f</m> is homogeneous of degree <m>n</m>, show that
 </ol>
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="8" due="2026-11-13"
 <solution>
 <p>
 <ol marker="A.">
@@ -201,6 +204,7 @@ equation.
 </ol>
 </p>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rw21-1">
@@ -215,6 +219,7 @@ Compute <m>\dfrac{\partial w}{\partial s}(-4,-4)</m> and
 <m>\dfrac{\partial w}{\partial t}(-4,-4)</m>.
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="8" due="2026-11-13"
 <solution>
 <p>
 The dependency tree is shown in <xref ref="fig-rw21-tree"/>. We first
@@ -256,14 +261,14 @@ branches lead to s and t; from z, a single branch leads to t.
   \node (s2) at (-0.6,0) {$s$};
   \node (t2) at (0.6,0) {$t$};
   \node (t3) at (1.8,0) {$t$};
-  \draw[mblue, thick] (w) -- (x);
-  \draw[mblue, thick] (w) -- (y);
-  \draw[mblue, thick] (w) -- (z);
-  \draw[mblue, thick] (x) -- (s1);
-  \draw[mblue, thick] (x) -- (t1);
-  \draw[mblue, thick] (y) -- (s2);
-  \draw[mblue, thick] (y) -- (t2);
-  \draw[mblue, thick] (z) -- (t3);
+  \draw[mblue, thick] (w) ]]>&#45;&#45;<![CDATA[ (x);
+  \draw[mblue, thick] (w) ]]>&#45;&#45;<![CDATA[ (y);
+  \draw[mblue, thick] (w) ]]>&#45;&#45;<![CDATA[ (z);
+  \draw[mblue, thick] (x) ]]>&#45;&#45;<![CDATA[ (s1);
+  \draw[mblue, thick] (x) ]]>&#45;&#45;<![CDATA[ (t1);
+  \draw[mblue, thick] (y) ]]>&#45;&#45;<![CDATA[ (s2);
+  \draw[mblue, thick] (y) ]]>&#45;&#45;<![CDATA[ (t2);
+  \draw[mblue, thick] (z) ]]>&#45;&#45;<![CDATA[ (t3);
 \end{tikzpicture}]]>
 </latex-image>
 </image>
@@ -300,6 +305,7 @@ Similarly,
 </md>
 </p>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <!-- ===== From the old worksheet "Exercises for Directional Derivatives
@@ -314,6 +320,7 @@ unit vectors in (polar) directions
 other angle?
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="8" due="2026-11-13"
 <solution>
 <p>
 The function is symmetric with respect to rotations around the origin,
@@ -331,6 +338,7 @@ directional derivative at <m>(0,0)</m> is <m>0</m> in the directions
 symmetry it is <m>0</m> for every other angle as well.
 </p>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rev-gr-3">
@@ -393,6 +401,7 @@ the fastest possible rate?
 </ol>
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="8" due="2026-11-13"
 <solution>
 <p>
 <ol marker="A.">
@@ -441,6 +450,7 @@ and
 </ol>
 </p>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rw23-3">
@@ -471,6 +481,7 @@ Find the maximum rate of change at <m>P_0(a,b)</m>.
 </ol>
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="8" due="2026-11-13"
 <solution>
 <p>
 <ol marker="A.">
@@ -508,6 +519,7 @@ is the maximum rate of change.
 </ol>
 </p>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rw21-8">
@@ -531,6 +543,7 @@ direction given by <m>\overrightarrow{v} = \langle -1, 1\rangle</m>.
 </ol>
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="8" due="2026-11-13"
 <solution>
 <p>
 The gradient is
@@ -572,6 +585,7 @@ D_{\hat u} f
 </ol>
 </p>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rw17-8">
@@ -622,6 +636,7 @@ have to go in this direction until the temperature reaches
 </ol>
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="8" due="2026-11-13"
 <solution>
 <p>
 First we determine <m>\nabla T</m> at <m>(1,1)</m>. The derivative
@@ -688,6 +703,7 @@ s \approx \frac{\Delta T}{D_{\hat u}T} = \frac46 = \frac23
 </ol>
 </p>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="pp-31">
@@ -826,6 +842,7 @@ point of the <m>f = 12</m> curve; <m>Q</m> lies midway between the
 </image>
 </figure>
 </statement>
+<!-- SOLUTION-LOCKED assignment="8" due="2026-11-13"
 <solution>
 <p>
 <ol marker="A.">
@@ -961,6 +978,7 @@ perpendicular to the level curve toward increasing <m>f</m>, while
 </image>
 </figure>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <p>
@@ -1004,6 +1022,7 @@ and the directions of no change.
     </p>
   
   </statement>
+  <!-- SOLUTION-LOCKED assignment="8" due="2026-11-13"
   <answer>
     <p>
       <ol>
@@ -1047,6 +1066,7 @@ and the directions of no change.
     </figure>
     </sidebyside>
   </answer>
+  END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="ex-isobars-low">
@@ -1085,6 +1105,7 @@ and the directions of no change.
     </p>
   
   </statement>
+  <!-- SOLUTION-LOCKED assignment="8" due="2026-11-13"
   <answer>
     <p>
       <ol>
@@ -1136,6 +1157,7 @@ and the directions of no change.
     </figure>
     </sidebyside>
   </answer>
+  END SOLUTION-LOCKED -->
 </exercise>
 
 </worksheet>

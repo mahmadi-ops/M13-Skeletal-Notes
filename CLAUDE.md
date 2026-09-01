@@ -36,6 +36,13 @@ convention). Repo-specific facts:
   that scales with the number of content files reachable from `main.ptx`
   (six pages each, so zero for the empty book and 252 for the full one).
   Do not put a fixed floor back: the empty book is a legitimate state.
+- Locking wraps blocks in XML comments, which may not contain `--`. Where a
+  solution holds TikZ (`\draw a -- b`) the lock escapes each `--`: inside
+  `CDATA` as `]]>&#45;&#45;<![CDATA[`, elsewhere as `&#45;&#45;`. Both parse
+  back to `--` as soon as the two marker lines come off, so release stays a
+  two-line deletion and the LaTeX the build sees is unchanged. A comment
+  nested inside a block is illegal whatever the escaping, so the lock hoists
+  it above the block instead of dropping it.
 - Solutions here are **public by default** (`publication.ptx` shows
   divisional solutions; the AI tutor in the Exercises introduction
   assumes that). A `lock` request wraps an assignment's

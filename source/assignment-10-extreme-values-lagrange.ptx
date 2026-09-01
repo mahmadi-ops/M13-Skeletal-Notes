@@ -39,6 +39,7 @@ material first, see
           </p>
         </statement>
 
+         <!-- SOLUTION-LOCKED assignment="10" due="2026-12-04"
          <solution>
       <p>
         The gradient is <m>\nabla f = \langle 2x - y,\; -x + 2y - 3\rangle</m>, which
@@ -65,6 +66,7 @@ material first, see
         <m>f(4,0) = 16</m>.
       </p>
     </solution>
+         END SOLUTION-LOCKED -->
       </exercise>
 
 <exercise xml:id="rm2-ex-2">
@@ -74,6 +76,7 @@ Find and classify all the critical points of
 <m>f(x,y) = xy\,e^{x^2+y^2}</m>.
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="10" due="2026-12-04"
 <solution>
 <p>
 The gradient is
@@ -98,6 +101,7 @@ Hence <m>D(0,0) = f_{xx}f_{yy} - f_{xy}^2 = -1</m>, so <m>(0,0)</m> is
 a saddle point.
 </p>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rw21-7">
@@ -108,6 +112,7 @@ Find the maximum and minimum values of the function
 <m>x^2 + y^2 \le 121</m>.
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="10" due="2026-12-04"
 <solution>
 <p>
 <em>Critical points in the interior:</em>
@@ -189,6 +194,7 @@ The disk <m>x^2 + y^2 \le 121</m>, the interior minimum at
 </image>
 </figure>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rw23-4">
@@ -203,6 +209,7 @@ point <m>W(x,y)</m> should a warehouse be located in order to minimize
 the sum) from <m>W</m> to <m>A</m>, <m>B</m>, and <m>C</m>?
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="10" due="2026-12-04"
 <solution>
 <p>
 The sum of the squares of the distances is
@@ -282,6 +289,7 @@ the sum of the squares of the distances.
 </image>
 </figure>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="pp-35">
@@ -291,6 +299,7 @@ Find all local maxima, minima and saddle points for
 <m>f(x,y) = \frac13 x^3 - x + xy^2</m>.
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="10" due="2026-12-04"
 <solution>
 <p>
 The first partials are
@@ -345,6 +354,7 @@ this is a <term>local maximum</term>.
 </ul>
 </p>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
     <exercise xml:id="exer-parallel-tangent-plane">
@@ -359,6 +369,7 @@ this is a <term>local maximum</term>.
         </p>
       </statement>
 
+      <!-- SOLUTION-LOCKED assignment="10" due="2026-12-04"
       <solution>
         <p>
           Multiplying by <m>-1</m>, the given plane is
@@ -537,6 +548,7 @@ this is a <term>local maximum</term>.
           <m>x + 5y + 2z = 3</m>.
         </p>
       </solution>
+      END SOLUTION-LOCKED -->
     </exercise>
 
     <exercise xml:id="exer-cobb-douglas">
@@ -557,6 +569,7 @@ this is a <term>local maximum</term>.
         </p>
       </statement>
 
+      <!-- SOLUTION-LOCKED assignment="10" due="2026-12-04"
       <solution>
         <p>
           The budget constraint is <m>20x + 30y = 600</m>, so we take
@@ -599,6 +612,7 @@ this is a <term>local maximum</term>.
           <m>8</m> units of the second.
         </p>
       </solution>
+      END SOLUTION-LOCKED -->
     </exercise>
 
 <exercise xml:id="rf-7">
@@ -641,6 +655,7 @@ and the height labelled z on the left face.
 </image>
 </figure>
 </statement>
+<!-- SOLUTION-LOCKED assignment="10" due="2026-12-04"
 <solution>
 <p>
 The surface area of the box is
@@ -683,6 +698,7 @@ x = y = z = 2 \text{ inches}
 and these dimensions (a cube) will maximize the volume.
 </p>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rs19-10">
@@ -693,6 +709,7 @@ minimum values of <m>f(x,y) = \sqrt2\,x - \sqrt2\,y</m> subject to the
 constraint <m>x^2 + y^2 = 4</m>.
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="10" due="2026-12-04"
 <solution>
 <p>
 With <m>g(x,y) = x^2 + y^2 - 4 = 0</m>, we have
@@ -775,6 +792,7 @@ the circle at the extrema
 </image>
 </figure>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="pp-37">
@@ -798,6 +816,7 @@ Find the maximum and minimum values of <m>f(x,y)</m> over the disk
 </ol>
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="10" due="2026-12-04"
 <solution>
 <p>
 <ol marker="A.">
@@ -899,6 +918,7 @@ point <m>\left(-\frac{3}{\sqrt2}, \frac{3}{\sqrt2}\right)</m>.
 </image>
 </figure>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="pp-39">
@@ -916,6 +936,7 @@ M(x,y,z) = 6x - y^2 + xz + 60.
 Where should you locate the radio telescope?
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="10" due="2026-12-04"
 <solution>
 <p>
 We must minimize <m>M</m> subject to the constraint that we stay on
@@ -967,6 +988,7 @@ where <m>M = 12</m>. So the radio telescope should be located at
 </md>
 </p>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 </worksheet>

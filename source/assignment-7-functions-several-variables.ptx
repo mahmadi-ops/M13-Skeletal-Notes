@@ -37,6 +37,7 @@ review the material first, see
 Sketch the domain of <m>f(x,y) = \sqrt{y - 3x}</m>.
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="7" due="2026-11-06"
 <solution>
 <p>
 The square root is defined exactly when its argument is non-negative,
@@ -81,6 +82,7 @@ half-plane <m>y \ge 3x</m>, including the boundary line itself.
 </image>
 </figure>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="pp-27">
@@ -134,6 +136,7 @@ other.
 </image>
 </figure>
 </statement>
+<!-- SOLUTION-LOCKED assignment="7" due="2026-11-06"
 <solution>
 <p>
 Two level curves belonging to <em>different</em> values can never
@@ -144,6 +147,7 @@ output to the point <m>P</m>, so <m>2 = 3</m> — which is impossible.
 Hence no function <m>g</m> can have the level curves shown.
 </p>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rw17-6">
@@ -159,6 +163,7 @@ Label any points where the surface crosses a coordinate axis AND label
 the value of <m>g</m> on the surface.
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="7" due="2026-11-06"
 <solution>
 <p>
 Evaluating <m>g</m> at the given point,
@@ -199,9 +204,9 @@ its cross sections in the coordinate planes.
 <latex-image>
 <![CDATA[\begin{tikzpicture}[scale=1.0]
   % axes
-  \draw[-stealth, thick] (0,-1.9) -- (0,2.2) node[above] {$z$};
-  \draw[-stealth, thick] (-3.6,0) -- (3.9,0) node[right] {$y$};
-  \draw[-stealth, thick] (1.15,0.82) -- (-1.5,-1.07) node[below left] {$x$};
+  \draw[-stealth, thick] (0,-1.9) ]]>&#45;&#45;<![CDATA[ (0,2.2) node[above] {$z$};
+  \draw[-stealth, thick] (-3.6,0) ]]>&#45;&#45;<![CDATA[ (3.9,0) node[right] {$y$};
+  \draw[-stealth, thick] (1.15,0.82) ]]>&#45;&#45;<![CDATA[ (-1.5,-1.07) node[below left] {$x$};
   % the ellipsoid outline: semi-axis 3 along y (drawn), 1 along z (drawn)
   \draw[mblue, thick] (0,0) ellipse (3cm and 1cm);
   % cross-section ellipses
@@ -221,6 +226,7 @@ its cross sections in the coordinate planes.
 </image>
 </figure>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="pp-25">
@@ -230,6 +236,7 @@ Sketch the level surface <m>f(x,y,z) = z^2 - x^2 - y^2</m> for
 <m>f(x,y,z) = 4</m>.
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="7" due="2026-11-06"
 <solution>
 <p>
 The level surface is <m>z^2 - x^2 - y^2 = 4</m>, i.e.
@@ -280,9 +287,9 @@ zero comma negative two. Each sheet is capped by an ellipse.
 <latex-image>
 <![CDATA[\begin{tikzpicture}[scale=1.0]
   % axes
-  \draw[-stealth, thick] (0,-3.7) -- (0,3.9) node[above] {$z$};
-  \draw[-stealth, thick] (-2.6,0) -- (2.8,0) node[right] {$y$};
-  \draw[-stealth, thick] (0.9,0.65) -- (-1.25,-0.9) node[below left] {$x$};
+  \draw[-stealth, thick] (0,-3.7) ]]>&#45;&#45;<![CDATA[ (0,3.9) node[above] {$z$};
+  \draw[-stealth, thick] (-2.6,0) ]]>&#45;&#45;<![CDATA[ (2.8,0) node[right] {$y$};
+  \draw[-stealth, thick] (0.9,0.65) ]]>&#45;&#45;<![CDATA[ (-1.25,-0.9) node[below left] {$x$};
   % upper sheet: x = +-0.85*sqrt(z^2-4) for z from 2 to 3.4
   \draw[mblue, thick] plot[domain=2:3.4, samples=31]
     ({0.85*sqrt(\x*\x - 4)}, \x);
@@ -303,6 +310,7 @@ zero comma negative two. Each sheet is capped by an ellipse.
 </image>
 </figure>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rm2-lim-1-a">
@@ -429,6 +437,7 @@ Discuss continuity of the following functions:
 </ol>
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="7" due="2026-11-06"
 <solution>
 <p>
 <ol marker="A.">
@@ -466,6 +475,7 @@ On the other hand, if we approach <m>(0,1)</m> on the line
 </ol>
 </p>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rw23-2">
@@ -486,6 +496,7 @@ Evaluate each of the following limits or show that it does not exist.
 </ol>
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="7" due="2026-11-06"
 <solution>
 <p>
 <ol marker="A.">
@@ -519,6 +530,7 @@ We factor the numerator as a difference of squares:
 </ol>
 </p>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rw21-6">
@@ -530,6 +542,7 @@ Find the limit, if it exists, or show that it does not exist:
 </md>
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="7" due="2026-11-06"
 <solution>
 <p>
 Along the path <m>x = 1</m>, <m>y \to 1^{+}</m> (so that
@@ -549,6 +562,7 @@ Since the limits computed along the two paths are not equal, the limit
 does not exist.
 </p>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rw22-6">
@@ -561,6 +575,7 @@ exist:
 </md>
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="7" due="2026-11-06"
 <solution>
 <p>
 Along the path <m>x = 0</m>:
@@ -576,6 +591,7 @@ Along the path <m>y = x</m>:
 Since <m>\frac13 \ne \frac14</m>, the limit does not exist.
 </p>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <!-- ===== From the old worksheet "Exercises for Partial Derivatives" ===== -->
@@ -590,6 +606,7 @@ is a solution of the diffusion equation
 </md>
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="7" due="2026-11-06"
 <solution>
 <p>
 We compute the needed derivatives:
@@ -613,6 +630,7 @@ gives exactly <m>\dfrac{\partial c}{\partial t}</m>, showing that
 <m>c</m> satisfies the diffusion equation.
 </p>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="pp-28">
@@ -623,6 +641,7 @@ Let <m>f(x,y,z) = xy + 3y^2z^3 + \ln(xz)</m>. Compute
 <m>\dfrac{\partial^2 f}{\partial y \partial z}</m>.
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="7" due="2026-11-06"
 <solution>
 <p>
 Note first that <m>\ln(xz) = \ln x + \ln z</m>, which makes the
@@ -643,6 +662,7 @@ and then with respect to <m>y</m>:
 </md>
 </p>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="q1-3">
@@ -701,6 +721,7 @@ give the units.
 </ol>
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="7" due="2026-11-06"
 <solution>
 <p>
 <term>(a)</term> A partial derivative is a limit of difference
@@ -851,6 +872,7 @@ slightly to the left.
 </image>
 </figure>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 </worksheet>

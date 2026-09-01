@@ -48,6 +48,7 @@ Describe the geometrical shape corresponding to the set.
 </ol>
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="4" due="2026-10-16"
 <solution>
 <p>
 <ol marker="A.">
@@ -117,21 +118,22 @@ that passes behind the plane is drawn dashed.
   \draw[mred, thick, rotate=-28] (-1.15,-1.9) rectangle (1.15,1.9);
   % the segment AB: the stretch from where it enters the plane patch up to
   % the midpoint C runs behind the plane, so it is drawn dashed
-  \draw[thick] (-2.4,-0.6) -- (-1.15,-0.287);
-  \draw[thick, dashed] (-1.15,-0.287) -- (0,0);
-  \draw[thick] (0,0) -- (2.4,0.6);
+  \draw[thick] (-2.4,-0.6) ]]>&#45;&#45;<![CDATA[ (-1.15,-0.287);
+  \draw[thick, dashed] (-1.15,-0.287) ]]>&#45;&#45;<![CDATA[ (0,0);
+  \draw[thick] (0,0) ]]>&#45;&#45;<![CDATA[ (2.4,0.6);
   \fill (-2.4,-0.6) circle (2pt) node[left=2pt] {$A$};
   \fill (2.4,0.6) circle (2pt) node[right=2pt] {$B$};
   % the midpoint
   \fill[mblue] (0,0) circle (2pt);
   \node[mblue, above left=1pt] at (0,0.06) {$C$};
   % right-angle marker at C, closed back onto the segment AB
-  \draw[mred] (0.22,0.055) -- (0.28,-0.185) -- (0.06,-0.24) -- (0,0);
+  \draw[mred] (0.22,0.055) ]]>&#45;&#45;<![CDATA[ (0.28,-0.185) ]]>&#45;&#45;<![CDATA[ (0.06,-0.24) ]]>&#45;&#45;<![CDATA[ (0,0);
 \end{tikzpicture}]]>
 </latex-image>
 </image>
 </figure>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="pp-24">
@@ -162,6 +164,7 @@ Describe the following regions and graphs.
 </ol>
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="4" due="2026-10-16"
 <solution>
 <p>
 The key is to notice whether the first condition is an
@@ -199,6 +202,7 @@ Setting <m>z = 0</m> on the sphere gives <m>x^2 + y^2 = 4</m>: the
 </ol>
 </p>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="m1-3">
@@ -219,6 +223,7 @@ What is its distance to the <m>y</m>-axis?
 </ol>
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="4" due="2026-10-16"
 <solution>
 <p>
 <term>(a)</term> The <m>yz</m>-plane is the plane <m>x = 0</m>. The
@@ -265,23 +270,23 @@ to the point zero, seven, zero on the y axis.
 <latex-image><![CDATA[
 \begin{tikzpicture}[x={(-0.50cm,-0.36cm)}, y={(1cm,0cm)}, z={(0cm,1cm)}]
 % axes
-\draw[->, thick] (-1,0,0) -- (5,0,0) node[below left] {$x$};
-\draw[->, thick] (0,-1,0) -- (0,9,0) node[right] {$y$};
-\draw[->, thick] (0,0,-7) -- (0,0,3) node[above] {$z$};
+\draw[->, thick] (-1,0,0) ]]>&#45;&#45;<![CDATA[ (5,0,0) node[below left] {$x$};
+\draw[->, thick] (0,-1,0) ]]>&#45;&#45;<![CDATA[ (0,9,0) node[right] {$y$};
+\draw[->, thick] (0,0,-7) ]]>&#45;&#45;<![CDATA[ (0,0,3) node[above] {$z$};
 % a patch of the yz-plane
-\fill[mblue, opacity=0.14] (0,3.4,-6.8) -- (0,9.2,-6.8) -- (0,9.2,1.6)
-      -- (0,3.4,1.6) -- cycle;
+\fill[mblue, opacity=0.14] (0,3.4,-6.8) ]]>&#45;&#45;<![CDATA[ (0,9.2,-6.8) ]]>&#45;&#45;<![CDATA[ (0,9.2,1.6)
+      ]]>&#45;&#45;<![CDATA[ (0,3.4,1.6) ]]>&#45;&#45;<![CDATA[ cycle;
 \node[mblue, anchor=south] at (0,6.3,1.7) {$yz$-plane};
 % the point and its shadows
 \coordinate (P) at (3,7,-5);
 \coordinate (F) at (0,7,-5);
 \coordinate (A) at (0,7,0);
-\draw[dashed, mgray] (0,7,0) -- (F);
-\draw[dashed, mgray] (3,0,0) -- (3,7,0) -- (P);
-\draw[dashed, mgray] (3,7,0) -- (A);
-\draw[very thick, mverm] (P) -- (F)
+\draw[dashed, mgray] (0,7,0) ]]>&#45;&#45;<![CDATA[ (F);
+\draw[dashed, mgray] (3,0,0) ]]>&#45;&#45;<![CDATA[ (3,7,0) ]]>&#45;&#45;<![CDATA[ (P);
+\draw[dashed, mgray] (3,7,0) ]]>&#45;&#45;<![CDATA[ (A);
+\draw[very thick, mverm] (P) ]]>&#45;&#45;<![CDATA[ (F)
       node[midway, anchor=north west, inner sep=1pt] {$3$};
-\draw[very thick, mgreen] (P) -- (A)
+\draw[very thick, mgreen] (P) ]]>&#45;&#45;<![CDATA[ (A)
       node[midway, anchor=east] {$\sqrt{34}$\;};
 \fill[mred] (P) circle (1.6pt);
 \fill[mverm] (F) circle (1.6pt);
@@ -294,6 +299,7 @@ to the point zero, seven, zero on the y axis.
 </image>
 </figure>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="ex-3d-nonconvex-solid">
@@ -306,6 +312,7 @@ by the cylinder <m>x^2+y^2=1</m>. Describe this solid.
 </p>
 </statement>
 
+<!-- SOLUTION-LOCKED assignment="4" due="2026-10-16"
 <solution>
 <p>
 The paraboloid <m>z=1-x^2-y^2</m> opens downward from its vertex
@@ -361,13 +368,13 @@ almost none at the center.
 \coordinate (C) at (-1.25,-1.5,1);
 \coordinate (D) at (1.25,-1.5,1);
 % node indicating the equation of the circumference
-\draw[white] (1.35,0,0) -- (0,1.35,0) node [black,below,midway,sloped] {$x^2 + y^2 = 1$};
+\draw[white] (1.35,0,0) ]]>&#45;&#45;<![CDATA[ (0,1.35,0) node [black,below,midway,sloped] {$x^2 + y^2 = 1$};
 % coordinate axes
-\draw[thick,->] (0,0,0) -- (1.5,0,0) node [below left] {\footnotesize$x$};
-\draw[dashed] (0,0,0) -- (-1.25,0,0);
-\draw[thick,->] (0,0,0) -- (0,1.5,0) node [right] {\footnotesize$y$};
-\draw[dashed] (0,0,0) -- (0,-1.25,0);
-\draw[thick] (0,0,0) -- (0,0,1.0);
+\draw[thick,->] (0,0,0) ]]>&#45;&#45;<![CDATA[ (1.5,0,0) node [below left] {\footnotesize$x$};
+\draw[dashed] (0,0,0) ]]>&#45;&#45;<![CDATA[ (-1.25,0,0);
+\draw[thick,->] (0,0,0) ]]>&#45;&#45;<![CDATA[ (0,1.5,0) node [right] {\footnotesize$y$};
+\draw[dashed] (0,0,0) ]]>&#45;&#45;<![CDATA[ (0,-1.25,0);
+\draw[thick] (0,0,0) ]]>&#45;&#45;<![CDATA[ (0,0,1.0);
 % the base disk
 \fill[yellow,opacity=0.35] plot[domain=0:6.2832,smooth,variable=\t] ({cos(\t r)},{sin(\t r)},{0.0});
 \draw[gray,thick] plot[domain=0:6.2832,smooth,variable=\t] ({cos(\t r)},{sin(\t r)},{0.0});
@@ -385,7 +392,7 @@ almost none at the center.
   \draw[cyan,thick,opacity=0.35] plot[domain=\tini:\tfin,smooth,variable=\t] ({\radio*cos(\t r)},{\radio*sin(\t r)},{1.0 - \altura});
 }
 % first part of the z axis
-\draw[thick,->] (0,0,1.0) -- (0,0,1.5) node [above] {\footnotesize$z$};
+\draw[thick,->] (0,0,1.0) ]]>&#45;&#45;<![CDATA[ (0,0,1.5) node [above] {\footnotesize$z$};
 \foreach \altura in {0.0125,0.025,...,1.0}{
   \pgfmathparse{sqrt(\altura)}
   \pgfmathsetmacro{\radio}{\pgfmathresult}
@@ -398,20 +405,21 @@ almost none at the center.
   \pgfmathsetmacro{\px}{\pgfmathresult}
   \pgfmathparse{sin(\angulo r)}
   \pgfmathsetmacro{\py}{\pgfmathresult}
-  \draw[gray,opacity=0.5] (\px,\py,0) -- (\px,\py,1.0);
+  \draw[gray,opacity=0.5] (\px,\py,0) ]]>&#45;&#45;<![CDATA[ (\px,\py,1.0);
 }
 % the circle at z = 1
 \draw[black,thick,opacity=0.75] plot[domain=0:6.2832,smooth,variable=\t] ({cos(\t r)},{sin(\t r)},{1.0});
 % the plane z = 1
-\draw[white] (C) -- (B) node[red,above,sloped,midway]{\footnotesize$z = 1$};
-\draw[red,dash dot] (A) -- (B) -- (C) -- (D) -- (A);
-\fill[pattern color=pink,pattern=north east lines] (A) -- (B) -- (C) -- (D) -- (A);
-\draw[thick,->] (0,0,1.0) -- (0,0,1.5) node [above] {\footnotesize$z$};
+\draw[white] (C) ]]>&#45;&#45;<![CDATA[ (B) node[red,above,sloped,midway]{\footnotesize$z = 1$};
+\draw[red,dash dot] (A) ]]>&#45;&#45;<![CDATA[ (B) ]]>&#45;&#45;<![CDATA[ (C) ]]>&#45;&#45;<![CDATA[ (D) ]]>&#45;&#45;<![CDATA[ (A);
+\fill[pattern color=pink,pattern=north east lines] (A) ]]>&#45;&#45;<![CDATA[ (B) ]]>&#45;&#45;<![CDATA[ (C) ]]>&#45;&#45;<![CDATA[ (D) ]]>&#45;&#45;<![CDATA[ (A);
+\draw[thick,->] (0,0,1.0) ]]>&#45;&#45;<![CDATA[ (0,0,1.5) node [above] {\footnotesize$z$};
 \end{tikzpicture}
 ]]></latex-image>
 </image>
 </figure>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rs19-2">
@@ -490,6 +498,7 @@ The quadrilateral with vertices <m>P</m>, <m>Q</m>, <m>R</m>, and
 </image>
 </figure>
 </statement>
+<!-- SOLUTION-LOCKED assignment="4" due="2026-10-16"
 <solution>
 <p>
 <ol marker="A.">
@@ -521,6 +530,7 @@ Chaining the three vectors tip to tail,
 </ol>
 </p>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="pp-9">
@@ -530,6 +540,7 @@ Find a vector of length 3 pointing in the opposite direction from the
 vector <m>2\,\mathbf i - 4\,\mathbf j + 4\,\mathbf k</m>.
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="4" due="2026-10-16"
 <solution>
 <p>
 The given vector has length
@@ -545,6 +556,7 @@ Multiplying by <m>-3</m> reverses the direction and gives length
 </md>
 </p>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="m1-2">
@@ -556,6 +568,7 @@ vector of length <m>\tfrac13</m> that points in the same direction as
 <m>\vec v</m>.
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="4" due="2026-10-16"
 <solution>
 <p>
 The vector from <m>P(5,-4,\sqrt3)</m> to <m>Q(3,-1,0)</m> is obtained
@@ -590,6 +603,7 @@ pointing the same way:
 </md>
 </p>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="vec-parallelogram-space">
@@ -619,6 +633,7 @@ Find the perimeter of <m>ABCD</m>.
 </ol>
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="4" due="2026-10-16"
 <solution>
 <p>
 <ol marker="A.">
@@ -707,9 +722,9 @@ point M in the middle of the parallelogram.
 <latex-image><![CDATA[
 \begin{tikzpicture}[x={(-0.50cm,-0.36cm)}, y={(1cm,0cm)}, z={(0cm,1cm)},
                     scale=0.78, >=stealth]
-\draw[->, thick] (0,0,0) -- (5.0,0,0) node[below left] {$x$};
-\draw[->, thick] (0,0,0) -- (0,8.6,0) node[right] {$y$};
-\draw[->, thick] (0,0,0) -- (0,0,7.2) node[above] {$z$};
+\draw[->, thick] (0,0,0) ]]>&#45;&#45;<![CDATA[ (5.0,0,0) node[below left] {$x$};
+\draw[->, thick] (0,0,0) ]]>&#45;&#45;<![CDATA[ (0,8.6,0) node[right] {$y$};
+\draw[->, thick] (0,0,0) ]]>&#45;&#45;<![CDATA[ (0,0,7.2) node[above] {$z$};
 \node[above left] at (0,0,0) {$0$};
 \coordinate (A) at (1,2,5);
 \coordinate (B) at (4,3,3);
@@ -717,13 +732,13 @@ point M in the middle of the parallelogram.
 \coordinate (D) at (3,6,6);
 \coordinate (M) at (3.5,4.5,4.5);
 % the diagonals, drawn first so the sides sit on top of them
-\draw[gray, thick, dashed] (A) -- (C);
-\draw[gray, thick, dashed] (B) -- (D);
+\draw[gray, thick, dashed] (A) ]]>&#45;&#45;<![CDATA[ (C);
+\draw[gray, thick, dashed] (B) ]]>&#45;&#45;<![CDATA[ (D);
 % the two pairs of equal sides
-\draw[->, cyan!60!black, very thick] (A) -- (B);
-\draw[->, cyan!60!black, very thick] (D) -- (C);
-\draw[->, magenta, very thick] (A) -- (D);
-\draw[->, magenta, very thick] (B) -- (C);
+\draw[->, cyan!60!black, very thick] (A) ]]>&#45;&#45;<![CDATA[ (B);
+\draw[->, cyan!60!black, very thick] (D) ]]>&#45;&#45;<![CDATA[ (C);
+\draw[->, magenta, very thick] (A) ]]>&#45;&#45;<![CDATA[ (D);
+\draw[->, magenta, very thick] (B) ]]>&#45;&#45;<![CDATA[ (C);
 % vertices
 \foreach \p in {A,B,C,D} \fill[black] (\p) circle (1.7pt);
 \fill[red] (M) circle (2.0pt);
@@ -737,6 +752,7 @@ point M in the middle of the parallelogram.
 </image>
 </figure>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rs19-4">
@@ -749,6 +765,7 @@ the sum of a vector parallel to <m>\mathbf v</m> and a vector
 orthogonal to <m>\mathbf v</m>.
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="4" due="2026-10-16"
 <solution>
 <p>
 We have <m>\vec u \cdot \vec v = 3</m> and
@@ -774,6 +791,7 @@ Here <m>\vec u_{\parallel}</m> is parallel to <m>\vec v</m> and
 <m>\vec u_{\parallel} + \vec u_{\perp} = \vec u</m>.
 </p>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rw22-4">
@@ -804,6 +822,7 @@ are non-zero real numbers.
 </ol>
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="4" due="2026-10-16"
 <solution>
 <p>
 <ol marker="A.">
@@ -834,6 +853,7 @@ are not parallel, because <m>\vec w_2</m> has a non-zero
 </ol>
 </p>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rw17-4">
@@ -859,6 +879,7 @@ Find the velocity vector of the wind in the direction of the dash.
 </ol>
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="4" due="2026-10-16"
 <solution>
 <p>
 Let <m>\vec d = \langle 2, 6\rangle</m> be the direction of the dash
@@ -902,6 +923,7 @@ matching part A.
 </ol>
 </p>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="dp-constrained-work">
@@ -937,6 +959,7 @@ Find one unit direction in the plane for which the work is zero.
 </ol>
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="4" due="2026-10-16"
 <solution>
 <p>
 Reading the coefficients of the plane, a normal vector is
@@ -1135,6 +1158,7 @@ is the direction in the plane perpendicular to
 neither with nor against the usable part of the force.
 </p>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 </worksheet>

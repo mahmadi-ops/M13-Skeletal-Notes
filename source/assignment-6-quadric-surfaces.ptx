@@ -153,6 +153,7 @@ material first, see
         <m>y = x^2 - z^2</m> matches graph <var name="$match4" width="4"/>.
       </p>
     </statement>
+    <!-- SOLUTION-LOCKED assignment="6" due="2026-10-28"
     <solution>
       <p>
         We identify each surface by slicing, just as in this section.  Here
@@ -203,6 +204,7 @@ material first, see
         cone in B.
       </p>
     </solution>
+    END SOLUTION-LOCKED -->
   </webwork>
 </exercise>
 
@@ -216,6 +218,7 @@ z^2 - y^2 - x^2 = 0.
 </md>
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="6" due="2026-10-28"
 <solution>
 <p>
 We can rewrite the equation as <m>z^2 = x^2 + y^2</m>. Let us look at
@@ -262,16 +265,16 @@ is capped by an ellipse representing a circular cross section.
 <latex-image>
 <![CDATA[\begin{tikzpicture}[scale=1.0]
   % axes
-  \draw[-stealth, thick] (0,-2.6) -- (0,2.8) node[above] {$z$};
-  \draw[-stealth, thick] (-2.4,0) -- (2.6,0) node[right] {$y$};
-  \draw[-stealth, thick] (0.95,0.68) -- (-1.3,-0.94) node[below left] {$x$};
+  \draw[-stealth, thick] (0,-2.6) ]]>&#45;&#45;<![CDATA[ (0,2.8) node[above] {$z$};
+  \draw[-stealth, thick] (-2.4,0) ]]>&#45;&#45;<![CDATA[ (2.6,0) node[right] {$y$};
+  \draw[-stealth, thick] (0.95,0.68) ]]>&#45;&#45;<![CDATA[ (-1.3,-0.94) node[below left] {$x$};
   % upper cone
-  \draw[mblue, thick] (0,0) -- (-1.5,1.8);
-  \draw[mblue, thick] (0,0) -- (1.5,1.8);
+  \draw[mblue, thick] (0,0) ]]>&#45;&#45;<![CDATA[ (-1.5,1.8);
+  \draw[mblue, thick] (0,0) ]]>&#45;&#45;<![CDATA[ (1.5,1.8);
   \draw[mblue, thick] (0,1.8) ellipse (1.5cm and 0.34cm);
   % lower cone
-  \draw[mblue, thick] (0,0) -- (-1.5,-1.8);
-  \draw[mblue, thick] (0,0) -- (1.5,-1.8);
+  \draw[mblue, thick] (0,0) ]]>&#45;&#45;<![CDATA[ (-1.5,-1.8);
+  \draw[mblue, thick] (0,0) ]]>&#45;&#45;<![CDATA[ (1.5,-1.8);
   \draw[mblue, thick] (0,-1.8) ellipse (1.5cm and 0.34cm);
   % vertex
   \fill (0,0) circle (1.5pt);
@@ -280,6 +283,7 @@ is capped by an ellipse representing a circular cross section.
 </image>
 </figure>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rw23-7">
@@ -288,6 +292,7 @@ is capped by an ellipse representing a circular cross section.
 Identify and sketch the surface <m>x^2 - y^2 + z^2 - 4 = 0</m>.
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="6" due="2026-10-28"
 <solution>
 <p>
 We can rewrite the equation as <m>x^2 + z^2 = y^2 + 4</m>. Let us look
@@ -334,9 +339,9 @@ shaped side curves.
 <latex-image>
 <![CDATA[\begin{tikzpicture}[scale=1.0]
   % axes
-  \draw[-stealth, thick] (0,-2.4) -- (0,2.6) node[above] {$z$};
-  \draw[-stealth, thick] (-3.5,0) -- (3.7,0) node[right] {$y$};
-  \draw[-stealth, thick] (0.9,0.65) -- (-1.25,-0.9) node[below left] {$x$};
+  \draw[-stealth, thick] (0,-2.4) ]]>&#45;&#45;<![CDATA[ (0,2.6) node[above] {$z$};
+  \draw[-stealth, thick] (-3.5,0) ]]>&#45;&#45;<![CDATA[ (3.7,0) node[right] {$y$};
+  \draw[-stealth, thick] (0.9,0.65) ]]>&#45;&#45;<![CDATA[ (-1.25,-0.9) node[below left] {$x$};
   % end ellipses at y = +-3, radius sqrt(13) ~ 2.1 visually
   \draw[mred, thick] (-3,0) ellipse (0.42cm and 2.1cm);
   \draw[mred, thick] (3,0) ellipse (0.42cm and 2.1cm);
@@ -352,6 +357,7 @@ shaped side curves.
 </image>
 </figure>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rw21-10">
@@ -361,6 +367,7 @@ Identify and sketch the surface corresponding to the equation
 <m>2x^2 - y + z^2 = 0</m>. Give reasons for your choice.
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="6" due="2026-10-28"
 <solution>
 <p>
 We can rewrite the equation as <m>y = 2x^2 + z^2</m>. Let us look at
@@ -411,9 +418,9 @@ capped by an ellipse at its wide right end.
 <latex-image>
 <![CDATA[\begin{tikzpicture}[scale=1.0]
   % axes
-  \draw[-stealth, thick] (0,-2.3) -- (0,2.5) node[above] {$z$};
-  \draw[-stealth, thick] (-1.6,0) -- (4.1,0) node[right] {$y$};
-  \draw[-stealth, thick] (0.9,0.65) -- (-1.25,-0.9) node[below left] {$x$};
+  \draw[-stealth, thick] (0,-2.3) ]]>&#45;&#45;<![CDATA[ (0,2.5) node[above] {$z$};
+  \draw[-stealth, thick] (-1.6,0) ]]>&#45;&#45;<![CDATA[ (4.1,0) node[right] {$y$};
+  \draw[-stealth, thick] (0.9,0.65) ]]>&#45;&#45;<![CDATA[ (-1.25,-0.9) node[below left] {$x$};
   % paraboloid profile: z = +-0.95*sqrt(y), vertex at origin, opening +y
   \draw[mblue, thick] plot[domain=0:3.4, samples=31]
     (\x, {0.95*sqrt(\x)});
@@ -427,6 +434,7 @@ capped by an ellipse at its wide right end.
 </image>
 </figure>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="m2b-2">
@@ -436,6 +444,7 @@ Sketch the surface <m>4x^2 - y^2 = -4 - z^2</m> in three dimensions.
 Label any points where the surface crosses the coordinate axes.
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="6" due="2026-10-28"
 <solution>
 <p>
 Collect everything on the left and divide by <m>-4</m>:
@@ -533,6 +542,7 @@ between the two vertices is empty.
 </figure>
 
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="pp-20">
@@ -542,6 +552,7 @@ Find the equation of the hyperbola with asymptotes <m>y = 3x</m> and
 <m>y = -3x</m> passing through the point <m>(0,2)</m>.
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="6" due="2026-10-28"
 <solution>
 <p>
 Since the hyperbola meets the <m>y</m>-axis (at <m>(0,2)</m>) it opens
@@ -608,6 +619,7 @@ The hyperbola <m>y^2 - 9x^2 = 4</m> with its asymptotes
 </image>
 </figure>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="exer-parabola-focus-directrix">
@@ -618,6 +630,7 @@ symmetry the <m>y</m>-axis, passing through the point <m>(4,2)</m>.
 Then find its focus and its directrix.
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="6" due="2026-10-28"
 <solution>
 <p>
 The vertex is at the origin and the axis of symmetry is the
@@ -695,6 +708,7 @@ the same distance from the focus as from the directrix.
 </image>
 </figure>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="pp-21">
@@ -709,6 +723,7 @@ over the rope traces a path. Ignoring the numbers, state what kind of
 curve the path makes: line, ellipse, parabola or hyperbola.
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="6" due="2026-10-28"
 <solution>
 <p>
 Let <m>A</m> and <m>B</m> be the two attachment points and <m>P</m>
@@ -727,6 +742,7 @@ an arc of an <term>ellipse</term>, lying in the vertical plane
 containing the two trees.
 </p>
 </solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 </worksheet>
