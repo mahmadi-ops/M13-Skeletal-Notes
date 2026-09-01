@@ -14,29 +14,75 @@
 
   <preface>
     <title>Preface</title>
+
     <p>
-      These pages aim to design and implement a series of interactive, accessible web-based
-      modules that strengthen students’ conceptual understanding of foundational mathematical 
-      ideas through explicit connections to physical phenomena. The project responds to a 
-      persistent challenge observed across STEM disciplines at SCU: students often demonstrate 
-      procedural competence in Mathematics while lacking the ability to transfer their mathematical 
-      knowledge across courses, particularly when mathematical ideas are applied in physical contexts. 
+      These are <term>skeletal</term> notes. Every section carries the
+      definitions, the statements of the theorems, and the outline of each
+      example and each proof <mdash /> but the details are left blank, and we
+      fill them in together in class. What you are holding is the scaffolding
+      of the course; the mathematics gets written into it as we do it.
     </p>
 
     <p>
-      Two of the main goals of this project are to:
-      <ol>
-        <li>
-          <p>
-            Enhance students’ conceptual understanding of mathematics through physically motivated examples and problems
-          </p>
-        </li>
-        <li>
-          <p>
-            Develop accessible instructional materials that support diverse learners, including those using screen readers or tactile graphics
-          </p>
-        </li>
-      </ol>
+      So bring them with you. Before each class, print the section we are
+      about to cover, or download it and annotate it on a tablet <mdash /> the
+      <q>PDF</q> button in the navigation bar gives you the whole book as one
+      file to print from. Then complete the blanks in class as we work through
+      the material. A page you filled in yourself is worth more later than any
+      set of notes handed to you finished.
+    </p>
+
+    <p>
+      Everything for this course lives here: the notes themselves, the
+      assignments, the review problems for each exam, and the solutions. Each
+      item is added as we reach it, so check back regularly rather than
+      assuming a page is final. Solutions to an assignment are posted only
+      after its due date has passed; the review sets are posted the same way.
+    </p>
+
+    <p>
+      The problems are all in <xref ref="section-exercises" text="title"/>.
+      There are ten assignments, which are graded, and four sets of review
+      problems, which are not <mdash /> the review sets collect everything the
+      assignments left over, and they are fair game on an exam. Assignments
+      are due at 11:59 PM on the day shown below.
+    </p>
+
+    <p>
+      <tabular top="major" bottom="minor" halign="left">
+        <row header="yes" bottom="medium">
+          <cell>Assignments</cell>
+          <cell>Due day, at 11:59 PM</cell>
+        </row>
+        <row>
+          <cell>1, 2, 4, 5, 7, 8, 10</cell>
+          <cell>Friday</cell>
+        </row>
+        <row>
+          <cell>3, 6, 9</cell>
+          <cell>Wednesday (exam weeks 3, 6, and 9)</cell>
+        </row>
+      </tabular>
+    </p>
+
+    <p>
+      You hand your work in through Gradescope, not through this site. The
+      steps <mdash /> how to upload a scan or a photo of your written
+      solutions, and how to tell Gradescope which page holds which problem
+      <mdash /> are under
+      <url href="https://mahmadi-ops.github.io/MATH13-Syllabus-Fall2026/math13-syllabus.html#gradescope">Submitting
+      Your Assignments in Gradescope</url> in the course syllabus. Read them
+      once before the first assignment is due;
+      a submission with the pages mismatched is the most common way points get
+      lost for reasons that have nothing to do with the mathematics.
+    </p>
+
+    <p>
+      One more thing worth knowing before you start: each of the ten
+      assignment pages carries a Socratic AI tutor that will coach you when
+      you are stuck, without ever giving an answer away. How it works, what it
+      will and will not do, and what to keep out of the chat are all set out
+      in <xref ref="skel-assemblage-tutor-guide" text="title"/>.
     </p>
   </preface>
 
