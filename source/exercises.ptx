@@ -34,9 +34,6 @@
 <!-- The rest of the Functions of Several Variables problems. -->
 <xi:include href="review-problems-3.ptx"/>
 
-<!-- ================= Limits and Continuity in Higher Dimensions ================= -->
-<xi:include href="exercises-limits.ptx"/>
-
 <!-- ================= Partial Derivatives ================= -->
 <xi:include href="exercises-partial-derivatives.ptx"/>
 
