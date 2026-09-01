@@ -27,8 +27,12 @@
 <!-- Everything from the eight Chapter 3 topics that was not assigned. -->
 <xi:include href="review-problems-2.ptx"/>
 
-<!-- ================= Functions of Several Variables ================= -->
-<xi:include href="exercises-functions-several-variables.ptx"/>
+<!-- ================= Assignment 7 ================= -->
+<xi:include href="assignment-7-functions-several-variables.ptx"/>
+
+<!-- ================= Review Problems #3 ================= -->
+<!-- The rest of the Functions of Several Variables problems. -->
+<xi:include href="review-problems-3.ptx"/>
 
 <!-- ================= Limits and Continuity in Higher Dimensions ================= -->
 <xi:include href="exercises-limits.ptx"/>
