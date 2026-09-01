@@ -32,6 +32,10 @@ convention). Repo-specific facts:
 - `frontmatter.ptx` is always live, so it must never `<xref>` anything that
   can be unposted -- its two references to the Exercises chapter were made
   plain text for exactly that reason.
+- `scripts/build-site.sh` guards against a truncated PDF with a page floor
+  that scales with the number of content files reachable from `main.ptx`
+  (six pages each, so zero for the empty book and 252 for the full one).
+  Do not put a fixed floor back: the empty book is a legitimate state.
 - Solutions here are **public by default** (`publication.ptx` shows
   divisional solutions; the AI tutor in the Exercises introduction
   assumes that). A `lock` request wraps an assignment's
