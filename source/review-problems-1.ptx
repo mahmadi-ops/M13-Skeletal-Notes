@@ -37,6 +37,10 @@ an exam. The topics they cover, with links to the notes:
 For any real number <m>x</m>, we have
 <m>\cosh^2(x) + \sinh^2(x) = \cosh(2x)</m>.
 </p>
+<p>
+Justify your answer fully: give a proof if the statement is true, or a
+counterexample if it is false.
+</p>
 </statement>
 <feedback>
 <p>
@@ -539,6 +543,10 @@ When <m>x \in (-6,-2)</m>, the geometric series with
 A geometric series <m>\displaystyle\sum_{n=1}^{\infty} ar^{n-1}</m>
 converges if and only if <m>|r| \le 1</m>.
 </p>
+<p>
+Justify your answer fully: give a proof if the statement is true, or a
+counterexample if it is false.
+</p>
 </statement>
 <feedback>
 <p>
@@ -659,6 +667,10 @@ Hence the sum is <m>-2(1) = -2</m>.
     <statement correct="no">
         <p>If we manage to find the maximum value of <m>|f^{(n+1)}(c)|</m> for <m>c</m> in the interval between <m>a</m> and <m>x</m>, 
           then we can find the exact error in the Taylor polynomial approximation.</p>
+    <p>
+    Justify your answer fully: give a proof if the statement is true, or a
+    counterexample if it is false.
+    </p>
     </statement>
     <feedback>
         <p>The statement is incorrect. While finding the maximum value of <m>|f^{(n+1)}(c)|</m> allows us to find an upper bound for the error, it does not give the exact error.</p>

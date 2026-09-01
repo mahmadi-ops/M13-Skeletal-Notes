@@ -57,6 +57,10 @@ and easily obtain the same partial derivatives.
 Consider <m>f(x,y) = \left(\cos x + (1+x)\tan y\right)e^{x^2-1+y}</m>.
 Then <m>\dfrac{d}{dt}f(t^2, t^3) = 0</m> at <m>t = 0</m>.
 </p>
+<p>
+Justify your answer fully: give a proof if the statement is true, or a
+counterexample if it is false.
+</p>
 </statement>
 <feedback>
 <p>

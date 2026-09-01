@@ -60,6 +60,10 @@ distractors are the answers you get from the most common shortcuts.
 If every directional derivative <m>D_{\mathbf u}f(P_0)</m> exists at a point
 <m>P_0</m>, then <m>f</m> must be continuous at <m>P_0</m>.
 </p>
+<p>
+Justify your answer fully: give a proof if the statement is true, or a
+counterexample if it is false.
+</p>
 </statement>
 <feedback>
 <p>
@@ -268,6 +272,11 @@ work, and therefore that a charged particle in a magnetic field moves at
 constant speed.
 </p>
 </statement>
+<!--
+  Keep the content of each <m> on ONE source line inside a <block>.  Parsons
+  blocks are line-oriented, so a newline inside the math splits the \( \)
+  delimiters across two lines and MathJax leaves the LaTeX as literal text.
+-->
 <blocks randomize="yes">
 <block order="1">
 <p>
@@ -288,15 +297,13 @@ By definition, a cross product is perpendicular to both of its factors, so
 </block>
 <block order="4">
 <p>
-Hence <m>\vec F\cdot\vec v
-= q\left(\vec v\times\vec B\right)\cdot\vec v = 0</m>.
+Hence <m>\vec F\cdot\vec v = q\left(\vec v\times\vec B\right)\cdot\vec v = 0</m>.
 </p>
 </block>
 <block order="5">
 <p>
 The kinetic energy satisfies
-<m>\dfrac{d}{dt}\left(\tfrac12 m\,\vec v\cdot\vec v\right)
- = m\,\vec v\cdot\dfrac{d\vec v}{dt} = \vec F\cdot\vec v</m>.
+<m>\dfrac{d}{dt}\left(\tfrac12 m\,\vec v\cdot\vec v\right) = m\,\vec v\cdot\dfrac{d\vec v}{dt} = \vec F\cdot\vec v</m>.
 </p>
 </block>
 <block order="6">
@@ -325,89 +332,11 @@ speed.
   checkboxes rather than radio buttons, a genuinely distinct widget.
 -->
 
-<exercise xml:id="rs-multiselect-quadrics">
-<title>Which of These Are Hyperboloids?</title>
-<statement>
-<p>
-None of the equations below is in standard position. Complete the square
-where necessary, then select <em>every</em> equation whose surface is a
-hyperboloid, of one sheet or of two.
-</p>
-</statement>
-<choices randomize="yes">
-
-<choice correct="yes">
-<statement><p><m>x^2 + y^2 - z^2 - 2x = 0</m></p></statement>
-<feedback>
-<p>
-Correct. Completing the square gives
-<m>(x-1)^2 + y^2 - z^2 = 1</m>: one negative square, equal to a positive
-constant, so a hyperboloid of <em>one</em> sheet.
-</p>
-</feedback>
-</choice>
-
-<choice>
-<statement><p><m>x^2 + y^2 + 4z^2 - 4y = 0</m></p></statement>
-<feedback>
-<p>
-No. This is <m>x^2 + (y-2)^2 + 4z^2 = 4</m> — every square is positive, so
-it is an ellipsoid.
-</p>
-</feedback>
-</choice>
-
-<choice correct="yes">
-<statement><p><m>x^2 - y^2 - z^2 = 1</m></p></statement>
-<feedback>
-<p>
-Correct. <em>Two</em> negative squares against a positive constant gives a
-hyperboloid of two sheets.
-</p>
-</feedback>
-</choice>
-
-<choice>
-<statement><p><m>x^2 + y^2 - z^2 = 0</m></p></statement>
-<feedback>
-<p>
-No — and this is the trap. It has the same signs as the first option, but
-it equals <m>0</m> rather than a positive constant. That degenerates the
-hyperboloid into an <em>elliptic cone</em>, the surface the two families of
-hyperboloids approach asymptotically.
-</p>
-</feedback>
-</choice>
-
-<choice>
-<statement><p><m>z + 1 = x^2 - y^2</m></p></statement>
-<feedback>
-<p>
-No. The word <q>hyperbolic</q> is a red herring: this is linear in
-<m>z</m>, so it is a <em>hyperbolic paraboloid</em> (a saddle) with vertex
-at <m>(0,0,-1)</m>, not a hyperboloid.
-</p>
-</feedback>
-</choice>
-
-</choices>
-<solution>
-<p>
-Completing the square in the first and second,
-<md>
-<mrow>x^2 + y^2 - z^2 - 2x \amp = 0
-   \;\Longrightarrow\; (x-1)^2 + y^2 - z^2 = 1,</mrow>
-<mrow>x^2 + y^2 + 4z^2 - 4y \amp = 0
-   \;\Longrightarrow\; x^2 + (y-2)^2 + 4z^2 = 4 .</mrow>
-</md>
-Reading off the signs: one negative square against <m>+1</m> is a
-hyperboloid of one sheet; two negative squares against <m>+1</m> is a
-hyperboloid of two sheets. So the first and third are hyperboloids. The
-second is an ellipsoid, the fourth equals <m>0</m> and so is a cone, and
-the fifth is linear in <m>z</m> and so is a hyperbolic paraboloid.
-</p>
-</solution>
-</exercise>
+<!--
+  This slot is empty.  The multiple-select question that lived here,
+  "Which of These Are Hyperboloids?" (rs-multiselect-quadrics), was moved to
+  review-problems-2.ptx to sit with the other quadric surfaces problems.
+-->
 
 
 <!-- ==================== 6. CARD SORT ==================== -->

@@ -18,6 +18,10 @@ These problems ask when a limit of a function of two variables exists and how to
 If <m>\lim\limits_{(x,y)\to(a,b)} f(x,y)</m> exists, the function
 <m>f(x,y)</m> must be defined or continuous at <m>(a,b)</m>.
 </p>
+<p>
+Justify your answer fully: give a proof if the statement is true, or a
+counterexample if it is false.
+</p>
 </statement>
 <feedback>
 <p>
@@ -39,6 +43,10 @@ To show that the limit at a point <m>(a,b)</m> exists, it suffices to
 find two paths to the point <m>(a,b)</m> where the limits of
 <m>f(x,y)</m> agree.
 </p>
+<p>
+Justify your answer fully: give a proof if the statement is true, or a
+counterexample if it is false.
+</p>
 </statement>
 <feedback>
 <p>
@@ -55,6 +63,10 @@ We would have to show the limit agrees on
 If <m>f(x,y) \to L</m> as <m>(x,y) \to (a,b)</m> along any line
 through <m>(a,b)</m>, then
 <m>\lim\limits_{(x,y)\to(a,b)} f(x,y) = L</m>.
+</p>
+<p>
+Justify your answer fully: give a proof if the statement is true, or a
+counterexample if it is false.
 </p>
 </statement>
 <feedback>
@@ -350,6 +362,10 @@ does not exist.
 If two functions <m>f(x,y)</m> and <m>g(x,y)</m> are both continuous
 at the point <m>P_0</m>, then the quotient <m>\dfrac{f}{g}</m> is also
 continuous at <m>P_0</m>.
+</p>
+<p>
+Justify your answer fully: give a proof if the statement is true, or a
+counterexample if it is false.
 </p>
 </statement>
 <feedback>

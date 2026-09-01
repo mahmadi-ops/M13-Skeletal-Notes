@@ -131,6 +131,10 @@ D^2_{\hat{u}} f(x,y) = f_{xx}a^2 + 2f_{xy}ab + f_{yy}b^2,
 </md>
 where <m>D^2_{\hat{u}} f = D_{\hat{u}}\left[D_{\hat{u}} f(x,y)\right]</m>.
 </p>
+<p>
+Justify your answer fully: give a proof if the statement is true, or a
+counterexample if it is false.
+</p>
 </statement>
 <feedback>
 <p>
@@ -157,6 +161,10 @@ Clairaut's Theorem.
 <statement correct="yes">
 <p>
 <m>D_{\hat{\imath} + \hat{\jmath}}\,f(x,y) = f_x + f_y</m>.
+</p>
+<p>
+Justify your answer fully: give a proof if the statement is true, or a
+counterexample if it is false.
 </p>
 </statement>
 <feedback>
