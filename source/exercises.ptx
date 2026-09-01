@@ -30,15 +30,12 @@
 <!-- ================= Assignment 7 ================= -->
 <xi:include href="assignment-7-functions-several-variables.ptx"/>
 
+<!-- ================= Assignment 8 ================= -->
+<xi:include href="assignment-8-chain-rule.ptx"/>
+
 <!-- ================= Review Problems #3 ================= -->
-<!-- The rest of the Functions of Several Variables problems. -->
+<!-- The rest of the Chapter 4 problems covered by Assignments 7 and 8. -->
 <xi:include href="review-problems-3.ptx"/>
-
-<!-- ================= Partial Derivatives ================= -->
-<xi:include href="exercises-partial-derivatives.ptx"/>
-
-<!-- ================= The Chain Rule ================= -->
-<xi:include href="exercises-chain-rule.ptx"/>
 
 <!-- ================= Directional Derivatives and Gradient Vectors ================= -->
 <xi:include href="exercises-gradients.ptx"/>
