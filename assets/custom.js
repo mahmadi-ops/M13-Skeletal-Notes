@@ -126,7 +126,9 @@
  * ------------------------------------------------------------------ */
 (function () {
   var PDF_HREF = "math13-skeletal-notes.pdf";
-  var PDF_TITLE = "Download the whole book as a PDF, to print or annotate";
+  var PDF_TITLE =
+    "Download the whole book as a PDF, to print or annotate — updated " +
+    "whenever new notes are posted";
 
   function addPdfButton() {
     var contents = document.querySelector("#ptx-navbar .ptx-navbar-contents");
