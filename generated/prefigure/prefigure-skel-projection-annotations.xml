@@ -1,0 +1,66 @@
+<diagram>
+  <annotations>
+    <annotation id="prefigure-skel-projection-figure" speech2="A right triangle showing vector u as the hypotenuse, its projection onto v along the horizontal base, and the perpendicular segment u minus the projection of u onto v.">
+      <grouped>prefigure-skel-projection-figure</grouped>
+      <position>1</position>
+      <children>
+        <active>prefigure-skel-projection-vec-v</active>
+        <active>prefigure-skel-projection-vec-u</active>
+        <active>prefigure-skel-projection-vec-proj</active>
+        <active>prefigure-skel-projection-vec-perp</active>
+        <active>prefigure-skel-projection-angle-theta</active>
+        <active>prefigure-skel-projection-right-angle</active>
+      </children>
+      <components>
+        <active>prefigure-skel-projection-vec-v</active>
+        <active>prefigure-skel-projection-vec-u</active>
+        <active>prefigure-skel-projection-vec-proj</active>
+        <active>prefigure-skel-projection-vec-perp</active>
+        <active>prefigure-skel-projection-angle-theta</active>
+        <active>prefigure-skel-projection-right-angle</active>
+      </components>
+    </annotation>
+    <annotation id="prefigure-skel-projection-vec-v" speech2="Vector v, along the horizontal direction.">
+      <active>prefigure-skel-projection-vec-v</active>
+      <position>1</position>
+      <parents>
+        <grouped>prefigure-skel-projection-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-skel-projection-vec-u" speech2="Vector u, drawn from the origin at angle theta above v.">
+      <active>prefigure-skel-projection-vec-u</active>
+      <position>2</position>
+      <parents>
+        <grouped>prefigure-skel-projection-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-skel-projection-vec-proj" speech2="The projection of u in the direction of v, lying along v.">
+      <active>prefigure-skel-projection-vec-proj</active>
+      <position>3</position>
+      <parents>
+        <grouped>prefigure-skel-projection-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-skel-projection-vec-perp" speech2="The component of u perpendicular to v, equal to u minus the projection of u onto v.">
+      <active>prefigure-skel-projection-vec-perp</active>
+      <position>4</position>
+      <parents>
+        <grouped>prefigure-skel-projection-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-skel-projection-angle-theta" speech2="The angle theta between u and v.">
+      <active>prefigure-skel-projection-angle-theta</active>
+      <position>5</position>
+      <parents>
+        <grouped>prefigure-skel-projection-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-skel-projection-right-angle" speech2="A right angle where the perpendicular component meets v.">
+      <active>prefigure-skel-projection-right-angle</active>
+      <position>6</position>
+      <parents>
+        <grouped>prefigure-skel-projection-figure</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>
