@@ -41,7 +41,7 @@
     <!-- Chapter 1: skeletal (fill-in) notes, 7.3 Hyperbolic Functions -->
     <xi:include href="ch-hyperbolic-skeletal.ptx" />
     <!-- Chapter 2: skeletal (fill-in) notes, Series and Sequences -->
-    <!-- UNPOSTED <xi:include href="ch-series-skeletal.ptx" /> UNPOSTED -->
+    <xi:include href="ch-series-skeletal.ptx" />
     <!-- Chapter 3: skeletal (fill-in) notes, 3D Space and Vector Algebra -->
     <!-- UNPOSTED <xi:include href="ch-geometry-skeletal.ptx" /> UNPOSTED -->
     <!-- Chapter 4: skeletal (fill-in) notes, Functions of Multiple Variables -->
