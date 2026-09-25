@@ -494,12 +494,6 @@ convergent, find its sum.
 
 <p>
 <em>Solution.</em>
-(For each one, start by computing <m>\lim\limits_{n\to\infty} a_n</m>.
-For D, the <m>n</m>th Term Test will not settle it, so write the partial
-sum instead and use
-<m>\dfrac{1}{k(k+1)} = \dfrac1k - \dfrac{1}{k+1}</m>. For E, the test
-will not settle it either, so write the series in sigma notation and
-identify <m>a</m> and <m>r</m>.)
 </p>
 
 <sidebyside width="97%">
@@ -600,9 +594,6 @@ diverges, show that it does.
 
 <p>
 <em>Solution.</em>
-(Begin by writing the partial sum <m>s_n</m>, and use
-<m>\ln\!\left(\frac{k+2}{k+1}\right) = \ln(k+2) - \ln(k+1)</m> so that
-the sum telescopes.)
 </p>
 
 <sidebyside width="97%">
