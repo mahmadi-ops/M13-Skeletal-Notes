@@ -1,0 +1,78 @@
+<diagram>
+  <annotations>
+    <annotation id="skel-hyperbola-box-hyperbola" speech2="A hyperbola drawn together with its central box, showing that the extended diagonals of the box are the asymptotes">
+      <grouped>skel-hyperbola-box-hyperbola</grouped>
+      <position>1</position>
+      <children>
+        <active>skel-hyperbola-box-box</active>
+        <active>skel-hyperbola-box-diagonals</active>
+        <active>skel-hyperbola-box-asymptotes</active>
+        <active>skel-hyperbola-box-run-rise</active>
+        <active>skel-hyperbola-box-corner</active>
+        <active>skel-hyperbola-box-hyperbola</active>
+        <active>skel-hyperbola-box-vertices</active>
+      </children>
+      <components>
+        <active>skel-hyperbola-box-box</active>
+        <active>skel-hyperbola-box-diagonals</active>
+        <active>skel-hyperbola-box-asymptotes</active>
+        <active>skel-hyperbola-box-run-rise</active>
+        <active>skel-hyperbola-box-corner</active>
+        <active>skel-hyperbola-box-hyperbola</active>
+        <active>skel-hyperbola-box-vertices</active>
+      </components>
+    </annotation>
+    <annotation id="skel-hyperbola-box-box" speech2="The central box, a rectangle centered at the origin with half-width a and half-height b, so its corners are at plus or minus a comma plus or minus b">
+      <active>skel-hyperbola-box-box</active>
+      <position>1</position>
+      <parents>
+        <grouped>skel-hyperbola-box-hyperbola</grouped>
+      </parents>
+    </annotation>
+    <annotation id="skel-hyperbola-box-diagonals" speech2="The two diagonals of the box drawn in purple, from corner to opposite corner through the center">
+      <active>skel-hyperbola-box-diagonals</active>
+      <position>2</position>
+      <parents>
+        <grouped>skel-hyperbola-box-hyperbola</grouped>
+      </parents>
+    </annotation>
+    <annotation id="skel-hyperbola-box-asymptotes" speech2="The same two diagonals continued beyond the box as dashed lines, the asymptotes y equals plus and minus b over a times x">
+      <active>skel-hyperbola-box-asymptotes</active>
+      <position>3</position>
+      <parents>
+        <grouped>skel-hyperbola-box-hyperbola</grouped>
+      </parents>
+    </annotation>
+    <annotation id="skel-hyperbola-box-run-rise" speech2="A red horizontal segment of length a from the center to the vertex, and a green vertical segment of length b from the vertex up to the corner, showing the diagonal has run a and rise b and therefore slope b over a">
+      <active>skel-hyperbola-box-run-rise</active>
+      <position>4</position>
+      <parents>
+        <grouped>skel-hyperbola-box-hyperbola</grouped>
+      </parents>
+    </annotation>
+    <annotation id="skel-hyperbola-box-corner" speech2="The corner of the box at a comma b, the point the diagonal passes through">
+      <active>skel-hyperbola-box-corner</active>
+      <position>5</position>
+      <parents>
+        <grouped>skel-hyperbola-box-hyperbola</grouped>
+      </parents>
+    </annotation>
+    <annotation id="skel-hyperbola-box-hyperbola" speech2="The hyperbola itself, two blue branches opening left and right, each staying inside its asymptotes while drawing closer to them" sonify="yes">
+      <active>skel-hyperbola-box-hyperbola</active>
+      <position>6</position>
+      <parents>
+        <grouped>skel-hyperbola-box-hyperbola</grouped>
+      </parents>
+      <sonification>
+        <ACTIVE>skel-hyperbola-box-hyperbola</ACTIVE>
+      </sonification>
+    </annotation>
+    <annotation id="skel-hyperbola-box-vertices" speech2="The vertices at plus and minus a comma zero, where each branch meets the box">
+      <active>skel-hyperbola-box-vertices</active>
+      <position>7</position>
+      <parents>
+        <grouped>skel-hyperbola-box-hyperbola</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

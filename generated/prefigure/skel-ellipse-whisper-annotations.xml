@@ -1,0 +1,51 @@
+<diagram>
+  <annotations>
+    <annotation id="skel-ellipse-whisper-gallery" speech2="A whispering gallery: sound leaving one focus reflects off the elliptical wall and reconverges at the other focus">
+      <grouped>skel-ellipse-whisper-gallery</grouped>
+      <position>1</position>
+      <children>
+        <active>skel-ellipse-whisper-gallery</active>
+        <active>skel-ellipse-whisper-paths</active>
+        <active>skel-ellipse-whisper-f2</active>
+        <active>skel-ellipse-whisper-f1</active>
+      </children>
+      <components>
+        <active>skel-ellipse-whisper-gallery</active>
+        <active>skel-ellipse-whisper-paths</active>
+        <active>skel-ellipse-whisper-f2</active>
+        <active>skel-ellipse-whisper-f1</active>
+      </components>
+    </annotation>
+    <annotation id="skel-ellipse-whisper-gallery" speech2="The elliptical wall of the gallery, seen from above" sonify="yes">
+      <active>skel-ellipse-whisper-gallery</active>
+      <position>1</position>
+      <parents>
+        <grouped>skel-ellipse-whisper-gallery</grouped>
+      </parents>
+      <sonification>
+        <ACTIVE>skel-ellipse-whisper-gallery</ACTIVE>
+      </sonification>
+    </annotation>
+    <annotation id="skel-ellipse-whisper-paths" speech2="Five sound paths leaving the speaker at one focus, striking the wall at different points, and all arriving at the listener at the other focus">
+      <active>skel-ellipse-whisper-paths</active>
+      <position>2</position>
+      <parents>
+        <grouped>skel-ellipse-whisper-gallery</grouped>
+      </parents>
+    </annotation>
+    <annotation id="skel-ellipse-whisper-f2" speech2="One focus, where the speaker whispers">
+      <active>skel-ellipse-whisper-f2</active>
+      <position>3</position>
+      <parents>
+        <grouped>skel-ellipse-whisper-gallery</grouped>
+      </parents>
+    </annotation>
+    <annotation id="skel-ellipse-whisper-f1" speech2="The other focus, where the whisper is heard">
+      <active>skel-ellipse-whisper-f1</active>
+      <position>4</position>
+      <parents>
+        <grouped>skel-ellipse-whisper-gallery</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>
