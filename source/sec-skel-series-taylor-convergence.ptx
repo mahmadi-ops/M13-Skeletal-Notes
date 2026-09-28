@@ -702,15 +702,6 @@ Show that the kinetic energy of an object moving with velocity
 
 <p>
 <em>Solution.</em>
-(Substitute <xref ref="eq-skel-relativistic-mass"/> into
-<xref ref="eq-skel-relativistic-ke"/> and set
-<m>x = \frac{v^2}{c^2}</m>, so that everything runs through the Taylor
-series
-<md xml:id="eq-skel-inv-sqrt-series" number="yes">
-\frac{1}{\sqrt{1-x}} = 1 + \frac{1}{2}x + \frac{3}{8}x^2
-+ \frac{5}{16}x^3 + \cdots .
-</md>
-Substitute back and say which term survives when <m>v \ll c</m>.)
 </p>
 
 <sidebyside width="97%">
@@ -718,31 +709,21 @@ Substitute back and say which term survives when <m>v \ll c</m>.)
 <latex-image>
 \begin{tikzpicture}
 \draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,10);
-\draw[gray!35] (0,6.7) -- (15,6.7);
-\draw[gray!35] (0,3.4) -- (15,3.4);
-\node[anchor=north west, font=\small\itshape] at (0.35,9.7) {$K$ in terms of $x$:};
-\node[anchor=north west, font=\small\itshape] at (0.35,6.4) {expanded with the series:};
-\node[anchor=north west, font=\small\itshape] at (0.35,3.1) {back in terms of $v$ and $c$:};
+\node[anchor=north west, text=gray!60, font=\footnotesize\itshape]
+  at (0.25,9.75) {workspace};
 \end{tikzpicture}
 </latex-image>
-<shortdescription>Blank box in three rows, for rewriting the kinetic energy in terms of x, for the series expansion, and for the result in terms of v and c.</shortdescription>
+<shortdescription>Blank workspace for approximating the relativistic kinetic energy when v is much smaller than c.</shortdescription>
 </image>
 </sidebyside>
 
 <p>
-When <m>v \ll c</m>, the higher order terms in the series become
-negligible, and we can approximate the kinetic energy as:
+When <m>v \ll c</m>, we can therefore approximate the kinetic energy as:
 <md xml:id="eq-skel-newtonian-ke" number="yes">
 K \approx \frac{1}{2} m_0v^2.
 </md>
 </p>
 </statement>
-<hint>
-<p>
-We can use the Taylor series for <m>f(x) = \frac{1}{\sqrt{1 - x}}</m> at
-<m>x=0</m> to approximate <m>K</m>. Use <m>x = \frac{v^2}{c^2}</m>.
-</p>
-</hint>
 </example>
 
 <example xml:id="ex-skel-error-newtonian-ke">
@@ -759,13 +740,6 @@ the relativistic kinetic energy of the car. The speed of light is
 
 <p>
 <em>Solution.</em>
-(Keeping only the first term of <xref ref="eq-skel-inv-sqrt-series"/>
-means using the degree-<m>1</m> Taylor polynomial, so the error is
-<m>R_1</m> of <xref ref="eq-skel-taylor-remainder"/>. Bound
-<m>f''(x) = \frac{3}{4}(1-x)^{-5/2}</m> as in
-<xref ref="rmk-skel-error-upper-bound"/> (it is increasing), then
-substitute <m>v/c = 10^{-7}</m>. Close with one sentence on what the size
-of the bound says.)
 </p>
 
 <sidebyside width="97%">
@@ -773,14 +747,11 @@ of the bound says.)
 <latex-image>
 \begin{tikzpicture}
 \draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,10);
-\draw[gray!35] (0,6.7) -- (15,6.7);
-\draw[gray!35] (0,3.4) -- (15,3.4);
-\node[anchor=north west, font=\small\itshape] at (0.35,9.7) {$R_1(x)$ and its upper bound:};
-\node[anchor=north west, font=\small\itshape] at (0.35,6.4) {substituting $v/c = 10^{-7}$:};
-\node[anchor=north west, font=\small\itshape] at (0.35,3.1) {conclusion:};
+\node[anchor=north west, text=gray!60, font=\footnotesize\itshape]
+  at (0.25,9.75) {workspace};
 \end{tikzpicture}
 </latex-image>
-<shortdescription>Blank box in three rows, for the remainder and its bound, for the numerical substitution, and for the conclusion about the quality of the approximation.</shortdescription>
+<shortdescription>Blank workspace for estimating the error in the Newtonian kinetic energy formula for the car.</shortdescription>
 </image>
 </sidebyside>
 </statement>
