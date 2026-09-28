@@ -201,9 +201,8 @@ interval between <m>a</m> and <m>x</m>.
 </theorem>
 
 <p>
-Derive <xref ref="eq-skel-remainder-bound"/> from
-<xref ref="eq-skel-taylor-remainder"/>: take absolute values, then
-replace <m>|f^{(n+1)}(c)|</m> by its upper bound <m>M</m>.
+(Derive <xref ref="eq-skel-remainder-bound"/> from
+<xref ref="eq-skel-taylor-remainder"/>.)
 </p>
 
 <sidebyside width="97%">
@@ -730,7 +729,7 @@ K \approx \frac{1}{2} m_0v^2.
 <title>Estimating the error in using the Newtonian kinetic energy formula to approximate the relativistic kinetic energy</title>
 <statement>
 <p>
-Assume that a car a moving with a velocity of <m>v = 30 m/s </m>
+Assume that a car is moving with a velocity of <m>v = 30 m/s </m>
 (<m>\approx 67</m> miles per hour). Use the remainder's theorem
 to estimate the error in using the Newtonian kinetic energy formula
 <xref ref="eq-skel-newtonian-ke"/> to approximate
@@ -937,12 +936,6 @@ Here is the exact quote from Giancoli's textbook:
 
 <p>
 <em>Solution.</em>
-(Replacing <m>\sin\theta</m> by <m>\theta</m> uses
-<m>p_1 = p_2 = \theta</m> of <xref ref="eq-skel-sin-series"/>, so the
-error is <m>R_2</m>. Bound it with <xref ref="eq-skel-taylor-remainder"/>
-and <m>|\cos c| \le 1</m>, divide by <m>\theta</m> to make the error
-<em>relative</em>, and find the angle at which that bound reaches
-<m>1\%</m>. Compare with Giancoli's <m>15^\circ</m>.)
 </p>
 
 <sidebyside width="97%">
@@ -950,14 +943,11 @@ and <m>|\cos c| \le 1</m>, divide by <m>\theta</m> to make the error
 <latex-image>
 \begin{tikzpicture}
 \draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,12);
-\draw[gray!35] (0,8) -- (15,8);
-\draw[gray!35] (0,4) -- (15,4);
-\node[anchor=north west, font=\small\itshape] at (0.35,11.7) {$R_2(\theta)$ and its bound:};
-\node[anchor=north west, font=\small\itshape] at (0.35,7.7) {the relative error bound:};
-\node[anchor=north west, font=\small\itshape] at (0.35,3.7) {the $1\%$ threshold, versus $15^\circ$:};
+\node[anchor=north west, text=gray!60, font=\footnotesize\itshape]
+  at (0.25,11.75) {workspace};
 \end{tikzpicture}
 </latex-image>
-<shortdescription>Blank box in three rows, for the remainder bound, for the relative error bound, and for locating the one percent threshold and comparing it with fifteen degrees.</shortdescription>
+<shortdescription>Blank workspace for checking Giancoli's claim about the small-angle approximation.</shortdescription>
 </image>
 </sidebyside>
 </statement>
@@ -990,11 +980,6 @@ order <m>n</m> of the Taylor polynomial increases.
 
 <p>
 <em>Solution.</em>
-(Evaluate <xref ref="eq-skel-arctan-series"/> at <m>x = 1</m>, where
-<m>\arctan(1) = \frac{\pi}{4}</m>. For the error, feed the derivative
-bound <xref ref="eq-skel-arctan-deriv-bound"/> below into
-<xref ref="eq-skel-remainder-bound"/> with <m>M = n!</m> and multiply by
-<m>4</m>; you should land on <xref ref="eq-skel-pi-error-bound"/>.)
 </p>
 
 <sidebyside width="97%">
@@ -1002,14 +987,11 @@ bound <xref ref="eq-skel-arctan-deriv-bound"/> below into
 <latex-image>
 \begin{tikzpicture}
 \draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,10);
-\draw[gray!35] (0,6.7) -- (15,6.7);
-\draw[gray!35] (0,3.4) -- (15,3.4);
-\node[anchor=north west, font=\small\itshape] at (0.35,9.7) {$\pi$ from the series at $x=1$:};
-\node[anchor=north west, font=\small\itshape] at (0.35,6.4) {$|R_n(1)|$ from the remainder bound:};
-\node[anchor=north west, font=\small\itshape] at (0.35,3.1) {the error bound for $\pi$, and its limit as $n \to \infty$:};
+\node[anchor=north west, text=gray!60, font=\footnotesize\itshape]
+  at (0.25,9.75) {workspace};
 \end{tikzpicture}
 </latex-image>
-<shortdescription>Blank box in three rows, for the series approximation of pi, for the remainder bound, and for the resulting error bound and its behaviour as n grows.</shortdescription>
+<shortdescription>Blank workspace for approximating pi with the arctangent series and bounding the error.</shortdescription>
 </image>
 </sidebyside>
 
@@ -1083,13 +1065,6 @@ to prove that <m>\alpha + \beta = \dfrac{\pi}{4}</m>.
 </image>
 </sidebyside>
 </statement>
-<hint>
-<p>
-Compute <m>\tan(\alpha+\beta)</m> first. Then explain why
-<m>\alpha + \beta</m> must lie in the interval
-<m>\left(0, \tfrac{\pi}{2}\right)</m>, and why this pins down its value.
-</p>
-</hint>
 </task>
 
 <task>
@@ -1119,12 +1094,6 @@ Write out this approximation explicitly for <m>n = 3</m>.
 </image>
 </sidebyside>
 </statement>
-<hint>
-<p>
-Multiply <xref ref="eq-skel-euler-identity"/> by <m>4</m> and replace each
-arctangent by its Taylor polynomial.
-</p>
-</hint>
 </task>
 
 <task>
@@ -1159,13 +1128,6 @@ and conclude that
 </image>
 </sidebyside>
 </statement>
-<hint>
-<p>
-Apply <xref ref="eq-skel-remainder-bound"/> with <m>M = n!</m> exactly as
-in <xref ref="ex-skel-approx-pi-arctan"/>, but keep the factor
-<m>|x|^{n+1}</m>. Then use the triangle inequality on the two remainders.
-</p>
-</hint>
 </task>
 
 <task>
@@ -1193,12 +1155,6 @@ smallest <m>n</m> for which the bound guarantees an error of at most
 </image>
 </sidebyside>
 </statement>
-<hint>
-<p>
-For the second part, the term <m>\left(\tfrac12\right)^{n+1}</m>
-dominates; try increasing odd values of <m>n</m>.
-</p>
-</hint>
 </task>
 
 <conclusion>
@@ -1274,10 +1230,6 @@ where <m>x\neq a</m>. Then there exists a number <m>c</m> between
 
 <p>
 <em>Proof.</em>
-(Apply the mean value theorem repeatedly: first to <m>f</m> on the
-interval from <m>a</m> to <m>x</m>, then to <m>f'</m> on the interval it
-produces, and so on, until it delivers a point where
-<m>f^{(n+1)}</m> vanishes.)
 </p>
 
 <sidebyside width="97%">
@@ -1285,14 +1237,11 @@ produces, and so on, until it delivers a point where
 <latex-image>
 \begin{tikzpicture}
 \draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,10);
-\draw[gray!35] (0,6.7) -- (15,6.7);
-\draw[gray!35] (0,3.4) -- (15,3.4);
-\node[anchor=north west, font=\small\itshape] at (0.35,9.7) {first application, producing $c_1$:};
-\node[anchor=north west, font=\small\itshape] at (0.35,6.4) {second application, producing $c_2$:};
-\node[anchor=north west, font=\small\itshape] at (0.35,3.1) {continuing to $c_{n+1}$:};
+\node[anchor=north west, text=gray!60, font=\footnotesize\itshape]
+  at (0.25,9.75) {workspace};
 \end{tikzpicture}
 </latex-image>
-<shortdescription>Blank box in three rows, for the repeated applications of the mean value theorem producing the points c one, c two, and finally c n plus one.</shortdescription>
+<shortdescription>Blank workspace for proving the lemma.</shortdescription>
 </image>
 </sidebyside>
 
@@ -1306,11 +1255,6 @@ Note that for the error function <m>R_n(x) = f(x) - p_n(x)</m>, we have
 
 <p>
 <em>Completing the proof.</em>
-(Assume <m>x \neq a</m> and construct
-<m>g(t) = R_n(t) - \frac{R_n(x)}{(x-a)^{n+1}} (t-a)^{n+1}</m>. Check,
-using <xref ref="rmk-skel-zero-error-function"/>, that <m>g</m> satisfies
-the hypotheses of the lemma; then compute <m>g^{(n+1)}(c)</m> and solve
-for <m>R_n(x)</m>.)
 </p>
 
 <sidebyside width="97%">
@@ -1318,14 +1262,11 @@ for <m>R_n(x)</m>.)
 <latex-image>
 \begin{tikzpicture}
 \draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,10);
-\draw[gray!35] (0,6.7) -- (15,6.7);
-\draw[gray!35] (0,3.4) -- (15,3.4);
-\node[anchor=north west, font=\small\itshape] at (0.35,9.7) {$g$ satisfies the lemma because:};
-\node[anchor=north west, font=\small\itshape] at (0.35,6.4) {$g^{(n+1)}(c) = 0$ gives:};
-\node[anchor=north west, font=\small\itshape] at (0.35,3.1) {solving for $R_n(x)$:};
+\node[anchor=north west, text=gray!60, font=\footnotesize\itshape]
+  at (0.25,9.75) {workspace};
 \end{tikzpicture}
 </latex-image>
-<shortdescription>Blank box in three rows, for checking the lemma's hypotheses, for the equation from the vanishing derivative, and for solving for the remainder.</shortdescription>
+<shortdescription>Blank workspace for completing the proof of the remainder theorem.</shortdescription>
 </image>
 </sidebyside>
 
