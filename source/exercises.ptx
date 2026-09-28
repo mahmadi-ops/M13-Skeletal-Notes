@@ -191,7 +191,7 @@ right or wrong, earns nothing.
 <xi:include href="assignment-1-hyperbolic.ptx"/>
 
 <!-- ================= Assignment 2 ================= -->
-<!-- UNPOSTED <xi:include href="assignment-2-series-taylor.ptx"/> UNPOSTED -->
+<xi:include href="assignment-2-series-taylor.ptx"/>
 
 <!-- ================= Assignment 3 ================= -->
 <!-- UNPOSTED <xi:include href="assignment-3-taylor-convergence-binomial.ptx"/> UNPOSTED -->
