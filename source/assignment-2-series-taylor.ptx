@@ -19,8 +19,7 @@ whether a series converges and what it sums to, and then use the Maclaurin
 series of the standard functions to recognise a sum. If you would like to
 review the material first, see
 <xref ref="sec-skel-series-infinite" text="title"/> and
-<!-- plain text until that section is posted: <xref ref="sec-skel-series-taylor" text="title"/> -->
-Taylor and Maclaurin Series.
+<xref ref="sec-skel-series-taylor" text="title"/>.
 </p>
 </introduction>
 
