@@ -348,8 +348,12 @@ END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="exer-dipole-field">
-    <title>Approximating The Electric Field due to an Electric Dipole</title>
+    <title>*Approximating The Electric Field due to an Electric Dipole</title>
     <statement>
+<p>
+<em>Starred problem.</em> This one is for the interested reader. It will not
+be examined.
+</p>
         <p>Consider an electric dipole consisting of two charges, <m>+q</m> and <m>-q</m>, 
           separated by a distance <m>d</m>. The electric field at a point <m>P</m> located at a distance <m>r</m>
           from the positive charge along the axis of the dipole is given by:
@@ -506,7 +510,12 @@ which shows that the leading term is proportional to <m>d/r^3</m>.</p>
 </exercise>
 
 <exercise xml:id="rf-1">
+<title>*A binomial series for a rational function</title>
 <statement>
+<p>
+<em>Starred problem.</em> This one is for the interested reader. It will not
+be examined.
+</p>
 <p>
 Use a <term>binomial series</term> to represent the function
 <m>f(x) = \dfrac{2x}{1-x}</m> as a series. Write your final answer in
@@ -549,7 +558,12 @@ END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="exer-binomial-maclaurin">
+<title>*Maclaurin series from the binomial series</title>
 <statement>
+<p>
+<em>Starred problem.</em> This one is for the interested reader. It will not
+be examined.
+</p>
 <p>
 Use the binomial series <xref ref="eq-skel-binomial-series"/> to obtain
 the Maclaurin series for
@@ -621,7 +635,12 @@ END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="exer-binomial-cube-root">
+<title>*Expanding a cube root</title>
 <statement>
+<p>
+<em>Starred problem.</em> This one is for the interested reader. It will not
+be examined.
+</p>
 <p>
 Expand the quantity <m>\sqrt[3]{P+t}</m> about <m>0</m> in powers of
 <m>\dfrac{t}{P}</m>. Give four nonzero terms.
@@ -794,7 +813,12 @@ END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="m1-6">
+<title>*Gravity above the surface of the Earth</title>
 <statement>
+<p>
+<em>Starred problem.</em> This one is for the interested reader. It will not
+be examined.
+</p>
 <p>
 The gravitational force exerted by the Earth on an object of mass
 <m>m</m> at height <m>h</m> above the surface is
