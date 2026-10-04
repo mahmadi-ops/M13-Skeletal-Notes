@@ -49,6 +49,16 @@ convention). Repo-specific facts:
   `<solution>`/`<answer>`/`<hint>` blocks in SOLUTION-LOCKED markers;
   `release` (after the due date) removes only the marker lines; `relock`
   re-wraps.
+- Everything that uses the **binomial series** outside its own section (the
+  starred problems of Assignment 3 and Review Problems #1, and the sentences
+  that cite the section) is marked `component="binomial"`. The student-facing
+  books' publication files keep only the `web`/`print` components, so PreTeXt
+  drops it there; the instructor books list `binomial` in their
+  `<version include>` and keep it. To show it to students again, add
+  `binomial` to the student publication files' `<version include>`.
+  `desk_action.py` drops hidden components before its cross-reference check,
+  exactly as the build does, so Assignment 3 and Review Problems #1 are
+  self-contained in the student books even while the section is unposted.
 - Postings are tracked only on the desk panel — the syllabus's
   posted-materials table was removed at the instructor's request, so no
   posting action touches the syllabus repo. Page filenames come from
