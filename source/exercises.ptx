@@ -3,9 +3,10 @@
 
 <introduction>
 <p>
-The ten assignments and the four review problem sets, in one place. Worked
-solutions appear beneath each problem once the assignment's due date has
-passed; solutions for the review sets are posted the same way.
+The ten assignments, the four review problem sets, and a sample past exam,
+in one place. Worked solutions appear beneath each problem once the
+assignment's due date has passed; solutions for the review sets are posted
+the same way.
 </p>
 
 <assemblage xml:id="skel-assemblage-tutor-guide">
@@ -199,6 +200,10 @@ right or wrong, earns nothing.
 <!-- ================= Review Problems #1 ================= -->
 <!-- Everything from the four topics above that was not assigned. -->
 <xi:include href="review-problems-1.ptx"/>
+
+<!-- ================= Sample Past Exam 1 ================= -->
+<!-- The five exam questions with their worked solutions. -->
+<xi:include href="sample-past-exam-1.ptx"/>
 
 <!-- ================= Assignment 4 ================= -->
 <!-- UNPOSTED <xi:include href="assignment-4-space-vectors-dot-product.ptx"/> UNPOSTED -->

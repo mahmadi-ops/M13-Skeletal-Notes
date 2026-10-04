@@ -59,6 +59,11 @@ convention). Repo-specific facts:
   `desk_action.py` drops hidden components before its cross-reference check,
   exactly as the build does, so Assignment 3 and Review Problems #1 are
   self-contained in the student books even while the section is unposted.
+- `sample-past-exam-1.ptx` (page `worksheet-sample-past-exam-1.html`) is a
+  copy of the instructor's completed-notes worksheet Sample Past Exam 1,
+  solutions included, after Review Problems #1; its four topic links point
+  at this book's ids. It is live, and `desk_action.py` can toggle it by the
+  key `sample-past-exam-1`; the desk panel does not list it.
 - Postings are tracked only on the desk panel — the syllabus's
   posted-materials table was removed at the instructor's request, so no
   posting action touches the syllabus repo. Page filenames come from
