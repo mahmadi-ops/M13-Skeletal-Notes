@@ -623,18 +623,19 @@ no elementary antiderivative.
 <p>
 We will use two Maclaurin series. The series of <m>\sin(x)</m> was found
 in <xref ref="example-skel-taylor-sin"/>:
-<md xml:id="eq-skel-sin-maclaurin" number="yes">
-\sin(x) = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \cdots
-= x - \frac{x^3}{6} + \frac{x^5}{120} - \cdots, \qquad x \in \R.
+<md>
+<mrow xml:id="eq-skel-sin-maclaurin" number="yes">\sin(x) \amp = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \cdots</mrow>
+<mrow>\amp = x - \frac{x^3}{6} + \frac{x^5}{120} - \cdots, \qquad x \in \R.</mrow>
 </md>
 The series of <m>\arctan(x)</m> is
 <md xml:id="eq-skel-arctan-maclaurin" number="yes">
 \arctan(x) = x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7} + \cdots, \qquad |x| \le 1;
 </md>
-it comes from the geometric series <xref ref="eq-skel-series-geometric"/>,
-since <m>\frac{d}{dt}\arctan(t) = \frac{1}{1+t^2} = 1 - t^2 + t^4 - t^6 + \cdots</m>
-for <m>|t| \lt 1</m>, and integrating this from <m>0</m> to <m>x</m> term by
-term gives <xref ref="eq-skel-arctan-maclaurin"/>.
+it comes from the geometric series <xref ref="eq-skel-series-geometric"/>:
+since <m>\frac{d}{dt}\arctan(t) = \frac{1}{1+t^2}</m>, and
+<m>\frac{1}{1+t^2} = 1 - t^2 + t^4 - t^6 + \cdots</m> for <m>|t| \lt 1</m>,
+integrating this from <m>0</m> to <m>x</m> term by term gives
+<xref ref="eq-skel-arctan-maclaurin"/>.
 </p>
 
 <example xml:id="ex-skel-taylor-limit-arctan-sin">
@@ -729,9 +730,9 @@ applied again. Taylor's formula explains what is going on. Suppose
 <m>a</m>, their first <m>k-1</m> derivatives vanish at <m>a</m>, and
 <m>g^{(k)}(a) \neq 0</m>. Then Taylor's formula with <m>n = k</m> gives
 <md>
-\frac{f(x)}{g(x)}
-= \frac{\frac{f^{(k)}(a)}{k!}(x-a)^k + R_k(x)}{\frac{g^{(k)}(a)}{k!}(x-a)^k + \widetilde{R}_k(x)}
-\longrightarrow \frac{f^{(k)}(a)}{g^{(k)}(a)} \qquad \text{as } x \to a,
+<mrow>\frac{f(x)}{g(x)}
+\amp = \frac{\frac{f^{(k)}(a)}{k!}(x-a)^k + R_k(x)}{\frac{g^{(k)}(a)}{k!}(x-a)^k + \widetilde{R}_k(x)}</mrow>
+<mrow>\amp \longrightarrow \frac{f^{(k)}(a)}{g^{(k)}(a)} \qquad \text{as } x \to a,</mrow>
 </md>
 because each remainder is at most a constant times <m>|x-a|^{k+1}</m>.
 The limit is the ratio of the first nonzero Taylor coefficients, which is
@@ -810,8 +811,8 @@ II, proved by integration by parts<fn>Let
 <m>I_k = \int_0^{\infty} x^k e^{-x}\,dx</m>. Then
 <m>I_0 = \int_0^{\infty} e^{-x}\,dx = 1</m>. For <m>k \ge 1</m>,
 integration by parts with <m>u = x^k</m> and <m>dv = e^{-x}\,dx</m> gives
-<m>I_k = \Big[-x^k e^{-x}\Big]_0^{\infty} + k\int_0^{\infty} x^{k-1}e^{-x}\,dx
-= 0 + k\,I_{k-1}</m>, since <m>x^k e^{-x} \to 0</m> as <m>x \to \infty</m>.
+<m>I_k = \Big[-x^k e^{-x}\Big]_0^{\infty} + k\,I_{k-1} = k\,I_{k-1}</m>, since
+<m>x^k e^{-x} \to 0</m> as <m>x \to \infty</m>.
 By induction, <m>I_k = k(k-1)\cdots 1 \cdot I_0 = k!</m>.</fn>: for every
 integer <m>k \ge 0</m>,
 <md xml:id="eq-skel-int-xk-exp" number="yes">
@@ -838,10 +839,10 @@ the Remainder Estimation Theorem gives
 <m>x \gt 0</m>,
 <m>\left|\frac{\sin x}{x} - S_N(x)\right| \le \frac{x^{2N+2}}{(2N+3)!}</m>.
 Multiplying by <m>e^{-x}</m>, integrating, and using <m>I_k = k!</m> with
-<m>k = 2N+2</m>,
-<m>\left|\int_0^{\infty} e^{-x}\frac{\sin x}{x}\,dx - \sum_{n=0}^{N}\frac{(-1)^n}{2n+1}\right|
-\le \frac{(2N+2)!}{(2N+3)!} = \frac{1}{2N+3}</m>. The right-hand side
-tends to <m>0</m> as <m>N \to \infty</m>, so the partial sums of the
+<m>k = 2N+2</m>, the integral differs from the partial sum
+<m>\sum_{n=0}^{N}\frac{(-1)^n}{2n+1}</m> by at most
+<m>\frac{(2N+2)!}{(2N+3)!} = \frac{1}{2N+3}</m>. This bound tends to
+<m>0</m> as <m>N \to \infty</m>, so the partial sums of the
 Leibniz series converge to the integral. Since they also converge to
 <m>\pi/4</m>, the integral equals <m>\pi/4</m>. A numerical evaluation of
 the integral gives <m>0.785398\ldots</m>, which agrees with
