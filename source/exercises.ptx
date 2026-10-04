@@ -194,11 +194,11 @@ right or wrong, earns nothing.
 <xi:include href="assignment-2-series-taylor.ptx"/>
 
 <!-- ================= Assignment 3 ================= -->
-<!-- UNPOSTED <xi:include href="assignment-3-taylor-convergence-binomial.ptx"/> UNPOSTED -->
+<xi:include href="assignment-3-taylor-convergence-binomial.ptx"/>
 
 <!-- ================= Review Problems #1 ================= -->
 <!-- Everything from the four topics above that was not assigned. -->
-<!-- UNPOSTED <xi:include href="review-problems-1.ptx"/> UNPOSTED -->
+<xi:include href="review-problems-1.ptx"/>
 
 <!-- ================= Assignment 4 ================= -->
 <!-- UNPOSTED <xi:include href="assignment-4-space-vectors-dot-product.ptx"/> UNPOSTED -->
