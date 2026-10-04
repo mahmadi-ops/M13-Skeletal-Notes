@@ -2,11 +2,10 @@
 <!--
   Skeletal (fill-in) version of 2.3 Taylor Series and its convergence.
 
-  Covers 2.3.1-2.3.3 of the full lecture notes (Taylor.ptx).  The two
-  remaining subsections of the original section - the applications
-  (relativistic kinetic energy, the pendulum, approximating pi) and the
-  proof of the remainder theorem - are deliberately NOT reproduced here;
-  a pointer at the end of the section sends interested readers to the
+  Covers 2.3.1-2.3.5 of the full lecture notes (Taylor.ptx).  In 2.3.4
+  only the first part, Computing Limits and Integrals with Taylor Series,
+  is examinable; the three physics applications (relativistic kinetic
+  energy, the pendulum, approximating pi) are starred, exactly as in the
   full notes.
 
   Theorems, definitions, and problem statements are kept; derivations
@@ -591,7 +590,14 @@ The error of the degree <m>n</m> approximation to <m>\sin(x)</m> on
 
 <introduction>
 <p>
-Physicists often use Taylor series to approximate functions in order to
+We begin with two uses of Taylor series that belong to single-variable
+calculus: computing limits of the indeterminate form <m>\frac{0}{0}</m>,
+which along the way gives a proof of L'Hôpital's rule, and approximating
+definite integrals whose integrands have no elementary antiderivative.
+</p>
+<p>
+The remaining three parts of this subsection are starred. Physicists often
+use Taylor series to approximate functions in order to
 simplify calculations. The first example is the kinetic energy of an object
 in relativistic mechanics. The second example is the approximation
 of the period of a pendulum. We will discuss the error in using these
@@ -601,8 +607,196 @@ in the last example.
 </p>
 </introduction>
 
+<subsubsection xml:id="subsubsec-skel-taylor-limits-integrals">
+<title>Computing Limits and Integrals with Taylor Series</title>
+
+<p>
+Taylor's formula <xref ref="thm-skel-taylor-formula"/> replaces a function
+near a point by a polynomial plus a remainder whose size the Remainder
+Estimation Theorem controls. That is exactly what two problems from
+single-variable calculus call for: a limit of the indeterminate form
+<m>\frac{0}{0}</m>, where numerator and denominator both vanish and the
+question is <em>how fast</em>, and a definite integral whose integrand has
+no elementary antiderivative.
+</p>
+
+<p>
+We will use two Maclaurin series. The series of <m>\sin(x)</m> was found
+in <xref ref="example-skel-taylor-sin"/>:
+<md xml:id="eq-skel-sin-maclaurin" number="yes">
+\sin(x) = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \cdots
+= x - \frac{x^3}{6} + \frac{x^5}{120} - \cdots, \qquad x \in \R.
+</md>
+The series of <m>\arctan(x)</m> is
+<md xml:id="eq-skel-arctan-maclaurin" number="yes">
+\arctan(x) = x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7} + \cdots, \qquad |x| \le 1;
+</md>
+it comes from the geometric series <xref ref="eq-skel-series-geometric"/>,
+since <m>\frac{d}{dt}\arctan(t) = \frac{1}{1+t^2} = 1 - t^2 + t^4 - t^6 + \cdots</m>
+for <m>|t| \lt 1</m>, and integrating this from <m>0</m> to <m>x</m> term by
+term gives <xref ref="eq-skel-arctan-maclaurin"/>.
+</p>
+
+<example xml:id="ex-skel-taylor-limit-arctan-sin">
+<title>A <m>\frac{0}{0}</m> limit by Taylor series</title>
+<statement>
+<p>
+Compute
+<md>
+\lim_{x \to 0} \frac{\arctan(x) - x}{\sin(x) - x}.
+</md>
+</p>
+
+<p>
+<em>Solution.</em>
+(Subtract <m>x</m> from <xref ref="eq-skel-arctan-maclaurin"/> and from
+<xref ref="eq-skel-sin-maclaurin"/>, factor the lowest power of <m>x</m>
+out of each, cancel it, and let <m>x \to 0</m>. Then say why the
+remaining terms may be ignored: write each series as its Taylor polynomial
+plus the remainder <xref ref="eq-skel-taylor-remainder"/> and bound the
+remainder.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,13);
+\draw[gray!35] (0,9.5) -- (15,9.5);
+\draw[gray!35] (0,6) -- (15,6);
+\draw[gray!35] (0,3) -- (15,3);
+\node[anchor=north west, font=\small\itshape] at (0.35,12.7) {numerator and denominator as series:};
+\node[anchor=north west, font=\small\itshape] at (0.35,9.2) {factor and cancel:};
+\node[anchor=north west, font=\small\itshape] at (0.35,5.7) {limit:};
+\node[anchor=north west, font=\small\itshape] at (0.35,2.7) {why the remaining terms vanish:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in four rows: the numerator and denominator as series, the factoring and cancellation, the limit, and why the remaining terms vanish.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+</example>
+
+<example xml:id="ex-skel-taylor-lhopital">
+<title>Proving L'Hôpital's rule with Taylor's formula</title>
+<statement>
+<p>
+Let <m>f</m> and <m>g</m> have continuous second derivatives on an open
+interval containing <m>a</m>, with <m>f(a) = g(a) = 0</m> and
+<m>g'(a) \neq 0</m>. Use Taylor's formula to prove L'Hôpital's rule:
+<md xml:id="eq-skel-lhopital" number="yes">
+\lim_{x \to a} \frac{f(x)}{g(x)} = \frac{f'(a)}{g'(a)} = \lim_{x \to a} \frac{f'(x)}{g'(x)}.
+</md>
+</p>
+
+<p>
+<em>Solution.</em>
+(Write Taylor's formula <xref ref="eq-skel-taylor-formula-eq"/> with
+<m>n = 1</m> for <m>f</m> and for <m>g</m>, use <m>f(a) = g(a) = 0</m> to
+cancel a factor of <m>x - a</m>, and let <m>x \to a</m>. Explain, as in
+<xref ref="rmk-skel-error-upper-bound"/>, why the terms containing
+<m>c_1</m> and <m>c_2</m> drop out, then use the continuity of <m>f'</m>
+and <m>g'</m> for the second equality.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,13);
+\draw[gray!35] (0,9) -- (15,9);
+\draw[gray!35] (0,5.5) -- (15,5.5);
+\draw[gray!35] (0,2.5) -- (15,2.5);
+\node[anchor=north west, font=\small\itshape] at (0.35,12.7) {Taylor's formula for f and for g:};
+\node[anchor=north west, font=\small\itshape] at (0.35,8.7) {after cancelling the common factor:};
+\node[anchor=north west, font=\small\itshape] at (0.35,5.2) {the limit as x tends to a:};
+\node[anchor=north west, font=\small\itshape] at (0.35,2.2) {the second equality:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in four rows: Taylor's formula for f and for g, the quotient after cancelling the common factor, the limit as x tends to a, and the second equality.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+</example>
+
+<remark xml:id="rmk-skel-lhopital-higher-order">
+<title>Why the rule sometimes has to be applied several times</title>
+<p>
+If <m>f'(a) = g'(a) = 0</m> as well, the quotient <m>f'(x)/g'(x)</m> is
+again of the form <m>\frac{0}{0}</m> and L'Hôpital's rule has to be
+applied again. Taylor's formula explains what is going on. Suppose
+<m>f</m> and <m>g</m> have <m>k+1</m> continuous derivatives near
+<m>a</m>, their first <m>k-1</m> derivatives vanish at <m>a</m>, and
+<m>g^{(k)}(a) \neq 0</m>. Then Taylor's formula with <m>n = k</m> gives
+<md>
+\frac{f(x)}{g(x)}
+= \frac{\frac{f^{(k)}(a)}{k!}(x-a)^k + R_k(x)}{\frac{g^{(k)}(a)}{k!}(x-a)^k + \widetilde{R}_k(x)}
+\longrightarrow \frac{f^{(k)}(a)}{g^{(k)}(a)} \qquad \text{as } x \to a,
+</md>
+because each remainder is at most a constant times <m>|x-a|^{k+1}</m>.
+The limit is the ratio of the first nonzero Taylor coefficients, which is
+exactly what <m>k</m> applications of L'Hôpital's rule compute. In
+<xref ref="ex-skel-taylor-limit-arctan-sin"/> the first nonzero
+coefficients were those of <m>x^3</m>. Check that
+<m>f'''(0)/g'''(0)</m>, with <m>f(x) = \arctan(x) - x</m> and
+<m>g(x) = \sin(x) - x</m>, agrees with the limit you found.
+</p>
+</remark>
+
+<example xml:id="ex-skel-taylor-integral-exp">
+<title>A definite integral with no elementary antiderivative</title>
+<statement>
+<p>
+The function <m>e^{-x^2}</m> has no elementary antiderivative, so the
+integral
+<md>
+I = \int_0^1 e^{-x^2}\,dx
+</md>
+cannot be evaluated with the fundamental theorem of calculus. Use the
+Taylor polynomial of order <m>n</m> of <m>e^{u}</m> to approximate
+<m>I</m>, bound the error with the Remainder Estimation Theorem, and find
+a value of <m>n</m> that guarantees an error of at most <m>10^{-4}</m>.
+</p>
+
+<p>
+<em>Solution.</em>
+(Write Taylor's formula for <m>e^{u}</m> at <m>0</m> with its remainder
+<xref ref="eq-skel-exp-remainder"/>, substitute <m>u = -x^2</m>, and bound
+<m>e^{c}</m> as in <xref ref="rmk-skel-error-upper-bound"/>; note the sign
+of <m>u</m>. Integrate the polynomial and the remainder bound from
+<m>0</m> to <m>1</m> separately. State the error bound in terms of
+<m>n</m>, then find the smallest <m>n</m> that makes it at most
+<m>10^{-4}</m>.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,14);
+\draw[gray!35] (0,10) -- (15,10);
+\draw[gray!35] (0,6) -- (15,6);
+\draw[gray!35] (0,3) -- (15,3);
+\node[anchor=north west, font=\small\itshape] at (0.35,13.7) {series with remainder, and the bound on the remainder:};
+\node[anchor=north west, font=\small\itshape] at (0.35,9.7) {integrate from 0 to 1:};
+\node[anchor=north west, font=\small\itshape] at (0.35,5.7) {error bound:};
+\node[anchor=north west, font=\small\itshape] at (0.35,2.7) {choice of n:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in four rows: the series with its remainder and the bound on the remainder, the integration from 0 to 1, the error bound, and the choice of n.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+</example>
+
+</subsubsection>
+
 <subsubsection xml:id="subsubsec-skel-relativistic-ke">
-<title>Approximating Relativistic Kinetic Energy</title>
+<title>*Approximating Relativistic Kinetic Energy</title>
+<p>
+<em>Starred section.</em> This one is for the interested reader. It will not
+be examined.
+</p>
 
 <p>
 In relativistic mechanics, the mass of an object moving with velocity
@@ -758,7 +952,11 @@ the relativistic kinetic energy of the car. The speed of light is
 </subsubsection>
 
 <subsubsection xml:id="subsubsec-skel-pendulum-small-angle">
-<title>Small-Angle Approximation for a Pendulum</title>
+<title>*Small-Angle Approximation for a Pendulum</title>
+<p>
+<em>Starred section.</em> This one is for the interested reader. It will not
+be examined.
+</p>
 
 <p>
 We begin this section by briefly reviewing the forces acting on a simple
@@ -955,7 +1153,11 @@ Here is the exact quote from Giancoli's textbook:
 </subsubsection>
 
 <subsubsection xml:id="subsubsec-skel-approximating-pi">
-<title>Approximating the value of <m>\pi</m> using Taylor series</title>
+<title>*Approximating the value of <m>\pi</m> using Taylor series</title>
+<p>
+<em>Starred section.</em> This one is for the interested reader. It will not
+be examined.
+</p>
 
 <p>
 In this subsection, we will discuss how to approximate the value of
