@@ -504,6 +504,7 @@ So the integrand is bounded and the integral exists. Its antiderivative is
 not elementary.)
 </p>
 </statement>
+<!-- SOLUTION-LOCKED assignment="3" due="2026-10-07"
 <hint>
 <p>
 Two facts from Calculus II, both proved by integration by parts<fn>For
@@ -530,6 +531,7 @@ expand <m>\dfrac{\sin(\ln t)}{\ln t}</m> as a series in <m>\ln t</m> and
 integrate term by term with <m>J_k</m>.
 </p>
 </hint>
+END SOLUTION-LOCKED -->
 <!-- SOLUTION-LOCKED assignment="3" due="2026-10-07"
 <solution>
 <p>
