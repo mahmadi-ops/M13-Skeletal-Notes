@@ -553,15 +553,6 @@ is true.
 </image>
 </sidebyside>
 </statement>
-<hint>
-<p>
-For the perpendicular half, write
-<m>\text{proj}_{\mathbf v}\mathbf u = c\,\mathbf v</m> where
-<m>c = \dfrac{\mathbf u\cdot\mathbf v}{\|\mathbf v\|^2}</m> is a scalar. In that
-form properties 2 and 3 of <xref ref="fact-skel-properties"/> apply directly,
-and property 4 will simplify <m>\mathbf v\cdot\mathbf v</m>.
-</p>
-</hint>
 </exercise>
 
 </paragraphs>
