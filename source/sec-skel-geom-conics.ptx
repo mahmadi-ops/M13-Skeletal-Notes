@@ -232,11 +232,6 @@
 
         <p>
           <em>Solution.</em>
-          (Complete the square in <m>x</m> and rearrange until the equation looks like
-          <xref ref="eq-skel-parabola-standard"/> with <m>x</m> replaced by a shifted
-          variable; that shift locates the vertex. Comparing coefficients then gives
-          <m>p</m>, whose sign tells you which way the curve opens. Sketch the result on
-          the grid, marking the vertex, the focus, and the directrix.)
         </p>
 
         <sidebyside widths="52% 44%">
