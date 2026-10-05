@@ -379,9 +379,10 @@ denoted <m>\text{proj}_{\mathbf v}\mathbf u</m>, and is shown in
 
 <figure xml:id="fig-skel-projection">
 <caption>
-The projection <m>\text{proj}_{\mathbf v}\mathbf u</m> of <m>\mathbf u</m>
-in the direction of <m>\mathbf v</m>, together with the perpendicular
-component <m>\mathbf u - \text{proj}_{\mathbf v}\mathbf u</m>.
+The vectors <m>\mathbf u</m> and <m>\mathbf v</m>, for the projection
+<m>\text{proj}_{\mathbf v}\mathbf u</m> of <m>\mathbf u</m> in the direction
+of <m>\mathbf v</m> and the perpendicular component
+<m>\mathbf u - \text{proj}_{\mathbf v}\mathbf u</m>.
 </caption>
 <image width="55%">
 <prefigure xmlns="https://prefigure.org" label="prefigure-skel-projection">
@@ -389,34 +390,18 @@ component <m>\mathbf u - \text{proj}_{\mathbf v}\mathbf u</m>.
 <coordinates bbox="(-0.5,-1,7,6)">
 <vector at="vec-v" v="(6,0)" tail="(0,0)" stroke="blue"/>
 <vector at="vec-u" v="(4,5)" tail="(0,0)" stroke="blue"/>
-<vector at="vec-proj" v="(4,0)" tail="(0,0)" stroke="maroon" thickness="5"/>
-<vector at="vec-perp" v="(0,5)" tail="(4,0)" stroke="maroon" thickness="5"/>
 <label at="v-label" anchor="(6,-0.3)" alignment="s" color="blue">
 <m>\mathbf v</m>
 </label>
 <label at="u-label" anchor="(2,2.5)" alignment="nw" color="blue">
 <m>\mathbf u</m>
 </label>
-<label at="proj-label" anchor="(2,-0.3)" alignment="s" color="maroon">
-<m>\mathbf u_{\parallel} = \text{proj}_{\mathbf v}\mathbf u</m>
-</label>
-<label at="perp-label" anchor="(4,2.5)" alignment="e" color="maroon">
-<m>\mathbf u_{\perp} = \mathbf u - \mathbf u_{\parallel}</m>
-</label>
-<angle-marker at="angle-theta" points="((6,0),(0,0),(4,5))" radius="23" clear-background="no">
-<m>\theta</m>
-</angle-marker>
-<angle-marker at="right-angle" points="((4,5),(4,0),(0,0))" clear-background="yes"/>
 </coordinates>
 
 <annotations>
-<annotation ref="figure" text="A right triangle showing vector u as the hypotenuse, its projection onto v along the horizontal base, and the perpendicular segment u minus the projection of u onto v.">
+<annotation ref="figure" text="Two vectors drawn from a common point: v along the horizontal direction and u pointing up and to the right, with nothing else drawn.">
   <annotation ref="vec-v" text="Vector v, along the horizontal direction."/>
-  <annotation ref="vec-u" text="Vector u, drawn from the origin at angle theta above v."/>
-  <annotation ref="vec-proj" text="The projection of u in the direction of v, lying along v."/>
-  <annotation ref="vec-perp" text="The component of u perpendicular to v, equal to u minus the projection of u onto v."/>
-  <annotation ref="angle-theta" text="The angle theta between u and v."/>
-  <annotation ref="right-angle" text="A right angle where the perpendicular component meets v."/>
+  <annotation ref="vec-u" text="Vector u, drawn from the same point, above v."/>
 </annotation>
 </annotations>
 </diagram>
