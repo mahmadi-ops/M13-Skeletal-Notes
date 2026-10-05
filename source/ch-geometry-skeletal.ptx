@@ -8,9 +8,9 @@
 <chapter xml:id="skel-chapter-geometry" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>3D Space and Vector Algebra</title>
 
-<!-- UNPOSTED <xi:include href="sec-skel-geom-3d-coordinates.ptx" /> UNPOSTED -->
-<!-- UNPOSTED <xi:include href="sec-skel-geom-vectors.ptx" /> UNPOSTED -->
-<!-- UNPOSTED <xi:include href="sec-skel-geom-dot-product.ptx" /> UNPOSTED -->
+<xi:include href="sec-skel-geom-3d-coordinates.ptx" />
+<xi:include href="sec-skel-geom-vectors.ptx" />
+<xi:include href="sec-skel-geom-dot-product.ptx" />
 <!-- UNPOSTED <xi:include href="sec-skel-geom-cross-product.ptx" /> UNPOSTED -->
 <!-- UNPOSTED <xi:include href="sec-skel-geom-parametrization.ptx" /> UNPOSTED -->
 <!-- UNPOSTED <xi:include href="sec-skel-geom-lines-planes.ptx" /> UNPOSTED -->
