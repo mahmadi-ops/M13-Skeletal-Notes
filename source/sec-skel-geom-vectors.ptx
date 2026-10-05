@@ -628,19 +628,16 @@ in <xref ref="fig-skel-vec-ijk"/>.
 
 <figure xml:id="fig-skel-vec-ijk">
 <caption>
-The standard unit vectors <m>\hat{\imath}</m>, <m>\hat{\jmath}</m>, and
-<m>\hat{k}</m>, and the decomposition
+Empty axes for the standard unit vectors <m>\hat{\imath}</m>,
+<m>\hat{\jmath}</m>, and <m>\hat{k}</m>, and for the decomposition
 <m>\mathbf a = a_1\hat{\imath} + a_2\hat{\jmath} + a_3\hat{k}</m> of a vector
 into components along the axes.
 </caption>
 <image width="72%">
 <description>
 <p>
-A three dimensional coordinate system showing three short magenta arrows
-of length one along the positive x, y and z axes, labelled i, j and k. A
-longer magenta arrow a runs from the origin to the point with coordinates
-a one, a two, a three, and blue arrows along the axes show its three
-components a one i, a two j and a three k.
+A three dimensional coordinate system with x, y and z axes and nothing
+drawn on it.
 </p>
 </description>
 <latex-image><![CDATA[
@@ -649,25 +646,6 @@ components a one i, a two j and a three k.
 \draw[->, thick] (0,0,0) -- (4.2,0,0) node[below left] {$x$};
 \draw[->, thick] (0,0,0) -- (0,4.6,0) node[right] {$y$};
 \draw[->, thick] (0,0,0) -- (0,0,3.6) node[above] {$z$};
-% standard unit vectors, drawn thicker than the other vectors
-\draw[->, magenta, line width=1.8pt] (0,0,0) -- (1,0,0);
-\node[magenta, above] at (0.5,0,0) {$\hat{\imath}$};
-\draw[->, magenta, line width=1.8pt] (0,0,0) -- (0,1,0) node[right] {$\hat{\jmath}$};
-\draw[->, magenta, line width=1.8pt] (0,0,0) -- (0,0,1) node[left] {$\hat{k}$};
-% a general vector a = (2.4, 3.2, 2.2)
-\coordinate (A) at (2.4,3.2,2.2);
-\draw[->, magenta, very thick] (0,0,0) -- (A);
-\fill[magenta] (A) circle (1.6pt);
-\node[magenta, above right=1pt] at (A) {$\langle a_1,a_2,a_3\rangle$};
-\node[magenta] at (1.1,1.5,1.35) {$\mathbf a$};
-% components
-\draw[->, cyan!60!black, very thick] (0,0,0) -- (2.4,0,0)
-      node[pos=0.35, below] {$a_1\hat{\imath}$};
-\draw[->, cyan!60!black, very thick] (2.4,0,0) -- (2.4,3.2,0)
-      node[midway, below] {$a_2\hat{\jmath}$};
-\draw[->, cyan!60!black, very thick] (2.4,3.2,0) -- (A)
-      node[midway, right] {$a_3\hat{k}$};
-\draw[gray, dashed] (0,0,0) -- (2.4,3.2,0);
 \end{tikzpicture}
 ]]></latex-image>
 </image>
