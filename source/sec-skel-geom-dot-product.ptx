@@ -538,27 +538,6 @@ that <m>\mathbf u - \text{proj}_{\mathbf v}\mathbf u</m> is perpendicular to
 <m>\mathbf v</m>. A picture is not a proof. Explain why each half of the claim
 is true.
 </p>
-<p>
-<ol marker="(a)">
-<li>
-<p>
-For the parallel half, look at the formula for
-<m>\text{proj}_{\mathbf v}\mathbf u</m> in
-<xref ref="fact-skel-projection-formula"/> and say what kind of expression it
-is. Why does that observation alone settle the question?
-</p>
-</li>
-<li>
-<p>
-For the perpendicular half, compute
-<m>\left(\mathbf u - \text{proj}_{\mathbf v}\mathbf u\right)\cdot\mathbf v</m>.
-Justify each step by naming the property of the dot product from
-<xref ref="fact-skel-properties"/> that you used, and then say what the value
-you obtain tells you about the two vectors.
-</p>
-</li>
-</ol>
-</p>
 
 <sidebyside width="97%">
 <image>
@@ -566,17 +545,18 @@ you obtain tells you about the two vectors.
 \begin{tikzpicture}
 \draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,15);
 \draw[gray!35] (0,10.5) -- (15,10.5);
-\node[anchor=north west, font=\small\itshape] at (0.35,14.7) {(a)};
-\node[anchor=north west, font=\small\itshape] at (0.35,10.2) {(b)};
+\node[anchor=north west, font=\small\itshape] at (0.35,14.7) {parallel half:};
+\node[anchor=north west, font=\small\itshape] at (0.35,10.2) {perpendicular half:};
 \end{tikzpicture}
 </latex-image>
-<shortdescription>Blank box in two labelled rows, one for part a and a taller one for the computation in part b.</shortdescription>
+<shortdescription>Blank box in two labelled rows, one for the parallel half of the claim and a taller one for the perpendicular half.</shortdescription>
 </image>
 </sidebyside>
 </statement>
 <hint>
 <p>
-In (b), write <m>\text{proj}_{\mathbf v}\mathbf u = c\,\mathbf v</m> where
+For the perpendicular half, write
+<m>\text{proj}_{\mathbf v}\mathbf u = c\,\mathbf v</m> where
 <m>c = \dfrac{\mathbf u\cdot\mathbf v}{\|\mathbf v\|^2}</m> is a scalar. In that
 form properties 2 and 3 of <xref ref="fact-skel-properties"/> apply directly,
 and property 4 will simplify <m>\mathbf v\cdot\mathbf v</m>.
