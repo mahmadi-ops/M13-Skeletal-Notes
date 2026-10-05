@@ -255,12 +255,7 @@ three components along the axes.
 
 <p>
 Read the components of <m>\mathbf v = \overrightarrow{PQ}</m> off
-<xref ref="fig-skel-vec-components"/>. (Compare the coordinates of
-<m>P</m> and <m>Q</m> one axis at a time: moving from <m>P</m> to
-<m>Q</m> changes <m>x_1</m> into <m>x_2</m>, so <m>x_1 + v_1 = x_2</m>.
-Do the same for <m>y</m> and <m>z</m>, then solve for the components.
-The magnitude of <m>\mathbf v</m> is just the distance from <m>P</m> to
-<m>Q</m>, so <xref ref="eq-skel-3d-distance"/> gives it at once.)
+<xref ref="fig-skel-vec-components"/>.
 </p>
 
 <sidebyside width="97%">
@@ -315,13 +310,7 @@ Find the standard position vector corresponding to this vector.
 
 <p>
 <em>Solution.</em>
-(Part <alert>A</alert> is <xref ref="eq-skel-vec-length"/> and part
-<alert>B</alert> is <xref ref="eq-skel-vec-components"/>; both answers
-come out whole. Finish by computing the length of the vector you found in
-part <alert>B</alert> and checking it against part <alert>A</alert> <mdash/>
-they must agree, since the two vectors are the same vector.)
 </p>
-
 <sidebyside width="97%">
 <image>
 <latex-image>
@@ -463,11 +452,7 @@ Add the following two vectors geometrically and algebraically.
 
 <p>
 <em>Solution.</em>
-(Algebraically, use <xref ref="eq-skel-vec-addition"/>. Geometrically,
-draw both vectors from the origin on the grid below and complete the
-parallelogram; the sum is its diagonal. The two answers must match.)
 </p>
-
 <sidebyside widths="46% 46%">
 <image>
 <latex-image>
@@ -515,9 +500,6 @@ removing the last components of the vectors.
 
 <p>
 Scaling a vector by <m>k</m> scales its length by <m>|k|</m>. Show this.
-(Write out <m>\|k\mathbf u\|</m> from
-<xref ref="eq-skel-vec-scalar"/> and pull the common factor <m>k^2</m>
-out of the square root. Say why the absolute value is needed.)
 </p>
 
 <sidebyside width="97%">
@@ -620,13 +602,7 @@ geometrically.
 
 <p>
 <em>Solution.</em>
-(Two parallelograms on the same grid: one spanned by <m>\mathbf u</m> and
-<m>\mathbf v</m>, one spanned by <m>\mathbf u</m> and <m>-\mathbf v</m>,
-by <xref ref="eq-skel-vec-subtraction"/>. Draw <m>-\mathbf v</m> first.
-Then check that your <m>\mathbf u - \mathbf v</m> also runs from the head
-of <m>\mathbf v</m> to the head of <m>\mathbf u</m>.)
 </p>
-
 <sidebyside widths="46% 46%">
 <image>
 <latex-image><![CDATA[
@@ -770,8 +746,7 @@ standard unit vectors <m>\hat{\imath}</m>, <m>\hat{\jmath}</m>, and
 
 <p>
 Check that <xref ref="eq-skel-vec-unit"/> really does produce a unit
-vector. (It is one line: apply <xref ref="eq-skel-vec-scalar-length"/>
-with <m>k = 1/\|\mathbf a\|</m>.)
+vector.
 </p>
 
 <sidebyside width="97%">
@@ -810,14 +785,7 @@ Find the unit vector in the direction of <m>\mathbf u + \mathbf v</m>.
 
 <p>
 <em>Solution.</em>
-(For part <alert>A</alert>, add componentwise with
-<xref ref="eq-skel-vec-addition"/> and then rewrite with
-<xref ref="eq-skel-vec-ijk"/> <mdash/> one of the three standard unit
-vectors drops out. For part <alert>B</alert>, compute the length of your
-answer and apply <xref ref="eq-skel-vec-unit"/>; give the result both in
-<m>\hat{\imath},\hat{\jmath},\hat{k}</m> form and in component form.)
 </p>
-
 <sidebyside width="97%">
 <image>
 <latex-image>

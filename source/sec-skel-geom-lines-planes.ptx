@@ -60,11 +60,7 @@ the normal vector.
 Consider a line that passes through the point <m>P_0(x_0,y_0,z_0)</m>
 and is parallel to the vector <m>\mathbf v</m>, as in
 <xref ref="fig-skel-lines-vector-eq"/>. Write down the vector equation of
-that line. (Every point <m>P</m> on the line is reached from <m>P_0</m> by
-travelling some multiple of <m>\mathbf v</m>; the boxed remark in the figure
-says which multiples are allowed. Add that displacement to the position
-vector <m>\mathbf r_0</m> of <m>P_0</m>, and say what the parameter <m>t</m>
-ranges over.)
+that line.
 </p>
 
 <sidebyside width="97%">
@@ -161,15 +157,7 @@ passes through the points <m>P_0(2,0,0)</m> and <m>P(1,-1,1)</m>.
 
 <p>
 <em>Solution.</em>
-(Neither point is a direction, so first build a vector parallel to the line
-out of the two of them with <xref ref="eq-skel-vec-components"/>. Then take
-<m>\mathbf r_0</m> to be the position vector of either point and apply
-<xref ref="eq-skel-lines-vector"/>, followed by
-<xref ref="eq-skel-lines-parametric"/>. Give the vector equation in both
-component and <m>\hat\imath,\hat\jmath,\hat k</m> form, and sketch the line on
-the axes below.)
 </p>
-
 <sidebyside widths="52% 40%">
 <image>
 <latex-image>
@@ -209,12 +197,7 @@ the axes below.)
 <p>
 Our goal is to find the distance <m>d</m> of the point <m>S</m> from
 the line <m>L</m>, as shown in <xref ref="fig-skel-lines-dist-line"/>.
-Derive a formula for it. (Read <m>d</m> off the right triangle in the figure
-in terms of <m>\|\overrightarrow{PS}\|</m> and the angle <m>\theta</m>, where
-<m>P</m> is any point on the line. That expression is nearly
-<xref ref="eq-skel-cross-geometric"/> already; supply the missing factor of
-<m>\|\mathbf v\|</m> by multiplying and dividing by it. Note that the answer
-cannot depend on which point <m>P</m> you picked.)
+Derive a formula for it.
 </p>
 
 <sidebyside width="97%">
@@ -306,14 +289,7 @@ with the vector equation
 
 <p>
 <em>Solution.</em>
-(This is the line of <xref ref="ex-skel-lines-two-points"/>. Read
-<m>\mathbf v</m> straight off the vector equation, and get a point <m>P</m> on
-the line by choosing any convenient value of <m>t</m>. Then build
-<m>\overrightarrow{PS}</m> and apply
-<xref ref="eq-skel-lines-distance"/>; the two square roots simplify against
-each other.)
 </p>
-
 <sidebyside width="97%">
 <image>
 <latex-image>
@@ -388,11 +364,7 @@ marker at P zero shows that the two vectors are perpendicular.
 
 <p>
 Turn <xref ref="eq-skel-planes-normal"/> into an equation in <m>x</m>,
-<m>y</m>, and <m>z</m>. (Put <m>P_0(x_0,y_0,z_0)</m>, <m>P(x,y,z)</m> and
-<m>\overrightarrow{n} = \langle A,B,C\rangle</m>, write out
-<m>\overrightarrow{P_0P}</m>, and expand the dot product with
-<xref ref="eq-skel-dot"/>. Then collect the constants on the right to reach
-the standard form, and say what the constant <m>D</m> equals.)
+<m>y</m>, and <m>z</m>.
 </p>
 
 <sidebyside width="97%">
@@ -437,12 +409,7 @@ intercepts and sketch the plane.
 
 <p>
 <em>Solution.</em>
-(Substitute into <xref ref="eq-skel-planes-point-normal"/> and simplify to the
-standard form; watch the sign of <m>z_0</m>. To find an intercept, set the
-other two variables to zero. Sketch only the part of the plane in the first
-octant, which is the triangle joining the three intercepts.)
 </p>
-
 <sidebyside widths="52% 40%">
 <image>
 <latex-image>
@@ -488,13 +455,7 @@ normal vectors are enough to produce one.
 </p>
 
 <p>
-Explain why, and write down <m>\mathbf v</m>. (The line <m>L</m> lies in the
-first plane, so <xref ref="eq-skel-planes-normal"/> says something about
-<m>\overrightarrow n_1</m> and <m>\mathbf v</m>; the same argument applies to
-the second plane. A vector orthogonal to two given vectors is what
-<xref ref="def-skel-cross-product"/> produces. Say what has to be true of the
-two planes for this vector to be nonzero, and why any nonzero multiple of it
-would do just as well.)
+Explain why, and write down <m>\mathbf v</m>.
 </p>
 
 <sidebyside width="97%">
@@ -599,14 +560,7 @@ planes <m>3x - 6y - 2z = 15</m> and <m>2x + y - 2z = 5</m>.
 
 <p>
 <em>Solution.</em>
-(Read the two normal vectors off the standard forms and apply
-<xref ref="eq-skel-planes-intersection-dir"/> for the direction. For a point,
-you are free to fix one coordinate: set <m>z = 0</m> and solve the resulting
-pair of equations in <m>x</m> and <m>y</m>. Then assemble the answer with
-<xref ref="eq-skel-lines-parametric"/>, and check it by substituting your
-point back into both plane equations.)
 </p>
-
 <sidebyside width="97%">
 <image>
 <latex-image>
@@ -638,12 +592,7 @@ point back into both plane equations.)
 Our goal here is to find the distance <m>d</m> of the point <m>S</m>
 from a plane, given a point <m>P</m> on the plane and the normal vector
 <m>\overrightarrow{n}</m>, as shown in
-<xref ref="fig-skel-planes-distance"/>. Derive a formula for it. (The
-segment from <m>S</m> to the plane is perpendicular to the plane, so it is
-parallel to <m>\overrightarrow n</m>; that makes <m>d</m> the length of the
-projection of <m>\overrightarrow{PS}</m> onto <m>\overrightarrow n</m>. Take the
-length of <xref ref="eq-skel-proj"/> and simplify, remembering that the
-scalar out front may be negative.)
+<xref ref="fig-skel-planes-distance"/>. Derive a formula for it.
 </p>
 
 <sidebyside width="97%">
@@ -725,13 +674,7 @@ equation <m>5x + y + z = -1</m>.
 
 <p>
 <em>Solution.</em>
-(The normal vector can be read straight off the equation, since it is already
-in the standard form <xref ref="eq-skel-planes-standard"/>. For the point
-<m>P</m>, set two of the coordinates to zero and solve for the third. Then
-apply <xref ref="eq-skel-planes-distance"/>; the answer is not a whole
-number.)
 </p>
-
 <sidebyside width="97%">
 <image>
 <latex-image>

@@ -256,11 +256,7 @@ are mutually perpendicular.
 </figure>
 
 <p>
-Now plot the point <m>(-4,3,-5)</m> on the axes below. (Watch the two
-negative signs: decide before you draw which side of the origin each leg
-goes, and which side of the <m>xy</m>-plane the point ends up on. Drawing
-the dashed box whose corners are the origin and the point makes the three
-coordinates easy to read back off.)
+Now plot the point <m>(-4,3,-5)</m> on the axes below.
 </p>
 
 <sidebyside width="60%">
@@ -341,10 +337,7 @@ coordinate planes create eight <term>octants</term>. The
 
 <p>
 From <xref ref="fig-skel-3d-coordinate-planes"/>, record the sign pattern
-of the octant a point lies in. (Fill in the first octant from the
-definition just given, then give the signs of the octant that lies
-directly below it, and say how many of the eight octants have at least
-one negative coordinate.)
+of the octant a point lies in.
 </p>
 
 <sidebyside width="97%">
@@ -484,14 +477,7 @@ corner.
 </figure>
 
 <p>
-Derive the distance formula from that box. (First mark the two helper
-corners on <xref ref="fig-skel-3d-distance"/>: the corner
-<m>A(x_2,y_1,z_1)</m>, reached from <m>P_1</m> along the box's base, and
-<m>B(x_2,y_2,z_1)</m>, reached from <m>A</m> across it. Label the three
-edge lengths, then apply the Pythagorean theorem twice: once in the base
-triangle <m>P_1AB</m>, whose right angle is at <m>A</m>, and once in the
-vertical triangle <m>P_1BP_2</m>, whose right angle is at <m>B</m>.
-Substitute the first result into the second.)
+Derive the distance formula from that box.
 </p>
 
 <sidebyside width="97%">
@@ -599,9 +585,7 @@ point of the sphere is the same distance a from the center.
 </figure>
 
 <p>
-Turn that description into an equation. (Write the condition
-<q>the distance from <m>P</m> to <m>P_0</m> is <m>a</m></q> using
-<xref ref="eq-skel-3d-distance"/>, then square both sides.)
+Turn that description into an equation.
 </p>
 
 <sidebyside width="97%">
@@ -714,9 +698,7 @@ inequalities.
 
 <p>
 Now sketch parts <alert>A</alert>, <alert>B</alert>, <alert>D</alert>,
-and <alert>E</alert> on the four sets of axes below. (Shade a region
-rather than outlining it when the answer is solid, and use a dashed
-outline for a boundary surface that the region does not include.)
+and <alert>E</alert> on the four sets of axes below.
 </p>
 
 <sidebyside widths="24% 24% 24% 24%">
@@ -777,9 +759,7 @@ outline for a boundary surface that the region does not include.)
 <p>
 Parts <alert>F</alert> and <alert>G</alert> are both built from the
 cylinder of part <alert>E</alert>. Sketch them on the axes below, and say
-in one line what changed. (In one part the free variable is restricted to
-an interval; in the other it is pinned to a single value. Only one of the
-two answers is a curve.)
+in one line what changed.
 </p>
 
 <sidebyside widths="46% 46%">

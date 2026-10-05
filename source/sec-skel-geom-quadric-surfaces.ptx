@@ -109,11 +109,7 @@ starting, write down what you expect a trace to be, and why.
 
   <p>
     Find its traces in the planes <m>x = 2</m>, <m>y = -3</m>, and <m>z = 1</m>.
-    (Substitute the given value into the equation and simplify; each trace is a
-    conic section in the two remaining variables. Identify each one by type, then
-    sketch it on the matching grid below. Two of the three are the same type
-    <mdash/> which two, and why?)
-  </p>
+</p>
 
  <sidebyside width="97%">
  <image>
@@ -232,10 +228,7 @@ starting, write down what you expect a trace to be, and why.
   <p>
     Take the same three planes <m>x = 2</m>, <m>y = -3</m>, and <m>z = 1</m> as in
     <xref ref="subsec-skel-elliptical-paraboloid"/>, and find the traces.
-    (The work is identical; only one sign has changed. Watch what that sign does
-    to the horizontal trace in particular, and to the direction in which each
-    parabola opens.)
-  </p>
+</p>
 
  <sidebyside width="97%">
  <image>
@@ -355,11 +348,8 @@ starting, write down what you expect a trace to be, and why.
 
   <p>
     Find the traces in the three coordinate planes <m>x = 0</m>, <m>y = 0</m>, and
-    <m>z = 0</m>. (Setting a variable to zero simply deletes its term. All three
-    traces turn out to be the same type of conic; say why that had to happen, given
-    the signs. What would change if the right-hand side were <m>0</m> instead of
-    <m>1</m>?)
-  </p>
+    <m>z = 0</m>.
+</p>
 
  <sidebyside width="97%">
  <image>
@@ -476,13 +466,7 @@ starting, write down what you expect a trace to be, and why.
 
   <p>
     Find the traces in the planes <m>x = 2</m>, <m>y = -3</m>, and <m>z = 1</m>.
-    (Note first what has changed from
-    <xref ref="subsec-skel-elliptical-paraboloid"/>: <m>z</m> now has the same
-    degree as <m>x</m> and <m>y</m>, so the vertical traces are no longer
-    parabolas. Work out what they are instead. Then say what the trace in the
-    plane <m>z = 0</m> is, and what the planes <m>x = 0</m> and <m>y = 0</m>
-    give <mdash/> those two are the degenerate cases worth knowing.)
-  </p>
+</p>
 
  <sidebyside width="97%">
  <image>
@@ -625,13 +609,6 @@ from a hyperboloid of two sheets.
         Identify each trace as an ellipse, parabola, or hyperbola.
       </p>
 
-      <p>
-        (Move the <m>z</m>-term to the right-hand side before deciding what the
-        horizontal trace is; the question is whether that right-hand side can ever
-        fail to be positive. The smallest of the horizontal traces has a name
-        <mdash/> give it.)
-      </p>
-
     <sidebyside width="97%">
     <image>
     <latex-image>
@@ -737,13 +714,6 @@ from a hyperboloid of two sheets.
         Repeat the analysis for the surface <m>\frac{z^2}{16} - \frac{x^2}{4} - \frac{y^2}{9} = 1</m>.
         For which values of <m>c</m> does the plane <m>z = c</m> intersect the
         surface this time?  What happens for <m>c</m> between those values?
-      </p>
-
-      <p>
-        (Rearrange as before. Now the sign of the right-hand side really does
-        change with <m>c</m>, so split into cases: negative, zero, and positive.
-        Say what the trace is in each case <mdash/> one of the three answers is
-        not a curve at all.)
       </p>
 
     <sidebyside width="97%">
@@ -852,12 +822,6 @@ from a hyperboloid of two sheets.
         surface is called a hyperboloid of <em>one sheet</em> and the second a
         hyperboloid of <em>two sheets</em>.  Can you predict the number of sheets
         directly from the signs in the equation?
-      </p>
-
-      <p>
-        (For the rule, write each equation with <m>1</m> on the right-hand side
-        and count something. Then say which axis is the axis of each hyperboloid,
-        and how the equation tells you.)
       </p>
 
     <sidebyside width="97%">

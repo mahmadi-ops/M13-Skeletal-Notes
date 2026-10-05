@@ -150,10 +150,7 @@ The parallelogram built on the vectors <m>\mathbf u</m> and
 
 <p>
 Read the area of that parallelogram off the figure, and compare it with
-<xref ref="eq-skel-cross-geometric"/>. (Use base times height, with the base
-<m>\|\mathbf v\|</m> and the height marked in the picture. Say why an absolute
-value is needed on <m>\sin\theta</m> even though
-<xref ref="def-skel-cross-product"/> does not carry one.)
+<xref ref="eq-skel-cross-geometric"/>.
 </p>
 
 <sidebyside width="97%">
@@ -238,11 +235,7 @@ of two parallel vectors is zero.
 </fact>
 
 <p>
-Say why <xref ref="eq-skel-parallel-vectors"/> follows, in one line. (Which
-factor of <xref ref="eq-skel-cross-geometric"/> vanishes, and for which values
-of <m>\theta</m>? Remember that parallel covers both the same and the opposite
-direction, and note that this is the cross product's counterpart of
-<xref ref="eq-skel-orthogonal"/>.)
+Say why <xref ref="eq-skel-parallel-vectors"/> follows, in one line.
 </p>
 
 <sidebyside width="97%">
@@ -280,10 +273,6 @@ vectors and <m>r</m>, <m>s</m> are scalars, then
 
 <p>
 Property 4 is the one that has no analogue for the dot product, so prove it.
-(Do not use the geometric definition; use the component formula
-<xref ref="eq-skel-cross-components"/> from the next subsection, and compare
-the first components of the two sides. Then state, in words, what property 4
-says about the order of the two factors.)
 </p>
 
 <sidebyside width="97%">
@@ -309,12 +298,7 @@ Show that
 
 <p>
 <em>Solution.</em>
-(Expand with the two distributive properties of
-<xref ref="thm-skel-cross-properties"/>, which gives four terms. Two of them
-vanish by <xref ref="fact-skel-parallel-vectors"/>, and the other two combine
-by property 4 <mdash/> mind the double negative.)
 </p>
-
 <sidebyside width="97%">
 <image>
 <latex-image>
@@ -353,14 +337,7 @@ measured counterclockwise.
 
 <p>
 <em>Solution.</em>
-(In both parts the two vectors lie in the <m>xy</m>-plane, so <m>\hat n</m> can
-only be <m>\hat k</m> or <m>-\hat k</m>; the right-hand rule of
-<xref ref="fig-skel-right-hand-rule-illustration"/> decides which. Take the
-lengths and the angle from the statement, and check that part 1 agrees with
-property 4 of <xref ref="thm-skel-cross-properties"/>. Finish by checking the
-magnitude in part 2 against <xref ref="eq-skel-parallelogram-area"/>.)
 </p>
-
 <sidebyside width="97%">
 <image>
 <latex-image>
@@ -442,14 +419,7 @@ Calculate the cross product <m>\mathbf u \times \mathbf v</m> if
 
 <p>
 <em>Solution.</em>
-(Set up the determinant of <xref ref="eq-skel-cross-determinant"/> with
-<m>\mathbf u</m> in the middle row, expand it with
-<xref ref="eq-skel-two-by-two-determinant"/>, and mind the minus sign on the
-<m>\hat\jmath</m> term. Then check your answer by dotting it with both
-<m>\mathbf u</m> and <m>\mathbf v</m>: by
-<xref ref="def-skel-cross-product"/> both results must vanish.)
 </p>
-
 <sidebyside width="97%">
 <image>
 <latex-image>
@@ -477,12 +447,7 @@ Consider the points <m>A(1,-1,2)</m>, <m>B(2,0,-1)</m>, and
 
 <p>
 <em>Solution.</em>
-(Build the two vectors with <xref ref="eq-skel-vec-components"/>, cross them,
-then normalize with <xref ref="eq-skel-vec-unit"/>. One component of the cross
-product comes out zero, which is worth noticing before you take the length.
-There are two unit vectors that work; say what the other one is.)
 </p>
-
 <sidebyside width="97%">
 <image>
 <latex-image>
@@ -562,12 +527,7 @@ is half of the corresponding parallelogram.
 
 <p>
 <em>Solution.</em>
-(No new cross product is needed <mdash/> reuse the one from
-<xref ref="ex-skel-perpendicular-vector"/>. Get the area of the parallelogram
-from <xref ref="eq-skel-parallelogram-area"/>, then read off
-<xref ref="fig-skel-triangle-area"/> what fraction of it the triangle is.)
 </p>
-
 <sidebyside width="97%">
 <image>
 <latex-image>
@@ -602,11 +562,7 @@ is perpendicular to <m>\overrightarrow{u} - \text{proj}_{\overrightarrow{v}}\ove
 </exercise>
 
 <p>
-Justify your answer. (Dot the two vectors together and distribute, using
-property 3 of <xref ref="fact-skel-properties"/>. A cross product is
-perpendicular to each of its own factors, so both of the resulting terms are
-of a form you already know how to evaluate; then appeal to
-<xref ref="eq-skel-orthogonal"/>.)
+Justify your answer.
 </p>
 
 <sidebyside width="97%">
@@ -634,11 +590,7 @@ Let <m>\hat{u}</m> and <m>\hat{v}</m> be two standard unit vectors in
 </exercise>
 
 <p>
-Justify your answer. (Write both terms with the geometric formulas
-<xref ref="eq-skel-angle"/> and <xref ref="eq-skel-cross-geometric"/>, so that
-each carries a factor of <m>\|\hat u\|^2\|\hat v\|^2</m>. A Pythagorean
-identity then collapses what is left. Say which step uses the fact that the
-vectors are <em>unit</em> vectors.)
+Justify your answer.
 </p>
 
 <sidebyside width="97%">
@@ -743,9 +695,7 @@ meter-newtons (<m>\text{m}\cdot\text{N}</m>) in SI.
 <p>
 The quantity in <xref ref="eq-skel-torque-magnitude"/> can be grouped in two
 useful ways, shown in <xref ref="fig-skel-torque-two-groupings"/>. Write down
-the two groupings. (Attach the <m>\sin\theta</m> first to <m>\|\overrightarrow r\|</m>
-and then to <m>\|\overrightarrow F\|</m>; each grouping names a quantity in the
-figure. Then say why the two products are equal.)
+the two groupings.
 </p>
 
 <sidebyside width="97%">
@@ -962,17 +912,7 @@ Side-by-side diagrams of an arm. In (a), the forearm is horizontal and a 700 N b
 
 <p>
 <em>Solution.</em>
-(Put the elbow at the origin and keep everything in the plane <m>z = 0</m>, so
-<m>\overrightarrow F</m> points straight up and only <m>\overrightarrow r</m>
-changes between the two parts. Convert the centimeters to meters before you
-start. In part 2 the forearm sits at <m>-30^\circ</m>, so the angle between
-<m>\overrightarrow r</m> and <m>\overrightarrow F</m> is not <m>30^\circ</m>
-<mdash/> read it off the picture. Compute each torque with
-<xref ref="eq-skel-torque-def"/> and check it against
-<xref ref="eq-skel-torque-magnitude"/>. Finish by saying which position
-produces the larger torque and why a gym machine might care.)
 </p>
-
 <sidebyside width="97%">
 <image>
 <latex-image>
@@ -1172,13 +1112,7 @@ turns as it goes; this is exactly what makes the second pair convenient.
 <p>
 Because the particle moves, the angle <m>\theta</m> depends on <m>t</m>, and
 so do the two moving unit vectors. Differentiate the frame, and then the
-position. (Differentiate <xref ref="eq-skel-rhat"/> and
-<xref ref="eq-skel-thetahat"/> with the chain rule, and recognize each answer
-as a multiple of the <em>other</em> unit vector. Then differentiate
-<xref ref="eq-skel-position-polar"/>, remembering that <m>r</m> is constant on
-a circle. Finish by saying which of <m>\hat r</m>, <m>\hat\theta</m> the
-velocity points along, and why that had to happen for a vector of constant
-length.)
+position.
 </p>
 
 <sidebyside width="97%">
@@ -1239,11 +1173,7 @@ geometrically, without any differentiation of unit vectors.
 <xref ref="fig-skel-circular-chord"/> shows the particle moving from
 <m>\overrightarrow{r}(t)</m> to <m>\overrightarrow{r}(t+\Delta t)</m> through a small angle
 <m>\Delta\theta</m>. Recover <xref ref="eq-skel-speed-omega-r"/> from that
-picture. (The two position vectors have the same length, so the triangle is
-isosceles; splitting it down the middle gives the chord length. For small
-angles replace <m>\sin x</m> by the first term of its Maclaurin series, then
-divide by <m>\Delta t</m> and let <m>\Delta t \to 0</m>. Say also what happens
-to the <em>direction</em> of the chord in that limit.)
+picture.
 </p>
 
 <sidebyside width="97%">
@@ -1511,13 +1441,7 @@ For an object in circular motion about the origin,
 </fact>
 
 <p>
-Verify <xref ref="eq-skel-v-omega-cross-r"/>. (Start by computing
-<m>\hat{k} \times \hat r</m> from <xref ref="eq-skel-rhat"/> with the
-determinant; the answer is one of the two frame vectors. Then substitute
-<xref ref="eq-skel-angular-velocity"/> and
-<xref ref="eq-skel-position-polar"/>, pull the scalars out with property 1 of
-<xref ref="thm-skel-cross-properties"/>, and compare with
-<xref ref="eq-skel-circular-velocity"/>.)
+Verify <xref ref="eq-skel-v-omega-cross-r"/>.
 </p>
 
 <sidebyside width="97%">
@@ -1537,11 +1461,7 @@ determinant; the answer is one of the two frame vectors. Then substitute
 <p>
 The geometry of the cross product delivers all three features of the velocity
 at once. Fill them in from <xref ref="fig-skel-omega-cross-r"/>, with no
-computation. (For the magnitude, use the angle between <m>\overrightarrow\omega</m>
-and <m>\overrightarrow r</m> in <xref ref="eq-skel-cross-geometric"/>. For the
-direction, use that a cross product is perpendicular to both of its factors.
-For the sense, ask what happens to <m>\overrightarrow\omega \times \overrightarrow r</m>
-when <m>\overrightarrow\omega</m> is reversed.)
+computation.
 </p>
 
 <sidebyside width="97%">
@@ -1665,14 +1585,7 @@ and for <m>t > t_1</m>?
 
 <p>
 <em>Solution.</em>
-(Everything follows from <m>d\theta/dt</m>, so compute that first, then apply
-<xref ref="eq-skel-angular-velocity"/> and
-<xref ref="eq-skel-circular-velocity"/>. Part 3 is one quadratic equation; keep
-only the positive root and say what the particle is doing at that instant.
-For part 4, the direction is decided by the <em>sign</em> of
-<m>d\theta/dt</m>, not its size.)
 </p>
-
 <sidebyside width="97%">
 <image>
 <latex-image>
@@ -1718,14 +1631,7 @@ Find the velocity of the point of the record at
 
 <p>
 <em>Solution.</em>
-(Convert revolutions per minute to radians per second before anything else;
-one revolution is <m>2\pi</m> radians. The sense of rotation fixes the sign of
-<m>\omega_z</m>. Then use <xref ref="eq-skel-v-omega-cross-r"/>, and check the
-speed against <xref ref="eq-skel-speed-omega-r"/>. Confirm that the direction
-you get really is counterclockwise for a point on the positive
-<m>x</m>-axis.)
 </p>
-
 <sidebyside width="97%">
 <image>
 <latex-image>
@@ -1756,13 +1662,7 @@ located at <m>\overrightarrow{r} = \left\langle 0,\,4,\,0\right\rangle</m> meter
 
 <p>
 <em>Solution.</em>
-(The period is given rather than the frequency, so <m>\omega = 2\pi/T</m>.
-Clockwise from above settles the sign, as in
-<xref ref="fig-skel-angular-velocity-sign"/>. Then apply
-<xref ref="eq-skel-v-omega-cross-r"/>, and check that the direction you get for
-a horse on the positive <m>y</m>-axis really is clockwise.)
 </p>
-
 <sidebyside width="97%">
 <image>
 <latex-image>

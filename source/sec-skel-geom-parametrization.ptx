@@ -144,10 +144,7 @@ parametric equations <m>x = f(t)</m>, <m>y = g(t)</m>.
 <p>
 As an example, consider <m>x = t</m> and <m>y = t^2</m>. Fill in
 <xref ref="table-skel-parabola-points"/>, plot the seven points on the grid
-below, and join them. (Then eliminate the parameter to name the curve, and
-mark on your sketch the direction in which it is traced as <m>t</m>
-increases. Notice that the left half and the right half are traced in
-different directions relative to the origin.)
+below, and join them.
 </p>
 
 <table xml:id="table-skel-parabola-points">
@@ -218,11 +215,7 @@ Here, we would like to parametrize <m>x</m> and <m>y</m> in terms of a
 single parameter <m>t</m>, as in
 <xref ref="eq-skel-parametric-equations"/>, in such a way that by varying the
 value of <m>t</m> we can reconstruct the circle
-<xref ref="eq-skel-unit-circle"/>. Find such a pair. (One trigonometric
-identity does the whole job; match it against
-<xref ref="eq-skel-unit-circle"/> term by term. State the interval of
-<m>t</m> that traces the circle exactly once, and check your answer by
-substituting it back in.)
+<xref ref="eq-skel-unit-circle"/>. Find such a pair.
 </p>
 
 <sidebyside width="97%">
@@ -364,14 +357,7 @@ Find the parametric equations corresponding to the following curves.
 
 <p>
 <em>Solution.</em>
-(In <alert>A</alert>, find the Cartesian equation of the line first and then
-take <m>x = t</m>; state the interval of <m>t</m> that gives the segment and
-no more of the line. Parts <alert>B</alert> and <alert>C</alert> are both
-adjustments of <xref ref="eq-skel-unit-circle-param"/>: one rescales the two
-coordinates, the other shifts them. Verify each answer by substituting it into
-the Cartesian equation.)
 </p>
-
 <sidebyside width="97%">
 <image>
 <latex-image>
@@ -494,12 +480,7 @@ For motion with uniform acceleration <m>a</m>, the position is
 
 <p>
 Now consider an object moving under the influence of gravity alone, ignoring
-air resistance. Write down its equations of motion. (Ask first which of
-<xref ref="eq-skel-motion-constant-speed"/> and
-<xref ref="eq-skel-motion-uniform-accel"/> applies in each direction, and
-why. Resolve the initial velocity into horizontal and vertical components
-using the launch angle <m>\theta</m>, and take the initial position to be the
-origin. Watch the sign of the acceleration.)
+air resistance. Write down its equations of motion.
 </p>
 
 <sidebyside width="97%">
@@ -531,12 +512,7 @@ where <m>v_0</m> is the initial speed, <m>\theta</m> is the launch angle, and
 </assemblage>
 
 <p>
-Now eliminate the parameter to find the trajectory. (Solve
-<xref ref="eq-skel-projectile-x"/> for <m>t</m>, with
-<m>(x_0,y_0) = (0,0)</m>, and substitute into
-<xref ref="eq-skel-projectile-y"/>. Simplify until <m>y</m> is a polynomial in
-<m>x</m>, using <m>\sin\theta/\cos\theta = \tan\theta</m>, and then name the
-curve you get.)
+Now eliminate the parameter to find the trajectory.
 </p>
 
 <sidebyside width="97%">
@@ -558,10 +534,6 @@ curve you get.)
 <p>
 Differentiating the equations of motion gives the velocity of the projectile.
 Write down its two components, and use them to say what happens at the apex.
-(Differentiate <xref ref="eq-skel-projectile-x"/> and
-<xref ref="eq-skel-projectile-y"/> with respect to <m>t</m>. One component is
-constant <mdash/> say which physical fact that reflects. Then check your
-answers against <xref ref="fig-skel-projectile-velocity"/>.)
 </p>
 
 <sidebyside width="97%">
@@ -735,10 +707,7 @@ like two roads on a map. A collision point is a statement about the two
 
 <p>
 Say how the two definitions differ when you set up the equations, and how they
-are related. (One of the two searches for a <em>pair</em> of parameter values
-and the other for a <em>single</em> one; say which, and what that means for
-the names you give the parameters. Then decide whether every collision point
-is an intersection point, and whether the converse holds.)
+are related.
 </p>
 
 <sidebyside width="97%">
@@ -779,14 +748,7 @@ the particles.
 
 <p>
 <em>Solution.</em>
-(Eliminate the parameter from each to confirm that the paths really are the
-parabola and the line named above. Then set up
-<xref ref="eq-skel-collision-condition"/>: the two equations must hold for the
-<em>same</em> <m>t</m>, and here one of them pins <m>t</m> down immediately.
-Finish by finding, for each of the two crossings, the time at which each
-particle passes through it <mdash/> that is what shows how they miss.)
 </p>
-
 <sidebyside width="97%">
 <image>
 <latex-image>
@@ -898,14 +860,7 @@ particles.
 
 <p>
 <em>Solution.</em>
-(Eliminate the parameter again and compare with the previous example: the
-paths should be unchanged, so the intersection points are too. The collision
-equations, however, now have a solution; find it, and remember to check that
-the value of <m>t</m> from the first equation also satisfies the second. Then
-say what happens at the <em>other</em> crossing, and mark the collision on the
-grid below.)
 </p>
-
 <sidebyside widths="46% 46%">
 <image>
 <latex-image>

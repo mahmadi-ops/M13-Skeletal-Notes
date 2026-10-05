@@ -98,10 +98,6 @@
         </md>
       </p>
 
-      <p>
-        (Say why you are allowed to cancel the <m>R</m>.)
-      </p>
-
       <sidebyside width="97%">
       <image>
       <latex-image>
@@ -126,11 +122,6 @@
         <md>
           R = \frac{2\,v_0^2\,\sin(\theta-\beta)\cos\theta}{g\cos^2\beta}\text{.}
         </md>
-      </p>
-
-      <p>
-        (Collect the <m>R</m>-term on one side first, then put the other side
-        over the common denominator <m>\cos\theta</m> so the identity applies.)
       </p>
 
       <sidebyside width="97%">
@@ -202,12 +193,6 @@
         </md>
       </p>
 
-      <p>
-        (Distance equals speed times time in the horizontal direction; then
-        substitute the range you found in
-        <xref ref="task-skel-incline-range"/>.)
-      </p>
-
       <sidebyside width="97%">
       <image>
       <latex-image>
@@ -228,13 +213,6 @@
         When the particle is projected <em>down</em> the plane, the geometry is
         the same with <m>\beta</m> replaced by <m>-\beta</m>. Write down the
         range, maximum range, and time of flight down the inclined plane.
-      </p>
-
-      <p>
-        (No new work is needed <mdash/> substitute into the three results above,
-        and remember that <m>\sin</m> is odd while <m>\cos</m> is even. Say
-        whether the maximum range down the plane is larger or smaller than the
-        maximum range up it, and whether that is what you would expect.)
       </p>
 
       <sidebyside width="97%">

@@ -135,11 +135,8 @@
       The standard equation follows from that definition and nothing else. Choose
       coordinates that make the picture symmetric: put the focus at <m>F(0,p)</m> and the
       directrix at <m>y = -p</m>, as in <xref ref="fig-skel-parabola-def"/>. Derive the
-      standard form. (Write the equidistance condition for a point <m>P(x,y)</m>: the
-      distance to <m>F</m> comes from <xref ref="eq-skel-3d-distance"/>, and the distance
-      to the directrix is measured straight down to the foot <m>(x,-p)</m>. Both sides are
-      non-negative, so squaring costs nothing; two pairs of terms then cancel.)
-    </p>
+      standard form.
+</p>
 
     <sidebyside width="97%">
     <image>
@@ -275,14 +272,8 @@
         </p>
 
         <p>
-          <em>Solution.</em>
-          (Run <xref ref="def-skel-parabola"/> in reverse, exactly as in the derivation
-          above, but with a <em>vertical</em> directrix, so the distance to it is measured
-          horizontally. Square, expand, and cancel. Decide the direction of opening from
-          the positions of the focus and the directrix, then check <m>p</m> against
-          <xref ref="eq-skel-parabola-sideways"/>.)
+        <em>Solution.</em>
         </p>
-
         <sidebyside widths="52% 44%">
         <image>
         <latex-image>
@@ -399,14 +390,8 @@
 
     <p>
       Where do the formulas for <m>a</m> come from? Two evaluations of
-      <xref ref="def-skel-ellipse"/> do all the work. Carry them out. (First put <m>P</m>
-      at the vertex <m>(a,0)</m> and write down the two focal radii in terms of <m>a</m>
-      and <m>c</m>; their sum identifies the constant in the definition. Then put <m>P</m>
-      at the co-vertex <m>(0,b)</m>, where symmetry forces the two radii to be equal, and
-      apply the Pythagorean theorem to the right triangle in
-      <xref ref="fig-skel-ellipse-def"/>. Say which of <m>a</m>, <m>b</m>, <m>c</m> is the
-      hypotenuse, and use that to explain the minus sign.)
-    </p>
+      <xref ref="def-skel-ellipse"/> do all the work. Carry them out.
+</p>
 
     <sidebyside width="97%">
     <image>
@@ -446,15 +431,8 @@
         <p>Sketch the graph of <m>4x^2 + 9y^2 = 36</m> and locate the foci.</p>
 
         <p>
-          <em>Solution.</em>
-          (Divide through to reach the standard form
-          <xref ref="eq-skel-ellipse-standard"/>, where the right-hand side must be
-          <m>1</m>. The <em>larger</em> denominator sits under the variable along the major
-          axis, which tells you which axis carries the foci; then use
-          <xref ref="eq-skel-ellipse-focal"/>. Sketch the ellipse on the grid and mark both
-          foci.)
+        <em>Solution.</em>
         </p>
-
         <sidebyside widths="52% 44%">
         <image>
         <latex-image>
@@ -500,14 +478,8 @@
         <p>Sketch the graph of <m>25x^2 + 16y^2 = 400</m> and locate the foci.</p>
 
         <p>
-          <em>Solution.</em>
-          (Same routine as the previous example, with one twist: this time the larger
-          denominator lands under the other variable. Decide from that which axis is the
-          major one <em>before</em> naming <m>a</m> and <m>b</m>, since
-          <xref ref="eq-skel-ellipse-focal"/> requires <m>a \gt b</m>. State where the foci
-          lie and sketch the result.)
+        <em>Solution.</em>
         </p>
-
         <sidebyside widths="52% 44%">
         <image>
         <latex-image>
@@ -627,16 +599,8 @@
 
     <p>
       The formulas for <m>a</m> arise exactly as they did for the ellipse, with sums
-      replaced by differences. Work them out. (Evaluate
-      <xref ref="def-skel-hyperbola"/> at the vertex <m>(a,0)</m>: the two focal radii are
-      differences of <m>c</m> and <m>a</m>, and subtracting them identifies the constant.
-      For the second relation, use the central box of
-      <xref ref="fig-skel-hyperbola-box"/>, whose corner <m>(a,b)</m> lies at distance
-      <m>c</m> from the centre. Then say which of <m>a</m>, <m>b</m>, <m>c</m> is the
-      hypotenuse this time, and compare with
-      <xref ref="eq-skel-ellipse-focal"/> <mdash/> that single difference is the source of
-      the sign change.)
-    </p>
+      replaced by differences. Work them out.
+</p>
 
     <sidebyside width="97%">
     <image>
@@ -671,14 +635,8 @@
     </figure>
 
     <p>
-      The same box explains the asymptotes. Show where they come from. (Solve
-      <xref ref="eq-skel-hyperbola-standard"/> for <m>y</m>, then factor <m>x</m> out of
-      the square root so that what is left tends to a constant as <m>|x|</m> grows. The
-      limit gives the two lines; the fact that the remaining root is always <em>less</em>
-      than <m>1</m> tells you on which side of them the curve stays. Finally, read the
-      slopes off the diagonals of the central box, and say what they become for a vertical
-      hyperbola <m>\frac{y^2}{a^2} - \frac{x^2}{b^2} = 1</m>.)
-    </p>
+      The same box explains the asymptotes. Show where they come from.
+</p>
 
     <sidebyside width="97%">
     <image>
@@ -768,13 +726,8 @@
         its graph.</p>
 
         <p>
-          <em>Solution.</em>
-          (Divide to reach <xref ref="eq-skel-hyperbola-standard"/>. The variable with the
-          <em>positive</em> sign decides which way the branches open. Then use
-          <xref ref="eq-skel-hyperbola-focal"/> for <m>c</m>. Sketch the central box first,
-          extend its diagonals for the asymptotes, and hang the branches on the vertices.)
+        <em>Solution.</em>
         </p>
-
         <sidebyside widths="52% 44%">
         <image>
         <latex-image>
@@ -821,14 +774,8 @@
         graph.</p>
 
         <p>
-          <em>Solution.</em>
-          (Divide and be careful with the signs: it is the <m>y^2</m>-term that is positive
-          now, so <m>a^2</m> is the denominator underneath it and the branches open up and
-          down. <xref ref="eq-skel-hyperbola-focal"/> is unchanged, but the slopes of the
-          asymptotes are not <m>\pm b/a</m> in this orientation <mdash/> work out what they
-          are.)
+        <em>Solution.</em>
         </p>
-
         <sidebyside widths="52% 44%">
         <image>
         <latex-image>
@@ -936,14 +883,8 @@
         </p>
 
         <p>
-          <em>Solution.</em>
-          (Put the vertex at the origin with the dish opening upward, so the cross-section
-          is <xref ref="eq-skel-parabola-standard"/>. Turn the width and the depth into the
-          coordinates of one point on the rim <mdash/> note that the width is measured
-          across the whole dish, not from the axis <mdash/> and substitute to find <m>p</m>.
-          The receiver goes at the focus; give its height above the vertex.)
+        <em>Solution.</em>
         </p>
-
         <sidebyside width="97%">
         <image>
         <latex-image>
@@ -984,9 +925,8 @@
 
     <p>
       Write down that common length, and say why the phrase <q>in phase</q> is the key to
-      the effect. (The length is the constant of <xref ref="def-skel-ellipse"/>, which you
-      identified above.)
-    </p>
+      the effect.
+</p>
 
     <sidebyside width="97%">
     <image>
@@ -1086,13 +1026,8 @@ A hand-coloured aquatint from 1809 showing the interior of Saint
         </p>
 
         <p>
-          <em>Solution.</em>
-          (Model the room by <xref ref="eq-skel-ellipse-standard"/> centred at the origin.
-          The length and the width are the <em>full</em> axes, not the semi-axes. Then use
-          <xref ref="eq-skel-ellipse-focal"/> to place the foci, and give the distance
-          between the two people as well as the distance the whisper travels.)
+        <em>Solution.</em>
         </p>
-
         <sidebyside width="97%">
         <image>
         <latex-image>
@@ -1128,11 +1063,7 @@ A hand-coloured aquatint from 1809 showing the interior of Saint
 
     <p>
       Say what that single measurement tells the vessel, and what a second one adds.
-      (A constant difference of distances from two fixed points is the defining property in
-      <xref ref="def-skel-hyperbola"/>; name the curve and say what plays the role of the
-      foci and of <m>2a</m>. Then note what extra information the <em>sign</em> of the delay
-      carries, and why one measurement alone is not enough to fix a position.)
-    </p>
+</p>
 
     <sidebyside width="97%">
     <image>
@@ -1275,18 +1206,8 @@ A hand-coloured aquatint from 1809 showing the interior of Saint
       </figure>
 
         <p>
-          <em>Solution.</em>
-          (Translate each timing fact into geometry first: equal arrival times mean equal
-          distances, which is the degenerate case of
-          <xref ref="def-skel-hyperbola"/> and gives a <em>line</em>; the <m>80</m>
-          microsecond delay gives a genuine hyperbola, so convert it to a distance. Then
-          choose coordinates that make that hyperbola simplest <mdash/> origin at the
-          midpoint of its foci, and one unit equal to the common factor of all the given
-          lengths. Parametrize the line, substitute into the hyperbola, and solve the
-          quadratic. Two points come out; use the branch condition to reject one, and say in
-          physical terms what is wrong with it. Finish by checking the three distances.)
+        <em>Solution.</em>
         </p>
-
         <sidebyside width="97%">
         <image>
         <latex-image>

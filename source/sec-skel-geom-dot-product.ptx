@@ -138,13 +138,7 @@ whose hypotenuse is <m>\mathbf w = \mathbf u - \mathbf v</m>.</caption>
 
 <p>
 Now compute <m>\|\mathbf w\|^2</m> a second way, in components, and compare
-the two answers. (Write <m>\mathbf u = \langle u_1,u_2,u_3\rangle</m> and
-<m>\mathbf v = \langle v_1,v_2,v_3\rangle</m>, expand
-<m>\|\mathbf u - \mathbf v\|^2</m> with <xref ref="eq-skel-vec-length"/>, and
-group the result into the three sums <m>\sum u_i^2</m>, <m>\sum v_i^2</m>, and
-<m>\sum u_iv_i</m>. Setting that equal to
-<xref ref="eq-skel-law-of-cosines"/>, two of the three groups cancel; solve
-for what is left.)
+the two answers.
 </p>
 
 <sidebyside width="97%">
@@ -211,13 +205,7 @@ Let <m>\mathbf u = \langle 1,2,3\rangle</m> and
 
 <p>
 <em>Solution.</em>
-(Multiply corresponding components and add,
-<xref ref="eq-skel-dot"/>. Before reaching for a calculator, use the sign of
-the answer to predict whether the angle is acute or obtuse. Then apply
-<xref ref="eq-skel-angle"/>, and give <m>\theta</m> in both radians and
-degrees.)
 </p>
-
 <sidebyside width="97%">
 <image>
 <latex-image>
@@ -267,11 +255,7 @@ and the orthogonality criterion <xref ref="eq-skel-orthogonal"/>.
 
 <p>
 <em>Solution.</em>
-(Plot the three vertices on the grid below. Only one vertex can hold the right
-angle; the picture will tell you which. Form the two vectors leaving that
-vertex with <xref ref="eq-skel-vec-components"/>, and take their dot product.)
 </p>
-
 <sidebyside widths="46% 46%">
 <image>
 <latex-image><![CDATA[
@@ -310,12 +294,7 @@ remaining angles.
 
 <p>
 <em>Solution.</em>
-(Apply <xref ref="eq-skel-angle"/> at the vertex <m>A</m>, using the two
-vectors that leave it. Both angles come out to familiar multiples of
-<m>\pi</m>, so you should not need a calculator; get the second one without
-computing a second dot product.)
 </p>
-
 <sidebyside width="97%">
 <image>
 <latex-image>
@@ -354,10 +333,7 @@ and <m>c</m> is a scalar, then
 </fact>
 
 <p>
-Prove properties 1, 3, and 4. (Each one is a single line of components from
-<xref ref="eq-skel-dot"/> followed by the matching property of real numbers;
-name that property as you use it. Property 4 is the one worth remembering, so
-say in words what it asserts about <m>\mathbf u \cdot \mathbf u</m>.)
+Prove properties 1, 3, and 4.
 </p>
 
 <sidebyside width="97%">
@@ -449,12 +425,7 @@ component <m>\mathbf u - \text{proj}_{\mathbf v}\mathbf u</m>.
 </figure>
 
 <p>
-Build the projection formula from that picture. (Read its length off the right
-triangle: <m>\|\text{proj}_{\mathbf v}\mathbf u\| = \|\mathbf u\|\cos\theta</m>.
-Its direction is the unit vector along <m>\mathbf v</m>, which is
-<xref ref="eq-skel-vec-unit"/>. Multiply the two, then replace
-<m>\cos\theta</m> using <xref ref="eq-skel-angle"/> and simplify until only
-<m>\mathbf u\cdot\mathbf v</m> and <m>\|\mathbf v\|</m> remain.)
+Build the projection formula from that picture.
 </p>
 
 <sidebyside width="97%">
@@ -521,13 +492,7 @@ other perpendicular to it.
 
 <p>
 <em>Solution.</em>
-(Note that <m>\mathbf v</m> has no <m>\hat{k}</m> component; write it as a
-vector in space before taking any dot product. Then apply
-<xref ref="eq-skel-proj"/> for the parallel part and subtract, as in
-<xref ref="eq-skel-decomposition"/>, for the perpendicular part. Check your
-answer by dotting the perpendicular part with <m>\mathbf v</m>.)
 </p>
-
 <sidebyside width="97%">
 <image>
 <latex-image>
@@ -714,12 +679,7 @@ and moves a particle from the point <m>A(0,10,8)</m> to the point
 
 <p>
 <em>Solution.</em>
-(Build the displacement vector <m>\mathbf D = \overrightarrow{AB}</m> first,
-with <xref ref="eq-skel-vec-components"/>; the angle <m>\theta</m> is never
-needed. Then apply <xref ref="eq-skel-work"/>, evaluating the dot product with
-<xref ref="eq-skel-dot"/>.)
 </p>
-
 <sidebyside width="97%">
 <image>
 <latex-image>
@@ -803,17 +763,7 @@ slope and a component <m>\overrightarrow{F}_{\perp}</m> into the surface, with
 
 <p>
 <em>Solution.</em>
-(Work in the plane. Write the weight <m>\overrightarrow F</m> first: it has
-magnitude <m>mg</m> and points straight down, so it has no <m>\hat\imath</m>
-component. Next write a unit vector <m>\hat v</m> pointing <em>down</em> the
-slope, at an angle of <m>-\pi/6</m> to the horizontal. Because
-<m>\|\hat v\| = 1</m>, <xref ref="eq-skel-proj"/> collapses to
-<m>(\overrightarrow F\cdot\hat v)\,\hat v</m>. Get
-<m>\overrightarrow F_{\perp}</m> by subtraction, using
-<xref ref="eq-skel-decomposition"/>, and keep the exact values rather than
-decimals.)
 </p>
-
 <sidebyside width="97%">
 <image>
 <latex-image>
@@ -968,13 +918,7 @@ Using the taste vectors above, rank the three pairs by angular distance.
 
 <p>
 <em>Solution.</em>
-(Before computing anything, use <xref ref="fig-skel-taste-vectors-2d"/> and the
-sign of each dot product to predict the ranking. Then fill in
-<xref ref="table-skel-taste-2d"/> using
-<xref ref="eq-skel-angular-distance"/>, working to three decimal places and
-giving the angles in degrees.)
 </p>
-
 <table xml:id="table-skel-taste-2d">
 <title>Angular distance between the three taste vectors.</title>
 <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
@@ -1062,11 +1006,6 @@ out far more generous ratings.
 
 <p>
 Find <m>d_A(\mathbf a,\mathbf c)</m> and <m>d_A(\mathbf b,\mathbf c)</m>.
-(One of the two needs no computation at all: look for a scalar relating the two
-vectors and appeal to the remark after
-<xref ref="def-skel-angular-distance"/>. Then say, in a sentence, what the
-answer means about a cautious rater and an enthusiastic one who rank the films
-the same way.)
 </p>
 
 <sidebyside width="97%">
@@ -1138,13 +1077,7 @@ ratings from before.) Which pair has the most similar taste?
 
 <p>
 <em>Solution.</em>
-(The formula is <xref ref="eq-skel-similarity-n"/>; only the bookkeeping is
-longer. Fill in <xref ref="table-skel-taste-10d"/>, then compare it with
-<xref ref="table-skel-taste-2d"/>: one pair that looked like opposites on two
-films turns out to be nearly orthogonal on ten. Say what that difference
-means.)
 </p>
-
 <table xml:id="table-skel-taste-10d">
 <title>Angular distance across all ten nominees.</title>
 <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
