@@ -362,76 +362,29 @@ span.
 
 <figure xml:id="fig-skel-vec-parallelogram">
 <caption>
-The parallelogram law. On the left, the components add head to tail. On
-the right, <m>\mathbf u + \mathbf v</m> is the diagonal of the
-parallelogram spanned by <m>\mathbf u</m> and <m>\mathbf v</m>.
+The parallelogram law: head to tail on the left, the diagonal of the
+parallelogram on the right.
 </caption>
 <image width="92%">
 <prefigure xmlns="https://prefigure.org" label="prefigure-skel-vec-parallelogram">
 <diagram dimensions="(620,270)" margins="12">
 <coordinates bbox="(-0.55,-0.55,9.9,3.9)">
-<!-- = left panel: head to tail = -->
+<!-- = left panel: empty axes for the head-to-tail picture = -->
 <vector at="pl-xaxis" v="(4.2,0)" tail="(-0.2,0)" stroke="black" thickness="2"/>
 <vector at="pl-yaxis" v="(0,3.5)" tail="(0,-0.2)" stroke="black" thickness="2"/>
-<vector at="pl-u" v="(2.1,0.85)" tail="(0,0)" stroke="#0072B2" thickness="3"/>
-<vector at="pl-v" v="(1.15,1.75)" tail="(2.1,0.85)" stroke="#0072B2" thickness="3"/>
-<vector at="pl-sum" v="(3.25,2.6)" tail="(0,0)" stroke="#D55E00" thickness="3"/>
-<line at="pl-d1" endpoints="((2.1,0.85),(3.25,0.85))" stroke="#D55E00"
-      dash="4 3" thickness="1.5"/>
-<line at="pl-d2" endpoints="((3.25,0.85),(3.25,2.6))" stroke="#D55E00"
-      dash="4 3" thickness="1.5"/>
-<line at="pl-d3" endpoints="((2.1,0),(2.1,0.85))" stroke="#D55E00"
-      dash="4 3" thickness="1.5"/>
 <label at="pl-x" anchor="(4.0,-0.06)" alignment="se"><m>x</m></label>
 <label at="pl-y" anchor="(-0.06,3.35)" alignment="nw"><m>y</m></label>
-<label at="pl-u-lab" anchor="(1.0,0.5)" alignment="se" color="#0072B2">
-<m>\mathbf u</m>
-</label>
-<label at="pl-v-lab" anchor="(2.75,1.65)" alignment="e" color="#0072B2">
-<m>\mathbf v</m>
-</label>
-<label at="pl-sum-lab" anchor="(1.35,1.72)" alignment="nw" color="#D55E00">
-<m>\mathbf u+\mathbf v</m>
-</label>
-<label at="pl-u1" anchor="(1.05,-0.08)" alignment="s"><m>u_1</m></label>
-<label at="pl-u2" anchor="(2.02,0.42)" alignment="w"><m>u_2</m></label>
-<label at="pl-v1" anchor="(2.68,0.78)" alignment="s"><m>v_1</m></label>
-<label at="pl-v2" anchor="(3.32,1.72)" alignment="e"><m>v_2</m></label>
-<label at="pl-top" anchor="(3.2,2.72)" alignment="nw">
-<m>\langle u_1+v_1,\; u_2+v_2\rangle</m>
-</label>
-<!-- = right panel: the parallelogram = -->
+<!-- = right panel: empty axes for the parallelogram = -->
 <vector at="pr-xaxis" v="(4.2,0)" tail="(5.4,0)" stroke="black" thickness="2"/>
 <vector at="pr-yaxis" v="(0,3.5)" tail="(5.6,-0.2)" stroke="black" thickness="2"/>
-<vector at="pr-u" v="(2.1,0.85)" tail="(5.6,0)" stroke="#0072B2" thickness="3"/>
-<vector at="pr-v" v="(1.15,1.75)" tail="(5.6,0)" stroke="#0072B2" thickness="3"/>
-<vector at="pr-sum" v="(3.25,2.6)" tail="(5.6,0)" stroke="#D55E00" thickness="3"/>
-<line at="pr-p1" endpoints="((7.7,0.85),(8.85,2.6))" stroke="#D55E00"
-      dash="4 3" thickness="1.5"/>
-<line at="pr-p2" endpoints="((6.75,1.75),(8.85,2.6))" stroke="#D55E00"
-      dash="4 3" thickness="1.5"/>
 <label at="pr-x" anchor="(9.4,-0.06)" alignment="se"><m>x</m></label>
 <label at="pr-y" anchor="(5.54,3.35)" alignment="nw"><m>y</m></label>
-<label at="pr-u-lab" anchor="(6.75,0.35)" alignment="se" color="#0072B2">
-<m>\mathbf u</m>
-</label>
-<label at="pr-v-lab" anchor="(6.05,1.35)" alignment="nw" color="#0072B2">
-<m>\mathbf v</m>
-</label>
-<label at="pr-sum-lab" anchor="(6.95,0.58)" alignment="n" color="#D55E00">
-<m>\mathbf u+\mathbf v</m>
-</label>
 </coordinates>
 
 <annotations>
-<annotation ref="figure" text="Two coordinate pictures side by side. On the left, the blue vector u is drawn from the origin and the blue vector v is drawn starting at the head of u; the orange sum vector u plus v runs from the origin to the head of v, and dashed lines show how the components add. On the right, u and v are both drawn from the origin and dashed lines complete a parallelogram whose diagonal is the orange vector u plus v.">
-  <annotation ref="pl-u" text="The vector u, drawn from the origin."/>
-  <annotation ref="pl-v" text="The vector v, drawn with its tail at the head of u, head to tail."/>
-  <annotation ref="pl-sum" text="The sum u plus v, reaching from the origin to the head of v. Its components are the sums of the components of u and v."/>
-  <annotation ref="pr-u" text="The vector u drawn from the origin."/>
-  <annotation ref="pr-v" text="The vector v drawn from the same origin."/>
-  <annotation ref="pr-sum" text="The sum u plus v is the diagonal of the parallelogram spanned by u and v."/>
-  <annotation ref="pr-p1" text="Dashed sides completing the parallelogram."/>
+<annotation ref="figure" text="Two empty coordinate systems side by side, each with an x axis and a y axis and nothing drawn on them: the left one is for drawing two vectors head to tail with their sum, the right one for drawing the two vectors from a common point and completing the parallelogram.">
+  <annotation ref="pl-xaxis" text="The x axis of the left coordinate system."/>
+  <annotation ref="pr-xaxis" text="The x axis of the right coordinate system."/>
 </annotation>
 </annotations>
 </diagram>
