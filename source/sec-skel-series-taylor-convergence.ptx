@@ -650,12 +650,6 @@ Compute
 
 <p>
 <em>Solution.</em>
-(Subtract <m>x</m> from <xref ref="eq-skel-arctan-maclaurin"/> and from
-<xref ref="eq-skel-sin-maclaurin"/>, factor the lowest power of <m>x</m>
-out of each, cancel it, and let <m>x \to 0</m>. Then say why the
-remaining terms may be ignored: write each series as its Taylor polynomial
-plus the remainder <xref ref="eq-skel-taylor-remainder"/> and bound the
-remainder.)
 </p>
 
 <sidebyside width="97%">
@@ -692,12 +686,6 @@ interval containing <m>a</m>, with <m>f(a) = g(a) = 0</m> and
 
 <p>
 <em>Solution.</em>
-(Write Taylor's formula <xref ref="eq-skel-taylor-formula-eq"/> with
-<m>n = 1</m> for <m>f</m> and for <m>g</m>, use <m>f(a) = g(a) = 0</m> to
-cancel a factor of <m>x - a</m>, and let <m>x \to a</m>. Explain, as in
-<xref ref="rmk-skel-error-upper-bound"/>, why the terms containing
-<m>c_1</m> and <m>c_2</m> drop out, then use the continuity of <m>f'</m>
-and <m>g'</m> for the second equality.)
 </p>
 
 <sidebyside width="97%">
@@ -761,13 +749,6 @@ a value of <m>n</m> that guarantees an error of at most <m>10^{-4}</m>.
 
 <p>
 <em>Solution.</em>
-(Write Taylor's formula for <m>e^{u}</m> at <m>0</m> with its remainder
-<xref ref="eq-skel-exp-remainder"/>, substitute <m>u = -x^2</m>, and bound
-<m>e^{c}</m> as in <xref ref="rmk-skel-error-upper-bound"/>; note the sign
-of <m>u</m>. Integrate the polynomial and the remainder bound from
-<m>0</m> to <m>1</m> separately. State the error bound in terms of
-<m>n</m>, then find the smallest <m>n</m> that makes it at most
-<m>10^{-4}</m>.)
 </p>
 
 <sidebyside width="97%">
@@ -821,12 +802,7 @@ I_k = \int_0^{\infty} x^k e^{-x}\,dx = k!.
 </p>
 
 <p>
-<em>Solution.</em>
-(Divide <xref ref="eq-skel-sin-maclaurin"/> by <m>x</m>, multiply by
-<m>e^{-x}</m>, and integrate term by term with
-<xref ref="eq-skel-int-xk-exp"/>; watch the factorials cancel. Then
-recognize the resulting series as <xref ref="eq-skel-arctan-maclaurin"/>
-evaluated at one particular <m>x</m>.<fn>Integrating an infinite series
+<em>Solution.</em><fn>Integrating an infinite series
 term by term over the unbounded interval <m>[0,\infty)</m> needs a
 justification, and the Remainder Estimation Theorem supplies one. Let
 <m>S_N(x) = \sum_{n=0}^{N} \frac{(-1)^n x^{2n}}{(2n+1)!}</m> be the partial
@@ -848,7 +824,7 @@ Leibniz series converge to the integral. Since they also converge to
 the integral gives <m>0.785398\ldots</m>, which agrees with
 <m>\pi/4 = 0.785398\ldots</m>. The bound <m>\frac{1}{2N+3}</m> also shows
 why the Leibniz series converges slowly: to guarantee an error below
-<m>10^{-3}</m> we need roughly <m>500</m> terms.</fn>)
+<m>10^{-3}</m> we need roughly <m>500</m> terms.</fn>
 </p>
 
 <sidebyside width="97%">
