@@ -640,9 +640,6 @@ x^2 + y^2 + z^2 + 2x + 4y = 0
 
 <p>
 <em>Solution.</em>
-(Complete the square in <m>x</m> and in <m>y</m>; there is nothing to do
-in <m>z</m>. Then match the result against
-<xref ref="eq-skel-3d-sphere"/> and read off the center and the radius.)
 </p>
 
 <sidebyside width="97%">
