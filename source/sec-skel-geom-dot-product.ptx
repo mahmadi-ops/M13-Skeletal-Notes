@@ -396,12 +396,16 @@ of <m>\mathbf v</m> and the perpendicular component
 <label at="u-label" anchor="(2,2.5)" alignment="nw" color="blue">
 <m>\mathbf u</m>
 </label>
+<angle-marker at="angle-theta" points="((6,0),(0,0),(4,5))" radius="23" clear-background="no">
+<m>\theta</m>
+</angle-marker>
 </coordinates>
 
 <annotations>
-<annotation ref="figure" text="Two vectors drawn from a common point: v along the horizontal direction and u pointing up and to the right, with nothing else drawn.">
+<annotation ref="figure" text="Two vectors drawn from a common point: v along the horizontal direction and u pointing up and to the right, with the angle theta between them marked and nothing else drawn.">
   <annotation ref="vec-v" text="Vector v, along the horizontal direction."/>
-  <annotation ref="vec-u" text="Vector u, drawn from the same point, above v."/>
+  <annotation ref="vec-u" text="Vector u, drawn from the same point, at angle theta above v."/>
+  <annotation ref="angle-theta" text="The angle theta between u and v."/>
 </annotation>
 </annotations>
 </diagram>
