@@ -454,13 +454,24 @@ the vector <m>\mathbf u - \text{proj}_{\mathbf v}\mathbf u</m> is perpendicular
 to it. Also, the sum of these two vectors equals <m>\mathbf u</m>. This means
 we can write <m>\mathbf u</m> as
 <md xml:id="eq-skel-decomposition" number="yes">
-\begin{aligned}
-\mathbf u \amp = \text{proj}_{\mathbf v}\mathbf u + \left(\mathbf u - \text{proj}_{\mathbf v}\mathbf u\right) \\
-\amp = \underbrace{\left(\frac{\mathbf u\cdot\mathbf v}{\|\mathbf v\|^2}\right)\mathbf v}_{\text{parallel to } \mathbf v}
-\;+\; \underbrace{\left(\mathbf u - \left(\frac{\mathbf u\cdot\mathbf v}{\|\mathbf v\|^2}\right)\mathbf v\right)}_{\text{orthogonal to } \mathbf v}.
-\end{aligned}
+\mathbf u = \underbrace{\underline{\hspace{9em}}}_{\text{parallel to } \mathbf v}
+\;+\; \underbrace{\underline{\hspace{9em}}}_{\text{orthogonal to } \mathbf v}.
 </md>
 </p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,8);
+\draw[gray!35] (0,4) -- (15,4);
+\node[anchor=north west, font=\small\itshape] at (0.35,7.7) {$\mathbf u = \text{proj}_{\mathbf v}\mathbf u + (\mathbf u - \text{proj}_{\mathbf v}\mathbf u) =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.7) {with the projection formula:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in two rows, for writing u as its projection onto v plus the remainder, and for substituting the projection formula to fill in equation (3.3.6).</shortdescription>
+</image>
+</sidebyside>
 
 <figure xml:id="fig-skel-projection-shadow">
   <caption>The projection of <m>\overrightarrow{u}</m> onto <m>\overrightarrow{v}</m> as a shadow cast by light from above.</caption>
