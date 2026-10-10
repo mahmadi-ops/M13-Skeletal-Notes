@@ -1,0 +1,111 @@
+<diagram>
+  <annotations>
+    <annotation id="prefigure-skel-no-collision-figure" speech2="Two parametrized paths that intersect in two points, although the two particles never collide">
+      <grouped>prefigure-skel-no-collision-figure</grouped>
+      <position>1</position>
+      <children>
+        <active>prefigure-skel-no-collision-grid-axes</active>
+        <active>prefigure-skel-no-collision-paths</active>
+        <active>prefigure-skel-no-collision-intersections</active>
+      </children>
+      <components>
+        <active>prefigure-skel-no-collision-grid-axes</active>
+        <active>prefigure-skel-no-collision-paths</active>
+        <active>prefigure-skel-no-collision-intersections</active>
+      </components>
+    </annotation>
+    <annotation id="prefigure-skel-no-collision-grid-axes" speech2="The coordinate grid and axes">
+      <grouped>prefigure-skel-no-collision-grid-axes</grouped>
+      <position>1</position>
+      <children>
+        <active>prefigure-skel-no-collision-grid</active>
+        <active>prefigure-skel-no-collision-axes</active>
+      </children>
+      <components>
+        <active>prefigure-skel-no-collision-grid</active>
+        <active>prefigure-skel-no-collision-axes</active>
+      </components>
+      <parents>
+        <grouped>prefigure-skel-no-collision-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-skel-no-collision-grid" speech2="The coordinate grid">
+      <active>prefigure-skel-no-collision-grid</active>
+      <position>1</position>
+      <parents>
+        <grouped>prefigure-skel-no-collision-grid-axes</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-skel-no-collision-axes" speech2="The coordinate axes">
+      <active>prefigure-skel-no-collision-axes</active>
+      <position>2</position>
+      <parents>
+        <grouped>prefigure-skel-no-collision-grid-axes</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-skel-no-collision-paths" speech2="The two paths">
+      <grouped>prefigure-skel-no-collision-paths</grouped>
+      <position>2</position>
+      <children>
+        <active>prefigure-skel-no-collision-path1</active>
+        <active>prefigure-skel-no-collision-path2</active>
+      </children>
+      <components>
+        <active>prefigure-skel-no-collision-path1</active>
+        <active>prefigure-skel-no-collision-path2</active>
+      </components>
+      <parents>
+        <grouped>prefigure-skel-no-collision-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-skel-no-collision-path1" sonify="yes" speech2="The path of the first particle, the parabola y equals x squared" speech="The first particle moves along the parabola y equals x squared, with position r one of t equals t comma t squared">
+      <active>prefigure-skel-no-collision-path1</active>
+      <position>1</position>
+      <parents>
+        <grouped>prefigure-skel-no-collision-paths</grouped>
+      </parents>
+      <sonification>
+        <ACTIVE>prefigure-skel-no-collision-path1</ACTIVE>
+      </sonification>
+    </annotation>
+    <annotation id="prefigure-skel-no-collision-path2" sonify="yes" speech2="The path of the second particle, the line y equals x plus 2" speech="The second particle moves along the line y equals x plus 2, with position r two of t equals negative t comma 2 minus t">
+      <active>prefigure-skel-no-collision-path2</active>
+      <position>2</position>
+      <parents>
+        <grouped>prefigure-skel-no-collision-paths</grouped>
+      </parents>
+      <sonification>
+        <ACTIVE>prefigure-skel-no-collision-path2</ACTIVE>
+      </sonification>
+    </annotation>
+    <annotation id="prefigure-skel-no-collision-intersections" speech2="The two intersection points of the paths">
+      <grouped>prefigure-skel-no-collision-intersections</grouped>
+      <position>3</position>
+      <children>
+        <active>prefigure-skel-no-collision-pointA</active>
+        <active>prefigure-skel-no-collision-pointB</active>
+      </children>
+      <components>
+        <active>prefigure-skel-no-collision-pointA</active>
+        <active>prefigure-skel-no-collision-pointB</active>
+      </components>
+      <parents>
+        <grouped>prefigure-skel-no-collision-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-skel-no-collision-pointA" speech2="The intersection point negative 1 comma 1">
+      <active>prefigure-skel-no-collision-pointA</active>
+      <position>1</position>
+      <parents>
+        <grouped>prefigure-skel-no-collision-intersections</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-skel-no-collision-pointB" speech2="The intersection point 2 comma 4">
+      <active>prefigure-skel-no-collision-pointB</active>
+      <position>2</position>
+      <parents>
+        <grouped>prefigure-skel-no-collision-intersections</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

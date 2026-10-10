@@ -1,0 +1,30 @@
+<diagram>
+  <annotations>
+    <annotation id="skel-prefigure-local-max-trace-figure" speech2="The parabola z equals negative x squared, opening downward, which is the trace of the surface z equals negative x squared minus y squared in the plane y equals 0. The highest point of the parabola is at the origin, marked in green as the local maximum.">
+      <grouped>skel-prefigure-local-max-trace-figure</grouped>
+      <position>1</position>
+      <children>
+        <active>skel-prefigure-local-max-trace-lm-trace</active>
+        <active>skel-prefigure-local-max-trace-lm-max</active>
+      </children>
+      <components>
+        <active>skel-prefigure-local-max-trace-lm-trace</active>
+        <active>skel-prefigure-local-max-trace-lm-max</active>
+      </components>
+    </annotation>
+    <annotation id="skel-prefigure-local-max-trace-lm-trace" speech2="The parabola z equals negative x squared, shown in blue, opening downward.">
+      <active>skel-prefigure-local-max-trace-lm-trace</active>
+      <position>1</position>
+      <parents>
+        <grouped>skel-prefigure-local-max-trace-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="skel-prefigure-local-max-trace-lm-max" speech2="The local maximum at the origin, marked in green, where the parabola reaches its highest value.">
+      <active>skel-prefigure-local-max-trace-lm-max</active>
+      <position>2</position>
+      <parents>
+        <grouped>skel-prefigure-local-max-trace-figure</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>
