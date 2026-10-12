@@ -206,7 +206,7 @@ right or wrong, earns nothing.
 <xi:include href="sample-past-exam-1.ptx"/>
 
 <!-- ================= Assignment 4 ================= -->
-<!-- UNPOSTED <xi:include href="assignment-4-space-vectors-dot-product.ptx"/> UNPOSTED -->
+<xi:include href="assignment-4-space-vectors-dot-product.ptx"/>
 
 <!-- ================= Assignment 5 ================= -->
 <!-- UNPOSTED <xi:include href="assignment-5-cross-product-lines-planes.ptx"/> UNPOSTED -->
