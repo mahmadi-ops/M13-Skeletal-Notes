@@ -14,6 +14,6 @@
 <xi:include href="sec-skel-geom-cross-product.ptx" />
 <xi:include href="sec-skel-geom-parametrization.ptx" />
 <xi:include href="sec-skel-geom-lines-planes.ptx" />
-<!-- UNPOSTED <xi:include href="sec-skel-geom-conics.ptx" /> UNPOSTED -->
-<!-- UNPOSTED <xi:include href="sec-skel-geom-quadric-surfaces.ptx" /> UNPOSTED -->
+<xi:include href="sec-skel-geom-conics.ptx" />
+<xi:include href="sec-skel-geom-quadric-surfaces.ptx" />
 </chapter>
