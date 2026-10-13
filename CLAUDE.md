@@ -70,6 +70,12 @@ convention). Repo-specific facts:
   solutions included, after Review Problems #1; its four topic links point
   at this book's ids. It is live, and `desk_action.py` can toggle it by the
   key `sample-past-exam-1`; the desk panel does not list it.
+- `exam-1.ptx` (page `worksheet-exam-1.html`) is this quarter's Exam 1
+  with brief solutions, transcribed from the instructor's answer key and
+  placed right after Sample Past Exam 1; the same file, with the
+  completed-notes ids, is in MATH13-Instructor. It is live, the desk
+  script toggles it by the key `exam-1`, and the desk panel does not
+  list it.
 - Postings are tracked only on the desk panel — the syllabus's
   posted-materials table was removed at the instructor's request, so no
   posting action touches the syllabus repo. Page filenames come from
