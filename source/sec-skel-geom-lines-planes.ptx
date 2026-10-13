@@ -478,29 +478,22 @@ Explain why, and write down <m>\mathbf v</m>.
 <title>Direction of the Line of Intersection</title>
 <p>
 <md xml:id="eq-skel-planes-intersection-dir" number="yes">
-\mathbf v = \overrightarrow{n}_1 \times \overrightarrow{n}_2.
+\mathbf v = \underline{\hspace{8em}}.
 </md>
 </p>
 </assemblage>
 
 <figure xml:id="fig-skel-planes-intersection">
 <caption>
-The cross product of the normal vectors gives the direction vector of
-the line of intersection.
+The direction vector of the line.
 </caption>
 <image width="66%">
 <description>
 <p>
 Two planes intersect inside a three dimensional box: a horizontal blue
 plane and a slanted pink plane, meeting at an oblique angle rather than
-a right angle. Both normal vectors leave the same marked point on the
-line where the planes meet. The blue vector n one points straight up,
-perpendicular to the blue horizontal plane; the pink vector n two points
-up and to the side, perpendicular to the pink slanted plane. A black vector
-runs along the crease where the planes meet. A legend in the upper right
-names the three vectors: n one, n two, and v equals n one cross n two. A
-square corner mark on either side of the common point, drawn in the colour
-of its normal, shows that each normal makes a right angle with that line.
+a right angle. The line where the planes meet is drawn in black, with
+one point on it marked. No vectors are drawn.
 </p>
 </description>
 <latex-image>
@@ -523,28 +516,6 @@ of its normal, shows that each normal makes a right angle with that line.
   \draw[black, very thick] (0.3,2.4,1.9) -- (3.7,2.4,1.9);
   % both normals leave the SAME point of the crease, marked with a dot
   \fill[black] (1.6,2.4,1.9) circle (1.8pt);
-  \draw[-stealth, msky!60!black, very thick] (1.6,2.4,1.9) -- (1.6,2.4,3.3);
-  \draw[-stealth, mpink!85!black, very thick] (1.6,2.4,1.9) -- (1.6,3.547,2.703);
-  % right angles with the line of intersection: equal legs of 0.5, one mark on
-  % each side of the common point so that neither hides the other
-  \draw[msky!60!black, semithick] (2.1,2.4,1.9) -- (2.1,2.4,2.4) -- (1.6,2.4,2.4);
-  \draw[mpink!85!black, semithick] (1.1,2.4,1.9) -- (1.1,2.810,2.187) -- (1.6,2.810,2.187);
-  % direction vector v along the crease
-  \draw[-stealth, black, very thick] (1.6,2.4,1.9) -- (3.1,2.4,1.9);
-  % legend; the font is set so that it prints at body-text size once the
-  % picture is scaled to the width given in the <image> element
-  \node[anchor=north east, draw=gray!60, rounded corners=1.5pt, fill=white,
-        fill opacity=0.92, text opacity=1, inner sep=2.5pt,
-        font=\fontsize{6}{7}\selectfont]
-    at (current bounding box.north east) {%
-    \begin{tabular}{@{}c@{\;}l@{}}
-      \tikz[x=1cm,y=1cm,baseline=-0.5ex]{\draw[-stealth, msky!60!black, very thick] (0,0) -- (0.36,0);}
-        & $\overrightarrow{n}_1$ \\[1.5pt]
-      \tikz[x=1cm,y=1cm,baseline=-0.5ex]{\draw[-stealth, mpink!85!black, very thick] (0,0) -- (0.36,0);}
-        & $\overrightarrow{n}_2$ \\[1.5pt]
-      \tikz[x=1cm,y=1cm,baseline=-0.5ex]{\draw[-stealth, black, very thick] (0,0) -- (0.36,0);}
-        & $\mathbf v = \overrightarrow{n}_1 \times \overrightarrow{n}_2$
-    \end{tabular}};
 \end{tikzpicture}]]>
 </latex-image>
 </image>

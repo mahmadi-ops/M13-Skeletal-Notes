@@ -119,7 +119,6 @@ The parallelogram built on the vectors <m>\mathbf u</m> and
 <coordinates bbox="(-0.5,-0.6,7.5,3.6)">
 <line at="par-side-top" endpoints="(u, u+v)" stroke="red" thickness="2"/>
 <line at="par-side-right" endpoints="(v, u+v)" stroke="blue" thickness="2"/>
-<line at="par-height" endpoints="(u, (2,0))" stroke="black" dash="4 4"/>
 <vector at="par-vec-u" v="u" tail="(0,0)" stroke="blue"/>
 <vector at="par-vec-v" v="v" tail="(0,0)" stroke="red"/>
 <label at="par-u-label" anchor="(1,1.5)" alignment="nw" color="blue">
@@ -128,19 +127,15 @@ The parallelogram built on the vectors <m>\mathbf u</m> and
 <label at="par-v-label" anchor="(2.3,-0.2)" alignment="s" color="red">
 <m>\mathbf v</m>
 </label>
-<label at="par-height-label" anchor="(2.1,1.5)" alignment="e">
-<m>\|\mathbf u\|\sin(\theta)</m>
-</label>
 <angle-marker at="par-angle-theta" points="(v,(0,0),u)" radius="20" clear-background="no">
 <m>\theta</m>
 </angle-marker>
 </coordinates>
-<annotations text="A parallelogram built on the vectors u and v, drawn tail to tail from the origin, with v along the horizontal direction. A dashed vertical segment from the tip of u down to v marks the height of the parallelogram, equal to the length of u times the sine of theta.">
+<annotations text="A parallelogram built on the vectors u and v, drawn tail to tail from the origin, with v along the horizontal direction and the angle theta between them marked.">
 <annotation ref="par-vec-u" text="Vector u, drawn from the origin at angle theta above v."/>
 <annotation ref="par-vec-v" text="Vector v, along the horizontal direction."/>
 <annotation ref="par-side-top" text="The side of the parallelogram parallel to v, starting at the tip of u."/>
 <annotation ref="par-side-right" text="The side of the parallelogram parallel to u, starting at the tip of v."/>
-<annotation ref="par-height" text="The dashed height of the parallelogram, with length equal to the length of u times the sine of theta."/>
 <annotation ref="par-angle-theta" text="The angle theta between u and v, located at the origin."/>
 </annotations>
 </diagram>
@@ -489,42 +484,6 @@ Find the area of the triangle with the vertices <m>A(1,-1,2)</m>,
 points that we had in the previous example.
 </p>
 
-<figure xml:id="fig-skel-triangle-area">
-<caption>
-The triangle built on the vectors <m>\overrightarrow{AB}</m> and <m>\overrightarrow{AC}</m>
-is half of the corresponding parallelogram.
-</caption>
-<image width="55%">
-<prefigure xmlns="https://prefigure.org" label="prefigure-skel-triangle-area">
-<diagram dimensions="(310,200)" margins="10">
-<definition>b=(4,0)</definition>
-<definition>c=(1.5,3)</definition>
-<coordinates bbox="(-0.5,-0.6,6,3.6)">
-<line at="tri-side-bc" endpoints="(c, b)" stroke="black" dash="4 4"/>
-<line at="tri-side-top" endpoints="(c, b+c)" stroke="red" dash="4 4"/>
-<line at="tri-side-right" endpoints="(b, b+c)" stroke="blue" dash="4 4"/>
-<vector at="tri-vec-ac" v="c" tail="(0,0)" stroke="blue"/>
-<vector at="tri-vec-ab" v="b" tail="(0,0)" stroke="red"/>
-<label at="tri-ac-label" anchor="(0.75,1.5)" alignment="nw" color="blue">
-<m>\overrightarrow{AC}</m>
-</label>
-<label at="tri-ab-label" anchor="(2,0)" alignment="s" color="red">
-<m>\overrightarrow{AB}</m>
-</label>
-</coordinates>
-
-<annotations text="A triangle formed by the vectors AB and AC drawn tail to tail from the vertex A, together with a dashed segment from the tip of AC to the tip of AB. Two more dashed segments complete the parallelogram built on AB and AC, showing that the triangle is half of the parallelogram.">
-<annotation ref="tri-vec-ab" text="Vector AB, along the horizontal direction."/>
-<annotation ref="tri-vec-ac" text="Vector AC, drawn from the same tail as AB."/>
-<annotation ref="tri-side-bc" text="The dashed third side of the triangle, from the tip of AC to the tip of AB."/>
-<annotation ref="tri-side-top" text="A dashed side completing the parallelogram, parallel to AB."/>
-<annotation ref="tri-side-right" text="A dashed side completing the parallelogram, parallel to AC."/>
-</annotations>
-</diagram>
-</prefigure>
-</image>
-</figure>
-
 <p>
 <em>Solution.</em>
 </p>
@@ -610,7 +569,12 @@ Justify your answer.
 
 <!-- ================================================================ -->
 <subsection xml:id="subsec-skel-torque">
-<title>Application: Torque</title>
+<title>*Application: Torque</title>
+
+<p>
+<em>Starred section.</em> This one is for the interested reader. It will not
+be examined.
+</p>
 
 <p>
 One of the well known physical applications of the cross product is
@@ -950,9 +914,13 @@ shortens.
 
 <!-- ================================================================ -->
 <subsection xml:id="subsec-skel-circular-motion">
-<title>Application: Circular Motion: Velocity and Angular Velocity</title>
+<title>*Application: Circular Motion: Velocity and Angular Velocity</title>
 
 <introduction>
+<p>
+<em>Starred section.</em> This one is for the interested reader. It will not
+be examined.
+</p>
 <p>
 A second physical application of the cross product describes the motion of
 an object travelling in a circle: a rider on a circular track, a ball whirled

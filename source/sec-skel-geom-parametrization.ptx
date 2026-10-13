@@ -461,7 +461,12 @@ Part C: the circle of radius <m>2</m> centered at <m>(2,0)</m>.
 
 <!-- ================================================================ -->
 <subsection xml:id="subsec-skel-projectile-motion">
-<title>Projectile Motion</title>
+<title>*Projectile Motion</title>
+
+<p>
+<em>Starred section.</em> This one is for the interested reader. It will not
+be examined.
+</p>
 
 <p>
 A type of parametric equation you may have already seen is the equation of
@@ -663,7 +668,12 @@ direction as the projectile falls.
 
 <!-- ================================================================ -->
 <subsection xml:id="subsec-skel-intersection-collision">
-<title>Intersection Points versus Collision Points</title>
+<title>*Intersection Points versus Collision Points</title>
+
+<p>
+<em>Starred section.</em> This one is for the interested reader. It will not
+be examined.
+</p>
 
 <p>
 A parametrization carries more information than the curve it traces: it also
