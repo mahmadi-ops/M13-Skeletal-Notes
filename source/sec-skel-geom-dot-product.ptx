@@ -16,6 +16,11 @@
   so it becomes an empty grid to plot on.  The two tables of angular
   distances are the answers to their examples, so their entries are left
   blank for the reader to fill in.
+
+  Starred: at the instructor's request (Oct 2026) the data-science
+  subsection (3.3.4) and its learning objective carry the star of the
+  book's starred sections (for the interested reader, not examined) in
+  the two student-facing books only; the instructor editions are unchanged.
 -->
 <section xml:id="sec-skel-geom-dot-product" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>The Dot Product</title>
@@ -63,10 +68,11 @@ for expressing it.
 </li>
 <li>
 <p>
-Explain how the dot product is used in data science to measure similarity:
+*Explain how the dot product is used in data science to measure similarity:
 represent preferences as vectors, compute the cosine similarity and the
 angular distance between them, interpret the result, and extend the
-computation from two dimensions to <m>\mathbb R^n</m>.
+computation from two dimensions to <m>\mathbb R^n</m>. (Starred: for the
+interested reader, not examined.)
 </p>
 </li>
 </ul>
@@ -770,7 +776,12 @@ the slope, and the perpendicular component
 
 <!-- ================================================================ -->
 <subsection xml:id="subsec-skel-data-science">
-<title>Application in Data Science: Measuring Similarity in Tastes</title>
+<title>*Application in Data Science: Measuring Similarity in Tastes</title>
+
+<p>
+<em>Starred section.</em> This one is for the interested reader. It will not
+be examined.
+</p>
 
 <p>
 Every time a streaming service tells you <q>because you watched
