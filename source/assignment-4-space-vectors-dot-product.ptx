@@ -52,7 +52,6 @@ Describe the geometrical shape corresponding to the set.
 </ol>
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="4" due="2026-10-16"
 <solution>
 <p>
 <ol marker="A.">
@@ -137,7 +136,6 @@ that passes behind the plane is drawn dashed.
 </image>
 </figure>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="pp-24">
@@ -168,7 +166,6 @@ Describe the following regions and graphs.
 </ol>
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="4" due="2026-10-16"
 <solution>
 <p>
 The key is to notice whether the first condition is an
@@ -206,7 +203,6 @@ Setting <m>z = 0</m> on the sphere gives <m>x^2 + y^2 = 4</m>: the
 </ol>
 </p>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="m1-3">
@@ -227,7 +223,6 @@ What is its distance to the <m>y</m>-axis?
 </ol>
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="4" due="2026-10-16"
 <solution>
 <p>
 <term>(a)</term> The <m>yz</m>-plane is the plane <m>x = 0</m>. The
@@ -303,7 +298,6 @@ to the point zero, seven, zero on the y axis.
 </image>
 </figure>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="ex-3d-nonconvex-solid">
@@ -316,7 +310,6 @@ outside by the cylinder <m>x^2+y^2=1</m>. Describe this solid.
 </p>
 </statement>
 
-<!-- SOLUTION-LOCKED assignment="4" due="2026-10-16"
 <solution>
 <p>
 Squaring <m>z=-\sqrt{1-x^2-y^2}</m> gives <m>x^2+y^2+z^2=1</m>, and the
@@ -416,7 +409,6 @@ tube.
 </image>
 </figure>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rs19-2">
@@ -495,7 +487,6 @@ The quadrilateral with vertices <m>P</m>, <m>Q</m>, <m>R</m>, and
 </image>
 </figure>
 </statement>
-<!-- SOLUTION-LOCKED assignment="4" due="2026-10-16"
 <solution>
 <p>
 <ol marker="A.">
@@ -527,7 +518,6 @@ Chaining the three vectors tip to tail,
 </ol>
 </p>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="pp-9">
@@ -537,7 +527,6 @@ Find a vector of length 3 pointing in the opposite direction from the
 vector <m>2\,\mathbf i - 4\,\mathbf j + 4\,\mathbf k</m>.
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="4" due="2026-10-16"
 <solution>
 <p>
 The given vector has length
@@ -553,7 +542,6 @@ Multiplying by <m>-3</m> reverses the direction and gives length
 </md>
 </p>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="m1-2">
@@ -565,7 +553,6 @@ vector of length <m>\tfrac13</m> that points in the same direction as
 <m>\vec v</m>.
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="4" due="2026-10-16"
 <solution>
 <p>
 The vector from <m>P(5,-4,\sqrt3)</m> to <m>Q(3,-1,0)</m> is obtained
@@ -600,7 +587,6 @@ pointing the same way:
 </md>
 </p>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="vec-parallelogram-space">
@@ -630,7 +616,6 @@ Find the perimeter of <m>ABCD</m>.
 </ol>
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="4" due="2026-10-16"
 <solution>
 <p>
 <ol marker="A.">
@@ -749,7 +734,6 @@ point M in the middle of the parallelogram.
 </image>
 </figure>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 </worksheet>
