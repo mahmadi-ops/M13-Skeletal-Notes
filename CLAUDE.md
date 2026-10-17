@@ -59,12 +59,17 @@ convention). Repo-specific facts:
   `desk_action.py` drops hidden components before its cross-reference check,
   exactly as the build does, so Assignment 3 and Review Problems #1 are
   self-contained in the student books even while the section is unposted.
-- Assignments 4 and 5 differ from their M13-Mehdi copies on purpose: at the
+- Assignments 4, 5 and 6 differ from their M13-Mehdi copies on purpose: at the
   instructor's request the four dot-product problems (`rs19-4`, `rw22-4`,
   `rw17-4`, `dp-constrained-work`) open Assignment 5 in this student-facing
   book only, locked with Assignment 5's due date, and Assignment 4's
-  introduction no longer cites the dot-product section. Do not sync either
-  file from M13-Mehdi, or carry the move into it, without asking.
+  introduction no longer cites the dot-product section. Likewise the five
+  lines-and-planes problems (`rf-4`, `rw21-5`, `rs19-5`, `pp-17`, `m2b-5`)
+  moved from the end of Assignment 5 to the start of Assignment 6 in this
+  book only, locked with Assignment 6's due date; Assignment 5 no longer
+  cites the lines-and-planes section and Assignment 6 does. Do not sync
+  assignments 4-6 from M13-Mehdi, or carry these moves into it, without
+  asking.
 - `sample-past-exam-1.ptx` (page `worksheet-sample-past-exam-1.html`) is a
   copy of the instructor's completed-notes worksheet Sample Past Exam 1,
   solutions included, after Review Problems #1; its four topic links point

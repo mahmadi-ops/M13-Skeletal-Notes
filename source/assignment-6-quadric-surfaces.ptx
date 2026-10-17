@@ -18,22 +18,235 @@
   parametrized the trace in the plane y = sqrt(6).
 
   exercise-quadric-graph-match was marked R2 in the markup but moved here at
-  the instructor's request; it opens the assignment, as it did the old
-  worksheet.
+  the instructor's request; it opened the assignment, as it did the old
+  worksheet, until the lines-and-planes problems arrived.
+
+  The five lines-and-planes problems at the start (rf-4, rw21-5, rs19-5,
+  pp-17 and m2b-5) were moved here from the end of
+  assignment-5-cross-product-lines-planes.ptx at the instructor's request,
+  in this student-facing skeletal book only: the copies in the other three
+  books still have them in Assignment 5, so the books differ on purpose.
+  Their SOLUTION-LOCKED markers carry this assignment's number and due date.
 -->
 <worksheet xml:id="worksheet-assignment-6" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Assignment 6</title>
 
 <introduction>
 <p>
-These problems match equations to pictures, identify a quadric surface from
-its equation by slicing it with the coordinate planes and sketch it, and
-identify conic sections from their equations. If you would like to review the
-material first, see
+These problems intersect lines with planes and measure distances between
+them, match equations to pictures, identify a quadric surface from its
+equation by slicing it with the coordinate planes and sketch it, and identify
+conic sections from their equations. If you would like to review the material
+first, see
+<xref ref="sec-skel-geom-lines-planes" text="title"/>,
 <xref ref="sec-skel-geom-quadric-surfaces" text="title"/> and
 <xref ref="sec-skel-geom-conics" text="title"/>.
 </p>
 </introduction>
+
+<exercise xml:id="rf-4">
+<statement>
+<p>
+Find the vector equation of the line of intersection of the following
+planes:
+<md>
+<mrow>2x + y - z \amp = 6,</mrow>
+<mrow>x - y + 3z \amp = 4.</mrow>
+</md>
+</p>
+</statement>
+<!-- SOLUTION-LOCKED assignment="6" due="2026-10-28"
+<solution>
+<p>
+The normal vectors are <m>\vec n_1 = \langle 2, 1, -1\rangle</m> and
+<m>\vec n_2 = \langle 1, -1, 3\rangle</m>, so the direction vector of
+the line of intersection is
+<md>
+\mathbf v = \vec n_1 \times \vec n_2 =
+\begin{vmatrix}
+\mathbf i \amp \mathbf j \amp \mathbf k \\
+2 \amp 1 \amp -1 \\
+1 \amp -1 \amp 3
+\end{vmatrix}
+= \langle 2, -7, -3\rangle.
+</md>
+</p>
+
+<p>
+Next we need a point on the line. Setting <m>x = 0</m> in the
+equations of the planes gives
+<md>
+<mrow>y - z \amp = 6</mrow>
+<mrow>-y + 3z \amp = 4</mrow>
+</md>
+Adding the two equations gives <m>2z = 10</m>, so <m>z = 5</m> and
+<m>y = 11</m>. Hence the point <m>(0, 11, 5)</m> is on the line, and
+the vector equation of the line of intersection is
+<md>
+\mathbf r(t) = \langle 0, 11, 5\rangle + t\,\langle 2, -7, -3\rangle.
+</md>
+</p>
+</solution>
+END SOLUTION-LOCKED -->
+</exercise>
+
+<exercise xml:id="rw21-5">
+<statement>
+<p>
+Find an equation of a plane containing the line
+<m>\mathbf r = \langle -4, 5, -1\rangle + t\langle -4, 6, -3\rangle</m>
+and parallel to the plane <m>-3x - y + 2z = 0</m>, in which the
+coefficient of <m>x</m> is <m>-3</m>.
+</p>
+</statement>
+<!-- SOLUTION-LOCKED assignment="6" due="2026-10-28"
+<solution>
+<p>
+Since the desired plane is parallel to <m>-3x - y + 2z = 0</m>, it has
+the same normal vector
+<md>
+\vec n = \langle -3, -1, 2\rangle = \langle A, B, C\rangle.
+</md>
+(Note that <m>\vec n \cdot \langle -4, 6, -3\rangle
+= 12 - 6 - 6 = 0</m>, so the line is indeed parallel to such a plane.)
+When <m>t = 0</m>, the point <m>(-4, 5, -1)</m> is on the plane, so
+from the point-normal form,
+<md>
+<mrow>A(x - x_0) + B(y - y_0) + C(z - z_0) \amp = 0</mrow>
+<mrow>\Rightarrow\quad -3(x+4) - (y-5) + 2(z+1) \amp = 0.</mrow>
+</md>
+</p>
+</solution>
+END SOLUTION-LOCKED -->
+</exercise>
+
+<exercise xml:id="rs19-5">
+<statement>
+<p>
+Calculate the distance between the following two lines:
+<md>
+<mrow>L_1: \amp \quad x = 4 - t, \quad y = 3 + 2t, \quad z = -5 + 3t</mrow>
+<mrow>L_2: \amp \quad x = 5 - t, \quad y = 3 + 2t, \quad z = -5 + 3t</mrow>
+</md>
+</p>
+</statement>
+<!-- SOLUTION-LOCKED assignment="6" due="2026-10-28"
+<solution>
+<p>
+We notice that the two lines are parallel (both have direction vector
+<m>\mathbf v = \langle -1, 2, 3\rangle</m>) and therefore we can find
+the distance between a point on <m>L_2</m> and the line <m>L_1</m>.
+Taking <m>S(5, 3, -5)</m> on <m>L_2</m> and <m>P(4, 3, -5)</m> on
+<m>L_1</m>, we get <m>\vec{PS} = \langle 1, 0, 0\rangle</m>, and
+<m>\|\mathbf v\| = \sqrt{1 + 4 + 9} = \sqrt{14}</m>.
+</p>
+
+<p>
+Using the cross product,
+<md>
+\vec{PS} \times \mathbf v =
+\begin{vmatrix}
+\mathbf i \amp \mathbf j \amp \mathbf k \\
+1 \amp 0 \amp 0 \\
+-1 \amp 2 \amp 3
+\end{vmatrix}
+= -3\,\mathbf j + 2\,\mathbf k,
+\qquad
+\left\|\vec{PS} \times \mathbf v\right\| = \sqrt{9 + 4} = \sqrt{13},
+</md>
+and the distance is
+<md>
+d = \frac{\left\|\vec{PS} \times \mathbf v\right\|}{\|\mathbf v\|}
+= \frac{\sqrt{13}}{\sqrt{14}}.
+</md>
+</p>
+</solution>
+END SOLUTION-LOCKED -->
+</exercise>
+
+<exercise xml:id="pp-17">
+<statement>
+<p>
+Find parametric equations for the line through <m>(2,1,1)</m> which is
+normal to the plane containing <m>(0,1,1)</m>, <m>(-1,2,4)</m> and
+<m>(3,0,1)</m>.
+</p>
+</statement>
+<!-- SOLUTION-LOCKED assignment="6" due="2026-10-28"
+<solution>
+<p>
+From <xref ref="pp-13"/>, the plane through those three points has
+normal vector <m>\vec n = \langle 3, 9, -2\rangle</m>. A line normal
+to the plane has <m>\vec n</m> as its direction vector, so through
+<m>(2,1,1)</m>,
+<md>
+x = 2 + 3t, \qquad y = 1 + 9t, \qquad z = 1 - 2t,
+\qquad t \in \R.
+</md>
+</p>
+</solution>
+END SOLUTION-LOCKED -->
+</exercise>
+
+<exercise xml:id="m2b-5">
+<statement>
+<p>
+Let <m>L</m> be the line given by
+<md>
+x = 4+t, \qquad y = -1-2t, \qquad z = 5+t .
+</md>
+Find the point on <m>L</m> that is closest to <m>(-2,2,-1)</m>.
+</p>
+</statement>
+<!-- SOLUTION-LOCKED assignment="6" due="2026-10-28"
+<solution>
+<p>
+Write <m>Q = (-2,2,-1)</m> and let
+<m>P(t) = (4+t,\ -1-2t,\ 5+t)</m> be the general point of <m>L</m>. The
+direction vector of the line is
+<m>\vec d = \left\langle 1,\ -2,\ 1\right\rangle</m>.
+</p>
+
+<p>
+The closest point is the foot of the perpendicular from <m>Q</m>, so we
+want the value of <m>t</m> for which <m>\vec{QP}</m> is orthogonal to
+<m>\vec d</m>. First,
+<md>
+<mrow>\vec{QP} \amp = \left\langle (4+t)-(-2),\ (-1-2t)-2,\ (5+t)-(-1)
+\right\rangle</mrow>
+<mrow>\amp = \left\langle 6+t,\ -3-2t,\ 6+t \right\rangle .</mrow>
+</md>
+</p>
+
+<p>
+Now impose <m>\vec{QP}\cdot\vec d = 0</m>:
+<md>
+<mrow>(6+t)(1) + (-3-2t)(-2) + (6+t)(1) \amp = 0</mrow>
+<mrow>6 + t + 6 + 4t + 6 + t \amp = 0</mrow>
+<mrow>18 + 6t \amp = 0</mrow>
+<mrow>t \amp = -3 .</mrow>
+</md>
+</p>
+
+<p>
+Substituting <m>t = -3</m> into the parametric equations gives the
+closest point
+<md>
+P(-3) = \left(4-3,\ -1+6,\ 5-3\right) = (1,\ 5,\ 2) .
+</md>
+As a check, at <m>t=-3</m> we get
+<m>\vec{QP} = \left\langle 3,\ 3,\ 3 \right\rangle</m>, and
+<md>
+\vec{QP}\cdot\vec d
+ = \left\langle 3,3,3\right\rangle\cdot\left\langle 1,-2,1\right\rangle
+ = 3 - 6 + 3 = 0 ,
+</md>
+as required. The distance from <m>Q</m> to the line is
+<m>\|\vec{QP}\| = \sqrt{9+9+9} = 3\sqrt3</m>.
+</p>
+</solution>
+END SOLUTION-LOCKED -->
+</exercise>
 
 <exercise xml:id="exercise-quadric-graph-match">
   <title>Matching Quadric Surfaces</title>
