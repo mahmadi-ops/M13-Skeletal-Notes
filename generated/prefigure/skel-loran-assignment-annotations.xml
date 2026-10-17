@@ -1,0 +1,48 @@
+<diagram>
+  <annotations>
+    <annotation id="skel-loran-assignment-p1" speech2="The exercise data: three receivers in the landscape with the known distances between them">
+      <grouped>skel-loran-assignment-p1</grouped>
+      <position>1</position>
+      <children>
+        <active>skel-loran-assignment-p2</active>
+        <active>skel-loran-assignment-p1</active>
+        <active>skel-loran-assignment-p3</active>
+        <active>skel-loran-assignment-right-angle</active>
+      </children>
+      <components>
+        <active>skel-loran-assignment-p2</active>
+        <active>skel-loran-assignment-p1</active>
+        <active>skel-loran-assignment-p3</active>
+        <active>skel-loran-assignment-right-angle</active>
+      </components>
+    </annotation>
+    <annotation id="skel-loran-assignment-p2" speech2="Receiver P two, at the left end of a horizontal dotted line">
+      <active>skel-loran-assignment-p2</active>
+      <position>1</position>
+      <parents>
+        <grouped>skel-loran-assignment-p1</grouped>
+      </parents>
+    </annotation>
+    <annotation id="skel-loran-assignment-p1" speech2="Receiver P one, on the same horizontal line, forty eight kilometers to the right of P two">
+      <active>skel-loran-assignment-p1</active>
+      <position>2</position>
+      <parents>
+        <grouped>skel-loran-assignment-p1</grouped>
+      </parents>
+    </annotation>
+    <annotation id="skel-loran-assignment-p3" speech2="Receiver P three, thirty six kilometers directly above the point twelve kilometers to the right of P one">
+      <active>skel-loran-assignment-p3</active>
+      <position>3</position>
+      <parents>
+        <grouped>skel-loran-assignment-p1</grouped>
+      </parents>
+    </annotation>
+    <annotation id="skel-loran-assignment-right-angle" speech2="A small square marking the right angle where the vertical dotted line meets the horizontal one">
+      <active>skel-loran-assignment-right-angle</active>
+      <position>4</position>
+      <parents>
+        <grouped>skel-loran-assignment-p1</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>
