@@ -11,7 +11,7 @@
   pp-21) later moved to assignment-6-quadric-surfaces.ptx.
 
   The five lines-and-planes problems that ended this assignment (rf-4,
-  rw21-5, rs19-5, pp-17 and m2b-5) were moved to the start of
+  rw21-5, rs19-5, pp-17 and m2b-5), and later dp-constrained-work, were moved to the start of
   assignment-6-quadric-surfaces.ptx at the instructor's request, in this
   student-facing skeletal book only.  The file keeps its old name.
 
@@ -20,12 +20,14 @@
   Chapter 4), the old pp-16 (dy/dx for x = 2 - t - t^3, y = 3t^2 - 6t + 1) and
   the old m2b-3 (the plane containing the parabola r(t) = <t+1, 2t, 2+3t-t^2>).
 
-  The four dot-product problems at the start (rs19-4, rw22-4, rw17-4 and
-  dp-constrained-work) were moved here from
-  assignment-4-space-vectors-dot-product.ptx at the instructor's request, in
-  this student-facing skeletal book only: the copies in mahmadi-ops/M13-Mehdi
-  still have them in Assignment 4, so the two books differ on purpose.  Their
-  SOLUTION-LOCKED markers carry this assignment's number and due date.
+  The three dot-product problems at the start (rs19-4, rw22-4 and rw17-4)
+  were moved here from assignment-4-space-vectors-dot-product.ptx at the
+  instructor's request, in this student-facing skeletal book only: the copies
+  in mahmadi-ops/M13-Mehdi still have them in Assignment 4, so the two books
+  differ on purpose.  Their SOLUTION-LOCKED markers carry this assignment's
+  number and due date.  A fourth, dp-constrained-work, came with them but
+  later moved on to assignment-6-quadric-surfaces.ptx, since it works with a
+  plane.
 
   Notation: m2b-1c in review-problems-2.ptx was the problem the markup asked
   to restate with \vec u and \vec v; m2b-4 sits beside it and was renamed the
@@ -215,241 +217,6 @@ matching part A.
 </p>
 </li>
 </ol>
-</p>
-</solution>
-END SOLUTION-LOCKED -->
-</exercise>
-
-<exercise xml:id="dp-constrained-work">
-<statement>
-<p>
-A constant force is
-<md>
-\mathbf F = \left\langle 2, -1, 3 \right\rangle .
-</md>
-A particle is constrained to move in directions parallel to the plane
-<md>
-2x - y + 2z = 0 .
-</md>
-For a displacement of one unit, the work done by the force is
-<m>W = \mathbf F\cdot\mathbf d</m>, where <m>\mathbf d</m> is an
-allowed unit direction lying in the plane.
-<ol marker="(a)">
-<li>
-<p>
-Find the unit direction in the plane that maximizes the work.
-</p>
-</li>
-<li>
-<p>
-Find the maximum possible work per unit distance.
-</p>
-</li>
-<li>
-<p>
-Find one unit direction in the plane for which the work is zero.
-</p>
-</li>
-</ol>
-</p>
-</statement>
-<!-- SOLUTION-LOCKED assignment="5" due="2026-10-23"
-<solution>
-<p>
-Reading the coefficients of the plane, a normal vector is
-<md>
-\mathbf n = \left\langle 2, -1, 2 \right\rangle ,
-\qquad \|\mathbf n\| = \sqrt{4+1+4} = 3 .
-</md>
-A vector is parallel to the plane exactly when it is orthogonal to
-<m>\mathbf n</m>.
-</p>
-
-<p>
-<term>(a)</term> Decompose the force into a normal piece and a piece
-lying in the plane,
-<md>
-\mathbf F = \operatorname{proj}_{\mathbf n}\mathbf F
-          + \mathbf F_{\parallel} .
-</md>
-The first piece comes from the projection formula. Since
-<md>
-<mrow>\mathbf F\cdot\mathbf n \amp
-= \left\langle 2,-1,3\right\rangle\cdot\left\langle 2,-1,2\right\rangle
-= 2(2) + (-1)(-1) + 3(2)</mrow>
-<mrow>\amp = 4 + 1 + 6 = 11 ,</mrow>
-</md>
-and <m>\|\mathbf n\|^2 = 9</m>, we get
-<md>
-\operatorname{proj}_{\mathbf n}\mathbf F
-= \frac{11}{9}\left\langle 2,-1,2\right\rangle
-= \left\langle \frac{22}{9},\ -\frac{11}{9},\ \frac{22}{9}\right\rangle .
-</md>
-Subtracting,
-<md>
-<mrow>\mathbf F_{\parallel} \amp
-= \mathbf F - \operatorname{proj}_{\mathbf n}\mathbf F
-= \left\langle 2,-1,3\right\rangle
-- \left\langle \frac{22}{9},\ -\frac{11}{9},\ \frac{22}{9}\right\rangle</mrow>
-<mrow>\amp = \left\langle -\frac49,\ \frac29,\ \frac59\right\rangle
-= \frac19\left\langle -4,\ 2,\ 5 \right\rangle .</mrow>
-</md>
-As a check, this really is parallel to the plane:
-<m>\left\langle -4,2,5\right\rangle\cdot\left\langle 2,-1,2\right\rangle
-= -8 - 2 + 10 = 0</m>.
-</p>
-
-<p>
-Now let <m>\mathbf d</m> be any allowed unit direction. Because
-<m>\operatorname{proj}_{\mathbf n}\mathbf F</m> is orthogonal to every
-vector lying in the plane,
-<md>
-W = \mathbf F\cdot\mathbf d
-  = \left(\operatorname{proj}_{\mathbf n}\mathbf F
-    + \mathbf F_{\parallel}\right)\cdot\mathbf d
-  = \mathbf F_{\parallel}\cdot\mathbf d .
-</md>
-The normal part of the force is simply wasted: it presses the particle
-against the constraint and does no work. Writing
-<m>\mathbf F_{\parallel}\cdot\mathbf d
-= \|\mathbf F_{\parallel}\|\,\|\mathbf d\|\cos\varphi
-= \|\mathbf F_{\parallel}\|\cos\varphi</m>, the largest value occurs when
-<m>\cos\varphi = 1</m>, that is when <m>\mathbf d</m> points in the same
-direction as <m>\mathbf F_{\parallel}</m>. Since
-<md>
-\left\|\left\langle -4,2,5\right\rangle\right\| = \sqrt{16+4+25}
-= \sqrt{45} = 3\sqrt5 ,
-</md>
-the maximizing unit vector is
-<md>
-\mathbf d_{\max}
-= \frac{\left\langle -4,\ 2,\ 5\right\rangle}{3\sqrt5} .
-</md>
-See <xref ref="fig-dp-constrained-work"/>.
-</p>
-
-<figure xml:id="fig-dp-constrained-work">
-<caption>
-The force <m>\mathbf F</m> splits into a piece
-<m>\operatorname{proj}_{\mathbf n}\mathbf F</m> along the normal, which
-does no work, and a much shorter piece <m>\mathbf F_{\parallel}</m>
-lying in the plane, which is the only part that can do work. The
-picture is drawn to scale:
-<m>\left\|\operatorname{proj}_{\mathbf n}\mathbf F\right\| = \tfrac{11}{3}</m>
-while <m>\left\|\mathbf F_{\parallel}\right\| = \tfrac{\sqrt5}{3}</m>.
-</caption>
-<image width="85%">
-<description>
-<p>
-A tilted plane through the origin with a normal arrow. A force vector
-rises steeply from the origin, almost along the normal; it is resolved
-into a long component along the normal and a very short component lying
-in the plane.
-</p>
-</description>
-<prefigure xmlns="https://prefigure.org" label="prefigure-dp-constrained-work">
-<diagram dimensions="(600,310)" margins="16">
-<coordinates bbox="(-4.7,-1.6,6.0,4.0)">
-<polygon at="dpw-plane"
-         points="((-0.70,0.30),(5.30,-1.20),(1.90,1.50),(-4.10,3.00))"
-         closed="yes"
-         stroke="#0072B2" thickness="2"
-         fill="#0072B2" fill-opacity="0.12"/>
-<line at="dpw-dash1" p1="(0.701,3.143)" p2="(1.135,3.034)"
-      stroke="#7F7F7F" thickness="1" dash="4 3"/>
-<line at="dpw-dash2" p1="(0.701,3.143)" p2="(0.166,1.009)"
-      stroke="#7F7F7F" thickness="1" dash="4 3"/>
-<vector at="dpw-n" v="(0.316,1.261)" tail="(3.3,0.25)"
-        stroke="black" thickness="2"/>
-<vector at="dpw-proj" v="(0.535,2.134)" tail="(0.6,0.9)"
-        stroke="#8B1A4A" thickness="3"/>
-<vector at="dpw-force" v="(0.101,2.243)" tail="(0.6,0.9)"
-        stroke="#D55E00" thickness="3"/>
-<vector at="dpw-par" v="(-0.434,0.109)" tail="(0.6,0.9)"
-        stroke="#009E73" thickness="4"/>
-<point at="dpw-origin" p="(0.6,0.9)" fill="black"/>
-<label at="dpw-originl" anchor="(0.66,0.78)" alignment="se">
-<m>O</m>
-</label>
-<label at="dpw-nl" anchor="(3.68,1.56)" alignment="e">
-<m>\mathbf n=\left\langle 2,-1,2\right\rangle</m>
-</label>
-<label at="dpw-forcel" anchor="(0.62,3.24)" alignment="nw" color="#D55E00">
-<m>\mathbf F</m>
-</label>
-<label at="dpw-projl" anchor="(1.22,3.06)" alignment="ne" color="#8B1A4A">
-<m>\operatorname{proj}_{\mathbf n}\mathbf F</m>
-</label>
-<label at="dpw-parl" anchor="(0.08,0.97)" alignment="w" color="#009E73">
-<m>\mathbf F_{\parallel}</m>
-</label>
-<label at="dpw-planel" anchor="(5.1,-1.32)" alignment="s" color="#0072B2">
-<m>2x-y+2z=0</m>
-</label>
-</coordinates>
-
-<annotations>
-<annotation ref="figure" text="A blue parallelogram represents the plane two x minus y plus two z equals zero, drawn through the origin O. A black arrow off to the right shows the normal direction n. From O, a long dark red arrow rises steeply as the projection of F onto n, a slightly tilted orange arrow of almost the same length is the force F itself, and a very short green arrow lying in the plane is the component of F parallel to the plane. Dashed grey segments complete the rectangle of the decomposition.">
-  <annotation ref="dpw-plane" text="The constraint plane, two x minus y plus two z equals zero, passing through the origin."/>
-  <annotation ref="dpw-n" text="A normal vector n to the plane, with components two, negative one, two."/>
-  <annotation ref="dpw-force" text="The force F, rising steeply and therefore nearly perpendicular to the plane."/>
-  <annotation ref="dpw-proj" text="The projection of F onto the normal, the long component that does no work."/>
-  <annotation ref="dpw-par" text="The component of F parallel to the plane, very short compared with the normal component; this is the only part of the force that can do work."/>
-</annotation>
-</annotations>
-</diagram>
-</prefigure>
-</image>
-</figure>
-
-<p>
-<term>(b)</term> The maximum work per unit displacement is the length of
-the in-plane component,
-<md>
-<mrow>W_{\max} \amp = \left\|\mathbf F_{\parallel}\right\|
-= \left|\frac19\left\langle -4,2,5\right\rangle\right|</mrow>
-<mrow>\amp = \frac19\left(3\sqrt5\right) = \frac{\sqrt5}{3}
-\approx 0.745 .</mrow>
-</md>
-We can confirm this directly from the original force:
-<md>
-<mrow>\mathbf F\cdot\mathbf d_{\max} \amp
-= \left\langle 2,-1,3\right\rangle\cdot
-  \frac{\left\langle -4,2,5\right\rangle}{3\sqrt5}
-= \frac{-8-2+15}{3\sqrt5}</mrow>
-<mrow>\amp = \frac{5}{3\sqrt5} = \frac{\sqrt5}{3} .</mrow>
-</md>
-Compare this with <m>\|\mathbf F\| = \sqrt{14} \approx 3.74</m>: the
-constraint costs us about <m>80\%</m> of the force.
-</p>
-
-<p>
-<term>(c)</term> We want a unit vector
-<m>\mathbf d = \left\langle x,y,z\right\rangle</m> satisfying two
-conditions at once: it must lie in the plane, and it must do no work.
-That is,
-<md>
-\mathbf d\cdot\mathbf n = 0 \qquad\text{and}\qquad
-\mathbf d\cdot\mathbf F = 0 ,
-</md>
-or explicitly
-<md>
-<mrow>2x - y + 2z \amp = 0 ,</mrow>
-<mrow>2x - y + 3z \amp = 0 .</mrow>
-</md>
-Subtracting the first equation from the second gives <m>z = 0</m>, and
-then <m>2x - y = 0</m>, so <m>y = 2x</m>. Taking <m>x = 1</m> gives the
-non-zero vector <m>\left\langle 1,2,0\right\rangle</m>, whose length is
-<m>\sqrt{1+4} = \sqrt5</m>. Hence one suitable unit vector is
-<md>
-\mathbf d_0 = \frac{1}{\sqrt5}\left\langle 1,\ 2,\ 0\right\rangle .
-</md>
-Indeed <m>\mathbf F\cdot\mathbf d_0
-= \tfrac{1}{\sqrt5}(2 - 2 + 0) = 0</m>, and the opposite direction
-<m>-\mathbf d_0</m> works equally well. Geometrically, <m>\mathbf d_0</m>
-is the direction in the plane perpendicular to
-<m>\mathbf F_{\parallel}</m>: moving along it, the particle travels
-neither with nor against the usable part of the force.
 </p>
 </solution>
 END SOLUTION-LOCKED -->
