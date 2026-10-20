@@ -104,6 +104,7 @@ the trajectory of the motion.
 </caption>
 <video xml:id="video-skel-parametric-motion"
        source="videos/parametric_motion_1080p.mp4"
+       preview="videos/previews/parametric_motion_1080p.jpg"
        width="70%" aspect="16:9"/>
 </figure>
 
@@ -200,6 +201,7 @@ sketch.
 </caption>
 <video xml:id="video-skel-parabola-param"
        source="videos/parabola_param_1080p.mp4"
+       preview="videos/previews/parabola_param_1080p.jpg"
        width="70%" aspect="16:9"/>
 </figure>
 
@@ -250,6 +252,7 @@ at <m>t = 0</m>, <m>\pi/2</m>, <m>\pi</m>, and <m>3\pi/2</m>.
 </caption>
 <video xml:id="video-skel-unit-circle-param"
        source="videos/unit_circle_param_1080p.mp4"
+       preview="videos/previews/unit_circle_param_1080p.jpg"
        width="70%" aspect="16:9"/>
 </figure>
 
@@ -434,6 +437,7 @@ Part A: the line segment from <m>(0,1)</m> to <m>(1,0)</m>.
 </caption>
 <video xml:id="video-skel-segment-param"
        source="videos/segment_param_1080p.mp4"
+       preview="videos/previews/segment_param_1080p.jpg"
        width="70%" aspect="16:9"/>
 </figure>
 
@@ -445,6 +449,7 @@ counterclockwise, with the points at <m>t = 0</m>, <m>\pi/2</m>,
 </caption>
 <video xml:id="video-skel-ellipse-param"
        source="videos/ellipse_param_1080p.mp4"
+       preview="videos/previews/ellipse_param_1080p.jpg"
        width="70%" aspect="16:9"/>
 </figure>
 
@@ -454,6 +459,7 @@ Part C: the circle of radius <m>2</m> centered at <m>(2,0)</m>.
 </caption>
 <video xml:id="video-skel-shifted-circle-param"
        source="videos/shifted_circle_param_1080p.mp4"
+       preview="videos/previews/shifted_circle_param_1080p.jpg"
        width="70%" aspect="16:9"/>
 </figure>
 
@@ -659,6 +665,7 @@ direction as the projectile falls.
 </caption>
 <video xml:id="video-skel-projectile-motion"
        source="videos/projectile_motion_1080p.mp4"
+       preview="videos/previews/projectile_motion_1080p.jpg"
        width="70%" aspect="16:9"/>
 </figure>
 
@@ -784,7 +791,7 @@ The particles <m>\mathbf r_1(t) = \langle t,t^2\rangle</m> and
 <m>(-1,1)</m> and <m>(2,4)</m>, but the clock shows that the two particles
 are never at either crossing at the same time.
 </caption>
-<video source="videos/no_collision_1080p.mp4" width="80%"/>
+<video source="videos/no_collision_1080p.mp4" preview="videos/previews/no_collision_1080p.jpg" width="80%"/>
 </figure>
 
 <figure xml:id="fig-skel-no-collision">
@@ -907,7 +914,7 @@ With <m>\mathbf r_2(t) = \langle 2t-2,2t\rangle</m> the second particle follows 
 line as before, but on a different schedule. Use it to check which crossing is
 the collision, and when it happens.
 </caption>
-<video source="videos/collision_1080p.mp4" width="80%"/>
+<video source="videos/collision_1080p.mp4" preview="videos/previews/collision_1080p.jpg" width="80%"/>
 </figure>
 
 <insight xml:id="skel-insight-collision-vs-intersection">

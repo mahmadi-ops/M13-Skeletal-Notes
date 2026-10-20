@@ -159,6 +159,7 @@ For a visual representation of Taylor's formula, watch the animation in
 <caption>Taylor's Formula Animation.</caption>
 <video xml:id="video-skel-taylor-formula"
        source="videos/taylor_formula_1080p.mp4"
+       preview="videos/previews/taylor_formula_1080p.jpg"
        width="100%" aspect="16:9"/>
 </figure>
 </sidebyside>
@@ -383,6 +384,7 @@ remainder-theorem argument.
 </caption>
 <video xml:id="video-skel-exp-taylor"
        source="videos/taylor_exp_convergence.mp4"
+       preview="videos/previews/taylor_exp_convergence.jpg"
        width="100%" aspect="16:9"/>
 </figure>
 </sidebyside>
@@ -1163,7 +1165,7 @@ the tension <m>\overrightarrow{F}_T</m>, and a tangential component
 restoring force. For small angles, <m>\sin\theta \approx \theta</m> gives
 <m>F \approx -\dfrac{mg}{\ell}x</m>.
 </caption>
-<video xml:id="video-skel-pendulum-forces" source="videos/pendulum_forces.mp4" width="90%" preview="default"/>
+<video xml:id="video-skel-pendulum-forces" source="videos/pendulum_forces.mp4" width="90%" preview="videos/previews/pendulum_forces.jpg"/>
 </figure>
 </sidebyside>
 
@@ -1435,7 +1437,7 @@ The error of Euler's-identity approximation (with its bound
 decreasing geometrically as <m>n</m> increases, compared with the series
 at <m>x=1</m>.
 </caption>
-<video xml:id="video-skel-euler-pi-error" source="videos/euler-pi-error.mp4" width="85%"/>
+<video xml:id="video-skel-euler-pi-error" source="videos/euler-pi-error.mp4" preview="videos/previews/euler-pi-error.jpg" width="85%"/>
 </figure>
 </sidebyside>
 </conclusion>

@@ -192,6 +192,7 @@ its length is <m>\|\mathbf u\|\|\mathbf v\||\sin\theta|</m>.
 </caption>
 <video xml:id="video-skel-cross-product"
        source="videos/cross_product_3d_1080p.mp4"
+       preview="videos/previews/cross_product_3d_1080p.jpg"
        width="70%" aspect="16:9"/>
 </figure>
 
@@ -470,6 +471,7 @@ points <m>A</m>, <m>B</m>, and <m>C</m>.
 </caption>
 <video xml:id="video-skel-normal-vector"
        source="videos/normal_vector_3d_1080p.mp4"
+       preview="videos/previews/normal_vector_3d_1080p.jpg"
        width="70%" aspect="16:9"/>
 </figure>
 </statement>
@@ -905,6 +907,7 @@ shortens.
 </caption>
 <video xml:id="video-skel-biceps-torque"
        source="videos/biceps_torque_1080p.mp4"
+       preview="videos/previews/biceps_torque_1080p.jpg"
        width="70%" aspect="16:9"/>
 </figure>
 </statement>

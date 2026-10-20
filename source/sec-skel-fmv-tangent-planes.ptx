@@ -550,6 +550,7 @@ turn, followed by a slow rotation of the finished figure.
 </caption>
 <video xml:id="video-skel-tp-computing-normal-vector"
        source="videos/ComputingNormalVector.mp4"
+       preview="videos/previews/ComputingNormalVector.jpg"
        width="90%"/>
 </figure>
 

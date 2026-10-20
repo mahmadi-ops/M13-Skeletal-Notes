@@ -139,6 +139,7 @@ The vectors <m>\mathbf u</m>, <m>\mathbf v</m>, and
 whose hypotenuse is <m>\mathbf w = \mathbf u - \mathbf v</m>.</caption>
 <video xml:id="video-skel-law-of-cosines"
        source="videos/law_of_cosines_1080p.mp4"
+       preview="videos/previews/law_of_cosines_1080p.jpg"
        width="90%" aspect="16:9"/>
 </figure>
 
@@ -483,6 +484,7 @@ we can write <m>\mathbf u</m> as
   <caption>The projection of <m>\overrightarrow{u}</m> onto <m>\overrightarrow{v}</m> as a shadow cast by light from above.</caption>
   <video xml:id="video-skel-projection-shadow"
          source="videos/projection_formula_1080p.mp4"
+         preview="videos/previews/projection_formula_1080p.jpg"
          width="90%" aspect="16:9"/>
 </figure>
 
@@ -528,6 +530,7 @@ To achieve a visual understanding of this decomposition, watch the video below.
   pointing straight up.</caption>
   <video xml:id="video-skel-decompose-3d"
          source="videos/decompose_3d_v3_1080p.mp4"
+         preview="videos/previews/decompose_3d_v3_1080p.jpg"
          width="90%" aspect="16:9"/>
 </figure>
 </statement>
@@ -595,6 +598,7 @@ is the magnitude of the force in the direction of motion, as computed in
   <caption>A constant force <m>\mathbf F</m> acting on an object causing a displacement from <m>A</m> to <m>B</m>.</caption>
   <video xml:id="video-skel-work-force"
          source="videos/work_force_1080p.mp4"
+         preview="videos/previews/work_force_1080p.jpg"
          width="90%" aspect="16:9"/>
 </figure>
 
@@ -678,6 +682,7 @@ For more help, watch the video below.
 <caption>Set up the work computation: build the displacement vector first, then take the dot product. What do you get?</caption>
 <video xml:id="video-skel-work-hint"
        source="videos/work_hint_v2_1080p.mp4"
+       preview="videos/previews/work_hint_v2_1080p.jpg"
        width="90%" aspect="16:9"/>
 </figure>
 </statement>
@@ -767,6 +772,7 @@ the slope, and the perpendicular component
 <m>\overrightarrow{F}_{\perp} = \overrightarrow{F} - \overrightarrow{F}_{\parallel}</m> presses it into the surface.</caption>
 <video xml:id="video-skel-inclined-plane"
        source="videos/inclined_plane_1080p.mp4"
+       preview="videos/previews/inclined_plane_1080p.jpg"
        width="100%" aspect="16:9"/>
 </figure>
 </statement>
