@@ -180,12 +180,27 @@ z \amp = z_0 + t\,v_3
 </md>
 </p>
 
+<p>
+When none of <m>v_1, v_2, v_3</m> is zero, each parametric equation can
+be solved for <m>t</m>; equating the three expressions eliminates
+<m>t</m> and gives the <term>standard equations</term> (also called the
+<term>symmetric equations</term>) of the line:
+<md xml:id="eq-skel-lines-standard" number="yes">
+\frac{x - x_0}{v_1} = \frac{y - y_0}{v_2} = \frac{z - z_0}{v_3}.
+</md>
+If one of the components of <m>\mathbf v</m> is zero, say
+<m>v_3 = 0</m>, that coordinate stays constant along the line, and the
+standard equations are written as
+<m>\dfrac{x - x_0}{v_1} = \dfrac{y - y_0}{v_2},\ z = z_0</m>.
+</p>
+
 <example xml:id="ex-skel-lines-two-points">
 <title>The line through two points</title>
 <statement>
 <p>
-Find the vector equation and the parametric equations of the line that
-passes through the points <m>P_0(2,0,0)</m> and <m>P(1,-1,1)</m>.
+Find the vector equation, the parametric equations and the standard
+equations of the line that passes through the points <m>P_0(2,0,0)</m>
+and <m>P(1,-1,1)</m>.
 </p>
 
 <p>
@@ -195,15 +210,17 @@ passes through the points <m>P_0(2,0,0)</m> and <m>P(1,-1,1)</m>.
 <image>
 <latex-image>
 \begin{tikzpicture}
-\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (8,11);
-\draw[gray!35] (0,8.5) -- (8,8.5);
-\draw[gray!35] (0,5) -- (8,5);
-\node[anchor=north west, font=\small\itshape] at (0.3,10.7) {$\mathbf v =$};
-\node[anchor=north west, font=\small\itshape] at (0.3,8.2) {$\mathbf r(t) =$};
-\node[anchor=north west, font=\small\itshape] at (0.3,4.7) {Parametric equations:};
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (8,14);
+\draw[gray!35] (0,11.5) -- (8,11.5);
+\draw[gray!35] (0,8) -- (8,8);
+\draw[gray!35] (0,3.5) -- (8,3.5);
+\node[anchor=north west, font=\small\itshape] at (0.3,13.7) {$\mathbf v =$};
+\node[anchor=north west, font=\small\itshape] at (0.3,11.2) {$\mathbf r(t) =$};
+\node[anchor=north west, font=\small\itshape] at (0.3,7.7) {Parametric equations:};
+\node[anchor=north west, font=\small\itshape] at (0.3,3.2) {Standard equations:};
 \end{tikzpicture}
 </latex-image>
-<shortdescription>Blank box in three rows, for the direction vector, for the vector equation of the line, and for its parametric equations.</shortdescription>
+<shortdescription>Blank box in four rows, for the direction vector, for the vector equation of the line, for its parametric equations, and for its standard equations.</shortdescription>
 </image>
 <image>
 <latex-image><![CDATA[
