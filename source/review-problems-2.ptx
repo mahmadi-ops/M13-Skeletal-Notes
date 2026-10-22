@@ -8,18 +8,21 @@
   instructor's markup marked R2 rather than assigning to Assignments 4-6.
 
   Starred problems (ex-cross-circular-motion, the three projectile exercises
-  and exer-parabolic-antenna) are optional and will not be examined.
+  and exer-parabolic-antenna) are optional and will not be examined.  At the
+  instructor's request (Oct 2026) they close the file, in their original
+  order, after the Runestone problems.
 
-  ex-3d-parabolic-cylinder and ex-3d-cylinder-paraboloid-solid came from the
-  three-dimensional coordinates worksheet; the markup asks for them to sit
-  with the quadric surfaces problems, so they are last.
+  The quadric-surface problems (rs19-3, rs-multiselect-quadrics,
+  ex-3d-parabolic-cylinder and ex-3d-cylinder-paraboloid-solid) moved to
+  Review Problems #3 at the instructor's request (Oct 2026), in this
+  student-facing book only, following the quadric-surface problems of
+  Assignments 6 and 7.  Review Problems #2 no longer cites the
+  quadric-surfaces section.
 
-  rs-multiselect-quadrics ("Which of These Are Hyperboloids?") was moved here
-  from the Interactive Problem Set (exercises-runestone-samples.ptx), where it
-  filled the multiple-select slot.  That worksheet has since been dissolved,
-  and its three Chapter 3 problems (rs-mc-vector-identity,
-  rs-fillin-skew-lines and rs-parsons-no-work) close this file; its Chapter 4
-  problems went to review-problems-3.ptx.
+  The Interactive Problem Set (exercises-runestone-samples.ptx) has been
+  dissolved; its three Chapter 3 problems (rs-mc-vector-identity,
+  rs-fillin-skew-lines and rs-parsons-no-work) follow the unstarred problems
+  here; its Chapter 4 problems went to review-problems-3.ptx.
 
   Those Runestone problems are DEV-schema elements, so validate this file
   with the CLI's dev schema option; the stable schema reports false positives
@@ -40,8 +43,9 @@
 <p>
 These are the problems from the Chapter 3 topics that were not assigned in
 Assignments 4-6, collected here for review. They are not assigned, but they
-are fair game on an exam. Problems marked with a star (<m>*</m>) are the
-exception: those are for the interested reader and will not be examined.
+are fair game on an exam. The problems marked with a star (<m>*</m>), at
+the end, are the exception: those are for the interested reader and will
+not be examined. The quadric-surface problems are in Review Problems #3.
 </p>
 
 <p>
@@ -57,7 +61,6 @@ The topics they cover, with links to the notes:
 <li><p><xref ref="sec-skel-geom-parametrization" text="title"/></p></li>
 <li><p><xref ref="sec-skel-geom-lines-planes" text="title"/></p></li>
 <li><p><xref ref="sec-skel-geom-conics" text="title"/></p></li>
-<li><p><xref ref="sec-skel-geom-quadric-surfaces" text="title"/></p></li>
 </ul>
 </p>
 </introduction>
@@ -1274,6 +1277,559 @@ centre represents u cross v, a vector pointing out of the page.
 </solution>
 </exercise>
 
+<exercise xml:id="pp-19">
+<statement>
+<p>
+Consider the curve of intersection of the surfaces
+<m>4x^2 + z^2 = 16</m> and <m>y = z</m>.
+<ol marker="(a)">
+<li>
+<p>
+Parametrize the curve.
+</p>
+</li>
+<li>
+<p>
+Find the projection of the curve onto the <m>xy</m>-plane, and give a
+Cartesian equation for it.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<term>(a)</term>
+The first surface does not involve <m>y</m>; dividing by <m>16</m>,
+<md>
+\frac{x^2}{4} + \frac{z^2}{16} = 1,
+</md>
+which is an ellipse in the <m>xz</m>-plane with semi-axes <m>2</m>
+(in <m>x</m>) and <m>4</m> (in <m>z</m>). It is parametrized by
+<m>x = 2\cos(t)</m>, <m>z = 4\sin(t)</m>. The second surface simply
+forces <m>y = z</m>, so
+<md>
+x = 2\cos(t), \qquad y = 4\sin(t), \qquad z = 4\sin(t),
+\qquad 0 \le t \le 2\pi.
+</md>
+</p>
+
+<p>
+<term>(b)</term> Projecting onto the <m>xy</m>-plane just means forgetting
+the <m>z</m>-coordinate, so the projected curve is parametrized by the
+first two components alone,
+<md>
+x = 2\cos(t), \qquad y = 4\sin(t), \qquad 0 \le t \le 2\pi.
+</md>
+To turn that into a Cartesian equation, eliminate <m>t</m> with
+<m>\cos^2 t + \sin^2 t = 1</m>:
+<md>
+\left(\frac{x}{2}\right)^2 + \left(\frac{y}{4}\right)^2
+= \cos^2 t + \sin^2 t = 1,
+\qquad\text{that is}\qquad
+\frac{x^2}{4} + \frac{y^2}{16} = 1 .
+</md>
+The shadow is an ellipse in the <m>xy</m>-plane with semi-axes <m>2</m>
+in the <m>x</m>-direction and <m>4</m> in the <m>y</m>-direction. This
+is the same ellipse we started from in the <m>xz</m>-plane, which is no
+accident: the plane <m>y = z</m> carries the <m>z</m>-coordinate over to
+the <m>y</m>-coordinate unchanged.
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rw23-6">
+<statement>
+<p>
+Find the intersection of the line
+<m>\mathbf r(t) = \langle 1, 0, 1\rangle + t\langle -1, 1, 1\rangle</m>
+and the plane <m>2x - y + z = 1</m>.
+</p>
+</statement>
+<solution>
+<p>
+The parametric equations of the line are
+<md>
+x(t) = 1 - t, \qquad y(t) = t, \qquad z(t) = 1 + t.
+</md>
+Substituting into the equation of the plane,
+<md>
+2x - y + z = 2(1-t) - t + (1+t) = 3 - 2t = 1
+\;\Rightarrow\; t = 1,
+</md>
+and <m>x(1) = 0</m>, <m>y(1) = 1</m>, <m>z(1) = 2</m>. The
+intersection is the point <m>(0, 1, 2)</m>.
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rw17-5">
+<statement>
+<p>
+Find the distance between the two planes
+<md>
+x + 2y + z = 1
+\qquad\text{and}\qquad
+2x + 4y + 2z = 7.
+</md>
+</p>
+</statement>
+<solution>
+<p>
+Dividing the second equation by <m>2</m> gives
+<m>x + 2y + z = \frac72</m>, so both planes have the same normal
+vector <m>\vec n = \langle 1, 2, 1\rangle</m> and are therefore
+<em>parallel</em>. (They are distinct, since <m>1 \ne \frac72</m>.)
+</p>
+
+<p>
+Pick any point on the first plane, say <m>P(1,0,0)</m>, and any point
+on the second, say <m>S\left(\frac72, 0, 0\right)</m>. Then
+<m>\vec{PS} = \left\langle \frac52, 0, 0\right\rangle</m>, and the
+distance between the planes is the length of the projection of
+<m>\vec{PS}</m> onto <m>\vec n</m>:
+<md>
+d = \left|\vec{PS}\cdot\frac{\vec n}{\|\vec n\|}\right|
+= \frac{\left|\frac52 \cdot 1 + 0 + 0\right|}{\sqrt{1+4+1}}
+= \frac{5}{2\sqrt6}.
+</md>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="pp-12">
+<statement>
+<p>
+Find the angle between the planes <m>2x + 2y = 7</m> and
+<m>y + z = -1</m>.
+</p>
+</statement>
+<solution>
+<p>
+The angle between two planes equals the angle between their normal
+vectors, <m>\vec n_1 = \langle 2, 2, 0\rangle</m> and
+<m>\vec n_2 = \langle 0, 1, 1\rangle</m>:
+<md>
+\cos\theta
+= \frac{\vec n_1 \cdot \vec n_2}{\|\vec n_1\|\,\|\vec n_2\|}
+= \frac{0 + 2 + 0}{\sqrt8 \cdot \sqrt2}
+= \frac{2}{4}
+= \frac12,
+</md>
+so <m>\theta = \dfrac{\pi}{3}</m>.
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="pp-14">
+<statement>
+<p>
+There is a line <m>L</m> parametrized by <m>x = 1 + 2t</m>,
+<m>y = 3 + 4t</m>, <m>z = 5 + 6t</m>. The line passes through some
+point <m>P</m> whose <m>z</m>-coordinate is <m>-7</m>. Find an
+equation for the plane through <m>P</m> normal to <m>L</m>.
+</p>
+</statement>
+<solution>
+<p>
+First locate <m>P</m>. Setting <m>z = -7</m>,
+<md>
+5 + 6t = -7 \;\Rightarrow\; t = -2,
+</md>
+so <m>x = 1 + 2(-2) = -3</m> and <m>y = 3 + 4(-2) = -5</m>, i.e.
+<m>P(-3, -5, -7)</m>.
+</p>
+
+<p>
+A plane normal to <m>L</m> has the direction vector of <m>L</m> as its
+normal vector, <m>\vec n = \langle 2, 4, 6\rangle</m>. Therefore the
+plane is
+<md>
+2(x+3) + 4(y+5) + 6(z+7) = 0.
+</md>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="m2a-4">
+<statement>
+<p>
+A surveyor determines that the three points
+<md>
+A = (-1,2,16), \qquad B = (2,-2,17), \qquad C = (2,0,16)
+</md>
+all lie on a flat surface <m>W</m>.
+<ol marker="(a)">
+<li>
+<p>
+Find the point of <m>W</m> that is closest to the point
+<m>(4,4,-3)</m>.
+</p>
+</li>
+<li>
+<p>
+Find parametric equations for a line that passes through
+<m>(4,4,-3)</m>, never crosses <m>W</m>, and satisfies
+<m>x(t) = y(t)</m>.
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+<term>Finding the plane.</term> Two vectors lying in <m>W</m> are
+<md>
+\vec{AB} = \left\langle 3,\ -4,\ 1 \right\rangle ,
+\qquad
+\vec{AC} = \left\langle 3,\ -2,\ 0 \right\rangle .
+</md>
+A normal vector is their cross product:
+<md>
+<mrow>\vec n \amp = \vec{AB}\times\vec{AC}
+= \begin{vmatrix}
+\mathbf i \amp \mathbf j \amp \mathbf k \\
+3 \amp -4 \amp 1 \\
+3 \amp -2 \amp 0
+\end{vmatrix}</mrow>
+<mrow>\amp = \left\langle (-4)(0)-(1)(-2),\ (1)(3)-(3)(0),\ (3)(-2)-(-4)(3)
+\right\rangle</mrow>
+<mrow>\amp = \left\langle 2,\ 3,\ 6 \right\rangle .</mrow>
+</md>
+Note <m>\|\vec n\| = \sqrt{4+9+36} = 7</m>, which will be convenient.
+Using the point <m>A</m>, the plane is
+<md>
+<mrow>2(x+1) + 3(y-2) + 6(z-16) \amp = 0</mrow>
+<mrow>2x + 3y + 6z \amp = 100 .</mrow>
+</md>
+(Check: <m>B</m> gives <m>4-6+102 = 100</m> and <m>C</m> gives
+<m>4+0+96 = 100</m>.)
+</p>
+
+<p>
+<term>(a)</term> The closest point of a plane to a given point
+<m>Q = (4,4,-3)</m> is the foot of the perpendicular from <m>Q</m>,
+which we reach by moving from <m>Q</m> in the direction of the normal.
+So consider
+<md>
+\vec r(t) = Q + t\,\vec n = (4+2t,\ 4+3t,\ -3+6t)
+</md>
+and find the value of <m>t</m> for which this point lies on <m>W</m>:
+<md>
+<mrow>2(4+2t) + 3(4+3t) + 6(-3+6t) \amp = 100</mrow>
+<mrow>8 + 4t + 12 + 9t - 18 + 36t \amp = 100</mrow>
+<mrow>2 + 49t \amp = 100</mrow>
+<mrow>t \amp = 2 .</mrow>
+</md>
+Therefore the closest point is
+<md>
+\vec r(2) = (4+4,\ 4+6,\ -3+12) = (8,\ 10,\ 9) .
+</md>
+(Check: <m>16 + 30 + 54 = 100</m>.) Incidentally, the
+distance from <m>Q</m> to <m>W</m> is
+<m>|t|\,\|\vec n\| = 2\cdot 7 = 14</m>.
+See <xref ref="fig-m2a-plane"/>.
+</p>
+
+<figure xml:id="fig-m2a-plane">
+<caption>
+Schematic picture of <xref ref="m2a-4"/>. From <m>Q(4,4,-3)</m> we
+travel along the normal direction <m>\vec n = \langle 2,3,6\rangle</m>
+until we hit <m>W</m>, arriving at <m>(8,10,9)</m>. Any line through
+<m>Q</m> whose direction is perpendicular to <m>\vec n</m> stays
+parallel to <m>W</m> and never meets it.
+</caption>
+<image width="72%">
+<description>
+<p>
+A tilted plane W drawn as a parallelogram, with the point Q below it.
+A normal arrow runs from Q up to the foot of the perpendicular on the
+plane, and a second line through Q is drawn parallel to the plane,
+never meeting it.
+</p>
+</description>
+<latex-image><![CDATA[
+\begin{tikzpicture}[scale=1.0]
+% the plane W as a parallelogram
+\fill[mblue, opacity=0.20] (-3.2,0.9) -- (2.6,2.1) -- (4.4,0.9)
+      -- (-1.4,-0.3) -- cycle;
+\draw[mblue, thick] (-3.2,0.9) -- (2.6,2.1) -- (4.4,0.9)
+      -- (-1.4,-0.3) -- cycle;
+\node[mblue] at (-2.75,1.45) {$W$};
+% the point Q and the foot F
+\coordinate (Q) at (0.2,-2.5);
+\coordinate (F) at (1.15,0.85);
+\draw[->, very thick, mverm] (Q) -- (F)
+      node[midway, right] {$\vec n=\langle 2,3,6\rangle$};
+\fill[mred] (Q) circle (2pt);
+\fill[mverm] (F) circle (2pt);
+\node[mred, anchor=north] at (Q) {$Q(4,4,-3)$};
+\node[mverm, anchor=south west] at (F) {$(8,10,9)$};
+% the parallel line through Q
+\draw[very thick, mgreen] (-3.0,-2.94) -- (3.6,-2.06);
+\node[mgreen, anchor=north east] at (-1.3,-2.98)
+      {$\ell:\ \vec d=\langle 6,6,-5\rangle$};
+% right angle mark at F
+\draw[mgray] ($(F)+(-0.20,-0.18)$) -- ($(F)+(-0.02,-0.30)$)
+             -- ($(F)+(0.10,-0.12)$);
+\end{tikzpicture}
+]]></latex-image>
+</image>
+</figure>
+
+<p>
+<term>(b)</term> A line never crosses the plane <m>W</m> exactly when
+it is parallel to <m>W</m> and does not lie in it. Since
+<m>Q = (4,4,-3)</m> is not on <m>W</m> (we saw
+<m>2(4)+3(4)+6(-3) = 2 \ne 100</m>), we only need the direction vector
+<m>\vec d = \left\langle a, b, c\right\rangle</m> to be perpendicular
+to the normal:
+<md>
+\vec d \cdot \vec n = 2a + 3b + 6c = 0 .
+</md>
+</p>
+
+<p>
+The extra requirement <m>x(t) = y(t)</m> forces the two lines
+<m>x = 4 + at</m> and <m>y = 4 + bt</m> to agree for all <m>t</m>,
+which happens exactly when <m>a = b</m>. Substituting <m>b = a</m>,
+<md>
+2a + 3a + 6c = 0 \quad\Longrightarrow\quad 5a = -6c .
+</md>
+Choosing <m>a = 6</m> and <m>c = -5</m> gives
+<m>\vec d = \left\langle 6,\ 6,\ -5 \right\rangle</m>, and the line is
+<md>
+x = 4 + 6t, \qquad y = 4 + 6t, \qquad z = -3 - 5t .
+</md>
+Indeed <m>x(t) = y(t)</m> for every <m>t</m>, and
+<m>\vec d\cdot\vec n = 12+18-30 = 0</m>, so the line is parallel to
+<m>W</m> and, starting from a point off <m>W</m>, never reaches it.
+</p>
+</solution>
+</exercise>
+
+<!-- ===== From the Interactive Problem Set (exercises-runestone-samples.ptx):
+     its three Chapter 3 problems.  These use dev-schema elements. ===== -->
+<exercise xml:id="rs-mc-vector-identity">
+<title>Which Identity Fails?</title>
+<statement>
+<p>
+Exactly one of the following is <em>not</em> valid for all vectors
+<m>\vec a, \vec b, \vec c</m> in <m>\R^3</m>. Which one?
+</p>
+</statement>
+<choices randomize="yes">
+
+<choice>
+<statement>
+<p><m>\vec a\cdot(\vec b\times\vec c) = (\vec a\times\vec b)\cdot\vec c</m></p>
+</statement>
+<feedback>
+<p>
+This one is valid. Both sides equal the determinant with rows
+<m>\vec a,\vec b,\vec c</m>, so the dot and the cross may be interchanged.
+</p>
+</feedback>
+</choice>
+
+<choice correct="yes">
+<statement>
+<p><m>\vec a\times(\vec b\times\vec c) = (\vec a\times\vec b)\times\vec c</m></p>
+</statement>
+<feedback>
+<p>
+Correct — the cross product is <em>not associative</em>. Take
+<m>\vec a = \vec b = \mathbf i</m> and <m>\vec c = \mathbf j</m>. Then
+<md>
+\mathbf i\times(\mathbf i\times\mathbf j) = \mathbf i\times\mathbf k
+ = -\mathbf j,
+\qquad
+(\mathbf i\times\mathbf i)\times\mathbf j = \vec 0\times\mathbf j = \vec 0 .
+</md>
+The left side lies in the plane of <m>\vec b</m> and <m>\vec c</m>; the
+right side lies in the plane of <m>\vec a</m> and <m>\vec b</m>. There is no
+reason for those to agree.
+</p>
+</feedback>
+</choice>
+
+<choice>
+<statement>
+<p><m>\vec a\times(\vec b + \vec c) = \vec a\times\vec b + \vec a\times\vec c</m></p>
+</statement>
+<feedback>
+<p>
+This one is valid — the cross product <em>is</em> distributive over
+addition. (It is only associativity that fails.)
+</p>
+</feedback>
+</choice>
+
+<choice>
+<statement>
+<p><m>\vec a\times(\vec b\times\vec c)
+   = (\vec a\cdot\vec c)\,\vec b - (\vec a\cdot\vec b)\,\vec c</m></p>
+</statement>
+<feedback>
+<p>
+This one is valid: it is the <q>BAC-CAB</q> triple product expansion. It
+looks the most exotic of the four, which is exactly why it is worth
+remembering that it is true.
+</p>
+</feedback>
+</choice>
+
+</choices>
+</exercise>
+
+<exercise xml:id="rs-fillin-skew-lines">
+<title>Distance Between Skew Lines</title>
+<statement>
+<p>
+Consider the two lines
+<md>
+<mrow>L_1: \amp \quad \vec r = \langle 1,0,2\rangle
+   + t\,\langle 2,-1,1\rangle,</mrow>
+<mrow>L_2: \amp \quad \vec r = \langle 0,3,-1\rangle
+   + s\,\langle 1,2,-1\rangle .</mrow>
+</md>
+They are skew. Let <m>\vec u,\vec v</m> be the direction vectors and let
+<m>\vec w</m> join a point of <m>L_1</m> to a point of <m>L_2</m>.
+</p>
+<p>
+The absolute value of the scalar triple product
+<m>\left|\vec w\cdot(\vec u\times\vec v)\right|</m> equals
+<var width="6"/>.
+</p>
+<p>
+The distance between the two lines, to three decimal places, is
+<var width="8"/>.
+</p>
+</statement>
+<setup>
+<var>
+<condition number="5">
+<feedback><p>Correct.</p></feedback>
+</condition>
+<condition number="-5">
+<feedback>
+<p>
+Nearly — the triple product itself is <m>-5</m>, but the question asks for
+its <em>absolute value</em>.
+</p>
+</feedback>
+</condition>
+</var>
+<var>
+<condition number="0.845" tolerance="0.001">
+<feedback><p>Correct.</p></feedback>
+</condition>
+<condition number="5.916" tolerance="0.002">
+<feedback>
+<p>
+That is <m>\left|\vec u\times\vec v\right| = \sqrt{35}</m>, the
+<em>denominator</em>. You still need to divide the triple product by it.
+</p>
+</feedback>
+</condition>
+<condition number="0.141" tolerance="0.002">
+<feedback>
+<p>
+You appear to have divided by <m>35</m> rather than by
+<m>\sqrt{35}</m>.
+</p>
+</feedback>
+</condition>
+</var>
+</setup>
+<hint>
+<p>
+The vector <m>\vec u\times\vec v</m> is perpendicular to both lines, so the
+distance is the length of the projection of <m>\vec w</m> onto it:
+<m>d = \left|\vec w\cdot(\vec u\times\vec v)\right| /
+\left|\vec u\times\vec v\right|</m>.
+</p>
+</hint>
+<solution>
+<p>
+With <m>\vec u = \langle 2,-1,1\rangle</m> and
+<m>\vec v = \langle 1,2,-1\rangle</m>,
+<md>
+\vec u\times\vec v =
+\begin{vmatrix}
+\mathbf i \amp \mathbf j \amp \mathbf k \\
+2 \amp -1 \amp 1 \\
+1 \amp 2 \amp -1
+\end{vmatrix}
+= \langle -1,\, 3,\, 5\rangle,
+\qquad
+\left|\vec u\times\vec v\right| = \sqrt{35}.
+</md>
+Taking <m>\vec w = \langle 0,3,-1\rangle - \langle 1,0,2\rangle
+= \langle -1,3,-3\rangle</m>,
+<md>
+\vec w\cdot(\vec u\times\vec v) = 1 + 9 - 15 = -5,
+\qquad
+d = \frac{5}{\sqrt{35}} = \frac{\sqrt{35}}{7} \approx 0.845 .
+</md>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rs-parsons-no-work">
+<title>Why a Magnetic Field Cannot Change a Particle's Speed</title>
+<statement>
+<p>
+Arrange the steps below into a correct proof that the magnetic force does no
+work, and therefore that a charged particle in a magnetic field moves at
+constant speed.
+</p>
+</statement>
+<!--
+  Keep the content of each <m> on ONE source line inside a <block>.  Parsons
+  blocks are line-oriented, so a newline inside the math splits the \( \)
+  delimiters across two lines and MathJax leaves the LaTeX as literal text.
+-->
+<blocks randomize="yes">
+<block order="1">
+<p>
+Let a particle of mass <m>m</m> and charge <m>q</m> move with velocity
+<m>\vec v</m> through a magnetic field <m>\vec B</m>.
+</p>
+</block>
+<block order="2">
+<p>
+The force on the particle is <m>\vec F = q\,\vec v\times\vec B</m>.
+</p>
+</block>
+<block order="3">
+<p>
+By definition, a cross product is perpendicular to both of its factors, so
+<m>\vec v\times\vec B</m> is perpendicular to <m>\vec v</m>.
+</p>
+</block>
+<block order="4">
+<p>
+Hence <m>\vec F\cdot\vec v = q\left(\vec v\times\vec B\right)\cdot\vec v = 0</m>.
+</p>
+</block>
+<block order="5">
+<p>
+The kinetic energy satisfies
+<m>\dfrac{d}{dt}\left(\tfrac12 m\,\vec v\cdot\vec v\right) = m\,\vec v\cdot\dfrac{d\vec v}{dt} = \vec F\cdot\vec v</m>.
+</p>
+</block>
+<block order="6">
+<p>
+Therefore <m>\dfrac{d}{dt}\left(\tfrac12 m v^2\right) = 0</m>, so <m>v</m>
+is constant: the field changes the particle's direction but never its
+speed.
+</p>
+</block>
+</blocks>
+</exercise>
+
+<!-- ===== Starred problems: for the interested reader, not examined. ===== -->
 <exercise xml:id="ex-cross-circular-motion">
 <title>*Circular Motion from a Perpendicular Force</title>
 
@@ -2323,337 +2879,6 @@ be examined.
   </conclusion>
 </exercise>
 
-<exercise xml:id="pp-19">
-<statement>
-<p>
-Consider the curve of intersection of the surfaces
-<m>4x^2 + z^2 = 16</m> and <m>y = z</m>.
-<ol marker="(a)">
-<li>
-<p>
-Parametrize the curve.
-</p>
-</li>
-<li>
-<p>
-Find the projection of the curve onto the <m>xy</m>-plane, and give a
-Cartesian equation for it.
-</p>
-</li>
-</ol>
-</p>
-</statement>
-<solution>
-<p>
-<term>(a)</term>
-The first surface does not involve <m>y</m>; dividing by <m>16</m>,
-<md>
-\frac{x^2}{4} + \frac{z^2}{16} = 1,
-</md>
-which is an ellipse in the <m>xz</m>-plane with semi-axes <m>2</m>
-(in <m>x</m>) and <m>4</m> (in <m>z</m>). It is parametrized by
-<m>x = 2\cos(t)</m>, <m>z = 4\sin(t)</m>. The second surface simply
-forces <m>y = z</m>, so
-<md>
-x = 2\cos(t), \qquad y = 4\sin(t), \qquad z = 4\sin(t),
-\qquad 0 \le t \le 2\pi.
-</md>
-</p>
-
-<p>
-<term>(b)</term> Projecting onto the <m>xy</m>-plane just means forgetting
-the <m>z</m>-coordinate, so the projected curve is parametrized by the
-first two components alone,
-<md>
-x = 2\cos(t), \qquad y = 4\sin(t), \qquad 0 \le t \le 2\pi.
-</md>
-To turn that into a Cartesian equation, eliminate <m>t</m> with
-<m>\cos^2 t + \sin^2 t = 1</m>:
-<md>
-\left(\frac{x}{2}\right)^2 + \left(\frac{y}{4}\right)^2
-= \cos^2 t + \sin^2 t = 1,
-\qquad\text{that is}\qquad
-\frac{x^2}{4} + \frac{y^2}{16} = 1 .
-</md>
-The shadow is an ellipse in the <m>xy</m>-plane with semi-axes <m>2</m>
-in the <m>x</m>-direction and <m>4</m> in the <m>y</m>-direction. This
-is the same ellipse we started from in the <m>xz</m>-plane, which is no
-accident: the plane <m>y = z</m> carries the <m>z</m>-coordinate over to
-the <m>y</m>-coordinate unchanged.
-</p>
-</solution>
-</exercise>
-
-<exercise xml:id="rw23-6">
-<statement>
-<p>
-Find the intersection of the line
-<m>\mathbf r(t) = \langle 1, 0, 1\rangle + t\langle -1, 1, 1\rangle</m>
-and the plane <m>2x - y + z = 1</m>.
-</p>
-</statement>
-<solution>
-<p>
-The parametric equations of the line are
-<md>
-x(t) = 1 - t, \qquad y(t) = t, \qquad z(t) = 1 + t.
-</md>
-Substituting into the equation of the plane,
-<md>
-2x - y + z = 2(1-t) - t + (1+t) = 3 - 2t = 1
-\;\Rightarrow\; t = 1,
-</md>
-and <m>x(1) = 0</m>, <m>y(1) = 1</m>, <m>z(1) = 2</m>. The
-intersection is the point <m>(0, 1, 2)</m>.
-</p>
-</solution>
-</exercise>
-
-<exercise xml:id="rw17-5">
-<statement>
-<p>
-Find the distance between the two planes
-<md>
-x + 2y + z = 1
-\qquad\text{and}\qquad
-2x + 4y + 2z = 7.
-</md>
-</p>
-</statement>
-<solution>
-<p>
-Dividing the second equation by <m>2</m> gives
-<m>x + 2y + z = \frac72</m>, so both planes have the same normal
-vector <m>\vec n = \langle 1, 2, 1\rangle</m> and are therefore
-<em>parallel</em>. (They are distinct, since <m>1 \ne \frac72</m>.)
-</p>
-
-<p>
-Pick any point on the first plane, say <m>P(1,0,0)</m>, and any point
-on the second, say <m>S\left(\frac72, 0, 0\right)</m>. Then
-<m>\vec{PS} = \left\langle \frac52, 0, 0\right\rangle</m>, and the
-distance between the planes is the length of the projection of
-<m>\vec{PS}</m> onto <m>\vec n</m>:
-<md>
-d = \left|\vec{PS}\cdot\frac{\vec n}{\|\vec n\|}\right|
-= \frac{\left|\frac52 \cdot 1 + 0 + 0\right|}{\sqrt{1+4+1}}
-= \frac{5}{2\sqrt6}.
-</md>
-</p>
-</solution>
-</exercise>
-
-<exercise xml:id="pp-12">
-<statement>
-<p>
-Find the angle between the planes <m>2x + 2y = 7</m> and
-<m>y + z = -1</m>.
-</p>
-</statement>
-<solution>
-<p>
-The angle between two planes equals the angle between their normal
-vectors, <m>\vec n_1 = \langle 2, 2, 0\rangle</m> and
-<m>\vec n_2 = \langle 0, 1, 1\rangle</m>:
-<md>
-\cos\theta
-= \frac{\vec n_1 \cdot \vec n_2}{\|\vec n_1\|\,\|\vec n_2\|}
-= \frac{0 + 2 + 0}{\sqrt8 \cdot \sqrt2}
-= \frac{2}{4}
-= \frac12,
-</md>
-so <m>\theta = \dfrac{\pi}{3}</m>.
-</p>
-</solution>
-</exercise>
-
-<exercise xml:id="pp-14">
-<statement>
-<p>
-There is a line <m>L</m> parametrized by <m>x = 1 + 2t</m>,
-<m>y = 3 + 4t</m>, <m>z = 5 + 6t</m>. The line passes through some
-point <m>P</m> whose <m>z</m>-coordinate is <m>-7</m>. Find an
-equation for the plane through <m>P</m> normal to <m>L</m>.
-</p>
-</statement>
-<solution>
-<p>
-First locate <m>P</m>. Setting <m>z = -7</m>,
-<md>
-5 + 6t = -7 \;\Rightarrow\; t = -2,
-</md>
-so <m>x = 1 + 2(-2) = -3</m> and <m>y = 3 + 4(-2) = -5</m>, i.e.
-<m>P(-3, -5, -7)</m>.
-</p>
-
-<p>
-A plane normal to <m>L</m> has the direction vector of <m>L</m> as its
-normal vector, <m>\vec n = \langle 2, 4, 6\rangle</m>. Therefore the
-plane is
-<md>
-2(x+3) + 4(y+5) + 6(z+7) = 0.
-</md>
-</p>
-</solution>
-</exercise>
-
-<exercise xml:id="m2a-4">
-<statement>
-<p>
-A surveyor determines that the three points
-<md>
-A = (-1,2,16), \qquad B = (2,-2,17), \qquad C = (2,0,16)
-</md>
-all lie on a flat surface <m>W</m>.
-<ol marker="(a)">
-<li>
-<p>
-Find the point of <m>W</m> that is closest to the point
-<m>(4,4,-3)</m>.
-</p>
-</li>
-<li>
-<p>
-Find parametric equations for a line that passes through
-<m>(4,4,-3)</m>, never crosses <m>W</m>, and satisfies
-<m>x(t) = y(t)</m>.
-</p>
-</li>
-</ol>
-</p>
-</statement>
-<solution>
-<p>
-<term>Finding the plane.</term> Two vectors lying in <m>W</m> are
-<md>
-\vec{AB} = \left\langle 3,\ -4,\ 1 \right\rangle ,
-\qquad
-\vec{AC} = \left\langle 3,\ -2,\ 0 \right\rangle .
-</md>
-A normal vector is their cross product:
-<md>
-<mrow>\vec n \amp = \vec{AB}\times\vec{AC}
-= \begin{vmatrix}
-\mathbf i \amp \mathbf j \amp \mathbf k \\
-3 \amp -4 \amp 1 \\
-3 \amp -2 \amp 0
-\end{vmatrix}</mrow>
-<mrow>\amp = \left\langle (-4)(0)-(1)(-2),\ (1)(3)-(3)(0),\ (3)(-2)-(-4)(3)
-\right\rangle</mrow>
-<mrow>\amp = \left\langle 2,\ 3,\ 6 \right\rangle .</mrow>
-</md>
-Note <m>\|\vec n\| = \sqrt{4+9+36} = 7</m>, which will be convenient.
-Using the point <m>A</m>, the plane is
-<md>
-<mrow>2(x+1) + 3(y-2) + 6(z-16) \amp = 0</mrow>
-<mrow>2x + 3y + 6z \amp = 100 .</mrow>
-</md>
-(Check: <m>B</m> gives <m>4-6+102 = 100</m> and <m>C</m> gives
-<m>4+0+96 = 100</m>.)
-</p>
-
-<p>
-<term>(a)</term> The closest point of a plane to a given point
-<m>Q = (4,4,-3)</m> is the foot of the perpendicular from <m>Q</m>,
-which we reach by moving from <m>Q</m> in the direction of the normal.
-So consider
-<md>
-\vec r(t) = Q + t\,\vec n = (4+2t,\ 4+3t,\ -3+6t)
-</md>
-and find the value of <m>t</m> for which this point lies on <m>W</m>:
-<md>
-<mrow>2(4+2t) + 3(4+3t) + 6(-3+6t) \amp = 100</mrow>
-<mrow>8 + 4t + 12 + 9t - 18 + 36t \amp = 100</mrow>
-<mrow>2 + 49t \amp = 100</mrow>
-<mrow>t \amp = 2 .</mrow>
-</md>
-Therefore the closest point is
-<md>
-\vec r(2) = (4+4,\ 4+6,\ -3+12) = (8,\ 10,\ 9) .
-</md>
-(Check: <m>16 + 30 + 54 = 100</m>.) Incidentally, the
-distance from <m>Q</m> to <m>W</m> is
-<m>|t|\,\|\vec n\| = 2\cdot 7 = 14</m>.
-See <xref ref="fig-m2a-plane"/>.
-</p>
-
-<figure xml:id="fig-m2a-plane">
-<caption>
-Schematic picture of <xref ref="m2a-4"/>. From <m>Q(4,4,-3)</m> we
-travel along the normal direction <m>\vec n = \langle 2,3,6\rangle</m>
-until we hit <m>W</m>, arriving at <m>(8,10,9)</m>. Any line through
-<m>Q</m> whose direction is perpendicular to <m>\vec n</m> stays
-parallel to <m>W</m> and never meets it.
-</caption>
-<image width="72%">
-<description>
-<p>
-A tilted plane W drawn as a parallelogram, with the point Q below it.
-A normal arrow runs from Q up to the foot of the perpendicular on the
-plane, and a second line through Q is drawn parallel to the plane,
-never meeting it.
-</p>
-</description>
-<latex-image><![CDATA[
-\begin{tikzpicture}[scale=1.0]
-% the plane W as a parallelogram
-\fill[mblue, opacity=0.20] (-3.2,0.9) -- (2.6,2.1) -- (4.4,0.9)
-      -- (-1.4,-0.3) -- cycle;
-\draw[mblue, thick] (-3.2,0.9) -- (2.6,2.1) -- (4.4,0.9)
-      -- (-1.4,-0.3) -- cycle;
-\node[mblue] at (-2.75,1.45) {$W$};
-% the point Q and the foot F
-\coordinate (Q) at (0.2,-2.5);
-\coordinate (F) at (1.15,0.85);
-\draw[->, very thick, mverm] (Q) -- (F)
-      node[midway, right] {$\vec n=\langle 2,3,6\rangle$};
-\fill[mred] (Q) circle (2pt);
-\fill[mverm] (F) circle (2pt);
-\node[mred, anchor=north] at (Q) {$Q(4,4,-3)$};
-\node[mverm, anchor=south west] at (F) {$(8,10,9)$};
-% the parallel line through Q
-\draw[very thick, mgreen] (-3.0,-2.94) -- (3.6,-2.06);
-\node[mgreen, anchor=north east] at (-1.3,-2.98)
-      {$\ell:\ \vec d=\langle 6,6,-5\rangle$};
-% right angle mark at F
-\draw[mgray] ($(F)+(-0.20,-0.18)$) -- ($(F)+(-0.02,-0.30)$)
-             -- ($(F)+(0.10,-0.12)$);
-\end{tikzpicture}
-]]></latex-image>
-</image>
-</figure>
-
-<p>
-<term>(b)</term> A line never crosses the plane <m>W</m> exactly when
-it is parallel to <m>W</m> and does not lie in it. Since
-<m>Q = (4,4,-3)</m> is not on <m>W</m> (we saw
-<m>2(4)+3(4)+6(-3) = 2 \ne 100</m>), we only need the direction vector
-<m>\vec d = \left\langle a, b, c\right\rangle</m> to be perpendicular
-to the normal:
-<md>
-\vec d \cdot \vec n = 2a + 3b + 6c = 0 .
-</md>
-</p>
-
-<p>
-The extra requirement <m>x(t) = y(t)</m> forces the two lines
-<m>x = 4 + at</m> and <m>y = 4 + bt</m> to agree for all <m>t</m>,
-which happens exactly when <m>a = b</m>. Substituting <m>b = a</m>,
-<md>
-2a + 3a + 6c = 0 \quad\Longrightarrow\quad 5a = -6c .
-</md>
-Choosing <m>a = 6</m> and <m>c = -5</m> gives
-<m>\vec d = \left\langle 6,\ 6,\ -5 \right\rangle</m>, and the line is
-<md>
-x = 4 + 6t, \qquad y = 4 + 6t, \qquad z = -3 - 5t .
-</md>
-Indeed <m>x(t) = y(t)</m> for every <m>t</m>, and
-<m>\vec d\cdot\vec n = 12+18-30 = 0</m>, so the line is parallel to
-<m>W</m> and, starting from a point off <m>W</m>, never reaches it.
-</p>
-</solution>
-</exercise>
-
 <exercise xml:id="exer-parabolic-antenna">
  <title>*A Parabolic Antenna</title>
    <introduction>
@@ -2895,648 +3120,6 @@ The same parabola and focus as before, with a red right triangle
      </p>
    </solution>
  </task>
-</exercise>
-
-<exercise xml:id="rs19-3">
-<statement>
-<p>
-Identify and sketch the surface <m>4x^2 - y^2 + 2z^2 + 4 = 0</m>.
-</p>
-</statement>
-<solution>
-<p>
-Dividing by <m>-4</m>, we can rewrite the equation as
-<md>
-x^2 - \frac{y^2}{4} + \frac{z^2}{2} = -1,
-\qquad\text{i.e.}\qquad
-\frac{y^2}{4} = 1 + x^2 + \frac{z^2}{2},
-</md>
-which forces <m>y^2 \ge 4</m>, i.e. <m>y \ge 2</m> or
-<m>y \le -2</m>. Let us look at the traces:
-<ul>
-<li>
-<p>
-Intersection with the plane <m>x = c_1</m>:
-<m>\dfrac{y^2}{4} - \dfrac{z^2}{2} = 1 + c_1^2</m>, a hyperbola.
-</p>
-</li>
-<li>
-<p>
-Intersection with the plane <m>y = c_2</m>:
-<m>x^2 + \dfrac{z^2}{2} = \dfrac{c_2^2}{4} - 1</m>; when
-<m>|c_2| \gt 2</m>, we have ellipses as intersections.
-</p>
-</li>
-<li>
-<p>
-Intersection with the plane <m>z = c_3</m>:
-<m>\dfrac{y^2}{4} - x^2 = 1 + \dfrac{c_3^2}{2}</m>, a hyperbola.
-</p>
-</li>
-</ul>
-The surface is a <term>hyperboloid of two sheets</term> along the
-<m>y</m>-axis, with vertices <m>(0,-2,0)</m> and <m>(0,2,0)</m>. See
-<xref ref="fig-rs19-hyperboloid2"/>.
-</p>
-
-<figure xml:id="fig-rs19-hyperboloid2">
-<caption>
-The hyperboloid of two sheets
-<m>\frac{y^2}{4} - x^2 - \frac{z^2}{2} = 1</m>: two bowl-shaped
-sheets opening along the <m>y</m>-axis, with vertices at
-<m>(0,\pm 2,0)</m>.
-</caption>
-<image width="66%">
-<description>
-<p>
-Two bowl shaped surfaces in a three dimensional coordinate system,
-opening away from each other along the horizontal y axis. The left
-sheet has its vertex at zero comma negative two comma zero and opens
-to the left; the right sheet has its vertex at zero comma two comma
-zero and opens to the right. Each sheet ends in an ellipse.
-</p>
-</description>
-<latex-image>
-<![CDATA[\begin{tikzpicture}[scale=1.0]
-  % axes
-  \draw[-stealth, thick] (0,-2.3) -- (0,2.5) node[above] {$z$};
-  \draw[-stealth, thick] (-3.9,0) -- (4.1,0) node[right] {$y$};
-  \draw[-stealth, thick] (0.9,0.65) -- (-1.25,-0.9) node[below left] {$x$};
-  % right sheet: vertex at y=2, profile z = +-0.95*sqrt(y^2/2 - 2)
-  \draw[mblue, thick] plot[domain=2:3.5, samples=31]
-    (\x, {0.95*sqrt(0.5*\x*\x - 2)});
-  \draw[mblue, thick] plot[domain=2:3.5, samples=31]
-    (\x, {-0.95*sqrt(0.5*\x*\x - 2)});
-  \draw[mblue, thick] (3.5,0) ellipse (0.34cm and 1.9cm);
-  % left sheet
-  \draw[mblue, thick] plot[domain=-3.5:-2, samples=31]
-    (\x, {0.95*sqrt(0.5*\x*\x - 2)});
-  \draw[mblue, thick] plot[domain=-3.5:-2, samples=31]
-    (\x, {-0.95*sqrt(0.5*\x*\x - 2)});
-  \draw[mblue, thick] (-3.5,0) ellipse (0.34cm and 1.9cm);
-  % vertices
-  \fill (2,0) circle (1.6pt) node[below right=1pt] {$(0,2,0)$};
-  \fill (-2,0) circle (1.6pt) node[below left=1pt] {$(0,-2,0)$};
-\end{tikzpicture}]]>
-</latex-image>
-</image>
-</figure>
-</solution>
-</exercise>
-
-<exercise xml:id="rs-multiselect-quadrics">
-<title>Which of These Are Hyperboloids?</title>
-<statement>
-<p>
-None of the equations below is in standard position. Complete the square
-where necessary, then select <em>every</em> equation whose surface is a
-hyperboloid, of one sheet or of two.
-</p>
-</statement>
-<choices randomize="yes">
-
-<choice correct="yes">
-<statement><p><m>x^2 + y^2 - z^2 - 2x = 0</m></p></statement>
-<feedback>
-<p>
-Correct. Completing the square gives
-<m>(x-1)^2 + y^2 - z^2 = 1</m>: one negative square, equal to a positive
-constant, so a hyperboloid of <em>one</em> sheet.
-</p>
-</feedback>
-</choice>
-
-<choice>
-<statement><p><m>x^2 + y^2 + 4z^2 - 4y = 0</m></p></statement>
-<feedback>
-<p>
-No. This is <m>x^2 + (y-2)^2 + 4z^2 = 4</m> — every square is positive, so
-it is an ellipsoid.
-</p>
-</feedback>
-</choice>
-
-<choice correct="yes">
-<statement><p><m>x^2 - y^2 - z^2 = 1</m></p></statement>
-<feedback>
-<p>
-Correct. <em>Two</em> negative squares against a positive constant gives a
-hyperboloid of two sheets.
-</p>
-</feedback>
-</choice>
-
-<choice>
-<statement><p><m>x^2 + y^2 - z^2 = 0</m></p></statement>
-<feedback>
-<p>
-No — and this is the trap. It has the same signs as the first option, but
-it equals <m>0</m> rather than a positive constant. That degenerates the
-hyperboloid into an <em>elliptic cone</em>, the surface the two families of
-hyperboloids approach asymptotically.
-</p>
-</feedback>
-</choice>
-
-<choice>
-<statement><p><m>z + 1 = x^2 - y^2</m></p></statement>
-<feedback>
-<p>
-No. The word <q>hyperbolic</q> is a red herring: this is linear in
-<m>z</m>, so it is a <em>hyperbolic paraboloid</em> (a saddle) with vertex
-at <m>(0,0,-1)</m>, not a hyperboloid.
-</p>
-</feedback>
-</choice>
-
-</choices>
-<solution>
-<p>
-Completing the square in the first and second,
-<md>
-<mrow>x^2 + y^2 - z^2 - 2x \amp = 0
-   \;\Longrightarrow\; (x-1)^2 + y^2 - z^2 = 1,</mrow>
-<mrow>x^2 + y^2 + 4z^2 - 4y \amp = 0
-   \;\Longrightarrow\; x^2 + (y-2)^2 + 4z^2 = 4 .</mrow>
-</md>
-Reading off the signs: one negative square against <m>+1</m> is a
-hyperboloid of one sheet; two negative squares against <m>+1</m> is a
-hyperboloid of two sheets. So the first and third are hyperboloids. The
-second is an ellipsoid, the fourth equals <m>0</m> and so is a cone, and
-the fifth is linear in <m>z</m> and so is a hyperbolic paraboloid.
-</p>
-</solution>
-</exercise>
-
-<exercise xml:id="ex-3d-parabolic-cylinder">
-<title>Graphing a Parabolic Cylinder</title>
-<statement>
-<p>
-Sketch the graph of <m>z = 4 - x^2</m> over the rectangle
-<m>-2 \le x \le 2</m>, <m>0 \le y \le 4</m> in the <m>xy</m>-plane.
-Why is this surface called a <term>parabolic cylinder</term>?
-</p>
-</statement>
-
-<solution>
-<p>
-Since the equation <m>z=4-x^2</m> does not involve <m>y</m>, every
-cross-section of the surface at a fixed value of <m>y</m> is the
-<em>same</em> parabola <m>z=4-x^2</m> in the <m>xz</m>-plane, opening
-downward from its vertex at <m>(0,4)</m>. Sliding that parabola along
-the <m>y</m>-axis from <m>y=0</m> to <m>y=4</m> sweeps out the surface.
-</p>
-<p>
-Over <m>-2\le x\le 2</m>, the parabola satisfies <m>4-x^2 \ge 0</m>,
-with equality exactly at <m>x=\pm 2</m>, so the surface touches the
-<m>xy</m>-plane along the two edges <m>x=\pm2</m> of the rectangular
-region and rises to a maximum height of <m>4</m> along the ridge
-<m>x=0</m>. Because it is generated by sliding a fixed curve along a
-straight line, rather than curving in the <m>y</m> direction as well,
-it is called a <term>parabolic cylinder</term>, shown in
-<xref ref="fig-ex3d-parabolic-cylinder"/>.
-</p>
-
-<figure xml:id="fig-ex3d-parabolic-cylinder">
-<caption>
-The parabolic cylinder <m>z=4-x^2</m> over the rectangle
-<m>-2\le x\le 2</m>, <m>0 \le y \le 4</m>. Every slice at a fixed
-<m>y</m> is the same downward-opening parabola.
-</caption>
-<image width="55%">
-<description>
-<p>
-A curved sheet shaped like a downward opening parabola in the x z
-plane, extended without change along the y direction over a rectangular
-region in the x y plane, forming an arched, tunnel-like surface.
-</p>
-</description>
-<latex-image><![CDATA[
-\usetikzlibrary{patterns, math}
-\tdplotsetmaincoords{60}{110}
-\begin{tikzpicture}[tdplot_main_coords,scale=0.85]
-\pgfmathsetmacro{\step}{0.01}
-% coordinate axes
-\draw[thick,->] (0,0,0) -- (2.5,0,0) node [below left] {\footnotesize$x$};
-\draw[dashed] (0,0,0) -- (-2.5,0,0);
-\draw[thick,->] (0,0,0) -- (0,4.5,0) node [right] {\footnotesize$y$};
-\draw[dashed] (0,0,0) -- (0,-0.5,0);
-\draw[thick] (0,0,0.0) -- (0,0,4.0);
-% the rectangular region in the xy-plane
-\draw[gray,thick,fill=yellow,opacity=0.35] (2,0,0) -- (2,4,0) -- (-2,4,0) -- (-2,0,0) -- cycle;
-\draw[blue,thick,opacity=0.5] (2,0,0) -- (2,4,0) -- (-2,4,0) -- (-2,0,0) -- cycle;
-% the curves slicing the surface
-\draw[blue,thick,opacity=0.5] plot[domain=-2:2,smooth,variable=\t] ({\t},{0},{4.0 - \t*\t});
-% the surface
-\foreach \y in {0,\step,...,4.0}{
-  \draw[cyan,thick,opacity=0.25] plot[domain=-2:2,smooth,variable=\t] ({\t},{\y},{4.0 - \t*\t});
-}
-% the curves slicing the surface
-\draw[blue,thick,opacity=0.5] plot[domain=-2:2,smooth,variable=\t] ({\t},{4.0},{4.0 - \t*\t});
-\node[blue,above right] at (0,2.5,4.125) {$z = 4 - x^2$};
-% last part of the z axis
-\draw[thick,->] (0,0,4.0) -- (0,0,4.5) node [above] {\footnotesize$z$};
-\end{tikzpicture}
-]]></latex-image>
-</image>
-</figure>
-</solution>
-</exercise>
-
-<exercise xml:id="ex-3d-cylinder-paraboloid-solid">
-<title>A Solid Bounded by a Cylinder and a Paraboloid</title>
-<statement>
-<p>
-Consider the solid bounded by the three surfaces
-<md>
-z = 0, \qquad z = x^2+y^2, \qquad x^2+y^2 = 4.
-</md>
-<ol marker="(a)">
-<li>
-<p>
-Describe each of the three bounding surfaces.
-</p>
-</li>
-<li>
-<p>
-Describe the solid region they enclose.
-</p>
-</li>
-<li>
-<p>
-Describe the cross-section of the solid in the plane <m>y=0</m>.
-</p>
-</li>
-</ol>
-</p>
-</statement>
-
-<solution>
-<p>
-<term>(a)</term> The equation <m>z=0</m> is the <m>xy</m>-plane. The
-equation <m>z=x^2+y^2</m> is a paraboloid opening upward from its
-vertex at the origin. The equation <m>x^2+y^2=4</m> is missing
-<m>z</m>, so it is the infinite cylinder of radius <m>2</m> whose axis
-is the <m>z</m>-axis. The paraboloid meets that cylinder exactly where
-<m>x^2+y^2=4</m>, at height <m>z=4</m>.
-</p>
-<p>
-<term>(b)</term> The solid consists of the points inside the cylinder
-lying between the flat base and the paraboloid:
-<md>
-x^2+y^2 \le 4, \qquad 0 \le z \le x^2+y^2.
-</md>
-Near the <m>z</m>-axis this range for <m>z</m> is almost nothing, since
-<m>x^2+y^2 \approx 0</m> there, while at the rim <m>x^2+y^2=4</m> it is
-the full interval <m>0 \le z \le 4</m>. The solid is therefore shaped
-like a shallow bowl carved out from underneath the paraboloid: thin at
-the center and rising to its full height <m>4</m> at the cylinder wall,
-shown in <xref ref="fig-ex3d-cylinder-paraboloid-solid"/>.
-</p>
-<p>
-<term>(c)</term> Setting <m>y=0</m> restricts the solid's defining
-inequalities to <m>-2\le x\le 2</m> and <m>0\le z\le x^2</m>: the
-region under the parabola <m>z=x^2</m>, above the <m>x</m>-axis,
-between <m>x=-2</m> and <m>x=2</m>, shown in
-<xref ref="fig-ex3d-cylinder-paraboloid-cross-section"/>.
-</p>
-
-<figure xml:id="fig-ex3d-cylinder-paraboloid-cross-section">
-<caption>
-The cross-section of the solid in the plane <m>y=0</m>: the region
-under the parabola <m>z=x^2</m> for <m>-2\le x\le 2</m>.
-</caption>
-<image width="40%">
-<description>
-<p>
-A two dimensional graph in the x z plane. A shaded region lies under
-the upward opening parabola z equals x squared, above the x axis,
-between x equals negative two and x equals two.
-</p>
-</description>
-<latex-image><![CDATA[
-\begin{tikzpicture}[scale=1.0, >=stealth]
-% the region 0 <= z <= x^2 for -2 <= x <= 2
-\fill[cyan!35, opacity=0.85] plot[domain=-2:2, samples=60] (\x,{\x*\x}) -- (2,0) -- (-2,0) -- cycle;
-\draw[cyan!55!black, thick] plot[domain=-2:2, samples=60] (\x,{\x*\x});
-\draw[cyan!55!black, thick] (-2,0) -- (2,0);
-\draw[->, thick] (-2.6,0) -- (2.6,0) node[right] {$x$};
-\draw[->, thick] (0,-0.4) -- (0,4.6) node[above] {$z$};
-\node[below left] at (0,0) {$0$};
-\draw[dashed, gray] (2,0) -- (2,4);
-\draw[dashed, gray] (-2,0) -- (-2,4);
-\node[below] at (2,0) {$2$};
-\node[below] at (-2,0) {$-2$};
-\node[cyan!55!black, above right] at (1.3,2.0) {$z=x^2$};
-\end{tikzpicture}
-]]></latex-image>
-</image>
-</figure>
-
-<figure xml:id="fig-ex3d-cylinder-paraboloid-solid">
-<caption>
-The solid bounded by <m>z=0</m>, the paraboloid <m>z=x^2+y^2</m>, and
-the cylinder <m>x^2+y^2=4</m>. The solid fills the region under the
-paraboloid, thin near the <m>z</m>-axis and reaching full height where
-the paraboloid meets the cylinder wall.
-</caption>
-<image width="55%">
-<description>
-<p>
-A paraboloid opening upward from the origin, shown as a shaded bowl
-sitting inside a cylindrical wall of radius two. The bowl's rim meets
-the top of the cylinder, and a shaded disk in the x y plane forms the
-flat base of the solid beneath the bowl.
-</p>
-</description>
-<latex-image><![CDATA[
-\usetikzlibrary{patterns, math}
-\tdplotsetmaincoords{60}{130}
-\begin{tikzpicture}[tdplot_main_coords,scale=0.75]
-\tikzmath{function f(\x) {return \x;};}
-\pgfmathsetmacro{\zini}{0.5*sqrt(2.0)}
-\pgfmathsetmacro{\step}{0.01}
-\pgfmathsetmacro{\zsig}{\zini+\step}
-\pgfmathsetmacro{\nextz}{\zini+0.5*\step}
-\pgfmathsetmacro{\sig}{2.0*\step}
-\pgfmathsetmacro{\tini}{0.5*pi}
-\pgfmathsetmacro{\tnext}{\tini+\step}
-\pgfmathsetmacro{\tfin}{1.85*pi}
-\pgfmathsetmacro{\tend}{2.5*pi}
-\pgfmathsetmacro{\tNext}{\tfin+\step}
-\pgfmathsetmacro{\final}{2.0*pi}
-% coordinate axes
-\draw[thick,->] (0,0,0) -- (3.5,0,0) node [below left] {\footnotesize$x$};
-\draw[dashed] (0,0,0) -- (-2.5,0,0);
-\draw[thick,->] (0,0,0) -- (0,3.5,0) node [right] {\footnotesize$y$};
-\draw[dashed] (0,0,0) -- (0,-2.5,0);
-% the base disk
-\draw[gray,thick,fill=yellow,opacity=0.35] plot[domain=0:6.2832,smooth,variable=\t] ({2.0*cos(\t r)},{2.0*sin(\t r)},{0.0});
-\draw[gray,dash dot dot] (-2,0,0) -- (-2,0,4);
-\draw[gray,dash dot dot] (0,-2,0) -- (0,-2,4);
-% the cylinder around the paraboloid (back)
-\foreach \angulo in {\tini,\tnext,...,\tfin}{
-  \pgfmathparse{2.0*cos(\angulo r)}
-  \pgfmathsetmacro{\px}{\pgfmathresult}
-  \pgfmathparse{2.0*sin(\angulo r)}
-  \pgfmathsetmacro{\py}{\pgfmathresult}
-  \draw[pink,opacity=0.15] (\px,\py,0) -- (\px,\py,4.0);
-}
-% the paraboloid (for z = constant)
-\foreach \altura in {\step,\sig,...,4.0}{
-  \pgfmathparse{sqrt(\altura)}
-  \pgfmathsetmacro{\radio}{\pgfmathresult}
-  \draw[cyan,thick,opacity=0.25] plot[domain=\tini:\tfin,smooth,variable=\t] ({\radio*cos(\t r)},{\radio*sin(\t r)},{\altura});
-}
-\draw[thick] (0,0,0) -- (0,0,4.0);
-% the curves bounding the solid
-\draw[blue,thick,opacity=0.5] plot[domain=-2:2,smooth,variable=\t] ({\t},0,{\t*\t});
-\draw[blue,thick,opacity=0.5] plot[domain=-2:2,smooth,variable=\t] (0,{\t},{\t*\t});
-% the paraboloid (for z = constant)
-\foreach \altura in {\step,\sig,...,4.0}{
-  \pgfmathparse{sqrt(\altura)}
-  \pgfmathsetmacro{\radio}{\pgfmathresult}
-  \draw[cyan,thick,opacity=0.25] plot[domain=\tfin:\tend,smooth,variable=\t] ({\radio*cos(\t r)},{\radio*sin(\t r)},{\altura});
-}
-\draw[blue,thick,opacity=0.5] plot[domain=0:6.2832,smooth,variable=\t] ({2.0*cos(\t r)},{2.0*sin(\t r)},{4.0});
-% the cylinder out of the paraboloid (front)
-\foreach \angulo in {\tfin,\tNext,...,\tend}{
-  \pgfmathparse{2.0*cos(\angulo r)}
-  \pgfmathsetmacro{\px}{\pgfmathresult}
-  \pgfmathparse{2.0*sin(\angulo r)}
-  \pgfmathsetmacro{\py}{\pgfmathresult}
-  \draw[pink,opacity=0.15] (\px,\py,0) -- (\px,\py,4.0);
-}
-\draw[gray,dash dot dot] (2,0,0) -- (2,0,4);
-\draw[gray,dash dot dot] (0,2,0) -- (0,2,4);
-\node[blue,left] at (1,-1.25,2.5) {$z = x^2 + y^2$};
-\draw[thick,->] (0,0,4.0) -- (0,0,4.5) node [above] {\footnotesize$z$};
-\end{tikzpicture}
-]]></latex-image>
-</image>
-</figure>
-</solution>
-</exercise>
-
-<!-- ===== From the Interactive Problem Set (exercises-runestone-samples.ptx):
-     its three Chapter 3 problems.  These use dev-schema elements. ===== -->
-<exercise xml:id="rs-mc-vector-identity">
-<title>Which Identity Fails?</title>
-<statement>
-<p>
-Exactly one of the following is <em>not</em> valid for all vectors
-<m>\vec a, \vec b, \vec c</m> in <m>\R^3</m>. Which one?
-</p>
-</statement>
-<choices randomize="yes">
-
-<choice>
-<statement>
-<p><m>\vec a\cdot(\vec b\times\vec c) = (\vec a\times\vec b)\cdot\vec c</m></p>
-</statement>
-<feedback>
-<p>
-This one is valid. Both sides equal the determinant with rows
-<m>\vec a,\vec b,\vec c</m>, so the dot and the cross may be interchanged.
-</p>
-</feedback>
-</choice>
-
-<choice correct="yes">
-<statement>
-<p><m>\vec a\times(\vec b\times\vec c) = (\vec a\times\vec b)\times\vec c</m></p>
-</statement>
-<feedback>
-<p>
-Correct — the cross product is <em>not associative</em>. Take
-<m>\vec a = \vec b = \mathbf i</m> and <m>\vec c = \mathbf j</m>. Then
-<md>
-\mathbf i\times(\mathbf i\times\mathbf j) = \mathbf i\times\mathbf k
- = -\mathbf j,
-\qquad
-(\mathbf i\times\mathbf i)\times\mathbf j = \vec 0\times\mathbf j = \vec 0 .
-</md>
-The left side lies in the plane of <m>\vec b</m> and <m>\vec c</m>; the
-right side lies in the plane of <m>\vec a</m> and <m>\vec b</m>. There is no
-reason for those to agree.
-</p>
-</feedback>
-</choice>
-
-<choice>
-<statement>
-<p><m>\vec a\times(\vec b + \vec c) = \vec a\times\vec b + \vec a\times\vec c</m></p>
-</statement>
-<feedback>
-<p>
-This one is valid — the cross product <em>is</em> distributive over
-addition. (It is only associativity that fails.)
-</p>
-</feedback>
-</choice>
-
-<choice>
-<statement>
-<p><m>\vec a\times(\vec b\times\vec c)
-   = (\vec a\cdot\vec c)\,\vec b - (\vec a\cdot\vec b)\,\vec c</m></p>
-</statement>
-<feedback>
-<p>
-This one is valid: it is the <q>BAC-CAB</q> triple product expansion. It
-looks the most exotic of the four, which is exactly why it is worth
-remembering that it is true.
-</p>
-</feedback>
-</choice>
-
-</choices>
-</exercise>
-
-<exercise xml:id="rs-fillin-skew-lines">
-<title>Distance Between Skew Lines</title>
-<statement>
-<p>
-Consider the two lines
-<md>
-<mrow>L_1: \amp \quad \vec r = \langle 1,0,2\rangle
-   + t\,\langle 2,-1,1\rangle,</mrow>
-<mrow>L_2: \amp \quad \vec r = \langle 0,3,-1\rangle
-   + s\,\langle 1,2,-1\rangle .</mrow>
-</md>
-They are skew. Let <m>\vec u,\vec v</m> be the direction vectors and let
-<m>\vec w</m> join a point of <m>L_1</m> to a point of <m>L_2</m>.
-</p>
-<p>
-The absolute value of the scalar triple product
-<m>\left|\vec w\cdot(\vec u\times\vec v)\right|</m> equals
-<var width="6"/>.
-</p>
-<p>
-The distance between the two lines, to three decimal places, is
-<var width="8"/>.
-</p>
-</statement>
-<setup>
-<var>
-<condition number="5">
-<feedback><p>Correct.</p></feedback>
-</condition>
-<condition number="-5">
-<feedback>
-<p>
-Nearly — the triple product itself is <m>-5</m>, but the question asks for
-its <em>absolute value</em>.
-</p>
-</feedback>
-</condition>
-</var>
-<var>
-<condition number="0.845" tolerance="0.001">
-<feedback><p>Correct.</p></feedback>
-</condition>
-<condition number="5.916" tolerance="0.002">
-<feedback>
-<p>
-That is <m>\left|\vec u\times\vec v\right| = \sqrt{35}</m>, the
-<em>denominator</em>. You still need to divide the triple product by it.
-</p>
-</feedback>
-</condition>
-<condition number="0.141" tolerance="0.002">
-<feedback>
-<p>
-You appear to have divided by <m>35</m> rather than by
-<m>\sqrt{35}</m>.
-</p>
-</feedback>
-</condition>
-</var>
-</setup>
-<hint>
-<p>
-The vector <m>\vec u\times\vec v</m> is perpendicular to both lines, so the
-distance is the length of the projection of <m>\vec w</m> onto it:
-<m>d = \left|\vec w\cdot(\vec u\times\vec v)\right| /
-\left|\vec u\times\vec v\right|</m>.
-</p>
-</hint>
-<solution>
-<p>
-With <m>\vec u = \langle 2,-1,1\rangle</m> and
-<m>\vec v = \langle 1,2,-1\rangle</m>,
-<md>
-\vec u\times\vec v =
-\begin{vmatrix}
-\mathbf i \amp \mathbf j \amp \mathbf k \\
-2 \amp -1 \amp 1 \\
-1 \amp 2 \amp -1
-\end{vmatrix}
-= \langle -1,\, 3,\, 5\rangle,
-\qquad
-\left|\vec u\times\vec v\right| = \sqrt{35}.
-</md>
-Taking <m>\vec w = \langle 0,3,-1\rangle - \langle 1,0,2\rangle
-= \langle -1,3,-3\rangle</m>,
-<md>
-\vec w\cdot(\vec u\times\vec v) = 1 + 9 - 15 = -5,
-\qquad
-d = \frac{5}{\sqrt{35}} = \frac{\sqrt{35}}{7} \approx 0.845 .
-</md>
-</p>
-</solution>
-</exercise>
-
-<exercise xml:id="rs-parsons-no-work">
-<title>Why a Magnetic Field Cannot Change a Particle's Speed</title>
-<statement>
-<p>
-Arrange the steps below into a correct proof that the magnetic force does no
-work, and therefore that a charged particle in a magnetic field moves at
-constant speed.
-</p>
-</statement>
-<!--
-  Keep the content of each <m> on ONE source line inside a <block>.  Parsons
-  blocks are line-oriented, so a newline inside the math splits the \( \)
-  delimiters across two lines and MathJax leaves the LaTeX as literal text.
--->
-<blocks randomize="yes">
-<block order="1">
-<p>
-Let a particle of mass <m>m</m> and charge <m>q</m> move with velocity
-<m>\vec v</m> through a magnetic field <m>\vec B</m>.
-</p>
-</block>
-<block order="2">
-<p>
-The force on the particle is <m>\vec F = q\,\vec v\times\vec B</m>.
-</p>
-</block>
-<block order="3">
-<p>
-By definition, a cross product is perpendicular to both of its factors, so
-<m>\vec v\times\vec B</m> is perpendicular to <m>\vec v</m>.
-</p>
-</block>
-<block order="4">
-<p>
-Hence <m>\vec F\cdot\vec v = q\left(\vec v\times\vec B\right)\cdot\vec v = 0</m>.
-</p>
-</block>
-<block order="5">
-<p>
-The kinetic energy satisfies
-<m>\dfrac{d}{dt}\left(\tfrac12 m\,\vec v\cdot\vec v\right) = m\,\vec v\cdot\dfrac{d\vec v}{dt} = \vec F\cdot\vec v</m>.
-</p>
-</block>
-<block order="6">
-<p>
-Therefore <m>\dfrac{d}{dt}\left(\tfrac12 m v^2\right) = 0</m>, so <m>v</m>
-is constant: the field changes the particle's direction but never its
-speed.
-</p>
-</block>
-</blocks>
 </exercise>
 
 </worksheet>

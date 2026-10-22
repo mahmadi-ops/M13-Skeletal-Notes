@@ -77,6 +77,15 @@ convention). Repo-specific facts:
   its old name) and Assignment 7's introduction cites the quadric-surfaces
   section. Do not sync assignments 4-7 from M13-Mehdi, or carry these
   moves into it, without asking.
+- Review Problems #2 and #3 differ from their M13-Mehdi copies the same
+  way: the four quadric-surface problems of Review Problems #2 (`rs19-3`,
+  `rs-multiselect-quadrics`, `ex-3d-parabolic-cylinder`,
+  `ex-3d-cylinder-paraboloid-solid`) open Review Problems #3 in this book
+  only, which now cites the quadric-surfaces section while #2 no longer
+  does; and #2's five starred problems (`ex-cross-circular-motion`, the
+  three projectile exercises, `exer-parabolic-antenna`) close it, after the
+  Runestone problems. Do not sync these two review sets from M13-Mehdi
+  without asking.
 - `sample-past-exam-1.ptx` (page `worksheet-sample-past-exam-1.html`) is a
   copy of the instructor's completed-notes worksheet Sample Past Exam 1,
   solutions included, after Review Problems #1; its four topic links point
@@ -169,7 +178,8 @@ See `.claude/skills/skeletonize/SKILL.md` for the full rules. In short:
 ## Runestone interactive exercises
 
 A handful of auto-gradable Runestone problems live in `review-problems-2.ptx`
-(three Chapter 3 ones) and `review-problems-3.ptx` (three Chapter 4 ones).
+(three Chapter 3 ones), `review-problems-3.ptx` (the quadric-surface
+multiple-select and two Chapter 4 ones) and `review-problems-4.ptx` (a card sort).
 They came from a sampler worksheet, `exercises-runestone-samples.ptx`, that
 held one example of each question type; the sampler was dissolved into the
 review sets once the formats had been evaluated. What it established:
