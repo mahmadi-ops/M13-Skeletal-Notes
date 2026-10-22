@@ -59,7 +59,7 @@ convention). Repo-specific facts:
   `desk_action.py` drops hidden components before its cross-reference check,
   exactly as the build does, so Assignment 3 and Review Problems #1 are
   self-contained in the student books even while the section is unposted.
-- Assignments 4, 5 and 6 differ from their M13-Mehdi copies on purpose: at the
+- Assignments 4 to 7 differ from their M13-Mehdi copies on purpose: at the
   instructor's request three dot-product problems (`rs19-4`, `rw22-4`,
   `rw17-4`) open Assignment 5 in this student-facing book only, locked
   with Assignment 5's due date, and Assignment 4's introduction no longer
@@ -69,9 +69,14 @@ convention). Repo-specific facts:
   followed there by `dp-constrained-work` (a force along a plane, which
   had moved from Assignment 4 to 5), all locked with Assignment 6's due
   date; Assignment 5 no longer
-  cites the lines-and-planes section and Assignment 6 does. Do not sync
-  assignments 4-6 from M13-Mehdi, or carry these moves into it, without
-  asking.
+  cites the lines-and-planes section and Assignment 6 does. And the five
+  quadric-surface problems (`exercise-quadric-graph-match`, `rf-5`,
+  `rw23-7`, `rw21-10`, `m2b-2`) moved from Assignment 6 to the start of
+  Assignment 7 in this book only, locked with Assignment 7's due date, so
+  Assignment 6 is lines and planes plus conic sections (its file keeps
+  its old name) and Assignment 7's introduction cites the quadric-surfaces
+  section. Do not sync assignments 4-7 from M13-Mehdi, or carry these
+  moves into it, without asking.
 - `sample-past-exam-1.ptx` (page `worksheet-sample-past-exam-1.html`) is a
   copy of the instructor's completed-notes worksheet Sample Past Exam 1,
   solutions included, after Review Problems #1; its four topic links point

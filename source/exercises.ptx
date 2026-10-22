@@ -216,7 +216,7 @@ right or wrong, earns nothing.
 <xi:include href="assignment-5-cross-product-lines-planes.ptx"/>
 
 <!-- ================= Assignment 6 ================= -->
-<!-- UNPOSTED <xi:include href="assignment-6-quadric-surfaces.ptx"/> UNPOSTED -->
+<xi:include href="assignment-6-quadric-surfaces.ptx"/>
 
 <!-- ================= Review Problems #2 ================= -->
 <!-- Everything from the eight Chapter 3 topics that was not assigned. -->
