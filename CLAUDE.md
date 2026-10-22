@@ -82,6 +82,13 @@ convention). Repo-specific facts:
   solutions included, after Review Problems #1; its four topic links point
   at this book's ids. It is live, and `desk_action.py` can toggle it by the
   key `sample-past-exam-1`; the desk panel does not list it.
+- `sample-past-exam-2.ptx` (page `worksheet-sample-past-exam-2.html`) is a
+  past second midterm with solutions, transcribed from the instructor's
+  solutions PDF, placed right after Review Problems #2: point values left
+  out, rules worded as in Sample Past Exam 1, six topic links pointing at
+  this book's Chapter 3 ids. The same file, with the completed-notes ids,
+  is in MATH13-Instructor. It is live, `desk_action.py` toggles it by the
+  key `sample-past-exam-2`, and the desk panel does not list it.
 - `exam-1.ptx` (page `worksheet-exam-1.html`) is this quarter's Exam 1
   with solutions, transcribed from the instructor's answer key (the
   solutions from its revised version) and
