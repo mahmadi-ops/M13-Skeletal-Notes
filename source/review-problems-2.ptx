@@ -10,7 +10,9 @@
   Starred problems (ex-cross-circular-motion, the three projectile exercises
   and exer-parabolic-antenna) are optional and will not be examined.  At the
   instructor's request (Oct 2026) they close the file, in their original
-  order, after the Runestone problems.
+  order, after the Runestone problems.  The last Runestone problem,
+  rs-parsons-no-work (the magnetic-field proof, question 20), was starred
+  too at the instructor's request, so it opens that closing starred group.
 
   The quadric-surface problems (rs19-3, rs-multiselect-quadrics,
   ex-3d-parabolic-cylinder and ex-3d-cylinder-paraboloid-solid) moved to
@@ -22,7 +24,7 @@
   The Interactive Problem Set (exercises-runestone-samples.ptx) has been
   dissolved; its three Chapter 3 problems (rs-mc-vector-identity,
   rs-fillin-skew-lines and rs-parsons-no-work) follow the unstarred problems
-  here; its Chapter 4 problems went to review-problems-3.ptx.
+  here, the last of them starred; its Chapter 4 problems went to review-problems-3.ptx.
 
   Those Runestone problems are DEV-schema elements, so validate this file
   with the CLI's dev schema option; the stable schema reports false positives
@@ -1776,9 +1778,14 @@ d = \frac{5}{\sqrt{35}} = \frac{\sqrt{35}}{7} \approx 0.845 .
 </solution>
 </exercise>
 
+<!-- ===== Starred problems: for the interested reader, not examined. ===== -->
 <exercise xml:id="rs-parsons-no-work">
-<title>Why a Magnetic Field Cannot Change a Particle's Speed</title>
+<title>*Why a Magnetic Field Cannot Change a Particle's Speed</title>
 <statement>
+<p>
+<em>Starred problem.</em> This one is for the interested reader. It will not
+be examined.
+</p>
 <p>
 Arrange the steps below into a correct proof that the magnetic force does no
 work, and therefore that a charged particle in a magnetic field moves at
@@ -1829,7 +1836,6 @@ speed.
 </blocks>
 </exercise>
 
-<!-- ===== Starred problems: for the interested reader, not examined. ===== -->
 <exercise xml:id="ex-cross-circular-motion">
 <title>*Circular Motion from a Perpendicular Force</title>
 

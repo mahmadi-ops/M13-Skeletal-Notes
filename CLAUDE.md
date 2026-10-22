@@ -82,9 +82,10 @@ convention). Repo-specific facts:
   `rs-multiselect-quadrics`, `ex-3d-parabolic-cylinder`,
   `ex-3d-cylinder-paraboloid-solid`) open Review Problems #3 in this book
   only, which now cites the quadric-surfaces section while #2 no longer
-  does; and #2's five starred problems (`ex-cross-circular-motion`, the
-  three projectile exercises, `exer-parabolic-antenna`) close it, after the
-  Runestone problems. Do not sync these two review sets from M13-Mehdi
+  does; and #2's six starred problems close it: the Runestone proof
+  `rs-parsons-no-work` (starred at the instructor's request), then
+  `ex-cross-circular-motion`, the three projectile exercises and
+  `exer-parabolic-antenna`. Do not sync these two review sets from M13-Mehdi
   without asking.
 - `sample-past-exam-1.ptx` (page `worksheet-sample-past-exam-1.html`) is a
   copy of the instructor's completed-notes worksheet Sample Past Exam 1,
