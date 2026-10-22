@@ -505,6 +505,45 @@ points that we had in the previous example.
 </statement>
 </example>
 
+<paragraphs xml:id="skel-par-brain-map-cross-product">
+<title>The Big Picture</title>
+<p>
+The map below gathers the ideas of this section so far on one page:
+the two definitions of the cross product and what each one tells us. An arrow between two topics means the second builds on the
+first, and the gold arrows mark a derivation, where a formula follows from
+the topic behind it.
+</p>
+<p component="web">
+Every topic on the map is a link to the part of the section where it is
+covered. For comfortable reading,
+<url href="external/brain-map-cross-product.html" visual="">open the map full size in a new tab</url>.
+</p>
+<p component="print">
+The online version of the map is interactive: every topic on it is a link
+to the part of the section where it is covered.
+</p>
+</paragraphs>
+
+<sidebyside component="web" width="100%">
+<interactive xml:id="interactive-skel-brain-map-cross-product" iframe="brain-map-cross-product.html" width="100%" aspect="16:9">
+<instructions>
+<p>
+Each box on the map is an idea from this section, and each arrow connects
+an idea to the ones that build on it; the gold arrows mark a derivation,
+where a formula follows from the idea behind it. Hover over a box to light
+up its connections, and click it to jump to the part of the section where
+it is covered.
+</p>
+</instructions>
+</interactive>
+</sidebyside>
+
+<sidebyside component="print" width="100%">
+<image source="brain-map-cross-product-print.png">
+<shortdescription>A concept map of the cross product: the first definition with the right-hand rule, orthogonality to both vectors, the parallelogram area and the parallel-vector test; the second definition in components and as a determinant, the properties, and the area of a triangle.</shortdescription>
+</image>
+</sidebyside>
+
 </subsection>
 
 <!-- ================================================================ -->
