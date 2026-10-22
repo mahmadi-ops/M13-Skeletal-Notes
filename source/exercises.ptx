@@ -220,7 +220,7 @@ right or wrong, earns nothing.
 
 <!-- ================= Review Problems #2 ================= -->
 <!-- Everything from the eight Chapter 3 topics that was not assigned. -->
-<!-- UNPOSTED <xi:include href="review-problems-2.ptx"/> UNPOSTED -->
+<xi:include href="review-problems-2.ptx"/>
 
 <!-- ================= Sample Past Exam 2 ================= -->
 <!-- The seven exam questions with their worked solutions. -->
