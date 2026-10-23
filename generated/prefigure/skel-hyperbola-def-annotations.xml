@@ -1,0 +1,51 @@
+<diagram>
+  <annotations>
+    <annotation id="skel-hyperbola-def-hyperbola" speech2="A hyperbola opening left and right, illustrating the definition of a hyperbola as the set of points whose distances to two foci have a constant difference">
+      <grouped>skel-hyperbola-def-hyperbola</grouped>
+      <position>1</position>
+      <children>
+        <active>skel-hyperbola-def-hyperbola</active>
+        <active>skel-hyperbola-def-asymptotes</active>
+        <active>skel-hyperbola-def-vertices</active>
+        <active>skel-hyperbola-def-foci</active>
+      </children>
+      <components>
+        <active>skel-hyperbola-def-hyperbola</active>
+        <active>skel-hyperbola-def-asymptotes</active>
+        <active>skel-hyperbola-def-vertices</active>
+        <active>skel-hyperbola-def-foci</active>
+      </components>
+    </annotation>
+    <annotation id="skel-hyperbola-def-hyperbola" speech2="The hyperbola x squared over a squared minus y squared over b squared equals one, two blue branches opening left and right" sonify="yes">
+      <active>skel-hyperbola-def-hyperbola</active>
+      <position>1</position>
+      <parents>
+        <grouped>skel-hyperbola-def-hyperbola</grouped>
+      </parents>
+      <sonification>
+        <ACTIVE>skel-hyperbola-def-hyperbola</ACTIVE>
+      </sonification>
+    </annotation>
+    <annotation id="skel-hyperbola-def-asymptotes" speech2="The two dashed asymptotes through the origin, the lines y equals plus and minus b over a times x, which the branches approach">
+      <active>skel-hyperbola-def-asymptotes</active>
+      <position>2</position>
+      <parents>
+        <grouped>skel-hyperbola-def-hyperbola</grouped>
+      </parents>
+    </annotation>
+    <annotation id="skel-hyperbola-def-vertices" speech2="The vertices V one at a comma zero and V two at minus a comma zero, where each branch is closest to the center">
+      <active>skel-hyperbola-def-vertices</active>
+      <position>3</position>
+      <parents>
+        <grouped>skel-hyperbola-def-hyperbola</grouped>
+      </parents>
+    </annotation>
+    <annotation id="skel-hyperbola-def-foci" speech2="The foci F one at c comma zero and F two at minus c comma zero, beyond the vertices on the x axis">
+      <active>skel-hyperbola-def-foci</active>
+      <position>4</position>
+      <parents>
+        <grouped>skel-hyperbola-def-hyperbola</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

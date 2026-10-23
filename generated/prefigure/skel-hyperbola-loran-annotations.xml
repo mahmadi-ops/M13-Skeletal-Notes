@@ -1,0 +1,69 @@
+<diagram>
+  <annotations>
+    <annotation id="skel-hyperbola-loran-locus" speech2="Hyperbolic navigation: a fixed difference in signal arrival times from two receivers places the unknown position A on a hyperbola whose foci are the receivers">
+      <grouped>skel-hyperbola-loran-locus</grouped>
+      <position>1</position>
+      <children>
+        <active>skel-hyperbola-loran-locus</active>
+        <active>skel-hyperbola-loran-locus2</active>
+        <active>skel-hyperbola-loran-signals</active>
+        <active>skel-hyperbola-loran-ship</active>
+        <active>skel-hyperbola-loran-s1</active>
+        <active>skel-hyperbola-loran-s2</active>
+      </children>
+      <components>
+        <active>skel-hyperbola-loran-locus</active>
+        <active>skel-hyperbola-loran-locus2</active>
+        <active>skel-hyperbola-loran-signals</active>
+        <active>skel-hyperbola-loran-ship</active>
+        <active>skel-hyperbola-loran-s1</active>
+        <active>skel-hyperbola-loran-s2</active>
+      </components>
+    </annotation>
+    <annotation id="skel-hyperbola-loran-locus" speech2="The hyperbola of all positions having the measured time difference from receivers P one and P two" sonify="yes">
+      <active>skel-hyperbola-loran-locus</active>
+      <position>1</position>
+      <parents>
+        <grouped>skel-hyperbola-loran-locus</grouped>
+      </parents>
+      <sonification>
+        <ACTIVE>skel-hyperbola-loran-locus</ACTIVE>
+      </sonification>
+    </annotation>
+    <annotation id="skel-hyperbola-loran-locus2" speech2="A second dashed hyperbola, the locus for a different time difference, showing that each delay picks out its own curve">
+      <active>skel-hyperbola-loran-locus2</active>
+      <position>2</position>
+      <parents>
+        <grouped>skel-hyperbola-loran-locus</grouped>
+      </parents>
+    </annotation>
+    <annotation id="skel-hyperbola-loran-signals" speech2="Two signal paths, of length r one from receiver P one and length r two from receiver P two, meeting at the point A">
+      <active>skel-hyperbola-loran-signals</active>
+      <position>3</position>
+      <parents>
+        <grouped>skel-hyperbola-loran-locus</grouped>
+      </parents>
+    </annotation>
+    <annotation id="skel-hyperbola-loran-ship" speech2="The unknown position A, somewhere on the locus, closer to P one">
+      <active>skel-hyperbola-loran-ship</active>
+      <position>4</position>
+      <parents>
+        <grouped>skel-hyperbola-loran-locus</grouped>
+      </parents>
+    </annotation>
+    <annotation id="skel-hyperbola-loran-s1" speech2="Receiver P one, the nearer focus">
+      <active>skel-hyperbola-loran-s1</active>
+      <position>5</position>
+      <parents>
+        <grouped>skel-hyperbola-loran-locus</grouped>
+      </parents>
+    </annotation>
+    <annotation id="skel-hyperbola-loran-s2" speech2="Receiver P two, the farther focus">
+      <active>skel-hyperbola-loran-s2</active>
+      <position>6</position>
+      <parents>
+        <grouped>skel-hyperbola-loran-locus</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

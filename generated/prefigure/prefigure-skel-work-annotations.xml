@@ -1,0 +1,99 @@
+<diagram>
+  <annotations>
+    <annotation id="prefigure-skel-work-figure" speech2="A force F acting at Q at angle theta above the direction of motion, together with the displacement vector D from P to Q, and a reference segment showing the magnitude of F times cosine theta, the component of F in the direction of motion." sonify="yes">
+      <grouped>prefigure-skel-work-figure</grouped>
+      <position>1</position>
+      <children>
+        <active>prefigure-skel-work-point-p</active>
+        <active>prefigure-skel-work-point-q</active>
+        <active>prefigure-skel-work-vec-d</active>
+        <active>prefigure-skel-work-vec-f</active>
+        <active>prefigure-skel-work-ref-line</active>
+        <active>prefigure-skel-work-angle-theta</active>
+        <active>prefigure-skel-work-label-cos</active>
+      </children>
+      <components>
+        <active>prefigure-skel-work-point-p</active>
+        <active>prefigure-skel-work-point-q</active>
+        <active>prefigure-skel-work-vec-d</active>
+        <active>prefigure-skel-work-vec-f</active>
+        <active>prefigure-skel-work-ref-line</active>
+        <active>prefigure-skel-work-angle-theta</active>
+        <active>prefigure-skel-work-label-cos</active>
+      </components>
+      <sonification>
+        <ACTIVE>prefigure-skel-work-figure</ACTIVE>
+      </sonification>
+    </annotation>
+    <annotation id="prefigure-skel-work-point-p" speech2="The starting point P." sonify="yes">
+      <active>prefigure-skel-work-point-p</active>
+      <position>1</position>
+      <parents>
+        <grouped>prefigure-skel-work-figure</grouped>
+      </parents>
+      <sonification>
+        <ACTIVE>prefigure-skel-work-point-p</ACTIVE>
+      </sonification>
+    </annotation>
+    <annotation id="prefigure-skel-work-point-q" speech2="The ending point Q." sonify="yes">
+      <active>prefigure-skel-work-point-q</active>
+      <position>2</position>
+      <parents>
+        <grouped>prefigure-skel-work-figure</grouped>
+      </parents>
+      <sonification>
+        <ACTIVE>prefigure-skel-work-point-q</ACTIVE>
+      </sonification>
+    </annotation>
+    <annotation id="prefigure-skel-work-vec-d" speech2="The displacement vector D, from P to Q." sonify="yes">
+      <active>prefigure-skel-work-vec-d</active>
+      <position>3</position>
+      <parents>
+        <grouped>prefigure-skel-work-figure</grouped>
+      </parents>
+      <sonification>
+        <ACTIVE>prefigure-skel-work-vec-d</ACTIVE>
+      </sonification>
+    </annotation>
+    <annotation id="prefigure-skel-work-vec-f" speech2="The force vector F, acting at Q at angle theta above the direction of motion." sonify="yes">
+      <active>prefigure-skel-work-vec-f</active>
+      <position>4</position>
+      <parents>
+        <grouped>prefigure-skel-work-figure</grouped>
+      </parents>
+      <sonification>
+        <ACTIVE>prefigure-skel-work-vec-f</ACTIVE>
+      </sonification>
+    </annotation>
+    <annotation id="prefigure-skel-work-ref-line" speech2="A horizontal reference segment used to measure the angle theta." sonify="yes">
+      <active>prefigure-skel-work-ref-line</active>
+      <position>5</position>
+      <parents>
+        <grouped>prefigure-skel-work-figure</grouped>
+      </parents>
+      <sonification>
+        <ACTIVE>prefigure-skel-work-ref-line</ACTIVE>
+      </sonification>
+    </annotation>
+    <annotation id="prefigure-skel-work-angle-theta" speech2="The angle theta between the force F and the direction of motion." sonify="yes">
+      <active>prefigure-skel-work-angle-theta</active>
+      <position>6</position>
+      <parents>
+        <grouped>prefigure-skel-work-figure</grouped>
+      </parents>
+      <sonification>
+        <ACTIVE>prefigure-skel-work-angle-theta</ACTIVE>
+      </sonification>
+    </annotation>
+    <annotation id="prefigure-skel-work-label-cos" speech2="The magnitude of F in the direction of motion, F times cosine theta." sonify="yes">
+      <active>prefigure-skel-work-label-cos</active>
+      <position>7</position>
+      <parents>
+        <grouped>prefigure-skel-work-figure</grouped>
+      </parents>
+      <sonification>
+        <ACTIVE>prefigure-skel-work-label-cos</ACTIVE>
+      </sonification>
+    </annotation>
+  </annotations>
+</diagram>

@@ -1,0 +1,57 @@
+<diagram>
+  <annotations>
+    <annotation id="skel-prefigure-dirderiv-angle-figure" speech2="A point P 0 surrounded by a dashed unit circle of possible directions. A long red arrow shows the gradient of f. A blue unit arrow shows a direction u making an angle theta with the gradient. Two gray arrows orthogonal to the gradient mark the directions of zero change. Below the circle is the formula: the directional derivative equals the magnitude of the gradient times cosine theta.">
+      <grouped>skel-prefigure-dirderiv-angle-figure</grouped>
+      <position>1</position>
+      <children>
+        <active>skel-prefigure-dirderiv-angle-an-grad</active>
+        <active>skel-prefigure-dirderiv-angle-an-u</active>
+        <active>skel-prefigure-dirderiv-angle-an-zero1</active>
+        <active>skel-prefigure-dirderiv-angle-an-zero2</active>
+        <active>skel-prefigure-dirderiv-angle-an-circle</active>
+      </children>
+      <components>
+        <active>skel-prefigure-dirderiv-angle-an-grad</active>
+        <active>skel-prefigure-dirderiv-angle-an-u</active>
+        <active>skel-prefigure-dirderiv-angle-an-zero1</active>
+        <active>skel-prefigure-dirderiv-angle-an-zero2</active>
+        <active>skel-prefigure-dirderiv-angle-an-circle</active>
+      </components>
+    </annotation>
+    <annotation id="skel-prefigure-dirderiv-angle-an-grad" speech2="The gradient vector of f at P 0, drawn in red. Moving in this direction gives the most rapid increase, with directional derivative equal to the magnitude of the gradient.">
+      <active>skel-prefigure-dirderiv-angle-an-grad</active>
+      <position>1</position>
+      <parents>
+        <grouped>skel-prefigure-dirderiv-angle-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="skel-prefigure-dirderiv-angle-an-u" speech2="A unit vector u, drawn in blue, making an angle theta with the gradient. Its directional derivative is the magnitude of the gradient times cosine theta.">
+      <active>skel-prefigure-dirderiv-angle-an-u</active>
+      <position>2</position>
+      <parents>
+        <grouped>skel-prefigure-dirderiv-angle-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="skel-prefigure-dirderiv-angle-an-zero1" speech2="A direction orthogonal to the gradient, where cosine theta is zero, so the directional derivative is zero and f does not change.">
+      <active>skel-prefigure-dirderiv-angle-an-zero1</active>
+      <position>3</position>
+      <parents>
+        <grouped>skel-prefigure-dirderiv-angle-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="skel-prefigure-dirderiv-angle-an-zero2" speech2="The opposite orthogonal direction, where the directional derivative is also zero.">
+      <active>skel-prefigure-dirderiv-angle-an-zero2</active>
+      <position>4</position>
+      <parents>
+        <grouped>skel-prefigure-dirderiv-angle-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="skel-prefigure-dirderiv-angle-an-circle" speech2="The dashed unit circle of all possible directions u at the point P 0.">
+      <active>skel-prefigure-dirderiv-angle-an-circle</active>
+      <position>5</position>
+      <parents>
+        <grouped>skel-prefigure-dirderiv-angle-figure</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>
