@@ -4,7 +4,7 @@
 
   A copy of the instructor's completed-notes worksheet of the same name
   (mahmadi-ops/MATH13-Instructor, source/sample-past-exam-2.ptx), with
-  the six topic links in the introduction pointed at this book's ids.
+  the seven topic links in the introduction pointed at this book's ids.
   Keep the two copies identical apart from those links.
 
   Transcribed from the instructor's solutions PDF of a past second midterm
@@ -29,6 +29,7 @@ topics it covers, with links to the notes:
 
 <p>
 <ul>
+<li><p><xref ref="sec-skel-geom-3d-coordinates" text="title"/></p></li>
 <li><p><xref ref="sec-skel-geom-vectors" text="title"/></p></li>
 <li><p><xref ref="sec-skel-geom-dot-product" text="title"/></p></li>
 <li><p><xref ref="sec-skel-geom-cross-product" text="title"/></p></li>
