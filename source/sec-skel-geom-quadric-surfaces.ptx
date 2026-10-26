@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  Skeletal (fill-in) version of 3.8 Quadric Surfaces.
+  Skeletal (fill-in) version of 3.8 Quadric Surfaces and Cylinders.
 
   Definitions, theorems, summaries, and problem statements are kept;
   derivations and solutions are replaced by blank workspace boxes, each
@@ -15,9 +15,13 @@
   real-world applications are kept in full.  The summary table of all six
   surfaces is kept at the end, as the reference to check the completed
   notes against and as the printable table students carry forward.
+  In the Cylinders subsection the figure illustrating the definition is
+  kept in full; the figure of each example (generating curve, the line
+  through P, the other parallel lines) is an empty plane grid and an empty
+  set of 3D axes to sketch on, and the solutions are workspace boxes.
 -->
 <section xml:id="sec-skel-geom-quadric-surfaces" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Quadric Surfaces</title>
+  <title>Quadric Surfaces and Cylinders</title>
 
 <objectives>
       <ol>
@@ -36,6 +40,12 @@
           <p>
             What conditions on the coefficients of a second-degree equation in three variables
             will produce a quadric surface?  What are the different types of quadric surfaces?
+          </p>
+        </li>
+        <li>
+          <p>
+            What is a cylinder, in the sense of this section, and how do we recognize one
+            from its equation?
           </p>
         </li>
       </ol>
@@ -1149,6 +1159,314 @@ from a hyperboloid of two sheets.
       </shortdescription>
     </image>
   </figure>
+
+</subsection>
+
+<subsection xml:id="subsec-skel-cylinders">
+  <title>Cylinders</title>
+
+  <p>
+    One family of surfaces is still missing from this section, and it is the one
+    whose name you already know.  In everyday language a cylinder is a tin can;
+    in this section the word means something broader, and the tin can is only
+    the most familiar member of the family.
+  </p>
+
+  <definition xml:id="def-skel-cylinder">
+    <statement>
+      <p>
+        A <term>cylinder</term> is the set of all lines that are parallel to a
+        given line and pass through a given plane curve, which is known as the
+        <term>generating curve</term> of the cylinder.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    The lines are called the <term>rulings</term> of the cylinder, and together
+    they sweep out the surface, as in <xref ref="fig-skel-cylinder-definition"/>.
+    Nothing in the definition asks the generating curve to be a circle, or even
+    to be closed: any plane curve will do, and the rulings may be parallel to
+    any line.
+  </p>
+
+  <figure xml:id="fig-skel-cylinder-definition">
+    <caption>
+      A cylinder: the lines through a plane curve <m>C</m> (the generating
+      curve) that are parallel to a given line <m>L</m>.
+    </caption>
+    <image xml:id="image-skel-cylinder-definition" width="62%">
+      <shortdescription>
+        A wavy curve C drawn in the xz-plane, and through each of its points a
+        line parallel to the y-axis; the lines together form a corrugated sheet.
+        A dashed line L parallel to the rulings stands to one side.
+      </shortdescription>
+      <latex-image>
+        <![CDATA[\begin{tikzpicture}[x={(-0.62cm,-0.42cm)}, y={(1cm,0cm)}, z={(0cm,1cm)}, >=stealth, scale=1.05]
+  \definecolor{oiblue}{RGB}{0,114,178}
+  \pgfmathdeclarefunction{gen}{1}{\pgfmathparse{0.55*#1*#1 + 0.25*cos(230*#1) + 0.1}}
+  % back edge of the sheet
+  \draw[oiblue!55, thin] plot[domain=-1.8:1.8, samples=70] (\x, 3.0, {gen(\x)});
+  % rulings
+  \foreach \x in {-1.8,-1.5,...,1.8} {
+    \draw[oiblue!55, thin] (\x, -2.6, {gen(\x)}) -- (\x, 3.0, {gen(\x)});
+  }
+  % axes
+  \draw[->, thick] (0,0,0) -- (3.2,0,0) node[below left] {$x$};
+  \draw[->, thick] (0,-2.9,0) -- (0,3.9,0) node[right] {$y$};
+  \draw[->, thick] (0,0,0) -- (0,0,3.5) node[above] {$z$};
+  \node[below right, inner sep=1pt] at (0,0,0) {$0$};
+  % front edge of the sheet
+  \draw[oiblue!55, thin] plot[domain=-1.8:1.8, samples=70] (\x, -2.6, {gen(\x)});
+  % the generating curve, in the plane y = 0
+  \draw[oiblue, very thick] plot[domain=-1.8:1.8, samples=70] (\x, 0, {gen(\x)});
+  \node[oiblue, above left] at (1.8, 0, {gen(1.8)}) {$C$};
+  % the given line L, parallel to the rulings
+  \draw[dashed, thick] (-1.0, 1.0, 3.4) -- (-1.0, 3.4, 3.4) node[right] {$L$};
+\end{tikzpicture}]]>
+      </latex-image>
+    </image>
+  </figure>
+
+  <p>
+    In this section the given line will always be one of the coordinate axes and
+    the generating curve will lie in the coordinate plane perpendicular to it.
+    That special position makes a cylinder easy to recognize from its equation,
+    and the definition itself is all we need to draw it, as the next example shows.
+  </p>
+
+<example xml:id="ex-skel-parabolic-cylinder">
+  <title>A parabolic cylinder</title>
+  <statement>
+    <p>
+      Identify and sketch the surface <m>z = x^2</m>.
+    </p>
+
+    <p>
+      <em>Solution.</em>
+      (Which variable is missing from the equation? Sketch the generating curve in the coordinate plane of the other two variables and mark a point <m>P</m> on it. Explain why the whole line through <m>P</m> parallel to the axis of the missing variable lies on the surface, then use <xref ref="def-skel-cylinder"/> to name the surface.)
+    </p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,13);
+\node[anchor=north west, font=\small\itshape] at (0.35,12.70) {Missing variable:};
+\draw[gray!35] (0,9.75) -- (15,9.75);
+\node[anchor=north west, font=\small\itshape] at (0.35,9.45) {Generating curve, and the plane it lies in:};
+\draw[gray!35] (0,6.50) -- (15,6.50);
+\node[anchor=north west, font=\small\itshape] at (0.35,6.20) {A point $P$ on it, and why the line through $P$ parallel to the axis of the missing variable is on the surface:};
+\draw[gray!35] (0,3.25) -- (15,3.25);
+\node[anchor=north west, font=\small\itshape] at (0.35,2.95) {So, by the definition, the surface is:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in four rows: the missing variable, the generating curve and its plane, a point P with the reason the line through P parallel to the axis of the missing variable lies on the surface, and the name of the surface.</shortdescription>
+</image>
+</sidebyside>
+
+    <figure xml:id="fig-skel-parabolic-cylinder-rulings">
+      <caption>
+        Grids for the surface <m>z = x^2</m>: the generating curve in the <m>xz</m>-plane, and the surface built from the line through <m>P</m> and the other parallel lines.
+      </caption>
+      <sidebyside widths="38% 58%" valign="middle">
+   <image>
+    <latex-image><![CDATA[
+\begin{tikzpicture}[scale=0.34, >=stealth]
+\draw[gray!30, very thin] (-6,-6) grid (6,6);
+\draw[->, thick] (-6,0) -- (6.5,0) node[right] {$x$};
+\draw[->, thick] (0,-6) -- (0,6.5) node[above] {$z$};
+\foreach \a in {-4,-2,2,4} \draw (\a,-0.2) -- (\a,0.2);
+\foreach \b in {-4,-2,2,4} \draw (-0.2,\b) -- (0.2,\b);
+\node[anchor=north, font=\small\itshape] at (0,-7.0) {$y=0$};
+\end{tikzpicture}
+]]></latex-image>
+    <shortdescription>Empty coordinate grid for the y=0, for sketching the generating curve.</shortdescription>
+   </image>
+
+   <image>
+    <latex-image><![CDATA[
+\begin{tikzpicture}[>=stealth]
+  \draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (9.5,7.6);
+  \node[anchor=north west, font=\small\itshape] at (0.25,7.3) {the generating curve, the line through $P$, and the other parallel lines:};
+  \draw[->, thick] (4.6,3.1) -- (2.9,1.95) node[below left] {$x$};
+  \draw[->, thick] (4.6,3.1) -- (8.6,3.1) node[right] {$y$};
+  \draw[->, thick] (4.6,3.1) -- (4.6,6.4) node[above] {$z$};
+\end{tikzpicture}
+]]></latex-image>
+    <shortdescription>Empty three-dimensional axes in a box, for sketching the generating curve, the line through P parallel to the axis of the missing variable, and the other parallel lines.</shortdescription>
+   </image>
+      </sidebyside>
+    </figure>
+
+    <p component="print">
+    An interactive figure building the surface <m>z = x^2</m> from its generating curve, the line through a point <m>P</m> of it parallel to the <m>y</m>-axis, and all the other parallel lines accompanies the online version of these notes.
+    </p>
+    <sidebyside component="web" width="100%">
+    <figure xml:id="fig-skel-parabolic-cylinder-interactive">
+      <caption>
+        Building the surface <m>z = x^2</m> from its definition: the generating curve, the line through a point of it parallel to the <m>y</m>-axis, and all the other parallel lines.
+      </caption>
+      <interactive xml:id="interactive-skel-parabolic-cylinder-rulings" iframe="parabolic-cylinder-rulings.html" width="100%" aspect="8:7">
+        <instructions>
+          <p>
+          Use the buttons to show the generating curve, the line through
+          <m>P</m> parallel to the <m>y</m>-axis, and then all the other lines
+          parallel to it, and drag the slider to move <m>P</m> along the
+          curve.  The coordinates of <m>P</m> and the equation of the line
+          through it are displayed above the figure, so you can check your own
+          sketch against it.  Drag the figure to view it from a different angle,
+          or press the <q>Rotate</q> button to spin it automatically.</p>
+        </instructions>
+      </interactive>
+    </figure>
+    </sidebyside>
+
+    <figure xml:id="fig-skel-parabolic-cylinder-video">
+      <caption>
+        Building <m>z = x^2</m> from its generating curve: the line through <m>P</m> parallel to the <m>y</m>-axis, and then all the other parallel lines. Use it to check your sketch.
+      </caption>
+      <video xml:id="video-skel-parabolic-cylinder-rulings"
+             source="videos/parabolic_cylinder_rulings_manim.mp4"
+             preview="videos/previews/parabolic_cylinder_rulings_manim.jpg"
+             width="100%" aspect="16:9"/>
+    </figure>
+  </statement>
+</example>
+
+  <p>
+    A word of warning.  The equation <m>z = x^2</m> is the equation of a parabola
+    when we work in the <m>xz</m>-plane and the equation of a parabolic cylinder
+    when we work in space.  The equation alone cannot tell you which is meant;
+    the context must.  In this section, and in every chapter that follows, an
+    equation in <m>x</m>, <m>y</m>, and <m>z</m> describes a surface, even when
+    one of the three letters happens not to appear.
+  </p>
+
+<example xml:id="ex-skel-circular-cylinder">
+  <title>A circular cylinder along the <m>x</m>-axis</title>
+  <statement>
+    <p>
+      Identify and sketch the surface <m>y^2 + z^2 = 4</m>.
+    </p>
+
+    <p>
+      <em>Solution.</em>
+      (Which variable is missing this time? Sketch the generating curve in the coordinate plane of the other two variables and mark a point <m>P</m> on it. Explain why the whole line through <m>P</m> parallel to the axis of the missing variable lies on the surface, then name the surface and say which axis is its axis.)
+    </p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,13);
+\node[anchor=north west, font=\small\itshape] at (0.35,12.70) {Missing variable:};
+\draw[gray!35] (0,9.75) -- (15,9.75);
+\node[anchor=north west, font=\small\itshape] at (0.35,9.45) {Generating curve, and the plane it lies in:};
+\draw[gray!35] (0,6.50) -- (15,6.50);
+\node[anchor=north west, font=\small\itshape] at (0.35,6.20) {A point $P$ on it, and why the line through $P$ parallel to the axis of the missing variable is on the surface:};
+\draw[gray!35] (0,3.25) -- (15,3.25);
+\node[anchor=north west, font=\small\itshape] at (0.35,2.95) {So, by the definition, the surface is (with its axis):};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in four rows: the missing variable, the generating curve and its plane, a point P with the reason the line through P parallel to the axis of the missing variable lies on the surface, and the name of the surface with its axis.</shortdescription>
+</image>
+</sidebyside>
+
+    <figure xml:id="fig-skel-circular-cylinder-rulings">
+      <caption>
+        Grids for the surface <m>y^2 + z^2 = 4</m>: the generating curve in the <m>yz</m>-plane, and the surface built from the line through <m>P</m> and the other parallel lines.
+      </caption>
+      <sidebyside widths="38% 58%" valign="middle">
+   <image>
+    <latex-image><![CDATA[
+\begin{tikzpicture}[scale=0.34, >=stealth]
+\draw[gray!30, very thin] (-6,-6) grid (6,6);
+\draw[->, thick] (-6,0) -- (6.5,0) node[right] {$y$};
+\draw[->, thick] (0,-6) -- (0,6.5) node[above] {$z$};
+\foreach \a in {-4,-2,2,4} \draw (\a,-0.2) -- (\a,0.2);
+\foreach \b in {-4,-2,2,4} \draw (-0.2,\b) -- (0.2,\b);
+\node[anchor=north, font=\small\itshape] at (0,-7.0) {$x=0$};
+\end{tikzpicture}
+]]></latex-image>
+    <shortdescription>Empty coordinate grid for the x=0, for sketching the generating curve.</shortdescription>
+   </image>
+
+   <image>
+    <latex-image><![CDATA[
+\begin{tikzpicture}[>=stealth]
+  \draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (9.5,7.6);
+  \node[anchor=north west, font=\small\itshape] at (0.25,7.3) {the generating curve, the line through $P$, and the other parallel lines:};
+  \draw[->, thick] (4.6,3.1) -- (2.9,1.95) node[below left] {$x$};
+  \draw[->, thick] (4.6,3.1) -- (8.6,3.1) node[right] {$y$};
+  \draw[->, thick] (4.6,3.1) -- (4.6,6.4) node[above] {$z$};
+\end{tikzpicture}
+]]></latex-image>
+    <shortdescription>Empty three-dimensional axes in a box, for sketching the generating curve, the line through P parallel to the axis of the missing variable, and the other parallel lines.</shortdescription>
+   </image>
+      </sidebyside>
+    </figure>
+
+    <p component="print">
+    An interactive figure building the surface <m>y^2 + z^2 = 4</m> from its generating curve, the line through a point <m>P</m> of it parallel to the <m>x</m>-axis, and all the other parallel lines accompanies the online version of these notes.
+    </p>
+    <sidebyside component="web" width="100%">
+    <figure xml:id="fig-skel-circular-cylinder-interactive">
+      <caption>
+        Building the surface <m>y^2 + z^2 = 4</m> from its definition: the generating curve, the line through a point of it parallel to the <m>x</m>-axis, and all the other parallel lines.
+      </caption>
+      <interactive xml:id="interactive-skel-circular-cylinder-rulings" iframe="circular-cylinder-rulings.html" width="100%" aspect="8:7">
+        <instructions>
+          <p>
+          Use the buttons to show the generating curve, the line through
+          <m>P</m> parallel to the <m>x</m>-axis, and then all the other lines
+          parallel to it, and drag the slider to move <m>P</m> along the
+          curve.  The coordinates of <m>P</m> and the equation of the line
+          through it are displayed above the figure, so you can check your own
+          sketch against it.  Drag the figure to view it from a different angle,
+          or press the <q>Rotate</q> button to spin it automatically.</p>
+        </instructions>
+      </interactive>
+    </figure>
+    </sidebyside>
+
+    <figure xml:id="fig-skel-circular-cylinder-video">
+      <caption>
+        Building <m>y^2 + z^2 = 4</m> from its generating curve: the line through <m>P</m> parallel to the <m>x</m>-axis, and then all the other parallel lines. Use it to check your sketch.
+      </caption>
+      <video xml:id="video-skel-circular-cylinder-rulings"
+             source="videos/circular_cylinder_rulings_manim.mp4"
+             preview="videos/previews/circular_cylinder_rulings_manim.jpg"
+             width="100%" aspect="16:9"/>
+    </figure>
+  </statement>
+</example>
+
+  <p>
+    The two examples share one pattern, and it is the whole test for a cylinder
+    in standard position.
+    (State the test, say in which coordinate plane the generating curve then
+    lies and which axis the rulings are parallel to, and decide whether every
+    cylinder is a quadric surface: give an example of one that is not.)
+  </p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,11);
+\node[anchor=north west, font=\small\itshape] at (0.35,10.70) {The test for a cylinder in standard position:};
+\draw[gray!35] (0,8.25) -- (15,8.25);
+\node[anchor=north west, font=\small\itshape] at (0.35,7.95) {Its generating curve is the graph of:};
+\draw[gray!35] (0,5.50) -- (15,5.50);
+\node[anchor=north west, font=\small\itshape] at (0.35,5.20) {Its rulings are parallel to:};
+\draw[gray!35] (0,2.75) -- (15,2.75);
+\node[anchor=north west, font=\small\itshape] at (0.35,2.45) {A cylinder that is not a quadric surface:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in four rows: the test for a cylinder, where its generating curve lives, the direction of its rulings, and an example of a cylinder that is not a quadric surface.</shortdescription>
+</image>
+</sidebyside>
 
 </subsection>
 
