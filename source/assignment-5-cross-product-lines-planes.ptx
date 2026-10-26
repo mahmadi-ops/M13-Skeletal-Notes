@@ -61,7 +61,6 @@ the sum of a vector parallel to <m>\mathbf v</m> and a vector
 orthogonal to <m>\mathbf v</m>.
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="5" due="2026-10-23"
 <solution>
 <p>
 We have <m>\vec u \cdot \vec v = 3</m> and
@@ -87,7 +86,6 @@ Here <m>\vec u_{\parallel}</m> is parallel to <m>\vec v</m> and
 <m>\vec u_{\parallel} + \vec u_{\perp} = \vec u</m>.
 </p>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rw22-4">
@@ -118,7 +116,6 @@ are non-zero real numbers.
 </ol>
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="5" due="2026-10-23"
 <solution>
 <p>
 <ol marker="A.">
@@ -149,7 +146,6 @@ are not parallel, because <m>\vec w_2</m> has a non-zero
 </ol>
 </p>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rw17-4">
@@ -175,7 +171,6 @@ Find the velocity vector of the wind in the direction of the dash.
 </ol>
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="5" due="2026-10-23"
 <solution>
 <p>
 Let <m>\vec d = \langle 2, 6\rangle</m> be the direction of the dash
@@ -219,7 +214,6 @@ matching part A.
 </ol>
 </p>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rw23-9-a">
@@ -272,7 +266,6 @@ Find a vector orthogonal to both <m>\mathbf v</m> and
 </ol>
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="5" due="2026-10-23"
 <solution>
 <p>
 <ol marker="A.">
@@ -309,7 +302,6 @@ Dividing by <m>5</m> gives the simpler answer
 </ol>
 </p>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="m2b-4">
@@ -331,7 +323,6 @@ Suppose <m>\|\vec u\| = 3</m>, <m>\|\vec v\| = 4</m> and
 </ol>
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="5" due="2026-10-23"
 <solution>
 <p>
 <term>(a)</term> Let <m>\theta</m> be the angle between the two
@@ -370,7 +361,6 @@ As a sanity check, <m>2\sqrt3 \approx 3.46</m>, which is less than
 <m>\|\vec v\| = 4</m>, as a shadow must be.
 </p>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rf-2">
@@ -385,7 +375,6 @@ represented by the following parametric equations, then graph it:
 </md>
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="5" due="2026-10-23"
 <solution>
 <p>
 From the second equation, <m>y + 1 = e^t</m>, and hence
@@ -446,7 +435,6 @@ for <m>0 \le t \le \ln(2)</m>, from <m>(1,0)</m> to <m>(4,1)</m>.
 </image>
 </figure>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rw23-8">
@@ -460,7 +448,6 @@ Assume that the curve is traced <term>counter-clockwise</term> as the
 parameter increases.
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="5" due="2026-10-23"
 <solution>
 <p>
 We complete the squares:
@@ -522,7 +509,6 @@ and <m>\frac52</m>, traced counter-clockwise.
 </image>
 </figure>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="pp-15">
@@ -543,7 +529,6 @@ Which axis is perpendicular to the plane <m>x = 4</m>?
 </ol>
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="5" due="2026-10-23"
 <solution>
 <p>
 <ol marker="A.">
@@ -570,7 +555,6 @@ to it.
 </ol>
 </p>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="m2a-2">
@@ -591,7 +575,6 @@ Parametrize the entire curve using one parametrization.
 </ol>
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="5" due="2026-10-23"
 <solution>
 <p>
 <term>(a)</term> Divide both sides by <m>100</m> to put the equation in
@@ -696,7 +679,6 @@ the entire ellipse exactly once, counterclockwise, starting at the
 right vertex <m>\left(\tfrac32,-4\right)</m>.
 </p>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 </worksheet>
