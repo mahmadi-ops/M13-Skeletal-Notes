@@ -57,7 +57,6 @@ planes:
 </md>
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="6" due="2026-10-28"
 <solution>
 <p>
 The normal vectors are <m>\vec n_1 = \langle 2, 1, -1\rangle</m> and
@@ -89,7 +88,6 @@ the vector equation of the line of intersection is
 </md>
 </p>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rw21-5">
@@ -101,7 +99,6 @@ and parallel to the plane <m>-3x - y + 2z = 0</m>, in which the
 coefficient of <m>x</m> is <m>-3</m>.
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="6" due="2026-10-28"
 <solution>
 <p>
 Since the desired plane is parallel to <m>-3x - y + 2z = 0</m>, it has
@@ -119,7 +116,6 @@ from the point-normal form,
 </md>
 </p>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rs19-5">
@@ -132,7 +128,6 @@ Calculate the distance between the following two lines:
 </md>
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="6" due="2026-10-28"
 <solution>
 <p>
 We notice that the two lines are parallel (both have direction vector
@@ -163,7 +158,6 @@ d = \frac{\left\|\vec{PS} \times \mathbf v\right\|}{\|\mathbf v\|}
 </md>
 </p>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="pp-17">
@@ -174,7 +168,6 @@ normal to the plane containing <m>(0,1,1)</m>, <m>(-1,2,4)</m> and
 <m>(3,0,1)</m>.
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="6" due="2026-10-28"
 <solution>
 <p>
 From <xref ref="pp-13"/>, the plane through those three points has
@@ -187,7 +180,6 @@ x = 2 + 3t, \qquad y = 1 + 9t, \qquad z = 1 - 2t,
 </md>
 </p>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="m2b-5">
@@ -200,7 +192,6 @@ x = 4+t, \qquad y = -1-2t, \qquad z = 5+t .
 Find the point on <m>L</m> that is closest to <m>(-2,2,-1)</m>.
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="6" due="2026-10-28"
 <solution>
 <p>
 Write <m>Q = (-2,2,-1)</m> and let
@@ -247,7 +238,6 @@ as required. The distance from <m>Q</m> to the line is
 <m>\|\vec{QP}\| = \sqrt{9+9+9} = 3\sqrt3</m>.
 </p>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="dp-constrained-work">
@@ -283,7 +273,6 @@ Find one unit direction in the plane for which the work is zero.
 </ol>
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="6" due="2026-10-28"
 <solution>
 <p>
 Reading the coefficients of the plane, a normal vector is
@@ -502,7 +491,6 @@ is the direction in the plane perpendicular to
 neither with nor against the usable part of the force.
 </p>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="pp-20">
@@ -512,7 +500,6 @@ Find the equation of the hyperbola with asymptotes <m>y = 3x</m> and
 <m>y = -3x</m> passing through the point <m>(0,2)</m>.
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="6" due="2026-10-28"
 <solution>
 <p>
 Since the hyperbola meets the <m>y</m>-axis (at <m>(0,2)</m>) it opens
@@ -579,7 +566,6 @@ The hyperbola <m>y^2 - 9x^2 = 4</m> with its asymptotes
 </image>
 </figure>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="exer-parabola-focus-directrix">
@@ -590,7 +576,6 @@ symmetry the <m>y</m>-axis, passing through the point <m>(4,2)</m>.
 Then find its focus and its directrix.
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="6" due="2026-10-28"
 <solution>
 <p>
 The vertex is at the origin and the axis of symmetry is the
@@ -668,7 +653,6 @@ the same distance from the focus as from the directrix.
 </image>
 </figure>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="pp-21">
@@ -683,7 +667,6 @@ over the rope traces a path. Ignoring the numbers, state what kind of
 curve the path makes: line, ellipse, parabola or hyperbola.
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="6" due="2026-10-28"
 <solution>
 <p>
 Let <m>A</m> and <m>B</m> be the two attachment points and <m>P</m>
@@ -720,7 +703,6 @@ and <m>B</m>; the bottle reaches only the solid arc between the trees.
        width="90%" aspect="16:9"/>
 </figure>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 </worksheet>
