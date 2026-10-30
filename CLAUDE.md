@@ -19,8 +19,8 @@ convention). Repo-specific facts:
   set to its `<xi:include>` and toggles it with the UNPOSTED wrapper;
   `.github/workflows/desk-requests.yml` applies `desk-requests/*.json`
   committed by the panel and dispatches `pretext-deploy.yml`.
-- The self-contained assignments (all but 7) and review sets 1/3/4
-  toggle instantly; the sections and the pairs A7↔RP3, A5→RP2 are
+- The self-contained assignments (all but 8) and review sets 1/3/4
+  toggle instantly; the sections and the pairs A8↔RP3, A5→RP2 are
   cross-referenced from other live pages, so those requests queue for
   Claude, who takes the referencing worksheets down or up together.
 - Chapters 2-4 and the Exercises chapter are wrappers holding only
@@ -59,7 +59,7 @@ convention). Repo-specific facts:
   `desk_action.py` drops hidden components before its cross-reference check,
   exactly as the build does, so Assignment 3 and Review Problems #1 are
   self-contained in the student books even while the section is unposted.
-- Assignments 4 to 7 differ from their M13-Mehdi copies on purpose: at the
+- Assignments 4 to 8 differ from their M13-Mehdi copies on purpose: at the
   instructor's request three dot-product problems (`rs19-4`, `rw22-4`,
   `rw17-4`) open Assignment 5 in this student-facing book only, locked
   with Assignment 5's due date, and Assignment 4's introduction no longer
@@ -75,8 +75,14 @@ convention). Repo-specific facts:
   Assignment 7 in this book only, locked with Assignment 7's due date, so
   Assignment 6 is lines and planes plus conic sections (its file keeps
   its old name) and Assignment 7's introduction cites the quadric-surfaces
-  section. Do not sync assignments 4-7 from M13-Mehdi, or carry these
-  moves into it, without asking.
+  section. Then the three partial-derivative problems (`rm2-pd-1`,
+  `pp-28`, `q1-3`) moved from the end of Assignment 7 to the start of
+  Assignment 8 in this book only, locked with Assignment 8's due date;
+  Assignment 7's introduction no longer cites the partial-derivatives
+  section and Assignment 8's does. Review Problems #3 cites `q1-3`, so the
+  pair that posts together is now A8↔RP3 rather than A7↔RP3. Do not sync
+  assignments 4-8 from M13-Mehdi, or carry these moves into it, without
+  asking.
 - Review Problems #2 and #3 differ from their M13-Mehdi copies the same
   way: the four quadric-surface problems of Review Problems #2 (`rs19-3`,
   `rs-multiselect-quadrics`, `ex-3d-parabolic-cylinder`,
