@@ -120,6 +120,15 @@ convention). Repo-specific facts:
   completed-notes ids, is in MATH13-Instructor. It is live, the desk
   script toggles it by the key `exam-1`, and the desk panel does not
   list it.
+- `exam-2.ptx` (page `worksheet-exam-2.html`) is this quarter's Exam 2
+  with solutions, transcribed from the instructor's solutions PDF
+  (MATH13-Exam2-Fall2026-Solutions) and placed right after Sample Past
+  Exam 2: point values kept as on Exam 1, no formula sheet (the exam had
+  none), the five sketches of Problems 4 and 5 redrawn in TikZ, seven
+  topic links pointing at this book's Chapter 3 ids. The same file, with
+  the completed-notes ids, is in MATH13-Instructor. It is live, the desk
+  script toggles it by the key `exam-2`, and the desk panel does not
+  list it.
 - Postings are tracked only on the desk panel — the syllabus's
   posted-materials table was removed at the instructor's request, so no
   posting action touches the syllabus repo. Page filenames come from
