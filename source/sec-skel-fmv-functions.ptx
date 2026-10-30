@@ -10,8 +10,8 @@
 
   Figures: the surfaces are three-dimensional plots no reader can draw by
   hand in a lecture, so they are reproduced in full, as in the lecture
-  notes, and the reader is asked to read properties off them.  The two
-  contour maps ARE the answer to their exercise, so they become empty
+  notes, and the reader is asked to read properties off them.  The
+  contour maps ARE the answer to their exercises, so they become empty
   grids to draw the level curves on.
 -->
 <section xml:id="sec-skel-fmv-functions" xmlns:xi="http://www.w3.org/2001/XInclude">
@@ -524,6 +524,134 @@ different heights.
 \end{axis}
 \end{tikzpicture}
 ]]></latex-image>
+</image>
+</figure>
+</statement>
+</example>
+
+<example xml:id="ex-skel-fsv-saddle-level-curves">
+<title>Level Curves of a Saddle</title>
+<statement>
+<p>
+Sketch some level curves of the function <m>h(x,y) = x^2 - y^2</m>.
+</p>
+
+<p>
+<em>Solution.</em>
+(Set <m>h(x,y) = c</m>. This time the shape depends on the sign of
+<m>c</m>: for <m>c \ne 0</m> it is a conic you met in
+<xref ref="sec-skel-geom-conics"/>, so name it and give its vertices,
+separately for <m>c \gt 0</m> and <m>c \lt 0</m>, and say what
+<m>c = 0</m> gives. Then sketch the curves for <m>c = -2, -1, 0, 1, 2</m>
+on the grid, and say how the curve for <m>c = 0</m> is related to all the
+others.)
+</p>
+
+<sidebyside widths="52% 44%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (8,11);
+\draw[gray!35] (0,8.6) -- (8,8.6);
+\draw[gray!35] (0,6.4) -- (8,6.4);
+\draw[gray!35] (0,4.2) -- (8,4.2);
+\draw[gray!35] (0,2) -- (8,2);
+\node[anchor=north west, font=\small\itshape] at (0.3,10.7) {Setting $h(x,y)=c$:};
+\node[anchor=north west, font=\small\itshape] at (0.3,8.3) {$c \gt 0$: shape and vertices:};
+\node[anchor=north west, font=\small\itshape] at (0.3,6.1) {$c = 0$:};
+\node[anchor=north west, font=\small\itshape] at (0.3,3.9) {$c \lt 0$: shape and vertices:};
+\node[anchor=north west, font=\small\itshape] at (0.3,1.7) {How $c = 0$ relates to the others:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in five rows, for the equation of the level curve, for its shape and vertices when c is positive, for the case c equals zero, for its shape and vertices when c is negative, and for how the curve at c equals zero is related to the others.</shortdescription>
+</image>
+<image>
+<latex-image><![CDATA[
+\begin{tikzpicture}[scale=0.85, >=stealth]
+\draw[gray!30, very thin] (-2.5,-2.5) grid[step=0.5] (2.5,2.5);
+\draw[->, thick] (-2.5,0) -- (2.8,0) node[right] {$x$};
+\draw[->, thick] (0,-2.5) -- (0,2.8) node[above] {$y$};
+\foreach \x in {-2,-1,1,2} \draw (\x,-0.08) -- (\x,0.08) node[below=4pt, font=\scriptsize] {$\x$};
+\foreach \y in {-2,-1,1,2} \draw (-0.08,\y) -- (0.08,\y) node[left=4pt, font=\scriptsize] {$\y$};
+\end{tikzpicture}
+]]></latex-image>
+<shortdescription>Empty coordinate grid running from negative two and a half to two and a half in both directions, for sketching the level curves of the function.</shortdescription>
+</image>
+</sidebyside>
+
+<p>
+The surface <m>z = h(x,y)</m> itself is shown in
+<xref ref="fig-skel-fsv-saddle-surface"/>; it is the
+<term>hyperbolic paraboloid</term> of
+<xref ref="subsec-skel-hyperbolic-paraboloid"/>. Use it to check the
+curves you drew.
+</p>
+
+<figure xml:id="fig-skel-fsv-saddle-surface">
+<caption>
+The hyperbolic paraboloid <m>z = h(x,y) = x^2 - y^2</m> over a disk
+centered at the origin, with heights drawn at half scale. Slicing it with
+a horizontal plane <m>z = c</m> produces the curves you drew above; the
+curves drawn here are at the equally spaced heights
+<m>c = -2, -1, 0, 1, 2</m>.
+</caption>
+<image width="72%">
+<shortdescription>A saddle shaped surface with coloured level curves drawn on it.</shortdescription>
+<description>
+<p>
+A saddle shaped surface over a disk, rising to two high lips over the
+positive and negative x axis and dipping to two low lips over the
+positive and negative y axis. Two black lines cross at the centre, where
+the surface is level. Orange and red curves run across the two high
+lips, and light and dark blue curves across the two low lips.
+</p>
+</description>
+<asymptote label="skel-asymptote-fsv-saddle"><![CDATA[
+import graph3;
+size(10cm, 0);
+currentprojection = orthographic(camera=(2.2,-6,3.0), up=Z);
+currentlight = light(gray(0.6), specularfactor=0.2, (4,-3,6), (-4,-1,3));
+
+// z = x^2 - y^2 over the disk of radius R, written in polar form;
+// heights are drawn at half scale so the saddle is not too tall
+real R = 1.6, k = 0.5;
+triple saddle(pair p) {
+  real r = p.x, t = p.y;
+  return (r*cos(t), r*sin(t), k*r^2*cos(2*t));
+}
+surface s = surface(saddle, (0,0), (R,2*pi), 8, 32, Spline);
+draw(s, surfacepen=material(diffusepen=gray(0.8), emissivepen=gray(0.2),
+                            specularpen=gray(0.15)),
+     meshpen=gray(0.55)+linewidth(0.2pt));
+
+// level curves z = c, coloured as in the contour map; each branch stops
+// where it leaves the disk, at x^2 + y^2 = |c| cosh(2t) = R^2
+pen lw = linewidth(1.8pt);
+pen[] col = {rgb("D55E00"), rgb("E69F00"), black, rgb("56B4E9"), rgb("0072B2")};
+real[] lev = {2, 1, 0, -1, -2};
+for (int i = 0; i < lev.length; ++i) {
+  real c = lev[i];
+  if (c == 0) {
+    real u = R/sqrt(2);
+    draw((-u,-u,0)--(u,u,0), col[i]+lw);
+    draw((-u,u,0)--(u,-u,0), col[i]+lw);
+    continue;
+  }
+  real a = sqrt(abs(c)), T = 0.5*acosh(R^2/abs(c));
+  for (int sgn = -1; sgn <= 1; sgn += 2) {
+    path3 g = (c > 0)
+      ? graph(new triple(real t) {return (sgn*a*cosh(t), a*sinh(t), k*c);}, -T, T, operator ..)
+      : graph(new triple(real t) {return (a*sinh(t), sgn*a*cosh(t), k*c);}, -T, T, operator ..);
+    draw(g, col[i]+lw);
+  }
+}
+
+// axes through the saddle point
+pen ax = gray(0.25)+linewidth(0.6pt);
+draw(Label("$x$", 1), (-2.1,0,0)--(2.4,0,0), ax, Arrow3);
+draw(Label("$y$", 1), (0,-2.1,0)--(0,2.4,0), ax, Arrow3);
+draw(Label("$z$", 1), (0,0,-1.45)--(0,0,1.8), ax, Arrow3);
+]]></asymptote>
 </image>
 </figure>
 </statement>
