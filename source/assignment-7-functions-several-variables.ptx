@@ -140,6 +140,17 @@ review the material first, see
       $match2 = String("B");
       $match3 = String("D");
       $match4 = String("C");
+      # Until Assignment 7's solutions are released, each blank is graded by a
+      # checker whose displayed correct answer is empty, so WeBWorK reports no
+      # answer for the page to print; grading still uses match1 to match4.
+      $ev1 = $match1->cmp(correct_ans => "", correct_ans_latex_string => "");
+      $ev2 = $match2->cmp(correct_ans => "", correct_ans_latex_string => "");
+      $ev3 = $match3->cmp(correct_ans => "", correct_ans_latex_string => "");
+      $ev4 = $match4->cmp(correct_ans => "", correct_ans_latex_string => "");
+<!-- SOLUTION-LOCKED assignment="7" due="2026-11-06"
+      $ev1 = $match1->cmp(); $ev2 = $match2->cmp();
+      $ev3 = $match3->cmp(); $ev4 = $match4->cmp();
+END SOLUTION-LOCKED -->
     </pg-code>
     <statement>
       <p>
@@ -147,22 +158,22 @@ review the material first, see
         above by entering a letter from A to F in each blank.
       </p>
       <p>
-        <m>y = 2x^2 + z^2</m> matches graph <var name="$match1" width="4"/>.
+        <m>y = 2x^2 + z^2</m> matches graph <var name="$match1" evaluator="$ev1" width="4"/>.
       </p>
       <p>
-        <m>y^2 = x^2 + 2z^2</m> matches graph <var name="$match2" width="4"/>.
+        <m>y^2 = x^2 + 2z^2</m> matches graph <var name="$match2" evaluator="$ev2" width="4"/>.
       </p>
       <p>
-        <m>x^2 + 2z^2 = 1</m> matches graph <var name="$match3" width="4"/>.
+        <m>x^2 + 2z^2 = 1</m> matches graph <var name="$match3" evaluator="$ev3" width="4"/>.
       </p>
       <p>
-        <m>y = x^2 - z^2</m> matches graph <var name="$match4" width="4"/>.
+        <m>y = x^2 - z^2</m> matches graph <var name="$match4" evaluator="$ev4" width="4"/>.
       </p>
     </statement>
-    <!-- Also SOLUTION-LOCKED for assignment="7": WeBWorK shows this problem from
-         its cached copies in generated-assets/webwork (exercise-quadric-graph-match.xml
-         and webwork-representations.xml), whose four answers and solution carry the
-         same markers. Release those two blocks with this one. -->
+    <!-- Also SOLUTION-LOCKED for assignment="7": WeBWorK prints a blank's correct
+         answer whatever the source locks, so the pg-code above hides this
+         problem's four answers until release; its locked block there restores
+         them and is released with this one. -->
     <!-- SOLUTION-LOCKED assignment="7" due="2026-11-06"
     <solution>
       <p>
