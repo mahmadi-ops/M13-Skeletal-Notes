@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-reps version="2" webwork2_major_version="2" webwork2_minor_version="20" xml:id="extracted-exercise-quadric-graph-match" assembly-id="exercise-quadric-graph-match">
+  <static seed="1">
+    <statement><p>Match the equations of the surfaces with the graphs A<ndash/>F shown above by entering a letter from A to F in each blank.</p>
+<p><m>y = 2x^2 + z^2</m> matches graph <fillin characters="4" name="AnSwEr0001"/>.</p>
+<p><m>y^2 = x^2 + 2z^2</m> matches graph <fillin characters="4" name="AnSwEr0002"/>.</p>
+<p><m>x^2 + 2z^2 = 1</m> matches graph <fillin characters="4" name="AnSwEr0003"/>.</p>
+<p><m>y = x^2 - z^2</m> matches graph <fillin characters="4" name="AnSwEr0004"/>.</p>
+</statement>
+  </static>
+  <rendering-data problemSource="MATH_13Skeletal_Notes/5-Assignments_and_Review_Problems/5_13-Assignment_7/5_13_1-Matching_Quadric_Surfaces.pg" origin="generated" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
+  <pg><![CDATA[
+#############################################
+###       Generated from PreTeXt source      
+###                                          
+###         https://pretextbook.org          
+###                                          
+#############################################
+## DBsubject()
+## DBchapter()
+## DBsection()
+## Level()
+## KEYWORDS()
+## TitleText1()
+## EditionText1()
+## AuthorText1()
+## Section1(not reported)
+## Problem1(5.13.1)
+## Author()
+## Institution()
+## Language(en-US)
+
+DOCUMENT();
+
+############################################################
+# Load Macros
+############################################################
+loadMacros(
+  "PGstandard.pl",
+  "PGML.pl",
+  "AnswerFormatHelp.pl",
+  "parserAssignment.pl",
+  "PGcourse.pl",
+);
+COMMENT('Authored in PreTeXt');
+
+############################################################
+# Header
+############################################################
+TEXT(beginproblem());
+
+############################################################
+# PG Setup Code
+############################################################
+Context()->strings->add(
+  "A" => {}, "B" => {}, "C" => {},
+  "D" => {}, "E" => {}, "F" => {},
+);
+$match1 = String("E");
+$match2 = String("B");
+$match3 = String("D");
+$match4 = String("C");
+# Until Assignment 7's solutions are released, each blank is graded by a
+# checker whose displayed correct answer is empty, so WeBWorK reports no
+# answer for the page to print; grading still uses match1 to match4.
+$ev1 = $match1->cmp(correct_ans => "", correct_ans_latex_string => "");
+$ev2 = $match2->cmp(correct_ans => "", correct_ans_latex_string => "");
+$ev3 = $match3->cmp(correct_ans => "", correct_ans_latex_string => "");
+$ev4 = $match4->cmp(correct_ans => "", correct_ans_latex_string => "");
+
+############################################################
+# Body
+############################################################
+
+BEGIN_PGML
+Match the equations of the surfaces with the graphs A[$NDASH]*F shown above by entering a letter from A to F in each blank.
+
+[`y = 2x^2 + z^2`] matches graph [_]{$ev1}{4}.
+
+[`y^2 = x^2 + 2z^2`] matches graph [_]{$ev2}{4}.
+
+[`x^2 + 2z^2 = 1`] matches graph [_]{$ev3}{4}.
+
+[`y = x^2 - z^2`] matches graph [_]{$ev4}{4}.
+
+END_PGML
+
+############################################################
+# End Problem
+############################################################
+
+ENDDOCUMENT();
+]]></pg>
+</webwork-reps>

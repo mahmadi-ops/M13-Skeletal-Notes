@@ -1,0 +1,11 @@
+openDate          = 01/01/2027 at 12:00am
+dueDate           = 12/31/2027 at 10:00pm
+answerDate        = 12/31/2027 at 10:00pm
+paperHeaderFile   = MATH_13Skeletal_Notes/header/5_13-Assignment_7.pg
+screenHeaderFile  = MATH_13Skeletal_Notes/header/5_13-Assignment_7.pg
+description       = Assignment 7
+problemListV2
+problem_start
+source_file = MATH_13Skeletal_Notes/5-Assignments_and_Review_Problems/5_13-Assignment_7/5_13_1-Matching_Quadric_Surfaces.pg
+problem_id = 1
+problem_end
