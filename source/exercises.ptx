@@ -227,7 +227,7 @@ right or wrong, earns nothing.
 <xi:include href="sample-past-exam-2.ptx"/>
 
 <!-- ================= Assignment 7 ================= -->
-<!-- UNPOSTED <xi:include href="assignment-7-functions-several-variables.ptx"/> UNPOSTED -->
+<xi:include href="assignment-7-functions-several-variables.ptx"/>
 
 <!-- ================= Assignment 8 ================= -->
 <!-- UNPOSTED <xi:include href="assignment-8-chain-rule.ptx"/> UNPOSTED -->

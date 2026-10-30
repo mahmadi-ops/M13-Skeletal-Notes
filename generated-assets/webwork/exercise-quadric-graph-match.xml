@@ -7,6 +7,7 @@
 <p><m>x^2 + 2z^2 = 1</m> matches graph <fillin characters="4" name="AnSwEr0003"/>.</p>
 <p><m>y = x^2 - z^2</m> matches graph <fillin characters="4" name="AnSwEr0004"/>.</p>
 </statement>
+    <!-- SOLUTION-LOCKED assignment="7" due="2026-11-06"
     <answer>
       <p>
         <m>\text{E}</m>
@@ -34,6 +35,7 @@
 <p>For <m>y = x^2 - z^2\text{,}</m> the plane <m>z = c</m> gives the parabola <m>y = x^2 - c^2</m> opening in the positive <m>y</m> direction, while the plane <m>x = c</m> gives the parabola <m>y = c^2 - z^2</m> opening in the negative <m>y</m> direction, and the plane <m>y = 0</m> gives the crossing lines <m>z = \pm x\text{.}</m>  Parabolas opening in opposite directions: a hyperbolic paraboloid, a saddle, graph C.</p>
 <p>Graphs A and F match none of the equations.  Slicing the ellipsoid in A gives bounded ellipses in every direction, which none of the equations produce.  Slicing the two bowls in F with planes <m>y = c</m> gives ellipses whose size grows like <m>\sqrt{|c|}\text{,}</m> unlike the straight-sided linear growth of the cone in B.</p>
 </solution>
+    END SOLUTION-LOCKED -->
   </static>
   <rendering-data problemSource="MATH_13Skeletal_Notes/5-Exercises/5_8-Review_Problems_2/5_8_23-Matching_Quadric_Surfaces.pg" origin="generated" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" passwd="anonymous" language="en-US"/>
   <pg><![CDATA[

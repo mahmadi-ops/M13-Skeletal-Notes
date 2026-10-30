@@ -48,7 +48,15 @@ convention). Repo-specific facts:
   assumes that). A `lock` request wraps an assignment's
   `<solution>`/`<answer>`/`<hint>` blocks in SOLUTION-LOCKED markers;
   `release` (after the due date) removes only the marker lines; `relock`
-  re-wraps.
+  re-wraps. A WeBWorK problem is shown from its cached copy in
+  `generated-assets/webwork/`, which CI does not regenerate (and the
+  WeBWorK server is unreachable from Claude's sandbox), so locking its
+  source does not hide what the cache holds. The quadric-matching problem
+  of Assignment 7 (`exercise-quadric-graph-match`) therefore has its four
+  cached answers and its solution wrapped in the same markers in both
+  `exercise-quadric-graph-match.xml` and `webwork-representations.xml`; a
+  comment beside the problem in the source points there, and releasing
+  Assignment 7 must unwrap those two blocks too.
 - Everything that uses the **binomial series** outside its own section (the
   starred problems of Assignment 3 and Review Problems #1, and the sentences
   that cite the section) is marked `component="binomial"`. The student-facing

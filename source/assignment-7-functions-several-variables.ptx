@@ -159,6 +159,10 @@ review the material first, see
         <m>y = x^2 - z^2</m> matches graph <var name="$match4" width="4"/>.
       </p>
     </statement>
+    <!-- Also SOLUTION-LOCKED for assignment="7": WeBWorK shows this problem from
+         its cached copies in generated-assets/webwork (exercise-quadric-graph-match.xml
+         and webwork-representations.xml), whose four answers and solution carry the
+         same markers. Release those two blocks with this one. -->
     <!-- SOLUTION-LOCKED assignment="7" due="2026-11-06"
     <solution>
       <p>
