@@ -12,7 +12,7 @@
 
 <xi:include href="sec-skel-fmv-functions.ptx" />
 <xi:include href="sec-skel-fmv-limits.ptx" />
-<!-- UNPOSTED <xi:include href="sec-skel-fmv-partial-derivatives.ptx" /> UNPOSTED -->
+<xi:include href="sec-skel-fmv-partial-derivatives.ptx" />
 <xi:include href="sec-skel-fmv-chain-rule.ptx" />
 <!-- UNPOSTED <xi:include href="sec-skel-fmv-directional-derivatives.ptx" /> UNPOSTED -->
 <!-- UNPOSTED <xi:include href="sec-skel-fmv-tangent-planes.ptx" /> UNPOSTED -->
