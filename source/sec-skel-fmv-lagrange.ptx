@@ -453,7 +453,6 @@ Find the greatest and smallest values that the function
 \frac{x^2}{8} + \frac{y^2}{2} = 1.
 </md>
 </p>
-</statement>
 
 <p>
 <em>Solution.</em>
@@ -487,6 +486,7 @@ extrema.)
 <shortdescription>Blank box in five rows: the constraint written in the form g equals zero, the two gradients, the component equations of the multiplier condition, the multiplier together with the points found from the constraint, and the values of the function with the absolute maximum and minimum.</shortdescription>
 </image>
 </sidebyside>
+</statement>
 </example>
 
 <figure xml:id="fig-skel-lagrange-ellipse-prefigure">
@@ -637,7 +637,6 @@ Find the absolute maximum and minimum of
 <m>f(x,y) = x^2 + y^2 - 2x + 2y + 5</m>, given the constraint
 <m>x^2 + y^2 = 4</m>.
 </p>
-</statement>
 
 <p>
 Completing the squares shows that
@@ -684,6 +683,7 @@ absolute extrema.)
 <shortdescription>Blank box in five rows: the two gradients, the component equations, the equation obtained by adding them together with the case that has to be ruled out, the points found from the constraint, and the values of the function with the absolute extrema.</shortdescription>
 </image>
 </sidebyside>
+</statement>
 </example>
 
 <p>
@@ -888,7 +888,6 @@ using the normal vector to the plane.
 Find the shortest distance from the point <m>(1,0,-2)</m> to the plane
 <m>x + 2y + z = 4</m>.
 </p>
-</statement>
 
 <p>
 <em>Solution.</em>
@@ -917,6 +916,7 @@ point and the distance.)
 <shortdescription>Blank box in four rows: the function to minimize together with the constraint function, the two gradients, the coordinates in terms of the multiplier followed by the value of the multiplier, and the closest point with the resulting distance.</shortdescription>
 </image>
 </sidebyside>
+</statement>
 </example>
 
 <figure xml:id="fig-skel-lagrange-plane-prefigure">
@@ -1247,7 +1247,6 @@ numbers. Use the method of Lagrange multipliers to prove that
 that is, <m>H \le G</m>, with equality if and only if
 <m>x_1 = x_2 = \cdots = x_n</m>.
 </p>
-</statement>
 
 <p>
 The difficulty is that both sides vary at once. The remedy is to hold
@@ -1371,6 +1370,7 @@ off <xref ref="eq-skel-hm-gm-claim"/> together with its equality case.)
 <shortdescription>Blank box in three rows: the values of the sum of reciprocals and of the harmonic mean at the Lagrange point, the reason every other point of the surface gives a strict inequality, and the final statement of the claim with its equality case.</shortdescription>
 </image>
 </sidebyside>
+</statement>
 </example>
 
 <p>

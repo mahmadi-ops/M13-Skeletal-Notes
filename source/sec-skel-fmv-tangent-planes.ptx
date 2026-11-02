@@ -411,7 +411,6 @@ Find the equation of the tangent plane to the surface at <m>P_0</m>.
 </li>
 </ol>
 </p>
-</statement>
 
 <p>
 <em>A.</em>
@@ -454,6 +453,7 @@ plane, so only the constant term is left: get it from
 <shortdescription>Blank box for the equation of the tangent plane to the paraboloid at P nought.</shortdescription>
 </image>
 </sidebyside>
+</statement>
 </example>
 
 <figure xml:id="fig-skel-tp-example-paraboloid">
@@ -876,7 +876,6 @@ Consider the function <m>f(x,y) = 1 + x^2 + y^2</m>, the point
 <m>f</m> as a result of moving away from <m>P_0(1,1)</m> in the
 direction of <m>\hat{u}</m> by <m>0.1</m> units.
 </p>
-</statement>
 
 <p>
 <em>Solution.</em>
@@ -903,6 +902,7 @@ is off. <xref ref="fig-skel-tp-example-change-zoom"/> is that gap, drawn.)
 <shortdescription>Blank box in three rows: the step size with the gradient and its value at P nought, the estimated change, and the exact change together with the difference between the two.</shortdescription>
 </image>
 </sidebyside>
+</statement>
 </example>
 
 <figure xml:id="fig-skel-tp-example-change">
@@ -1220,7 +1220,6 @@ Consider the function <m>f(x,y) = -2x^2 - 2xy^3 - 2x</m>. Approximate
 <m>P_0\left(-0.5,\, -0.5,\, f(-0.5,-0.5)\right)</m> with a linear
 function <m>L(x,y)</m>.
 </p>
-</statement>
 
 <p>
 <em>Solution.</em>
@@ -1245,6 +1244,7 @@ of tangency stays visible.)
 <shortdescription>Blank box in two rows, one for the values of the function and its two partial derivatives at the point, and one for the resulting linearization.</shortdescription>
 </image>
 </sidebyside>
+</statement>
 </example>
 
 <figure xml:id="fig-skel-tp-example-linearization">
