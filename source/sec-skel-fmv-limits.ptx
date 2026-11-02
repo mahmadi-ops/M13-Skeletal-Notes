@@ -234,87 +234,6 @@ is not enough here.)
 </image>
 </sidebyside>
 
-<theorem xml:id="thm-skel-lim-properties">
-<title>Properties of Limits</title>
-<statement>
-<p>
-The following rules hold if <m>L</m>, <m>M</m>, and <m>k</m> are real
-numbers and
-<md>
-\lim_{(x,y)\to(x_0,y_0)} f(x,y) = L
-\qquad \text{and} \qquad
-\lim_{(x,y)\to(x_0,y_0)} g(x,y) = M.
-</md>
-</p>
-<p>
-<alert>1. Sum Rule:</alert>
-<m>\displaystyle \lim_{(x,y)\to(x_0,y_0)} \bigl(f(x,y)+g(x,y)\bigr)
-= L + M</m>
-</p>
-<p>
-<alert>2. Difference Rule:</alert>
-<m>\displaystyle \lim_{(x,y)\to(x_0,y_0)} \bigl(f(x,y)-g(x,y)\bigr)
-= L - M</m>
-</p>
-<p>
-<alert>3. Product Rule:</alert>
-<m>\displaystyle \lim_{(x,y)\to(x_0,y_0)} \bigl(f(x,y)\cdot g(x,y)\bigr)
-= L \cdot M</m>
-</p>
-<p>
-<alert>4. Constant Multiple Rule:</alert>
-<m>\displaystyle \lim_{(x,y)\to(x_0,y_0)} k f(x,y) = kL</m>
-for any number <m>k</m>
-</p>
-<p>
-<alert>5. Quotient Rule:</alert>
-<m>\displaystyle \lim_{(x,y)\to(x_0,y_0)} \frac{f(x,y)}{g(x,y)}
-= \frac{L}{M}</m>, provided <m>M \neq 0</m>
-</p>
-<p>
-<alert>6. Power Rule:</alert> If <m>r</m> and <m>s</m> are integers with
-no common factors and <m>s \neq 0</m>, then
-<m>\displaystyle \lim_{(x,y)\to(x_0,y_0)} \bigl(f(x,y)\bigr)^{r/s}
-= L^{r/s}</m>, provided <m>L^{r/s}</m> is a real number. (If <m>s</m> is
-even, we assume that <m>L \gt 0</m>.)
-</p>
-</statement>
-</theorem>
-
-<example xml:id="ex-skel-lim-substitution">
-<title>Evaluating a Limit by Direct Substitution</title>
-<statement>
-<p>
-Evaluate
-<md>
-\lim_{(x,y)\to(2,2\pi)} \frac{x}{y} + \cos(xy).
-</md>
-</p>
-
-<p>
-<em>Solution.</em>
-(Nothing here is indeterminate, so take the two pieces separately by
-direct substitution and then reassemble them. Name the rule from
-<xref ref="thm-skel-lim-properties"/> that lets you split the limit in
-the first place.)
-</p>
-
-<sidebyside width="97%">
-<image>
-<latex-image>
-\begin{tikzpicture}
-\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,8);
-\draw[gray!35] (0,4) -- (15,4);
-\node[anchor=north west, font=\small\itshape] at (0.35,7.7) {The two pieces:};
-\node[anchor=north west, font=\small\itshape] at (0.35,3.7) {Recombining (rule used: \qquad\qquad ):};
-\end{tikzpicture}
-</latex-image>
-<shortdescription>Blank box in two rows, one for the two limits taken separately and one for recombining them with the named rule.</shortdescription>
-</image>
-</sidebyside>
-</statement>
-</example>
-
 <example xml:id="ex-skel-lim-dne">
 <title>A Limit That Does Not Exist</title>
 <statement>
@@ -456,6 +375,87 @@ lines, and dragging turns the picture.
 </image>
 </sidebyside>
 
+</statement>
+</example>
+
+<theorem xml:id="thm-skel-lim-properties">
+<title>Properties of Limits</title>
+<statement>
+<p>
+The following rules hold if <m>L</m>, <m>M</m>, and <m>k</m> are real
+numbers and
+<md>
+\lim_{(x,y)\to(x_0,y_0)} f(x,y) = L
+\qquad \text{and} \qquad
+\lim_{(x,y)\to(x_0,y_0)} g(x,y) = M.
+</md>
+</p>
+<p>
+<alert>1. Sum Rule:</alert>
+<m>\displaystyle \lim_{(x,y)\to(x_0,y_0)} \bigl(f(x,y)+g(x,y)\bigr)
+= L + M</m>
+</p>
+<p>
+<alert>2. Difference Rule:</alert>
+<m>\displaystyle \lim_{(x,y)\to(x_0,y_0)} \bigl(f(x,y)-g(x,y)\bigr)
+= L - M</m>
+</p>
+<p>
+<alert>3. Product Rule:</alert>
+<m>\displaystyle \lim_{(x,y)\to(x_0,y_0)} \bigl(f(x,y)\cdot g(x,y)\bigr)
+= L \cdot M</m>
+</p>
+<p>
+<alert>4. Constant Multiple Rule:</alert>
+<m>\displaystyle \lim_{(x,y)\to(x_0,y_0)} k f(x,y) = kL</m>
+for any number <m>k</m>
+</p>
+<p>
+<alert>5. Quotient Rule:</alert>
+<m>\displaystyle \lim_{(x,y)\to(x_0,y_0)} \frac{f(x,y)}{g(x,y)}
+= \frac{L}{M}</m>, provided <m>M \neq 0</m>
+</p>
+<p>
+<alert>6. Power Rule:</alert> If <m>r</m> and <m>s</m> are integers with
+no common factors and <m>s \neq 0</m>, then
+<m>\displaystyle \lim_{(x,y)\to(x_0,y_0)} \bigl(f(x,y)\bigr)^{r/s}
+= L^{r/s}</m>, provided <m>L^{r/s}</m> is a real number. (If <m>s</m> is
+even, we assume that <m>L \gt 0</m>.)
+</p>
+</statement>
+</theorem>
+
+<example xml:id="ex-skel-lim-substitution">
+<title>Evaluating a Limit by Direct Substitution</title>
+<statement>
+<p>
+Evaluate
+<md>
+\lim_{(x,y)\to(2,2\pi)} \frac{x}{y} + \cos(xy).
+</md>
+</p>
+
+<p>
+<em>Solution.</em>
+(Nothing here is indeterminate, so take the two pieces separately by
+direct substitution and then reassemble them. Name the rule from
+<xref ref="thm-skel-lim-properties"/> that lets you split the limit in
+the first place.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,8);
+\draw[gray!35] (0,4) -- (15,4);
+\node[anchor=north west, font=\small\itshape] at (0.35,7.7) {The two pieces:};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.7) {Recombining (rule used: \qquad\qquad ):};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in two rows, one for the two limits taken separately and one for recombining them with the named rule.</shortdescription>
+</image>
+</sidebyside>
 </statement>
 </example>
 
