@@ -762,6 +762,48 @@ of <xref ref="def-skel-continuity-two-variables"/> directly.)
 </statement>
 </example>
 
+<example xml:id="ex-skel-cont-find-c">
+<title>Choosing <m>c</m> to Make a Function Continuous</title>
+<statement>
+<p>
+Find <m>c</m> so that
+<md>
+f(x,y) =
+\begin{cases}
+\dfrac{(x-1)^4-(y-2)^4}{(x-1)^2+(y-2)^2} \amp (x,y) \neq (1,2)\\
+c \amp (x,y) = (1,2)
+\end{cases}
+</md>
+is continuous everywhere.
+</p>
+
+<p>
+<em>Solution.</em>
+(Factor the numerator as a difference of squares and cancel, saying why
+that is allowed away from <m>(1,2)</m>. Take the limit of what remains,
+choose <m>c</m> by condition <alert>3</alert> of
+<xref ref="def-skel-continuity-two-variables"/>, and say why every other
+point is already fine.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,11);
+\draw[gray!35] (0,7) -- (15,7);
+\draw[gray!35] (0,3) -- (15,3);
+\node[anchor=north west, font=\small\itshape] at (0.35,10.7) {Factoring and cancelling:};
+\node[anchor=north west, font=\small\itshape] at (0.35,6.7) {The limit at $(1,2)$:};
+\node[anchor=north west, font=\small\itshape] at (0.35,2.7) {The value of $c$, and the other points:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in three rows, for factoring and cancelling, for the limit at (1,2), and for the value of c with a word on the other points.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+</example>
+
 </subsection>
 
 </section>
