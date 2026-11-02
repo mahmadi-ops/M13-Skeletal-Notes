@@ -498,6 +498,81 @@ substitution.)
 </statement>
 </example>
 
+<example xml:id="ex-skel-lim-sine-factor">
+<title>Factoring and the Limit of <m>\frac{\sin u}{u}</m></title>
+<statement>
+<p>
+Evaluate
+<md>
+\lim_{(x,y)\to(1,1)} \frac{\sin(x-y)\left(x^3-y^3\right)}{(x-y)^2(x+y)}.
+</md>
+</p>
+
+<p>
+<em>Solution.</em>
+(Direct substitution gives <m>0/0</m>. Factor the difference of cubes and
+cancel, leaving <m>\frac{\sin(x-y)}{x-y}</m> times a quotient that direct
+substitution handles; the first factor is a one-variable limit in
+<m>u = x - y</m>. Name the rule of <xref ref="thm-skel-lim-properties"/>
+that recombines the two.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,11);
+\draw[gray!35] (0,7) -- (15,7);
+\draw[gray!35] (0,3) -- (15,3);
+\node[anchor=north west, font=\small\itshape] at (0.35,10.7) {Factoring and cancelling:};
+\node[anchor=north west, font=\small\itshape] at (0.35,6.7) {The two factors:};
+\node[anchor=north west, font=\small\itshape] at (0.35,2.7) {The limit (rule used: \qquad\qquad ):};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in three rows, for factoring and cancelling, for the limits of the two remaining factors, and for the limit with the named rule.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+</example>
+
+<example xml:id="ex-skel-lim-curved-path">
+<title>Straight Lines Are Not Enough</title>
+<statement>
+<p>
+Evaluate the following limit, or show that it does not exist.
+<md>
+\lim_{(x,y)\to(1,2)} \frac{(x-1)^2(y-2)^3}{(x-1)^4+(y-2)^6}.
+</md>
+</p>
+
+<p>
+<em>Solution.</em>
+(Shift the point to the origin with <m>u = x - 1</m>, <m>v = y - 2</m>.
+Find what every straight line through <m>(1,2)</m> gives, including the
+vertical one, then try a curve along which the two terms of the
+denominator are equal, and conclude.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,14);
+\draw[gray!35] (0,11) -- (15,11);
+\draw[gray!35] (0,7) -- (15,7);
+\draw[gray!35] (0,3) -- (15,3);
+\node[anchor=north west, font=\small\itshape] at (0.35,13.7) {After the shift:};
+\node[anchor=north west, font=\small\itshape] at (0.35,10.7) {Along straight lines:};
+\node[anchor=north west, font=\small\itshape] at (0.35,6.7) {Along a curve:};
+\node[anchor=north west, font=\small\itshape] at (0.35,2.7) {Conclusion:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in four rows, for the function after shifting the point to the origin, for its limit along straight lines, for its limit along a curve, and for the conclusion.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+</example>
+
 </subsection>
 
 <!-- ================================================================ -->
