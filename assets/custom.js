@@ -499,7 +499,8 @@
 })();
 
 /* ------------------------------------------------------------------ *
- * Reflow equations in Sections 4.1--4.4 as the reading column changes.
+ * Reflow equations in Sections 4.1--4.5 and on the Assignment 7 page as
+ * the reading column changes.
  * MathJax 4 can break long displays without shrinking their type. Reflow
  * after a solution opens as well: hidden knowls have no usable width
  * during the initial typesetting pass.
@@ -509,7 +510,11 @@
     "#sec-skel-fmv-functions, #sec-skel-fmv-limits, " +
     "#sec-skel-fmv-partial-derivatives, #sec-skel-fmv-chain-rule, " +
     "section[id^='subsec-skel-fsv-'], section[id^='subsec-skel-lim-'], " +
-    "section[id^='subsec-skel-pd-'], section[id^='subsec-skel-cr-']"
+    "section[id^='subsec-skel-pd-'], section[id^='subsec-skel-cr-'], " +
+    "#sec-skel-fmv-directional-derivatives, " +
+    "section[id^='subsec-skel-dirderiv-'], section[id^='subsec-skel-gradient-'], " +
+    "#subsec-skel-fmv-scalar-fields, " +
+    "#worksheet-assignment-7"
   );
   if (!scope) return;
   var content = document.getElementById("ptx-content") || scope;

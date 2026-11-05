@@ -219,10 +219,10 @@ and indeed <m>y = 2^2/4 = 1</m> at <m>t=2</m>, as required. Note that
 Next we differentiate the path:
 <md>
 <mrow>\frac{dx}{dt} \amp = -\frac{1}{8}\cdot\frac{2}{2t-3}
-              = -\frac{1}{4(2t-3)},
-\amp \frac{dx}{dt}\bigg|_{t=2} \amp = -\frac{1}{4} ,</mrow>
-<mrow>\frac{dy}{dt} \amp = \frac{2^t \ln 2}{4},
-\amp \frac{dy}{dt}\bigg|_{t=2} \amp = \frac{4\ln 2}{4} = \ln 2 .</mrow>
+              = -\frac{1}{4(2t-3)},</mrow>
+<mrow>\frac{dx}{dt}\bigg|_{t=2} \amp = -\frac{1}{4},</mrow>
+<mrow>\frac{dy}{dt} \amp = \frac{2^t \ln 2}{4},</mrow>
+<mrow>\frac{dy}{dt}\bigg|_{t=2} \amp = \frac{4\ln 2}{4} = \ln 2.</mrow>
 </md>
 </p>
 

@@ -1109,12 +1109,12 @@ Since <m>1 \ne 0</m>, the limit does not exist.
 </li>
 <li>
 <p>
-We factor the numerator as a difference of squares:
-<md>
-<mrow>\lim_{(x,y)\to(1,1)} \frac{x^8 - y^8}{x^4 - y^4}
-\amp = \lim_{(x,y)\to(1,1)}
-\frac{\left(x^4 - y^4\right)\left(x^4 + y^4\right)}{x^4 - y^4}</mrow>
-<mrow>\amp = \lim_{(x,y)\to(1,1)} x^4 + y^4 = 2.</mrow>
+We factor the numerator as a difference of squares,
+<m>x^8 - y^8 = \left(x^4 - y^4\right)\left(x^4 + y^4\right)</m>, and cancel
+the common factor <m>x^4 - y^4</m>:
+<md alignment="gather">
+<mrow>\lim_{(x,y)\to(1,1)} \frac{x^8 - y^8}{x^4 - y^4}</mrow>
+<mrow>= \lim_{(x,y)\to(1,1)} \left(x^4 + y^4\right) = 2.</mrow>
 </md>
 </p>
 </li>
