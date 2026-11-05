@@ -176,7 +176,7 @@ END SOLUTION-LOCKED -->
 
 <exercise xml:id="rf-8-a">
 <title>True or False</title>
-<statement correct="no">
+<statement>
 <p>
 Any tangent plane to a graph must meet that graph at exactly one
 point.
@@ -186,13 +186,18 @@ Justify your answer fully: give a proof if the statement is true, or a
 counterexample if it is false.
 </p>
 </statement>
-<feedback>
+<!-- SOLUTION-LOCKED assignment="9" due="2026-11-18"
+<answer>
+<p>False.</p>
+</answer>
+<solution>
 <p>
 Consider the plane <m>z = c</m>. The tangent
 plane to this graph at any point is the same as <m>z = c</m>, so it
 meets the graph at infinitely many points.
 </p>
-</feedback>
+</solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rev-tp-3">

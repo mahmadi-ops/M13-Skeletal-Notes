@@ -373,7 +373,7 @@ END SOLUTION-LOCKED -->
 
 <exercise xml:id="rev-tp-5">
 <title>True or False</title>
-<statement correct="yes">
+<statement>
 <p>
 Consider <m>f(x,y) = \left(\cos x + (1+x)\tan y\right)e^{x^2-1+y}</m>.
 Then <m>\dfrac{d}{dt}f(t^2, t^3) = 0</m> at <m>t = 0</m>.
@@ -383,7 +383,11 @@ Justify your answer fully: give a proof if the statement is true, or a
 counterexample if it is false.
 </p>
 </statement>
-<feedback>
+<!-- SOLUTION-LOCKED assignment="8" due="2026-11-13"
+<answer>
+<p>True.</p>
+</answer>
+<solution>
 <p>
 Writing <m>x(t) = t^2</m> and <m>y(t) = t^3</m>, we
 see that
@@ -401,7 +405,8 @@ Now we see from the chain rule that
 = 0 \quad\text{at } t = 0.
 </md>
 </p>
-</feedback>
+</solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rm2-cr-1">
@@ -634,7 +639,7 @@ END SOLUTION-LOCKED -->
 
 <exercise xml:id="rev-gr-3">
 <title>True or False</title>
-<statement correct="yes">
+<statement>
 <p>
 If <m>\hat{u} = \langle a, b\rangle</m> is a unit vector and <m>f</m>
 has continuous second partials, then
@@ -648,7 +653,11 @@ Justify your answer fully: give a proof if the statement is true, or a
 counterexample if it is false.
 </p>
 </statement>
-<feedback>
+<!-- SOLUTION-LOCKED assignment="8" due="2026-11-13"
+<answer>
+<p>True.</p>
+</answer>
+<solution>
 <p>
 We have that
 <md>
@@ -665,7 +674,8 @@ This simplifies to
 Note we needed <m>f</m> to have continuous second partials to invoke
 Clairaut's Theorem.
 </p>
-</feedback>
+</solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rm2-gr-2">

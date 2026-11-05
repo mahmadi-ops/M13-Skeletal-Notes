@@ -19,7 +19,9 @@ cd "$ROOT"
 
 PDF="math13-skeletal-notes.pdf"
 
-pretext build web
+python3 scripts/check_solution_locks.py
+# Relocking must remove old answer knowls as well as the visible solutions.
+pretext build web --clean
 
 # Keep the print build's transcript: pretext streams xelatex's console output
 # (the LaTeX log, page by page) but discards the temporary build directory,

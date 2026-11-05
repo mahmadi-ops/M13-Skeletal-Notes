@@ -850,7 +850,7 @@ END SOLUTION-LOCKED -->
 
 <exercise xml:id="rm2-lim-1-a">
 <title>True or False</title>
-<statement correct="no">
+<statement>
 <p>
 If <m>\lim\limits_{(x,y)\to(a,b)} f(x,y)</m> exists, the function
 <m>f(x,y)</m> must be defined or continuous at <m>(a,b)</m>.
@@ -860,7 +860,11 @@ Justify your answer fully: give a proof if the statement is true, or a
 counterexample if it is false.
 </p>
 </statement>
-<feedback>
+<!-- SOLUTION-LOCKED assignment="7" due="2026-11-06"
+<answer>
+<p>False.</p>
+</answer>
+<solution>
 <p>
 We can for example define <m>f(x,y)</m> to be zero
 when <m>(x,y) \ne (0,0)</m> and to be <m>1</m> when
@@ -869,12 +873,13 @@ of <m>f(x,y)</m> for <m>(x,y) \to (a,b)</m> exists but it is not equal
 to <m>f(a,b)</m>. We could also leave <m>f(x,y)</m> undefined at the
 origin to give another counterexample.
 </p>
-</feedback>
+</solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rm2-lim-1-c">
 <title>True or False</title>
-<statement correct="no">
+<statement>
 <p>
 If <m>f(x,y) \to L</m> as <m>(x,y) \to (a,b)</m> along any line
 through <m>(a,b)</m>, then
@@ -885,7 +890,11 @@ Justify your answer fully: give a proof if the statement is true, or a
 counterexample if it is false.
 </p>
 </statement>
-<feedback>
+<!-- SOLUTION-LOCKED assignment="7" due="2026-11-06"
+<answer>
+<p>False.</p>
+</answer>
+<solution>
 <p>
 One counterexample is
 <md>
@@ -951,7 +960,8 @@ the parabola <m>y = x^2</m> stays inside it.
 </prefigure>
 </image>
 </figure>
-</feedback>
+</solution>
+END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rm2-lim-3">

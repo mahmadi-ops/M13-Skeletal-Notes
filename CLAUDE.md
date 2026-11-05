@@ -57,6 +57,14 @@ convention). Repo-specific facts:
   empty, though they still grade against the real answers, and a
   SOLUTION-LOCKED block inside the `pg-code` swaps in the ordinary
   checkers, so releasing Assignment 7 brings the answers back.
+- True/false questions in locked assignments use a plain `<statement>`, with
+  the truth value in `<answer>` and its proof or counterexample in `<solution>`.
+  Lock both blocks together with the assignment's existing SOLUTION-LOCKED
+  markers. Do not use `statement/@correct` or live `<feedback>` there: PreTeXt
+  generates an answer from `@correct` even when other solutions are locked.
+  Release still removes only the two marker lines. `scripts/check_solution_locks.py`
+  checks this before each site build, and the clean web build removes stale
+  answer knowls when solutions are locked again.
 - Everything that uses the **binomial series** outside its own section (the
   starred problems of Assignment 3 and Review Problems #1, and the sentences
   that cite the section) is marked `component="binomial"`. The student-facing
