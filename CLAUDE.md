@@ -104,7 +104,15 @@ convention). Repo-specific facts:
   Assignment 9's due date, so Assignment 8 is partial derivatives and the
   chain rule, and Assignment 9 is gradients plus tangent planes (its file
   keeps its old name); Assignment 8's introduction no longer cites the
-  directional-derivatives section and Assignment 9's does. Do not sync
+  directional-derivatives section and Assignment 9's does. Then seven
+  problems left Assignment 9 for Review Problems #3, in this book only
+  (Nov 2026): `pp-31`, `ex-electrostatic-plate` and `ex-isobars-low` (with
+  the paragraph that introduces the last two) after `ex-fall-line`, then
+  `rev-tp-2` (its statement now names the tangent plane it uses, which
+  `rev-tp-1` finds in Assignment 9), `rev-tp-3` and `pp-33`, and `q1-2`
+  after `q2-2`. Their locks came off, since review solutions are public, so
+  Assignment 9 is eleven problems. Its introduction names Section 4.6 in
+  plain text, so that it could be posted before that section. Do not sync
   assignments 4-9 from M13-Mehdi, or carry these moves into it, without
   asking.
 - Review Problems #2 and #3 differ from their M13-Mehdi copies the same
