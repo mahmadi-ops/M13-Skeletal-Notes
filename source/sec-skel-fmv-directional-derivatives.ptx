@@ -6,7 +6,9 @@
   Definitions, theorems, summaries, and problem statements are kept;
   derivations and solutions are replaced by blank workspace boxes, each
   with a one-line statement of what has to be done.  The three activities
-  keep their task statements and hints; their answers become workspace.
+  keep their task statements; their answers become workspace.  At the
+  instructor's request the section carries no hints: the activities' hints
+  and the parenthetical instruction after each "Solution." were removed.
   Content mirrors directional-derivatives.ptx of the full lecture notes;
   every xml:id here is prefixed with "skel-" so the two can coexist.
 
@@ -272,13 +274,6 @@ Use the definition of directional derivative to compute
 
 <p>
 <em>Solution.</em>
-(Substitute the given <m>x_0</m>, <m>y_0</m>, <m>u_1</m>, <m>u_2</m>
-into <xref ref="eq-skel-dirderiv-definition"/> and expand. Both squares
-are the same, which halves the algebra; after expanding, every surviving
-term carries a factor of <m>s</m>, so the quotient simplifies before the
-limit is taken. Keep this number <mdash/> you will recover it in two lines
-in <xref ref="ex-skel-dirderiv-gradient"/> once the gradient is
-available.)
 </p>
 
 <sidebyside width="97%">
@@ -389,12 +384,6 @@ single-variable limit is left, and what is its value?
 </image>
 </sidebyside>
 </statement>
-<hint>
-<p>
-Ask yourself which of the two inputs of <m>f</m> actually changes as
-<m>s</m> varies.
-</p>
-</hint>
 </task>
 
 <task xml:id="task-skel-dirderiv-j">
@@ -744,12 +733,6 @@ through <m>P_0(1,1)</m>, and give a vector tangent to that curve at
 </image>
 </sidebyside>
 </statement>
-<hint>
-<p>
-Level curves of this <m>f</m> are circles centred at the origin. A
-tangent to a circle is perpendicular to its radius.
-</p>
-</hint>
 </task>
 
 <task xml:id="task-skel-perp-dot-product">
@@ -867,16 +850,6 @@ Evaluate the directional derivative
 
 <p>
 <em>Solution.</em>
-(Same function, point and direction as
-<xref ref="ex-skel-dirderiv-definition"/>, but now use
-<xref ref="eq-skel-dirderiv-gradient-relation"/>: find <m>\nabla f</m>,
-evaluate it at <m>P_0</m>, and dot it with <m>\hat u</m>. It should take
-two lines and agree with the limit you computed earlier. Then read the
-answer geometrically off
-<xref ref="fig-skel-dirderiv-surface-tikz"/>: <m>\hat u</m> points along a
-line in the <m>xy</m>-plane, that line lies in a vertical plane, and that
-plane cuts the surface in a curve <mdash/> name the curve, and say which
-line's slope your number is.)
 </p>
 
 <sidebyside width="97%">
@@ -1337,14 +1310,6 @@ there is no change in <m>f</m>.
 
 <p>
 <em>Solution.</em>
-(Compute <m>\left(\nabla f\right)_{(1,1)}</m> first; parts
-<alert>A</alert> and <alert>B</alert> then follow from the list above, but
-the question asks for <em>directions</em>, so normalize. For part
-<alert>C</alert> set <m>\left(\nabla f\right)_{(1,1)}\cdot\hat u = 0</m>
-and solve together with <m>\|\hat u\| = 1</m>; there are two answers, and
-they are related in a way worth stating. Finally draw all four directions
-on the grid, together with the level curve through <m>P_0</m>, and say how
-each is placed relative to that curve.)
 </p>
 
 <sidebyside widths="52% 44%">
