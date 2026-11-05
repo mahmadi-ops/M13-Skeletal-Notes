@@ -237,7 +237,7 @@ right or wrong, earns nothing.
 <xi:include href="assignment-8-chain-rule.ptx"/>
 
 <!-- ================= Assignment 9 ================= -->
-<!-- UNPOSTED <xi:include href="assignment-9-tangent-planes.ptx"/> UNPOSTED -->
+<xi:include href="assignment-9-tangent-planes.ptx"/>
 
 <!-- ================= Review Problems #3 ================= -->
 <!-- The rest of the Chapter 4 problems covered by Assignments 7 and 8. -->

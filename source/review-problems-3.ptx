@@ -230,10 +230,10 @@ at <m>(0,0,-1)</m>, not a hyperboloid.
 <p>
 Completing the square in the first and second,
 <md>
-<mrow>x^2 + y^2 - z^2 - 2x \amp = 0
-   \;\Longrightarrow\; (x-1)^2 + y^2 - z^2 = 1,</mrow>
-<mrow>x^2 + y^2 + 4z^2 - 4y \amp = 0
-   \;\Longrightarrow\; x^2 + (y-2)^2 + 4z^2 = 4 .</mrow>
+<mrow>\amp x^2 + y^2 - z^2 - 2x = 0</mrow>
+<mrow>\amp \quad \Longrightarrow\; (x-1)^2 + y^2 - z^2 = 1,</mrow>
+<mrow>\amp x^2 + y^2 + 4z^2 - 4y = 0</mrow>
+<mrow>\amp \quad \Longrightarrow\; x^2 + (y-2)^2 + 4z^2 = 4 .</mrow>
 </md>
 Reading off the signs: one negative square against <m>+1</m> is a
 hyperboloid of one sheet; two negative squares against <m>+1</m> is a
@@ -628,12 +628,9 @@ be removed from every level curve.
 Let us take the three levels <m>c = -4</m>, <m>c = 1</m> and
 <m>c = 4</m>:
 <md>
-<mrow>h \amp = -4: \amp\qquad x \amp = -\frac{y^2}{4}
-  \amp\amp \text{(opens left)},</mrow>
-<mrow>h \amp = 1: \amp\qquad x \amp = y^2
-  \amp\amp \text{(opens right, narrow)},</mrow>
-<mrow>h \amp = 4: \amp\qquad x \amp = \frac{y^2}{4}
-  \amp\amp \text{(opens right, wide)}.</mrow>
+<mrow>h = -4: \amp \quad x = -\frac{y^2}{4} \quad \text{(opens left)},</mrow>
+<mrow>h = 1: \amp \quad x = y^2 \quad \text{(opens right, narrow)},</mrow>
+<mrow>h = 4: \amp \quad x = \frac{y^2}{4} \quad \text{(opens right, wide)}.</mrow>
 </md>
 The larger <m>|c|</m> is, the wider the parabola. These are drawn in
 <xref ref="fig-q2-levels"/>.
@@ -925,11 +922,10 @@ T_{xy}(1,1) \approx \frac{T_x(1,1.5) - T_x(1,1)}{0.5}
 <m>(1,1)</m> when <m>\ln(2t-3) = 0</m>, that is at <m>t = 2</m>, and
 then <m>y = 2^2/4 = 1</m> as required. Differentiating the path,
 <md>
-<mrow>\frac{dx}{dt} \amp = -\frac{1}{4}\cdot\frac{2}{2t-3}
-              = -\frac{1}{2(2t-3)},
-\amp \frac{dx}{dt}\bigg|_{t=2} \amp = -\frac{1}{2} ,</mrow>
-<mrow>\frac{dy}{dt} \amp = \frac{2^t\ln 2}{4},
-\amp \frac{dy}{dt}\bigg|_{t=2} \amp = \ln 2 .</mrow>
+<mrow>\frac{dx}{dt} \amp = -\frac{1}{4}\cdot\frac{2}{2t-3} = -\frac{1}{2(2t-3)},</mrow>
+<mrow>\frac{dx}{dt}\bigg|_{t=2} \amp = -\frac{1}{2} ,</mrow>
+<mrow>\frac{dy}{dt} \amp = \frac{2^t\ln 2}{4},</mrow>
+<mrow>\frac{dy}{dt}\bigg|_{t=2} \amp = \ln 2 .</mrow>
 </md>
 </p>
 
@@ -1135,10 +1131,10 @@ rapidly?
 We first compute the gradient:
 <md>
 <mrow>T_x \amp = e^x(\sin x + \sin y) + e^x\cos x</mrow>
-<mrow>\amp = e^x(\sin x + \cos x + \sin y),
-\qquad T_x(0,0) = 1,</mrow>
-<mrow>T_y \amp = e^x \cos y,
-\qquad T_y(0,0) = 1,</mrow>
+<mrow>\amp = e^x(\sin x + \cos x + \sin y),</mrow>
+<mrow>T_x(0,0) \amp = 1,</mrow>
+<mrow>T_y \amp = e^x \cos y,</mrow>
+<mrow>T_y(0,0) \amp = 1,</mrow>
 </md>
 so <m>\nabla T\big|_{(0,0)} = \langle 1, 1\rangle</m>. The direction
 vector is <m>\overrightarrow{u} = \langle 3, -4\rangle</m> with
@@ -1244,9 +1240,8 @@ Find the derivatives of <m>f(x,y)</m> in these directions at
 The gradient is
 <md>
 <mrow>\nabla f \amp = (2x + y)\,\hat{\imath} + (x + 2y)\,\hat{\jmath},</mrow>
-<mrow>\left(\nabla f\right)_{(-1,1)} \amp = \langle -1, 1\rangle,
-\qquad
-\left\|\left(\nabla f\right)_{(-1,1)}\right\| = \sqrt2.</mrow>
+<mrow>\left(\nabla f\right)_{(-1,1)} \amp = \langle -1, 1\rangle,</mrow>
+<mrow>\left\|\left(\nabla f\right)_{(-1,1)}\right\| \amp = \sqrt2.</mrow>
 </md>
 The function increases most rapidly in the direction of the gradient,
 <md>
@@ -1266,16 +1261,12 @@ and decreases most rapidly in the opposite direction,
 <p>
 The directional derivatives are
 <md>
-<mrow>\left(D_{\hat u_1} f\right)_{P_0}
-\amp = \left(\nabla f\right)_{(-1,1)} \cdot \hat u_1
-= \frac{1}{\sqrt2} + \frac{1}{\sqrt2}
-= \sqrt2
-= \left\|\left(\nabla f\right)_{(-1,1)}\right\|,</mrow>
-<mrow>\left(D_{\hat u_2} f\right)_{P_0}
-\amp = \left(\nabla f\right)_{(-1,1)} \cdot \hat u_2
-= -\frac{1}{\sqrt2} - \frac{1}{\sqrt2}
-= -\sqrt2
-= -\left\|\left(\nabla f\right)_{(-1,1)}\right\|.</mrow>
+<mrow>\amp \left(D_{\hat u_1} f\right)_{P_0} = \left(\nabla f\right)_{(-1,1)} \cdot \hat u_1</mrow>
+<mrow>\amp \quad = \frac{1}{\sqrt2} + \frac{1}{\sqrt2} = \sqrt2</mrow>
+<mrow>\amp \quad = \left\|\left(\nabla f\right)_{(-1,1)}\right\|,</mrow>
+<mrow>\amp \left(D_{\hat u_2} f\right)_{P_0} = \left(\nabla f\right)_{(-1,1)} \cdot \hat u_2</mrow>
+<mrow>\amp \quad = -\frac{1}{\sqrt2} - \frac{1}{\sqrt2} = -\sqrt2</mrow>
+<mrow>\amp \quad = -\left\|\left(\nabla f\right)_{(-1,1)}\right\|.</mrow>
 </md>
 As expected, the largest possible rate of change is
 <m>\|\nabla f\|</m> and the smallest is <m>-\|\nabla f\|</m>.
@@ -1505,6 +1496,667 @@ and the directions of no change.
   </answer>
 </exercise>
 
+<!-- ===== Moved from Assignment 9 (Nov 2026): a contour map and two physical
+     settings for the gradient, then three tangent-plane problems ===== -->
+<exercise xml:id="pp-31">
+<statement>
+<p>
+<m>f</m> is a <q>nice</q> function of <m>x</m> and <m>y</m> (i.e.
+<m>f</m> is continuous and its partials exist). In
+<xref ref="fig-pp-contours"/> are shown the level curves
+<m>f(x,y) = 0, 2, 4, 6, 8, 10, 12</m>.
+<ol marker="A.">
+<li>
+<p>
+Let <m>u_1 = \frac{1}{\sqrt2}\hat{\imath} + \frac{1}{\sqrt2}\hat{\jmath}</m>.
+Estimate <m>D_{u_1}f(4,3)</m>.
+</p>
+</li>
+<li>
+<p>
+Estimate <m>D_{u_1}f(1,2)</m>.
+</p>
+</li>
+<li>
+<p>
+Draw on the diagram a unit vector pointing in the same direction as
+<m>\nabla f(1,2)</m>.
+</p>
+</li>
+<li>
+<p>
+At <m>P</m>, draw a unit vector and label it <m>u_2</m>, such that
+<m>D_{u_2}f(P) \lt 0</m>.
+</p>
+</li>
+<li>
+<p>
+Estimate <m>\dfrac{\partial f}{\partial x}(P)</m>.
+</p>
+</li>
+<li>
+<p>
+Which appears bigger, <m>\dfrac{\partial f}{\partial y}(Q)</m> or
+<m>\dfrac{\partial f}{\partial y}(R)</m>?
+</p>
+</li>
+</ol>
+</p>
+
+<figure xml:id="fig-pp-contours">
+<caption>
+Level curves of <m>f</m> at the values
+<m>0, 2, 4, 6, 8, 10, 12</m>. The marked point <m>P</m> is the highest
+point of the <m>f = 12</m> curve; <m>Q</m> lies midway between the
+<m>f = 2</m> and <m>f = 4</m> curves; <m>R</m> lies midway between the
+<m>f = 10</m> and <m>f = 12</m> curves.
+</caption>
+<image width="88%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-pp-contours">
+<diagram dimensions="(470,420)" margins="12">
+<definition>c0(t) = (t, -0.30 + 2.2/((1 + exp(-(t-1)/0.55))*(1 + exp((t-4.2)/0.9))))</definition>
+<definition>c2(t) = (t, -0.08 + 2.2/((1 + exp(-(t-1)/0.55))*(1 + exp((t-4.2)/0.9))))</definition>
+<definition>c4(t) = (t, 0.17 + 2.2/((1 + exp(-(t-1)/0.55))*(1 + exp((t-4.2)/0.9))))</definition>
+<definition>c6(t) = (t, 0.75 + 2.2/((1 + exp(-(t-1)/0.55))*(1 + exp((t-4.2)/0.9))))</definition>
+<definition>c8(t) = (t, 1.88 + 2.2/((1 + exp(-(t-1)/0.55))*(1 + exp((t-4.2)/0.9))))</definition>
+<definition>c10(t) = (t, 2.98 + 2.2/((1 + exp(-(t-1)/0.55))*(1 + exp((t-4.2)/0.9))))</definition>
+<definition>c12(t) = (t, 3.90 + 2.2/((1 + exp(-(t-1)/0.55))*(1 + exp((t-4.2)/0.9))))</definition>
+<coordinates bbox="(-0.5,-1.35,8.3,6.6)">
+<grid-axes xlabel="x" ylabel="y"/>
+<parametric-curve at="ct-0" function="c0" domain="(0.15,6.3)"
+                  stroke="#0072B2" thickness="2"/>
+<parametric-curve at="ct-2" function="c2" domain="(0.15,6.3)"
+                  stroke="#0072B2" thickness="2"/>
+<parametric-curve at="ct-4" function="c4" domain="(0.15,6.3)"
+                  stroke="#0072B2" thickness="2"/>
+<parametric-curve at="ct-6" function="c6" domain="(0.15,6.3)"
+                  stroke="#0072B2" thickness="2"/>
+<parametric-curve at="ct-8" function="c8" domain="(0.15,6.3)"
+                  stroke="#0072B2" thickness="2"/>
+<parametric-curve at="ct-10" function="c10" domain="(0.15,6.3)"
+                  stroke="#0072B2" thickness="2"/>
+<parametric-curve at="ct-12" function="c12" domain="(0.15,6.3)"
+                  stroke="#0072B2" thickness="2"/>
+<!-- P is the peak of the f=12 curve; Q is midway between f=2 and f=4,
+     R midway between f=10 and f=12, so each point's position is exact. -->
+<point at="ct-P" p="(2.4,5.697)" fill="#D55E00"/>
+<point at="ct-Q" p="(5.2,0.59)" fill="#D55E00"/>
+<point at="ct-R" p="(4.6,4.298)" fill="#D55E00"/>
+<line at="ct-Q-lead" endpoints="((5.24,0.64),(5.42,0.86))"
+      stroke="#D55E00" thickness="1.5"/>
+<label at="ct-P-lab" anchor="(2.4,5.82)" alignment="n" color="#D55E00">
+<m>P</m>
+</label>
+<label at="ct-Q-lab" anchor="(5.45,0.90)" alignment="e" color="#D55E00">
+<m>Q</m>
+</label>
+<label at="ct-R-lab" anchor="(4.72,4.30)" alignment="e" color="#D55E00">
+<m>R</m>
+</label>
+<!-- The f=2 and f=0 labels do not fit beside their curves, so each is
+     set below and joined to its curve by a leader. -->
+<line at="ct-lead2" endpoints="((6.35,0.114),(6.70,-0.41))"
+      stroke="#7F7F7F" thickness="1"/>
+<line at="ct-lead0" endpoints="((6.35,-0.106),(6.70,-1.01))"
+      stroke="#7F7F7F" thickness="1"/>
+<label at="ct-l12" anchor="(6.45,4.094)" alignment="e">
+<m>f=12</m>
+</label>
+<label at="ct-l10" anchor="(6.45,3.174)" alignment="e">
+<m>f=10</m>
+</label>
+<label at="ct-l8" anchor="(6.45,2.074)" alignment="e">
+<m>f=8</m>
+</label>
+<label at="ct-l6" anchor="(6.45,0.944)" alignment="e">
+<m>f=6</m>
+</label>
+<label at="ct-l4" anchor="(6.45,0.364)" alignment="e">
+<m>f=4</m>
+</label>
+<label at="ct-l2" anchor="(6.75,-0.45)" alignment="e">
+<m>f=2</m>
+</label>
+<label at="ct-l0" anchor="(6.75,-1.05)" alignment="e">
+<m>f=0</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="Seven level curves of f, labelled zero through twelve from the bottom up. Each curve rises steeply from the left, reaches a hump near x equals two point four, and then descends gently to the right. The low valued curves are bunched tightly together near the x axis on the right, where the point Q sits, while the high valued curves are widely spaced near the top right, where the point R sits. The point P sits at the very top of the f equals twelve curve, where that curve is horizontal.">
+  <annotation ref="ct-P" text="The point P, on the f equals twelve level curve at its highest point, where that curve is horizontal."/>
+  <annotation ref="ct-Q" text="The point Q, at the lower right, exactly midway between the f equals two and f equals four level curves, which are only about one quarter of a unit apart."/>
+  <annotation ref="ct-R" text="The point R, at the upper right, exactly midway between the f equals ten and f equals twelve level curves, which are about one unit apart."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</statement>
+<solution>
+<p>
+<ol marker="A.">
+<li>
+<p>
+The directional derivative <m>D_{u_1}f(4,3)</m> tells us roughly how
+much <m>f</m> increases if we move <em>one unit</em> from
+<m>(4,3)</m> in the direction <m>u_1</m>, i.e. diagonally up and to
+the right at <m>45^{\circ}</m>. Starting at <m>(4,3)</m> and moving
+one unit that way lands us near <m>(4.7, 3.7)</m>, which is about two
+contours further along, and each contour step is <m>\Delta f = 2</m>
+spread over roughly one unit of travel. Reading the map,
+<md>
+D_{u_1}f(4,3) \approx 2.
+</md>
+</p>
+</li>
+<li>
+<p>
+At <m>(1,2)</m> the level curve through that point is climbing at
+roughly <m>45^{\circ}</m>, i.e. the level curve is
+<em>parallel</em> to <m>u_1</m>. Moving along a level curve does not
+change the value of <m>f</m>, so
+<md>
+D_{u_1}f(1,2) \approx 0.
+</md>
+</p>
+</li>
+<li>
+<p>
+The gradient is perpendicular to the level curve and points in the
+direction of <em>increase</em>. At <m>(1,2)</m> the level curve runs
+up and to the right at about <m>45^{\circ}</m>, and <m>f</m>
+increases as we move upward, so <m>\nabla f(1,2)</m> points up and to
+the <em>left</em>, i.e. in the direction
+<m>\frac{1}{\sqrt2}\langle -1, 1\rangle</m>. See
+<xref ref="fig-pp-contours-answer"/>.
+</p>
+</li>
+<li>
+<p>
+We need any direction of <em>decrease</em> at <m>P</m>, i.e. any
+direction pointing toward the lower-valued level curves (toward
+<m>f = 10</m>, not away from it). Since the level curves below
+<m>P</m> have smaller values, <m>u_2 = \langle 0, -1\rangle</m>
+(straight down) works. See <xref ref="fig-pp-contours-answer"/>.
+</p>
+</li>
+<li>
+<p>
+<m>P</m> sits at the very top of its level curve, where the curve is
+<em>horizontal</em>. Walking in the <m>+x</m> direction from
+<m>P</m> therefore keeps us on the same level curve for a while, so
+<m>f</m> does not change to first order:
+<md>
+\frac{\partial f}{\partial x}(P) \approx 0.
+</md>
+</p>
+</li>
+<li>
+<p>
+<m>\dfrac{\partial f}{\partial y}</m> measures how fast <m>f</m>
+changes as we move straight up, which is large where the contours are
+close together and small where they are far apart. At <m>Q</m> we only
+have to go up about <m>0.25</m> units to move from one contour to the
+next, so
+<m>\dfrac{\partial f}{\partial y}(Q) \approx \dfrac{2}{0.25} = 8</m>.
+At <m>R</m> we must go up about <m>1</m> unit for the same change, so
+<m>\dfrac{\partial f}{\partial y}(R) \approx \dfrac{2}{1} = 2</m>.
+Hence <m>\dfrac{\partial f}{\partial y}(Q)</m> is bigger.
+</p>
+</li>
+</ol>
+</p>
+
+<figure xml:id="fig-pp-contours-answer">
+<caption>
+The vectors asked for in parts C and D: <m>\nabla f(1,2)</m> points
+perpendicular to the level curve toward increasing <m>f</m>, while
+<m>u_2</m> at <m>P</m> points toward decreasing <m>f</m>.
+</caption>
+<image width="88%">
+<prefigure xmlns="https://prefigure.org" label="prefigure-pp-contours-answer">
+<diagram dimensions="(470,420)" margins="12">
+<definition>c0(t) = (t, -0.30 + 2.2/((1 + exp(-(t-1)/0.55))*(1 + exp((t-4.2)/0.9))))</definition>
+<definition>c2(t) = (t, -0.08 + 2.2/((1 + exp(-(t-1)/0.55))*(1 + exp((t-4.2)/0.9))))</definition>
+<definition>c4(t) = (t, 0.17 + 2.2/((1 + exp(-(t-1)/0.55))*(1 + exp((t-4.2)/0.9))))</definition>
+<definition>c6(t) = (t, 0.75 + 2.2/((1 + exp(-(t-1)/0.55))*(1 + exp((t-4.2)/0.9))))</definition>
+<definition>c8(t) = (t, 1.88 + 2.2/((1 + exp(-(t-1)/0.55))*(1 + exp((t-4.2)/0.9))))</definition>
+<definition>c10(t) = (t, 2.98 + 2.2/((1 + exp(-(t-1)/0.55))*(1 + exp((t-4.2)/0.9))))</definition>
+<definition>c12(t) = (t, 3.90 + 2.2/((1 + exp(-(t-1)/0.55))*(1 + exp((t-4.2)/0.9))))</definition>
+<coordinates bbox="(-0.5,-1.35,8.3,6.6)">
+<grid-axes xlabel="x" ylabel="y"/>
+<parametric-curve at="ca-0" function="c0" domain="(0.15,6.3)"
+                  stroke="#7F7F7F" thickness="1.5"/>
+<parametric-curve at="ca-2" function="c2" domain="(0.15,6.3)"
+                  stroke="#7F7F7F" thickness="1.5"/>
+<parametric-curve at="ca-4" function="c4" domain="(0.15,6.3)"
+                  stroke="#7F7F7F" thickness="1.5"/>
+<parametric-curve at="ca-6" function="c6" domain="(0.15,6.3)"
+                  stroke="#7F7F7F" thickness="1.5"/>
+<parametric-curve at="ca-8" function="c8" domain="(0.15,6.3)"
+                  stroke="#7F7F7F" thickness="1.5"/>
+<parametric-curve at="ca-10" function="c10" domain="(0.15,6.3)"
+                  stroke="#7F7F7F" thickness="1.5"/>
+<parametric-curve at="ca-12" function="c12" domain="(0.15,6.3)"
+                  stroke="#7F7F7F" thickness="1.5"/>
+<vector at="ca-grad" v="(-0.71,0.71)" tail="(1,2)"
+        stroke="#009E73" thickness="3"/>
+<vector at="ca-u2" v="(0,-1)" tail="(2.4,5.697)"
+        stroke="#D55E00" thickness="3"/>
+<point at="ca-pt12" p="(1,2)" fill="#009E73"/>
+<point at="ca-P" p="(2.4,5.697)" fill="#D55E00"/>
+<label at="ca-grad-lab" anchor="(0.34,2.84)" alignment="ne" color="#009E73">
+<m>\nabla f(1,2)</m>
+</label>
+<label at="ca-u2-lab" anchor="(2.62,4.82)" alignment="e" color="#D55E00">
+<m>u_2</m>
+</label>
+<label at="ca-P-lab" anchor="(2.4,5.82)" alignment="n" color="#D55E00">
+<m>P</m>
+</label>
+</coordinates>
+
+<annotations>
+<annotation ref="figure" text="The same seven level curves, drawn in gray. A green arrow at the point one comma two points up and to the left, perpendicular to the level curve there; it is labelled gradient of f at one comma two. A vermillion arrow at P points straight down and is labelled u two.">
+  <annotation ref="ca-grad" text="The gradient at one comma two, perpendicular to the level curve and pointing toward larger values of f."/>
+  <annotation ref="ca-u2" text="The vector u two at P, pointing straight down toward smaller values of f, so the directional derivative there is negative."/>
+</annotation>
+</annotations>
+</diagram>
+</prefigure>
+</image>
+</figure>
+</solution>
+</exercise>
+
+<p>
+The next two problems repeat the three questions of
+<xref ref="ex-skel-two-runners"/> in two more physical settings: find the
+direction of most rapid decrease, the rate along a prescribed direction,
+and the directions of no change.
+</p>
+
+<exercise xml:id="ex-electrostatic-plate">
+  <title>Electric Potential on a Coated Plate</title>
+  <statement>
+    <p>
+      The electric potential on a thin coated plate, in volts, is
+      <md>V(x,y) = 100 - 2x^2 - 6y^2,</md>
+      with <m>x</m> and <m>y</m> in centimeters. Consider the point <m>P_0(2,1)</m>.
+    </p>
+    <p>
+      <ol>
+        <li>
+          <p>
+            Find <m>\nabla V</m> at <m>P_0</m> and the electric field
+            <m>\mathbf E = -\nabla V</m> there. Along which unit vector does the
+            potential drop most rapidly, and at what rate?
+          </p>
+        </li>
+        <li>
+          <p>
+            A test charge is nudged along
+            <m>\hat{u} = \tfrac{4}{5}\hat{\imath} - \tfrac{3}{5}\hat{\jmath}</m>. Compute
+            <m>D_{\hat{u}}V</m> at <m>P_0</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Find the two unit vectors along which the potential does not change, and name
+            the curve they are tangent to.
+          </p>
+        </li>
+      </ol>
+    </p>
+  
+  </statement>
+  <answer>
+    <p>
+      <ol>
+        <li>
+          <p>
+            <m>\nabla V = -4x\,\hat{\imath} - 12y\,\hat{\jmath}</m>, so
+            <m>(\nabla V)_{(2,1)} = -8\,\hat{\imath} - 12\,\hat{\jmath}</m> and
+            <m>\mathbf E = 8\,\hat{\imath} + 12\,\hat{\jmath}</m> V/cm. The potential drops
+            fastest along <m>\hat{u} = \tfrac{1}{\sqrt{13}}(2\,\hat{\imath} + 3\,\hat{\jmath})</m>,
+            at the rate <m>-\|\nabla V\| = -4\sqrt{13} \approx -14.4</m> V/cm.
+          </p>
+        </li>
+        <li>
+          <p>
+            <md>D_{\hat{u}}V = (-8)\left(\tfrac{4}{5}\right)
+                + (-12)\left(-\tfrac{3}{5}\right) = \tfrac{4}{5} = 0.8</md>
+            in V/cm. The potential rises slightly along this heading.
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\hat{u} = \pm\tfrac{1}{\sqrt{13}}(3\,\hat{\imath} - 2\,\hat{\jmath})</m>. These are
+            tangent to the equipotential ellipse <m>2x^2 + 6y^2 = 14</m> through <m>P_0</m>,
+            and they are orthogonal to <m>\mathbf E</m>, as they must be.
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p component="print">
+      An interactive figure of the plate <mdash/> the equipotential route at
+      <m>V = 86</m> V and the field-line route side by side, with the
+      potential read out as the point moves <mdash/> accompanies the online
+      version of these notes.
+    </p>
+    <sidebyside component="web" width="100%">
+    <figure xml:id="figure-potential-plate">
+      <caption>The potential <m>V(x,y) = 100 - 2x^2 - 6y^2</m> on the plate. One route holds <m>V = 86</m> V along the equipotential <m>2x^2 + 6y^2 = 14</m>; the other follows a field line, on which <m>D_{\hat{u}}V = -\|\nabla V\|</m> at every point.</caption>
+      <interactive xml:id="interactive-potential-plate"
+                   iframe="potential-plate-3d.html"
+                   width="100%" aspect="16:10"/>
+    </figure>
+    </sidebyside>
+  </answer>
+</exercise>
+
+<exercise xml:id="ex-isobars-low">
+  <title>Sailing the Isobars of a Low</title>
+  <statement>
+    <p>
+      Near the center of a low-pressure system the sea-level pressure, in millibars, is
+      modeled by
+      <md>P(x,y) = 988 + 0.004\left(x^2 + y^2\right),</md>
+      with <m>x</m> and <m>y</m> in miles from the center of the low. A ship sits at
+      <m>P_0(20,10)</m>.
+    </p>
+    <p>
+      <ol>
+        <li>
+          <p>
+            Find the pressure at the ship and <m>\nabla P</m> there. The
+            pressure-gradient force per unit volume of air is a positive multiple of
+            <m>-\nabla P</m>; in which unit direction does it push, and what is
+            <m>\|\nabla P\|</m> in millibars per mile?
+          </p>
+        </li>
+        <li>
+          <p>
+            A second ship 40 miles from the center reports a stronger wind. Using this
+            model, explain why <m>\|\nabla P\|</m> supports that report.
+          </p>
+        </li>
+        <li>
+          <p>
+            The captain decides to hold a constant barometer reading. Give the two
+            possible unit headings at <m>P_0</m>, and describe the shape of the full route.
+          </p>
+        </li>
+      </ol>
+    </p>
+  
+  </statement>
+  <answer>
+    <p>
+      <ol>
+        <li>
+          <p>
+            <m>P(20,10) = 988 + 0.004(500) = 990</m> mb, and
+            <m>\nabla P = 0.008x\,\hat{\imath} + 0.008y\,\hat{\jmath}</m> gives
+            <m>(\nabla P)_{(20,10)} = 0.16\,\hat{\imath} + 0.08\,\hat{\jmath}</m>. The force
+            points along
+            <m>-\mathbf u = -\tfrac{1}{\sqrt{5}}(2\,\hat{\imath} + \hat{\jmath})</m>, that is,
+            inward toward the low, and
+            <m>\|\nabla P\| = 0.08\sqrt{5} \approx 0.18</m> mb/mi.
+          </p>
+        </li>
+        <li>
+          <p>
+            Here <m>\|\nabla P\| = 0.008\sqrt{x^2+y^2}</m> grows linearly with distance from
+            the center, so at 40 miles it is <m>0.32</m> mb/mi, nearly double the value at
+            the first ship. (Real storms reverse this trend close to the eye; the model is
+            only reasonable over a limited annulus.)
+          </p>
+        </li>
+        <li>
+          <p>
+            <m>\mathbf u = \pm\tfrac{1}{\sqrt{5}}(\hat{\imath} - 2\,\hat{\jmath})</m>. Since the
+            level curves of <m>P</m> are the circles <m>x^2+y^2 = \text{constant}</m>,
+            holding the barometer steady means circling the storm at a fixed radius of
+            <m>\sqrt{500} \approx 22.4</m> miles.
+          </p>
+        </li>
+      </ol>
+    </p>
+    <p component="web">
+      Use the interactive figure to explore the problem further geometrically,
+      switching between the two headings and watching how the barometer responds as
+      the ship moves.
+    </p>
+    <p component="print">
+      An interactive figure of the pressure field <mdash/> the two headings
+      switchable, with the barometer responding as the ship moves <mdash/>
+      accompanies the online version of these notes.
+    </p>
+    <sidebyside component="web" width="100%">
+    <figure xml:id="figure-isobars-low">
+      <caption>The pressure field <m>P(x,y) = 988 + 0.004(x^2+y^2)</m> around a low. One heading circles the eye at constant <m>990</m> mb; the other runs outward along <m>\nabla P</m>. The distance readout shows why <m>\|\nabla P\| = 0.008r</m> grows with radius.</caption>
+      <interactive xml:id="interactive-isobars-low"
+                   iframe="isobars-low-3d.html"
+                   width="100%" aspect="16:10"/>
+    </figure>
+    </sidebyside>
+  </answer>
+</exercise>
+
+<exercise xml:id="rev-tp-2">
+<statement>
+<p>
+Find a parametric equation for a line contained in the tangent plane
+to the graph of <m>f(x,y) = \cos(xy)</m> at the point
+<m>\left(\dfrac{\pi}{2}, 1, 0\right)</m>. (Any line will suffice.)
+</p>
+</statement>
+<solution>
+<p>
+The tangent plane to the graph of <m>f(x,y) = \cos(xy)</m> at this point
+is <m>x + \frac{\pi}{2}\,y + z = \pi</m>. Note that the point
+<m>\left(\dfrac{\pi}{2}, 1, 0\right)</m> lies on this plane, and the plane has normal vector
+<m>\vec n = \left\langle 1, \dfrac{\pi}{2}, 1\right\rangle</m>. Any
+vector orthogonal to the normal vector will point along this plane. By
+inspection, we see that
+<md>
+\langle 1, 0, -1\rangle \cdot
+\left\langle 1, \frac{\pi}{2}, 1\right\rangle = 0,
+</md>
+so the vector <m>\langle 1, 0, -1\rangle</m> points along the plane.
+Thus <m>\langle 1, 0, -1\rangle</m> is the direction vector of a line
+pointing along this plane. Combining this with the point on the plane
+that we have already found, we see that the line
+<md>
+\mathbf r(t) = \left\langle t + \frac{\pi}{2},\; 1,\; -t\right\rangle
+</md>
+is contained in the tangent plane. We could find other lines contained
+in the plane by making different choices of direction vector. See
+<xref ref="fig-rev-tp-line"/>.
+</p>
+
+<figure xml:id="fig-rev-tp-line">
+<caption>
+The tangent plane <m>x + \frac{\pi}{2}y + z = \pi</m> to the graph of
+<m>f(x,y) = \cos(xy)</m> at <m>P_0\left(\frac{\pi}{2},1,0\right)</m>,
+its normal vector <m>\vec n = \langle 1, \frac{\pi}{2}, 1\rangle</m>,
+and the line <m>\mathbf r(t) = \langle t + \frac{\pi}{2}, 1, -t\rangle</m>
+contained in the plane.
+</caption>
+<image width="70%">
+<description>
+<p>
+A three dimensional coordinate system showing a tilted shaded
+parallelogram that represents the tangent plane. A red point P zero at
+pi over two comma one comma zero lies in the middle of the plane. A
+blue arrow perpendicular to the plane at P zero is the normal vector
+n, and a dark red line through P zero lying inside the plane is the
+line r of t.
+</p>
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[x={(-0.50cm,-0.36cm)}, y={(1cm,0cm)}, z={(0cm,1cm)}, scale=1.0]
+  % axes
+  \draw[-stealth, thick] (0,0,0) ]]>&#45;&#45;<![CDATA[ (3.4,0,0) node[below left] {$x$};
+  \draw[-stealth, thick] (0,0,0) ]]>&#45;&#45;<![CDATA[ (0,2.9,0) node[right] {$y$};
+  \draw[-stealth, thick] (0,0,0) ]]>&#45;&#45;<![CDATA[ (0,0,3.2) node[above] {$z$};
+  % tangent plane patch: z = pi - x - (pi/2) y over x in [0.6,2.4], y in [0.3,1.7]
+  \fill[msky, opacity=0.30]
+    (0.6,0.3,2.0705) ]]>&#45;&#45;<![CDATA[ (2.4,0.3,0.2705) ]]>&#45;&#45;<![CDATA[ (2.4,1.7,-1.9285) ]]>&#45;&#45;<![CDATA[ (0.6,1.7,-0.1285) ]]>&#45;&#45;<![CDATA[ cycle;
+  \draw[msky!70!black]
+    (0.6,0.3,2.0705) ]]>&#45;&#45;<![CDATA[ (2.4,0.3,0.2705) ]]>&#45;&#45;<![CDATA[ (2.4,1.7,-1.9285) ]]>&#45;&#45;<![CDATA[ (0.6,1.7,-0.1285) ]]>&#45;&#45;<![CDATA[ cycle;
+  % the line r(t) = (t + pi/2, 1, -t) for t in [-0.95, 0.82]
+  \draw[mred, very thick] (0.6208,1,0.95) ]]>&#45;&#45;<![CDATA[ (2.3908,1,-0.82);
+  % the point P0
+  \fill[red] (1.5708,1,0) circle (2pt) node[below left=2pt, red] {$P_0\!\left(\frac{\pi}{2},1,0\right)$};
+  % the normal vector at P0, direction (1, pi/2, 1)/|.| * 0.95
+  \draw[-stealth, mblue, very thick] (1.5708,1,0) ]]>&#45;&#45;<![CDATA[ (2.0146,1.6971,0.4438)
+        node[below right=3pt] {$\vec n=\left\langle 1,\frac{\pi}{2},1\right\rangle$};
+  % label for the line
+  \node[mred, below right=0pt] at (2.25,1.05,-0.72) {$\mathbf r(t)$};
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
+</solution>
+</exercise>
+
+<exercise xml:id="rev-tp-3">
+<statement>
+<p>
+Let <m>S</m> be a sphere centered at the origin in <m>\R^3</m>, and
+consider any point <m>P</m> on <m>S</m>. Show that the vector
+<m>\vec{OP}</m> is orthogonal to the tangent plane to <m>S</m> at
+<m>P</m>.
+</p>
+</statement>
+<solution>
+<p>
+Let <m>R</m> be the radius of the sphere, and write
+<m>P = (x_0, y_0, z_0)</m>. Assume for the moment that <m>P</m> lies on
+the top half of the sphere (i.e. <m>z_0 \gt 0</m>). Note that the top
+half of the sphere is the same as the graph of the function
+<m>f(x,y) = \sqrt{R^2 - x^2 - y^2}</m>. We can compute
+<md>
+<mrow>\frac{\partial f}{\partial x}(x_0, y_0)
+\amp = -\frac{x_0}{\sqrt{R^2 - x_0^2 - y_0^2}},</mrow>
+<mrow>\frac{\partial f}{\partial y}(x_0, y_0)
+\amp = -\frac{y_0}{\sqrt{R^2 - x_0^2 - y_0^2}},</mrow>
+</md>
+so that the tangent plane to the graph at <m>P</m> (which is the same
+as the tangent plane to <m>S</m> at <m>P</m>) is given by
+<md>
+z - z_0
+= -\frac{x_0}{\sqrt{R^2 - x_0^2 - y_0^2}}\,(x - x_0)
+- \frac{y_0}{\sqrt{R^2 - x_0^2 - y_0^2}}\,(y - y_0).
+</md>
+</p>
+
+<p>
+We can rewrite this as
+<md>
+x_0(x - x_0) + y_0(y - y_0) + z_0(z - z_0) = 0,
+</md>
+where we use the fact that <m>z_0 = \sqrt{R^2 - x_0^2 - y_0^2}</m> to
+simplify things. From this we see that
+<m>\langle x_0, y_0, z_0\rangle</m> is a normal vector to the tangent
+plane. But <m>\langle x_0, y_0, z_0\rangle = \vec{OP}</m>, so this is
+exactly what we needed to show. See <xref ref="fig-rev-tp-sphere"/>.
+</p>
+
+<p>
+A similar argument (with <m>-\sqrt{R^2 - x^2 - y^2}</m> in place of
+<m>\sqrt{R^2 - x^2 - y^2}</m>) works when <m>P</m> is on the bottom
+half of the sphere (i.e. <m>z_0 \lt 0</m>). When <m>z_0 = 0</m>, we
+have to use a <q>sideways graph</q> of some function like
+<m>f(y,z) = \sqrt{R^2 - y^2 - z^2}</m>, but other than that, pretty
+much everything is the same.
+</p>
+
+<figure xml:id="fig-rev-tp-sphere">
+<caption>
+The vector <m>\vec{OP} = \langle x_0, y_0, z_0\rangle</m> from the
+center of the sphere to the point <m>P</m> is a normal vector to the
+tangent plane to <m>S</m> at <m>P</m>.
+</caption>
+<image width="58%">
+<description>
+<p>
+A sphere centered at the origin O, drawn with a dashed equator. A
+point P sits on the upper right of the sphere. An arrow from O through
+P continues past the surface, and a small shaded parallelogram at P,
+perpendicular to the arrow, represents the tangent plane. A right
+angle marker at P shows that the vector O P is orthogonal to the
+tangent plane.
+</p>
+</description>
+<latex-image>
+<![CDATA[\begin{tikzpicture}[scale=1.0]
+  % the sphere
+  \draw[thick, mblue] (0,0) circle (2);
+  \draw[mblue, dashed] (-2,0) arc (180:360:2 and 0.55);
+  \draw[mblue] (-2,0) arc (180:0:2 and -0.55);
+  % center
+  \fill (0,0) circle (1.6pt) node[below left=1pt] {$O$};
+  % the point P at 40 degrees
+  \coordinate (P) at (40:2);
+  % OP vector, extended past the sphere
+  \draw[-stealth, mred, very thick] (0,0) ]]>&#45;&#45;<![CDATA[ (40:2.9)
+        node[above right=-1pt] {$\vec{OP}$};
+  \fill[red] (P) circle (2pt) node[below right=2pt] {$P$};
+  % tangent plane at P: parallelogram perpendicular to OP
+  % direction along the page perpendicular to OP: (-sin40, cos40)
+  % slanted second direction to fake 3D
+  \begin{scope}[shift={(P)}]
+    \coordinate (u) at (-0.766,0.643);   % perpendicular to OP, unit
+    \coordinate (v) at (0.30,0.42);      % skewed depth direction
+    \fill[morange, opacity=0.30]
+      ($-1.3*(u) - 0.9*(v)$) ]]>&#45;&#45;<![CDATA[ ($1.3*(u) - 0.9*(v)$)
+      ]]>&#45;&#45;<![CDATA[ ($1.3*(u) + 0.9*(v)$) ]]>&#45;&#45;<![CDATA[ ($-1.3*(u) + 0.9*(v)$) ]]>&#45;&#45;<![CDATA[ cycle;
+    \draw[morange!70!black]
+      ($-1.3*(u) - 0.9*(v)$) ]]>&#45;&#45;<![CDATA[ ($1.3*(u) - 0.9*(v)$)
+      ]]>&#45;&#45;<![CDATA[ ($1.3*(u) + 0.9*(v)$) ]]>&#45;&#45;<![CDATA[ ($-1.3*(u) + 0.9*(v)$) ]]>&#45;&#45;<![CDATA[ cycle;
+    % right-angle marker between OP direction and the plane direction u
+    \draw ($0.34*(u)$) ]]>&#45;&#45;<![CDATA[ ($0.34*(u) + (0.26,0.218)$) ]]>&#45;&#45;<![CDATA[ (0.26,0.218);
+  \end{scope}
+\end{tikzpicture}]]>
+</latex-image>
+</image>
+</figure>
+</solution>
+</exercise>
+
+<exercise xml:id="pp-33">
+<statement>
+<p>
+Find the equation of the tangent plane to the sphere
+<m>x^2 + y^2 + z^2 = 14</m> at <m>(1,2,3)</m>.
+</p>
+</statement>
+<solution>
+<p>
+Write the sphere as the level surface
+<m>F(x,y,z) = x^2 + y^2 + z^2 = 14</m>. The gradient is normal to the
+level surface:
+<md>
+\nabla F = \langle 2x, 2y, 2z\rangle,
+\qquad
+\vec n = \nabla F\big|_{(1,2,3)} = \langle 2, 4, 6\rangle.
+</md>
+Hence the tangent plane is
+<md>
+2(x-1) + 4(y-2) + 6(z-3) = 0,
+</md>
+which simplifies to <m>x + 2y + 3z = 14</m>. (Notice that the normal
+vector is parallel to the position vector <m>\langle 1,2,3\rangle</m>,
+exactly as we proved for spheres centered at the origin.)
+</p>
+</solution>
+</exercise>
+
 <!-- ===== From the old worksheet "Exercises for Tangent Planes and
      Differentials": its problems 9 and 11 ===== -->
 <exercise xml:id="pp-40">
@@ -1587,6 +2239,58 @@ Therefore
 The exact value is
 <m>\sin\!\left(\tfrac{23\pi}{60}\right) \approx 0.933</m>, so again the
 approximation is quite good.
+</p>
+</solution>
+</exercise>
+
+<!-- ===== Moved from Assignment 9 (Nov 2026) ===== -->
+<exercise xml:id="q1-2">
+<statement>
+<p>
+Let
+<md>
+g(x,y) = \frac{\sqrt{x}}{\sqrt[3]{y}} ,
+</md>
+and note that <m>g(36,8) = 3</m>. Use an appropriate partial derivative
+to approximate <m>g(36,6)</m>.
+</p>
+</statement>
+<solution>
+<p>
+We move from <m>(36,8)</m> to <m>(36,6)</m>. Only <m>y</m> changes, and
+it changes by
+<md>
+\Delta y = 6 - 8 = -2 ,
+</md>
+so the partial derivative we need is <m>g_y</m>. Writing
+<m>g(x,y) = x^{1/2} y^{-1/3}</m>,
+<md>
+g_y(x,y) = -\frac{1}{3}\, x^{1/2} y^{-4/3}
+         = -\frac{\sqrt{x}}{3\, y^{4/3}} .
+</md>
+</p>
+
+<p>
+At <m>(36,8)</m> we have <m>\sqrt{36} = 6</m> and
+<m>8^{4/3} = \left(8^{1/3}\right)^4 = 2^4 = 16</m>, so
+<md>
+g_y(36,8) = -\frac{6}{3 \cdot 16} = -\frac{6}{48} = -\frac{1}{8} .
+</md>
+</p>
+
+<p>
+The linear approximation is
+<md>
+<mrow>g(36,6) \amp \approx g(36,8) + g_y(36,8)\,\Delta y</mrow>
+<mrow>\amp = 3 + \left(-\frac{1}{8}\right)(-2)</mrow>
+<mrow>\amp = 3 + \frac14 = \frac{13}{4} = 3.25 .</mrow>
+</md>
+</p>
+
+<p>
+As a check, the exact value is
+<m>g(36,6) = 6/\sqrt[3]{6} \approx 3.302</m>, so the approximation is
+good to about <m>1.6\%</m>.
 </p>
 </solution>
 </exercise>
