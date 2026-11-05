@@ -75,7 +75,7 @@ convention). Repo-specific facts:
   `desk_action.py` drops hidden components before its cross-reference check,
   exactly as the build does, so Assignment 3 and Review Problems #1 are
   self-contained in the student books even while the section is unposted.
-- Assignments 4 to 8 differ from their M13-Mehdi copies on purpose: at the
+- Assignments 4 to 9 differ from their M13-Mehdi copies on purpose: at the
   instructor's request three dot-product problems (`rs19-4`, `rw22-4`,
   `rw17-4`) open Assignment 5 in this student-facing book only, locked
   with Assignment 5's due date, and Assignment 4's introduction no longer
@@ -96,8 +96,16 @@ convention). Repo-specific facts:
   Assignment 8 in this book only, locked with Assignment 8's due date;
   Assignment 7's introduction no longer cites the partial-derivatives
   section and Assignment 8's does. Review Problems #3 cites `q1-3`, so the
-  pair that posts together is now A8↔RP3 rather than A7↔RP3. Do not sync
-  assignments 4-8 from M13-Mehdi, or carry these moves into it, without
+  pair that posts together is now A8↔RP3 rather than A7↔RP3. Finally the
+  nine directional-derivative and gradient problems (`rev-gr-1`,
+  `rev-gr-3`, `rm2-gr-2`, `rw23-3`, `rw21-8`, `rw17-8`, `pp-31`,
+  `ex-electrostatic-plate`, `ex-isobars-low`) moved from the end of
+  Assignment 8 to the start of Assignment 9 in this book only, locked with
+  Assignment 9's due date, so Assignment 8 is partial derivatives and the
+  chain rule, and Assignment 9 is gradients plus tangent planes (its file
+  keeps its old name); Assignment 8's introduction no longer cites the
+  directional-derivatives section and Assignment 9's does. Do not sync
+  assignments 4-9 from M13-Mehdi, or carry these moves into it, without
   asking.
 - Review Problems #2 and #3 differ from their M13-Mehdi copies the same
   way: the four quadric-surface problems of Review Problems #2 (`rs19-3`,
