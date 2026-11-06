@@ -78,6 +78,7 @@ TOPICS = {
     "review-problems-4": ("source/exercises.ptx", "review-problems-4.ptx"),
     "sample-past-exam-1": ("source/exercises.ptx", "sample-past-exam-1.ptx"),
     "sample-past-exam-2": ("source/exercises.ptx", "sample-past-exam-2.ptx"),
+    "sample-past-exam-3": ("source/exercises.ptx", "sample-past-exam-3.ptx"),
     "exam-1": ("source/exercises.ptx", "exam-1.ptx"),
     "exam-2": ("source/exercises.ptx", "exam-2.ptx"),
 }
