@@ -68,9 +68,12 @@ so all the directional derivatives will be equal. Therefore it is
 sufficient to compute the derivative for <m>\theta = 0</m>, i.e.
 <m>\dfrac{\partial f}{\partial x}</m>:
 <md>
-\frac{\partial f}{\partial x}
-= \frac{\partial}{\partial x} e^{-(x^2+y^2)^2}
-= -2(x^2+y^2)\cdot 2x\, e^{-(x^2+y^2)^2}.
+<mrow>
+\amp \frac{\partial f}{\partial x} = \frac{\partial}{\partial x} e^{-(x^2+y^2)^2}
+</mrow>
+<mrow>
+\amp \quad = -2(x^2+y^2)\cdot 2x\, e^{-(x^2+y^2)^2}.
+</mrow>
 </md>
 Plugging in <m>x = y = 0</m> we see that this is zero. Hence the
 directional derivative at <m>(0,0)</m> is <m>0</m> in the directions
@@ -111,9 +114,12 @@ D^2_{\hat{u}} f
 </md>
 This simplifies to
 <md>
-\langle a f_{xx} + b f_{xy},\; a f_{xy} + b f_{yy}\rangle
-\cdot \langle a, b\rangle
-= f_{xx}a^2 + 2f_{xy}ab + f_{yy}b^2.
+<mrow>
+\amp \langle a f_{xx} + b f_{xy},\; a f_{xy} + b f_{yy}\rangle \cdot \langle a, b\rangle
+</mrow>
+<mrow>
+\amp \quad = f_{xx}a^2 + 2f_{xy}ab + f_{yy}b^2.
+</mrow>
 </md>
 Note we needed <m>f</m> to have continuous second partials to invoke
 Clairaut's Theorem.
@@ -155,10 +161,18 @@ the fastest possible rate?
 The fastest possible rate of increase is attained in the direction of
 the gradient:
 <md>
-\nabla z = \left\langle \frac{\partial z}{\partial x},
-\frac{\partial z}{\partial y}\right\rangle
-= \left\langle 2x + 2\sin(xy)\cos(xy)\,y,\;
-2\sin(xy)\cos(xy)\,x\right\rangle.
+<mrow>
+\amp \nabla z
+</mrow>
+<mrow>
+\amp \quad = \left\langle \frac{\partial z}{\partial x}, \frac{\partial z}{\partial y}\right\rangle
+</mrow>
+<mrow>
+\amp \quad = \bigl\langle 2x + 2\sin(xy)\cos(xy)\,y,
+</mrow>
+<mrow>
+\amp \qquad 2\sin(xy)\cos(xy)\,x \bigr\rangle.
+</mrow>
 </md>
 At <m>(1, 0, 1)</m>, this gradient is simply
 <m>\nabla z(1,0) = \langle 2, 0\rangle</m>, and the fastest possible
@@ -176,10 +190,12 @@ direction. Then the directional derivative
 <m>(1,0,1)</m> in the direction of <m>\hat{u}</m>; it can be calculated
 using the dot product with the gradient:
 <md>
-1 = D_{\hat{u}}(1,0)
-= \hat{u} \cdot \nabla z(1,0)
-= \langle a, b\rangle \cdot \langle 2, 0\rangle
-= 2a + 0b = 2a.
+<mrow>
+\amp 1 = D_{\hat{u}}(1,0) = \hat{u} \cdot \nabla z(1,0)
+</mrow>
+<mrow>
+\amp \quad = \langle a, b\rangle \cdot \langle 2, 0\rangle = 2a + 0b = 2a.
+</mrow>
 </md>
 Thus, <m>a = \frac12</m> and <m>b</m> must be such that
 <m>\hat{u} = \left\langle \frac12, b\right\rangle</m> is unit, i.e.
@@ -297,11 +313,12 @@ The gradient is
 <p>
 The direction of most rapid decrease is opposite to the gradient:
 <md>
--\frac{\nabla f}{\|\nabla f\|}
-= \left(\frac{2}{\sqrt{13}}\right)\hat{\imath}
-- \left(\frac{3}{\sqrt{13}}\right)\hat{\jmath}
-= \left\langle \frac{2}{\sqrt{13}}, -\frac{3}{\sqrt{13}}
-\right\rangle.
+<mrow>
+\amp {-\frac{\nabla f}{\|\nabla f\|}} = \left(\frac{2}{\sqrt{13}}\right)\hat{\imath} - \left(\frac{3}{\sqrt{13}}\right)\hat{\jmath}
+</mrow>
+<mrow>
+\amp \quad = \left\langle \frac{2}{\sqrt{13}}, -\frac{3}{\sqrt{13}} \right\rangle.
+</mrow>
 </md>
 </p>
 </li>
@@ -312,11 +329,12 @@ The unit vector in the direction of <m>\overrightarrow{v}</m> is
 = \left\langle -\dfrac{1}{\sqrt2}, \dfrac{1}{\sqrt2}\right\rangle</m>,
 so
 <md>
-D_{\hat u} f
-= \nabla f \cdot \hat u
-= \langle -2, 3\rangle \cdot
-\left\langle -\frac{1}{\sqrt2}, \frac{1}{\sqrt2}\right\rangle
-= \frac{5}{\sqrt2}.
+<mrow>
+\amp D_{\hat u} f = \nabla f \cdot \hat u
+</mrow>
+<mrow>
+\amp \quad = \langle -2, 3\rangle \cdot \left\langle -\frac{1}{\sqrt2}, \frac{1}{\sqrt2}\right\rangle = \frac{5}{\sqrt2}.
+</mrow>
 </md>
 </p>
 </li>
@@ -394,10 +412,12 @@ direction of <m>4\,\hat{\imath} + 3\,\hat{\jmath}</m> is
 <m>\frac15\langle 4, 3\rangle</m>, since
 <m>\|\langle 4,3\rangle\| = 5</m>, so
 <md>
-3 = \nabla T \cdot \frac15\langle 4, 3\rangle
-= \frac{c}{5}\Big(8 - 3\Big)
-= c
-\;\Rightarrow\; c = 3.
+<mrow>
+\amp 3 = \nabla T \cdot \frac15\langle 4, 3\rangle = \frac{c}{5}\Big(8 - 3\Big) = c
+</mrow>
+<mrow>
+\amp \quad \Rightarrow c = 3.
+</mrow>
 </md>
 Therefore
 <md>
@@ -416,11 +436,12 @@ The direction from <m>(1,1)</m> toward <m>(4,-3)</m> is
 vector is <m>\hat u = \left\langle \frac35, -\frac45\right\rangle</m>
 and
 <md>
-\left(D_{\hat u} T\right)_{(1,1)}
-= \langle 6, -3\rangle \cdot
-\left\langle \frac35, -\frac45\right\rangle
-= \frac{18}{5} + \frac{12}{5}
-= 6 \; {}^{\circ}\text{C}/\text{m}.
+<mrow>
+\amp \left(D_{\hat u} T\right)_{(1,1)} = \langle 6, -3\rangle \cdot \left\langle \frac35, -\frac45\right\rangle
+</mrow>
+<mrow>
+\amp \quad = \frac{18}{5} + \frac{12}{5} = 6 \; {}^{\circ}\text{C}/\text{m}.
+</mrow>
 </md>
 </p>
 </li>
@@ -460,9 +481,15 @@ Find an equation for the tangent plane to the graph of
 We have <m>f_x = -y\sin(xy)</m> and <m>f_y = -x\sin(xy)</m>, so the
 tangent plane at a general point <m>(x_0, y_0)</m> is given by
 <md>
-z - \cos(x_0 y_0)
-= -y_0 \sin(x_0 y_0)(x - x_0)
-- x_0 \sin(x_0 y_0)(y - y_0).
+<mrow>
+\amp z - \cos(x_0 y_0)
+</mrow>
+<mrow>
+\amp \quad = -y_0 \sin(x_0 y_0)(x - x_0)
+</mrow>
+<mrow>
+\amp \qquad {} - x_0 \sin(x_0 y_0)(y - y_0).
+</mrow>
 </md>
 </p>
 
@@ -502,9 +529,12 @@ and the normal to the tangent plane is
 </md>
 The constant is
 <md>
-D = \vec n \cdot \vec{OP_0}
-= \langle -4, 0, 2\rangle \cdot \langle 2, 0, 2\rangle
-= -8 + 4 = -4,
+<mrow>
+\amp D = \vec n \cdot \vec{OP_0} = \langle -4, 0, 2\rangle \cdot \langle 2, 0, 2\rangle
+</mrow>
+<mrow>
+\amp \quad = -8 + 4 = -4,
+</mrow>
 </md>
 so from <m>Ax + By + Cz = D</m>, the tangent plane at
 <m>P_0(2,0,2)</m> is
@@ -556,7 +586,12 @@ The tangent plane to <m>z = f(x,y)</m> at the point <m>(1,2,9)</m> is
 <p>
 The tangent plane to the graph of <m>f</m> at <m>(a,b)</m> is
 <md>
-z = f(a,b) + f_x(a,b)(x-a) + f_y(a,b)(y-b),
+<mrow>
+\amp z = f(a,b) + f_x(a,b)(x-a)
+</mrow>
+<mrow>
+\amp \quad {} + f_y(a,b)(y-b),
+</mrow>
 </md>
 so once it is expanded the coefficient of <m>x</m> is
 <m>f_x(a,b)</m> and the coefficient of <m>y</m> is
@@ -588,19 +623,33 @@ approximate <m>f(0.1, 0.2)</m>.
 The point <m>(0.1, 0.2)</m> is close to the origin, where the
 function is easy to work with, so we linearize at <m>(0,0)</m>:
 <md>
-f(0,0) = 2 + \ln(1) = 2,
-\qquad
-f_x = \frac{3}{1+3x-4y},
-\qquad
-f_y = \frac{-4}{1+3x-4y},
+<mrow>
+\amp f(0,0) = 2 + \ln(1) = 2,
+</mrow>
+<mrow>
+\amp f_x = \frac{3}{1+3x-4y}, \qquad f_y = \frac{-4}{1+3x-4y},
+</mrow>
 </md>
 so <m>f_x(0,0) = 3</m> and <m>f_y(0,0) = -4</m>. The linearization is
 <md>
-L(x,y) = f(0,0) + f_x(0,0)x + f_y(0,0)y = 2 + 3x - 4y,
+<mrow>
+\amp L(x,y)
+</mrow>
+<mrow>
+\amp \quad = f(0,0) + f_x(0,0)x + f_y(0,0)y
+</mrow>
+<mrow>
+\amp \quad = 2 + 3x - 4y,
+</mrow>
 </md>
 and therefore
 <md>
-f(0.1, 0.2) \approx L(0.1, 0.2) = 2 + 0.3 - 0.8 = 1.5.
+<mrow>
+\amp f(0.1, 0.2) \approx L(0.1, 0.2)
+</mrow>
+<mrow>
+\amp \quad = 2 + 0.3 - 0.8 = 1.5.
+</mrow>
 </md>
 </p>
 </solution>

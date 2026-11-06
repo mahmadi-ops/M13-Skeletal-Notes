@@ -83,9 +83,12 @@ Identify and sketch the surface <m>4x^2 - y^2 + 2z^2 + 4 = 0</m>.
 <p>
 Dividing by <m>-4</m>, we can rewrite the equation as
 <md>
-x^2 - \frac{y^2}{4} + \frac{z^2}{2} = -1,
-\qquad\text{i.e.}\qquad
-\frac{y^2}{4} = 1 + x^2 + \frac{z^2}{2},
+<mrow>
+\amp x^2 - \frac{y^2}{4} + \frac{z^2}{2} = -1, \quad\text{i.e.}
+</mrow>
+<mrow>
+\amp \frac{y^2}{4} = 1 + x^2 + \frac{z^2}{2},
+</mrow>
 </md>
 which forces <m>y^2 \ge 4</m>, i.e. <m>y \ge 2</m> or
 <m>y \le -2</m>. Let us look at the traces:
@@ -325,7 +328,12 @@ region in the x y plane, forming an arched, tunnel-like surface.
 <p>
 Consider the solid bounded by the three surfaces
 <md>
-z = 0, \qquad z = x^2+y^2, \qquad x^2+y^2 = 4.
+<mrow>
+\amp z = 0, \qquad z = x^2+y^2,
+</mrow>
+<mrow>
+\amp x^2+y^2 = 4.
+</mrow>
 </md>
 <ol marker="(a)">
 <li>
@@ -613,9 +621,12 @@ So one of the three curves must be <m>h(x,y) = -4</m>.
 <p>
 In general the level curve <m>h(x,y) = c</m> is
 <md>
-\frac{y^2}{x} = c \quad\Longleftrightarrow\quad y^2 = c\,x
-\quad\Longleftrightarrow\quad x = \frac{y^2}{c}
-\qquad (c \ne 0) .
+<mrow>
+\amp \frac{y^2}{x} = c \quad\Longleftrightarrow\quad y^2 = c\,x
+</mrow>
+<mrow>
+\amp \quad\Longleftrightarrow\quad x = \frac{y^2}{c} \quad (c \ne 0) .
+</mrow>
 </md>
 Each of these is a <em>parabola opening along the</em> <m>x</m><em>-axis</em>,
 with vertex at the origin. If <m>c \gt 0</m> it opens to the right, and
@@ -757,9 +768,12 @@ Evaluate the following limit or show that the limit does not exist:
 <p>
 Along the line <m>y = x</m>:
 <md>
-\lim_{(x,y)\to(0,0)} \frac{x^2 + y^4}{x^2 + y^2}
-= \lim_{x\to 0} \frac{x^2 + x^4}{2x^2}
-= \lim_{x\to 0} \frac12\left(1 + x^2\right) = \frac12.
+<mrow>
+\amp \lim_{(x,y)\to(0,0)} \frac{x^2 + y^4}{x^2 + y^2} = \lim_{x\to 0} \frac{x^2 + x^4}{2x^2}
+</mrow>
+<mrow>
+\amp \quad = \lim_{x\to 0} \frac12\left(1 + x^2\right) = \frac12.
+</mrow>
 </md>
 Along the line <m>y = 0</m>:
 <md>
@@ -880,8 +894,12 @@ Approximate <m>T_{xy}(1,1)</m>, and give its units.
 <p>
 An ant walks across the plate along the path
 <md>
-x = 1 - \frac{\ln(2t-3)}{4}, \qquad y = \frac{2^t}{4},
-\qquad 1.5 \lt t \lt 4 .
+<mrow>
+\amp x = 1 - \frac{\ln(2t-3)}{4}, \qquad y = \frac{2^t}{4},
+</mrow>
+<mrow>
+\amp 1.5 \lt t \lt 4 .
+</mrow>
 </md>
 Approximate the rate at which the temperature the ant feels is
 changing at the moment it is at the point <m>(x,y) = (1,1)</m>, and
@@ -895,8 +913,12 @@ give the units.
 <p>
 <term>(a)</term> Holding <m>y=1</m> and stepping forward in <m>x</m>,
 <md>
-T_x(1,1) \approx \frac{T(1.5,1) - T(1,1)}{0.5} = \frac{65-70}{0.5}
-         = -10 \quad {}^{\circ}\text{F}/\text{ft} .
+<mrow>
+\amp T_x(1,1) \approx \frac{T(1.5,1) - T(1,1)}{0.5}
+</mrow>
+<mrow>
+\amp \quad = \frac{65-70}{0.5} = -10 \quad {}^{\circ}\text{F}/\text{ft} .
+</mrow>
 </md>
 So at <m>(1,1)</m>, moving in the positive <m>x</m>-direction with
 <m>y</m> held fixed, the temperature <em>drops</em> at a rate of about
@@ -906,14 +928,21 @@ So at <m>(1,1)</m>, moving in the positive <m>x</m>-direction with
 <p>
 <term>(b)</term> We need <m>T_x</m> at a second value of <m>y</m>:
 <md>
-T_x(1,1.5) \approx \frac{T(1.5,1.5) - T(1,1.5)}{0.5}
-           = \frac{69-73}{0.5} = -8 .
+<mrow>
+\amp T_x(1,1.5) \approx \frac{T(1.5,1.5) - T(1,1.5)}{0.5}
+</mrow>
+<mrow>
+\amp \quad = \frac{69-73}{0.5} = -8 .
+</mrow>
 </md>
 Then
 <md>
-T_{xy}(1,1) \approx \frac{T_x(1,1.5) - T_x(1,1)}{0.5}
-            = \frac{-8-(-10)}{0.5} = 4
-            \quad {}^{\circ}\text{F}/\text{ft}^2 .
+<mrow>
+\amp T_{xy}(1,1) \approx \frac{T_x(1,1.5) - T_x(1,1)}{0.5}
+</mrow>
+<mrow>
+\amp \quad = \frac{-8-(-10)}{0.5} = 4 \quad {}^{\circ}\text{F}/\text{ft}^2 .
+</mrow>
 </md>
 </p>
 
@@ -932,7 +961,12 @@ then <m>y = 2^2/4 = 1</m> as required. Differentiating the path,
 <p>
 From the table,
 <md>
-T_y(1,1) \approx \frac{T(1,1.5)-T(1,1)}{0.5} = \frac{73-70}{0.5} = 6 .
+<mrow>
+\amp T_y(1,1) \approx \frac{T(1,1.5)-T(1,1)}{0.5}
+</mrow>
+<mrow>
+\amp \quad = \frac{73-70}{0.5} = 6 .
+</mrow>
 </md>
 </p>
 
@@ -981,9 +1015,12 @@ At <m>(r,\theta) = \left(3, \frac{\pi}{2}\right)</m> we have
 <m>xz + z^2 = 0 + 9 = 9</m>. Also
 <m>-r\sin\theta = -3</m> and <m>r\cos\theta = 0</m>. Hence
 <md>
-\frac{\partial f}{\partial \theta}
-= \left[0 + 3e^{9}\right](-3) + \left[0 + 6e^{9}\right](0)
-= -9e^{9}.
+<mrow>
+\amp \frac{\partial f}{\partial \theta} = \left[0 + 3e^{9}\right](-3) + \left[0 + 6e^{9}\right](0)
+</mrow>
+<mrow>
+\amp \quad = -9e^{9}.
+</mrow>
 </md>
 </p>
 </solution>
@@ -1087,9 +1124,12 @@ counterexample if it is false.
 Since
 <m>\hat{\imath} + \hat{\jmath} = \langle 1, 1\rangle</m>,
 <md>
-D_{\hat{\imath} + \hat{\jmath}}\,f(x,y)
-= \nabla f(x,y) \cdot \langle 1, 1\rangle
-= f_x + f_y.
+<mrow>
+\amp D_{\hat{\imath} + \hat{\jmath}}\,f(x,y) = \nabla f(x,y) \cdot \langle 1, 1\rangle
+</mrow>
+<mrow>
+\amp \quad = f_x + f_y.
+</mrow>
 </md>
 </p>
 </feedback>
@@ -1142,11 +1182,12 @@ vector is <m>\overrightarrow{u} = \langle 3, -4\rangle</m> with
 <m>\hat u = \dfrac{\overrightarrow{u}}{\|\overrightarrow{u}\|}
 = \left\langle \dfrac35, -\dfrac45\right\rangle</m>. Hence
 <md>
-\left(D_{\hat u} T\right)_{(0,0)}
-= \nabla T\big|_{(0,0)} \cdot \hat u
-= \langle 1, 1\rangle \cdot
-\left\langle \frac35, -\frac45\right\rangle
-= -\frac15.
+<mrow>
+\amp \left(D_{\hat u} T\right)_{(0,0)} = \nabla T\big|_{(0,0)} \cdot \hat u
+</mrow>
+<mrow>
+\amp \quad = \langle 1, 1\rangle \cdot \left\langle \frac35, -\frac45\right\rangle = -\frac15.
+</mrow>
 </md>
 </p>
 </li>
@@ -1312,10 +1353,12 @@ degrees will you warm up?
 <p>
 A function increases fastest in the direction of its gradient:
 <md>
-\nabla T = \langle 6x + 8y,\; 8x + 2y\rangle,
-\qquad
-\nabla T\big|_{(1,0)} = \langle 6, 8\rangle
-= 6\,\hat{\imath} + 8\,\hat{\jmath}.
+<mrow>
+\amp \nabla T = \langle 6x + 8y,\; 8x + 2y\rangle,
+</mrow>
+<mrow>
+\amp \nabla T\big|_{(1,0)} = \langle 6, 8\rangle = 6\,\hat{\imath} + 8\,\hat{\jmath}.
+</mrow>
 </md>
 So head in the direction <m>6\,\hat{\imath} + 8\,\hat{\jmath}</m>
 (equivalently, the unit vector
@@ -1327,9 +1370,12 @@ So head in the direction <m>6\,\hat{\imath} + 8\,\hat{\jmath}</m>
 In the direction of the gradient, the directional derivative equals
 the length of the gradient:
 <md>
-\left(D_{\hat u}T\right)_{(1,0)}
-= \left\|\nabla T\big|_{(1,0)}\right\|
-= \sqrt{36 + 64} = 10.
+<mrow>
+\amp \left(D_{\hat u}T\right)_{(1,0)} = \left\|\nabla T\big|_{(1,0)}\right\| = \sqrt{36 + 64}
+</mrow>
+<mrow>
+\amp \quad = 10.
+</mrow>
 </md>
 </p>
 </li>
@@ -1364,17 +1410,22 @@ to increase by <m>6</m>.
 <p>
 Let <m>\rho(x,y) = 100 + 0.1xy + 0.1y^2</m>. Then
 <md>
-\nabla \rho = \langle 0.1y,\; 0.1x + 0.2y\rangle,
-\qquad
-\nabla \rho\big|_{(10,10)} = \langle 1,\; 1 + 2\rangle
-= \langle 1, 3\rangle.
+<mrow>
+\amp \nabla \rho = \langle 0.1y,\; 0.1x + 0.2y\rangle,
+</mrow>
+<mrow>
+\amp \nabla \rho\big|_{(10,10)} = \langle 1,\; 1 + 2\rangle = \langle 1, 3\rangle.
+</mrow>
 </md>
 The given direction is already a unit vector, since
 <m>\left(\frac35\right)^2 + \left(\frac45\right)^2 = 1</m>, so
 <md>
-D_{\hat u}\rho(10,10)
-= \langle 1, 3\rangle \cdot \left\langle \frac35, \frac45\right\rangle
-= \frac35 + \frac{12}{5} = 3.
+<mrow>
+\amp D_{\hat u}\rho(10,10) = \langle 1, 3\rangle \cdot \left\langle \frac35, \frac45\right\rangle
+</mrow>
+<mrow>
+\amp \quad = \frac35 + \frac{12}{5} = 3.
+</mrow>
 </md>
 </p>
 
@@ -1826,8 +1877,14 @@ and the directions of no change.
         </li>
         <li>
           <p>
-            <md>D_{\hat{u}}V = (-8)\left(\tfrac{4}{5}\right)
-                + (-12)\left(-\tfrac{3}{5}\right) = \tfrac{4}{5} = 0.8</md>
+            <md>
+<mrow>
+\amp D_{\hat{u}}V = (-8)\left(\tfrac{4}{5}\right) + (-12)\left(-\tfrac{3}{5}\right) = \tfrac{4}{5}
+</mrow>
+<mrow>
+\amp \quad = 0.8
+</mrow>
+</md>
             in V/cm. The potential rises slightly along this heading.
           </p>
         </li>
@@ -2049,16 +2106,27 @@ half of the sphere is the same as the graph of the function
 so that the tangent plane to the graph at <m>P</m> (which is the same
 as the tangent plane to <m>S</m> at <m>P</m>) is given by
 <md>
-z - z_0
-= -\frac{x_0}{\sqrt{R^2 - x_0^2 - y_0^2}}\,(x - x_0)
-- \frac{y_0}{\sqrt{R^2 - x_0^2 - y_0^2}}\,(y - y_0).
+<mrow>
+\amp z - z_0
+</mrow>
+<mrow>
+\amp \quad = -\frac{x_0}{\sqrt{R^2 - x_0^2 - y_0^2}}\,(x - x_0)
+</mrow>
+<mrow>
+\amp \qquad {} - \frac{y_0}{\sqrt{R^2 - x_0^2 - y_0^2}}\,(y - y_0).
+</mrow>
 </md>
 </p>
 
 <p>
 We can rewrite this as
 <md>
-x_0(x - x_0) + y_0(y - y_0) + z_0(z - z_0) = 0,
+<mrow>
+\amp x_0(x - x_0) + y_0(y - y_0) + z_0(z - z_0)
+</mrow>
+<mrow>
+\amp \quad = 0,
+</mrow>
 </md>
 where we use the fact that <m>z_0 = \sqrt{R^2 - x_0^2 - y_0^2}</m> to
 simplify things. From this we see that
@@ -2142,9 +2210,12 @@ Write the sphere as the level surface
 <m>F(x,y,z) = x^2 + y^2 + z^2 = 14</m>. The gradient is normal to the
 level surface:
 <md>
-\nabla F = \langle 2x, 2y, 2z\rangle,
-\qquad
-\vec n = \nabla F\big|_{(1,2,3)} = \langle 2, 4, 6\rangle.
+<mrow>
+\amp \nabla F = \langle 2x, 2y, 2z\rangle,
+</mrow>
+<mrow>
+\amp \vec n = \nabla F\big|_{(1,2,3)} = \langle 2, 4, 6\rangle.
+</mrow>
 </md>
 Hence the tangent plane is
 <md>
@@ -2176,9 +2247,12 @@ value of the error when assuming <m>A = 2</m>.
 Treat <m>A</m> as a function of the two measured quantities,
 <m>A(F,M) = \dfrac{F}{M}</m>. Its differential is
 <md>
-dA = \frac{\partial A}{\partial F}\,dF
-+ \frac{\partial A}{\partial M}\,dM
-= \frac{1}{M}\,dF - \frac{F}{M^2}\,dM.
+<mrow>
+\amp dA = \frac{\partial A}{\partial F}\,dF + \frac{\partial A}{\partial M}\,dM
+</mrow>
+<mrow>
+\amp \quad = \frac{1}{M}\,dF - \frac{F}{M^2}\,dM.
+</mrow>
 </md>
 At the measured values <m>F = 6</m> and <m>M = 3</m> (where indeed
 <m>A = 2</m>), the coefficients are <m>\frac13</m> and
@@ -2189,10 +2263,15 @@ At the measured values <m>F = 6</m> and <m>M = 3</m> (where indeed
 Taking absolute values and using the triangle inequality with the
 worst-case errors <m>|dF| \le 0.3</m> and <m>|dM| \le 0.1</m>,
 <md>
-|dA| \le \frac{1}{3}|dF| + \frac{2}{3}|dM|
-\le \frac13(0.3) + \frac23(0.1)
-= 0.1 + \frac{1}{15}
-= \frac16.
+<mrow>
+\amp |dA| \le \frac{1}{3}|dF| + \frac{2}{3}|dM|
+</mrow>
+<mrow>
+\amp \quad \le \frac13(0.3) + \frac23(0.1) = 0.1 + \frac{1}{15}
+</mrow>
+<mrow>
+\amp \quad = \frac16.
+</mrow>
 </md>
 So the error in the value <m>A = 2</m> is at most about
 <m>\frac16 \approx 0.167</m>.
@@ -2313,13 +2392,21 @@ counterexample if it is false.
 <p>
 False, and the failure is dramatic. Let
 <md>
-f(x,y) = \frac{x^2 y}{x^4 + y^2}\ \text{ for } (x,y)\ne(0,0),
-\qquad f(0,0) = 0 .
+<mrow>
+\amp f(x,y) = \frac{x^2 y}{x^4 + y^2}\ \text{ for } (x,y)\ne(0,0),
+</mrow>
+<mrow>
+\amp f(0,0) = 0 .
+</mrow>
 </md>
 For a unit vector <m>\mathbf u = \langle a,b\rangle</m> with <m>b \ne 0</m>,
 <md>
-D_{\mathbf u}f(0,0) = \lim_{t\to 0}\frac{f(ta,tb)}{t}
- = \lim_{t\to 0}\frac{a^2 b}{t^2a^4 + b^2} = \frac{a^2}{b},
+<mrow>
+\amp D_{\mathbf u}f(0,0) = \lim_{t\to 0}\frac{f(ta,tb)}{t}
+</mrow>
+<mrow>
+\amp \quad = \lim_{t\to 0}\frac{a^2 b}{t^2a^4 + b^2} = \frac{a^2}{b},
+</mrow>
 </md>
 and <m>D_{\mathbf u}f(0,0) = 0</m> when <m>b = 0</m>. So <em>every</em>
 directional derivative exists. Yet along the parabola <m>y = mx^2</m>,
