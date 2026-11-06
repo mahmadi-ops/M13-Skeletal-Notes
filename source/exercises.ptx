@@ -241,7 +241,7 @@ right or wrong, earns nothing.
 
 <!-- ================= Review Problems #3 ================= -->
 <!-- The rest of the Chapter 4 problems covered by Assignments 7 and 8. -->
-<!-- UNPOSTED <xi:include href="review-problems-3.ptx"/> UNPOSTED -->
+<xi:include href="review-problems-3.ptx"/>
 
 <!-- ================= Assignment 10 ================= -->
 <!-- UNPOSTED <xi:include href="assignment-10-extreme-values-lagrange.ptx"/> UNPOSTED -->

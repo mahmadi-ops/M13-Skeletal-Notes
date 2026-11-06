@@ -44,7 +44,7 @@ graph and to a surface, recover a gradient from a tangent plane, and use
 a linearization to approximate a value. If you would like to review the
 material first, see
 <xref ref="sec-skel-fmv-directional-derivatives" text="title"/> and
-Section 4.6, Tangent Planes and Differentials.
+<xref ref="sec-skel-fmv-tangent-planes" text="title"/>.
 </p>
 </introduction>
 
