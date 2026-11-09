@@ -185,6 +185,119 @@ with the number of terms.)
 </image>
 </sidebyside>
 
+<!-- The espresso example and its practice problems: mirrors
+     example-cr-espresso and example-cr-espresso-practice of ch-14-4.ptx
+     (the instructor's handout "Pulling an Espresso Shot", Nov 2026).
+     Statements kept; the tree diagram and every computation are left to
+     the student, in blank boxes. -->
+<example xml:id="ex-skel-cr-espresso">
+<title>Pulling an Espresso Shot</title>
+<statement>
+<p>
+As an espresso shot pours, coffee solids dissolve into the water and the
+cup fills. The strength of what is in the cup is its
+<term>concentration</term>
+<md>
+C(m,V) = \frac{m}{V},
+</md>
+where <m>m</m> is the mass of dissolved coffee solids in the cup (in
+grams) and <m>V</m> is the volume of liquid in the cup (in milliliters).
+Both change during the shot, so <m>m = m(t)</m> and <m>V = V(t)</m>, with
+<m>t</m> in seconds. At <m>t = 20</m> s,
+<md>
+<mrow>m = 4\,\text{g}, \quad V = 40\,\text{mL},</mrow>
+<mrow>\frac{dm}{dt} = 0.12\,\text{g/s}, \quad \frac{dV}{dt} = 1.6\,\text{mL/s}.</mrow>
+</md>
+At <m>t = 20</m> s, is the cup getting stronger or weaker, and how fast?
+</p>
+
+<p>
+<em>Solution.</em>
+(Draw the tree for <m>C</m>, <m>m</m>, <m>V</m> and <m>t</m>, and write
+the chain rule it gives, one term per path, as in
+<xref ref="eq-skel-chain-rule-two"/>. Evaluate <m>C</m> and
+<m>\frac{dC}{dt}</m> at <m>t = 20</m> s with units, and say whether the
+cup is getting stronger or weaker. Then explain why: factor
+<m>\frac{dC}{dt}</m> so that the ratio <m>m'/V'</m> appears, say what
+that ratio measures, and compare it with <m>C</m>.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,19);
+\draw[gray!35] (0,14) -- (15,14);
+\draw[gray!35] (0,10) -- (15,10);
+\draw[gray!35] (0,6.5) -- (15,6.5);
+\node[anchor=north west, font=\small\itshape] at (0.35,18.7) {Step 1. Tree:};
+\node[anchor=north west, font=\small\itshape] at (0.35,13.7) {Step 2. $\dfrac{dC}{dt} =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,9.7) {Step 3. $C =$ \qquad\qquad $\dfrac{dC}{dt} =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,6.2) {Step 4. Stronger or weaker? \qquad Why? $\dfrac{dC}{dt} = \dfrac{V'}{V}\Bigl($ \qquad\qquad $\Bigr)$};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in four rows, for the tree diagram, for the chain rule for the rate of change of concentration, for the concentration and its rate at twenty seconds, and for the interpretation with the factored derivative.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+</example>
+
+<example xml:id="ex-skel-cr-espresso-practice">
+<title>Pulling an Espresso Shot, Continued</title>
+<statement>
+<p>
+Use the same data at <m>t = 20</m> s as in
+<xref ref="ex-skel-cr-espresso"/>.
+<ol marker="1.">
+<li>
+<p>
+What flow rate <m>\frac{dV}{dt}</m> would make the strength of the cup
+momentarily constant at <m>t = 20</m> s (with <m>m</m>, <m>V</m>, and
+<m>\frac{dm}{dt}</m> unchanged)? Interpret your answer.
+</p>
+</li>
+<li>
+<p>
+Use a linear approximation to estimate the concentration at
+<m>t = 22</m> s.
+</p>
+</li>
+<li>
+<p>
+Explain, using the tree diagram, why the chain rule for
+<m>\frac{dC}{dt}</m> has two terms, and what each term means physically.
+</p>
+</li>
+</ol>
+</p>
+
+<p>
+<em>Solution.</em>
+(For <alert>1</alert>, set <m>\frac{dC}{dt} = 0</m> and solve; compare
+the stream's concentration at that flow rate with the cup's. For
+<alert>2</alert>, step forward from <m>t = 20</m> with the rate you
+found. For <alert>3</alert>, evaluate each path's term separately, with
+units and sign, and say which physical effect each one is.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,16);
+\draw[gray!35] (0,11) -- (15,11);
+\draw[gray!35] (0,7.5) -- (15,7.5);
+\node[anchor=north west, font=\small\itshape] at (0.35,15.7) {1. $\dfrac{dV}{dt} =$ \qquad\qquad Interpretation:};
+\node[anchor=north west, font=\small\itshape] at (0.35,10.7) {2. $C(22) \approx$};
+\node[anchor=north west, font=\small\itshape] at (0.35,7.2) {3. Path through $m$: \qquad\qquad\qquad Path through $V$:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in three rows, for the flow rate that keeps the strength constant with its interpretation, for the linear estimate of the concentration at twenty-two seconds, and for the two terms of the chain rule with their meaning.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+</example>
+
 <theorem xml:id="thm-skel-chain-rule-three-intermediate">
 <title>Chain Rule for Functions of Three Independent Variables</title>
 <statement>
