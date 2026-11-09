@@ -191,8 +191,8 @@ with the number of terms.)
      Statements kept; the tree diagram and every computation are left to
      the student, in blank boxes. The statement carries the handout's photo
      with its hints taken out (assets/espresso-shot.jpg: the incoming-stream
-     label removed, the tree, chain rule and interpretation panels cropped
-     away); the full picture is in the completed notes' solution only. -->
+     label removed, the box on the cup changed to "C(t) = ?", the tree, chain
+     rule and interpretation panels cropped away); the full picture is in the completed notes' solution only. -->
 <example xml:id="ex-skel-cr-espresso">
 <title>Pulling an Espresso Shot</title>
 <statement>
@@ -211,14 +211,14 @@ Both change during the shot, so <m>m = m(t)</m> and <m>V = V(t)</m>, with
 
 <image source="espresso-shot.jpg" width="70%">
 <shortdescription>
-An espresso shot pouring into a glass cup, labelled with m of t, V of t, and C of t equals m of t over V of t.
+An espresso shot pouring into a glass cup, labelled with m of t and V of t, and a box on the cup asking C of t equals what.
 </shortdescription>
 <description>
 <p>
 A photograph of an espresso shot pouring from a machine into a clear glass
 cup. A label pointing at the cup reads <q><m>m(t)</m>, mass of dissolved
 solids (g)</q>, a second reads <q><m>V(t)</m>, volume of liquid (mL)</q>,
-and a box on the cup reads <m>C(t) = \frac{m(t)}{V(t)}</m>.
+and a box on the cup asks <q><m>C(t) = {}</m>?</q>.
 </p>
 </description>
 </image>
