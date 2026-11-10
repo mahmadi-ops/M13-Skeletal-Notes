@@ -608,3 +608,73 @@
     start();
   }
 })();
+
+/* ------------------------------------------------------------------ *
+ * Typeset the interactive exercises MathJax missed (Nov 2026).
+ * A Runestone exercise is drawn by code that arrives on its own
+ * schedule.  When that happens after MathJax's pass over the page, the
+ * exercise's text goes back in as raw \( ... \).  Most kinds of exercise
+ * then ask MathJax to typeset them; the clickable-area kind ("Find the
+ * Error") does not, so its lines stayed raw.  This looks for exercises
+ * still showing raw LaTeX and hands them to MathJax, one at a time, and
+ * again whenever an exercise changes (feedback, a re-drawn problem).
+ * ------------------------------------------------------------------ */
+(function () {
+  if (!window.Promise || !window.MutationObserver) return;
+  var RAW = /\\\(|\\\[/;
+  var tried = typeof WeakMap === "function" ? new WeakMap() : null;
+  var chain = Promise.resolve();
+  var timer = 0;
+
+  // The raw LaTeX an exercise still shows: PreTeXt wraps every formula in
+  // a .process-math span, and a typeset one holds an mjx-container.
+  function leftover(box) {
+    var spans = box.querySelectorAll(".process-math"), out = "";
+    for (var i = 0; i < spans.length; i++) {
+      var s = spans[i];
+      if (!s.querySelector("mjx-container") && RAW.test(s.textContent)) out += s.textContent;
+    }
+    return out;
+  }
+
+  function sweep() {
+    var mj = window.MathJax;
+    if (!mj || typeof mj.typesetPromise !== "function") return;
+    var boxes = document.querySelectorAll(".ptx-runestone-container");
+    Array.prototype.forEach.call(boxes, function (box) {
+      var text = leftover(box);
+      if (!text) return;
+      // MathJax has already been given exactly this text: do not ask twice.
+      if (tried && tried.get(box) === text) return;
+      if (tried) tried.set(box, text);
+      chain = chain.then(function () {
+        return leftover(box) ? mj.typesetPromise([box]) : null;
+      }).catch(function (error) {
+        console.warn("Could not typeset an exercise", error);
+      });
+    });
+  }
+
+  function schedule() {
+    clearTimeout(timer);
+    timer = setTimeout(sweep, 250);
+  }
+
+  function start() {
+    var boxes = document.querySelectorAll(".ptx-runestone-container");
+    if (!boxes.length) return;
+    var observer = new MutationObserver(schedule);
+    Array.prototype.forEach.call(boxes, function (box) {
+      observer.observe(box, { childList: true, subtree: true, characterData: true });
+    });
+    // MathJax and the exercises both start after this script: look a few
+    // times while the page settles, then leave it to the observer.
+    [500, 1500, 3000, 6000, 12000, 25000].forEach(function (ms) { setTimeout(sweep, ms); });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", start);
+  } else {
+    start();
+  }
+})();
