@@ -45,9 +45,8 @@ class SolutionLockTests(unittest.TestCase):
 
     def test_true_false_answers_appear_only_after_release(self):
         problems = {
-            "assignment-7-functions-several-variables.ptx": {"rm2-lim-1-a": "False.", "rm2-lim-1-c": "False."},
-            "assignment-8-chain-rule.ptx": {"rev-tp-5": "True.", "rev-gr-3": "True."},
-            "assignment-9-tangent-planes.ptx": {"rf-8-a": "False."},
+            "assignment-8-chain-rule.ptx": {"rev-tp-5": "True."},
+            "assignment-9-tangent-planes.ptx": {"rf-8-a": "False.", "rev-gr-3": "True."},
         }
         for name, expected in problems.items():
             text = (ROOT / "source" / name).read_text()
@@ -66,6 +65,21 @@ class SolutionLockTests(unittest.TestCase):
                     self.assertEqual("".join(before.find("statement").itertext()), "".join(after.find("statement").itertext()))
                     self.assertEqual("".join(after.find("answer").itertext()).strip(), answer)
                     self.assertIsNotNone(after.find("solution/p"))
+
+
+    def test_released_true_false_answers_are_shown(self):
+        released = {
+            "assignment-7-functions-several-variables.ptx": {"rm2-lim-1-a": "False.", "rm2-lim-1-c": "False."},
+        }
+        for name, expected in released.items():
+            text = (ROOT / "source" / name).read_text()
+            self.assertNotRegex(text, RELEASE)
+            root = ET.fromstring(text)
+            for key, answer in expected.items():
+                with self.subTest(problem=key):
+                    exercise = root.find(f".//exercise[@xml:id='{key}']", {"xml": "http://www.w3.org/XML/1998/namespace"})
+                    self.assertEqual("".join(exercise.find("answer").itertext()).strip(), answer)
+                    self.assertIsNotNone(exercise.find("solution/p"))
 
 
 if __name__ == "__main__":

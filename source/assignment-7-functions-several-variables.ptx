@@ -147,10 +147,8 @@ review the material first, see
       $ev2 = $match2->cmp(correct_ans => "", correct_ans_latex_string => "");
       $ev3 = $match3->cmp(correct_ans => "", correct_ans_latex_string => "");
       $ev4 = $match4->cmp(correct_ans => "", correct_ans_latex_string => "");
-<!-- SOLUTION-LOCKED assignment="7" due="2026-11-06"
       $ev1 = $match1->cmp(); $ev2 = $match2->cmp();
       $ev3 = $match3->cmp(); $ev4 = $match4->cmp();
-END SOLUTION-LOCKED -->
     </pg-code>
     <statement>
       <p>
@@ -174,7 +172,6 @@ END SOLUTION-LOCKED -->
          answer whatever the source locks, so the pg-code above hides this
          problem's four answers until release; its locked block there restores
          them and is released with this one. -->
-    <!-- SOLUTION-LOCKED assignment="7" due="2026-11-06"
     <solution>
       <p>
         We identify each surface by slicing, just as in this section.  Here
@@ -225,7 +222,6 @@ END SOLUTION-LOCKED -->
         cone in B.
       </p>
     </solution>
-    END SOLUTION-LOCKED -->
   </webwork>
 </exercise>
 
@@ -239,7 +235,6 @@ z^2 - y^2 - x^2 = 0.
 </md>
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="7" due="2026-11-06"
 <solution>
 <p>
 We can rewrite the equation as <m>z^2 = x^2 + y^2</m>. Let us look at
@@ -304,7 +299,6 @@ is capped by an ellipse representing a circular cross section.
 </image>
 </figure>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rw23-7">
@@ -313,7 +307,6 @@ END SOLUTION-LOCKED -->
 Identify and sketch the surface <m>x^2 - y^2 + z^2 - 4 = 0</m>.
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="7" due="2026-11-06"
 <solution>
 <p>
 We can rewrite the equation as <m>x^2 + z^2 = y^2 + 4</m>. Let us look
@@ -378,7 +371,6 @@ shaped side curves.
 </image>
 </figure>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rw21-10">
@@ -388,7 +380,6 @@ Identify and sketch the surface corresponding to the equation
 <m>2x^2 - y + z^2 = 0</m>. Give reasons for your choice.
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="7" due="2026-11-06"
 <solution>
 <p>
 We can rewrite the equation as <m>y = 2x^2 + z^2</m>. Let us look at
@@ -455,7 +446,6 @@ capped by an ellipse at its wide right end.
 </image>
 </figure>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="m2b-2">
@@ -465,7 +455,6 @@ Sketch the surface <m>4x^2 - y^2 = -4 - z^2</m> in three dimensions.
 Label any points where the surface crosses the coordinate axes.
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="7" due="2026-11-06"
 <solution>
 <p>
 Collect everything on the left and divide by <m>-4</m>:
@@ -563,7 +552,6 @@ between the two vertices is empty.
 </figure>
 
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="pp-26">
@@ -572,7 +560,6 @@ END SOLUTION-LOCKED -->
 Sketch the domain of <m>f(x,y) = \sqrt{y - 3x}</m>.
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="7" due="2026-11-06"
 <solution>
 <p>
 The square root is defined exactly when its argument is non-negative,
@@ -617,7 +604,6 @@ half-plane <m>y \ge 3x</m>, including the boundary line itself.
 </image>
 </figure>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="pp-27">
@@ -671,7 +657,6 @@ other.
 </image>
 </figure>
 </statement>
-<!-- SOLUTION-LOCKED assignment="7" due="2026-11-06"
 <solution>
 <p>
 Two level curves belonging to <em>different</em> values can never
@@ -682,7 +667,6 @@ output to the point <m>P</m>, so <m>2 = 3</m> — which is impossible.
 Hence no function <m>g</m> can have the level curves shown.
 </p>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rw17-6">
@@ -698,7 +682,6 @@ Label any points where the surface crosses a coordinate axis AND label
 the value of <m>g</m> on the surface.
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="7" due="2026-11-06"
 <solution>
 <p>
 Evaluating <m>g</m> at the given point,
@@ -761,7 +744,6 @@ its cross sections in the coordinate planes.
 </image>
 </figure>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="pp-25">
@@ -771,7 +753,6 @@ Sketch the level surface <m>f(x,y,z) = z^2 - x^2 - y^2</m> for
 <m>f(x,y,z) = 4</m>.
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="7" due="2026-11-06"
 <solution>
 <p>
 The level surface is <m>z^2 - x^2 - y^2 = 4</m>, i.e.
@@ -845,7 +826,6 @@ zero comma negative two. Each sheet is capped by an ellipse.
 </image>
 </figure>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rm2-lim-1-a">
@@ -860,7 +840,6 @@ Justify your answer fully: give a proof if the statement is true, or a
 counterexample if it is false.
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="7" due="2026-11-06"
 <answer>
 <p>False.</p>
 </answer>
@@ -874,7 +853,6 @@ to <m>f(a,b)</m>. We could also leave <m>f(x,y)</m> undefined at the
 origin to give another counterexample.
 </p>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rm2-lim-1-c">
@@ -890,7 +868,6 @@ Justify your answer fully: give a proof if the statement is true, or a
 counterexample if it is false.
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="7" due="2026-11-06"
 <answer>
 <p>False.</p>
 </answer>
@@ -985,7 +962,6 @@ the parabola <m>y = x^2</m> stays inside it.
 </image>
 </figure>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rm2-lim-3">
@@ -1008,7 +984,6 @@ function is not continuous, say which of the three conditions in
 </ol>
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="7" due="2026-11-06"
 <solution>
 <p>
 <ol marker="A.">
@@ -1066,7 +1041,6 @@ made continuous by assigning a value at the point in question: the
 problem does not ask for it.
 </p>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rw23-2">
@@ -1087,7 +1061,6 @@ Evaluate each of the following limits or show that it does not exist.
 </ol>
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="7" due="2026-11-06"
 <solution>
 <p>
 <ol marker="A.">
@@ -1121,7 +1094,6 @@ the common factor <m>x^4 - y^4</m>:
 </ol>
 </p>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rw21-6">
@@ -1133,7 +1105,6 @@ Find the limit, if it exists, or show that it does not exist:
 </md>
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="7" due="2026-11-06"
 <solution>
 <p>
 Along the path <m>x = 1</m>, <m>y \to 1^{+}</m> (so that
@@ -1153,7 +1124,6 @@ Since the limits computed along the two paths are not equal, the limit
 does not exist.
 </p>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rw22-6">
@@ -1166,7 +1136,6 @@ exist:
 </md>
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="7" due="2026-11-06"
 <solution>
 <p>
 Along the path <m>x = 0</m>:
@@ -1182,7 +1151,6 @@ Along the path <m>y = x</m>:
 Since <m>\frac13 \ne \frac14</m>, the limit does not exist.
 </p>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 </worksheet>
