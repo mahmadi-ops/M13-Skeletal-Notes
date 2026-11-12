@@ -16,6 +16,17 @@
   points and the plot of the candidate points ARE the answers to their
   examples, so those two become empty grids to mark up.
 
+  No hints (Nov 2026, at the instructor's request), as in 4.6: no
+  instruction line says how to do a derivation or an example, no box row
+  names a method, and no caption, figure label or alt text gives an answer
+  away; a solution keeps at most a pointer to the figure that checks it.
+  Each task gets ONE blank workspace with a last row for the result.  So
+  the captions of the videos describe the surface only, and the diagrams
+  leave out the labels of the full notes that state a result (the
+  inequality in the disk, "Local maximum", the equations of the saddle's
+  traces, the interior critical point of the rectangle, "stable" and
+  "unstable"); the stability diagram follows the box it checks.
+
   Nov 2026: the five diagrams kept in full are Asymptote now, the same
   figures as in the full notes.  The definition of a saddle point opens the
   subsection "Saddle Point" (formerly "A Saddle Point Example"), and two
@@ -105,11 +116,6 @@ disk centered at <m>(a,b)</m>.
 <p>
 Test the definition on two surfaces you already know,
 <m>f(x,y) = x^2 + y^2</m> and <m>f(x,y) = -x^2 - y^2</m>, at the origin.
-(For each, decide which of the two inequalities of
-<xref ref="def-skel-local-extrema"/> holds on a disk around <m>(0,0)</m>,
-and say why it holds for <em>every</em> point of the disk rather than
-just some. The word <q>local</q> is doing work here: say what would
-change if the disk had to be the whole plane.)
 </p>
 
 <sidebyside width="97%">
@@ -117,22 +123,19 @@ change if the disk had to be the whole plane.)
 <latex-image>
 \begin{tikzpicture}
 \draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,9);
-\draw[gray!35] (0,6) -- (15,6);
 \draw[gray!35] (0,3) -- (15,3);
-\node[anchor=north west, font=\small\itshape] at (0.35,8.7) {$x^2+y^2$ at the origin:};
-\node[anchor=north west, font=\small\itshape] at (0.35,5.7) {$-x^2-y^2$ at the origin:};
-\node[anchor=north west, font=\small\itshape] at (0.35,2.7) {What &lt;q&gt;local&lt;/q&gt; is doing:};
+\node[anchor=north west, text=gray!60, font=\footnotesize\itshape]
+  at (0.25,8.75) {workspace};
+\node[anchor=north west, font=\small\itshape] at (0.35,2.7) {$x^2+y^2$ at the origin: \qquad\qquad $-x^2-y^2$ at the origin:};
 \end{tikzpicture}
 </latex-image>
-<shortdescription>Blank box in three rows, for classifying the origin on each of the two paraboloids and for the role of the word local.</shortdescription>
+<shortdescription>Blank workspace, with a last row for what each of the two functions has at the origin.</shortdescription>
 </image>
 </sidebyside>
 
 <figure xml:id="fig-skel-local-min-video">
 <caption>
-The paraboloid <m>z = x^2 + y^2</m>. Over an open disk centered at
-<m>(0,0)</m>, the value <m>f(0,0) = 0</m> is smaller than every other
-value of the function, so <m>f(0,0)</m> is a local minimum.
+The paraboloid <m>z = x^2 + y^2</m> near the origin.
 </caption>
 <video xml:id="video-skel-local-min"
        source="videos/local_min_paraboloid_1080p.mp4"
@@ -143,19 +146,18 @@ value of the function, so <m>f(0,0)</m> is a local minimum.
 <figure xml:id="fig-skel-local-min-disk">
 <caption>
 An open disk in the domain of <m>f(x,y) = x^2 + y^2</m> centered at
-<m>(0,0)</m>. For every point <m>(x,y)</m> inside the disk we have
-<m>f(0,0) \le f(x,y)</m>, so <m>f(0,0)</m> is a local minimum.
+<m>(0,0)</m>.
 </caption>
 <image width="50%">
-<shortdescription>An open disk centred at the origin, where the function has a local minimum.</shortdescription>
+<shortdescription>An open disk centred at the origin.</shortdescription>
 <description>
 <p>
-An open disk in the x y plane, centered at the origin, drawn with a dashed red boundary and shaded gray. The center point 0, 0 is marked in green. Inside the disk, a label reads f of 0, 0 is less than or equal to f of x, y.
+An open disk in the x y plane, centered at the origin, drawn with a dashed red boundary and shaded gray. The center point 0, 0 is marked in green.
 </p>
 </description>
 <asymptote label="asymptote-skel-ev-local-min-disk"><![CDATA[
-// An open disk centred at (0,0) in the domain of f(x,y) = x^2 + y^2: inside it
-// f(0,0) <= f(x,y), so f(0,0) is a local minimum.
+// An open disk centred at (0,0) in the domain of f(x,y) = x^2 + y^2. The full
+// notes also print the inequality that holds in it, which is left out here.
 import graph;
 unitsize(2.4cm);
 
@@ -177,16 +179,13 @@ axes(-1.55, 1.55, -1.55, 1.55, "$x$", "$y$");
 
 dot((0, 0), rgb(0, 0.5, 0) + linewidth(5pt));
 label("$(0,0)$", (0, 0), NE, rgb(0, 0.5, 0));
-label("$f(0,0)\le f(x,y)$", (0, -0.55), Fill(gray(0.85)));
 ]]></asymptote>
 </image>
 </figure>
 
 <figure xml:id="fig-skel-local-max-video">
 <caption>
-The paraboloid <m>z = -x^2 - y^2</m> opens downward. Over an open disk
-centered at <m>(0,0)</m>, the value <m>f(0,0) = 0</m> is larger than
-every other value of the function, so <m>f(0,0)</m> is a local maximum.
+The paraboloid <m>z = -x^2 - y^2</m> near the origin.
 </caption>
 <video xml:id="video-skel-local-max"
        source="videos/local_max_paraboloid_1080p.mp4"
@@ -197,20 +196,18 @@ every other value of the function, so <m>f(0,0)</m> is a local maximum.
 <figure xml:id="fig-skel-local-max-trace">
 <caption>
 The trace of the surface <m>z = -x^2 - y^2</m> in the plane
-<m>y = 0</m> is the parabola <m>z = -x^2</m>, which has a maximum at
-the origin. By symmetry, every vertical cross-section through the
-origin has the same shape.
+<m>y = 0</m>.
 </caption>
 <image width="55%">
-<shortdescription>A parabola opening downward with its highest point at the origin.</shortdescription>
+<shortdescription>A parabola through the origin opening downward.</shortdescription>
 <description>
 <p>
-The parabola z equals negative x squared, opening downward, which is the trace of the surface z equals negative x squared minus y squared in the plane y equals 0. The highest point of the parabola is at the origin, marked in green as the local maximum.
+The parabola z equals negative x squared, opening downward, which is the trace of the surface z equals negative x squared minus y squared in the plane y equals 0. The origin is marked in green.
 </p>
 </description>
 <asymptote label="asymptote-skel-ev-local-max-trace"><![CDATA[
-// The trace of z = -x^2 - y^2 in the plane y = 0: the parabola z = -x^2, with its
-// maximum at the origin.
+// The trace of z = -x^2 - y^2 in the plane y = 0, the parabola z = -x^2. The full
+// notes also label the origin as the local maximum, which is left out here.
 import graph;
 unitsize(2.6cm);
 
@@ -230,7 +227,6 @@ draw(graph(g, -1.3, 1.3), blue + linewidth(1.6pt));
 label("$z=-x^2$", (0.95, g(0.95)), E, blue);
 
 dot((0, 0), rgb(0, 0.5, 0) + linewidth(5pt));
-label("Local maximum", (0.08, 0.08), NE, rgb(0, 0.5, 0));
 ]]></asymptote>
 </image>
 </figure>
@@ -251,24 +247,22 @@ f_x(a,b) = f_y(a,b) = 0.
 
 <p>
 Check <xref ref="thm-skel-first-derivative-test"/> on
-<m>f(x,y) = x^2+y^2</m>, and then read the theorem carefully in the other
-direction. (The check is two derivatives. Then ask: does the theorem say
-that a point where both partials vanish <em>must</em> be an extremum? It
-does not <mdash/> state which way the implication runs, and why that
-matters for how you will use it.)
+<m>f(x,y) = x^2+y^2</m>, and say which way the implication of the
+theorem runs.
 </p>
 
 <sidebyside width="97%">
 <image>
 <latex-image>
 \begin{tikzpicture}
-\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,7);
-\draw[gray!35] (0,3.5) -- (15,3.5);
-\node[anchor=north west, font=\small\itshape] at (0.35,6.7) {$f_x(0,0) =$ \qquad $f_y(0,0) =$};
-\node[anchor=north west, font=\small\itshape] at (0.35,3.2) {The implication runs:};
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,8);
+\draw[gray!35] (0,3) -- (15,3);
+\node[anchor=north west, text=gray!60, font=\footnotesize\itshape]
+  at (0.25,7.75) {workspace};
+\node[anchor=north west, font=\small\itshape] at (0.35,2.7) {the implication runs:};
 \end{tikzpicture}
 </latex-image>
-<shortdescription>Blank box in two rows, one for the two partial derivatives at the origin and one for the direction of the implication in the theorem.</shortdescription>
+<shortdescription>Blank workspace, with a last row for the direction of the implication in the theorem.</shortdescription>
 </image>
 </sidebyside>
 
@@ -455,13 +449,7 @@ Show that <m>f</m> has a saddle point at <m>(0,0)</m>.
 
 <p>
 <em>Solution.</em>
-(This is the hyperbolic paraboloid of
-<xref ref="subsec-skel-hyperbolic-paraboloid"/>. Find the partials and
-confirm that <m>(0,0)</m> is the only critical point. Then, to match
-<xref ref="def-skel-saddle-point"/>, you need points of <em>both</em>
-kinds in every disk around the origin: restrict <m>f</m> to each
-coordinate axis in turn and look at the sign. Note at the end that both
-partials vanish here and yet there is no extremum.)
+(Compare with <xref ref="fig-skel-saddle-traces"/>.)
 </p>
 
 <sidebyside width="97%">
@@ -469,25 +457,19 @@ partials vanish here and yet there is no extremum.)
 <latex-image>
 \begin{tikzpicture}
 \draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,12);
-\draw[gray!35] (0,9) -- (15,9);
-\draw[gray!35] (0,6) -- (15,6);
 \draw[gray!35] (0,3) -- (15,3);
-\node[anchor=north west, font=\small\itshape] at (0.35,11.7) {$f_x =$ \qquad $f_y =$ \qquad critical point:};
-\node[anchor=north west, font=\small\itshape] at (0.35,8.7) {Along the $x$-axis: $f(x,0) =$};
-\node[anchor=north west, font=\small\itshape] at (0.35,5.7) {Along the $y$-axis: $f(0,y) =$};
-\node[anchor=north west, font=\small\itshape] at (0.35,2.7) {Conclusion:};
+\node[anchor=north west, text=gray!60, font=\footnotesize\itshape]
+  at (0.25,11.75) {workspace};
+\node[anchor=north west, font=\small\itshape] at (0.35,2.7) {conclusion:};
 \end{tikzpicture}
 </latex-image>
-<shortdescription>Blank box in four rows, for the partial derivatives and critical point, for the function along each coordinate axis, and for the conclusion.</shortdescription>
+<shortdescription>Blank workspace, with a last row for the conclusion.</shortdescription>
 </image>
 </sidebyside>
 
 <figure xml:id="fig-skel-saddle-video">
 <caption>
-The hyperbolic paraboloid <m>z = y^2/3 - x^2/3</m>. Along the
-<m>x</m>-axis the surface falls below the origin, and along the
-<m>y</m>-axis it rises above the origin, so <m>(0,0)</m> is a saddle
-point.
+The hyperbolic paraboloid <m>z = y^2/3 - x^2/3</m>.
 </caption>
 <video xml:id="video-skel-saddle-point"
        source="videos/saddle_point_1080p.mp4"
@@ -497,21 +479,20 @@ point.
 
 <figure xml:id="fig-skel-saddle-traces">
 <caption>
-The traces of <m>z = y^2/3 - x^2/3</m> along the two coordinate planes.
-In the plane <m>y = 0</m> the trace <m>z = -x^2/3</m> opens downward,
-while in the plane <m>x = 0</m> the trace <m>z = y^2/3</m> opens
-upward, so <m>(0,0)</m> is a saddle point.
+The traces of <m>z = y^2/3 - x^2/3</m> in the planes <m>x = 0</m>
+(blue) and <m>y = 0</m> (red).
 </caption>
 <image width="55%">
 <shortdescription>Two parabolas through the origin, one opening upward and one opening downward.</shortdescription>
 <description>
 <p>
-Two parabolas through the origin showing the traces of the hyperbolic paraboloid z equals y squared over 3 minus x squared over 3, drawn on one pair of axes: the horizontal axis stands for x or y and the vertical axis is z. The blue parabola opens upward and is the trace along the y axis. The red parabola opens downward and is the trace along the x axis. The origin, where they meet, is the saddle point.
+Two parabolas through the origin showing the traces of the hyperbolic paraboloid z equals y squared over 3 minus x squared over 3, drawn on one pair of axes: the horizontal axis stands for x or y and the vertical axis is z. The blue parabola opens upward and is the trace in the plane x equals 0. The red parabola opens downward and is the trace in the plane y equals 0. They meet at the origin.
 </p>
 </description>
 <asymptote label="asymptote-skel-ev-saddle-traces"><![CDATA[
 // The traces of z = y^2/3 - x^2/3 in the two coordinate planes, drawn on one pair of
-// axes: z = y^2/3 (plane x = 0) opens upward, z = -x^2/3 (plane y = 0) opens downward.
+// axes (blue: plane x = 0, red: plane y = 0). The full notes also label each with
+// its equation, which is left out here.
 import graph;
 unitsize(1.7cm);
 
@@ -530,8 +511,6 @@ real up(real t) { return t^2/3; }
 real down(real t) { return -t^2/3; }
 draw(graph(up, -2.1, 2.1), blue + linewidth(1.6pt));
 draw(graph(down, -2.1, 2.1), red + linewidth(1.6pt));
-label("$\displaystyle z=\frac{y^2}{3}$", (1.45, up(1.45)), NW, blue);
-label("$\displaystyle z=-\frac{x^2}{3}$", (1.45, down(1.45)), SW, red);
 
 dot((0, 0), black + linewidth(5pt));
 ]]></asymptote>
@@ -605,12 +584,9 @@ f_{xy} \amp f_{yy}
 </p>
 
 <p>
-Before using it, get the shape of the test clear. (Which quantity is
-consulted <em>first</em>, and what does its sign decide? Only in one of
-those branches does a second quantity get consulted <mdash/> which, and
-what does it decide there? Note also which entry of
-<xref ref="eq-skel-hessian"/> is used twice, and why
-<xref ref="thm-skel-mixed-derivative"/> permits that.)
+Before using the test, describe in your own words how it reaches its
+verdict, and say why <xref ref="eq-skel-hessian"/> may use <m>f_{xy}</m>
+for both off-diagonal entries.
 </p>
 
 <sidebyside width="97%">
@@ -618,14 +594,13 @@ what does it decide there? Note also which entry of
 <latex-image>
 \begin{tikzpicture}
 \draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,9);
-\draw[gray!35] (0,6) -- (15,6);
 \draw[gray!35] (0,3) -- (15,3);
-\node[anchor=north west, font=\small\itshape] at (0.35,8.7) {First look at: \qquad\qquad which decides:};
-\node[anchor=north west, font=\small\itshape] at (0.35,5.7) {Then, if needed, look at: \qquad which decides:};
-\node[anchor=north west, font=\small\itshape] at (0.35,2.7) {Why $f_{xy}$ may be used for both off-diagonal entries:};
+\node[anchor=north west, text=gray!60, font=\footnotesize\itshape]
+  at (0.25,8.75) {workspace};
+\node[anchor=north west, font=\small\itshape] at (0.35,2.7) {why $f_{xy}$ appears twice:};
 \end{tikzpicture}
 </latex-image>
-<shortdescription>Blank box in three rows, for the order in which the two quantities of the test are consulted and for why the mixed partial appears twice.</shortdescription>
+<shortdescription>Blank workspace, with a last row for why the mixed partial derivative appears twice.</shortdescription>
 </image>
 </sidebyside>
 
@@ -642,13 +617,7 @@ z = f(x,y) = x^4 + y^4 - 4xy.
 
 <p>
 <em>Solution.</em>
-(Set both first partials to zero. The resulting pair is symmetric in
-<m>x</m> and <m>y</m>; substitute one into the other to get a single
-equation in one variable, and factor it completely <mdash/> only the real
-roots count. Then form <xref ref="eq-skel-hessian"/> once, as a formula in
-<m>x</m> and <m>y</m>, and evaluate it at each critical point rather than
-recomputing. Mark the critical points on the grid, which is the
-intersection of the two curves you solved.)
+(Compare with <xref ref="fig-skel-quartic-video"/>.)
 </p>
 
 <sidebyside widths="52% 44%">
@@ -656,16 +625,13 @@ intersection of the two curves you solved.)
 <latex-image>
 \begin{tikzpicture}
 \draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (8,15);
-\draw[gray!35] (0,12) -- (8,12);
-\draw[gray!35] (0,7) -- (8,7);
-\draw[gray!35] (0,4.5) -- (8,4.5);
-\node[anchor=north west, font=\small\itshape] at (0.3,14.7) {$f_x =$ \qquad $f_y =$};
-\node[anchor=north west, font=\small\itshape] at (0.3,11.7) {Solving:};
-\node[anchor=north west, font=\small\itshape] at (0.3,6.7) {$H(x,y) =$};
-\node[anchor=north west, font=\small\itshape] at (0.3,4.2) {Classification of each point:};
+\draw[gray!35] (0,4) -- (8,4);
+\node[anchor=north west, text=gray!60, font=\footnotesize\itshape]
+  at (0.25,14.75) {workspace};
+\node[anchor=north west, font=\small\itshape, text width=7.3cm] at (0.3,3.7) {the local maxima, local minima and saddle points:};
 \end{tikzpicture}
 </latex-image>
-<shortdescription>Blank box in four rows, for the first partial derivatives, for solving the system, for the Hessian, and for the classification of each critical point.</shortdescription>
+<shortdescription>Blank workspace, with a last row for the local maxima, local minima and saddle points.</shortdescription>
 </image>
 <image>
 <latex-image><![CDATA[
@@ -677,15 +643,13 @@ intersection of the two curves you solved.)
 \foreach \y in {-1,1} \draw (-0.05,\y) -- (0.05,\y) node[left=3pt, font=\scriptsize] {$\y$};
 \end{tikzpicture}
 ]]></latex-image>
-<shortdescription>Empty coordinate grid from negative one and a half to one and a half in both directions, for sketching the two curves and marking their intersections.</shortdescription>
+<shortdescription>Empty coordinate grid from negative one and a half to one and a half in both directions.</shortdescription>
 </image>
 </sidebyside>
 
 <figure xml:id="fig-skel-quartic-video">
 <caption>
-The surface <m>z = x^4 + y^4 - 4xy</m> has a saddle point at
-<m>(0,0,0)</m> and two local minima, at <m>(1,1,-2)</m> and
-<m>(-1,-1,-2)</m>.
+The surface <m>z = x^4 + y^4 - 4xy</m>.
 </caption>
 <video xml:id="video-skel-quartic-extrema"
        source="videos/quartic_extrema_1080p.mp4"
@@ -705,13 +669,6 @@ Find the shortest distance from the point <m>(1,0,-2)</m> to the plane
 
 <p>
 <em>Solution.</em>
-(Write the distance from <m>(1,0,-2)</m> to a general point of the
-plane using <xref ref="eq-skel-3d-distance"/>, then use the plane's
-equation to eliminate one variable. Minimizing <m>d^2</m> instead of
-<m>d</m> avoids the square root <mdash/> say why the two have their minimum
-at the same place. Find the single critical point and confirm with the
-Hessian, then argue that this local minimum is the absolute one. Finally
-substitute back to get the distance itself.)
 </p>
 
 <sidebyside width="97%">
@@ -719,18 +676,13 @@ substitute back to get the distance itself.)
 <latex-image>
 \begin{tikzpicture}
 \draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,17);
-\draw[gray!35] (0,13.5) -- (15,13.5);
-\draw[gray!35] (0,11) -- (15,11);
-\draw[gray!35] (0,6.5) -- (15,6.5);
-\draw[gray!35] (0,3.5) -- (15,3.5);
-\node[anchor=north west, font=\small\itshape] at (0.35,16.7) {$d^2 = f(x,y) =$};
-\node[anchor=north west, font=\small\itshape] at (0.35,13.2) {Why minimizing $d^2$ is enough:};
-\node[anchor=north west, font=\small\itshape] at (0.35,10.7) {Critical point:};
-\node[anchor=north west, font=\small\itshape] at (0.35,6.2) {$H =$ \qquad so the point is a:};
-\node[anchor=north west, font=\small\itshape] at (0.35,3.2) {$d =$};
+\draw[gray!35] (0,3) -- (15,3);
+\node[anchor=north west, text=gray!60, font=\footnotesize\itshape]
+  at (0.25,16.75) {workspace};
+\node[anchor=north west, font=\small\itshape] at (0.35,2.7) {the shortest distance:};
 \end{tikzpicture}
 </latex-image>
-<shortdescription>Blank box in five rows, for the squared distance as a function of two variables, for why squaring is harmless, for the critical point, for the Hessian test, and for the distance.</shortdescription>
+<shortdescription>Blank workspace, with a last row for the shortest distance.</shortdescription>
 </image>
 </sidebyside>
 </statement>
@@ -760,14 +712,7 @@ R = \{(x,y) : 0 \le x \le 3,\; 0 \le y \le 2\}.
 
 <p>
 <em>Solution.</em>
-(Three steps. First the critical points of <m>f</m> lying <em>inside</em>
-<m>R</m>. Then the boundary, which is not one curve but four edges: on
-each, one variable is fixed, so <m>f</m> becomes a one-variable function
-on a closed interval <mdash/> handle each with single-variable calculus,
-and do not forget the endpoints. Finally compare every value collected.
-Note that no second derivative test is needed anywhere here; say why.
-Label the four edges on <xref ref="fig-skel-rectangle-region"/> as you
-go.)
+(Compare with <xref ref="fig-skel-absolute-extrema-surface-video"/>.)
 </p>
 
 <sidebyside width="97%">
@@ -775,20 +720,13 @@ go.)
 <latex-image>
 \begin{tikzpicture}
 \draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,20);
-\draw[gray!35] (0,17) -- (15,17);
-\draw[gray!35] (0,13.5) -- (15,13.5);
-\draw[gray!35] (0,10.5) -- (15,10.5);
-\draw[gray!35] (0,7.5) -- (15,7.5);
-\draw[gray!35] (0,4.5) -- (15,4.5);
-\node[anchor=north west, font=\small\itshape] at (0.35,19.7) {I. Interior critical points:};
-\node[anchor=north west, font=\small\itshape] at (0.35,16.7) {II. On $L_1$: $f =$ \qquad min: \qquad max:};
-\node[anchor=north west, font=\small\itshape] at (0.35,13.2) {\phantom{II. }On $L_2$: $f =$ \qquad min: \qquad max:};
-\node[anchor=north west, font=\small\itshape] at (0.35,10.2) {\phantom{II. }On $L_3$: $f =$ \qquad min: \qquad max:};
-\node[anchor=north west, font=\small\itshape] at (0.35,7.2) {\phantom{II. }On $L_4$: $f =$ \qquad min: \qquad max:};
-\node[anchor=north west, font=\small\itshape] at (0.35,4.2) {III. Absolute max: \qquad\qquad absolute min:};
+\draw[gray!35] (0,3) -- (15,3);
+\node[anchor=north west, text=gray!60, font=\footnotesize\itshape]
+  at (0.25,19.75) {workspace};
+\node[anchor=north west, font=\small\itshape] at (0.35,2.7) {the absolute maximum: \qquad\qquad the absolute minimum:};
 \end{tikzpicture}
 </latex-image>
-<shortdescription>Blank box in six rows, for the interior critical points, for the function restricted to each of the four edges with its extreme values, and for the absolute extrema.</shortdescription>
+<shortdescription>Blank workspace, with a last row for the absolute maximum and minimum values.</shortdescription>
 </image>
 </sidebyside>
 
@@ -796,8 +734,7 @@ go.)
 <caption>
 The closed bounded rectangle
 <m>R = \{(x,y) : 0 \le x \le 3,\; 0 \le y \le 2\}</m> with its four
-edges <m>L_1</m>, <m>L_2</m>, <m>L_3</m>, and <m>L_4</m>, and the
-critical point <m>(1,1)</m> in its interior.
+edges <m>L_1</m>, <m>L_2</m>, <m>L_3</m>, and <m>L_4</m>.
 </caption>
 <video xml:id="video-skel-rectangle-region"
        source="videos/rectangle_region_1080p.mp4"
@@ -807,20 +744,18 @@ critical point <m>(1,1)</m> in its interior.
 
 <figure xml:id="fig-skel-rectangle-region">
 <caption>
-The rectangle <m>R</m> and its four edges. To find the absolute
-extrema, we evaluate <m>f</m> at the critical points inside <m>R</m>
-and compare with the extreme values of <m>f</m> along each edge.
+The rectangle <m>R</m> and its four edges.
 </caption>
 <image width="55%">
-<shortdescription>A rectangle with its four edges labelled and one point marked inside it.</shortdescription>
+<shortdescription>A rectangle with its four edges labelled.</shortdescription>
 <description>
 <p>
-The rectangle R in the x y plane, with corners at the origin, 3, 0, 3, 2, and 0, 2, shaded gray. Its four edges are labeled L 1 along the bottom, L 2 along the right, L 3 along the top, and L 4 along the left. The critical point 1, 1 is marked inside the rectangle.
+The rectangle R in the x y plane, with corners at the origin, 3, 0, 3, 2, and 0, 2, shaded gray. Its four edges are labeled L 1 along the bottom, L 2 along the right, L 3 along the top, and L 4 along the left.
 </p>
 </description>
 <asymptote label="asymptote-skel-ev-rectangle-region"><![CDATA[
-// The rectangle R = [0,3] x [0,2] with its four edges L1, L2, L3, L4 and the critical
-// point (1,1) in its interior.
+// The rectangle R = [0,3] x [0,2] with its four edges L1, L2, L3, L4. The full notes
+// also mark the interior critical point, which is left out here.
 import graph;
 unitsize(1.9cm);
 
@@ -849,17 +784,13 @@ label("$3$", (3, 0), S);
 label("$2$", (0, 2), W);
 
 label("$R$", (2.2, 1.3));
-dot((1, 1), rgb(0.5, 0, 0) + linewidth(5.5pt));
-label("$(1,1)$", (1, 1), NE, rgb(0.5, 0, 0));
 ]]></asymptote>
 </image>
 </figure>
 
 <figure xml:id="fig-skel-absolute-extrema-surface-video">
 <caption>
-The surface <m>z = x^2 - 2xy + 2y</m> over the rectangle <m>R</m>. The
-absolute maximum <m>f(3,0) = 9</m> and the absolute minimum
-<m>f(0,0) = f(2,2) = 0</m> occur on the boundary of <m>R</m>.
+The surface <m>z = x^2 - 2xy + 2y</m> over the rectangle <m>R</m>.
 </caption>
 <video xml:id="video-skel-absolute-extrema-surface"
        source="videos/absolute_extrema_surface_1080p.mp4"
@@ -899,24 +830,21 @@ U_y \amp = mg\,f_y = 0.
 <p>
 Say what <xref ref="eq-skel-equilibrium-condition"/> means
 mathematically, and what the second derivative test then tells you
-physically. (Since <m>mg</m> is a nonzero constant, the equilibrium
-points of the marble coincide with something you have already named. Then
-match each of the three conclusions of
-<xref ref="thm-skel-second-derivative-test"/> to the behaviour of a
-marble nudged from rest.)
+physically.
 </p>
 
 <sidebyside width="97%">
 <image>
 <latex-image>
 \begin{tikzpicture}
-\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,8);
-\draw[gray!35] (0,4.5) -- (15,4.5);
-\node[anchor=north west, font=\small\itshape] at (0.35,7.7) {The equilibrium points are exactly:};
-\node[anchor=north west, font=\small\itshape] at (0.35,4.2) {Local min $\to$ \qquad local max $\to$ \qquad saddle $\to$};
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,9);
+\draw[gray!35] (0,3) -- (15,3);
+\node[anchor=north west, text=gray!60, font=\footnotesize\itshape]
+  at (0.25,8.75) {workspace};
+\node[anchor=north west, font=\small\itshape] at (0.35,2.7) {the equilibrium points are:};
 \end{tikzpicture}
 </latex-image>
-<shortdescription>Blank box in two rows, one identifying the equilibrium points and one matching each outcome of the second derivative test to stable or unstable equilibrium.</shortdescription>
+<shortdescription>Blank workspace, with a last row for what the equilibrium points are.</shortdescription>
 </image>
 </sidebyside>
 
@@ -940,13 +868,7 @@ determine whether the equilibrium is stable or unstable.
 
 <p>
 <em>Solution.</em>
-(All three surfaces have appeared already in this section. For each,
-check the two first partials vanish at the origin, then compute
-<m>H(0,0)</m> and <m>f_{xx}(0,0)</m> and read off
-<xref ref="thm-skel-second-derivative-test"/>. Translate each verdict
-into what the marble does. Case (iii) is the interesting one: the marble
-rolls back along one axis and away along the other <mdash/> say which, and
-why that still counts as unstable.)
+(Compare with <xref ref="fig-skel-stability-video"/>.)
 </p>
 
 <sidebyside width="97%">
@@ -954,26 +876,19 @@ why that still counts as unstable.)
 <latex-image>
 \begin{tikzpicture}
 \draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,14);
-\draw[gray!35] (0,10.5) -- (15,10.5);
-\draw[gray!35] (0,7) -- (15,7);
-\draw[gray!35] (0,3.5) -- (15,3.5);
-\node[anchor=north west, font=\small\itshape] at (0.35,13.7) {(i) $H(0,0) =$ \quad $f_{xx} =$ \quad verdict:};
-\node[anchor=north west, font=\small\itshape] at (0.35,10.2) {(ii) $H(0,0) =$ \quad $f_{xx} =$ \quad verdict:};
-\node[anchor=north west, font=\small\itshape] at (0.35,6.7) {(iii) $H(0,0) =$ \quad $f_{xx} =$ \quad verdict:};
-\node[anchor=north west, font=\small\itshape] at (0.35,3.2) {Why a saddle is unstable even though one direction restores:};
+\draw[gray!35] (0,3) -- (15,3);
+\node[anchor=north west, text=gray!60, font=\footnotesize\itshape]
+  at (0.25,13.75) {workspace};
+\node[anchor=north west, font=\small\itshape] at (0.35,2.7) {(i) \qquad\qquad\qquad (ii) \qquad\qquad\qquad (iii)};
 \end{tikzpicture}
 </latex-image>
-<shortdescription>Blank box in four rows, one for each of the three surfaces with its Hessian and verdict, and one for why a saddle equilibrium is unstable.</shortdescription>
+<shortdescription>Blank workspace, with a last row for the verdict on each of the three surfaces.</shortdescription>
 </image>
 </sidebyside>
 
 <figure xml:id="fig-skel-stability-video">
 <caption>
-A marble at an equilibrium point on each of the three surfaces. On the
-bowl <m>z = x^2 + y^2</m> a displaced marble rolls back (stable); on
-the dome <m>z = -x^2 - y^2</m> it rolls away (unstable); on the saddle
-<m>z = y^2/3 - x^2/3</m> it rolls back along the <m>y</m>-direction but
-away along the <m>x</m>-direction (unstable).
+A marble at the origin on each of the three surfaces.
 </caption>
 <video xml:id="video-skel-marble-stability"
        source="videos/stability_marble_1080p.mp4"
@@ -981,25 +896,41 @@ away along the <m>x</m>-direction (unstable).
        width="70%" aspect="16:9"/>
 </figure>
 
+<p>
+State the general principle these three cases illustrate.
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,7);
+\draw[gray!35] (0,3) -- (15,3);
+\node[anchor=north west, text=gray!60, font=\footnotesize\itshape]
+  at (0.25,6.75) {workspace};
+\node[anchor=north west, font=\small\itshape] at (0.35,2.7) {an equilibrium is stable exactly when:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank workspace, with a last row for the general principle.</shortdescription>
+</image>
+</sidebyside>
+
 <figure xml:id="fig-skel-stability-cross-sections">
 <caption>
-Cross-sections of the potential energy near an equilibrium point. Along
-a direction where <m>U</m> has a minimum (blue), the force is
-restoring and pushes the marble back: stable. Along a direction where
-<m>U</m> has a maximum (red), the force pushes the marble away:
-unstable. For the bowl, every cross-section is the blue type; for the
-dome, every cross-section is the red type; a saddle has one of each.
+Two cross-sections of the potential energy <m>U</m> through an
+equilibrium point, with the force on a displaced marble.
 </caption>
 <image width="55%">
 <shortdescription>Two parabolas through the origin with force arrows: toward the origin on one, away from it on the other.</shortdescription>
 <description>
 <p>
-Two cross-sections of the potential energy through an equilibrium point at the origin, where a green marble sits. The blue curve opens upward: the force arrows point back toward the equilibrium, so this direction is stable. The red curve opens downward: the force arrows point away from the equilibrium, so this direction is unstable.
+Two cross-sections of the potential energy through an equilibrium point at the origin, where a green marble sits. The blue curve opens upward, with force arrows pointing back toward the equilibrium. The red curve opens downward, with force arrows pointing away from it.
 </p>
 </description>
 <asymptote label="asymptote-skel-ev-stability-cross-sections"><![CDATA[
 // Two cross-sections of the potential energy U through an equilibrium point: one with
-// a minimum (the force pushes the marble back) and one with a maximum (it pushes it away).
+// a minimum (the force pushes the marble back) and one with a maximum (it pushes it
+// away). The full notes also label them stable and unstable, which is left out here.
 import graph;
 unitsize(2.3cm);
 
@@ -1018,8 +949,6 @@ real stable(real x) { return 0.9*x^2; }
 real unstable(real x) { return -0.9*x^2; }
 draw(graph(stable, -1.35, 1.35), blue + linewidth(1.6pt));
 draw(graph(unstable, -1.35, 1.35), red + linewidth(1.6pt));
-label("stable", (1.2, stable(1.2)), E, blue);
-label("unstable", (1.2, unstable(1.2)), E, red);
 
 // the force on a displaced marble: back towards the equilibrium, or away from it
 draw((0.95, 0.35)--(0.5, 0.35), blue + linewidth(1.8pt), Arrow(7));
@@ -1031,22 +960,6 @@ dot((0, 0), rgb(0, 0.5, 0) + linewidth(6pt));
 ]]></asymptote>
 </image>
 </figure>
-
-<p>
-State the general principle these three cases illustrate.
-</p>
-
-<sidebyside width="97%">
-<image>
-<latex-image>
-\begin{tikzpicture}
-\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,5);
-\node[anchor=north west, font=\small\itshape] at (0.35,4.7) {An equilibrium is stable exactly when:};
-\end{tikzpicture}
-</latex-image>
-<shortdescription>Blank box for the general principle relating stability to the potential energy.</shortdescription>
-</image>
-</sidebyside>
 </statement>
 </example>
 
