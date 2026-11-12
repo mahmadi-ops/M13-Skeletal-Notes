@@ -31,7 +31,10 @@
   print); where the full notes' figure carries an answer in its labels (the
   components of a vector, the equation of a plane, a numerical value), the
   copy here leaves it out.  differential-estimate-manim.html, the interactive
-  that compares df with Delta f, is gated to the web target as well.
+  that compares df with Delta f, is gated to the web target as well; this
+  book's copy of it sets SKELETAL = true, which removes the Example button
+  (it printed the example's df and Delta f) and the closed form ds^2 of the
+  error.
 -->
 <section xml:id="sec-skel-fmv-tangent-planes" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Tangent Planes and Differentials</title>
@@ -1212,10 +1215,10 @@ every distance <m>ds</m>, accompanies the online version of these notes.
 <caption>
 The differential <m>df</m> against the actual change <m>\Delta f</m> for
 <m>f(x,y) = 1 + x^2 + y^2</m> at <m>P_0(1,1)</m>. The vertical plane
-through <m>P_0</m> along <m>\hat{u}</m> cuts the surface in the gold
+through <m>P_0</m> along <m>\hat{u}</m> cuts the surface in the white
 curve. Over the distance <m>ds</m>, the tangent line to that curve (blue)
 changes its height by <m>df</m>, while the surface itself changes its
-height by <m>\Delta f</m> (orange); the red segment between the two is
+height by <m>\Delta f</m> (orange); the pink segment between the two is
 the error <m>\Delta f - df</m>.
 </caption>
 <!-- aspect 5:6: the readout sits in a bar above the picture and the sliders
@@ -1229,18 +1232,15 @@ the error <m>\Delta f - df</m>.
 The surface and the point <m>P_0</m> are those of
 <xref ref="ex-skel-tp-change"/>. Choose the direction of
 <m>\hat{u}</m> and the distance <m>ds</m> with the two sliders; the panel
-above the picture reports the rate of change
-<m>\nabla f \Big|_{P_0} \cdot \hat{u}</m>, the estimate <m>df</m>, the
-actual change <m>\Delta f</m> and their difference. <q>Example</q> sets
-the direction and the distance of the example, <q>Shrink
-<m>ds</m></q> lets the distance go to zero, and <q>Turn
-<m>\hat{u}</m></q> takes the direction once around <m>P_0</m>.
+above the picture reports the estimate <m>df</m>, the actual change
+<m>\Delta f</m> and the error between them. <q>Shrink <m>ds</m></q> lets
+the distance go to zero, and <q>Turn <m>\hat{u}</m></q> takes the
+direction once around <m>P_0</m>.
 <q>Zoom in</q> moves the camera close to <m>P_0</m>, <q>Slice view</q>
 looks straight at the vertical plane so that the picture becomes the
-single-variable one of <xref ref="fig-skel-tp-linear-approx-1d"/>,
-<q>Tangent plane</q> adds the tangent plane at <m>P_0</m>, which contains
-the tangent line of every direction, dragging rotates the picture by
-hand, and the button at the bottom right shows the figure full screen.
+single-variable one of <xref ref="fig-skel-tp-linear-approx-1d"/>, dragging
+rotates the picture by hand, and the button at the bottom right shows the
+figure full screen.
 </p>
 </instructions>
 </interactive>
