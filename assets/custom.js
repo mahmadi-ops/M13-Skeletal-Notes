@@ -635,7 +635,7 @@
 })();
 
 /* ------------------------------------------------------------------ *
- * Reflow equations in Sections 4.1--4.5, in Lagrange Multipliers and on the
+ * Reflow equations in Sections 4.1--4.7, in Lagrange Multipliers and on the
  * Assignment 7 and 8 pages as the reading column changes.
  * MathJax 4 can break long displays without shrinking their type. Reflow
  * after a solution opens as well: hidden knowls have no usable width
@@ -650,6 +650,14 @@
     "#sec-skel-fmv-directional-derivatives, " +
     "section[id^='subsec-skel-dirderiv-'], section[id^='subsec-skel-gradient-'], " +
     "#subsec-skel-fmv-scalar-fields, " +
+    // Section 4.6 (tangent planes and differentials) and its subsections
+    "#sec-skel-fmv-tangent-planes, section[id^='subsec-skel-tp-'], " +
+    // Section 4.7 (extreme values), its subsections and the included
+    // "Why the Second Derivative Test Works"
+    "#sec-skel-fmv-extreme-values, #subsec-skel-local-extrema, " +
+    "#subsec-skel-saddle-example, #subsec-skel-second-derivative-test, " +
+    "#subsec-skel-absolute-extrema, #subsec-skel-equilibrium-stability, " +
+    "#subsec-skel-fmv-why-second-derivative-test, " +
     "#worksheet-assignment-7, #worksheet-assignment-8, " +
     "#sec-skel-fmv-lagrange, section[id^='subsec-skel-lagrange-']"
   );

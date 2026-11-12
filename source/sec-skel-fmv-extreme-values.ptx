@@ -15,6 +15,13 @@
   cross-sections) are reproduced in full.  The plot of the critical
   points and the plot of the candidate points ARE the answers to their
   examples, so those two become empty grids to mark up.
+
+  Nov 2026: the five diagrams kept in full are Asymptote now, the same
+  figures as in the full notes.  The definition of a saddle point opens the
+  subsection "Saddle Point" (formerly "A Saddle Point Example"), and two
+  examples follow the definition of a critical point, each with one blank
+  workspace; their graphs show the surface only, without the critical
+  point, the tangent plane or the trace that the full notes mark.
 -->
 <section xml:id="sec-skel-fmv-extreme-values" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Extreme Values and Saddle Points</title>
@@ -140,29 +147,38 @@ An open disk in the domain of <m>f(x,y) = x^2 + y^2</m> centered at
 <m>f(0,0) \le f(x,y)</m>, so <m>f(0,0)</m> is a local minimum.
 </caption>
 <image width="50%">
-<prefigure xmlns="https://prefigure.org" label="skel-prefigure-local-min-disk">
-<diagram dimensions="(300,300)" margins="10">
-<coordinates bbox="(-1.6,-1.6,1.6,1.6)">
-<axes at="ld-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
-<circle at="ld-disk" center="(0,0)" radius="1.1" fill="lightgray"
-        stroke="red" dash="6 4" thickness="2"/>
-<point at="ld-center" p="(0,0)" fill="green" alignment="ne">
-<m>(0,0)</m>
-</point>
-<label at="ld-ineq" anchor="(0,-0.55)" alignment="c">
-<m>f(0,0)\le f(x,y)</m>
-</label>
-</coordinates>
+<shortdescription>An open disk centred at the origin, where the function has a local minimum.</shortdescription>
+<description>
+<p>
+An open disk in the x y plane, centered at the origin, drawn with a dashed red boundary and shaded gray. The center point 0, 0 is marked in green. Inside the disk, a label reads f of 0, 0 is less than or equal to f of x, y.
+</p>
+</description>
+<asymptote label="asymptote-skel-ev-local-min-disk"><![CDATA[
+// An open disk centred at (0,0) in the domain of f(x,y) = x^2 + y^2: inside it
+// f(0,0) <= f(x,y), so f(0,0) is a local minimum.
+import graph;
+unitsize(2.4cm);
 
-<annotations>
-<annotation ref="figure" text="An open disk in the x y plane, centered at the origin, drawn with a dashed red boundary and shaded gray. The center point 0 comma 0 is marked in green. Inside the disk, f of 0 comma 0 is less than or equal to f of x comma y.">
-  <annotation ref="ld-disk" text="The open disk centered at the origin, with a dashed red boundary."/>
-  <annotation ref="ld-center" text="The center of the disk, the point 0 comma 0, marked in green, where the local minimum occurs."/>
-  <annotation ref="ld-ineq" text="The inequality f of 0 comma 0 less than or equal to f of x comma y, which holds for all points x comma y inside the disk."/>
-</annotation>
-</annotations>
-</diagram>
-</prefigure>
+// axes through the origin, with arrowheads and no tick marks
+void axes(real xmin, real xmax, real ymin, real ymax, string xl, string yl) {
+  pen axispen = black + linewidth(0.8pt);
+  draw((xmin, 0)--(xmax, 0), axispen, Arrow(6));
+  draw((0, ymin)--(0, ymax), axispen, Arrow(6));
+  if (xl != "") label(xl, (xmax, 0), E);
+  if (yl != "") label(yl, (0, ymax), N);
+}
+
+// the open disk: shaded, with a dashed boundary because the boundary is left out
+path disk = circle((0, 0), 1.1);
+fill(disk, gray(0.85));
+draw(disk, red + linewidth(1.4pt) + linetype("6 4"));
+
+axes(-1.55, 1.55, -1.55, 1.55, "$x$", "$y$");
+
+dot((0, 0), rgb(0, 0.5, 0) + linewidth(5pt));
+label("$(0,0)$", (0, 0), NE, rgb(0, 0.5, 0));
+label("$f(0,0)\le f(x,y)$", (0, -0.55), Fill(gray(0.85)));
+]]></asymptote>
 </image>
 </figure>
 
@@ -186,30 +202,36 @@ the origin. By symmetry, every vertical cross-section through the
 origin has the same shape.
 </caption>
 <image width="55%">
-<prefigure xmlns="https://prefigure.org" label="skel-prefigure-local-max-trace">
-<diagram dimensions="(340,240)" margins="10">
-<definition>g(x) = -x^2</definition>
-<coordinates bbox="(-1.5,-1.9,1.5,0.6)">
-<axes at="lm-axes" xlabel="x" ylabel="z" decorations="no" arrows="1"/>
-<graph at="lm-trace" function="g" domain="(-1.3,1.3)" stroke="blue"
-       thickness="2.5"/>
-<point at="lm-max" p="(0,0)" fill="green"/>
-<label at="lm-max-label" anchor="(0.12,0.14)" alignment="ne" color="green">
-<m>\text{Local maximum}</m>
-</label>
-<label at="lm-eq-label" anchor="(0.95,-0.55)" alignment="e" color="blue">
-<m>z=-x^2</m>
-</label>
-</coordinates>
+<shortdescription>A parabola opening downward with its highest point at the origin.</shortdescription>
+<description>
+<p>
+The parabola z equals negative x squared, opening downward, which is the trace of the surface z equals negative x squared minus y squared in the plane y equals 0. The highest point of the parabola is at the origin, marked in green as the local maximum.
+</p>
+</description>
+<asymptote label="asymptote-skel-ev-local-max-trace"><![CDATA[
+// The trace of z = -x^2 - y^2 in the plane y = 0: the parabola z = -x^2, with its
+// maximum at the origin.
+import graph;
+unitsize(2.6cm);
 
-<annotations>
-<annotation ref="figure" text="The parabola z equals negative x squared, opening downward, which is the trace of the surface z equals negative x squared minus y squared in the plane y equals 0. The highest point of the parabola is at the origin, marked in green as the local maximum.">
-  <annotation ref="lm-trace" text="The parabola z equals negative x squared, shown in blue, opening downward."/>
-  <annotation ref="lm-max" text="The local maximum at the origin, marked in green, where the parabola reaches its highest value."/>
-</annotation>
-</annotations>
-</diagram>
-</prefigure>
+// axes through the origin, with arrowheads and no tick marks
+void axes(real xmin, real xmax, real ymin, real ymax, string xl, string yl) {
+  pen axispen = black + linewidth(0.8pt);
+  draw((xmin, 0)--(xmax, 0), axispen, Arrow(6));
+  draw((0, ymin)--(0, ymax), axispen, Arrow(6));
+  if (xl != "") label(xl, (xmax, 0), E);
+  if (yl != "") label(yl, (0, ymax), N);
+}
+
+axes(-1.5, 1.5, -1.85, 0.6, "$x$", "$z$");
+
+real g(real x) { return -x^2; }
+draw(graph(g, -1.3, 1.3), blue + linewidth(1.6pt));
+label("$z=-x^2$", (0.95, g(0.95)), E, blue);
+
+dot((0, 0), rgb(0, 0.5, 0) + linewidth(5pt));
+label("Local maximum", (0.08, 0.08), NE, rgb(0, 0.5, 0));
+]]></asymptote>
 </image>
 </figure>
 
@@ -262,6 +284,147 @@ and <m>f_y</m> do not exist is a <term>critical point</term> of
 </statement>
 </definition>
 
+<example xml:id="ex-skel-critical-point-zero-partials">
+<title>A Critical Point Where Both Partial Derivatives Are Zero</title>
+<statement>
+<p>
+Find the critical points of the function
+<m>f(x,y) = x^2 + y^2 - 2x - 2y + 3</m>.
+</p>
+
+<p>
+<em>Solution.</em>
+(Compare with <xref ref="fig-skel-critical-point-zero-partials"/>.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,10);
+\draw[gray!35] (0,3) -- (15,3);
+\node[anchor=north west, text=gray!60, font=\footnotesize\itshape]
+  at (0.25,9.75) {workspace};
+\node[anchor=north west, font=\small\itshape] at (0.35,2.7) {the critical points:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank workspace, with a last row for the critical points of f.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+</example>
+
+<figure xml:id="fig-skel-critical-point-zero-partials">
+<caption>
+The graph of <m>f(x,y) = x^2 + y^2 - 2x - 2y + 3</m>.
+</caption>
+<image width="70%">
+<shortdescription>A bowl-shaped surface opening upward above the x y plane.</shortdescription>
+<description>
+<p>
+A gray paraboloid opening upward, the graph of f, drawn over a disc of the
+x y plane in the first quadrant, with the x, y and z axes.
+</p>
+</description>
+<asymptote label="asymptote-skel-ev-critical-point-zero-partials"><![CDATA[
+// The paraboloid z = x^2 + y^2 - 2x - 2y + 3, drawn as in the full notes but
+// without the critical point, its tangent plane or the guide lines, which
+// are the answer to the example.
+import graph3;
+// Keep HTML interactive; use vector rendering only for print output.
+if(settings.outformat != "html") settings.render=0;
+size(11cm,9cm);
+currentprojection=orthographic(camera=(7,-5,4),up=Z);
+currentlight=light(gray(0.6),specularfactor=0.2,(4,-3,6),(-4,-1,3));
+pen ax=gray(0.25)+linewidth(0.6pt);
+
+// the surface over the disc of radius 1.5 centred at (1,1)
+triple bowl(pair q) { return (1 + q.x*cos(q.y), 1 + q.x*sin(q.y), 1 + q.x^2); }
+draw(surface(bowl, (0, 0), (1.5, 2pi), 8, 24, Spline),
+     surfacepen=gray(0.75)+opacity(0.35),
+     meshpen=gray(0.55)+opacity(0.4)+linewidth(0.3pt));
+label("$z=f(x,y)$", bowl((1.5, 0.3)), 2*E, gray(0.4));
+
+draw(Label("$x$",1),O--(3.2,0,0),ax,Arrow3);
+draw(Label("$y$",1),O--(0,3.2,0),ax,Arrow3);
+draw(Label("$z$",1),O--(0,0,3.7),ax,Arrow3);
+]]></asymptote>
+</image>
+</figure>
+
+<example xml:id="ex-skel-critical-point-cone">
+<title>A Critical Point Where the Partial Derivatives Do Not Exist</title>
+<statement>
+<p>
+Find the critical points of the function
+<m>f(x,y) = \sqrt{x^2 + y^2}</m>.
+</p>
+
+<p>
+<em>Solution.</em>
+(Compare with <xref ref="fig-skel-critical-point-cone"/>.)
+</p>
+
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,10);
+\draw[gray!35] (0,3) -- (15,3);
+\node[anchor=north west, text=gray!60, font=\footnotesize\itshape]
+  at (0.25,9.75) {workspace};
+\node[anchor=north west, font=\small\itshape] at (0.35,2.7) {the critical points:};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank workspace, with a last row for the critical points of f.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+</example>
+
+<figure xml:id="fig-skel-critical-point-cone">
+<caption>
+The graph of <m>f(x,y) = \sqrt{x^2 + y^2}</m>.
+</caption>
+<image width="70%">
+<shortdescription>A cone opening upward, standing on its tip at the origin.</shortdescription>
+<description>
+<p>
+A gray cone opening upward with its tip at the origin, the graph of f,
+with the x, y and z axes.
+</p>
+</description>
+<asymptote label="asymptote-skel-ev-critical-point-cone"><![CDATA[
+// The cone z = sqrt(x^2 + y^2), drawn as in the full notes but without the
+// trace z = |x| and its corner, which are the answer to the example.
+import graph3;
+// Keep HTML interactive; use vector rendering only for print output.
+if(settings.outformat != "html") settings.render=0;
+size(11cm,9cm);
+currentprojection=orthographic(camera=(7,-5,4),up=Z);
+currentlight=light(gray(0.6),specularfactor=0.2,(4,-3,6),(-4,-1,3));
+pen ax=gray(0.25)+linewidth(0.6pt);
+
+// the cone over the disc of radius 1.6
+triple cone(pair q) { return (q.x*cos(q.y), q.x*sin(q.y), q.x); }
+draw(surface(cone, (0, 0), (1.6, 2pi), 8, 24, Spline),
+     surfacepen=gray(0.75)+opacity(0.35),
+     meshpen=gray(0.55)+opacity(0.4)+linewidth(0.3pt));
+label("$z=f(x,y)$", cone((1.6, 1.2)), E, gray(0.4));
+
+draw(Label("$x$",1),(-2,0,0)--(2.4,0,0),ax,Arrow3);
+draw(Label("$y$",1),(0,-2,0)--(0,2.4,0),ax,Arrow3);
+draw(Label("$z$",1),O--(0,0,2.3),ax,Arrow3);
+]]></asymptote>
+</image>
+</figure>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="subsec-skel-saddle-example">
+<title>Saddle Point</title>
+
 <definition xml:id="def-skel-saddle-point">
 <title>Saddle Point</title>
 <statement>
@@ -276,12 +439,6 @@ saddle point of the surface.
 </p>
 </statement>
 </definition>
-
-</subsection>
-
-<!-- ================================================================ -->
-<subsection xml:id="subsec-skel-saddle-example">
-<title>A Saddle Point Example</title>
 
 <example xml:id="ex-skel-saddle-point">
 <title>Saddle Point</title>
@@ -346,34 +503,38 @@ while in the plane <m>x = 0</m> the trace <m>z = y^2/3</m> opens
 upward, so <m>(0,0)</m> is a saddle point.
 </caption>
 <image width="55%">
-<prefigure xmlns="https://prefigure.org" label="skel-prefigure-saddle-traces">
-<diagram dimensions="(360,280)" margins="10">
-<definition>up(t) = t^2/3</definition>
-<definition>down(t) = -t^2/3</definition>
-<coordinates bbox="(-2.4,-1.7,2.4,1.7)">
-<axes at="sd-axes" decorations="no" arrows="1"/>
-<graph at="sd-up" function="up" domain="(-2.1,2.1)" stroke="blue"
-       thickness="2.5"/>
-<graph at="sd-down" function="down" domain="(-2.1,2.1)" stroke="red"
-       thickness="2.5"/>
-<point at="sd-saddle" p="(0,0)" fill="black"/>
-<label at="sd-up-label" anchor="(1.45,0.95)" alignment="nw" color="blue">
-<m>z=\dfrac{y^2}{3}</m>
-</label>
-<label at="sd-down-label" anchor="(1.45,-0.95)" alignment="sw" color="red">
-<m>z=-\dfrac{x^2}{3}</m>
-</label>
-</coordinates>
+<shortdescription>Two parabolas through the origin, one opening upward and one opening downward.</shortdescription>
+<description>
+<p>
+Two parabolas through the origin showing the traces of the hyperbolic paraboloid z equals y squared over 3 minus x squared over 3, drawn on one pair of axes: the horizontal axis stands for x or y and the vertical axis is z. The blue parabola opens upward and is the trace along the y axis. The red parabola opens downward and is the trace along the x axis. The origin, where they meet, is the saddle point.
+</p>
+</description>
+<asymptote label="asymptote-skel-ev-saddle-traces"><![CDATA[
+// The traces of z = y^2/3 - x^2/3 in the two coordinate planes, drawn on one pair of
+// axes: z = y^2/3 (plane x = 0) opens upward, z = -x^2/3 (plane y = 0) opens downward.
+import graph;
+unitsize(1.7cm);
 
-<annotations>
-<annotation ref="figure" text="Two parabolas through the origin showing the traces of the hyperbolic paraboloid z equals y squared over 3 minus x squared over 3. The blue parabola opens upward and is the trace along the y axis. The red parabola opens downward and is the trace along the x axis. The origin, where they meet, is the saddle point.">
-  <annotation ref="sd-up" text="The blue parabola z equals y squared over 3, the trace in the plane x equals 0, which opens upward, so the function is positive along the y axis."/>
-  <annotation ref="sd-down" text="The red parabola z equals negative x squared over 3, the trace in the plane y equals 0, which opens downward, so the function is negative along the x axis."/>
-  <annotation ref="sd-saddle" text="The origin, where the two traces meet. The function increases in one direction and decreases in the other, so this is a saddle point."/>
-</annotation>
-</annotations>
-</diagram>
-</prefigure>
+// axes through the origin, with arrowheads and no tick marks
+void axes(real xmin, real xmax, real ymin, real ymax, string xl, string yl) {
+  pen axispen = black + linewidth(0.8pt);
+  draw((xmin, 0)--(xmax, 0), axispen, Arrow(6));
+  draw((0, ymin)--(0, ymax), axispen, Arrow(6));
+  if (xl != "") label(xl, (xmax, 0), E);
+  if (yl != "") label(yl, (0, ymax), N);
+}
+
+axes(-2.4, 2.4, -1.7, 1.7, "$x$ or $y$", "$z$");
+
+real up(real t) { return t^2/3; }
+real down(real t) { return -t^2/3; }
+draw(graph(up, -2.1, 2.1), blue + linewidth(1.6pt));
+draw(graph(down, -2.1, 2.1), red + linewidth(1.6pt));
+label("$\displaystyle z=\frac{y^2}{3}$", (1.45, up(1.45)), NW, blue);
+label("$\displaystyle z=-\frac{x^2}{3}$", (1.45, down(1.45)), SW, red);
+
+dot((0, 0), black + linewidth(5pt));
+]]></asymptote>
 </image>
 </figure>
 </statement>
@@ -651,54 +812,46 @@ extrema, we evaluate <m>f</m> at the critical points inside <m>R</m>
 and compare with the extreme values of <m>f</m> along each edge.
 </caption>
 <image width="55%">
-<prefigure xmlns="https://prefigure.org" label="skel-prefigure-rectangle-region">
-<diagram dimensions="(340,260)" margins="10">
-<coordinates bbox="(-0.7,-0.7,4.0,2.9)">
-<axes at="rg-axes" xlabel="x" ylabel="y" decorations="no" arrows="1"/>
-<rectangle at="rg-region" center="(1.5,1)" dimensions="(3,2)"
-           fill="lightgray" stroke="none"/>
-<line at="rg-L1" endpoints="((0,0),(3,0))" stroke="blue" thickness="3"/>
-<line at="rg-L2" endpoints="((3,0),(3,2))" stroke="red" thickness="3"/>
-<line at="rg-L3" endpoints="((0,2),(3,2))" stroke="green" thickness="3"/>
-<line at="rg-L4" endpoints="((0,0),(0,2))" stroke="orange" thickness="3"/>
-<point at="rg-critical" p="(1,1)" fill="maroon" alignment="ne">
-<m>(1,1)</m>
-</point>
-<label at="rg-R-label" anchor="(2.2,1.3)" alignment="c">
-<m>R</m>
-</label>
-<label at="rg-L1-label" anchor="(1.5,-0.1)" alignment="s" color="blue">
-<m>L_1</m>
-</label>
-<label at="rg-L2-label" anchor="(3.1,1)" alignment="e" color="red">
-<m>L_2</m>
-</label>
-<label at="rg-L3-label" anchor="(1.5,2.1)" alignment="n" color="green">
-<m>L_3</m>
-</label>
-<label at="rg-L4-label" anchor="(-0.1,1)" alignment="w" color="orange">
-<m>L_4</m>
-</label>
-<label at="rg-x3-label" anchor="(3,-0.1)" alignment="s">
-<m>3</m>
-</label>
-<label at="rg-y2-label" anchor="(-0.1,2)" alignment="w">
-<m>2</m>
-</label>
-</coordinates>
+<shortdescription>A rectangle with its four edges labelled and one point marked inside it.</shortdescription>
+<description>
+<p>
+The rectangle R in the x y plane, with corners at the origin, 3, 0, 3, 2, and 0, 2, shaded gray. Its four edges are labeled L 1 along the bottom, L 2 along the right, L 3 along the top, and L 4 along the left. The critical point 1, 1 is marked inside the rectangle.
+</p>
+</description>
+<asymptote label="asymptote-skel-ev-rectangle-region"><![CDATA[
+// The rectangle R = [0,3] x [0,2] with its four edges L1, L2, L3, L4 and the critical
+// point (1,1) in its interior.
+import graph;
+unitsize(1.9cm);
 
-<annotations>
-<annotation ref="figure" text="The rectangle R in the x y plane, with corners at the origin, 3 comma 0, 3 comma 2, and 0 comma 2, shaded gray. Its four edges are labeled L 1 along the bottom, L 2 along the right, L 3 along the top, and L 4 along the left. The critical point 1 comma 1 is marked inside the rectangle.">
-  <annotation ref="rg-region" text="The rectangle R, consisting of points with x between 0 and 3 and y between 0 and 2."/>
-  <annotation ref="rg-L1" text="The first edge L 1, along the bottom of the rectangle, where y equals 0 and x runs from 0 to 3."/>
-  <annotation ref="rg-L2" text="The second edge L 2, along the right side, where x equals 3 and y runs from 0 to 2."/>
-  <annotation ref="rg-L3" text="The third edge L 3, along the top, where y equals 2 and x runs from 0 to 3."/>
-  <annotation ref="rg-L4" text="The fourth edge L 4, along the left side, where x equals 0 and y runs from 0 to 2."/>
-  <annotation ref="rg-critical" text="The critical point 1 comma 1, in the interior of the rectangle, where both partial derivatives are zero."/>
-</annotation>
-</annotations>
-</diagram>
-</prefigure>
+// axes through the origin, with arrowheads and no tick marks
+void axes(real xmin, real xmax, real ymin, real ymax, string xl, string yl) {
+  pen axispen = black + linewidth(0.8pt);
+  draw((xmin, 0)--(xmax, 0), axispen, Arrow(6));
+  draw((0, ymin)--(0, ymax), axispen, Arrow(6));
+  if (xl != "") label(xl, (xmax, 0), E);
+  if (yl != "") label(yl, (0, ymax), N);
+}
+
+fill(box((0, 0), (3, 2)), gray(0.87));
+axes(-0.6, 3.9, -0.6, 2.8, "$x$", "$y$");
+
+pen c1 = blue, c2 = red, c3 = rgb(0, 0.5, 0), c4 = rgb(0.9, 0.5, 0);
+draw((0, 0)--(3, 0), c1 + linewidth(2.2pt));
+draw((3, 0)--(3, 2), c2 + linewidth(2.2pt));
+draw((0, 2)--(3, 2), c3 + linewidth(2.2pt));
+draw((0, 0)--(0, 2), c4 + linewidth(2.2pt));
+label("$L_1$", (1.5, 0), S, c1);
+label("$L_2$", (3, 1), E, c2);
+label("$L_3$", (1.5, 2), N, c3);
+label("$L_4$", (0, 1), W, c4);
+label("$3$", (3, 0), S);
+label("$2$", (0, 2), W);
+
+label("$R$", (2.2, 1.3));
+dot((1, 1), rgb(0.5, 0, 0) + linewidth(5.5pt));
+label("$(1,1)$", (1, 1), NE, rgb(0.5, 0, 0));
+]]></asymptote>
 </image>
 </figure>
 
@@ -736,7 +889,10 @@ at a point where the force along the surface vanishes, which happens
 exactly where both partial derivatives of the potential energy are
 zero:
 <md xml:id="eq-skel-equilibrium-condition" number="yes">
-U_x = mg\,f_x = 0 \quad \text{and} \quad U_y = mg\,f_y = 0.
+\begin{aligned}
+U_x \amp = mg\,f_x = 0,\\
+U_y \amp = mg\,f_y = 0.
+\end{aligned}
 </md>
 </p>
 
@@ -770,9 +926,11 @@ marble nudged from rest.)
 <p>
 A marble rests at the origin on each of the following three surfaces:
 <md xml:id="eq-skel-three-surfaces" number="yes">
-\text{(i)}\; z = x^2 + y^2, \qquad
-\text{(ii)}\; z = -x^2 - y^2, \qquad
-\text{(iii)}\; z = \frac{y^2}{3} - \frac{x^2}{3}.
+\begin{aligned}
+\text{(i)} \amp \; z = x^2 + y^2,\\
+\text{(ii)} \amp \; z = -x^2 - y^2,\\
+\text{(iii)} \amp \; z = \frac{y^2}{3} - \frac{x^2}{3}.
+\end{aligned}
 </md>
 </p>
 <p>
@@ -833,49 +991,44 @@ unstable. For the bowl, every cross-section is the blue type; for the
 dome, every cross-section is the red type; a saddle has one of each.
 </caption>
 <image width="55%">
-<prefigure xmlns="https://prefigure.org" label="skel-prefigure-stability-cross-sections">
-<diagram dimensions="(360,280)" margins="10">
-<definition>stable(x) = 0.9*x^2</definition>
-<definition>unstable(x) = -0.9*x^2</definition>
-<coordinates bbox="(-1.7,-1.9,1.7,1.9)">
-<axes at="st-axes" decorations="no" arrows="1"/>
-<graph at="st-stable" function="stable" domain="(-1.35,1.35)"
-       stroke="blue" thickness="2.5"/>
-<graph at="st-unstable" function="unstable" domain="(-1.35,1.35)"
-       stroke="red" thickness="2.5"/>
-<vector at="st-restore-right" v="(-0.45,0)" tail="(0.95,0.35)"
-        stroke="blue" thickness="3"/>
-<vector at="st-restore-left" v="(0.45,0)" tail="(-0.95,0.35)"
-        stroke="blue" thickness="3"/>
-<vector at="st-runaway-right" v="(0.45,0)" tail="(0.45,-0.35)"
-        stroke="red" thickness="3"/>
-<vector at="st-runaway-left" v="(-0.45,0)" tail="(-0.45,-0.35)"
-        stroke="red" thickness="3"/>
-<point at="st-marble" p="(0,0)" fill="green"/>
-<label at="st-stable-label" anchor="(1.15,1.45)" alignment="e" color="blue">
-<m>\text{stable}</m>
-</label>
-<label at="st-unstable-label" anchor="(1.6,-1.45)" alignment="w" color="red">
-<m>\text{unstable}</m>
-</label>
-<label at="st-U-label" anchor="(-0.12,1.75)" alignment="w">
-<m>U</m>
-</label>
-</coordinates>
+<shortdescription>Two parabolas through the origin with force arrows: toward the origin on one, away from it on the other.</shortdescription>
+<description>
+<p>
+Two cross-sections of the potential energy through an equilibrium point at the origin, where a green marble sits. The blue curve opens upward: the force arrows point back toward the equilibrium, so this direction is stable. The red curve opens downward: the force arrows point away from the equilibrium, so this direction is unstable.
+</p>
+</description>
+<asymptote label="asymptote-skel-ev-stability-cross-sections"><![CDATA[
+// Two cross-sections of the potential energy U through an equilibrium point: one with
+// a minimum (the force pushes the marble back) and one with a maximum (it pushes it away).
+import graph;
+unitsize(2.3cm);
 
-<annotations>
-<annotation ref="figure" text="Two cross-sections of the potential energy through an equilibrium point at the origin, where a green marble sits. The blue curve opens upward: the force arrows point back toward the equilibrium, so this direction is stable. The red curve opens downward: the force arrows point away from the equilibrium, so this direction is unstable.">
-  <annotation ref="st-stable" text="A cross-section where the potential energy has a minimum, shown in blue and opening upward. Displacements in this direction are pushed back: stable."/>
-  <annotation ref="st-restore-right" text="The restoring force on a marble displaced to the right along the blue cross-section, pointing back toward the equilibrium."/>
-  <annotation ref="st-restore-left" text="The restoring force on a marble displaced to the left along the blue cross-section, pointing back toward the equilibrium."/>
-  <annotation ref="st-unstable" text="A cross-section where the potential energy has a maximum, shown in red and opening downward. Displacements in this direction grow: unstable."/>
-  <annotation ref="st-runaway-right" text="The force on a marble displaced to the right along the red cross-section, pointing away from the equilibrium."/>
-  <annotation ref="st-runaway-left" text="The force on a marble displaced to the left along the red cross-section, pointing away from the equilibrium."/>
-  <annotation ref="st-marble" text="The marble at the equilibrium point, where both partial derivatives of the potential energy are zero."/>
-</annotation>
-</annotations>
-</diagram>
-</prefigure>
+// axes through the origin, with arrowheads and no tick marks
+void axes(real xmin, real xmax, real ymin, real ymax, string xl, string yl) {
+  pen axispen = black + linewidth(0.8pt);
+  draw((xmin, 0)--(xmax, 0), axispen, Arrow(6));
+  draw((0, ymin)--(0, ymax), axispen, Arrow(6));
+  if (xl != "") label(xl, (xmax, 0), E);
+  if (yl != "") label(yl, (0, ymax), N);
+}
+
+axes(-1.7, 1.7, -1.85, 1.85, "", "$U$");
+
+real stable(real x) { return 0.9*x^2; }
+real unstable(real x) { return -0.9*x^2; }
+draw(graph(stable, -1.35, 1.35), blue + linewidth(1.6pt));
+draw(graph(unstable, -1.35, 1.35), red + linewidth(1.6pt));
+label("stable", (1.2, stable(1.2)), E, blue);
+label("unstable", (1.2, unstable(1.2)), E, red);
+
+// the force on a displaced marble: back towards the equilibrium, or away from it
+draw((0.95, 0.35)--(0.5, 0.35), blue + linewidth(1.8pt), Arrow(7));
+draw((-0.95, 0.35)--(-0.5, 0.35), blue + linewidth(1.8pt), Arrow(7));
+draw((0.45, -0.35)--(0.9, -0.35), red + linewidth(1.8pt), Arrow(7));
+draw((-0.45, -0.35)--(-0.9, -0.35), red + linewidth(1.8pt), Arrow(7));
+
+dot((0, 0), rgb(0, 0.5, 0) + linewidth(6pt));
+]]></asymptote>
 </image>
 </figure>
 
