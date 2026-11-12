@@ -20,7 +20,12 @@
   the interactive gated to the web target with a print note beside it.
 
   The tangent plane is found from the cross product of the direction vectors
-  of the two tangent lines, as in the full notes (Nov 2026).  The figures of
+  of the two tangent lines, as in the full notes (Nov 2026).  The three
+  derivations of the section (the tangent plane, the normal vector as a
+  gradient, the estimate of Delta f) each get ONE empty workspace with a last
+  row for the result: the text before it names what is derived, never how,
+  and does not break the work into steps (instructor request, Nov 2026).
+  The figures of
   that derivation, of the first example and of "Estimating the Change in a
   Particular Direction" are Asymptote (interactive in HTML, vector PDF in
   print); where the full notes' figure carries an answer in its labels (the
@@ -80,8 +85,7 @@ to the curve cut from the surface <m>z = f(x,y)</m> by the plane
 line to the curve cut by the plane <m>x = x_0</m>. In this section we put
 these two tangent lines together: the plane containing both of them is
 the tangent plane to the surface at <m>P_0(x_0, y_0, f(x_0,y_0))</m>. We
-find its equation from the cross product of the direction vectors of the
-two tangent lines, use its normal vector to write the equation of the
+find its equation, use its normal vector to write the equation of the
 normal line to the surface, estimate the change in <m>f</m> caused by
 moving a small distance away from <m>P_0</m> in a given direction, and
 finally use the tangent plane to linearize <m>f</m> near a point.
@@ -93,42 +97,60 @@ finally use the tangent plane to linearize <m>f</m> near a point.
 <title>Equation of the Tangent Plane</title>
 
 <p>
-We use two things we already know to calculate the equation of the
-tangent plane to the surface <m>z = f(x,y)</m> at
-<m>P_0(x_0, y_0, z_0)</m>, where <m>z_0 = f(x_0,y_0)</m>: the partial
-derivatives are the slopes of two tangent lines at <m>P_0</m>, and the
-cross product of two vectors is perpendicular to both of them
-(<xref ref="sec-skel-geom-cross-product"/>).
-</p>
-
-<p>
-Find a direction vector <m>\mathbf v_1</m> of the tangent line at
-<m>P_0</m> in the plane <m>y = y_0</m>, and a direction vector
-<m>\mathbf v_2</m> of the tangent line at <m>P_0</m> in the plane
-<m>x = x_0</m>.
+We now derive the equation of the tangent plane to the surface
+<m>z = f(x,y)</m> at <m>P_0(x_0, y_0, z_0)</m>, where
+<m>z_0 = f(x_0,y_0)</m>.
 </p>
 
 <sidebyside width="97%">
 <image>
 <latex-image>
 \begin{tikzpicture}
-\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,9);
-\draw[gray!35] (0,4.5) -- (15,4.5);
-\node[anchor=north west, font=\small\itshape] at (0.35,8.7) {$\mathbf v_1 =$};
-\node[anchor=north west, font=\small\itshape] at (0.35,4.2) {$\mathbf v_2 =$};
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,15);
+\draw[gray!35] (0,3.25) -- (15,3.25);
+\node[anchor=north west, text=gray!60, font=\footnotesize\itshape]
+  at (0.25,14.75) {workspace};
+\node[anchor=north west, font=\small\itshape] at (0.35,2.95) {the tangent plane:};
 \end{tikzpicture}
 </latex-image>
-<shortdescription>Blank box in two rows, one for each of the two direction vectors.</shortdescription>
+<shortdescription>Blank workspace for the derivation, with a last row for the equation of the tangent plane.</shortdescription>
 </image>
 </sidebyside>
+
+<assemblage xml:id="skel-summary-tp-tangent-plane">
+<title>The Tangent Plane</title>
+<p>
+The equation of the <term>tangent plane to the surface</term>
+<m>z = f(x,y)</m> at <m>P_0(x_0, y_0, f(x_0,y_0))</m> is
+<md>
+<mrow>
+\amp f_x(x_0,y_0)(x - x_0)
+</mrow>
+<mrow>
+\amp \quad {} + f_y(x_0,y_0)(y - y_0)
+</mrow>
+<mrow xml:id="eq-skel-tp-tangent-plane" number="yes">
+\amp \quad {} - (z - z_0) = 0.
+</mrow>
+</md>
+</p>
+</assemblage>
+
+<p>
+The three figures below go with the derivation:
+<xref ref="fig-skel-tp-direction-vectors"/> and
+<xref ref="fig-skel-tp-cross-product"/> show its two steps, and
+<xref ref="fig-skel-tp-plane-normal"/> shows the two tangent lines inside
+the planes <m>y = y_0</m> and <m>x = x_0</m>, together with the plane
+that contains both of them.
+</p>
 
 <figure xml:id="fig-skel-tp-direction-vectors">
 <caption>
 The two tangent lines at <m>P_0</m>, each with a direction vector:
 <m>\mathbf v_1</m> on the tangent line in the plane <m>y = y_0</m> and
 <m>\mathbf v_2</m> on the tangent line in the plane <m>x = x_0</m>. The
-dashed legs show the run and the rise of each vector. Compare with what
-you found.
+dashed legs show the run and the rise of each vector.
 </caption>
 <image width="86%">
 <shortdescription>A grey surface with two curves through a magenta point P 0, the tangent line to each curve, and an arrow along each tangent line.</shortdescription>
@@ -197,33 +219,13 @@ draw(Label("$z$",1),O--(a-0.2,a-0.2,3.6),ax,Arrow3);
 </image>
 </figure>
 
-<p>
-Use <m>\mathbf v_1</m> and <m>\mathbf v_2</m> to find a vector normal to
-the tangent plane.
-</p>
-
-<sidebyside width="97%">
-<image>
-<latex-image>
-\begin{tikzpicture}
-\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,11);
-\draw[gray!35] (0,3.25) -- (15,3.25);
-\node[anchor=north west, text=gray!60, font=\footnotesize\itshape]
-  at (0.25,10.75) {workspace};
-\node[anchor=north west, font=\small\itshape] at (0.35,2.95) {a normal vector:};
-\end{tikzpicture}
-</latex-image>
-<shortdescription>Blank workspace, with a last row for a vector normal to the tangent plane.</shortdescription>
-</image>
-</sidebyside>
-
 <figure xml:id="fig-skel-tp-cross-product">
 <caption>
 The tangent plane at <m>P_0</m> contains <m>\mathbf v_1</m> and
 <m>\mathbf v_2</m>, and with them the parallelogram they span. The cross
 product <m>\mathbf v_1 \times \mathbf v_2</m> is perpendicular to both
 vectors, and <m>\mathbf v_2 \times \mathbf v_1</m> points the opposite
-way. Compare with what you found.
+way.
 </caption>
 <image width="86%">
 <shortdescription>The surface with its pink tangent plane at P 0, the arrows v 1 and v 2 in the plane, and two opposite arrows perpendicular to the plane.</shortdescription>
@@ -300,51 +302,6 @@ draw(Label("$z$",1),O--(a-0.2,a-0.2,3.6),ax,Arrow3);
 ]]></asymptote>
 </image>
 </figure>
-
-<p>
-Now write the equation of the plane through <m>P_0</m> with this normal
-vector (<xref ref="eq-skel-planes-point-normal"/>).
-</p>
-
-<sidebyside width="97%">
-<image>
-<latex-image>
-\begin{tikzpicture}
-\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,9);
-\draw[gray!35] (0,3.25) -- (15,3.25);
-\node[anchor=north west, text=gray!60, font=\footnotesize\itshape]
-  at (0.25,8.75) {workspace};
-\node[anchor=north west, font=\small\itshape] at (0.35,2.95) {the tangent plane:};
-\end{tikzpicture}
-</latex-image>
-<shortdescription>Blank workspace, with a last row for the equation of the tangent plane.</shortdescription>
-</image>
-</sidebyside>
-
-<assemblage xml:id="skel-summary-tp-tangent-plane">
-<title>The Tangent Plane</title>
-<p>
-The equation of the <term>tangent plane to the surface</term>
-<m>z = f(x,y)</m> at <m>P_0(x_0, y_0, f(x_0,y_0))</m> is
-<md>
-<mrow>
-\amp f_x(x_0,y_0)(x - x_0)
-</mrow>
-<mrow>
-\amp \quad {} + f_y(x_0,y_0)(y - y_0)
-</mrow>
-<mrow xml:id="eq-skel-tp-tangent-plane" number="yes">
-\amp \quad {} - (z - z_0) = 0.
-</mrow>
-</md>
-</p>
-</assemblage>
-
-<p>
-<xref ref="fig-skel-tp-plane-normal"/> shows the two tangent lines inside
-the planes <m>y = y_0</m> and <m>x = x_0</m>, together with the plane
-that contains both of them.
-</p>
 
 <figure xml:id="fig-skel-tp-plane-normal">
 <caption>
@@ -449,27 +406,21 @@ the picture names each of these seven elements.
 </figure>
 
 <p>
-The same plane can be reached a second way, through a gradient. Write the
-equation of the surface as <m>w(x,y,z) = f(x,y) - z = 0</m>, so that the
-surface is a level surface of <m>w</m>.
-</p>
-
-<p>
-Find <m>\nabla w</m> at <m>P_0</m>, and say why it is normal to the
-tangent plane.
+A normal vector to the tangent plane can also be written as a gradient.
 </p>
 
 <sidebyside width="97%">
 <image>
 <latex-image>
 \begin{tikzpicture}
-\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,9);
-\draw[gray!35] (0,4.5) -- (15,4.5);
-\node[anchor=north west, font=\small\itshape] at (0.35,8.7) {$\nabla w =$};
-\node[anchor=north west, font=\small\itshape] at (0.35,4.2) {at $P_0$, and why it is normal to the plane:};
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,10);
+\draw[gray!35] (0,3.25) -- (15,3.25);
+\node[anchor=north west, text=gray!60, font=\footnotesize\itshape]
+  at (0.25,9.75) {workspace};
+\node[anchor=north west, font=\small\itshape] at (0.35,2.95) {the normal vector:};
 \end{tikzpicture}
 </latex-image>
-<shortdescription>Blank box in two rows, one for the gradient of w and one for its value at P nought together with the reason it is normal to the tangent plane.</shortdescription>
+<shortdescription>Blank workspace, with a last row for the normal vector to the tangent plane.</shortdescription>
 </image>
 </sidebyside>
 
@@ -1011,22 +962,21 @@ draw(Label("$z$",1),O--(0,0,3.6),ax,Arrow3);
 
 <p>
 Computing <xref ref="eq-skel-tp-delta-f"/> exactly means evaluating
-<m>f</m> twice. Estimate <m>\Delta f</m> from the directional derivative
-of <m>f</m> at <m>P_0</m> instead, and say why the result is only an
-estimate.
+<m>f</m> twice. We now derive an estimate of <m>\Delta f</m> instead.
 </p>
 
 <sidebyside width="97%">
 <image>
 <latex-image>
 \begin{tikzpicture}
-\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,8);
-\draw[gray!35] (0,3.5) -- (15,3.5);
-\node[anchor=north west, font=\small\itshape] at (0.35,7.7) {the estimate:};
-\node[anchor=north west, font=\small\itshape] at (0.35,3.2) {why it is only an estimate:};
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,10);
+\draw[gray!35] (0,3.25) -- (15,3.25);
+\node[anchor=north west, text=gray!60, font=\footnotesize\itshape]
+  at (0.25,9.75) {workspace};
+\node[anchor=north west, font=\small\itshape] at (0.35,2.95) {the estimate:};
 \end{tikzpicture}
 </latex-image>
-<shortdescription>Blank box in two rows, one for the estimate of the change and one for the reason it is only an estimate.</shortdescription>
+<shortdescription>Blank workspace, with a last row for the estimate of the change.</shortdescription>
 </image>
 </sidebyside>
 
