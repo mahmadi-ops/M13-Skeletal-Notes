@@ -35,6 +35,12 @@
   book's copy of it sets SKELETAL = true, which removes the Example button
   (it printed the example's df and Delta f) and the closed form ds^2 of the
   error.
+
+  The closing subsection "Video Summary" holds the two Manim videos of the
+  full notes (tangent_plane_cross_product.mp4, tangent_plane_approximation.mp4;
+  scripts in assets/manim).  The videos show the derivations in full, so
+  here their captions only name the topic and the full notes' lists of what
+  each video explains are left out.
 -->
 <section xml:id="sec-skel-fmv-tangent-planes" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Tangent Planes and Differentials</title>
@@ -1478,6 +1484,40 @@ normal direction.
 \end{tikzpicture}
 </latex-image>
 </image>
+</figure>
+
+</subsection>
+
+<!-- ================================================================ -->
+<subsection xml:id="subsec-skel-tp-video-summary">
+<title>Video Summary</title>
+
+<p>
+The two videos below recap this section. They show its derivations in
+full, so they are best watched after the workspaces above have been
+filled in.
+</p>
+
+<figure xml:id="fig-skel-tp-video-tangent-plane">
+<caption>
+The equation of the tangent plane to <m>z = f(x,y)</m> at <m>P_0</m>, the
+normal vector and the normal line.
+</caption>
+<video xml:id="video-skel-tp-tangent-plane"
+       source="videos/tangent_plane_cross_product.mp4"
+       preview="videos/previews/tangent_plane_cross_product.jpg"
+       width="100%" aspect="16:9"/>
+</figure>
+
+<figure xml:id="fig-skel-tp-video-approximation">
+<caption>
+The differential <m>df</m> against the actual change <m>\Delta f</m>, and
+the linearization <m>L(x,y)</m>.
+</caption>
+<video xml:id="video-skel-tp-approximation"
+       source="videos/tangent_plane_approximation.mp4"
+       preview="videos/previews/tangent_plane_approximation.jpg"
+       width="100%" aspect="16:9"/>
 </figure>
 
 </subsection>
