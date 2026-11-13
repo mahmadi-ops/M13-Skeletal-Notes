@@ -111,7 +111,8 @@ convention). Repo-specific facts:
   `rev-tp-2` (its statement now names the tangent plane it uses, which
   `rev-tp-1` finds in Assignment 9), `rev-tp-3` and `pp-33`, and `q1-2`
   after `q2-2`. Their locks came off, since review solutions are public, so
-  Assignment 9 is eleven problems. Its introduction names Section 4.6 in
+  Assignment 9 was eleven problems; then `rw17-8` (its problem 6) followed
+  them into Review Problems #3, after `rw22-7`, so it is ten. Its introduction names Section 4.6 in
   plain text, so that it could be posted before that section. Do not sync
   assignments 4-9 from M13-Mehdi, or carry these moves into it, without
   asking.

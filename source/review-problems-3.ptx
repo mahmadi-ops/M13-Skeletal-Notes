@@ -34,7 +34,10 @@
   using T = 3x^2 + 8xy + y^2 at (1,0), where T = 3 and the gradient is
   (6,8) of length 10.  ex-fall-line is one of the three closing "two
   runners" problems, so the paragraph introducing them was reworded here
-  for a single problem.
+  for a single problem.  rw17-8, an odd-numbered problem of that
+  worksheet, joined them later from Assignment 9 at the instructor's
+  request (Nov 2026); it sits after rw22-7, as in the worksheet's order,
+  and its lock came off, since review solutions are public.
 
   Then problems 9 and 11 of the old worksheet "Exercises for Tangent Planes
   and Differentials" (pp-40 and q2-2); the rest of that worksheet became
@@ -1311,6 +1314,125 @@ The directional derivatives are
 </md>
 As expected, the largest possible rate of change is
 <m>\|\nabla f\|</m> and the smallest is <m>-\|\nabla f\|</m>.
+</p>
+</li>
+</ol>
+</p>
+</solution>
+</exercise>
+
+<exercise xml:id="rw17-8">
+<statement>
+<p>
+Suppose the temperature (in degrees Celsius) at a point
+<m>(x,y)</m> is given by <m>T(x,y)</m>, where <m>T</m> is a
+continuous function that has continuous partial derivatives, and
+distances in the <m>xy</m>-plane are measured in meters. We are given
+the following information about <m>T</m> at the point
+<m>(x,y) = (1,1)</m>:
+<ul>
+<li>
+<p>
+<m>T(1,1) = 20</m> <degree/>C,
+</p>
+</li>
+<li>
+<p>
+the derivative of <m>T</m> at <m>(1,1)</m> obtains its smallest
+(i.e. most negative) value in the direction toward the <em>point</em>
+<m>(-1, 2)</m>,
+</p>
+</li>
+<li>
+<p>
+the derivative of <m>T</m> at <m>(1,1)</m> in the direction of the
+<em>vector</em> <m>4\,\hat{\imath} + 3\,\hat{\jmath}</m> is
+<m>3</m> <degree/>C/m.
+</p>
+</li>
+</ul>
+<ol marker="A.">
+<li>
+<p>
+Find the derivative of <m>T</m> at <m>(1,1)</m> in the direction
+toward the <em>point</em> <m>(4,-3)</m>.
+</p>
+</li>
+<li>
+<p>
+If you start at <m>(1,1)</m> and move along a straight path toward
+the point <m>(4,-3)</m>, <em>approximately</em> how far will you
+have to go in this direction until the temperature reaches
+<m>24</m> <degree/>C?
+</p>
+</li>
+</ol>
+</p>
+</statement>
+<solution>
+<p>
+First we determine <m>\nabla T</m> at <m>(1,1)</m>. The derivative
+is most negative in the direction of <m>-\nabla T</m>, and the
+direction from <m>(1,1)</m> toward <m>(-1,2)</m> is
+<md>
+\langle -1-1,\; 2-1\rangle = \langle -2, 1\rangle.
+</md>
+Hence <m>-\nabla T</m> is a positive multiple of
+<m>\langle -2, 1\rangle</m>, i.e.
+<m>\nabla T = c\,\langle 2, -1\rangle</m> for some <m>c \gt 0</m>.
+</p>
+
+<p>
+The third piece of information fixes <m>c</m>. The unit vector in the
+direction of <m>4\,\hat{\imath} + 3\,\hat{\jmath}</m> is
+<m>\frac15\langle 4, 3\rangle</m>, since
+<m>\|\langle 4,3\rangle\| = 5</m>, so
+<md>
+<mrow>
+\amp 3 = \nabla T \cdot \frac15\langle 4, 3\rangle = \frac{c}{5}\Big(8 - 3\Big) = c
+</mrow>
+<mrow>
+\amp \quad \Rightarrow c = 3.
+</mrow>
+</md>
+Therefore
+<md>
+\nabla T\big|_{(1,1)}
+= 3\langle 2, -1\rangle
+= \langle 6, -3\rangle.
+</md>
+</p>
+
+<p>
+<ol marker="A.">
+<li>
+<p>
+The direction from <m>(1,1)</m> toward <m>(4,-3)</m> is
+<m>\langle 3, -4\rangle</m>, whose length is <m>5</m>, so the unit
+vector is <m>\hat u = \left\langle \frac35, -\frac45\right\rangle</m>
+and
+<md>
+<mrow>
+\amp \left(D_{\hat u} T\right)_{(1,1)} = \langle 6, -3\rangle \cdot \left\langle \frac35, -\frac45\right\rangle
+</mrow>
+<mrow>
+\amp \quad = \frac{18}{5} + \frac{12}{5} = 6 \; {}^{\circ}\text{C}/\text{m}.
+</mrow>
+</md>
+</p>
+</li>
+<li>
+<p>
+The temperature must rise from <m>20</m> <degree/>C to <m>24</m>
+<degree/>C, i.e. <m>\Delta T = 4</m> <degree/>C, and along this
+direction it rises at approximately <m>6</m> <degree/>C per meter.
+Using the linear approximation
+<m>\Delta T \approx \left(D_{\hat u}T\right) \cdot s</m>, where
+<m>s</m> is the distance travelled,
+<md>
+s \approx \frac{\Delta T}{D_{\hat u}T} = \frac46 = \frac23
+\approx 0.67 \text{ meters}.
+</md>
 </p>
 </li>
 </ol>
