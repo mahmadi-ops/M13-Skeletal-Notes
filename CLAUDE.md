@@ -113,9 +113,11 @@ convention). Repo-specific facts:
   after `q2-2`. Their locks came off, since review solutions are public, so
   Assignment 9 was eleven problems; then `rw17-8` (its problem 6) followed
   them into Review Problems #3, after `rw22-7`, so it is ten. Its introduction names Section 4.6 in
-  plain text, so that it could be posted before that section. Do not sync
-  assignments 4-9 from M13-Mehdi, or carry these moves into it, without
-  asking.
+  plain text, so that it could be posted before that section. Likewise
+  `exer-parallel-tangent-plane` (Assignment 10's problem 6) moved to Review
+  Problems #4, before `exer-xy-on-circle`, with its lock off, so Assignment
+  10 is ten problems. Do not sync assignments 4-10 from M13-Mehdi, or carry
+  these moves into it, without asking.
 - Review Problems #2 and #3 differ from their M13-Mehdi copies the same
   way: the four quadric-surface problems of Review Problems #2 (`rs19-3`,
   `rs-multiselect-quadrics`, `ex-3d-parabolic-cylinder`,
