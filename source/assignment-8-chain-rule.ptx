@@ -49,7 +49,6 @@ is a solution of the diffusion equation
 </md>
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="8" due="2026-11-13"
 <solution>
 <p>
 We compute the needed derivatives:
@@ -73,7 +72,6 @@ gives exactly <m>\dfrac{\partial c}{\partial t}</m>, showing that
 <m>c</m> satisfies the diffusion equation.
 </p>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="pp-28">
@@ -84,7 +82,6 @@ Let <m>f(x,y,z) = xy + 3y^2z^3 + \ln(xz)</m>. Compute
 <m>\dfrac{\partial^2 f}{\partial y \partial z}</m>.
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="8" due="2026-11-13"
 <solution>
 <p>
 Note first that <m>\ln(xz) = \ln x + \ln z</m>, which makes the
@@ -105,7 +102,6 @@ and then with respect to <m>y</m>:
 </md>
 </p>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="q1-3">
@@ -164,7 +160,6 @@ give the units.
 </ol>
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="8" due="2026-11-13"
 <solution>
 <p>
 <term>(a)</term> A partial derivative is a limit of difference
@@ -315,7 +310,6 @@ slightly to the left.
 </image>
 </figure>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 <!-- ===== From the old worksheet "Exercises for The Chain Rule" ===== -->
@@ -332,7 +326,6 @@ t = \frac{x-y}{2},
 using both the chain rule and by plugging in <m>s</m> and <m>t</m>.
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="8" due="2026-11-13"
 <solution>
 <p>
 Using the chain rule:
@@ -357,7 +350,6 @@ f(s(x,y), t(x,y))
 and easily obtain the same partial derivatives.
 </p>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rev-tp-5">
@@ -372,7 +364,6 @@ Justify your answer fully: give a proof if the statement is true, or a
 counterexample if it is false.
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="8" due="2026-11-13"
 <answer>
 <p>True.</p>
 </answer>
@@ -395,7 +386,6 @@ Now we see from the chain rule that
 </md>
 </p>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rm2-cr-1">
@@ -436,7 +426,6 @@ If <m>f</m> is homogeneous of degree <m>n</m>, show that
 </ol>
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="8" due="2026-11-13"
 <solution>
 <p>
 <ol marker="A.">
@@ -489,7 +478,6 @@ equation.
 </ol>
 </p>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rw21-1">
@@ -504,7 +492,6 @@ Compute <m>\dfrac{\partial w}{\partial s}(-4,-4)</m> and
 <m>\dfrac{\partial w}{\partial t}(-4,-4)</m>.
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="8" due="2026-11-13"
 <solution>
 <p>
 The dependency tree is shown in <xref ref="fig-rw21-tree"/>. We first
@@ -590,7 +577,6 @@ Similarly,
 </md>
 </p>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 </worksheet>

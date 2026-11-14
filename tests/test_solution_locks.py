@@ -45,7 +45,6 @@ class SolutionLockTests(unittest.TestCase):
 
     def test_true_false_answers_appear_only_after_release(self):
         problems = {
-            "assignment-8-chain-rule.ptx": {"rev-tp-5": "True."},
             "assignment-9-tangent-planes.ptx": {"rf-8-a": "False.", "rev-gr-3": "True."},
         }
         for name, expected in problems.items():
@@ -70,6 +69,7 @@ class SolutionLockTests(unittest.TestCase):
     def test_released_true_false_answers_are_shown(self):
         released = {
             "assignment-7-functions-several-variables.ptx": {"rm2-lim-1-a": "False.", "rm2-lim-1-c": "False."},
+            "assignment-8-chain-rule.ptx": {"rev-tp-5": "True."},
         }
         for name, expected in released.items():
             text = (ROOT / "source" / name).read_text()
