@@ -804,7 +804,7 @@ The surface <m>z = x^2 - 2xy + 2y</m> over the rectangle <m>R</m>.
 
 <!-- ================================================================ -->
 <subsection xml:id="subsec-skel-equilibrium-stability">
-<title>A Physical Application: Equilibrium and Stability</title>
+<title>*A Physical Application: Equilibrium and Stability</title>
 
 <p>
 Consider a marble that rolls on the surface <m>z = f(x,y)</m> under the
