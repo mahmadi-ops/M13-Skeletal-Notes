@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h2 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2.3.19</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">A non-elementary integral computed exactly.</span>
+</h2>
+<div class="para logical">
+<div class="para">In <a href="subsec-skel-taylor-applications.html#ex-skel-taylor-integral-exp" class="internal" title="Example 2.3.18: A definite integral with no elementary antiderivative">Example 2.3.18</a>, term-by-term integration produced a series that we could only <em class="emphasis">estimate</em>. Sometimes, however, the series produced by term-by-term integration is one we already recognize, and then the integral can be evaluated <em class="emphasis">exactly</em>, even though the integrand has no elementary antiderivative. Show that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-skel-taylor-integral-exp.html">
+\begin{equation*}
+\int_0^{\infty} e^{-x}\,\frac{\sin x}{x}\,dx = \frac{\pi}{4}.
+\end{equation*}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-skel-taylor-integral-exp-sin-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para logical">
+<div class="para">
+<em class="emphasis">Hint.</em> Each power of <span class="process-math">\(x\)</span> has to be integrated against <span class="process-math">\(e^{-x}\)</span> on <span class="process-math">\([0,\infty)\text{.}\)</span> Use the following fact from Calculus II, proved by integration by parts<details class="ptx-footnote" aria-live="polite" id="ex-skel-taylor-integral-exp-sin-2-2-5"><summary class="ptx-footnote__number" title="Footnote 2.3.1"><sup> 1 </sup></summary>
+<div class="ptx-footnote__contents" id="ex-skel-taylor-integral-exp-sin-2-2-5">Let <span class="process-math">\(I_k = \int_0^{\infty} x^k e^{-x}\,dx\text{.}\)</span> Then <span class="process-math">\(I_0 = \int_0^{\infty} e^{-x}\,dx = 1\text{.}\)</span> For <span class="process-math">\(k \ge 1\text{,}\)</span> integration by parts with <span class="process-math">\(u = x^k\)</span> and <span class="process-math">\(dv = e^{-x}\,dx\)</span> gives <span class="process-math">\(I_k = \Big[-x^k e^{-x}\Big]_0^{\infty} + k\,I_{k-1} = k\,I_{k-1}\text{,}\)</span> since <span class="process-math">\(x^k e^{-x} \to 0\)</span> as <span class="process-math">\(x \to \infty\text{.}\)</span> By induction, <span class="process-math">\(I_k = k(k-1)\cdots 1 \cdot I_0 = k!\text{.}\)</span>
+</div></details>: for every integer <span class="process-math">\(k \ge 0\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation}
+I_k = \int_0^{\infty} x^k e^{-x}\,dx = k!.\tag{2.3.10}
+\end{equation}
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-skel-taylor-integral-exp-sin-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="para">
+<em class="emphasis">Solution.</em><details class="ptx-footnote" aria-live="polite" id="ex-skel-taylor-integral-exp-sin-2-3-2"><summary class="ptx-footnote__number" title="Footnote 2.3.2"><sup> 2 </sup></summary>
+<div class="ptx-footnote__contents" id="ex-skel-taylor-integral-exp-sin-2-3-2">Integrating an infinite series term by term over the unbounded interval <span class="process-math">\([0,\infty)\)</span> needs a justification, and the Remainder Estimation Theorem supplies one. Let <span class="process-math">\(S_N(x) = \sum_{n=0}^{N} \frac{(-1)^n x^{2n}}{(2n+1)!}\)</span> be the partial sum of the series for <span class="process-math">\(\frac{\sin x}{x}\text{,}\)</span> a polynomial of degree <span class="process-math">\(2N\text{.}\)</span> For <span class="process-math">\(f(x) = \sin x\)</span> every derivative satisfies <span class="process-math">\(|f^{(k)}(t)| \le 1\text{.}\)</span> The Taylor polynomial of <span class="process-math">\(\sin x\)</span> of degree <span class="process-math">\(2N+2\)</span> has no <span class="process-math">\(x^{2N+2}\)</span> term, so it equals <span class="process-math">\(x\,S_N(x)\text{,}\)</span> and the Remainder Estimation Theorem gives <span class="process-math">\(|\sin x - x\,S_N(x)| \le \frac{|x|^{2N+3}}{(2N+3)!}\text{.}\)</span> Dividing by <span class="process-math">\(x \gt 0\text{,}\)</span> <span class="process-math">\(\left|\frac{\sin x}{x} - S_N(x)\right| \le \frac{x^{2N+2}}{(2N+3)!}\text{.}\)</span> Multiplying by <span class="process-math">\(e^{-x}\text{,}\)</span> integrating, and using <span class="process-math">\(I_k = k!\)</span> with <span class="process-math">\(k = 2N+2\text{,}\)</span> the integral differs from the partial sum <span class="process-math">\(\sum_{n=0}^{N}\frac{(-1)^n}{2n+1}\)</span> by at most <span class="process-math">\(\frac{(2N+2)!}{(2N+3)!} = \frac{1}{2N+3}\text{.}\)</span> This bound tends to <span class="process-math">\(0\)</span> as <span class="process-math">\(N \to \infty\text{,}\)</span> so the partial sums of the Leibniz series converge to the integral. Since they also converge to <span class="process-math">\(\pi/4\text{,}\)</span> the integral equals <span class="process-math">\(\pi/4\text{.}\)</span> A numerical evaluation of the integral gives <span class="process-math">\(0.785398\ldots\text{,}\)</span> which agrees with <span class="process-math">\(\pi/4 = 0.785398\ldots\text{.}\)</span> The bound <span class="process-math">\(\frac{1}{2N+3}\)</span> also shows why the Leibniz series converges slowly: to guarantee an error below <span class="process-math">\(10^{-3}\)</span> we need roughly <span class="process-math">\(500\)</span> terms.
+</div></details><div class="autopermalink" aria-hidden="true" data-description="Paragraph"><a tabindex="-1" href="#ex-skel-taylor-integral-exp-sin-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> 
+<div class="sidebyside">
+<div class="sbsrow" style="margin-left:1.5%;margin-right:1.5%;grid-template-columns:100%;column-gap:0%;">
+<div class="sbspanel sbspanel--top top" style=""><div class="image-box"><img src="generated/latex-image/ex-skel-taylor-integral-exp-sin-2-4-1.svg" role="img" class="contained" alt="Blank box in three rows: a series for the integrand, the term-by-term integration, and recognizing the resulting series."></div></div>
+</div>
+</div>
+<div class="autopermalink" aria-hidden="true" data-description="Example 2.3.19: A non-elementary integral computed exactly"><a tabindex="-1" href="#ex-skel-taylor-integral-exp-sin" title="Copy heading and permalink for Example 2.3.19: A non-elementary integral computed exactly" aria-label="Copy heading and permalink for Example 2.3.19: A non-elementary integral computed exactly">🔗</a></div>
+</article><span class="incontext"><a class="internal" href="subsec-skel-taylor-applications.html#ex-skel-taylor-integral-exp-sin">In Context</a></span>
+</body>
+</html>

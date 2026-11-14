@@ -1,0 +1,30 @@
+<diagram>
+  <annotations>
+    <annotation id="prefigure-skel-vec-parallelogram-figure" speech2="Two empty coordinate systems side by side, each with an x axis and a y axis and nothing drawn on them: the left one is for drawing two vectors head to tail with their sum, the right one for drawing the two vectors from a common point and completing the parallelogram.">
+      <grouped>prefigure-skel-vec-parallelogram-figure</grouped>
+      <position>1</position>
+      <children>
+        <active>prefigure-skel-vec-parallelogram-pl-xaxis</active>
+        <active>prefigure-skel-vec-parallelogram-pr-xaxis</active>
+      </children>
+      <components>
+        <active>prefigure-skel-vec-parallelogram-pl-xaxis</active>
+        <active>prefigure-skel-vec-parallelogram-pr-xaxis</active>
+      </components>
+    </annotation>
+    <annotation id="prefigure-skel-vec-parallelogram-pl-xaxis" speech2="The x axis of the left coordinate system.">
+      <active>prefigure-skel-vec-parallelogram-pl-xaxis</active>
+      <position>1</position>
+      <parents>
+        <grouped>prefigure-skel-vec-parallelogram-figure</grouped>
+      </parents>
+    </annotation>
+    <annotation id="prefigure-skel-vec-parallelogram-pr-xaxis" speech2="The x axis of the right coordinate system.">
+      <active>prefigure-skel-vec-parallelogram-pr-xaxis</active>
+      <position>2</position>
+      <parents>
+        <grouped>prefigure-skel-vec-parallelogram-figure</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

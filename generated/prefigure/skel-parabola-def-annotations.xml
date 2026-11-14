@@ -1,0 +1,60 @@
+<diagram>
+  <annotations>
+    <annotation id="skel-parabola-def-parabola" speech2="A parabola opening upward with vertex at the origin, illustrating the defining property that every point is equidistant from a fixed focus and a fixed directrix">
+      <grouped>skel-parabola-def-parabola</grouped>
+      <position>1</position>
+      <children>
+        <active>skel-parabola-def-parabola</active>
+        <active>skel-parabola-def-focus</active>
+        <active>skel-parabola-def-directrix</active>
+        <active>skel-parabola-def-vertex</active>
+        <active>skel-parabola-def-equidistant</active>
+      </children>
+      <components>
+        <active>skel-parabola-def-parabola</active>
+        <active>skel-parabola-def-focus</active>
+        <active>skel-parabola-def-directrix</active>
+        <active>skel-parabola-def-vertex</active>
+        <active>skel-parabola-def-equidistant</active>
+      </components>
+    </annotation>
+    <annotation id="skel-parabola-def-parabola" speech2="The parabola x squared equals four p y, shown as a blue upward curve" sonify="yes">
+      <active>skel-parabola-def-parabola</active>
+      <position>1</position>
+      <parents>
+        <grouped>skel-parabola-def-parabola</grouped>
+      </parents>
+      <sonification>
+        <ACTIVE>skel-parabola-def-parabola</ACTIVE>
+      </sonification>
+    </annotation>
+    <annotation id="skel-parabola-def-focus" speech2="The focus, the fixed point at zero comma p on the axis of symmetry">
+      <active>skel-parabola-def-focus</active>
+      <position>2</position>
+      <parents>
+        <grouped>skel-parabola-def-parabola</grouped>
+      </parents>
+    </annotation>
+    <annotation id="skel-parabola-def-directrix" speech2="The directrix, the fixed horizontal line y equals minus p, drawn dashed in red">
+      <active>skel-parabola-def-directrix</active>
+      <position>3</position>
+      <parents>
+        <grouped>skel-parabola-def-parabola</grouped>
+      </parents>
+    </annotation>
+    <annotation id="skel-parabola-def-vertex" speech2="The vertex at the origin, the point of the parabola halfway between the focus and the directrix">
+      <active>skel-parabola-def-vertex</active>
+      <position>4</position>
+      <parents>
+        <grouped>skel-parabola-def-parabola</grouped>
+      </parents>
+    </annotation>
+    <annotation id="skel-parabola-def-equidistant" speech2="A point P on the parabola with two equal green segments, one to the focus and one dropped perpendicular to the directrix, showing the two distances are equal">
+      <active>skel-parabola-def-equidistant</active>
+      <position>5</position>
+      <parents>
+        <grouped>skel-parabola-def-parabola</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

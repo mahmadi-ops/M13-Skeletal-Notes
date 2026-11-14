@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="prefigure-skel-parallelogram-area-figure" width="401" height="220" viewBox="0 0 401 220">
+  <defs>
+    <clipPath id="prefigure-skel-parallelogram-area-__clipPath-0">
+      <rect x="10.0" y="10.0" width="381.0" height="200.0"/>
+    </clipPath>
+    <clipPath id="prefigure-skel-parallelogram-area-__clipPath-1">
+      <rect x="10.0" y="10.0" width="381.0" height="200.0"/>
+    </clipPath>
+    <marker id="prefigure-skel-parallelogram-area-arrow-head-end-3_None_24_60-blue" markerWidth="13.5" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="9.8" refY="6.0">
+      <path d="M 13.5 6.0L 0.0 12.0L 2.6 7.5L 2.6 4.5L 0.0 0.0Z" fill="blue" stroke="none"/>
+    </marker>
+    <marker id="prefigure-skel-parallelogram-area-arrow-head-end-3_None_24_60-blue-outline" markerWidth="17.5" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="11.8" refY="8.0">
+      <path d="M 16.3 9.8 L 2.8 15.8 A 2 2 0 0 1 0.0 14.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 16.3 6.2 A 2 2 0 0 1 16.3 9.8 Z" fill="white" stroke="none"/>
+    </marker>
+    <marker id="prefigure-skel-parallelogram-area-arrow-head-end-3_None_24_60-red" markerWidth="13.5" markerHeight="12.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="9.8" refY="6.0">
+      <path d="M 13.5 6.0L 0.0 12.0L 2.6 7.5L 2.6 4.5L 0.0 0.0Z" fill="red" stroke="none"/>
+    </marker>
+    <marker id="prefigure-skel-parallelogram-area-arrow-head-end-3_None_24_60-red-outline" markerWidth="17.5" markerHeight="16.0" markerUnits="userSpaceOnUse" orient="auto-start-reverse" refX="11.8" refY="8.0">
+      <path d="M 16.3 9.8 L 2.8 15.8 A 2 2 0 0 1 0.0 14.0 L 0.0 2.0 A 2 2 0 0 1 2.8 0.2 L 16.3 6.2 A 2 2 0 0 1 16.3 9.8 Z" fill="white" stroke="none"/>
+    </marker>
+  </defs>
+  <line id="prefigure-skel-parallelogram-area-par-side-top" x1="129.1" y1="38.6" x2="367.2" y2="38.6" stroke="red" stroke-width="2" fill="none"/>
+  <line id="prefigure-skel-parallelogram-area-par-side-right" x1="271.9" y1="181.4" x2="367.2" y2="38.6" stroke="blue" stroke-width="2" fill="none"/>
+  <path id="prefigure-skel-parallelogram-area-par-vec-u" stroke="blue" stroke-width="3" fill="none" marker-end="url(#prefigure-skel-parallelogram-area-arrow-head-end-3_None_24_60-blue)" d="M 33.8 181.4 L 127.0 41.6"/>
+  <path id="prefigure-skel-parallelogram-area-par-vec-v" stroke="red" stroke-width="3" fill="none" marker-end="url(#prefigure-skel-parallelogram-area-arrow-head-end-3_None_24_60-red)" d="M 33.8 181.4 L 268.3 181.4"/>
+  <g id="prefigure-skel-parallelogram-area-par-u-label" transform="translate(77.4,106.0) translate(-11.6,-8.3)">
+    <g id="prefigure-skel-parallelogram-area-__g-0">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.112px; color:blue" width="11.568px" height="8.256px" role="img" focusable="false" viewBox="0 -450 639 456" x="0.0" y="0.0">
+        <defs>
+          <path id="prefigure-skel-parallelogram-area-MJX-2-TEX-B-1D42E" d="M40 442L134 446Q228 450 229 450H235V273V165Q235 90 238 74T254 52Q268 46 304 46H319Q352 46 380 67T419 121L420 123Q424 135 425 199Q425 201 425 207Q425 233 425 249V316Q425 354 423 363T410 376Q396 380 369 380H356V442L554 450V267Q554 84 556 79Q561 62 610 62H623V31Q623 0 622 0Q603 0 527 -3T432 -6Q431 -6 431 25V56L420 45Q373 6 332 -1Q313 -6 281 -6Q208 -6 165 14T109 87L107 98L106 230Q106 358 104 366Q96 380 50 380H37V442H40Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math">
+            <g data-mml-node="TeXAtom" data-mjx-texclass="ORD">
+              <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="bold" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-attributes="texclass:ORD" data-semantic-speech="bold u">
+                <use data-c="1D42E" xlink:href="#prefigure-skel-parallelogram-area-MJX-2-TEX-B-1D42E"/>
+              </g>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <g id="prefigure-skel-parallelogram-area-par-v-label" transform="translate(143.3,195.0) translate(-5.5,-0.0)">
+    <g id="prefigure-skel-parallelogram-area-__g-1">
+      <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: 0.000px; color:red" width="10.984px" height="8.040px" role="img" focusable="false" viewBox="0 -444 607 444" x="0.0" y="0.0">
+        <defs>
+          <path id="prefigure-skel-parallelogram-area-MJX-3-TEX-B-1D42F" d="M401 444Q413 441 495 441Q568 441 574 444H580V382H510L409 156Q348 18 339 6Q331 -4 320 -4Q318 -4 313 -4T303 -3H288Q273 -3 264 12T221 102Q206 135 197 156L96 382H26V444H34Q49 441 145 441Q252 441 270 444H279V382H231L284 264Q335 149 338 149Q338 150 389 264T442 381Q442 382 418 382H394V444H401Z"/>
+        </defs>
+        <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+          <g data-mml-node="math">
+            <g data-mml-node="TeXAtom" data-mjx-texclass="ORD">
+              <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="latinletter" data-semantic-font="bold" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-attributes="texclass:ORD" data-semantic-speech="bold v">
+                <use data-c="1D42F" xlink:href="#prefigure-skel-parallelogram-area-MJX-3-TEX-B-1D42F"/>
+              </g>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </g>
+  </g>
+  <g id="prefigure-skel-parallelogram-area-par-angle-theta">
+    <g transform="translate(55.4,168.0) translate(0.0,-12.9)">
+      <g id="prefigure-skel-parallelogram-area-__g-2">
+        <svg xmlns:xlink="http://www.w3.org/1999/xlink" style="vertical-align: -0.184px" width="8.488px" height="12.944px" role="img" focusable="false" viewBox="0 -705 469 715" x="0.0" y="0.0">
+          <defs>
+            <path id="prefigure-skel-parallelogram-area-MJX-4-TEX-I-1D703" d="M35 200Q35 302 74 415T180 610T319 704Q320 704 327 704T339 705Q393 701 423 656Q462 596 462 495Q462 380 417 261T302 66T168 -10H161Q125 -10 99 10T60 63T41 130T35 200ZM383 566Q383 668 330 668Q294 668 260 623T204 521T170 421T157 371Q206 370 254 370L351 371Q352 372 359 404T375 484T383 566ZM113 132Q113 26 166 26Q181 26 198 36T239 74T287 161T335 307L340 324H145Q145 321 136 286T120 208T113 132Z"/>
+          </defs>
+          <g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)">
+            <g data-mml-node="math">
+              <g data-mml-node="mi" data-semantic-type="identifier" data-semantic-role="greekletter" data-semantic-font="italic" data-semantic-annotation="clearspeak:simple" data-semantic-id="0" data-semantic-speech="theta">
+                <use data-c="1D703" xlink:href="#prefigure-skel-parallelogram-area-MJX-4-TEX-I-1D703"/>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </g>
+    </g>
+    <path stroke="black" stroke-width="2" fill="none" d="M 44.9 164.8 L 45.1 164.9 L 45.2 165.0 L 45.4 165.1 L 45.6 165.2 L 45.7 165.4 L 45.9 165.5 L 46.0 165.6 L 46.2 165.7 L 46.3 165.8 L 46.5 166.0 L 46.6 166.1 L 46.8 166.2 L 46.9 166.3 L 47.1 166.5 L 47.2 166.6 L 47.4 166.7 L 47.5 166.9 L 47.7 167.0 L 47.8 167.1 L 47.9 167.3 L 48.1 167.4 L 48.2 167.6 L 48.4 167.7 L 48.5 167.8 L 48.6 168.0 L 48.8 168.1 L 48.9 168.3 L 49.0 168.4 L 49.1 168.6 L 49.3 168.7 L 49.4 168.9 L 49.5 169.0 L 49.6 169.2 L 49.8 169.3 L 49.9 169.5 L 50.0 169.7 L 50.1 169.8 L 50.2 170.0 L 50.3 170.1 L 50.4 170.3 L 50.5 170.5 L 50.7 170.6 L 50.8 170.8 L 50.9 171.0 L 51.0 171.1 L 51.1 171.3 L 51.2 171.5 L 51.3 171.6 L 51.4 171.8 L 51.4 172.0 L 51.5 172.2 L 51.6 172.3 L 51.7 172.5 L 51.8 172.7 L 51.9 172.9 L 52.0 173.0 L 52.1 173.2 L 52.1 173.4 L 52.2 173.6 L 52.3 173.8 L 52.4 173.9 L 52.4 174.1 L 52.5 174.3 L 52.6 174.5 L 52.6 174.7 L 52.7 174.9 L 52.8 175.1 L 52.8 175.2 L 52.9 175.4 L 52.9 175.6 L 53.0 175.8 L 53.1 176.0 L 53.1 176.2 L 53.2 176.4 L 53.2 176.6 L 53.3 176.8 L 53.3 176.9 L 53.3 177.1 L 53.4 177.3 L 53.4 177.5 L 53.5 177.7 L 53.5 177.9 L 53.5 178.1 L 53.6 178.3 L 53.6 178.5 L 53.6 178.7 L 53.6 178.9 L 53.7 179.1 L 53.7 179.3 L 53.7 179.5 L 53.7 179.7 L 53.8 179.9 L 53.8 180.1 L 53.8 180.2 L 53.8 180.4 L 53.8 180.6 L 53.8 180.8 L 53.8 181.0 L 53.8 181.2 L 53.8 181.4"/>
+  </g>
+</svg>
