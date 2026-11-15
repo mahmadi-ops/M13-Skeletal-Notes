@@ -16,6 +16,6 @@
 <xi:include href="sec-skel-fmv-chain-rule.ptx" />
 <xi:include href="sec-skel-fmv-directional-derivatives.ptx" />
 <xi:include href="sec-skel-fmv-tangent-planes.ptx" />
-<!-- UNPOSTED <xi:include href="sec-skel-fmv-extreme-values.ptx" /> UNPOSTED -->
-<!-- UNPOSTED <xi:include href="sec-skel-fmv-lagrange.ptx" /> UNPOSTED -->
+<xi:include href="sec-skel-fmv-extreme-values.ptx" />
+<xi:include href="sec-skel-fmv-lagrange.ptx" />
 </chapter>
