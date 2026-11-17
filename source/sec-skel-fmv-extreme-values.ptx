@@ -33,6 +33,11 @@
   examples follow the definition of a critical point, each with one blank
   workspace; their graphs show the surface only, without the critical
   point, the tangent plane or the trace that the full notes mark.
+
+  Nov 2026: the video comparing the critical points of curves y = f(x)
+  with those of the surfaces of this section closes the subsection
+  "Local Maximum and Local Minimum", as in the full notes; like the other
+  videos it is a check, and its caption names the surfaces only.
 -->
 <section xml:id="sec-skel-fmv-extreme-values" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Extreme Values and Saddle Points</title>
@@ -411,6 +416,23 @@ draw(Label("$y$",1),(0,-2,0)--(0,2.4,0),ax,Arrow3);
 draw(Label("$z$",1),O--(0,0,2.3),ax,Arrow3);
 ]]></asymptote>
 </image>
+</figure>
+
+<p>
+<xref ref="fig-skel-critical-1d-2d-video"/> sets the surfaces of this
+section beside curves <m>y = f(x)</m> of one variable.
+</p>
+
+<figure xml:id="fig-skel-critical-1d-2d-video">
+<caption>
+Curves <m>y = f(x)</m> beside the surfaces <m>z = x^2 + y^2</m>,
+<m>z = -x^2 - y^2</m>, <m>z = \sqrt{x^2 + y^2}</m> and
+<m>z = y^2/3 - x^2/3</m>.
+</caption>
+<video xml:id="video-skel-critical-1d-2d"
+       source="videos/critical_points_1d_vs_2d_1080p.mp4"
+       preview="videos/previews/critical_points_1d_vs_2d_1080p.jpg"
+       width="70%" aspect="16:9"/>
 </figure>
 
 </subsection>
