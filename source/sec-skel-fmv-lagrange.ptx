@@ -9,7 +9,7 @@
   prefixed with "skel-" so the two can coexist.
 
   Figures: all eight are reproduced in full.  The two schematics and the
-  two videos carry the argument for collinearity, and the three level
+  three videos carry the argument for collinearity, and the three level
   curve pictures (the family of level curves, the ellipse with its
   hyperbolas, the circle with its level circles) are far past what a
   student can draw in class, so each is kept and followed by a box that
@@ -229,6 +229,28 @@ there exists some number <m>\lambda \in \R</m> such that
 </md>
 </p>
 </assemblage>
+
+<figure xml:id="fig-skel-lagrange-perpendicular-video">
+<caption>
+Why the gradients are collinear at a constrained extremum, for any
+<m>f</m> and <m>g</m>. The constraint curve <m>C</m> is the level curve
+<m>g = 0</m>, so <m>g</m> does not change as a point moves along it and
+<m>\nabla g \cdot \hat{T} = 0</m>, <xref ref="eq-skel-lagrange-gradg-perp"/>.
+At a constrained maximum or minimum <m>f</m> is stationary along
+<m>C</m>, so <m>\nabla f \cdot \hat{T} = 0</m>,
+<xref ref="eq-skel-lagrange-gradf-perp"/>: a tilted <m>\nabla f</m> would
+have a shadow on <m>\hat{T}</m>. In the plane only one line through
+<m>P</m>, the normal line, is perpendicular to <m>\hat{T}</m>, so both
+gradients lie on it: they are collinear, and one is a multiple of the
+other, <xref ref="eq-skel-lagrange-collinear"/>. The multiplier
+<m>\lambda</m> is negative when the gradients point opposite ways and
+positive when they point the same way.
+</caption>
+<video xml:id="video-skel-lagrange-perpendicular"
+       source="videos/lagrange_gradients_perpendicular_manim.mp4"
+       preview="videos/previews/lagrange_gradients_perpendicular_manim.jpg"
+       width="100%" aspect="16:9"/>
+</figure>
 
 <p>
 <xref ref="fig-skel-lagrange-level-curves"/> puts
