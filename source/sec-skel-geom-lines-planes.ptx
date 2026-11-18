@@ -721,6 +721,39 @@ equation <m>5x + y + z = -1</m>.
 </statement>
 </example>
 
+<example xml:id="ex-skel-planes-distance-shortest">
+<title>Shortest distance from a point to a plane</title>
+<statement>
+<p>
+Find the shortest distance from the point <m>S(1,0,-2)</m> to the plane
+<m>x + 2y + z = 4</m>.
+</p>
+
+<p>
+<em>Solution.</em>
+</p>
+<sidebyside width="97%">
+<image>
+<latex-image>
+\begin{tikzpicture}
+\draw[rounded corners=8pt, draw=gray!55, thick] (0,0) rectangle (15,14);
+\draw[gray!35] (0,10.5) -- (15,10.5);
+\draw[gray!35] (0,7) -- (15,7);
+\draw[gray!35] (0,3.5) -- (15,3.5);
+\node[anchor=north west, font=\small\itshape] at (0.35,13.7) {$\overrightarrow{n} =$};
+\node[anchor=north west, font=\small\itshape] at (7.50,13.7) {$P =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,10.2) {$\overrightarrow{PS} =$};
+\node[anchor=north west, font=\small\itshape] at (7.50,10.2) {$\overrightarrow{PS}\cdot\overrightarrow{n} =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,6.7) {$d =$};
+\node[anchor=north west, font=\small\itshape] at (0.35,3.2) {closest point $Q =$};
+\end{tikzpicture}
+</latex-image>
+<shortdescription>Blank box in four rows, for the normal vector and a point on the plane, for the vector P S and its dot product with the normal, for the distance, and for the point of the plane closest to S.</shortdescription>
+</image>
+</sidebyside>
+</statement>
+</example>
+
 </subsection>
 
 </section>
