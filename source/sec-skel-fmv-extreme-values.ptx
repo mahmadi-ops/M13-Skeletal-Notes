@@ -592,6 +592,11 @@ must find some other way to determine the behavior of <m>f</m> at
 </theorem>
 
 <p>
+Why the test works is explained at the end of this section, in
+<xref ref="subsec-skel-fmv-why-second-derivative-test"/>.
+</p>
+
+<p>
 The expression <m>f_{xx}f_{yy} - f_{xy}^2</m> is called the
 <term>discriminant</term> or the <term>Hessian</term> of <m>f(x,y)</m>,
 and it is easiest to remember as a determinant:
