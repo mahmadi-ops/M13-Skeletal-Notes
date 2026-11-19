@@ -64,7 +64,6 @@ unit vectors in (polar) directions
 other angle?
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="9" due="2026-11-18"
 <solution>
 <p>
 The function is symmetric with respect to rotations around the origin,
@@ -85,7 +84,6 @@ directional derivative at <m>(0,0)</m> is <m>0</m> in the directions
 symmetry it is <m>0</m> for every other angle as well.
 </p>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rev-gr-3">
@@ -104,7 +102,6 @@ Justify your answer fully: give a proof if the statement is true, or a
 counterexample if it is false.
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="9" due="2026-11-18"
 <answer>
 <p>True.</p>
 </answer>
@@ -129,7 +126,6 @@ Note we needed <m>f</m> to have continuous second partials to invoke
 Clairaut's Theorem.
 </p>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rm2-gr-2">
@@ -156,7 +152,6 @@ the fastest possible rate?
 </ol>
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="9" due="2026-11-18"
 <solution>
 <p>
 <ol marker="A.">
@@ -215,7 +210,6 @@ and
 </ol>
 </p>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rw23-3">
@@ -246,7 +240,6 @@ Find the maximum rate of change at <m>P_0(a,b)</m>.
 </ol>
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="9" due="2026-11-18"
 <solution>
 <p>
 <ol marker="A.">
@@ -279,7 +272,6 @@ is the maximum rate of change.
 </ol>
 </p>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rw21-8">
@@ -303,7 +295,6 @@ direction given by <m>\overrightarrow{v} = \langle -1, 1\rangle</m>.
 </ol>
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="9" due="2026-11-18"
 <solution>
 <p>
 The gradient is
@@ -345,7 +336,6 @@ so
 </ol>
 </p>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 <!-- ===== From the old worksheet "Exercises for Tangent Planes and
@@ -358,7 +348,6 @@ Find an equation for the tangent plane to the graph of
 <m>\left(\dfrac{\pi}{2}, 1, 0\right)</m>.
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="9" due="2026-11-18"
 <solution>
 <p>
 We have <m>f_x = -y\sin(xy)</m> and <m>f_y = -x\sin(xy)</m>, so the
@@ -389,7 +378,6 @@ x + \frac{\pi}{2}\,y + z = \pi.
 </md>
 </p>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rs19-9">
@@ -399,7 +387,6 @@ Find the equation of the tangent plane at the point <m>P_0(2,0,2)</m>
 on the surface <m>2z - x^2 = 0</m>.
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="9" due="2026-11-18"
 <solution>
 <p>
 Let <m>w(x,y,z) = 2z - x^2 = 0</m>. Then
@@ -428,7 +415,6 @@ so from <m>Ax + By + Cz = D</m>, the tangent plane at
 </md>
 </p>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="rf-8-a">
@@ -443,7 +429,6 @@ Justify your answer fully: give a proof if the statement is true, or a
 counterexample if it is false.
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="9" due="2026-11-18"
 <answer>
 <p>False.</p>
 </answer>
@@ -454,7 +439,6 @@ plane to this graph at any point is the same as <m>z = c</m>, so it
 meets the graph at infinitely many points.
 </p>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="pp-34">
@@ -464,7 +448,6 @@ The tangent plane to <m>z = f(x,y)</m> at the point <m>(1,2,9)</m> is
 <m>z = 3x + 5y - 4</m>. Find <m>\nabla f(1,2)</m>.
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="9" due="2026-11-18"
 <solution>
 <p>
 The tangent plane to the graph of <m>f</m> at <m>(a,b)</m> is
@@ -490,7 +473,6 @@ and therefore
 <m>3(1) + 5(2) - 4 = 9</m> <m>\checkmark</m>.)
 </p>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 <exercise xml:id="pp-36">
@@ -500,7 +482,6 @@ Let <m>f(x,y) = 2 + \ln(1 + 3x - 4y)</m>. Use a linearization to
 approximate <m>f(0.1, 0.2)</m>.
 </p>
 </statement>
-<!-- SOLUTION-LOCKED assignment="9" due="2026-11-18"
 <solution>
 <p>
 The point <m>(0.1, 0.2)</m> is close to the origin, where the
@@ -536,7 +517,6 @@ and therefore
 </md>
 </p>
 </solution>
-END SOLUTION-LOCKED -->
 </exercise>
 
 </worksheet>
