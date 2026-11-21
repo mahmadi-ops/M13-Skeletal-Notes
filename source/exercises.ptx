@@ -70,11 +70,11 @@ posted the same way.
 <xi:include href="sample-past-exam-3.ptx"/>
 
 <!-- ================= Assignment 10 ================= -->
-<!-- UNPOSTED <xi:include href="assignment-10-extreme-values-lagrange.ptx"/> UNPOSTED -->
+<xi:include href="assignment-10-extreme-values-lagrange.ptx"/>
 
 <!-- ================= Review Problems #4 ================= -->
 <!-- The rest of the extreme values and Lagrange multipliers problems. -->
-<!-- UNPOSTED <xi:include href="review-problems-4.ptx"/> UNPOSTED -->
+<xi:include href="review-problems-4.ptx"/>
 
 <conclusion>
 <assemblage xml:id="skel-assemblage-tutor-guide">
