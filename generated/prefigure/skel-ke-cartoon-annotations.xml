@@ -1,0 +1,45 @@
+<diagram>
+  <annotations>
+    <annotation id="skel-ke-cartoon-relativistic" speech2="A comparison of relativistic and Newtonian kinetic energy versus speed v. The relativistic energy races upward toward a wall at the speed of light c, while the Newtonian energy ambles along a gentle parabola">
+      <grouped>skel-ke-cartoon-relativistic</grouped>
+      <position>1</position>
+      <children>
+        <active>skel-ke-cartoon-relativistic</active>
+        <active>skel-ke-cartoon-newtonian</active>
+        <active>skel-ke-cartoon-wall</active>
+      </children>
+      <components>
+        <active>skel-ke-cartoon-relativistic</active>
+        <active>skel-ke-cartoon-newtonian</active>
+        <active>skel-ke-cartoon-wall</active>
+      </components>
+    </annotation>
+    <annotation id="skel-ke-cartoon-relativistic" speech2="The relativistic kinetic energy, which shoots up without bound as v approaches the speed of light c" sonify="yes">
+      <active>skel-ke-cartoon-relativistic</active>
+      <position>1</position>
+      <parents>
+        <grouped>skel-ke-cartoon-relativistic</grouped>
+      </parents>
+      <sonification>
+        <ACTIVE>skel-ke-cartoon-relativistic</ACTIVE>
+      </sonification>
+    </annotation>
+    <annotation id="skel-ke-cartoon-newtonian" speech2="The Newtonian kinetic energy, a gentle parabola that stays finite and matches the relativistic curve only when v is much less than c" sonify="yes">
+      <active>skel-ke-cartoon-newtonian</active>
+      <position>2</position>
+      <parents>
+        <grouped>skel-ke-cartoon-relativistic</grouped>
+      </parents>
+      <sonification>
+        <ACTIVE>skel-ke-cartoon-newtonian</ACTIVE>
+      </sonification>
+    </annotation>
+    <annotation id="skel-ke-cartoon-wall" speech2="A hatched wall at v equals c, the speed of light, a barrier the relativistic energy approaches but never reaches">
+      <active>skel-ke-cartoon-wall</active>
+      <position>3</position>
+      <parents>
+        <grouped>skel-ke-cartoon-relativistic</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>

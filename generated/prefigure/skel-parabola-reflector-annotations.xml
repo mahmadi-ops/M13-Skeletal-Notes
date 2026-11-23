@@ -1,0 +1,42 @@
+<diagram>
+  <annotations>
+    <annotation id="skel-parabola-reflector-dish" speech2="A parabolic reflector: incoming rays parallel to the axis all reflect to the focus">
+      <grouped>skel-parabola-reflector-dish</grouped>
+      <position>1</position>
+      <children>
+        <active>skel-parabola-reflector-dish</active>
+        <active>skel-parabola-reflector-rays</active>
+        <active>skel-parabola-reflector-focus</active>
+      </children>
+      <components>
+        <active>skel-parabola-reflector-dish</active>
+        <active>skel-parabola-reflector-rays</active>
+        <active>skel-parabola-reflector-focus</active>
+      </components>
+    </annotation>
+    <annotation id="skel-parabola-reflector-dish" speech2="The parabolic cross-section of the dish, a blue upward curve" sonify="yes">
+      <active>skel-parabola-reflector-dish</active>
+      <position>1</position>
+      <parents>
+        <grouped>skel-parabola-reflector-dish</grouped>
+      </parents>
+      <sonification>
+        <ACTIVE>skel-parabola-reflector-dish</ACTIVE>
+      </sonification>
+    </annotation>
+    <annotation id="skel-parabola-reflector-rays" speech2="Four vertical incoming rays, each striking the dish and reflecting to a single common point">
+      <active>skel-parabola-reflector-rays</active>
+      <position>2</position>
+      <parents>
+        <grouped>skel-parabola-reflector-dish</grouped>
+      </parents>
+    </annotation>
+    <annotation id="skel-parabola-reflector-focus" speech2="The focus, where every reflected ray converges; the receiver is placed here">
+      <active>skel-parabola-reflector-focus</active>
+      <position>3</position>
+      <parents>
+        <grouped>skel-parabola-reflector-dish</grouped>
+      </parents>
+    </annotation>
+  </annotations>
+</diagram>
