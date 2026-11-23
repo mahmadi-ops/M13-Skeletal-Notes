@@ -80,6 +80,9 @@
     <!-- and links that the PDF prints for videos and interactives from it;    -->
     <!-- without it they held bare page names that a phone cannot open.        -->
     <baseurl href="https://mahmadi-ops.github.io/M13-Skeletal-Notes/"/>
+    <!-- Google Analytics 4 (anonymous visit counts).  One property covers   -->
+    <!-- every book on mahmadi-ops.github.io; reports split them by path.    -->
+    <analytics google-gst="G-HLPGGP7XJ2"/>
     <!-- PreFigure diagrams that carry <annotations> are drawn by            -->
     <!-- diagcess.js, which scans for its .ChemAccess-element target divs    -->
     <!-- once at page load.  A figure opened afterwards inside a             -->
